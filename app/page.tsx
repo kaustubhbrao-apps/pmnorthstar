@@ -243,7 +243,7 @@ export default function HomePage() {
                 <Menu size={20} />
               </button>
               <div>
-                <p className="eyebrow hidden sm:block">// library.saved</p>
+                <p className="eyebrow hidden sm:block">Library</p>
                 <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>Saved</h1>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function HomePage() {
           <main className="flex-1 overflow-y-auto scroll-container p-4 sm:p-6 pb-12">
             {!user ? (
               <div className="flex flex-col items-center justify-center py-20">
-                <p className="eyebrow mb-3">// auth.required</p>
+                <p className="eyebrow mb-3">Sign in required</p>
                 <p className="text-base font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>Sign in to see your saved items</p>
                 <button
                   onClick={() => setShowAuthModal(true)}
@@ -268,8 +268,8 @@ export default function HomePage() {
               <>
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <p className="eyebrow">// books</p>
-                    <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(savedBooks.length).padStart(2, "0")}]</span>
+                    <p className="eyebrow">Books</p>
+                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(savedBooks.length)}</span>
                   </div>
                   {savedBooks.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No saved books yet.</p>
@@ -295,8 +295,8 @@ export default function HomePage() {
 
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <p className="eyebrow">// case_studies</p>
-                    <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(savedStudies.length).padStart(2, "0")}]</span>
+                    <p className="eyebrow">Case Studies</p>
+                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(savedStudies.length)}</span>
                   </div>
                   {savedStudies.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No saved case studies yet.</p>
@@ -321,8 +321,8 @@ export default function HomePage() {
 
                 <div>
                   <div className="flex items-baseline gap-3 mb-4">
-                    <p className="eyebrow">// playlists</p>
-                    <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(savedPlaylists.length).padStart(2, "0")}]</span>
+                    <p className="eyebrow">Playlists</p>
+                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(savedPlaylists.length)}</span>
                   </div>
                   {savedPlaylists.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No saved playlists yet.</p>
@@ -372,7 +372,7 @@ export default function HomePage() {
                 <Menu size={20} />
               </button>
               <div>
-                <p className="eyebrow hidden sm:block">// library.favourites</p>
+                <p className="eyebrow hidden sm:block">Library</p>
                 <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>Favourites</h1>
               </div>
             </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
           <main className="flex-1 overflow-y-auto scroll-container p-4 sm:p-6 pb-12">
             {!user ? (
               <div className="flex flex-col items-center justify-center py-20">
-                <p className="eyebrow mb-3">// auth.required</p>
+                <p className="eyebrow mb-3">Sign in required</p>
                 <p className="text-base font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>Sign in to see your favourites</p>
                 <button onClick={() => setShowAuthModal(true)} className="btn-accent mt-5">
                   Log In / Sign Up
@@ -394,8 +394,8 @@ export default function HomePage() {
               <>
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <p className="eyebrow">// books</p>
-                    <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(favouriteBooks.length).padStart(2, "0")}]</span>
+                    <p className="eyebrow">Books</p>
+                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(favouriteBooks.length)}</span>
                   </div>
                   {favouriteBooks.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No favourite books yet.</p>
@@ -421,8 +421,8 @@ export default function HomePage() {
 
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <p className="eyebrow">// case_studies</p>
-                    <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(favouriteStudies.length).padStart(2, "0")}]</span>
+                    <p className="eyebrow">Case Studies</p>
+                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(favouriteStudies.length)}</span>
                   </div>
                   {favouriteStudies.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No favourite case studies yet.</p>
@@ -447,8 +447,8 @@ export default function HomePage() {
 
                 <div>
                   <div className="flex items-baseline gap-3 mb-4">
-                    <p className="eyebrow">// playlists</p>
-                    <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(favouritePlaylists.length).padStart(2, "0")}]</span>
+                    <p className="eyebrow">Playlists</p>
+                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(favouritePlaylists.length)}</span>
                   </div>
                   {favouritePlaylists.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No favourite playlists yet.</p>
@@ -496,7 +496,7 @@ export default function HomePage() {
                 <Menu size={20} />
               </button>
               <div>
-                <p className="eyebrow hidden sm:block">// case_studies.index</p>
+                <p className="eyebrow hidden sm:block">Case Studies</p>
                 <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
                   Case Studies
                 </h1>
@@ -512,7 +512,7 @@ export default function HomePage() {
                 {/* Hero strip */}
                 <div className="dot-grid px-4 sm:px-8 py-10 sm:py-14" style={{ borderBottom: "1px solid var(--card-border)" }}>
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="eyebrow">{String(caseStudies.length).padStart(2, "0")} / studies</span>
+                    <span className="eyebrow">{caseStudies.length} studies</span>
                     <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
                     <span className="eyebrow">5 categories</span>
                   </div>
@@ -552,13 +552,13 @@ export default function HomePage() {
                             className="eyebrow"
                             style={csColor ? { color: csColor, opacity: 0.85 } : undefined}
                           >
-                            // {activeCsFilter === "All" ? "all" : activeCsFilter.toLowerCase()}
+                            {activeCsFilter === "All" ? "All Categories" : activeCsFilter}
                           </span>
-                          <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
-                            [{String(filteredCaseStudies.length).padStart(2, "0")}]
+                          <span className="text-xs" style={{ color: "var(--text-faint)" }}>
+                            {String(filteredCaseStudies.length)}
                           </span>
                         </div>
-                        <div className="hidden sm:flex items-center gap-4 font-mono text-[11px]" style={{ letterSpacing: "0.04em" }}>
+                        <div className="hidden sm:flex items-center gap-4 text-[12px]">
                           <span className="inline-flex items-center gap-1.5" style={{ color: "#50C878" }}>
                             <TrendingUp size={11} strokeWidth={1.6} /> {wins} wins
                           </span>
@@ -613,7 +613,7 @@ export default function HomePage() {
                 <Menu size={20} />
               </button>
               <div>
-                <span className="eyebrow hidden sm:block">// learn.index</span>
+                <span className="eyebrow hidden sm:block">Learn</span>
                 <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
                   Learn
                 </h1>
@@ -632,7 +632,7 @@ export default function HomePage() {
                   style={{ borderBottom: "1px solid var(--card-border)" }}
                 >
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="eyebrow">{String(playlists.length).padStart(2, "0")} / playlists</span>
+                    <span className="eyebrow">{playlists.length} playlists</span>
                     <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
                     <span className="eyebrow">{learnCategories.length} topics</span>
                   </div>
@@ -681,10 +681,10 @@ export default function HomePage() {
                             className="eyebrow"
                             style={lnColor ? { color: lnColor, opacity: 0.85 } : undefined}
                           >
-                            // {activeLearnFilter === "All" ? "all" : activeLearnFilter.toLowerCase()}
+                            {activeLearnFilter === "All" ? "All Topics" : activeLearnFilter}
                           </span>
-                          <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
-                            [{String(filteredPlaylists.length).padStart(2, "0")}]
+                          <span className="text-xs" style={{ color: "var(--text-faint)" }}>
+                            {String(filteredPlaylists.length)}
                           </span>
                         </div>
                       </div>
@@ -749,8 +749,8 @@ export default function HomePage() {
               >
                 <Star size={11} className="text-white fill-white" strokeWidth={1.5} />
               </div>
-              <span className="font-mono font-bold text-[13px]" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em" }}>north</span>
-              <span className="font-mono font-bold text-[13px]" style={{ color: "var(--brand-primary)", letterSpacing: "-0.04em" }}>_star</span>
+              <span className="font-display font-bold text-[15px]" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>North</span>
+              <span className="font-display font-bold text-[15px]" style={{ color: "var(--brand-primary)", letterSpacing: "-0.02em" }}>Star</span>
             </div>
           </div>
           <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
@@ -776,30 +776,30 @@ export default function HomePage() {
           className="flex flex-wrap items-center justify-between gap-2 px-4 sm:px-6 py-2"
           style={{ borderBottom: "1px solid var(--card-border)", background: "var(--nav-bg)" }}
         >
-          <p className="font-mono text-[11px]" style={{ color: "var(--text-muted)", letterSpacing: "0.04em" }}>
-            {user ? `// hello, ${user.name.toLowerCase()}` : "// sign in to save and like resources"}
+          <p className="text-[11px] sm:text-xs truncate flex-shrink min-w-0" style={{ color: "var(--text-muted)" }}>
+            {user ? `Welcome back, ${user.name}` : "Browse freely. Sign in only if you want to save."}
           </p>
           {user ? (
-            <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
               <button
                 onClick={() => setActiveNav("saved")}
-                className="font-mono text-[10px] uppercase tracking-wider inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg"
+                className="text-[11px] font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
                 style={{ background: "transparent", border: "1px solid var(--card-border)", color: "var(--text-muted)" }}
               >
                 <Bookmark size={10} strokeWidth={1.6} />
-                Saved <span style={{ color: "var(--text-faint)" }}>{String(savedCount).padStart(2, "0")}</span>
+                <span className="hidden sm:inline">Saved </span><span style={{ color: "var(--text-faint)" }}>{savedCount}</span>
               </button>
               <button
                 onClick={() => setActiveNav("favourites")}
-                className="font-mono text-[10px] uppercase tracking-wider inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg"
+                className="text-[11px] font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
                 style={{ background: "transparent", border: "1px solid var(--card-border)", color: "var(--text-muted)" }}
               >
                 <Heart size={10} strokeWidth={1.6} />
-                Fav <span style={{ color: "var(--text-faint)" }}>{String(favouriteCount).padStart(2, "0")}</span>
+                <span className="hidden sm:inline">Fav </span><span style={{ color: "var(--text-faint)" }}>{favouriteCount}</span>
               </button>
               <button
                 onClick={handleLogout}
-                className="font-mono text-[10px] uppercase tracking-wider inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg"
+                className="text-[11px] font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
                 style={{ background: "transparent", border: "1px solid var(--card-border)", color: "var(--text-muted)" }}
               >
                 <LogOut size={10} strokeWidth={1.6} />
@@ -807,7 +807,7 @@ export default function HomePage() {
               </button>
             </div>
           ) : (
-            <button onClick={() => setShowAuthModal(true)} className="btn-accent" style={{ padding: "6px 12px", fontSize: 12 }}>
+            <button onClick={() => setShowAuthModal(true)} className="btn-accent flex-shrink-0" style={{ padding: "6px 12px", fontSize: 12 }}>
               <User size={11} /> Log In
             </button>
           )}
@@ -821,55 +821,55 @@ export default function HomePage() {
           ) : !user ? (
             <div className="pb-12 overflow-y-auto">
               {/* Hero */}
-              <div className="dot-grid px-4 sm:px-8 py-16 sm:py-24 text-center" style={{ borderBottom: "1px solid var(--card-border)" }}>
+              <div className="dot-grid px-4 sm:px-8 py-12 sm:py-20 lg:py-24 text-center" style={{ borderBottom: "1px solid var(--card-border)" }}>
                 <div className="max-w-3xl mx-auto">
-                  <div className="flex items-center justify-center gap-3 mb-6">
-                    <span className="eyebrow">// pm.library</span>
-                    <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
+                  <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-5 sm:mb-6">
+                    <span className="eyebrow">A curated library</span>
+                    <span className="w-px h-3 hidden sm:inline-block" style={{ background: "var(--card-border)" }} />
                     <span className="eyebrow">v0.1</span>
                   </div>
                   <h1
-                    className="text-4xl sm:text-6xl font-bold mb-5"
+                    className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5"
                     style={{ color: "var(--text-primary)", letterSpacing: "-0.04em", lineHeight: 1.05 }}
                   >
                     Product management,<br />
                     <span className="gradient-text">distilled.</span>
                   </h1>
                   <p
-                    className="text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed"
+                    className="text-sm sm:text-base max-w-lg mx-auto mb-6 sm:mb-8 leading-relaxed px-2"
                     style={{ color: "var(--text-muted)" }}
                   >
                     A curated shelf of books, case studies, and playlists — for builders learning out loud.
                   </p>
                   <div className="flex flex-wrap items-center justify-center gap-2.5">
-                    <button onClick={() => setShowAuthModal(true)} className="btn-primary group">
-                      Get started
+                    <button onClick={() => setActiveNav("casestudies")} className="btn-primary group">
+                      Browse case studies
                       <ArrowUpRight size={14} strokeWidth={1.8} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </button>
-                    <button onClick={() => setShowAuthModal(true)} className="btn-ghost">
-                      Free forever
+                    <button onClick={() => setActiveNav("learn")} className="btn-ghost">
+                      Explore playlists
                     </button>
                   </div>
                 </div>
               </div>
 
               {/* Stats ticker */}
-              <div className="px-4 sm:px-8 py-8 sm:py-10 grid grid-cols-3 max-w-3xl mx-auto" style={{ borderBottom: "1px solid var(--card-border)" }}>
+              <div className="px-4 sm:px-8 py-6 sm:py-10 grid grid-cols-3 max-w-3xl mx-auto" style={{ borderBottom: "1px solid var(--card-border)" }}>
                 {[
                   { value: "30", label: "books" },
-                  { value: "50", label: "case studies" },
+                  { value: "50", label: "cases" },
                   { value: String(playlists.length), label: "playlists" },
                 ].map(({ value, label }, idx) => (
                   <div
                     key={label}
-                    className={`text-left px-3 sm:px-6 ${idx > 0 ? "border-l" : ""}`}
+                    className={`text-left px-2 sm:px-6 ${idx > 0 ? "border-l" : ""}`}
                     style={{ borderColor: "var(--card-border)" }}
                   >
-                    <div className="font-mono text-[10px] tracking-[0.18em] uppercase mb-2" style={{ color: "var(--text-faint)" }}>
-                      // {label}
+                    <div className="text-[10px] sm:text-[11px] font-medium tracking-wider uppercase mb-1 sm:mb-2 truncate" style={{ color: "var(--text-faint)" }}>
+                      {label}
                     </div>
-                    <div className="text-3xl sm:text-5xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}>
-                      {String(value).padStart(2, "0")}
+                    <div className="text-2xl sm:text-4xl lg:text-5xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}>
+                      {value}
                     </div>
                   </div>
                 ))}
@@ -877,7 +877,7 @@ export default function HomePage() {
 
               {/* What's inside */}
               <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-                <p className="eyebrow mb-3">// what's inside</p>
+                <p className="eyebrow mb-3">What's inside</p>
                 <h2 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
                   Four shelves, one library.
                 </h2>
@@ -907,7 +907,7 @@ export default function HomePage() {
 
               {/* Featured strip */}
               <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-12">
-                <p className="eyebrow mb-4">// featured</p>
+                <p className="eyebrow mb-4">Featured</p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
                   {caseStudies.slice(0, 8).map((cs, idx) => (
                     <div
@@ -916,7 +916,7 @@ export default function HomePage() {
                       style={{ borderRadius: 10 }}
                     >
                       <p className="font-mono text-[10px] mb-2" style={{ color: "var(--text-faint)", letterSpacing: "0.08em" }}>
-                        {String(idx + 1).padStart(2, "0")}
+                        {idx + 1}
                       </p>
                       <p className="text-sm font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>{cs.company}</p>
                       <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>{cs.category}</p>
@@ -927,9 +927,9 @@ export default function HomePage() {
 
               {/* CTA */}
               <div className="text-center px-4 pb-12">
-                <p className="eyebrow mb-4">// no credit card required</p>
-                <button onClick={() => setShowAuthModal(true)} className="btn-primary group">
-                  Sign up for free
+                <p className="eyebrow mb-4">Free · Open · Curated</p>
+                <button onClick={() => setActiveNav("casestudies")} className="btn-primary group">
+                  Start exploring
                   <ArrowUpRight size={14} strokeWidth={1.8} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </button>
               </div>
@@ -953,8 +953,8 @@ export default function HomePage() {
                     onClick={() => nav && setActiveNav(nav)}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-mono text-[10px] tracking-[0.18em] uppercase" style={{ color: "var(--text-faint)" }}>
-                        // {label}
+                      <span className="text-[11px] font-medium tracking-wider uppercase" style={{ color: "var(--text-faint)" }}>
+                        {label.replace("_", " ")}
                       </span>
                       {nav && (
                         <ArrowUpRight
@@ -966,7 +966,7 @@ export default function HomePage() {
                       )}
                     </div>
                     <div className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
-                      {String(value).padStart(2, "0")}
+                      {value}
                     </div>
                   </button>
                 ))}
@@ -1022,12 +1022,12 @@ export default function HomePage() {
               <div className="px-4 sm:px-6 mt-10 mb-8">
                 <div className="flex items-end justify-between mb-5">
                   <div>
-                    <p className="eyebrow mb-1.5" style={{ color: "#F3123C", opacity: 0.85 }}>// case_studies</p>
+                    <p className="eyebrow mb-1.5" style={{ color: "#F3123C", opacity: 0.85 }}>Case Studies</p>
                     <div className="flex items-baseline gap-3">
                       <h2 className="text-base sm:text-lg font-semibold" style={{ color: "#F3123C", letterSpacing: "-0.02em" }}>
                         Case Studies
                       </h2>
-                      <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[50]</span>
+                      <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>[50]</span>
                     </div>
                   </div>
                   <button onClick={() => setActiveNav("casestudies")} className="btn-ghost">
@@ -1056,12 +1056,12 @@ export default function HomePage() {
               <div className="px-4 sm:px-6 mt-10 mb-8">
                 <div className="flex items-end justify-between mb-5">
                   <div>
-                    <p className="eyebrow mb-1.5" style={{ color: "#9B8FFF", opacity: 0.85 }}>// learn</p>
+                    <p className="eyebrow mb-1.5" style={{ color: "#9B8FFF", opacity: 0.85 }}>Learn</p>
                     <div className="flex items-baseline gap-3">
                       <h2 className="text-base sm:text-lg font-semibold" style={{ color: "#9B8FFF", letterSpacing: "-0.02em" }}>
                         Learn
                       </h2>
-                      <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(playlists.length).padStart(2, "0")}]</span>
+                      <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(playlists.length)}</span>
                     </div>
                     <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>
                       Curated YouTube playlists across {learnCategories.length} topics
@@ -1095,20 +1095,20 @@ export default function HomePage() {
                 <>
                   {/* Search header */}
                   <div className="mb-6">
-                    <p className="eyebrow mb-1.5">// search</p>
+                    <p className="eyebrow mb-1.5">Search results</p>
                     <div className="flex items-baseline gap-3 flex-wrap">
                       <h2 className="text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
                         “{searchQuery}”
                       </h2>
                       <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
-                        [{String(filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length).padStart(2, "0")}]
+                        {String(filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length)}
                       </span>
                     </div>
                   </div>
 
                   {filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-20 text-center">
-                      <p className="eyebrow mb-3">// no results</p>
+                      <p className="eyebrow mb-3">No results</p>
                       <p className="text-base font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>Nothing matched</p>
                       <p className="text-sm mt-1" style={{ color: "var(--text-muted)" }}>Try a different keyword</p>
                     </div>
@@ -1118,9 +1118,9 @@ export default function HomePage() {
                       {filteredBooks.length > 0 && (
                         <div className="mb-10">
                           <div className="flex items-baseline gap-3 mb-4">
-                            <p className="eyebrow">// books</p>
-                            <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>
-                              [{String(filteredBooks.length).padStart(2, "0")}]
+                            <p className="eyebrow">Books</p>
+                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                              {String(filteredBooks.length)}
                             </span>
                           </div>
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -1146,9 +1146,9 @@ export default function HomePage() {
                       {searchedCaseStudies.length > 0 && (
                         <div className="mb-10">
                           <div className="flex items-baseline gap-3 mb-4">
-                            <p className="eyebrow">// case_studies</p>
-                            <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>
-                              [{String(searchedCaseStudies.length).padStart(2, "0")}]
+                            <p className="eyebrow">Case Studies</p>
+                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                              {String(searchedCaseStudies.length)}
                             </span>
                           </div>
                           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -1173,9 +1173,9 @@ export default function HomePage() {
                       {searchedPlaylists.length > 0 && (
                         <div>
                           <div className="flex items-baseline gap-3 mb-4">
-                            <p className="eyebrow">// playlists</p>
-                            <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>
-                              [{String(searchedPlaylists.length).padStart(2, "0")}]
+                            <p className="eyebrow">Playlists</p>
+                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                              {String(searchedPlaylists.length)}
                             </span>
                           </div>
                           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -1201,19 +1201,19 @@ export default function HomePage() {
               ) : (
                 <>
                   <div className="mb-6">
-                    <p className="eyebrow mb-1.5">// filter</p>
+                    <p className="eyebrow mb-1.5">Filter</p>
                     <div className="flex items-baseline gap-3">
                       <h2 className="text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
                         {activeFilter}
                       </h2>
                       <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
-                        [{String(filteredBooks.length).padStart(2, "0")}]
+                        {String(filteredBooks.length)}
                       </span>
                     </div>
                   </div>
                   {filteredBooks.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-20 text-center">
-                      <p className="eyebrow mb-3">// no results</p>
+                      <p className="eyebrow mb-3">No results</p>
                       <p className="text-base font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>No books found</p>
                       <p className="text-sm mt-1" style={{ color: "var(--text-muted)" }}>Try a different category</p>
                     </div>

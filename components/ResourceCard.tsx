@@ -66,33 +66,31 @@ export function ResourceCard({
         rel="noopener noreferrer"
         className="block px-5 pt-5 pb-4 group"
       >
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3 min-w-0">
-            <span className="font-mono text-xs" style={{ color: "var(--text-faint)", letterSpacing: "0.08em" }}>
-              {indexLabel}
-            </span>
-            <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
-            <span
-              className="font-mono text-[10px] tracking-[0.18em] uppercase truncate"
-              style={{ color: "var(--text-muted)" }}
-            >
-              {book.category}
-            </span>
-          </div>
-          <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full"
+        <div className="flex items-center justify-between mb-5">
+          <span
+            className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded-full truncate"
+            style={{
+              background: "var(--brand-soft)",
+              color: "var(--brand-primary)",
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "var(--brand-primary)" }} />
+            {book.category}
+          </span>
+          <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
             style={{ border: "1px solid var(--card-border)", color: "var(--brand-primary)" }}>
             <ArrowUpRight size={14} strokeWidth={1.6} />
           </div>
         </div>
 
         <h3
-          className="text-[15px] sm:text-base font-semibold leading-snug mb-1.5"
-          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+          className="text-lg sm:text-xl font-semibold leading-tight mb-1.5"
+          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
         >
           {book.title}
         </h3>
-        <p className="font-mono text-xs mb-3" style={{ color: "var(--brand-primary)", opacity: 0.85 }}>
-          {book.author}
+        <p className="text-xs mb-3" style={{ color: "var(--text-muted)" }}>
+          by {book.author}
         </p>
 
         {variant !== "list" && (
@@ -103,7 +101,7 @@ export function ResourceCard({
 
         <div className="flex items-center justify-between">
           <StarRating rating={book.rating} />
-          <span className="font-mono text-[10px]" style={{ color: "var(--text-faint)", letterSpacing: "0.06em" }}>
+          <span className="text-xs" style={{ color: "var(--text-faint)" }}>
             {book.rating.toFixed(1)}
           </span>
         </div>
@@ -113,7 +111,7 @@ export function ResourceCard({
         className="px-5 py-3 flex items-center justify-between"
         style={{ borderTop: "1px solid var(--card-border)" }}
       >
-        <span className="font-mono text-[10px] tracking-[0.14em] uppercase" style={{ color: "var(--text-muted)" }}>
+        <span className="text-xs" style={{ color: "var(--text-muted)" }}>
           Open book
         </span>
         <SaveButton

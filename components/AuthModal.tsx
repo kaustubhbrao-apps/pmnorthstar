@@ -125,13 +125,10 @@ export function AuthModal({ onClose, onSuccess }: AuthModalProps) {
                 <Star size={13} className="text-white fill-white" strokeWidth={1.5} />
               </div>
               <div className="flex items-baseline gap-0.5">
-                <span className="font-mono font-bold text-[15px]" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em" }}>north</span>
-                <span className="font-mono font-bold text-[15px]" style={{ color: "var(--brand-primary)", letterSpacing: "-0.04em" }}>_star</span>
+                <span className="font-display font-bold text-[17px]" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>North</span>
+                <span className="font-display font-bold text-[17px]" style={{ color: "var(--brand-primary)", letterSpacing: "-0.02em" }}>Star</span>
               </div>
             </div>
-            <p className="eyebrow mb-2">
-              // {mode === "forgot" ? "auth.reset" : mode === "login" ? "auth.login" : "auth.signup"}
-            </p>
             <h2
               className="text-2xl font-bold mb-1"
               style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
@@ -146,8 +143,8 @@ export function AuthModal({ onClose, onSuccess }: AuthModalProps) {
               {mode === "forgot"
                 ? "Verify your identity to set a new password."
                 : mode === "login"
-                ? "Sign in to access saved resources."
-                : "Start saving and liking resources."}
+                ? "Sign in to access your saved resources."
+                : "Optional — sign up to save and like content."}
             </p>
           </div>
 

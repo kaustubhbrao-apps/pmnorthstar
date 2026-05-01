@@ -28,15 +28,9 @@ export function SectionRow({ title, subtitle, children, accentColor }: SectionRo
     <section className="animate-section">
       <div className="flex items-end justify-between mb-4 px-4 sm:px-6">
         <div>
-          <p
-            className="eyebrow mb-1.5"
-            style={accentColor ? { color: accentColor, opacity: 0.85 } : undefined}
-          >
-            // {title.toLowerCase().replace(/\s+/g, ".")}
-          </p>
           <div className="flex items-baseline gap-3">
             <h2
-              className="text-base sm:text-lg font-semibold"
+              className="text-xl sm:text-2xl font-semibold"
               style={{
                 color: accentColor || "var(--text-primary)",
                 letterSpacing: "-0.02em",
@@ -44,15 +38,12 @@ export function SectionRow({ title, subtitle, children, accentColor }: SectionRo
             >
               {title}
             </h2>
-            <span
-              className="font-mono"
-              style={{ fontSize: 11, color: "var(--text-faint)", letterSpacing: "0.06em" }}
-            >
-              [{String(count).padStart(2, "0")}]
+            <span style={{ fontSize: 12, color: "var(--text-faint)" }}>
+              {count} {count === 1 ? "item" : "items"}
             </span>
           </div>
           {subtitle && (
-            <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>
+            <p className="text-sm mt-1" style={{ color: "var(--text-muted)" }}>
               {subtitle}
             </p>
           )}

@@ -44,37 +44,35 @@ export function CaseStudyCard({
       style={{ ["--accent-color" as any]: color } as React.CSSProperties}
     >
       <Link href={`/case-study/${study.id}`} className="block px-5 pt-5 pb-4 group">
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3 min-w-0">
-            <span className="font-mono text-xs" style={{ color: "var(--text-faint)", letterSpacing: "0.08em" }}>
-              {indexLabel}
-            </span>
-            <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
-            <span
-              className="font-mono text-[10px] tracking-[0.18em] uppercase truncate"
-              style={{ color }}
-            >
-              {study.category}
-            </span>
-          </div>
-          <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full"
+        <div className="flex items-center justify-between mb-5">
+          <span
+            className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded-full truncate"
+            style={{
+              background: `${color}14`,
+              color,
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
+            {study.category}
+          </span>
+          <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
             style={{ border: "1px solid var(--card-border)", color }}>
             <ArrowUpRight size={14} strokeWidth={1.6} />
           </div>
         </div>
 
-        <p className="font-mono text-xs mb-1.5" style={{ color, opacity: 0.9 }}>
-          <span className="mr-1.5">{study.logo}</span>
+        <p className="text-xs mb-2" style={{ color: "var(--text-muted)" }}>
+          <span className="text-base mr-1.5 align-middle">{study.logo}</span>
           {study.company} · {study.year}
         </p>
         <h3
-          className="text-[15px] sm:text-base font-semibold leading-snug mb-2"
-          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+          className="text-lg sm:text-xl font-semibold leading-tight mb-2"
+          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
         >
           {study.title}
         </h3>
 
-        <p className="text-xs leading-relaxed line-clamp-2 mb-4" style={{ color: "var(--text-muted)" }}>
+        <p className="text-sm leading-relaxed line-clamp-2 mb-4" style={{ color: "var(--text-muted)" }}>
           {study.description}
         </p>
 
@@ -92,7 +90,7 @@ export function CaseStudyCard({
           ) : (
             <TrendingUp size={12} strokeWidth={1.6} />
           )}
-          <span className="line-clamp-1 font-mono text-[11px]" style={{ letterSpacing: "0.02em" }}>
+          <span className="line-clamp-1 text-[11px]">
             {study.outcome}
           </span>
         </div>
@@ -103,11 +101,10 @@ export function CaseStudyCard({
             {study.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="font-mono text-[10px] px-2 py-0.5 rounded"
+                className="text-[11px] px-2 py-0.5 rounded-full"
                 style={{
                   background: "var(--tag-bg)",
                   color: "var(--text-muted)",
-                  letterSpacing: "0.04em",
                 }}
               >
                 {tag}
@@ -121,7 +118,7 @@ export function CaseStudyCard({
         className="px-5 py-3 flex items-center justify-between"
         style={{ borderTop: "1px solid var(--card-border)" }}
       >
-        <span className="font-mono text-[10px] tracking-[0.14em] uppercase" style={{ color: "var(--text-muted)" }}>
+        <span className="text-xs" style={{ color: "var(--text-muted)" }}>
           Read case study
         </span>
         <SaveButton

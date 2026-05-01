@@ -46,7 +46,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
         style={{ background: "var(--page-bg)" }}
       >
         <div className="text-center">
-          <p className="eyebrow mb-2">// 404</p>
+          <p className="eyebrow mb-2">404</p>
           <p className="text-lg font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
             Case study not found
           </p>
@@ -86,17 +86,17 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
             >
               <Menu size={20} />
             </button>
-            <Link href="/" className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider"
-              style={{ color: "var(--text-muted)", letterSpacing: "0.12em" }}>
-              <ArrowLeft size={12} strokeWidth={1.6} />
-              <span className="hidden sm:inline">Case studies</span>
+            <Link href="/" className="inline-flex items-center gap-2 text-sm font-medium"
+              style={{ color: "var(--text-muted)" }}>
+              <ArrowLeft size={14} strokeWidth={1.6} />
+              <span className="hidden sm:inline">All case studies</span>
               <span className="sm:hidden">Back</span>
             </Link>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="font-mono text-[10px]" style={{ color: "var(--text-faint)", letterSpacing: "0.08em" }}>
-              {indexLabel} / {String(caseStudies.length).padStart(2, "0")}
+            <span className="text-xs" style={{ color: "var(--text-faint)" }}>
+              {currentIndex + 1} of {caseStudies.length}
             </span>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} className="hidden sm:inline-flex" />
           </div>
@@ -111,10 +111,11 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
             <div className="max-w-3xl">
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span
-                  className="font-mono text-[10px] tracking-[0.18em] uppercase"
-                  style={{ color }}
+                  className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                  style={{ background: `${color}14`, color }}
                 >
-                  // {study.category.toLowerCase()}
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} />
+                  {study.category}
                 </span>
                 <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
                 <span className="meta-mono inline-flex items-center gap-1">
@@ -161,10 +162,10 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                 )}
                 <div>
                   <span
-                    className="font-mono text-[10px] tracking-[0.18em] uppercase block mb-1"
+                    className="text-[11px] font-semibold uppercase tracking-wider block mb-1"
                     style={{ opacity: 0.8 }}
                   >
-                    // {isFailure ? "outcome" : "impact"}
+                    {isFailure ? "Outcome" : "Impact"}
                   </span>
                   <span style={{ color: "var(--text-primary)" }}>{study.outcome}</span>
                 </div>
@@ -188,15 +189,14 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                 className="flex flex-wrap items-center gap-2 py-6 mt-4"
                 style={{ borderTop: "1px solid var(--card-border)" }}
               >
-                <span className="eyebrow mr-2">// tags</span>
+                <span className="eyebrow mr-2">Tags</span>
                 {study.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[10px] px-2 py-1 rounded"
+                    className="text-xs px-2.5 py-1 rounded-full"
                     style={{
                       background: "var(--tag-bg)",
                       color: "var(--text-muted)",
-                      letterSpacing: "0.04em",
                     }}
                   >
                     {tag}

@@ -49,29 +49,21 @@ export function PlaylistCard({
         className="block px-5 pt-5 pb-4 group"
         style={{ cursor: hasUrl ? "pointer" : "not-allowed" }}
       >
-        {/* Top row: index · category · arrow */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex items-center gap-3 min-w-0">
-            <span
-              className="font-mono text-xs"
-              style={{ color: "var(--text-faint)", letterSpacing: "0.08em" }}
-            >
-              {indexLabel}
-            </span>
-            <span
-              className="w-px h-3"
-              style={{ background: "var(--card-border)" }}
-            />
-            <span
-              className="font-mono text-[10px] tracking-[0.18em] uppercase truncate"
-              style={{ color }}
-            >
-              {playlist.category}
-            </span>
-          </div>
+        {/* Top row: category · arrow */}
+        <div className="flex items-center justify-between mb-5">
+          <span
+            className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded-full truncate"
+            style={{
+              background: `${color}14`,
+              color,
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
+            {playlist.category}
+          </span>
 
           <div
-            className="card-arrow flex items-center justify-center w-7 h-7 rounded-full"
+            className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
             style={{
               border: `1px solid var(--card-border)`,
               color: hasUrl ? color : "var(--text-faint)",
@@ -83,19 +75,19 @@ export function PlaylistCard({
 
         {/* Title */}
         <h3
-          className="text-base sm:text-[17px] font-semibold leading-snug mb-2"
-          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+          className="text-lg sm:text-xl font-semibold leading-tight mb-2"
+          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
         >
           {playlist.title}
         </h3>
 
         {/* Channel + meta */}
         <p
-          className="font-mono text-xs mb-4"
-          style={{ color, opacity: 0.85 }}
+          className="text-xs mb-3"
+          style={{ color: "var(--text-muted)" }}
         >
           {playlist.channel}
-          {playlist.videos ? ` · ${playlist.videos} vids` : ""}
+          {playlist.videos ? ` · ${playlist.videos} videos` : ""}
           {playlist.level ? ` · ${playlist.level}` : ""}
         </p>
 
@@ -113,11 +105,10 @@ export function PlaylistCard({
             {playlist.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="font-mono text-[10px] px-2 py-0.5 rounded"
+                className="text-[11px] px-2 py-0.5 rounded-full"
                 style={{
                   background: "var(--tag-bg)",
                   color: "var(--text-muted)",
-                  letterSpacing: "0.04em",
                 }}
               >
                 {tag}
@@ -133,7 +124,7 @@ export function PlaylistCard({
         style={{ borderTop: "1px solid var(--card-border)" }}
       >
         <span
-          className="font-mono text-[10px] tracking-[0.14em] uppercase"
+          className="text-xs"
           style={{ color: hasUrl ? "var(--text-muted)" : "var(--text-faint)" }}
         >
           {hasUrl ? "Watch on YouTube" : "Coming soon"}

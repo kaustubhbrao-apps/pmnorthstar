@@ -46,7 +46,7 @@ export function MobileNav({
             <Icon size={11} strokeWidth={1.6} />
             {label}
             {count !== null && (
-              <span className="chip-count">{String(count).padStart(2, "0")}</span>
+              <span className="chip-count">{count}</span>
             )}
           </button>
         );

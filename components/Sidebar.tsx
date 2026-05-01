@@ -101,23 +101,23 @@ export function Sidebar({
               <Star size={13} className="text-white fill-white" strokeWidth={1.5} />
             </div>
             <div className="flex items-baseline gap-0.5">
-              <span className="font-mono text-[15px] font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em" }}>north</span>
-              <span className="font-mono text-[15px] font-bold" style={{ color: "var(--brand-primary)", letterSpacing: "-0.04em" }}>_star</span>
+              <span className="font-display text-[16px] font-bold tracking-tight" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>North</span>
+              <span className="font-display text-[16px] font-bold tracking-tight" style={{ color: "var(--brand-primary)", letterSpacing: "-0.02em" }}>Star</span>
             </div>
           </div>
-          <p className="eyebrow mt-2.5">// pm.resource.hub</p>
+          <p className="text-[11px] mt-2 ml-0.5" style={{ color: "var(--text-faint)" }}>PM resources, curated</p>
         </div>
 
         {/* Nav */}
         <nav className="flex-1 space-y-0.5 overflow-y-auto scroll-container">
-          <p className="eyebrow px-3 mb-2">Navigate</p>
+          <p className="text-[11px] font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Navigate</p>
 
           {primaryNav.map((item) => (
             <NavButton key={item.id} {...item} />
           ))}
 
           <div className="pt-5">
-            <p className="eyebrow px-3 mb-2">Library</p>
+            <p className="text-[11px] font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Library</p>
 
             <NavButton
               id="saved"
@@ -136,7 +136,7 @@ export function Sidebar({
 
         {/* Footer mark */}
         <div className="px-3 pt-4" style={{ borderTop: "1px solid var(--sidebar-border)" }}>
-          <p className="eyebrow">v0.1 · build_a</p>
+          <p className="text-[11px]" style={{ color: "var(--text-faint)" }}>v0.1 — public beta</p>
         </div>
       </aside>
     </>
