@@ -1,9 +1,53 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUpRight, Star, BookOpen } from "lucide-react";
 import { Book } from "@/data/books";
 import { SaveButton } from "@/components/SaveButton";
+
+// Pull a Wikipedia thumbnail for the author when the book cover fails.
+// Wikipedia's REST API returns CORS-friendly JSON. Result cached in
+// localStorage so we don't re-fetch on every render / navigation.
+function useAuthorPhoto(author: string, enabled: boolean): string | null {
+  const [photo, setPhoto] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!enabled) return;
+    if (typeof window === "undefined") return;
+
+    const cacheKey = `pmnorthstar:author-photo:${author}`;
+    const cached = window.localStorage.getItem(cacheKey);
+    if (cached === "none") return;
+    if (cached) {
+      setPhoto(cached);
+      return;
+    }
+
+    let cancelled = false;
+    const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(author)}`;
+    fetch(url, { headers: { Accept: "application/json" } })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((data) => {
+        if (cancelled) return;
+        const src = data?.thumbnail?.source;
+        if (src) {
+          window.localStorage.setItem(cacheKey, src);
+          setPhoto(src);
+        } else {
+          window.localStorage.setItem(cacheKey, "none");
+        }
+      })
+      .catch(() => {
+        if (!cancelled) window.localStorage.setItem(cacheKey, "none");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [author, enabled]);
+
+  return photo;
+}
 
 interface ResourceCardProps {
   book: Book;
@@ -49,6 +93,7 @@ export function ResourceCard({
   const indexLabel = String(index + 1).padStart(2, "0");
   const [coverFailed, setCoverFailed] = useState(false);
   const hasCover = book.thumbnailURL && !coverFailed;
+  const authorPhoto = useAuthorPhoto(book.author, !hasCover);
 
   // Width sizing per variant
   const widthClass =
@@ -117,6 +162,20 @@ export function ResourceCard({
               className="h-full w-auto max-w-full object-contain"
               style={{ padding: "8px 0" }}
             />
+          ) : authorPhoto ? (
+            <div className="flex items-center gap-3 px-5 w-full">
+              <img
+                src={authorPhoto}
+                alt={book.author}
+                loading="lazy"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover flex-shrink-0"
+                style={{ border: "2px solid var(--card-bg)" }}
+              />
+              <div className="min-w-0">
+                <p className="text-[10px] font-medium uppercase tracking-wider mb-0.5" style={{ color: "var(--brand-primary)" }}>Author</p>
+                <p className="text-sm font-semibold truncate" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>{book.author}</p>
+              </div>
+            </div>
           ) : (
             <div className="flex flex-col items-center justify-center px-4 text-center">
               <BookOpen size={28} strokeWidth={1.4} style={{ color: "var(--brand-primary)", opacity: 0.6 }} />

@@ -131,13 +131,18 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
 
               <div className="flex items-start gap-4 mb-5">
                 {logoUrl && !logoFailed ? (
-                  <img
-                    src={logoUrl}
-                    alt={`${study.company} logo`}
-                    onError={() => setLogoFailed(true)}
-                    className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-lg object-contain flex-shrink-0 mt-1"
-                    style={{ background: "transparent" }}
-                  />
+                  <span
+                    className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl flex-shrink-0 mt-1 overflow-hidden"
+                    style={{ background: "#fff", border: "1px solid var(--card-border)" }}
+                  >
+                    <img
+                      src={logoUrl}
+                      alt={`${study.company} logo`}
+                      onError={() => setLogoFailed(true)}
+                      className="max-w-full max-h-full object-contain"
+                      style={{ padding: "8px" }}
+                    />
+                  </span>
                 ) : (
                   <span className="text-3xl sm:text-4xl lg:text-5xl flex-shrink-0">{study.logo}</span>
                 )}

@@ -95,16 +95,21 @@ export function CaseStudyCard({
 
         <div className="flex items-center gap-2 mb-2">
           {logoUrl && !logoFailed ? (
-            <img
-              src={logoUrl}
-              alt={`${study.company} logo`}
-              loading="lazy"
-              onError={() => setLogoFailed(true)}
-              className="w-5 h-5 rounded object-contain flex-shrink-0"
-              style={{ background: "transparent" }}
-            />
+            <span
+              className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
+              style={{ background: "#fff", border: "1px solid var(--card-border)" }}
+            >
+              <img
+                src={logoUrl}
+                alt={`${study.company} logo`}
+                loading="lazy"
+                onError={() => setLogoFailed(true)}
+                className="max-w-full max-h-full object-contain"
+                style={{ padding: "3px" }}
+              />
+            </span>
           ) : (
-            <span className="text-base flex-shrink-0">{study.logo}</span>
+            <span className="text-lg flex-shrink-0">{study.logo}</span>
           )}
           <p className="text-xs" style={{ color: "var(--text-muted)" }}>
             {study.company} · {study.year}
