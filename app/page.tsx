@@ -508,15 +508,6 @@ export default function HomePage() {
           <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
 
           <main className="flex-1 overflow-y-auto scroll-container">
-            {!user ? (
-              <div className="flex flex-col items-center justify-center py-20">
-                <p className="eyebrow mb-3">// auth.required</p>
-                <p className="text-base font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>Sign in to view case studies</p>
-                <button onClick={() => setShowAuthModal(true)} className="btn-accent mt-5">
-                  Log In / Sign Up
-                </button>
-              </div>
-            ) : (
               <>
                 {/* Hero strip */}
                 <div className="dot-grid px-4 sm:px-8 py-10 sm:py-14" style={{ borderBottom: "1px solid var(--card-border)" }}>
@@ -527,7 +518,7 @@ export default function HomePage() {
                   </div>
                   <h2 className="text-2xl sm:text-4xl font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
                     Real product wins,<br className="hidden sm:block" />
-                    <span style={{ color: "var(--text-muted)" }}>and the failures behind them.</span>
+                    <span className="gradient-warm">and the failures behind them.</span>
                   </h2>
                   <p className="text-sm max-w-xl" style={{ color: "var(--text-muted)" }}>
                     50 deep-dives — pivots, growth loops, design bets, hard lessons.
@@ -596,7 +587,6 @@ export default function HomePage() {
                   </div>
                 </div>
               </>
-            )}
           </main>
         </div>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
@@ -635,19 +625,6 @@ export default function HomePage() {
           <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
 
           <main className="flex-1 overflow-y-auto scroll-container">
-            {!user ? (
-              <div className="flex flex-col items-center justify-center py-20">
-                <GraduationCap size={40} style={{ color: "var(--text-faint)" }} />
-                <p className="text-base font-semibold mt-4" style={{ color: "var(--text-muted)" }}>Sign in to access learning playlists</p>
-                <button
-                  onClick={() => setShowAuthModal(true)}
-                  className="mt-4 px-5 py-2.5 rounded-xl text-sm font-semibold text-white"
-                  style={{ background: "var(--brand-primary)" }}
-                >
-                  Log In / Sign Up
-                </button>
-              </div>
-            ) : (
               <>
                 {/* Hero strip */}
                 <div
@@ -664,7 +641,7 @@ export default function HomePage() {
                     style={{ color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1.1 }}
                   >
                     Curated YouTube playlists,<br className="hidden sm:block" />
-                    <span style={{ color: "var(--text-muted)" }}>for builders who learn out loud.</span>
+                    <span className="gradient-cool">for builders who learn out loud.</span>
                   </h2>
                   <p
                     className="text-sm max-w-xl"
@@ -739,7 +716,6 @@ export default function HomePage() {
                   )}
                 </div>
               </>
-            )}
           </main>
         </div>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
@@ -857,7 +833,7 @@ export default function HomePage() {
                     style={{ color: "var(--text-primary)", letterSpacing: "-0.04em", lineHeight: 1.05 }}
                   >
                     Product management,<br />
-                    <span style={{ color: "var(--text-muted)" }}>distilled.</span>
+                    <span className="gradient-text">distilled.</span>
                   </h1>
                   <p
                     className="text-sm sm:text-base max-w-lg mx-auto mb-8 leading-relaxed"
@@ -997,7 +973,7 @@ export default function HomePage() {
               </div>
 
               {/* Featured Row */}
-              <SectionRow title="Latest Picks" subtitle="Hand-curated for product learners" accentColor="var(--brand-primary)">
+              <SectionRow title="Latest Picks" subtitle="Hand-curated for product learners" accentColor="#FF6B35">
                 {featured.map((book, index) => (
                   <ResourceCard
                     key={book.id}
@@ -1046,9 +1022,9 @@ export default function HomePage() {
               <div className="px-4 sm:px-6 mt-10 mb-8">
                 <div className="flex items-end justify-between mb-5">
                   <div>
-                    <p className="eyebrow mb-1.5">// case_studies</p>
+                    <p className="eyebrow mb-1.5" style={{ color: "#F3123C", opacity: 0.85 }}>// case_studies</p>
                     <div className="flex items-baseline gap-3">
-                      <h2 className="text-base sm:text-lg font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+                      <h2 className="text-base sm:text-lg font-semibold" style={{ color: "#F3123C", letterSpacing: "-0.02em" }}>
                         Case Studies
                       </h2>
                       <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[50]</span>
@@ -1080,9 +1056,9 @@ export default function HomePage() {
               <div className="px-4 sm:px-6 mt-10 mb-8">
                 <div className="flex items-end justify-between mb-5">
                   <div>
-                    <p className="eyebrow mb-1.5">// learn</p>
+                    <p className="eyebrow mb-1.5" style={{ color: "#9B8FFF", opacity: 0.85 }}>// learn</p>
                     <div className="flex items-baseline gap-3">
-                      <h2 className="text-base sm:text-lg font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+                      <h2 className="text-base sm:text-lg font-semibold" style={{ color: "#9B8FFF", letterSpacing: "-0.02em" }}>
                         Learn
                       </h2>
                       <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>[{String(playlists.length).padStart(2, "0")}]</span>

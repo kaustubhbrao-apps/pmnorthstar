@@ -92,7 +92,7 @@ export function PlaylistCard({
         {/* Channel + meta */}
         <p
           className="font-mono text-xs mb-4"
-          style={{ color: "var(--text-muted)" }}
+          style={{ color, opacity: 0.85 }}
         >
           {playlist.channel}
           {playlist.videos ? ` · ${playlist.videos} vids` : ""}

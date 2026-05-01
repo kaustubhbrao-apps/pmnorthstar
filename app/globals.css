@@ -315,6 +315,49 @@ input:focus        { outline: none; }
   background-position: -1px -1px;
 }
 
+/* Multi-color gradient text — for hero phrases */
+.gradient-text {
+  background: linear-gradient(135deg, #F3123C 0%, #FF6B35 25%, #F5C842 50%, #50C878 75%, #9B8FFF 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* Static brand-tinted gradient — for subtler accent text */
+.gradient-brand {
+  background: linear-gradient(135deg, #F3123C, #9B8FFF);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+
+/* Cool gradient — for tech-leaning accents */
+.gradient-cool {
+  background: linear-gradient(135deg, #4FC3F7, #9B8FFF);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+
+/* Warm gradient — for energy/discovery accents */
+.gradient-warm {
+  background: linear-gradient(135deg, #FF6B35, #F5C842);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+
 /* Buttons */
 .btn-primary {
   display: inline-flex;

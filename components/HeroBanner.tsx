@@ -28,7 +28,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
         >
           Your product management library,
           <br className="hidden sm:block" />
-          <span style={{ color: "var(--text-muted)" }}>built for builders.</span>
+          <span className="gradient-text">built for builders.</span>
         </h1>
 
         <p

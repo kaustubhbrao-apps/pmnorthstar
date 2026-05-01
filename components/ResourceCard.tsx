@@ -91,7 +91,7 @@ export function ResourceCard({
         >
           {book.title}
         </h3>
-        <p className="font-mono text-xs mb-3" style={{ color: "var(--text-muted)" }}>
+        <p className="font-mono text-xs mb-3" style={{ color: "var(--brand-primary)", opacity: 0.85 }}>
           {book.author}
         </p>
 

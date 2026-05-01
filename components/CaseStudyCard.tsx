@@ -63,7 +63,7 @@ export function CaseStudyCard({
           </div>
         </div>
 
-        <p className="font-mono text-xs mb-1.5" style={{ color: "var(--text-muted)" }}>
+        <p className="font-mono text-xs mb-1.5" style={{ color, opacity: 0.9 }}>
           <span className="mr-1.5">{study.logo}</span>
           {study.company} · {study.year}
         </p>
