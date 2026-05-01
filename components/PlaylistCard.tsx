@@ -1,8 +1,23 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Play } from "lucide-react";
 import { Playlist, learnCategoryColors } from "@/data/learn";
 import { SaveButton } from "@/components/SaveButton";
+
+// Pull a YouTube thumbnail when the URL is a single video; for playlists
+// (youtube.com/playlist?list=...) there's no public thumbnail without an
+// API call, so we fall back to a colored gradient with the category emoji.
+function getYouTubeThumbnail(url: string): string | null {
+  if (!url) return null;
+  // youtu.be/<id>
+  const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+  if (shortMatch) return `https://i.ytimg.com/vi/${shortMatch[1]}/hqdefault.jpg`;
+  // youtube.com/watch?v=<id>
+  const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+  if (watchMatch) return `https://i.ytimg.com/vi/${watchMatch[1]}/hqdefault.jpg`;
+  return null;
+}
 
 interface PlaylistCardProps {
   playlist: Playlist;
@@ -27,6 +42,8 @@ export function PlaylistCard({
 }: PlaylistCardProps) {
   const color = learnCategoryColors[playlist.category] ?? "var(--brand-primary)";
   const hasUrl = playlist.url && playlist.url.trim() !== "";
+  const thumbnail = hasUrl ? getYouTubeThumbnail(playlist.url) : null;
+  const [thumbFailed, setThumbFailed] = useState(false);
   const indexLabel =
     typeof index === "number" ? String(index + 1).padStart(2, "0") : "·";
 
@@ -68,9 +85,49 @@ export function PlaylistCard({
         target={hasUrl ? "_blank" : undefined}
         rel={hasUrl ? "noopener noreferrer" : undefined}
         onClick={(e) => { if (!hasUrl) e.preventDefault(); }}
-        className="block px-5 pt-5 pb-4 group"
+        className="block group"
         style={{ cursor: hasUrl ? "pointer" : "not-allowed" }}
       >
+        {/* Image / thumbnail area */}
+        <div
+          className="relative w-full overflow-hidden"
+          style={{
+            aspectRatio: "16 / 9",
+            background: thumbnail && !thumbFailed
+              ? "transparent"
+              : `linear-gradient(135deg, ${color}30, ${color}10)`,
+            borderBottom: "1px solid var(--card-border)",
+          }}
+        >
+          {thumbnail && !thumbFailed ? (
+            <img
+              src={thumbnail}
+              alt={playlist.title}
+              loading="lazy"
+              onError={() => setThumbFailed(true)}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-5xl sm:text-6xl opacity-90">{playlist.thumbnail}</span>
+            </div>
+          )}
+          {hasUrl && (
+            <div
+              className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              style={{ background: "rgba(0,0,0,0.35)" }}
+            >
+              <div
+                className="flex items-center justify-center w-12 h-12 rounded-full"
+                style={{ background: color }}
+              >
+                <Play size={18} className="text-white fill-white" strokeWidth={1.5} />
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="px-5 pt-4 pb-4">
         {/* Top row: category · arrow */}
         <div className="flex items-center justify-between mb-5">
           <span
@@ -138,6 +195,7 @@ export function PlaylistCard({
             ))}
           </div>
         )}
+        </div>
       </a>
 
       {/* Footer */}
