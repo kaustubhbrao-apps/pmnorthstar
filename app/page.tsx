@@ -16,6 +16,7 @@ import {
   playlists,
   learnCategories,
   getPlaylistsByCategory,
+  learnCategoryColors,
   LearnFilter,
 } from "@/data/learn";
 import { Sidebar } from "@/components/Sidebar";
@@ -47,9 +48,17 @@ interface AuthUser {
 }
 
 const categoryAccents: Record<string, string> = {
-  "Product Management": "#F3123C",
-  Startups: "#F3123C",
-  Management: "#F3123C",
+  "Product Management": "#9B8FFF", // purple
+  Startups: "#FF6B35",              // orange
+  Management: "#4FC3F7",            // blue
+};
+
+const caseStudyCategoryColors: Record<string, string> = {
+  Product: "#9B8FFF",
+  Growth: "#FF6B35",
+  Strategy: "#F5C842",
+  Design: "#50C878",
+  Failure: "#FF4B4B",
 };
 
 export default function HomePage() {
@@ -106,6 +115,24 @@ export default function HomePage() {
     setUser(null);
     setSavedIds(new Set());
     setLikedIds(new Set());
+  };
+
+  const handleSavedChange = (id: string, saved: boolean) => {
+    setSavedIds((prev) => {
+      const next = new Set(prev);
+      if (saved) next.add(id);
+      else next.delete(id);
+      return next;
+    });
+  };
+
+  const handleLikedChange = (id: string, liked: boolean) => {
+    setLikedIds((prev) => {
+      const next = new Set(prev);
+      if (liked) next.add(id);
+      else next.delete(id);
+      return next;
+    });
   };
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -228,6 +255,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(book.id)}
                           initialLiked={likedIds.has(book.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </div>
@@ -252,6 +281,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(study.id)}
                           initialLiked={likedIds.has(study.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </div>
@@ -276,6 +307,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(playlist.id)}
                           initialLiked={likedIds.has(playlist.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </div>
@@ -346,6 +379,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(book.id)}
                           initialLiked={likedIds.has(book.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </div>
@@ -370,6 +405,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(study.id)}
                           initialLiked={likedIds.has(study.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </div>
@@ -394,6 +431,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(playlist.id)}
                           initialLiked={likedIds.has(playlist.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </div>
@@ -479,22 +518,32 @@ export default function HomePage() {
                   </div>
 
                   {/* Section heading */}
-                  <div className="flex items-baseline justify-between mb-5">
-                    <div className="flex items-baseline gap-3">
-                      <span className="eyebrow">// {activeCsFilter === "All" ? "all" : activeCsFilter.toLowerCase()}</span>
-                      <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
-                        [{String(filteredCaseStudies.length).padStart(2, "0")}]
-                      </span>
-                    </div>
-                    <div className="hidden sm:flex items-center gap-4 font-mono text-[11px]" style={{ letterSpacing: "0.04em" }}>
-                      <span className="inline-flex items-center gap-1.5" style={{ color: "#50C878" }}>
-                        <TrendingUp size={11} strokeWidth={1.6} /> {wins} wins
-                      </span>
-                      <span className="inline-flex items-center gap-1.5" style={{ color: "#FF4B4B" }}>
-                        <TrendingDown size={11} strokeWidth={1.6} /> {fails} fails
-                      </span>
-                    </div>
-                  </div>
+                  {(() => {
+                    const csColor = activeCsFilter === "All" ? undefined : caseStudyCategoryColors[activeCsFilter];
+                    return (
+                      <div className="flex items-baseline justify-between mb-5">
+                        <div className="flex items-baseline gap-3">
+                          <span
+                            className="eyebrow"
+                            style={csColor ? { color: csColor, opacity: 0.85 } : undefined}
+                          >
+                            // {activeCsFilter === "All" ? "all" : activeCsFilter.toLowerCase()}
+                          </span>
+                          <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
+                            [{String(filteredCaseStudies.length).padStart(2, "0")}]
+                          </span>
+                        </div>
+                        <div className="hidden sm:flex items-center gap-4 font-mono text-[11px]" style={{ letterSpacing: "0.04em" }}>
+                          <span className="inline-flex items-center gap-1.5" style={{ color: "#50C878" }}>
+                            <TrendingUp size={11} strokeWidth={1.6} /> {wins} wins
+                          </span>
+                          <span className="inline-flex items-center gap-1.5" style={{ color: "#FF4B4B" }}>
+                            <TrendingDown size={11} strokeWidth={1.6} /> {fails} fails
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })()}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                     {filteredCaseStudies.map((study, idx) => (
@@ -506,6 +555,8 @@ export default function HomePage() {
                         initialSaved={savedIds.has(study.id)}
                         initialLiked={likedIds.has(study.id)}
                         onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                       />
                     ))}
                   </div>
@@ -608,17 +659,24 @@ export default function HomePage() {
                   </div>
 
                   {/* Section heading */}
-                  <div className="flex items-baseline justify-between mb-5">
-                    <div className="flex items-baseline gap-3">
-                      <span className="eyebrow">// {activeLearnFilter === "All" ? "all" : activeLearnFilter.toLowerCase()}</span>
-                      <span
-                        className="font-mono text-xs"
-                        style={{ color: "var(--text-faint)" }}
-                      >
-                        [{String(filteredPlaylists.length).padStart(2, "0")}]
-                      </span>
-                    </div>
-                  </div>
+                  {(() => {
+                    const lnColor = activeLearnFilter === "All" ? undefined : learnCategoryColors[activeLearnFilter];
+                    return (
+                      <div className="flex items-baseline justify-between mb-5">
+                        <div className="flex items-baseline gap-3">
+                          <span
+                            className="eyebrow"
+                            style={lnColor ? { color: lnColor, opacity: 0.85 } : undefined}
+                          >
+                            // {activeLearnFilter === "All" ? "all" : activeLearnFilter.toLowerCase()}
+                          </span>
+                          <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
+                            [{String(filteredPlaylists.length).padStart(2, "0")}]
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })()}
 
                   {filteredPlaylists.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-20 text-center">
@@ -637,6 +695,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(playlist.id)}
                           initialLiked={likedIds.has(playlist.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </div>
@@ -910,6 +970,8 @@ export default function HomePage() {
                     initialSaved={savedIds.has(book.id)}
                     initialLiked={likedIds.has(book.id)}
                     onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                   />
                 ))}
               </SectionRow>
@@ -932,6 +994,8 @@ export default function HomePage() {
                           initialSaved={savedIds.has(book.id)}
                           initialLiked={likedIds.has(book.id)}
                           onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                         />
                       ))}
                     </SectionRow>
@@ -967,6 +1031,8 @@ export default function HomePage() {
                       initialSaved={savedIds.has(study.id)}
                       initialLiked={likedIds.has(study.id)}
                       onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                     />
                   ))}
                 </div>
@@ -1002,6 +1068,8 @@ export default function HomePage() {
                       initialSaved={savedIds.has(playlist.id)}
                       initialLiked={likedIds.has(playlist.id)}
                       onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                     />
                   ))}
                 </div>
@@ -1038,6 +1106,8 @@ export default function HomePage() {
                       initialSaved={savedIds.has(book.id)}
                       initialLiked={likedIds.has(book.id)}
                       onAuthRequired={() => setShowAuthModal(true)}
+                          onSavedChange={handleSavedChange}
+                          onLikedChange={handleLikedChange}
                     />
                   ))}
                 </div>

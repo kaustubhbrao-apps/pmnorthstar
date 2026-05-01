@@ -10,7 +10,7 @@ interface SectionRowProps {
   accentColor?: string;
 }
 
-export function SectionRow({ title, subtitle, children }: SectionRowProps) {
+export function SectionRow({ title, subtitle, children, accentColor }: SectionRowProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: "left" | "right") => {
@@ -28,11 +28,19 @@ export function SectionRow({ title, subtitle, children }: SectionRowProps) {
     <section className="animate-section">
       <div className="flex items-end justify-between mb-4 px-4 sm:px-6">
         <div>
-          <p className="eyebrow mb-1.5">// {title.toLowerCase().replace(/\s+/g, ".")}</p>
+          <p
+            className="eyebrow mb-1.5"
+            style={accentColor ? { color: accentColor, opacity: 0.85 } : undefined}
+          >
+            // {title.toLowerCase().replace(/\s+/g, ".")}
+          </p>
           <div className="flex items-baseline gap-3">
             <h2
               className="text-base sm:text-lg font-semibold"
-              style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+              style={{
+                color: accentColor || "var(--text-primary)",
+                letterSpacing: "-0.02em",
+              }}
             >
               {title}
             </h2>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Bookmark, Heart, Loader2 } from "lucide-react";
 
 interface Resource {
@@ -17,6 +17,8 @@ interface SaveButtonProps {
   initialSaved?: boolean;
   initialLiked?: boolean;
   onAuthRequired: () => void;
+  onSavedChange?: (id: string, saved: boolean) => void;
+  onLikedChange?: (id: string, liked: boolean) => void;
 }
 
 export function SaveButton({
@@ -25,11 +27,18 @@ export function SaveButton({
   initialSaved = false,
   initialLiked = false,
   onAuthRequired,
+  onSavedChange,
+  onLikedChange,
 }: SaveButtonProps) {
   const [saved, setSaved] = useState(initialSaved);
   const [liked, setLiked] = useState(initialLiked);
   const [savingLoading, setSavingLoading] = useState(false);
   const [likingLoading, setLikingLoading] = useState(false);
+
+  // Keep local state in sync if parent's truth (initialSaved/initialLiked) changes
+  // — happens when same resource is saved/unsaved on a sibling card
+  useEffect(() => { setSaved(initialSaved); }, [initialSaved]);
+  useEffect(() => { setLiked(initialLiked); }, [initialLiked]);
 
   const handleSave = async (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -47,7 +56,11 @@ export function SaveButton({
           link: resource.link,
         }),
       });
-      if (res.ok) setSaved(!saved);
+      if (res.ok) {
+        const next = !saved;
+        setSaved(next);
+        onSavedChange?.(resource.id, next);
+      }
     } catch (error) {
       console.error("Save error:", error);
     } finally {
@@ -71,7 +84,11 @@ export function SaveButton({
           link: resource.link,
         }),
       });
-      if (res.ok) setLiked(!liked);
+      if (res.ok) {
+        const next = !liked;
+        setLiked(next);
+        onLikedChange?.(resource.id, next);
+      }
     } catch (error) {
       console.error("Like error:", error);
     } finally {

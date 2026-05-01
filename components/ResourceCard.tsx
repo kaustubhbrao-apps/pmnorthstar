@@ -12,6 +12,8 @@ interface ResourceCardProps {
   initialSaved?: boolean;
   initialLiked?: boolean;
   onAuthRequired?: () => void;
+  onSavedChange?: (id: string, saved: boolean) => void;
+  onLikedChange?: (id: string, liked: boolean) => void;
 }
 
 function StarRating({ rating, size = 9 }: { rating: number; size?: number }) {
@@ -40,6 +42,8 @@ export function ResourceCard({
   initialSaved = false,
   initialLiked = false,
   onAuthRequired = () => {},
+  onSavedChange,
+  onLikedChange,
 }: ResourceCardProps) {
   const indexLabel = String(index + 1).padStart(2, "0");
 
@@ -118,6 +122,8 @@ export function ResourceCard({
           initialSaved={initialSaved}
           initialLiked={initialLiked}
           onAuthRequired={onAuthRequired}
+          onSavedChange={onSavedChange}
+          onLikedChange={onLikedChange}
         />
       </div>
     </div>

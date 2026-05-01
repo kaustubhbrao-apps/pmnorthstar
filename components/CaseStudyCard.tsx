@@ -12,6 +12,8 @@ interface CaseStudyCardProps {
   initialSaved?: boolean;
   initialLiked?: boolean;
   onAuthRequired?: () => void;
+  onSavedChange?: (id: string, saved: boolean) => void;
+  onLikedChange?: (id: string, liked: boolean) => void;
 }
 
 const categoryColors: Record<string, string> = {
@@ -29,6 +31,8 @@ export function CaseStudyCard({
   initialSaved = false,
   initialLiked = false,
   onAuthRequired = () => {},
+  onSavedChange,
+  onLikedChange,
 }: CaseStudyCardProps) {
   const isFailure = study.category === "Failure";
   const color = categoryColors[study.category] ?? "var(--brand-primary)";
@@ -132,6 +136,8 @@ export function CaseStudyCard({
           initialSaved={initialSaved}
           initialLiked={initialLiked}
           onAuthRequired={onAuthRequired}
+          onSavedChange={onSavedChange}
+          onLikedChange={onLikedChange}
         />
       </div>
     </div>

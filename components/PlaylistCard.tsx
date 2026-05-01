@@ -11,6 +11,8 @@ interface PlaylistCardProps {
   initialSaved?: boolean;
   initialLiked?: boolean;
   onAuthRequired?: () => void;
+  onSavedChange?: (id: string, saved: boolean) => void;
+  onLikedChange?: (id: string, liked: boolean) => void;
 }
 
 export function PlaylistCard({
@@ -20,6 +22,8 @@ export function PlaylistCard({
   initialSaved = false,
   initialLiked = false,
   onAuthRequired = () => {},
+  onSavedChange,
+  onLikedChange,
 }: PlaylistCardProps) {
   const color = learnCategoryColors[playlist.category] ?? "var(--brand-primary)";
   const hasUrl = playlist.url && playlist.url.trim() !== "";
@@ -146,6 +150,8 @@ export function PlaylistCard({
           initialSaved={initialSaved}
           initialLiked={initialLiked}
           onAuthRequired={onAuthRequired}
+          onSavedChange={onSavedChange}
+          onLikedChange={onLikedChange}
         />
       </div>
     </div>
