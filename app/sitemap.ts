@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1.0,
     },
+    {
+      url: `${SITE_URL}/india`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 
   for (const study of caseStudies) {
