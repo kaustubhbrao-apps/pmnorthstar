@@ -6,7 +6,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
-import { caseStudies } from "@/data/caseStudies";
+import { caseStudies, getIndianCaseStudies } from "@/data/caseStudies";
 import { playlists } from "@/data/learn";
 import { books } from "@/data/books";
 import { ArrowUpRight, Menu } from "lucide-react";
@@ -50,6 +50,17 @@ export default function IndiaPage() {
 
   const globalRelevant = caseStudies.filter((c) =>
     globalRelevantIds.includes(c.id)
+  );
+
+  const publishedIndia = getIndianCaseStudies();
+  const publishedCompanies = new Set(
+    publishedIndia.map((c) => c.company.toLowerCase())
+  );
+  const stillUpcoming = upcomingIndia.filter(
+    (e) =>
+      !publishedCompanies.has(e.company.toLowerCase()) &&
+      // "Groww vs Zerodha" is a comparison topic, treat as one entry
+      !e.company.split(" vs ").every((c) => publishedCompanies.has(c.toLowerCase()))
   );
 
   return (
@@ -176,73 +187,114 @@ export default function IndiaPage() {
             ))}
           </section>
 
-          {/* India case studies — coming */}
-          <section
-            id="india-coming"
-            className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16"
-            style={{ borderBottom: "1px solid var(--card-border)" }}
-          >
-            <div className="max-w-3xl">
-              <p className="eyebrow mb-3" style={{ color: "#FF6B35" }}>
-                Indian case studies — in the works
-              </p>
-              <h2
-                className="text-2xl sm:text-3xl font-semibold mb-3"
-                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-              >
-                12 deep dives on Indian unicorns
-              </h2>
-              <p
-                className="text-sm sm:text-base leading-relaxed mb-8 max-w-2xl"
-                style={{ color: "var(--text-muted)" }}
-              >
-                Long-form analyses of the product decisions behind India's
-                biggest companies — what worked, what broke, what every PM here
-                should learn from them. Published one per week.
-              </p>
+          {/* Published India case studies (auto-syndicated from main library) */}
+          {publishedIndia.length > 0 && (
+            <section
+              className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16"
+              style={{ borderBottom: "1px solid var(--card-border)" }}
+            >
+              <div className="max-w-5xl">
+                <p className="eyebrow mb-3" style={{ color: "#FF6B35" }}>
+                  Live now
+                </p>
+                <h2
+                  className="text-2xl sm:text-3xl font-semibold mb-3"
+                  style={{
+                    color: "var(--text-primary)",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  Indian case studies, published
+                </h2>
+                <p
+                  className="text-sm sm:text-base leading-relaxed mb-8 max-w-2xl"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  Long-form analyses of the product decisions behind India's
+                  biggest companies. These also live in the main library.
+                </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {upcomingIndia.map((entry, idx) => (
-                  <div
-                    key={entry.company}
-                    className="surface p-4"
-                    style={{ borderRadius: 10 }}
-                  >
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span
-                        className="text-base font-semibold"
-                        style={{
-                          color: "var(--text-primary)",
-                          letterSpacing: "-0.01em",
-                        }}
-                      >
-                        {entry.company}
-                      </span>
-                      <span
-                        className="text-[10px] font-medium uppercase tracking-wider"
-                        style={{ color: "var(--text-faint)" }}
-                      >
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <p
-                      className="text-xs leading-relaxed"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {entry.angle}
-                    </p>
-                  </div>
-                ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                  {publishedIndia.map((study, idx) => (
+                    <CaseStudyCard key={study.id} study={study} index={idx} />
+                  ))}
+                </div>
               </div>
+            </section>
+          )}
 
-              <p
-                className="text-xs mt-6"
-                style={{ color: "var(--text-faint)" }}
-              >
-                Have a request for a case study not on this list? Reach out.
-              </p>
-            </div>
-          </section>
+          {/* India case studies — coming */}
+          {stillUpcoming.length > 0 && (
+            <section
+              id="india-coming"
+              className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16"
+              style={{ borderBottom: "1px solid var(--card-border)" }}
+            >
+              <div className="max-w-3xl">
+                <p className="eyebrow mb-3" style={{ color: "#FF6B35" }}>
+                  In the works
+                </p>
+                <h2
+                  className="text-2xl sm:text-3xl font-semibold mb-3"
+                  style={{
+                    color: "var(--text-primary)",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {stillUpcoming.length} more deep dives ahead
+                </h2>
+                <p
+                  className="text-sm sm:text-base leading-relaxed mb-8 max-w-2xl"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  Long-form analyses of the product decisions behind India's
+                  biggest companies — what worked, what broke, what every PM
+                  here should learn from them. Published one per week.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {stillUpcoming.map((entry, idx) => (
+                    <div
+                      key={entry.company}
+                      className="surface p-4"
+                      style={{ borderRadius: 10 }}
+                    >
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span
+                          className="text-base font-semibold"
+                          style={{
+                            color: "var(--text-primary)",
+                            letterSpacing: "-0.01em",
+                          }}
+                        >
+                          {entry.company}
+                        </span>
+                        <span
+                          className="text-[10px] font-medium uppercase tracking-wider"
+                          style={{ color: "var(--text-faint)" }}
+                        >
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                      <p
+                        className="text-xs leading-relaxed"
+                        style={{ color: "var(--text-muted)" }}
+                      >
+                        {entry.angle}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <p
+                  className="text-xs mt-6"
+                  style={{ color: "var(--text-faint)" }}
+                >
+                  Have a request for a case study not on this list? Reach out.
+                </p>
+              </div>
+            </section>
+          )}
 
           {/* Globally relevant for India */}
           <section

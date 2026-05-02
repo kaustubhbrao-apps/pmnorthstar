@@ -9,6 +9,7 @@ export interface CaseStudy {
   tags: string[];
   content: string;
   logo: string;
+  region?: "India"; // omitted = global; set on Indian-company case studies
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -636,3 +637,6 @@ export const getCaseStudiesByCategory = (cat: CaseStudyCategory) =>
 
 export const getCaseStudyById = (id: string): CaseStudy | undefined =>
   caseStudies.find((c) => c.id === id);
+
+export const getIndianCaseStudies = (): CaseStudy[] =>
+  caseStudies.filter((c) => c.region === "India");
