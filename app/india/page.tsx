@@ -7,6 +7,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { caseStudies, getIndianCaseStudies } from "@/data/caseStudies";
 import { playlists } from "@/data/learn";
 import { books } from "@/data/books";
@@ -390,6 +391,20 @@ export default function IndiaPage() {
             </div>
           </section>
 
+          {/* Newsletter signup */}
+          <section
+            className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16"
+            style={{ borderBottom: "1px solid var(--card-border)" }}
+          >
+            <div className="max-w-2xl mx-auto">
+              <SubscribeForm
+                variant="card"
+                headline="Get every new case study in your inbox."
+                subhead="Indian and global product deep dives, one every few days. Free."
+              />
+            </div>
+          </section>
+
           {/* Final CTA */}
           <section className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16">
             <div className="max-w-2xl text-center mx-auto">
@@ -401,7 +416,7 @@ export default function IndiaPage() {
                 Start with the library you have today
               </h2>
               <Link href="/" className="btn-primary group">
-                Browse all 50 case studies
+                Browse all 55 case studies
                 <ArrowUpRight
                   size={14}
                   strokeWidth={1.8}

@@ -29,6 +29,7 @@ import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PlaylistCard } from "@/components/PlaylistCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { AuthModal } from "@/components/AuthModal";
 import {
   TrendingUp,
@@ -974,6 +975,13 @@ export default function HomePage() {
                           onLikedChange={handleLikedChange}
                     />
                   ))}
+                </div>
+              </div>
+
+              {/* Newsletter signup — bottom of home view */}
+              <div className="px-4 sm:px-6 mt-10 mb-12">
+                <div className="max-w-2xl mx-auto">
+                  <SubscribeForm variant="card" />
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { getCaseStudyById, caseStudies } from "@/data/caseStudies";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { ArrowLeft, ArrowUpRight, TrendingUp, TrendingDown, Clock, Menu } from "lucide-react";
 import Link from "next/link";
@@ -236,6 +237,15 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
               </div>
 
               {/* Prev / Next */}
+              {/* Newsletter signup — placed at the high-intent moment after reading */}
+              <div className="py-8" style={{ borderTop: "1px solid var(--card-border)" }}>
+                <SubscribeForm
+                  variant="card"
+                  headline="Like this case study? Get the next one in your inbox."
+                  subhead="One product deep dive every few days — Apple, Cred, Razorpay, Slack, Zerodha and more. Free."
+                />
+              </div>
+
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 gap-3 py-8"
                 style={{ borderTop: "1px solid var(--card-border)" }}

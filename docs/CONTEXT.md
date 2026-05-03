@@ -1,6 +1,6 @@
 # northstar — context document
 
-Last updated: 2026-05-04
+Last updated: 2026-05-04 (Substack integration shipped)
 
 A living context doc so any future session (Claude or otherwise) can pick up cold. Update it whenever decisions or strategy shift.
 
@@ -24,7 +24,7 @@ All accounts on personal email (migrated from company email earlier in May 2026)
 | Vercel | personal | Hobby (free) |
 | Supabase | "kaustubhbrao-apps's Org" | free |
 | Hostinger | personal email | domain hosting only |
-| Substack | not yet created | (free when set up) |
+| Substack | `pmnorthstar.substack.com` (account: pmnorthstarindia@gmail.com) | free |
 | Google Search Console | personal email | verified |
 
 ## Tech stack
@@ -181,8 +181,14 @@ Swiggy, PhonePe, Cult.fit, Nykaa, Meesho, Slice, Groww vs Zerodha — and more t
 - "Push it somewhere somehow daily" = ban risk; avoid
 
 ### Email/newsletter setup status
-- **Substack URL not yet created** by user (waiting)
-- Once URL exists: embed signup form on case study pages bottom, home footer, /india top
+- ✅ **Substack live** at `pmnorthstar.substack.com`
+- ✅ **Custom signup form** (`components/SubscribeForm.tsx`) embedded on:
+  - Bottom of every case study page
+  - Home page footer (after Learn preview)
+  - Bottom of `/india` page (before final CTA)
+- Form POSTs directly to Substack's `/api/v1/free` endpoint with `mode: no-cors`
+- On success: shows confirmation message ("Check your inbox to confirm")
+- Substack handles email confirmation flow + welcome email
 - Beehiiv considered but Substack chosen for network effects
 
 ## SEO status
@@ -254,9 +260,10 @@ Fixed BreadcrumbList "Missing field 'item'" error. Removed the category breadcru
 
 ## Pending / next moves
 
-1. **User to create Substack** at `pmnorthstar.substack.com` — pending
-2. **Wire Substack embed** into case study pages, home footer, /india top — depends on (1)
+1. ✅ Substack live at `pmnorthstar.substack.com` (done 2026-05-04)
+2. ✅ Custom signup form embedded on case studies + home + /india (done 2026-05-04)
 3. **Write next 5 India case studies** at the 3-day mark: Swiggy, PhonePe, Cult.fit, Nykaa, Meesho
+4. **First Substack post**: write the welcome / intro post (~150 words) introducing the publication
 4. **Continue weekly publishing** after the 25-case batch
 5. **Audit at month 6**: if not at 25-60k MAU + 1.5k+ subs, plan needs adjustment
 6. **Monetization layer at month 12-15** if PM milestones met
