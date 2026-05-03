@@ -159,6 +159,19 @@ Swiggy, PhonePe, Cult.fit, Nykaa, Meesho, Slice, Groww vs Zerodha — and more t
 
 ## Distribution playbook
 
+### Committed cadence (2026-05-04)
+
+| Activity | Per week | Time/week |
+|---|---|---|
+| Case studies | 3 | ~7.5 hrs |
+| LinkedIn posts (daily) | 7 | ~3.5 hrs |
+| Substack article (Tuesday IST) | 1 | ~1.5 hrs |
+| Substack Notes | 21-35 (3-5/day) | ~2-3 hrs |
+| Reddit (30 min/day) | 7 | ~3.5 hrs |
+| **Total** | | **~18-19 hrs/week** |
+
+The non-negotiable: **don't go daily on Substack articles.** Subscribers will unsubscribe from inbox fatigue. Articles weekly + Notes daily is the proven Lenny's / Stratechery / Pragmatic Engineer pattern.
+
 ### Daily LinkedIn (~2k baseline impressions per post)
 - 1 post/day, varied format (case study deep dive, single insight, question, carousel, behind-the-scenes)
 - Pattern: hook in body, link in **first comment** (LinkedIn deprioritizes external links in body)
