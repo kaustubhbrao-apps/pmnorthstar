@@ -162,7 +162,7 @@ export function ResourceCard({
           {hasCover ? (
             <img
               src={book.thumbnailURL}
-              alt={`${book.title} cover`}
+              alt={`${book.title} book cover by ${book.author} — ${book.category} reading list`}
               loading={index < 4 ? "eager" : "lazy"}
               decoding="async"
               fetchPriority={index < 4 ? "high" : "low"}

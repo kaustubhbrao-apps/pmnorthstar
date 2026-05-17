@@ -104,7 +104,7 @@ export function PlaylistCard({
           {thumbnail && !thumbFailed ? (
             <img
               src={thumbnail}
-              alt={playlist.title}
+              alt={`${playlist.title} — ${playlist.category} YouTube playlist`}
               loading="lazy"
               onError={() => setThumbFailed(true)}
               className="w-full h-full object-cover"

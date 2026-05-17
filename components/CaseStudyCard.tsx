@@ -101,7 +101,7 @@ export function CaseStudyCard({
             >
               <img
                 src={logoUrl}
-                alt={`${study.company} logo`}
+                alt={`${study.company} logo — ${study.category} case study on northstar`}
                 loading="lazy"
                 onError={() => setLogoFailed(true)}
                 className="max-w-full max-h-full object-contain"

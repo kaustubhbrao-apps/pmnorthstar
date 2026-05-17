@@ -152,7 +152,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                   >
                     <img
                       src={logoUrl}
-                      alt={`${study.company} logo`}
+                      alt={`${study.company} logo — ${study.category} product case study`}
                       onError={() => setLogoFailed(true)}
                       className="max-w-full max-h-full object-contain"
                       style={{ padding: "8px" }}

@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { caseStudies, getCaseStudySlug } from "@/data/caseStudies";
+import { topics } from "@/data/topics";
+import { comparisons } from "@/data/comparisons";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.vercel.app";
 
@@ -27,6 +29,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
+    });
+  }
+
+  // Topic hubs — category-level pages aggregating related case studies.
+  for (const topic of topics) {
+    routes.push({
+      url: `${SITE_URL}/topics/${topic.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+  }
+
+  // Comparison pages — capture "X vs Y" search queries.
+  for (const cmp of comparisons) {
+    routes.push({
+      url: `${SITE_URL}/compare/${cmp.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.75,
     });
   }
 
