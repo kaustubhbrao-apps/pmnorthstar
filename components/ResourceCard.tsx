@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Star, BookOpen } from "lucide-react";
-import { Book } from "@/data/books";
+import { Book, getBookSlug } from "@/data/books";
 import { SaveButton } from "@/components/SaveButton";
 
 // Pull a Wikipedia thumbnail for the author when the book cover fails.
@@ -143,9 +143,7 @@ export function ResourceCard({
         </div>
       )}
       <a
-        href={book.link}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={`/book/${getBookSlug(book)}`}
         className="block group"
       >
         {/* Book cover image */}

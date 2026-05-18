@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { caseStudies, getCaseStudySlug } from "@/data/caseStudies";
 import { topics } from "@/data/topics";
 import { comparisons } from "@/data/comparisons";
+import { books, getBookSlug } from "@/data/books";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.vercel.app";
 
@@ -49,6 +50,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.75,
+    });
+  }
+
+  // Book detail pages — northstar's take + Amazon affiliate link per book.
+  for (const book of books) {
+    routes.push({
+      url: `${SITE_URL}/book/${getBookSlug(book)}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.65,
     });
   }
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | northstar",
   },
   description:
-    `A free curated library of the best books, case studies, and YouTube playlists for product managers. ${BOOK_COUNT} essential books, ${CASE_STUDY_COUNT} real case studies (Apple, Spotify, Airbnb, Slack, Cred, Razorpay, Zerodha), and ${PLAYLIST_COUNT} hand-picked learning playlists across design, data, marketing, branding, startups and finance.`,
+    `Free product management insights, case studies, and curated learning playlists. ${CASE_STUDY_COUNT} long-form case studies on the companies that built modern product (Apple, Spotify, Cred, Razorpay, Zerodha + more), original analysis on ${BOOK_COUNT} essential PM books with buy links, and ${PLAYLIST_COUNT} hand-picked YouTube playlists across design, data, marketing, branding, startups and finance. No paywall on insights.`,
   keywords: [
     "product management",
     "product manager",
