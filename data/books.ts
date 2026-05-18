@@ -30,6 +30,10 @@ export interface Book {
   year: number;
   tags: string[];
   featured?: boolean;
+  // Pre-shortened Amazon Associates link (amzn.to/...). When present, used as
+  // the "long route" CTA on the book detail page. If absent, getAmazonAffiliateUrl
+  // falls back to a search URL with the affiliate tag appended.
+  amazonUrl?: string;
   summary?: BookSummary;           // Optional. Books without a summary show "Coming soon" on /book/[slug].
 }
 
@@ -52,6 +56,7 @@ export function getBookBySlug(slug: string, books: Book[]): Book | undefined {
 }
 
 export function getAmazonAffiliateUrl(book: Book): string {
+  if (book.amazonUrl) return book.amazonUrl;
   const query = encodeURIComponent(`${book.title} ${book.author}`);
   return `https://www.amazon.in/s?k=${query}&tag=${AMAZON_AFFILIATE_TAG}`;
 }
@@ -60,6 +65,7 @@ export const books: Book[] = [
   // ─── PRODUCT MANAGEMENT ──────────────────────────────────────────────────
   {
     id: "pm-1",
+    amazonUrl: "https://amzn.to/3Rgf7sw",
     title: "Inspired",
     author: "Marty Cagan",
     category: "Product Management",
@@ -95,6 +101,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-2",
+    amazonUrl: "https://amzn.to/4wUqfMb",
     title: "Continuous Discovery Habits",
     author: "Teresa Torres",
     category: "Product Management",
@@ -129,6 +136,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-3",
+    amazonUrl: "https://amzn.to/42GLDqk",
     title: "The Lean Product Playbook",
     author: "Dan Olsen",
     category: "Product Management",
@@ -163,6 +171,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-4",
+    amazonUrl: "https://amzn.to/4wHdsfS",
     title: "Empowered",
     author: "Marty Cagan",
     category: "Product Management",
@@ -198,6 +207,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-5",
+    amazonUrl: "https://amzn.to/4eVluv5",
     title: "Shape Up",
     author: "Ryan Singer",
     category: "Product Management",
@@ -232,6 +242,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-6",
+    amazonUrl: "https://amzn.to/49b1Pnj",
     title: "Product-Led Growth",
     author: "Wes Bush",
     category: "Product Management",
@@ -266,6 +277,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-7",
+    amazonUrl: "https://amzn.to/49TzT7y",
     title: "Obviously Awesome",
     author: "April Dunford",
     category: "Product Management",
@@ -300,6 +312,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-8",
+    amazonUrl: "https://amzn.to/3RtuIoz",
     title: "The Mom Test",
     author: "Rob Fitzpatrick",
     category: "Product Management",
@@ -335,6 +348,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-9",
+    amazonUrl: "https://amzn.to/4dRJCxC",
     title: "Hooked",
     author: "Nir Eyal",
     category: "Product Management",
@@ -369,6 +383,7 @@ export const books: Book[] = [
   },
   {
     id: "pm-10",
+    amazonUrl: "https://amzn.to/4fud7Xz",
     title: "Escaping the Build Trap",
     author: "Melissa Perri",
     category: "Product Management",
@@ -405,6 +420,7 @@ export const books: Book[] = [
   // ─── STARTUPS ────────────────────────────────────────────────────────────
   {
     id: "st-1",
+    amazonUrl: "https://amzn.to/4dz1wnE",
     title: "Zero to One",
     author: "Peter Thiel",
     category: "Startups",
@@ -440,6 +456,7 @@ export const books: Book[] = [
   },
   {
     id: "st-2",
+    amazonUrl: "https://amzn.to/4dk8ga0",
     title: "The Lean Startup",
     author: "Eric Ries",
     category: "Startups",
@@ -474,6 +491,7 @@ export const books: Book[] = [
   },
   {
     id: "st-3",
+    amazonUrl: "https://amzn.to/4wDN8mD",
     title: "The Hard Thing About Hard Things",
     author: "Ben Horowitz",
     category: "Startups",
@@ -509,6 +527,7 @@ export const books: Book[] = [
   },
   {
     id: "st-4",
+    amazonUrl: "https://amzn.to/4tL4Ulw",
     title: "Blitzscaling",
     author: "Reid Hoffman",
     category: "Startups",
@@ -543,6 +562,7 @@ export const books: Book[] = [
   },
   {
     id: "st-5",
+    amazonUrl: "https://amzn.to/49UFcnc",
     title: "Traction",
     author: "Gabriel Weinberg",
     category: "Startups",
@@ -577,6 +597,7 @@ export const books: Book[] = [
   },
   {
     id: "st-6",
+    amazonUrl: "https://amzn.to/4uQPn4o",
     title: "The Startup Owner's Manual",
     author: "Steve Blank",
     category: "Startups",
@@ -611,6 +632,7 @@ export const books: Book[] = [
   },
   {
     id: "st-7",
+    amazonUrl: "https://amzn.to/3Rg0cyy",
     title: "Venture Deals",
     author: "Brad Feld",
     category: "Startups",
@@ -645,6 +667,7 @@ export const books: Book[] = [
   },
   {
     id: "st-8",
+    amazonUrl: "https://amzn.to/3POvUlZ",
     title: "Hacking Growth",
     author: "Sean Ellis",
     category: "Startups",
@@ -679,6 +702,7 @@ export const books: Book[] = [
   },
   {
     id: "st-9",
+    amazonUrl: "https://amzn.to/49DVwJ0",
     title: "Lost and Founder",
     author: "Rand Fishkin",
     category: "Startups",
@@ -713,6 +737,7 @@ export const books: Book[] = [
   },
   {
     id: "st-10",
+    amazonUrl: "https://amzn.to/49PXB4z",
     title: "The $100 Startup",
     author: "Chris Guillebeau",
     category: "Startups",
@@ -749,6 +774,7 @@ export const books: Book[] = [
   // ─── MANAGEMENT ──────────────────────────────────────────────────────────
   {
     id: "mg-1",
+    amazonUrl: "https://amzn.to/43hKYvw",
     title: "High Output Management",
     author: "Andrew Grove",
     category: "Management",
@@ -784,6 +810,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-2",
+    amazonUrl: "https://amzn.to/4uQPUDq",
     title: "Measure What Matters",
     author: "John Doerr",
     category: "Management",
@@ -818,6 +845,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-3",
+    amazonUrl: "https://amzn.to/3RdEbAs",
     title: "Good to Great",
     author: "Jim Collins",
     category: "Management",
@@ -852,6 +880,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-4",
+    amazonUrl: "https://amzn.to/4dsOW9h",
     title: "Principles",
     author: "Ray Dalio",
     category: "Management",
@@ -887,6 +916,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-5",
+    amazonUrl: "https://amzn.to/3PQjf1U",
     title: "The Innovator's Dilemma",
     author: "Clayton Christensen",
     category: "Management",
@@ -921,6 +951,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-6",
+    amazonUrl: "https://amzn.to/3PxIQwz",
     title: "Thinking, Fast and Slow",
     author: "Daniel Kahneman",
     category: "Management",
@@ -955,6 +986,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-7",
+    amazonUrl: "https://amzn.to/43fGl57",
     title: "The Psychology of Money",
     author: "Morgan Housel",
     category: "Management",
@@ -990,6 +1022,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-8",
+    amazonUrl: "https://amzn.to/4nChaTS",
     title: "This Is Marketing",
     author: "Seth Godin",
     category: "Management",
@@ -1024,6 +1057,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-9",
+    amazonUrl: "https://amzn.to/4uPdtwm",
     title: "No Rules Rules",
     author: "Reed Hastings",
     category: "Management",
@@ -1058,6 +1092,7 @@ export const books: Book[] = [
   },
   {
     id: "mg-10",
+    amazonUrl: "https://amzn.to/4tGXC1S",
     title: "The E-Myth Revisited",
     author: "Michael E. Gerber",
     category: "Management",
