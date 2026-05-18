@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import {
   books,
   getBookSlug,
@@ -462,6 +463,20 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                   />
                 </a>
               </div>
+            </div>
+          </section>
+
+          {/* Newsletter signup — placed at the high-intent moment after the review + CTA */}
+          <section
+            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+            style={{ borderBottom: "1px solid var(--card-border)" }}
+          >
+            <div className="max-w-3xl">
+              <SubscribeForm
+                variant="card"
+                headline="Like this review? Get the next book breakdown in your inbox."
+                subhead="One book or case study every few days — the short route, with the takeaways and our honest read. Free."
+              />
             </div>
           </section>
 
