@@ -157,7 +157,20 @@ export default function HomePage() {
     if (hash && valid.includes(hash)) setActiveNav(hash);
   }, []);
 
-  const featured = getFeaturedBooks();
+  // Featured list, reordered so no two adjacent cards share an author.
+  // Greedy: at each step, pick the first remaining item whose author
+  // differs from the previously placed one.
+  const featured = (() => {
+    const items = getFeaturedBooks();
+    const result: typeof items = [];
+    const remaining = [...items];
+    while (remaining.length > 0) {
+      const lastAuthor = result[result.length - 1]?.author;
+      const idx = remaining.findIndex((b) => b.author !== lastAuthor);
+      result.push(remaining.splice(idx >= 0 ? idx : 0, 1)[0]);
+    }
+    return result;
+  })();
 
   const filteredBooks = useMemo(() => {
     let result = books;
@@ -949,32 +962,33 @@ export default function HomePage() {
             <div className="pb-12">
               {heroBook && <HeroBanner onNavChange={setActiveNav} />}
 
-              {/* Stats ticker */}
+              {/* Stats ticker. All four tiles are now clickable jump anchors —
+                  books and categories scroll to the relevant section / filter
+                  bar; case_studies and playlists switch nav. */}
               <div className="grid grid-cols-2 sm:grid-cols-4 mx-4 sm:mx-6 mt-6 mb-8 surface" style={{ borderRadius: 12 }}>
                 {[
-                  { label: "books", value: "30", nav: null as string | null },
-                  { label: "case_studies", value: String(caseStudies.length), nav: "casestudies" },
-                  { label: "playlists", value: String(playlists.length), nav: "learn" },
-                  { label: "categories", value: "3", nav: null as string | null },
-                ].map(({ label, value, nav }, idx) => (
+                  { label: "books", value: String(books.length), action: () => document.getElementById("books-section")?.scrollIntoView({ behavior: "smooth", block: "start" }) },
+                  { label: "case_studies", value: String(caseStudies.length), action: () => setActiveNav("casestudies") },
+                  { label: "playlists", value: String(playlists.length), action: () => setActiveNav("learn") },
+                  { label: "categories", value: "3", action: () => document.getElementById("books-section")?.scrollIntoView({ behavior: "smooth", block: "start" }) },
+                ].map(({ label, value, action }, idx) => (
                   <button
                     key={label}
-                    className={`text-left p-4 ${idx > 0 ? "border-l" : ""} ${idx === 1 || idx === 3 ? "" : ""} transition-colors group`}
-                    style={{ borderColor: "var(--card-border)", cursor: nav ? "pointer" : "default" }}
-                    onClick={() => nav && setActiveNav(nav)}
+                    type="button"
+                    className={`text-left p-4 ${idx > 0 ? "border-l" : ""} transition-colors group hover:bg-[color:var(--tag-bg)]`}
+                    style={{ borderColor: "var(--card-border)", cursor: "pointer" }}
+                    onClick={action}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[11px] font-medium tracking-wider uppercase" style={{ color: "var(--text-faint)" }}>
                         {label.replace("_", " ")}
                       </span>
-                      {nav && (
-                        <ArrowUpRight
-                          size={12}
-                          strokeWidth={1.6}
-                          style={{ color: "var(--text-faint)" }}
-                          className="transition-all group-hover:text-[color:var(--brand-primary)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        />
-                      )}
+                      <ArrowUpRight
+                        size={12}
+                        strokeWidth={1.6}
+                        style={{ color: "var(--text-faint)" }}
+                        className="transition-all group-hover:text-[color:var(--brand-primary)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
                     </div>
                     <div className="text-2xl sm:text-3xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
                       {value}
@@ -1001,7 +1015,7 @@ export default function HomePage() {
                 ))}
               </SectionRow>
 
-              <div className="section-divider my-8" />
+              <div className="section-divider my-8" id="books-section" />
 
               {/* Per-Category Rows */}
               {categories.map((cat) => {
