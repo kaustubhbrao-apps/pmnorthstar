@@ -8,6 +8,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { ShareButton } from "@/components/ShareButton";
+import { Footer } from "@/components/Footer";
 import { getCaseStudyById, getCaseStudySlug } from "@/data/caseStudies";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { getComparisonBySlug, comparisons } from "@/data/comparisons";
@@ -363,6 +364,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </section>
+          <Footer />
         </main>
       </div>
     </div>

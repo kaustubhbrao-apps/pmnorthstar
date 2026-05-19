@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { ShareButton } from "@/components/ShareButton";
+import { Footer } from "@/components/Footer";
 import {
   books,
   getBookSlug,
@@ -608,6 +609,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </section>
+          <Footer />
         </main>
       </div>
     </div>

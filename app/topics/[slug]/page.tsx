@@ -8,6 +8,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { ShareButton } from "@/components/ShareButton";
+import { Footer } from "@/components/Footer";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { caseStudies } from "@/data/caseStudies";
 import { getTopicBySlug, topics } from "@/data/topics";
@@ -216,6 +217,7 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </section>
+          <Footer />
         </main>
       </div>
     </div>

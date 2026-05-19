@@ -8,6 +8,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ShareButton } from "@/components/ShareButton";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { Footer } from "@/components/Footer";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { ArrowLeft, ArrowUpRight, TrendingUp, TrendingDown, Clock, Menu } from "lucide-react";
 import Link from "next/link";
@@ -358,6 +359,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
               </div>
             </div>
           </div>
+          <Footer />
         </main>
       </div>
     </div>

@@ -31,6 +31,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { AuthModal } from "@/components/AuthModal";
+import { Footer } from "@/components/Footer";
 import { topics } from "@/data/topics";
 import { comparisons } from "@/data/comparisons";
 import Link from "next/link";
@@ -1306,6 +1307,7 @@ export default function HomePage() {
               )}
             </div>
           )}
+          <Footer />
         </main>
       </div>
 

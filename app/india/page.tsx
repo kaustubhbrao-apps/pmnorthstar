@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { Footer } from "@/components/Footer";
 import { caseStudies, getIndianCaseStudies } from "@/data/caseStudies";
 import { playlists } from "@/data/learn";
 import { books } from "@/data/books";
@@ -425,6 +426,7 @@ export default function IndiaPage() {
               </Link>
             </div>
           </section>
+          <Footer />
         </main>
       </div>
     </div>
