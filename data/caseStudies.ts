@@ -1,3 +1,8 @@
+// Bump when case studies are added, edited, or have material changes.
+// Sitemap reads this so Google sees an accurate lastModified date for
+// case study URLs instead of today's date emitted on every build.
+export const CASE_STUDIES_LAST_UPDATED = "2026-05-18";
+
 export interface CaseStudy {
   id: string;
   company: string;

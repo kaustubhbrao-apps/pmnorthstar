@@ -7,6 +7,7 @@ import { CaseStudyFaqs } from "@/components/CaseStudyFaqs";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ShareButton } from "@/components/ShareButton";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { Footer } from "@/components/Footer";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
@@ -129,6 +130,15 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
             style={{ borderBottom: "1px solid var(--card-border)" }}
           >
             <div className="max-w-3xl">
+              <Breadcrumbs
+                className="mb-5"
+                items={[
+                  { label: "northstar", href: "/" },
+                  { label: "Case studies", href: "/#casestudies" },
+                  { label: study.category },
+                  { label: study.title },
+                ]}
+              />
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span
                   className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full"

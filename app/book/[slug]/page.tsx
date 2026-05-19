@@ -11,6 +11,9 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { ShareButton } from "@/components/ShareButton";
 import { Footer } from "@/components/Footer";
 import { getCategoryColor } from "@/lib/category-colors";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BookFaqs } from "@/components/BookFaqs";
+import { getBookFaqs } from "@/data/bookFaqs";
 import {
   books,
   getBookSlug,
@@ -93,6 +96,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
 
   const amazonUrl = getAmazonAffiliateUrl(book);
   const cat = getCategoryColor(book.category);
+  const faqs = getBookFaqs(book);
 
   // Related books (same category, different book)
   const relatedBooks = books
@@ -154,6 +158,15 @@ export default function BookPage({ params }: { params: { slug: string } }) {
             style={{ borderBottom: "1px solid var(--card-border)" }}
           >
             <div className="max-w-3xl">
+              <Breadcrumbs
+                className="mb-5"
+                items={[
+                  { label: "northstar", href: "/" },
+                  { label: "Books", href: "/#books-section" },
+                  { label: book.category, href: "/#books-section" },
+                  { label: book.title },
+                ]}
+              />
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span
                   className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-0.5 rounded-full"
@@ -489,6 +502,19 @@ export default function BookPage({ params }: { params: { slug: string } }) {
               />
             </div>
           </section>
+
+          {/* FAQ — captures 'Is X worth reading?' / 'Who should read X?'
+              People-Also-Ask surfaces. Generated from the review text. */}
+          {faqs.length > 0 && (
+            <section
+              className="px-4 sm:px-8 lg:px-12"
+              style={{ borderBottom: "1px solid var(--card-border)" }}
+            >
+              <div className="max-w-3xl">
+                <BookFaqs faqs={faqs} />
+              </div>
+            </section>
+          )}
 
           {/* Related case studies (only if summary explicitly links them) */}
           {relatedCaseStudies.length > 0 && (

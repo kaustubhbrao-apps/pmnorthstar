@@ -4,6 +4,12 @@ export type Category = "Product Management" | "Startups" | "Management";
 // from affiliate-program.amazon.in. All book links flow through here.
 export const AMAZON_AFFILIATE_TAG = "pmnorthstar-21";
 
+// Bump this when the book dataset has a meaningful content change
+// (new book, edited summary, refreshed affiliate URL). The sitemap
+// reads it so Google sees an accurate lastModified date instead of
+// today's date repeated forever.
+export const BOOKS_LAST_UPDATED = "2026-05-18";
+
 export interface BookSummary {
   // Multi-paragraph original commentary — northstar's perspective on the book,
   // its position in the PM reading landscape, audience, and limitations.

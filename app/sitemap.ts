@@ -1,13 +1,24 @@
 import type { MetadataRoute } from "next";
-import { caseStudies, getCaseStudySlug } from "@/data/caseStudies";
+import {
+  caseStudies,
+  getCaseStudySlug,
+  CASE_STUDIES_LAST_UPDATED,
+} from "@/data/caseStudies";
 import { topics } from "@/data/topics";
 import { comparisons } from "@/data/comparisons";
-import { books, getBookSlug } from "@/data/books";
+import { books, getBookSlug, BOOKS_LAST_UPDATED } from "@/data/books";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Index-level pages reflect today (they aggregate dynamic content
+  // so 'now' is honest). Detail pages use a per-dataset content-updated
+  // date that we manually bump when the underlying content changes —
+  // emitting today's date for static content on every build lies to
+  // Google about how fresh the page actually is.
   const now = new Date();
+  const booksUpdated = new Date(BOOKS_LAST_UPDATED);
+  const casesUpdated = new Date(CASE_STUDIES_LAST_UPDATED);
 
   const routes: MetadataRoute.Sitemap = [
     {
@@ -27,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const study of caseStudies) {
     routes.push({
       url: `${SITE_URL}/case-study/${getCaseStudySlug(study.id)}`,
-      lastModified: now,
+      lastModified: casesUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
     });
@@ -57,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const book of books) {
     routes.push({
       url: `${SITE_URL}/book/${getBookSlug(book)}`,
-      lastModified: now,
+      lastModified: booksUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
     });
