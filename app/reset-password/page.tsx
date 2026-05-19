@@ -64,9 +64,9 @@ function ResetPasswordForm() {
     return (
       <div className="flex flex-col items-center text-center">
         <XCircle size={40} style={{ color: "var(--brand-primary)" }} />
-        <h2 className="text-xl font-bold mt-4" style={{ color: "var(--text-primary)" }}>
+        <h1 className="text-xl font-bold mt-4" style={{ color: "var(--text-primary)" }}>
           Invalid Reset Link
-        </h2>
+        </h1>
         <p className="text-sm mt-2" style={{ color: "var(--text-muted)" }}>
           This link is invalid or has expired.
         </p>
@@ -85,9 +85,9 @@ function ResetPasswordForm() {
     return (
       <div className="flex flex-col items-center text-center">
         <CheckCircle size={40} style={{ color: "var(--success, #22c55e)" }} />
-        <h2 className="text-xl font-bold mt-4" style={{ color: "var(--text-primary)" }}>
+        <h1 className="text-xl font-bold mt-4" style={{ color: "var(--text-primary)" }}>
           Password Reset!
-        </h2>
+        </h1>
         <p className="text-sm mt-2" style={{ color: "var(--text-muted)" }}>
           Your password has been updated. You can now log in with your new password.
         </p>
@@ -104,9 +104,9 @@ function ResetPasswordForm() {
 
   return (
     <>
-      <h2 className="text-xl font-bold mb-1" style={{ color: "var(--text-primary)" }}>
+      <h1 className="text-xl font-bold mb-1" style={{ color: "var(--text-primary)" }}>
         Set new password
-      </h2>
+      </h1>
       <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
         Enter your new password below.
       </p>

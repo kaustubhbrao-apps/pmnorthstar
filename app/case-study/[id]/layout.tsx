@@ -31,8 +31,16 @@ export async function generateMetadata(
   }
   const slug = getCaseStudySlug(study.id);
   const url = `${SITE_URL}/case-study/${slug}`;
+  // If the natural title is already long, drop the ' | northstar'
+  // template suffix so the SERP title stays under 60 chars and doesn't
+  // get truncated mid-word. Brand is still in the URL, OG, and JSON-LD.
+  const SUFFIX_LEN = " | northstar".length;
+  const titleField =
+    study.title.length + SUFFIX_LEN > 60
+      ? { absolute: study.title }
+      : study.title;
   return {
-    title: study.title,
+    title: titleField,
     description: study.description,
     alternates: { canonical: url },
     openGraph: {

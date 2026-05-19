@@ -14,7 +14,10 @@ const PLAYLIST_COUNT = playlists.length;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "northstar — Free Product Management Library, Case Studies & Playlists",
+    // Default home title kept under 60 chars so Bing/Google don't
+    // truncate it in SERPs. The longer marketing line lives in the
+    // description and OpenGraph blocks below instead.
+    default: "northstar — Free Product Management Library",
     template: "%s | northstar",
   },
   description:
