@@ -117,11 +117,6 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
             <span className="hidden sm:inline text-xs" style={{ color: "var(--text-faint)" }}>
               {currentIndex + 1} of {caseStudies.length}
             </span>
-            <ShareButton
-              title={`${study.title} — northstar case study`}
-              text={`${study.title}: ${study.description} — via @pmnorthstar`}
-              compact
-            />
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} className="hidden sm:inline-flex" />
           </div>
         </header>
@@ -176,11 +171,18 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
               </div>
 
               <p
-                className="text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl"
+                className="text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mb-6"
                 style={{ color: "var(--text-muted)" }}
               >
                 {study.description}
               </p>
+
+              <ShareButton
+                title={`${study.title} — northstar case study`}
+                text={`${study.title}: ${study.description} — via @pmnorthstar`}
+                label="Share this case study"
+                variant="prominent"
+              />
             </div>
           </div>
 

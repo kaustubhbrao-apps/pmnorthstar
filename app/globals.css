@@ -411,6 +411,28 @@ input:focus        { outline: none; }
 }
 .btn-accent:hover { background: var(--brand-hover); border-color: var(--brand-hover); }
 
+/* Brand-tinted secondary CTA. Sits between btn-ghost (invisible) and
+   btn-accent (loud solid red) — used when an action should clearly
+   belong to the brand color family but not compete with the primary CTA. */
+.btn-accent-soft {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--brand-soft);
+  color: var(--brand-primary);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: 1px solid rgba(243, 18, 60, 0.35);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn-accent-soft:hover {
+  background: rgba(243, 18, 60, 0.16);
+  border-color: var(--brand-primary);
+}
+
 /* Reusable surface card */
 .surface {
   background: var(--card-bg);

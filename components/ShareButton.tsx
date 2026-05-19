@@ -16,6 +16,9 @@ interface ShareButtonProps {
   url?: string;
   label?: string;
   compact?: boolean;
+  // "subtle" is the muted header style; "prominent" is brand-tinted for
+  // in-content placement next to primary CTAs where discoverability matters.
+  variant?: "subtle" | "prominent";
 }
 
 export function ShareButton({
@@ -24,6 +27,7 @@ export function ShareButton({
   url,
   label = "Share",
   compact = false,
+  variant = "subtle",
 }: ShareButtonProps) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -81,19 +85,32 @@ export function ShareButton({
     `${shareText} ${shareUrl}`
   )}`;
 
-  const sizeClass = compact ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-sm";
-  const iconSize = compact ? 11 : 14;
+  const sizeClass = compact
+    ? "px-2 py-1 text-xs"
+    : variant === "prominent"
+    ? "px-4 py-2.5 text-sm"
+    : "px-3 py-1.5 text-sm";
+  const iconSize = compact ? 11 : variant === "prominent" ? 15 : 14;
+
+  const buttonStyle =
+    variant === "prominent"
+      ? {
+          background: "var(--brand-soft)",
+          color: "var(--brand-primary)",
+          border: "1px solid rgba(243, 18, 60, 0.35)",
+        }
+      : {
+          background: "var(--tag-bg)",
+          color: "var(--text-muted)",
+          border: "1px solid var(--card-border)",
+        };
 
   return (
     <div className="relative inline-block" ref={ref}>
       <button
         onClick={handleClick}
-        className={`flex items-center gap-1.5 rounded-lg font-medium transition-all ${sizeClass}`}
-        style={{
-          background: "var(--tag-bg)",
-          color: "var(--text-muted)",
-          border: "1px solid var(--card-border)",
-        }}
+        className={`flex items-center gap-1.5 rounded-lg font-semibold transition-all hover:opacity-90 ${sizeClass}`}
+        style={buttonStyle}
       >
         <Share2 size={iconSize} />
         {label}

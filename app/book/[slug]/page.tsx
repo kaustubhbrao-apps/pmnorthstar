@@ -139,14 +139,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
               <span className="sm:hidden">Back</span>
             </Link>
           </div>
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <ShareButton
-              title={`${book.title} by ${book.author} — northstar review`}
-              text={`${book.title} by ${book.author}: ${book.description} — northstar's review`}
-              compact
-            />
-            <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          </div>
+          <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
         </header>
 
         <MobileNav activeNav="" onNavChange={handleNavChange} />
@@ -237,7 +230,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                   href={amazonUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={book.summary ? "btn-ghost" : "btn-accent group"}
+                  className={book.summary ? "btn-accent-soft group" : "btn-accent group"}
                 >
                   <ShoppingCart size={14} strokeWidth={1.8} />
                   The long route — Buy on Amazon
@@ -247,6 +240,11 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                     className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </a>
+                <ShareButton
+                  title={`${book.title} by ${book.author} — northstar review`}
+                  text={`${book.title} by ${book.author}: ${book.description} — northstar's review`}
+                  variant="prominent"
+                />
               </div>
 
               <p className="text-[11px] mt-3" style={{ color: "var(--text-faint)" }}>
