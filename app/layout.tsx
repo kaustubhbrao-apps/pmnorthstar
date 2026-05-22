@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { caseStudies } from "@/data/caseStudies";
 import { playlists } from "@/data/learn";
 import { books } from "@/data/books";
+import { ConsentBanner } from "@/components/ConsentBanner";
 import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
@@ -98,6 +99,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <ConsentBanner />
         <Analytics />
         <SpeedInsights />
       </body>
