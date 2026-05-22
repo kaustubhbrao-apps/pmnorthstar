@@ -279,35 +279,38 @@ export default function BookPage({ params }: { params: { slug: string } }) {
           >
             <div className="max-w-3xl grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-5 sm:gap-7 items-start">
               <div className="flex-shrink-0">
-                {authorPhoto.url && !authorPhoto.failed ? (
-                  <img
-                    src={authorPhoto.url}
-                    alt={`${book.author} — author of ${book.title}`}
-                    loading="lazy"
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
-                    style={{
-                      border: "2px solid var(--card-bg)",
-                      boxShadow: "0 0 0 1px var(--card-border)",
-                    }}
-                  />
-                ) : (
-                  <div
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center"
-                    style={{
-                      background: "linear-gradient(135deg, var(--brand-primary), #8B0000)",
-                      border: "2px solid var(--card-bg)",
-                      boxShadow: "0 0 0 1px var(--card-border)",
-                    }}
-                  >
-                    <span className="text-2xl sm:text-3xl font-bold text-white">
-                      {book.author
-                        .split(" ")
-                        .map((p) => p[0])
-                        .slice(0, 2)
-                        .join("")}
-                    </span>
-                  </div>
-                )}
+                {/* Author avatar slot — fixed-size box that always reserves
+                    space. Initials gradient renders as a base; Wikipedia
+                    photo overlays absolutely when (and if) it loads, so
+                    there's no CLS from the swap. */}
+                <div
+                  className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden"
+                  style={{
+                    aspectRatio: "1 / 1",
+                    background:
+                      "linear-gradient(135deg, var(--brand-primary), #8B0000)",
+                    border: "2px solid var(--card-bg)",
+                    boxShadow: "0 0 0 1px var(--card-border)",
+                  }}
+                >
+                  <span className="absolute inset-0 flex items-center justify-center text-2xl sm:text-3xl font-bold text-white">
+                    {book.author
+                      .split(" ")
+                      .map((p) => p[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </span>
+                  {authorPhoto.url && !authorPhoto.failed && (
+                    <img
+                      src={authorPhoto.url}
+                      alt={`${book.author} — author of ${book.title}`}
+                      loading="lazy"
+                      width={112}
+                      height={112}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )}
+                </div>
               </div>
 
               <div>

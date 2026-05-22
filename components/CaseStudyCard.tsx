@@ -94,23 +94,35 @@ export function CaseStudyCard({
         </div>
 
         <div className="flex items-center gap-2 mb-2">
-          {logoUrl && !logoFailed ? (
-            <span
-              className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
-              style={{ background: "#fff", border: "1px solid var(--card-border)" }}
-            >
+          {/* Fixed 28px slot — always reserved whether the logo loads,
+              fails, or falls back to the emoji. Prevents CLS when the
+              Google Favicon fetch resolves async. */}
+          <span
+            className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
+            style={{
+              aspectRatio: "1 / 1",
+              background: logoUrl && !logoFailed ? "#fff" : "transparent",
+              border:
+                logoUrl && !logoFailed
+                  ? "1px solid var(--card-border)"
+                  : "none",
+            }}
+          >
+            {logoUrl && !logoFailed ? (
               <img
                 src={logoUrl}
                 alt={`${study.company} logo — ${study.category} case study on northstar`}
                 loading="lazy"
+                width={28}
+                height={28}
                 onError={() => setLogoFailed(true)}
                 className="max-w-full max-h-full object-contain"
                 style={{ padding: "3px" }}
               />
-            </span>
-          ) : (
-            <span className="text-lg flex-shrink-0">{study.logo}</span>
-          )}
+            ) : (
+              <span className="text-lg leading-none">{study.logo}</span>
+            )}
+          </span>
           <p className="text-xs" style={{ color: "var(--text-muted)" }}>
             {study.company} · {study.year}
           </p>

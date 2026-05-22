@@ -172,32 +172,40 @@ export function ResourceCard({
           className="flex items-center gap-3 px-4 pt-4 pb-3"
           style={{ borderBottom: "1px solid var(--card-border)" }}
         >
-          {authorPhoto ? (
-            <img
-              src={authorPhoto}
-              alt={book.author}
-              loading="lazy"
-              decoding="async"
-              className="w-10 h-10 rounded-full flex-shrink-0 object-cover"
-              style={{ boxShadow: "0 0 0 1px var(--card-border)" }}
-            />
-          ) : (
-            <div
-              className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center"
-              style={{
-                background:
-                  "linear-gradient(135deg, var(--brand-primary), #8B0000)",
-                boxShadow: "0 0 0 1px var(--card-border)",
-              }}
+          {/* Avatar slot — always reserves a fixed 40x40 box via explicit
+              dimensions + aspect-ratio. Prevents CLS when the Wikipedia
+              photo loads asynchronously and replaces the initials fallback. */}
+          <div
+            className="relative w-10 h-10 rounded-full flex-shrink-0 overflow-hidden"
+            style={{
+              aspectRatio: "1 / 1",
+              boxShadow: "0 0 0 1px var(--card-border)",
+              background:
+                "linear-gradient(135deg, var(--brand-primary), #8B0000)",
+            }}
+          >
+            {/* Initials always render — acts as the visual background until
+                the photo (if any) overlays via absolute positioning. No
+                conditional swap = no layout shift. */}
+            <span
+              className="absolute inset-0 flex items-center justify-center text-xs font-bold text-white"
+              style={{ letterSpacing: "-0.01em" }}
             >
-              <span
-                className="text-xs font-bold text-white"
-                style={{ letterSpacing: "-0.01em" }}
-              >
-                {authorInitials(book.author)}
-              </span>
-            </div>
-          )}
+              {authorInitials(book.author)}
+            </span>
+            {authorPhoto && (
+              <img
+                src={authorPhoto}
+                alt={book.author}
+                loading="lazy"
+                decoding="async"
+                width={40}
+                height={40}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+          </div>
+
           <div className="min-w-0 flex-1">
             <p
               className="text-[10px] font-medium uppercase tracking-wider"
