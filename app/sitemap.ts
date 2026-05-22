@@ -7,6 +7,7 @@ import {
 import { topics } from "@/data/topics";
 import { comparisons } from "@/data/comparisons";
 import { books, getBookSlug, BOOKS_LAST_UPDATED } from "@/data/books";
+import { getAllAIDecodedArticles } from "@/lib/ai-decoded";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -77,6 +78,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: booksUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
+    });
+  }
+
+  // AI Decoded — index + per-article. Higher priority than evergreen
+  // content because the section is time-sensitive; we want Google to
+  // re-crawl it more often.
+  routes.push({
+    url: `${SITE_URL}/ai-decoded`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.85,
+  });
+  for (const article of getAllAIDecodedArticles()) {
+    routes.push({
+      url: `${SITE_URL}/ai-decoded/${article.frontmatter.slug}`,
+      lastModified: new Date(
+        article.frontmatter.updatedAt ?? article.frontmatter.publishedAt
+      ),
+      changeFrequency: "monthly",
+      priority: 0.8,
     });
   }
 
