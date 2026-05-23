@@ -447,6 +447,87 @@ export function getCaseStudyFaqs(id: string): FAQ[] {
   console.log(`✓ data/caseStudyFaqs.ts (${faqCount} case studies with FAQs)`);
 }
 
+// ─── AI DECODED MANIFEST ────────────────────────────────────────────────
+// AI Decoded articles live as markdown files in content/ai-decoded/
+// and are read by lib/ai-decoded.ts on the server. The home page is
+// a client component and can't read fs, so it needs a bundled manifest
+// for search. Generated here from the same markdown source.
+function syncAIDecodedManifest() {
+  const DIR = path.join(CONTENT, "ai-decoded");
+  if (!fs.existsSync(DIR)) {
+    console.log("✓ data/aiDecodedManifest.ts (no ai-decoded folder; skipped)");
+    return;
+  }
+  const entries = fs
+    .readdirSync(DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(DIR, f), "utf8");
+      const { data, content } = matter(raw);
+      return {
+        slug: f.replace(/\.md$/, ""),
+        data,
+        body: content.trim(),
+      };
+    })
+    .filter((e) => !!e.data.publishedAt)
+    .sort(
+      (a, b) =>
+        new Date(b.data.publishedAt as string).getTime() -
+        new Date(a.data.publishedAt as string).getTime()
+    );
+
+  const items = entries
+    .map((e) => {
+      const d = e.data;
+      const faqText = (
+        (d.faqs as { question: string; answer: string }[] | undefined) ?? []
+      )
+        .map((f) => `${f.question} ${f.answer}`)
+        .join(" ");
+      const searchableContent = `${e.body} ${faqText}`.toLowerCase();
+      const fields: string[] = [];
+      fields.push(`    slug: ${ts(d.slug)}`);
+      fields.push(`    title: ${ts(d.title)}`);
+      fields.push(`    excerpt: ${ts(d.excerpt)}`);
+      fields.push(`    category: ${ts(d.category)}`);
+      fields.push(`    primaryKeyword: ${ts(d.primaryKeyword)}`);
+      fields.push(
+        `    longTailKeywords: ${tsArr(d.longTailKeywords as string[], 6)}`
+      );
+      fields.push(`    publishedAt: ${ts(d.publishedAt)}`);
+      fields.push(`    searchableContent: ${ts(searchableContent)}`);
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+// Lightweight client-bundleable index of AI Decoded articles.
+// Used by the home page search; the full content + interactive
+// page rendering still goes through lib/ai-decoded.ts which reads
+// the markdown files directly on the server.
+
+export interface AIDecodedManifestEntry {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  primaryKeyword: string;
+  longTailKeywords: string[];
+  publishedAt: string;
+  // Pre-lowercased concatenation of body + FAQ text. Used by search
+  // .includes() calls so we don't lowercase per-keystroke at runtime.
+  searchableContent: string;
+}
+
+export const aiDecodedManifest: AIDecodedManifestEntry[] = [
+${items},
+];
+`;
+  fs.writeFileSync(path.join(DATA, "aiDecodedManifest.ts"), out, "utf8");
+  console.log(`✓ data/aiDecodedManifest.ts (${entries.length} entries)`);
+}
+
 function main() {
   console.log("Syncing markdown content → data/*.ts...\n");
   syncTopics();
@@ -454,6 +535,7 @@ function main() {
   syncBooks();
   syncCaseStudies();
   syncCaseStudyFaqs();
+  syncAIDecodedManifest();
   console.log("\nDone. Review the diff before committing.");
 }
 

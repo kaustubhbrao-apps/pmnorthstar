@@ -35,6 +35,7 @@ import { Footer } from "@/components/Footer";
 import { topics } from "@/data/topics";
 import { comparisons } from "@/data/comparisons";
 import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
+import { aiDecodedManifest } from "@/data/aiDecodedManifest";
 import Link from "next/link";
 import {
   TrendingUp,
@@ -46,6 +47,7 @@ import {
   Star,
   GraduationCap,
   ArrowUpRight,
+  Sparkles,
 } from "lucide-react";
 
 interface AuthUser {
@@ -283,6 +285,20 @@ export default function HomePage() {
         return true;
       return false;
     });
+  }, [searchQuery]);
+
+  const searchedAIDecoded = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return [] as typeof aiDecodedManifest;
+    return aiDecodedManifest.filter(
+      (a) =>
+        a.title.toLowerCase().includes(q) ||
+        a.excerpt.toLowerCase().includes(q) ||
+        a.category.toLowerCase().includes(q) ||
+        a.primaryKeyword.toLowerCase().includes(q) ||
+        a.longTailKeywords.some((k) => k.toLowerCase().includes(q)) ||
+        a.searchableContent.includes(q) // already lowercased at build time
+    );
   }, [searchQuery]);
 
   const searchedComparisons = useMemo(() => {
@@ -1280,12 +1296,12 @@ export default function HomePage() {
                         “{searchQuery}”
                       </h2>
                       <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
-                        {String(filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedTopics.length + searchedComparisons.length)}
+                        {String(filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedAIDecoded.length + searchedTopics.length + searchedComparisons.length)}
                       </span>
                     </div>
                   </div>
 
-                  {filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedTopics.length + searchedComparisons.length === 0 ? (
+                  {filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedAIDecoded.length + searchedTopics.length + searchedComparisons.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-20 text-center">
                       <p className="eyebrow mb-3">No results</p>
                       <p className="text-base font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>Nothing matched</p>
@@ -1343,6 +1359,54 @@ export default function HomePage() {
                                 onSavedChange={handleSavedChange}
                                 onLikedChange={handleLikedChange}
                               />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* AI Decoded group — brand-tinted to match the
+                          section's prominent slot in nav */}
+                      {searchedAIDecoded.length > 0 && (
+                        <div className="mb-10">
+                          <div className="flex items-baseline gap-3 mb-4">
+                            <p className="eyebrow" style={{ color: "var(--brand-primary)" }}>
+                              AI Decoded
+                            </p>
+                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                              {String(searchedAIDecoded.length)}
+                            </span>
+                          </div>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {searchedAIDecoded.map((a) => (
+                              <Link
+                                key={a.slug}
+                                href={`/ai-decoded/${a.slug}`}
+                                className="surface p-4 group transition-colors"
+                                style={{
+                                  borderRadius: 12,
+                                  borderColor: "rgba(243, 18, 60, 0.30)",
+                                }}
+                              >
+                                <p
+                                  className="text-[10px] font-medium uppercase tracking-wider mb-1.5 inline-flex items-center gap-1"
+                                  style={{ color: "var(--brand-primary)" }}
+                                >
+                                  <Sparkles size={10} strokeWidth={1.8} />
+                                  {a.category}
+                                </p>
+                                <p
+                                  className="text-sm font-semibold leading-snug mb-1.5 line-clamp-2"
+                                  style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+                                >
+                                  {a.title}
+                                </p>
+                                <p
+                                  className="text-xs leading-relaxed line-clamp-2"
+                                  style={{ color: "var(--text-muted)" }}
+                                >
+                                  {a.excerpt}
+                                </p>
+                              </Link>
                             ))}
                           </div>
                         </div>
