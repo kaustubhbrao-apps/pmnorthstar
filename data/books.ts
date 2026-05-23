@@ -1,26 +1,18 @@
+// ⚠️  AUTO-GENERATED — DO NOT EDIT BY HAND.
+// Source of truth is content/. Run `npx tsx scripts/sync-content.ts`
+// to regenerate after editing markdown files.
+
 export type Category = "Product Management" | "Startups" | "Management";
 
-// Amazon Associates India affiliate tag. Update once you get your tag
-// from affiliate-program.amazon.in. All book links flow through here.
+// Amazon Associates India affiliate tag. All book links flow through here.
 export const AMAZON_AFFILIATE_TAG = "pmnorthstar-21";
 
-// Bump this when the book dataset has a meaningful content change
-// (new book, edited summary, refreshed affiliate URL). The sitemap
-// reads it so Google sees an accurate lastModified date instead of
-// today's date repeated forever.
-export const BOOKS_LAST_UPDATED = "2026-05-18";
-
 export interface BookSummary {
-  // Multi-paragraph original commentary — northstar's perspective on the book,
-  // its position in the PM reading landscape, audience, and limitations.
-  // Stays at the "book review" level; does not reproduce book content.
   analysis: string[];
-  // Named ideas / frameworks the book introduces. Each entry: the concept name
-  // and a one-sentence plain-language explanation of what it means.
   keyConcepts: Array<{ name: string; explanation: string }>;
-  whoShouldRead: string;           // Who this book is genuinely useful for
-  pairsWith?: string[];            // IDs of related books on northstar
-  relatedCaseStudies?: string[];   // IDs of case studies that demonstrate the book's ideas
+  whoShouldRead: string;
+  pairsWith?: string[];
+  relatedCaseStudies?: string[];
 }
 
 export interface Book {
@@ -36,15 +28,13 @@ export interface Book {
   year: number;
   tags: string[];
   featured?: boolean;
-  // Pre-shortened Amazon Associates link (amzn.to/...). When present, used as
-  // the "long route" CTA on the book detail page. If absent, getAmazonAffiliateUrl
-  // falls back to a search URL with the affiliate tag appended.
   amazonUrl?: string;
-  summary?: BookSummary;           // Optional. Books without a summary show "Coming soon" on /book/[slug].
+  summary?: BookSummary;
 }
 
-// Slug for /book/[slug] URLs. Generated from title (with author last name as
-// disambiguator if needed). Kept as a helper so we don't duplicate per-book.
+// Bumped when book content has meaningful refresh. Sitemap reads this.
+export const BOOKS_LAST_UPDATED = "2026-05-18";
+
 function slugify(s: string): string {
   return s
     .toLowerCase()
@@ -68,7 +58,6 @@ export function getAmazonAffiliateUrl(book: Book): string {
 }
 
 export const books: Book[] = [
-  // ─── PRODUCT MANAGEMENT ──────────────────────────────────────────────────
   {
     id: "pm-1",
     amazonUrl: "https://amzn.to/3Rgf7sw",
@@ -81,7 +70,11 @@ export const books: Book[] = [
     rating: 4.8,
     pages: 368,
     year: 2017,
-    tags: ["product", "strategy", "teams"],
+    tags: [
+      "product",
+      "strategy",
+      "teams"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -91,18 +84,40 @@ export const books: Book[] = [
         "The most common misreading is that Inspired is a process book. It isn't. PMs who read it expecting frameworks, templates, or step-by-step playbooks usually come away disappointed. The book is fundamentally an organizational design argument disguised as a PM book. The PMs who get the most out of it are the ones who realize halfway through that Cagan isn't telling them how to do their job differently; he's telling them what kind of company will let them do it well.",
         "It serves senior PMs and PM-curious founders better than junior PMs. The book assumes you've already worked inside a product team and now want a model for why some of those teams felt right and others didn't. First-time PMs often find it abstract on first read; it tends to land in year 2-3 of the career when the patterns Cagan describes start matching personal experience.",
         "For Indian PMs specifically, the book is most useful for understanding the playbook that the US/SF tech industry now considers default. Reading Inspired is how you decode why your foreign-trained CEO or American product leader talks the way they do. Whether the playbook itself works inside Indian companies — with their tighter capital cycles, more directive founders, smaller engineering teams, and different user behaviors — is a separate question the book doesn't answer.",
-        "Its main limitation in 2026 is its starting point: late-stage SaaS companies with venture funding and engineering-heavy teams. The advice doesn't always transfer to Indian B2C companies, government tech, agencies, or anywhere with constrained autonomy. Read it as the SV ideal, not the universal model — pair it with Empowered for the management-side companion, and revisit it at year 5 of your career when the chapters that felt abstract earlier start landing differently.",
+        "Its main limitation in 2026 is its starting point: late-stage SaaS companies with venture funding and engineering-heavy teams. The advice doesn't always transfer to Indian B2C companies, government tech, agencies, or anywhere with constrained autonomy. Read it as the SV ideal, not the universal model — pair it with Empowered for the management-side companion, and revisit it at year 5 of your career when the chapters that felt abstract earlier start landing differently."
       ],
       keyConcepts: [
-        { name: "Product discovery vs delivery", explanation: "The work of figuring out what to build (discovery) is a separate discipline from building it (delivery) — and most teams under-invest in the first." },
-        { name: "Outcome-based teams (vs feature teams)", explanation: "Teams given a problem to solve and a metric to move, rather than a feature list to ship by a date." },
-        { name: "The product trio (PM, designer, engineer)", explanation: "Discovery happens best when a product manager, designer, and engineer work together as one unit — not handing off artifacts between functions." },
-        { name: "Discovery prototypes", explanation: "Throwaway, low-fidelity artifacts built specifically to test a risk (will users use this? can we build it?) before committing real engineering time." },
-        { name: "Continuous risk assessment (value, usability, feasibility, viability)", explanation: "Every product idea has four risks to validate — does anyone want it, can they use it, can we build it, and does it work for the business — and Cagan argues you should test all four constantly, not just at kickoff." },
+        {
+          name: "Product discovery vs delivery",
+          explanation: "The work of figuring out what to build (discovery) is a separate discipline from building it (delivery) — and most teams under-invest in the first."
+        },
+        {
+          name: "Outcome-based teams (vs feature teams)",
+          explanation: "Teams given a problem to solve and a metric to move, rather than a feature list to ship by a date."
+        },
+        {
+          name: "The product trio (PM, designer, engineer)",
+          explanation: "Discovery happens best when a product manager, designer, and engineer work together as one unit — not handing off artifacts between functions."
+        },
+        {
+          name: "Discovery prototypes",
+          explanation: "Throwaway, low-fidelity artifacts built specifically to test a risk (will users use this? can we build it?) before committing real engineering time."
+        },
+        {
+          name: "Continuous risk assessment (value, usability, feasibility, viability)",
+          explanation: "Every product idea has four risks to validate — does anyone want it, can they use it, can we build it, and does it work for the business — and Cagan argues you should test all four constantly, not just at kickoff."
+        }
       ],
       whoShouldRead: "Mid-career PMs at SaaS / consumer tech companies who want a coherent model for why some teams ship great products and others ship roadmaps. Senior PMs, founders, and PM-curious engineers will also get value. New PMs in their first 6 months should probably read it after Escaping the Build Trap.",
-      pairsWith: ["pm-4", "pm-10"],
-      relatedCaseStudies: ["cs-2", "cs-7", "cs-27"],
+      pairsWith: [
+        "pm-4",
+        "pm-10"
+      ],
+      relatedCaseStudies: [
+        "cs-2",
+        "cs-7",
+        "cs-27"
+      ],
     },
   },
   {
@@ -117,7 +132,11 @@ export const books: Book[] = [
     rating: 4.7,
     pages: 258,
     year: 2021,
-    tags: ["discovery", "research", "habits"],
+    tags: [
+      "discovery",
+      "research",
+      "habits"
+    ],
     summary: {
       analysis: [
         "Continuous Discovery Habits is the book that took user research out of the hands of dedicated researchers and put it back on PM desks. Teresa Torres argues — and now most modern teams agree — that talking to users is too important to outsource to a sprint or a quarterly study. It needs to be a habit.",
@@ -126,18 +145,39 @@ export const books: Book[] = [
         "The most common misreading is that the book is about 'doing customer interviews every week.' That's the practice, but it's not the point. The deeper argument is about how product decisions get made: whether they emerge from accumulated, ongoing contact with users, or whether they emerge from quarterly planning offsites driven by stakeholder politics. The interviews are downstream of the philosophy. PMs who try to copy the weekly interview habit without buying into the underlying argument tend to burn out within a few months.",
         "Read this if you're a PM who has the title but feels disconnected from your users. It's most useful when you have authority over the discovery process and want to convince stakeholders that ongoing customer contact beats a quarterly research sprint. It's less useful at companies where research is already a separate function — though many such companies probably should question that structure.",
         "For Indian PMs, the book's harder challenge is structural. Many Indian product teams sit inside founder-driven organizations where the founder's intuition about users carries more weight than any structured discovery process. The book assumes you have permission to talk to users on your own cadence; many Indian PMs don't, by default, and that permission is part of what they have to win before the book's practices become possible. It's worth reading not just to learn the methodology but to understand what good looks like.",
-        "Pair it with The Mom Test for the actual mechanics of customer conversations. Continuous Discovery Habits is strong on process and weak on the moment-to-moment craft of asking better questions; The Mom Test is the reverse.",
+        "Pair it with The Mom Test for the actual mechanics of customer conversations. Continuous Discovery Habits is strong on process and weak on the moment-to-moment craft of asking better questions; The Mom Test is the reverse."
       ],
       keyConcepts: [
-        { name: "Opportunity Solution Tree", explanation: "A visual map that branches from a desired outcome → customer opportunities (problems / unmet needs) → candidate solutions → experiments to validate them." },
-        { name: "Continuous discovery (weekly customer touchpoints)", explanation: "Talking to at least one user every week as a habit, not as a quarterly research sprint — so user understanding stays fresh and built into decisions." },
-        { name: "Outcome over outputs", explanation: "Measuring success by the change in customer behavior or business metric, not by the number of features shipped." },
-        { name: "Assumption tests vs. customer interviews", explanation: "Interviews uncover what customers actually do today; assumption tests check whether specific beliefs about a future solution are true. They're different tools for different questions." },
-        { name: "The discovery trio (PM, designer, engineer in research)", explanation: "All three roles attend customer conversations, not just PMs — because engineers and designers spot different signals than PMs do." },
+        {
+          name: "Opportunity Solution Tree",
+          explanation: "A visual map that branches from a desired outcome → customer opportunities (problems / unmet needs) → candidate solutions → experiments to validate them."
+        },
+        {
+          name: "Continuous discovery (weekly customer touchpoints)",
+          explanation: "Talking to at least one user every week as a habit, not as a quarterly research sprint — so user understanding stays fresh and built into decisions."
+        },
+        {
+          name: "Outcome over outputs",
+          explanation: "Measuring success by the change in customer behavior or business metric, not by the number of features shipped."
+        },
+        {
+          name: "Assumption tests vs. customer interviews",
+          explanation: "Interviews uncover what customers actually do today; assumption tests check whether specific beliefs about a future solution are true. They're different tools for different questions."
+        },
+        {
+          name: "The discovery trio (PM, designer, engineer in research)",
+          explanation: "All three roles attend customer conversations, not just PMs — because engineers and designers spot different signals than PMs do."
+        }
       ],
       whoShouldRead: "PMs who feel disconnected from their users and want a structured habit (not just a project) to fix it. Especially useful for teams transitioning from feature-factory to outcome-driven work.",
-      pairsWith: ["pm-1", "pm-8"],
-      relatedCaseStudies: ["cs-3", "cs-5"],
+      pairsWith: [
+        "pm-1",
+        "pm-8"
+      ],
+      relatedCaseStudies: [
+        "cs-3",
+        "cs-5"
+      ],
     },
   },
   {
@@ -152,7 +192,11 @@ export const books: Book[] = [
     rating: 4.6,
     pages: 336,
     year: 2015,
-    tags: ["lean", "mvp", "feedback"],
+    tags: [
+      "lean",
+      "mvp",
+      "feedback"
+    ],
     summary: {
       analysis: [
         "The Lean Product Playbook is the operational companion to The Lean Startup. Where Eric Ries gave the philosophy, Dan Olsen gave the worksheet. It's the book PMs reach for when they need a structured exercise to run with their team next Tuesday, not a thesis to debate at a leadership offsite.",
@@ -161,18 +205,39 @@ export const books: Book[] = [
         "The most common misreading is treating the framework as a one-time exercise to do at the start of a product — identify customer, articulate value prop, build MVP, ship, done. In practice, the most useful application is iterative: rerunning the framework when entering a new market, launching a new feature line, or pivoting an existing product. PMs who apply it once and then move on miss the structural value of treating product strategy as something you continuously test rather than declare and forget.",
         "It's most useful for early-stage PMs and founders pre-PMF. By Series B or beyond, when you're optimizing existing products with real users, the playbook's lean-startup framing starts feeling too 0-to-1. Mid-to-late-stage teams should treat it as a refresher on first-principles thinking, not a daily handbook.",
         "Indian PMs often face a specific challenge with this kind of structured framework: the gap between articulating a target customer hypothesis and actually getting access to those customers is enormous. The book assumes a Western SaaS context where you can run customer interviews via Zoom with your target persona. In Indian markets, you may need to physically travel, find translators, navigate trust gaps. The framework is still useful, but the cost of applying it well is higher.",
-        "Pair with Continuous Discovery Habits for the modern update: Olsen's book was written before continuous discovery was standard practice, and Torres extends the same impulse into a sustainable cadence rather than a one-time lean experiment.",
+        "Pair with Continuous Discovery Habits for the modern update: Olsen's book was written before continuous discovery was standard practice, and Torres extends the same impulse into a sustainable cadence rather than a one-time lean experiment."
       ],
       keyConcepts: [
-        { name: "Product-Market Fit Pyramid", explanation: "A 5-layer model — target customer, underserved needs, value proposition, feature set, UX — where each layer has to fit the one below it for the product to land in the market." },
-        { name: "Target customer hypothesis", explanation: "A specific, written-down statement of who you're building for, treated as a hypothesis to test rather than an assumption to operate from." },
-        { name: "Underserved customer needs", explanation: "The slice of customer needs that incumbents do poorly or ignore — the only space where a new product has room to win." },
-        { name: "MVP as hypothesis test", explanation: "The smallest product you can ship that lets you learn whether your value proposition resonates — not the first version of the product you want to build." },
-        { name: "Iterating value proposition", explanation: "Reworking the promise you make to customers based on what you learn — most early-stage products iterate features when they should be iterating the underlying promise." },
+        {
+          name: "Product-Market Fit Pyramid",
+          explanation: "A 5-layer model — target customer, underserved needs, value proposition, feature set, UX — where each layer has to fit the one below it for the product to land in the market."
+        },
+        {
+          name: "Target customer hypothesis",
+          explanation: "A specific, written-down statement of who you're building for, treated as a hypothesis to test rather than an assumption to operate from."
+        },
+        {
+          name: "Underserved customer needs",
+          explanation: "The slice of customer needs that incumbents do poorly or ignore — the only space where a new product has room to win."
+        },
+        {
+          name: "MVP as hypothesis test",
+          explanation: "The smallest product you can ship that lets you learn whether your value proposition resonates — not the first version of the product you want to build."
+        },
+        {
+          name: "Iterating value proposition",
+          explanation: "Reworking the promise you make to customers based on what you learn — most early-stage products iterate features when they should be iterating the underlying promise."
+        }
       ],
       whoShouldRead: "Early-stage PMs and pre-PMF founders looking for a structured exercise to take a product hypothesis to a testable artifact. Useful as a refresher for later-stage PMs who've drifted into feature-shipping mode.",
-      pairsWith: ["pm-2", "st-2"],
-      relatedCaseStudies: ["cs-3", "cs-10"],
+      pairsWith: [
+        "pm-2",
+        "st-2"
+      ],
+      relatedCaseStudies: [
+        "cs-3",
+        "cs-10"
+      ],
     },
   },
   {
@@ -187,7 +252,11 @@ export const books: Book[] = [
     rating: 4.7,
     pages: 368,
     year: 2020,
-    tags: ["leadership", "teams", "culture"],
+    tags: [
+      "leadership",
+      "teams",
+      "culture"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -197,18 +266,39 @@ export const books: Book[] = [
         "The most common misreading is treating 'empowerment' as a permission slip rather than an obligation. PMs who read it as 'I should be empowered to make decisions' miss that the book is mostly written *to* the people who would grant that empowerment, and that the book is explicit that empowerment without coaching and clear strategy is just abandonment. The version of empowerment Cagan describes requires significant active investment from leaders — it's not a hands-off model.",
         "Its main limitation is the same as Inspired's: it assumes a late-stage SaaS context with venture funding, mature engineering culture, and product as a respected function inside the company. The case studies are heavily Silicon Valley. It doesn't speak well to founder-led companies where the founder is also the de facto chief product officer, to consulting-adjacent product orgs, or to companies where product is still proving its right to exist.",
         "For Indian PMs and product leaders, this is the more immediately useful Cagan book — more so than Inspired. The Indian product ecosystem in 2026 is still in the phase of figuring out what good product leadership looks like, and Empowered names the role of head-of-product and CPO in concrete terms that most Indian founders haven't seen articulated. Use it as a benchmark for what the role should grow into, even if the company isn't there yet.",
-        "Pair with High Output Management for the operational management fundamentals Cagan assumes you already have, and revisit Inspired afterward — the two books make more sense read in this order than the order they were published.",
+        "Pair with High Output Management for the operational management fundamentals Cagan assumes you already have, and revisit Inspired afterward — the two books make more sense read in this order than the order they were published."
       ],
       keyConcepts: [
-        { name: "Product leadership as coaching", explanation: "Heads of product spend most of their time developing their PMs through 1:1s, feedback, and stretch assignments — not managing the backlog themselves." },
-        { name: "Strategic context (vs. backlog management)", explanation: "Leaders give teams the why and the where (vision, strategy, success metrics) and let teams own the what and the how." },
-        { name: "Hiring and developing PMs over a 3-5 year horizon", explanation: "Great PMs are mostly grown, not bought — and the developmental work that makes that happen takes years of structured coaching, not a quarterly review." },
-        { name: "Empowerment as obligation, not permission", explanation: "'Empowering' a team isn't just letting them decide — it's providing the context, coaching, and air cover that makes those decisions possible. Without that work, it's just abandonment." },
-        { name: "Product vision and strategy as leadership work", explanation: "The vision (where we're going in 3-5 years) and strategy (what bets we're making) come from product leadership, not from a sales pipeline or a roadmap meeting." },
+        {
+          name: "Product leadership as coaching",
+          explanation: "Heads of product spend most of their time developing their PMs through 1:1s, feedback, and stretch assignments — not managing the backlog themselves."
+        },
+        {
+          name: "Strategic context (vs. backlog management)",
+          explanation: "Leaders give teams the why and the where (vision, strategy, success metrics) and let teams own the what and the how."
+        },
+        {
+          name: "Hiring and developing PMs over a 3-5 year horizon",
+          explanation: "Great PMs are mostly grown, not bought — and the developmental work that makes that happen takes years of structured coaching, not a quarterly review."
+        },
+        {
+          name: "Empowerment as obligation, not permission",
+          explanation: "'Empowering' a team isn't just letting them decide — it's providing the context, coaching, and air cover that makes those decisions possible. Without that work, it's just abandonment."
+        },
+        {
+          name: "Product vision and strategy as leadership work",
+          explanation: "The vision (where we're going in 3-5 years) and strategy (what bets we're making) come from product leadership, not from a sales pipeline or a roadmap meeting."
+        }
       ],
       whoShouldRead: "Heads of product, VPs of product, CPOs, and founders who are also the de facto chief product officer. Senior PMs eyeing the next step in their career. Less immediately useful for IC PMs in their first 2-3 years.",
-      pairsWith: ["pm-1", "mg-1"],
-      relatedCaseStudies: ["cs-2", "cs-7"],
+      pairsWith: [
+        "pm-1",
+        "mg-1"
+      ],
+      relatedCaseStudies: [
+        "cs-2",
+        "cs-7"
+      ],
     },
   },
   {
@@ -223,7 +313,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 220,
     year: 2019,
-    tags: ["process", "shipping", "cycles"],
+    tags: [
+      "process",
+      "shipping",
+      "cycles"
+    ],
     summary: {
       analysis: [
         "Shape Up is the most unusual book on this list because it isn't really a book — it's a method documentation from one specific company, Basecamp, that the company chose to share publicly as a free PDF in 2019. Ryan Singer was the head of product strategy at the time, and the book is essentially Basecamp's internal playbook made external. That origin shapes everything about it: the method is opinionated, narrow, and deeply tied to how one small, profitable, remote-first company chose to work.",
@@ -232,18 +326,38 @@ export const books: Book[] = [
         "The most common misreading is treating Shape Up as 'longer sprints' — keeping all the rest of the Scrum machinery and just stretching cycles to six weeks. That's not what the book is recommending. The whole framework rests on the team having autonomy to define scope inside the appetite, the absence of a backlog, and the trust that the team will use the time well without daily stand-up surveillance. Without those organizational shifts, longer cycles just produce slower waterfalls.",
         "Its biggest limitation is that it was built for and inside Basecamp. Basecamp has roughly 60 employees, no investors, a profitable revenue model, and a CEO (Jason Fried) who has actively rejected most growth-at-all-costs SaaS conventions. The method assumes you have small, full-stack, autonomous product teams; long-tenured engineers; no external roadmap commitments to customers or sales; and leaders who don't need weekly progress visibility. Most companies have none of these.",
         "For Indian product teams, Shape Up tends to find its audience in two specific places: early-stage engineer-led startups where one team is doing everything, and small product companies where the founder is trying to wean the team off Scrum theater. It transfers poorly to enterprise SaaS, consulting-style product orgs, or anywhere with strong dependencies between teams. Read it as a thought-provocation about what process is for, not as a method to copy wholesale.",
-        "Pair with Inspired for the question of what kinds of teams should run this method, and with The Lean Product Playbook for what 'shaping' actually looks like — the book is strong on the cycle mechanics but lighter on how to develop the product judgment that good shaping requires.",
+        "Pair with Inspired for the question of what kinds of teams should run this method, and with The Lean Product Playbook for what 'shaping' actually looks like — the book is strong on the cycle mechanics but lighter on how to develop the product judgment that good shaping requires."
       ],
       keyConcepts: [
-        { name: "Six-week cycles + two-week cooldown", explanation: "Teams work in six-week focused cycles, then take two weeks to fix bugs, polish, and breathe — instead of running continuous two-week sprints forever." },
-        { name: "Shaped pitches (appetite-bounded problems)", explanation: "Before a cycle starts, someone 'shapes' a problem into a written pitch that defines the appetite (how much time we're willing to spend) and the boundaries — but not the solution detail." },
-        { name: "No backlog", explanation: "Basecamp doesn't maintain a backlog of features waiting to be built. Each cycle bets fresh on the most important shaped pitches; un-picked ideas re-pitch later or disappear." },
-        { name: "Hill chart (uncertainty vs. progress)", explanation: "A visualization showing work climbing up the 'figuring it out' side of a hill and then down the 'execution' side — a clearer status indicator than percent-complete." },
-        { name: "Circuit breaker (ship at six weeks or stop)", explanation: "If the work isn't done at six weeks, the team stops — no extensions. This forces ruthless scope cuts during the cycle rather than scope creep at the end." },
+        {
+          name: "Six-week cycles + two-week cooldown",
+          explanation: "Teams work in six-week focused cycles, then take two weeks to fix bugs, polish, and breathe — instead of running continuous two-week sprints forever."
+        },
+        {
+          name: "Shaped pitches (appetite-bounded problems)",
+          explanation: "Before a cycle starts, someone 'shapes' a problem into a written pitch that defines the appetite (how much time we're willing to spend) and the boundaries — but not the solution detail."
+        },
+        {
+          name: "No backlog",
+          explanation: "Basecamp doesn't maintain a backlog of features waiting to be built. Each cycle bets fresh on the most important shaped pitches; un-picked ideas re-pitch later or disappear."
+        },
+        {
+          name: "Hill chart (uncertainty vs. progress)",
+          explanation: "A visualization showing work climbing up the 'figuring it out' side of a hill and then down the 'execution' side — a clearer status indicator than percent-complete."
+        },
+        {
+          name: "Circuit breaker (ship at six weeks or stop)",
+          explanation: "If the work isn't done at six weeks, the team stops — no extensions. This forces ruthless scope cuts during the cycle rather than scope creep at the end."
+        }
       ],
       whoShouldRead: "Small product teams frustrated with Scrum overhead, founders/CTOs setting up early-stage product process, and senior PMs questioning whether their org's agile rituals are still serving them. Less useful for large enterprise SaaS or teams with heavy cross-team dependencies.",
-      pairsWith: ["pm-1", "pm-3"],
-      relatedCaseStudies: ["cs-2"],
+      pairsWith: [
+        "pm-1",
+        "pm-3"
+      ],
+      relatedCaseStudies: [
+        "cs-2"
+      ],
     },
   },
   {
@@ -258,7 +372,11 @@ export const books: Book[] = [
     rating: 4.4,
     pages: 276,
     year: 2019,
-    tags: ["growth", "PLG", "strategy"],
+    tags: [
+      "growth",
+      "PLG",
+      "strategy"
+    ],
     summary: {
       analysis: [
         "Product-Led Growth is the book that gave a name and a playbook to what Slack, Dropbox, Calendly, and Notion had already been doing for years — letting the product itself, rather than a sales team, do most of the work of acquiring and converting users. Wes Bush wrote it in 2019 as a deliberately practitioner-facing manual: less theory, more decision frameworks and pricing-page diagnostics.",
@@ -267,18 +385,39 @@ export const books: Book[] = [
         "The most common misreading is treating PLG as 'remove the sales team and add a free tier.' Bush is careful to argue the opposite: that PLG is a coordinated strategy across pricing, onboarding, in-product nudges, and yes, sometimes a sales motion layered on top. Founders who read the book and just slap a free plan on an existing sales-led product usually create the worst of both worlds — they cannibalize sales-led revenue without successfully driving self-serve conversion.",
         "Its limitation is that it's narrowly written for B2B SaaS founders selling to other small-to-mid-sized businesses. PLG translates poorly to enterprise products with multi-stakeholder buying committees, to consumer products with ad-monetization (where the user isn't the buyer), and to vertical SaaS in regulated industries where the buyer can't even sign up without procurement approval.",
         "For Indian product teams, the book is most useful for the wave of Indian SaaS companies selling globally — the Chargebee/Freshworks/Zoho cohort and the wave behind it. PLG is genuinely the cheapest GTM motion when you're selling from India into the US, where building a US sales team is expensive and slow. For Indian B2C or India-only SaaS, the book is less applicable: the Indian buyer's reluctance to put a credit card on file before talking to a human breaks several of the book's foundational assumptions.",
-        "Pair with Hacking Growth for the broader growth-experimentation toolkit, and Obviously Awesome to get the positioning right before you ever start optimizing the onboarding funnel — a great onboarding flow won't save a product whose positioning is unclear.",
+        "Pair with Hacking Growth for the broader growth-experimentation toolkit, and Obviously Awesome to get the positioning right before you ever start optimizing the onboarding funnel — a great onboarding flow won't save a product whose positioning is unclear."
       ],
       keyConcepts: [
-        { name: "MOAT framework (Market, Ocean, Audience, Time to value)", explanation: "A four-factor diagnostic for whether product-led growth is the right GTM motion for your product, or whether you should stay sales-led." },
-        { name: "Free trial vs. freemium decision tree", explanation: "Free trial (full product for a limited time) and freemium (limited product forever) solve different growth problems — choosing the wrong one breaks the conversion funnel." },
-        { name: "Time to value as core PLG metric", explanation: "How many seconds or minutes between sign-up and the user experiencing real value. In PLG, this number is the most important lever in the entire funnel." },
-        { name: "Product-qualified leads (PQLs)", explanation: "Users whose in-product behavior (hit usage thresholds, invited teammates, integrated key tools) signals they're ready to convert to paid — the PLG analog of sales-qualified leads." },
-        { name: "Activation events", explanation: "The specific in-product action that correlates most strongly with long-term retention. Identifying it and engineering more users toward it is most of the activation work." },
+        {
+          name: "MOAT framework (Market, Ocean, Audience, Time to value)",
+          explanation: "A four-factor diagnostic for whether product-led growth is the right GTM motion for your product, or whether you should stay sales-led."
+        },
+        {
+          name: "Free trial vs. freemium decision tree",
+          explanation: "Free trial (full product for a limited time) and freemium (limited product forever) solve different growth problems — choosing the wrong one breaks the conversion funnel."
+        },
+        {
+          name: "Time to value as core PLG metric",
+          explanation: "How many seconds or minutes between sign-up and the user experiencing real value. In PLG, this number is the most important lever in the entire funnel."
+        },
+        {
+          name: "Product-qualified leads (PQLs)",
+          explanation: "Users whose in-product behavior (hit usage thresholds, invited teammates, integrated key tools) signals they're ready to convert to paid — the PLG analog of sales-qualified leads."
+        },
+        {
+          name: "Activation events",
+          explanation: "The specific in-product action that correlates most strongly with long-term retention. Identifying it and engineering more users toward it is most of the activation work."
+        }
       ],
       whoShouldRead: "B2B SaaS founders, heads of growth, and PMs at companies considering or executing a self-serve motion. Especially useful for Indian SaaS companies selling globally. Less useful for enterprise, consumer-ad-monetized, or heavily regulated products.",
-      pairsWith: ["pm-7", "st-8"],
-      relatedCaseStudies: ["cs-5", "cs-10"],
+      pairsWith: [
+        "pm-7",
+        "st-8"
+      ],
+      relatedCaseStudies: [
+        "cs-5",
+        "cs-10"
+      ],
     },
   },
   {
@@ -293,7 +432,11 @@ export const books: Book[] = [
     rating: 4.7,
     pages: 198,
     year: 2019,
-    tags: ["positioning", "marketing", "messaging"],
+    tags: [
+      "positioning",
+      "marketing",
+      "messaging"
+    ],
     summary: {
       analysis: [
         "Obviously Awesome is the rare book in the product canon that's actually about marketing — specifically, positioning — written by someone who's done it for twenty-five companies and has the receipts. April Dunford built her career as a positioning consultant for B2B tech companies, and the book reads like a distillation of two decades of client work. It's short (under 200 pages), tactical, and almost aggressively unglamorous.",
@@ -302,18 +445,39 @@ export const books: Book[] = [
         "The most common misreading is treating positioning as a marketing-team problem. The book is most useful when read by PMs and founders who own the product strategy, because positioning decisions cascade into product decisions: who you target shapes what you build, and a misaligned position generally means you're building the wrong features for the wrong audience. PMs who outsource the positioning conversation to marketing usually inherit a product whose value proposition doesn't match its actual capabilities.",
         "Its main limitation is that it's heavily B2B-focused. The case studies are all enterprise or SMB SaaS companies, and Dunford's frame of reference is sales-led GTM where positioning surfaces in pitch decks and sales scripts. The book is still useful for consumer products, but you have to translate — for consumer apps, 'positioning' shows up in the app store description and the first three seconds of the onboarding flow, not in a sales narrative.",
         "For Indian product teams, the book is most useful for SaaS companies selling globally and for D2C brands trying to break out of crowded categories. Indian buyers, both B2B and B2C, are notoriously feature-comparison-obsessed at the early consideration stage, and Dunford's argument that you should compete on a different axis than your competitors is genuinely strategic advice for the Indian market — most Indian product marketing in 2026 still pattern-matches to feature listing rather than category positioning.",
-        "Pair with Product-Led Growth — Dunford's positioning framework is what you need to nail before you ever start optimizing the onboarding funnel that PLG depends on. And pair with The Mom Test on the discovery side: positioning is downstream of understanding what customers actually care about, and most positioning failures are really customer-understanding failures wearing a marketing costume.",
+        "Pair with Product-Led Growth — Dunford's positioning framework is what you need to nail before you ever start optimizing the onboarding funnel that PLG depends on. And pair with The Mom Test on the discovery side: positioning is downstream of understanding what customers actually care about, and most positioning failures are really customer-understanding failures wearing a marketing costume."
       ],
       keyConcepts: [
-        { name: "Five-step positioning framework", explanation: "Dunford's process: list competitive alternatives → identify unique attributes → translate to value → name the segment that cares most → choose the market category that frames all of the above." },
-        { name: "Competitive alternatives (vs. competitors)", explanation: "What the customer would do if your product didn't exist — often a spreadsheet, a manual process, or 'nothing,' not your named competitor. This is the right reference frame for positioning." },
-        { name: "Unique attributes → value → who cares", explanation: "Features are only relevant insofar as they produce value, and value is only relevant for the specific customer segment that needs it. Skipping links in this chain produces bad positioning." },
-        { name: "Market category as strategic choice", explanation: "The category you choose to compete in determines the buyer's reference set, their evaluation criteria, and whether your strengths show up at all. It's not a marketing decision — it's a product strategy decision." },
-        { name: "Repositioning as deliberate exercise", explanation: "Positioning isn't a one-time launch task. Companies should periodically rerun the five-step process — markets shift, competitors enter, and the position that worked at $1M ARR rarely works at $10M." },
+        {
+          name: "Five-step positioning framework",
+          explanation: "Dunford's process: list competitive alternatives → identify unique attributes → translate to value → name the segment that cares most → choose the market category that frames all of the above."
+        },
+        {
+          name: "Competitive alternatives (vs. competitors)",
+          explanation: "What the customer would do if your product didn't exist — often a spreadsheet, a manual process, or 'nothing,' not your named competitor. This is the right reference frame for positioning."
+        },
+        {
+          name: "Unique attributes → value → who cares",
+          explanation: "Features are only relevant insofar as they produce value, and value is only relevant for the specific customer segment that needs it. Skipping links in this chain produces bad positioning."
+        },
+        {
+          name: "Market category as strategic choice",
+          explanation: "The category you choose to compete in determines the buyer's reference set, their evaluation criteria, and whether your strengths show up at all. It's not a marketing decision — it's a product strategy decision."
+        },
+        {
+          name: "Repositioning as deliberate exercise",
+          explanation: "Positioning isn't a one-time launch task. Companies should periodically rerun the five-step process — markets shift, competitors enter, and the position that worked at $1M ARR rarely works at $10M."
+        }
       ],
       whoShouldRead: "PMs, founders, and product marketers at B2B SaaS companies struggling with how to describe what they do. Especially useful when a product is technically strong but not converting visitors. Less immediately tactical for consumer apps, but the underlying ideas still apply.",
-      pairsWith: ["pm-6", "pm-8"],
-      relatedCaseStudies: ["cs-3", "cs-27"],
+      pairsWith: [
+        "pm-6",
+        "pm-8"
+      ],
+      relatedCaseStudies: [
+        "cs-3",
+        "cs-27"
+      ],
     },
   },
   {
@@ -328,7 +492,11 @@ export const books: Book[] = [
     rating: 4.8,
     pages: 130,
     year: 2013,
-    tags: ["customer", "validation", "interviews"],
+    tags: [
+      "customer",
+      "validation",
+      "interviews"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -338,18 +506,39 @@ export const books: Book[] = [
         "The most common misreading is treating it as a script. PMs and founders sometimes try to literally copy the example questions in the book, deploy them in a customer interview, and feel disappointed when the conversation feels stilted. The book is teaching a posture, not a script — the posture is being genuinely more interested in what the customer already does than in what you want them to think. The questions are downstream of that posture and have to be improvised in the moment.",
         "Its limitation is that it's written from a B2B founder's perspective. The examples are mostly about selling enterprise software, and the 'meaningful commitment' bar (a pre-order, an intro to a budget holder, a paid pilot) is calibrated for that world. For consumer products, the framework still applies but the commitment signals look different: deleting a competitor's app, repeatedly using a prototype, or sharing it with a friend without prompting are the consumer equivalents.",
         "For Indian PMs and founders, the book is genuinely cross-cultural in a way most American PM books aren't. The 'people will lie politely' dynamic is, if anything, more pronounced in Indian customer conversations where direct critical feedback is socially expensive. Fitzpatrick's techniques work as well in Bangalore as they do in San Francisco — possibly better, because the politeness gap is wider. The book is a strong recommendation for any Indian founder doing problem discovery for a product idea.",
-        "Pair with Continuous Discovery Habits for the operating cadence (how often, with whom, in what structure), and read this one first. Mom Test gives you the in-conversation craft; Torres gives you the program around it.",
+        "Pair with Continuous Discovery Habits for the operating cadence (how often, with whom, in what structure), and read this one first. Mom Test gives you the in-conversation craft; Torres gives you the program around it."
       ],
       keyConcepts: [
-        { name: "Anchor questions in past behavior", explanation: "Ask about what the customer actually did last week, not what they'd hypothetically do with your product. Past behavior is the only data that doesn't lie." },
-        { name: "Deflect compliments to specifics", explanation: "When customers say nice things about your idea, redirect to concrete behavior: 'when did you last try to solve this?' Compliments are social politeness, not signal." },
-        { name: "Meaningful commitment as the only real signal", explanation: "Customers are only validating you if they part with something — time, money, reputation, or a hard introduction. Anything cheaper is polite noise." },
-        { name: "Bad data vs. no data", explanation: "Badly run customer interviews produce false confidence, which is worse than no information at all. Better to skip the conversation than to mis-ask the question." },
-        { name: "The three deadly questions to avoid", explanation: "Don't ask 'would you buy this?', 'do you like this idea?', or 'what features would you want?' All three reliably produce misleading answers." },
+        {
+          name: "Anchor questions in past behavior",
+          explanation: "Ask about what the customer actually did last week, not what they'd hypothetically do with your product. Past behavior is the only data that doesn't lie."
+        },
+        {
+          name: "Deflect compliments to specifics",
+          explanation: "When customers say nice things about your idea, redirect to concrete behavior: 'when did you last try to solve this?' Compliments are social politeness, not signal."
+        },
+        {
+          name: "Meaningful commitment as the only real signal",
+          explanation: "Customers are only validating you if they part with something — time, money, reputation, or a hard introduction. Anything cheaper is polite noise."
+        },
+        {
+          name: "Bad data vs. no data",
+          explanation: "Badly run customer interviews produce false confidence, which is worse than no information at all. Better to skip the conversation than to mis-ask the question."
+        },
+        {
+          name: "The three deadly questions to avoid",
+          explanation: "Don't ask 'would you buy this?', 'do you like this idea?', or 'what features would you want?' All three reliably produce misleading answers."
+        }
       ],
       whoShouldRead: "Every first-time founder. Every PM about to run their first round of customer interviews. Senior PMs and founders revisiting customer discovery after a stretch of feature shipping. Possibly the highest ROI-per-page book on this entire list.",
-      pairsWith: ["pm-2", "pm-3"],
-      relatedCaseStudies: ["cs-3", "cs-5"],
+      pairsWith: [
+        "pm-2",
+        "pm-3"
+      ],
+      relatedCaseStudies: [
+        "cs-3",
+        "cs-5"
+      ],
     },
   },
   {
@@ -364,7 +553,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 256,
     year: 2014,
-    tags: ["habits", "engagement", "psychology"],
+    tags: [
+      "habits",
+      "engagement",
+      "psychology"
+    ],
     summary: {
       analysis: [
         "Hooked is the book that defined a decade of consumer product design and then became one of the most contested books in the canon. Nir Eyal published it in 2014, distilling habit-formation research and BJ Fogg's behavior model into a four-step loop — Trigger, Action, Variable Reward, Investment — that became the de facto operating system for designing engagement-driven products. By 2017, virtually every consumer-app PM had at least skimmed it.",
@@ -373,18 +566,39 @@ export const books: Book[] = [
         "By 2018-2019, Hooked had become controversial. The same techniques that built Duolingo's streaks and Instagram's variable feed had also built Candy Crush's predatory monetization and TikTok's compulsion loops. Eyal himself responded with a 2019 follow-up (Indistractable) that reframes the work as 'design for user benefit, not against users,' but the ethical critique stuck. Modern PMs reading Hooked have to read it as a tool with sharp edges, not as a neutral playbook.",
         "The most common misreading is applying the Hook Model to products where habit is the wrong outcome. Most enterprise SaaS products, most one-off tools, most regulated-industry products don't need habit-forming loops — they need utility. PMs who try to retrofit the four-step loop onto a tax-filing tool or a procurement workflow usually create friction, not engagement. Hooked applies cleanly to a narrow band of products: consumer apps where daily engagement is the success metric and the product is the user's choice rather than their employer's.",
         "For Indian product teams, especially the consumer fintech / commerce / content app cohort, the book is high-leverage reading because the Indian consumer-app market in 2026 is still competing primarily on engagement and frequency. The Hook Model is observably present in Cred's reward loops, Dream11's contest cadence, and most short-video apps competing for retention. The ethical conversation is also more raw in India, where the user base skews younger and many users are first-time smartphone users with less developed habits around screen time.",
-        "Pair with Atomic Habits if you want a more recent and ethically cleaner treatment of habit formation, and re-read Hooked critically — for the framework, while keeping the user-welfare conversation explicit.",
+        "Pair with Atomic Habits if you want a more recent and ethically cleaner treatment of habit formation, and re-read Hooked critically — for the framework, while keeping the user-welfare conversation explicit."
       ],
       keyConcepts: [
-        { name: "Hook Model: Trigger → Action → Variable Reward → Investment", explanation: "A four-step loop that habit-forming products run users through, then run again — each loop deepens the user's connection to the product." },
-        { name: "External vs. internal triggers", explanation: "Early on, users come back because of external triggers (notifications, emails). The product becomes a habit when internal triggers (emotions, routines) take over." },
-        { name: "Variable rewards (of the tribe, hunt, self)", explanation: "Unpredictable payoffs are more engaging than predictable ones — and Eyal categorizes them into social (tribe), informational (hunt), and personal-mastery (self) varieties." },
-        { name: "Investment phase (loading the next trigger)", explanation: "Asking the user to put something into the product (data, content, a friend invite) at the end of each loop — both increases their stake and seeds the next trigger." },
-        { name: "Habit zone vs. utility products", explanation: "Not every product needs to be a habit. Habit loops are for products where daily-or-near-daily engagement is the success metric; utility products (tax filing, procurement) need different mechanics." },
+        {
+          name: "Hook Model: Trigger → Action → Variable Reward → Investment",
+          explanation: "A four-step loop that habit-forming products run users through, then run again — each loop deepens the user's connection to the product."
+        },
+        {
+          name: "External vs. internal triggers",
+          explanation: "Early on, users come back because of external triggers (notifications, emails). The product becomes a habit when internal triggers (emotions, routines) take over."
+        },
+        {
+          name: "Variable rewards (of the tribe, hunt, self)",
+          explanation: "Unpredictable payoffs are more engaging than predictable ones — and Eyal categorizes them into social (tribe), informational (hunt), and personal-mastery (self) varieties."
+        },
+        {
+          name: "Investment phase (loading the next trigger)",
+          explanation: "Asking the user to put something into the product (data, content, a friend invite) at the end of each loop — both increases their stake and seeds the next trigger."
+        },
+        {
+          name: "Habit zone vs. utility products",
+          explanation: "Not every product needs to be a habit. Habit loops are for products where daily-or-near-daily engagement is the success metric; utility products (tax filing, procurement) need different mechanics."
+        }
       ],
       whoShouldRead: "Consumer-app PMs working on engagement and retention. Founders building habit-driven products. Less applicable to enterprise/B2B PMs. Read alongside the ethical critique, not in isolation.",
-      pairsWith: ["pm-2", "mg-5"],
-      relatedCaseStudies: ["cs-1", "cs-7"],
+      pairsWith: [
+        "pm-2",
+        "mg-5"
+      ],
+      relatedCaseStudies: [
+        "cs-1",
+        "cs-7"
+      ],
     },
   },
   {
@@ -399,7 +613,11 @@ export const books: Book[] = [
     rating: 4.6,
     pages: 200,
     year: 2018,
-    tags: ["strategy", "outcomes", "process"],
+    tags: [
+      "strategy",
+      "outcomes",
+      "process"
+    ],
     summary: {
       analysis: [
         "Escaping the Build Trap is probably the best on-ramp book for someone new to product management — clearer than Inspired, less philosophical than Continuous Discovery Habits, and shorter than both. Melissa Perri wrote it in 2018 out of her consulting work helping enterprise companies transition from feature-factory operations to outcome-driven product orgs, and the book is structured around the actual symptoms those companies show up with.",
@@ -408,22 +626,41 @@ export const books: Book[] = [
         "The most common misreading is treating it as a manifesto rather than a transition plan. PMs read the early chapters, get fired up about escaping the build trap, and then try to unilaterally stop tracking features in their next planning cycle. That doesn't work — the book is explicit that the trap is an organizational pathology, not an individual one, and escaping it requires alignment across engineering, design, leadership, and finance. The most valuable chapters are the back half, about how to actually run the transformation, and most readers underweight them.",
         "Its main limitation is its enterprise framing. The case studies are mostly large incumbent companies, and the kind of organizational change Perri describes assumes you have enough company stability to invest 2-3 years in a transformation. Startups in their first 18 months don't have a build trap — they have a survival problem, and most of the book's advice on rebuilding strategy and product orgs is overkill at that stage. Read this when your company is over 50 people and starting to feel the bureaucratic drag.",
         "For Indian PMs, this is the single most pragmatically useful book in the canon. The Indian product industry in 2026 has a disproportionate share of mid-size product orgs (200-2000 people) that grew quickly out of services or marketplaces, and most of them have textbook build-trap symptoms: roadmaps driven by sales commitments, success measured by velocity, no real product strategy beneath the feature list. Perri's framework gives Indian PMs both language to diagnose the problem and a credible playbook to argue for fixing it.",
-        "Pair with Inspired for the philosophical foundation and Empowered for the leadership-side reinforcement. The three together form a coherent trilogy, and Perri's book is the most accessible entry point. Many career PMs would benefit from reading Build Trap *first*, even though it came out after Inspired.",
+        "Pair with Inspired for the philosophical foundation and Empowered for the leadership-side reinforcement. The three together form a coherent trilogy, and Perri's book is the most accessible entry point. Many career PMs would benefit from reading Build Trap *first*, even though it came out after Inspired."
       ],
       keyConcepts: [
-        { name: "Output vs. outcome", explanation: "Output is what you shipped (features, releases). Outcome is what changed for customers or the business. Most companies measure the first and ignore the second." },
-        { name: "Feature factory diagnosis", explanation: "Symptoms of a feature factory: success measured by velocity, roadmaps driven by sales commitments, no clear product strategy, and shipped features that nobody can connect to a metric." },
-        { name: "Product Kata (problem framing exercise)", explanation: "A repeatable practice for moving from a vague target to a tested step — describe the target condition, the current condition, the obstacles, and the next experiment." },
-        { name: "Strategy framework (vision → strategic intent → product initiative → option)", explanation: "A cascading hierarchy that connects the company's long-term vision down to today's product bets, with each layer constraining the next." },
-        { name: "Product organization design", explanation: "How the structure of product teams (their boundaries, ownership, and reporting lines) shapes what gets built. Most build-trap symptoms are structural, not individual." },
+        {
+          name: "Output vs. outcome",
+          explanation: "Output is what you shipped (features, releases). Outcome is what changed for customers or the business. Most companies measure the first and ignore the second."
+        },
+        {
+          name: "Feature factory diagnosis",
+          explanation: "Symptoms of a feature factory: success measured by velocity, roadmaps driven by sales commitments, no clear product strategy, and shipped features that nobody can connect to a metric."
+        },
+        {
+          name: "Product Kata (problem framing exercise)",
+          explanation: "A repeatable practice for moving from a vague target to a tested step — describe the target condition, the current condition, the obstacles, and the next experiment."
+        },
+        {
+          name: "Strategy framework (vision → strategic intent → product initiative → option)",
+          explanation: "A cascading hierarchy that connects the company's long-term vision down to today's product bets, with each layer constraining the next."
+        },
+        {
+          name: "Product organization design",
+          explanation: "How the structure of product teams (their boundaries, ownership, and reporting lines) shapes what gets built. Most build-trap symptoms are structural, not individual."
+        }
       ],
       whoShouldRead: "Best first book for someone new to product management. Highly useful for PMs at mid-to-large product orgs (50-2000 people) that have outgrown startup mode but haven't yet built mature product practices. Less critical for early-stage startups or experienced PMs at SV-native companies.",
-      pairsWith: ["pm-1", "pm-4"],
-      relatedCaseStudies: ["cs-3", "cs-27"],
+      pairsWith: [
+        "pm-1",
+        "pm-4"
+      ],
+      relatedCaseStudies: [
+        "cs-3",
+        "cs-27"
+      ],
     },
   },
-
-  // ─── STARTUPS ────────────────────────────────────────────────────────────
   {
     id: "st-1",
     amazonUrl: "https://amzn.to/4dz1wnE",
@@ -436,7 +673,11 @@ export const books: Book[] = [
     rating: 4.6,
     pages: 224,
     year: 2014,
-    tags: ["monopoly", "future", "venture"],
+    tags: [
+      "monopoly",
+      "future",
+      "venture"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -446,18 +687,39 @@ export const books: Book[] = [
         "The most common misreading is taking Thiel's contrarianism as a personality recommendation. PMs and founders read the book, decide to be 'contrarian,' and apply it to product choices that don't reward contrarianism. The book's argument is specifically about *strategic positioning* — finding a small market you can dominate before expanding outward — not about being deliberately weird for its own sake. Most founders who treat the book as a vibes manual rather than a strategy manual end up worse off.",
         "Its limitations are well documented. The book is heavily influenced by Thiel's specific bets (PayPal, Palantir, Facebook) and undersells how much of his thesis depends on a particular moment in US tech history with cheap capital, deep talent markets, and friendly regulation. Critics also note that Thiel's politics and public stances since 2016 have made many readers re-evaluate the book through a different lens, which is fair — though the underlying strategic frameworks largely stand on their own and don't require ideological alignment to be useful.",
         "For Indian founders, Zero to One is most useful as a corrective to the 'be the Indian version of X' instinct that dominated 2015-2022 Indian startup funding. The Indian ecosystem has been heavily clone-driven, and Thiel's argument that genuinely large outcomes come from creating new categories is genuinely strategic advice for the next wave of Indian founders. That said, the monopoly framework requires capital-market conditions that haven't always existed in India — defensible Indian monopolies often look more like distribution-and-regulatory monopolies (Reliance Jio, Zomato) than pure technology monopolies.",
-        "Pair with The Hard Thing About Hard Things for the operational reality that Thiel's book deliberately abstracts away, and with Hooked or Inspired for what to actually build inside the monopoly position the book argues you should pursue. Read it once, return to it every two years — the parts that resonate change as career stage changes.",
+        "Pair with The Hard Thing About Hard Things for the operational reality that Thiel's book deliberately abstracts away, and with Hooked or Inspired for what to actually build inside the monopoly position the book argues you should pursue. Read it once, return to it every two years — the parts that resonate change as career stage changes."
       ],
       keyConcepts: [
-        { name: "Zero to one (new) vs. one to n (incremental)", explanation: "Building something genuinely new is a different game than scaling something that already exists — and most large outcomes come from the first kind, not the second." },
-        { name: "Monopoly as strategic goal", explanation: "Competition destroys profit; durable monopoly preserves it. Thiel argues founders should aim to build a monopoly in some narrow category, not to win a 'fair' market." },
-        { name: "Small markets you can dominate first", explanation: "Pick a market so small that you can credibly own it within 2-3 years, then expand outward from monopoly position. Starting big and losing is worse than starting small and winning." },
-        { name: "Definite optimism (vs. indefinite)", explanation: "Definite optimism: you have a specific plan for a better future. Indefinite optimism: you believe things will get better but don't know how. Thiel argues definite optimism is what produces large outcomes." },
-        { name: "Power law of returns", explanation: "In venture-scale outcomes, returns follow a power law: a tiny number of bets produce most of the value. This shapes every decision from portfolio construction to which company to join." },
+        {
+          name: "Zero to one (new) vs. one to n (incremental)",
+          explanation: "Building something genuinely new is a different game than scaling something that already exists — and most large outcomes come from the first kind, not the second."
+        },
+        {
+          name: "Monopoly as strategic goal",
+          explanation: "Competition destroys profit; durable monopoly preserves it. Thiel argues founders should aim to build a monopoly in some narrow category, not to win a 'fair' market."
+        },
+        {
+          name: "Small markets you can dominate first",
+          explanation: "Pick a market so small that you can credibly own it within 2-3 years, then expand outward from monopoly position. Starting big and losing is worse than starting small and winning."
+        },
+        {
+          name: "Definite optimism (vs. indefinite)",
+          explanation: "Definite optimism: you have a specific plan for a better future. Indefinite optimism: you believe things will get better but don't know how. Thiel argues definite optimism is what produces large outcomes."
+        },
+        {
+          name: "Power law of returns",
+          explanation: "In venture-scale outcomes, returns follow a power law: a tiny number of bets produce most of the value. This shapes every decision from portfolio construction to which company to join."
+        }
       ],
       whoShouldRead: "Founders pre-Series A who are choosing what market to attack, and senior PMs at growth-stage companies who want to think about category positioning. Less immediately useful for day-to-day operational decisions or for IC PMs without strategy ownership.",
-      pairsWith: ["st-3", "st-2"],
-      relatedCaseStudies: ["cs-4", "cs-15"],
+      pairsWith: [
+        "st-3",
+        "st-2"
+      ],
+      relatedCaseStudies: [
+        "cs-4",
+        "cs-15"
+      ],
     },
   },
   {
@@ -472,7 +734,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 336,
     year: 2011,
-    tags: ["lean", "mvp", "iteration"],
+    tags: [
+      "lean",
+      "mvp",
+      "iteration"
+    ],
     summary: {
       analysis: [
         "The Lean Startup is the book that named a movement and then got swallowed by it. Eric Ries published it in 2011, drawing on his experience at IMVU and on Steve Blank's customer development work, and within three years it had become the single most-quoted methodology in the global startup ecosystem. By 2015 'MVP,' 'pivot,' and 'build-measure-learn' had crossed from startup jargon into corporate innovation programs at Fortune 500s.",
@@ -481,18 +747,39 @@ export const books: Book[] = [
         "The most common misreading by far is treating 'MVP' as 'first version of the product I want to build, minus features.' That is not what the book argues. An MVP in Ries's framing is the smallest experiment that produces validated learning about a specific hypothesis — sometimes it's a landing page, a concierge service, or a wizard-of-oz prototype. The vast majority of founders and PMs who say 'we built an MVP' have actually just built a small version of their product, which is a very different (and often worse) thing.",
         "The book's main limitation, visible mostly in hindsight, is that it generalized from a narrow set of cases — primarily B2C SaaS / consumer internet — to all startups. It works less well for deep-tech, hardware, biotech, and regulated industries where the cost of iteration is genuinely high and the build-measure-learn cycle takes years per loop. By the late 2010s, even Ries himself was walking back some of the harder claims, particularly the suggestion that lean methodology applied uniformly to corporate innovation programs (which largely failed).",
         "For Indian founders, the book has been culturally important but operationally tricky. Indian markets often punish the visible-experimentation, ship-the-rough-edges approach in ways US markets don't — Indian users are notoriously unforgiving of bugs and feature gaps, especially for paid products, and trust takes longer to build. The framework still applies, but the calibration of how rough an MVP can be in market is materially different. Read it for the philosophy, but recalibrate the MVP threshold for the audience.",
-        "Pair with The Lean Product Playbook for the operational worksheet that turns Ries's philosophy into a concrete exercise, and with The Mom Test for the customer-conversation craft Ries waves at but never really teaches. The trio together makes more sense than any of them alone.",
+        "Pair with The Lean Product Playbook for the operational worksheet that turns Ries's philosophy into a concrete exercise, and with The Mom Test for the customer-conversation craft Ries waves at but never really teaches. The trio together makes more sense than any of them alone."
       ],
       keyConcepts: [
-        { name: "Build-measure-learn loop", explanation: "The core operating cycle: build the smallest thing that produces real customer data, measure what happens, learn whether your hypothesis held — then loop." },
-        { name: "MVP as smallest validated learning experiment", explanation: "An MVP isn't a stripped-down first product — it's the smallest experiment (sometimes a landing page or concierge service) that produces validated learning about a specific hypothesis." },
-        { name: "Pivot (vs. persevere)", explanation: "After each learning loop, decide whether to keep going (persevere) or change a core assumption (pivot). The decision should be based on data, not on founder stubbornness." },
-        { name: "Innovation accounting", explanation: "A way to measure progress for products that don't have meaningful revenue yet — using cohort retention, customer behavior, and validated learning rather than vanity totals." },
-        { name: "Vanity metrics vs. actionable metrics", explanation: "Vanity metrics (total downloads, cumulative signups) always go up and tell you nothing. Actionable metrics (conversion by cohort, retention curves) can show whether the product is improving or not." },
+        {
+          name: "Build-measure-learn loop",
+          explanation: "The core operating cycle: build the smallest thing that produces real customer data, measure what happens, learn whether your hypothesis held — then loop."
+        },
+        {
+          name: "MVP as smallest validated learning experiment",
+          explanation: "An MVP isn't a stripped-down first product — it's the smallest experiment (sometimes a landing page or concierge service) that produces validated learning about a specific hypothesis."
+        },
+        {
+          name: "Pivot (vs. persevere)",
+          explanation: "After each learning loop, decide whether to keep going (persevere) or change a core assumption (pivot). The decision should be based on data, not on founder stubbornness."
+        },
+        {
+          name: "Innovation accounting",
+          explanation: "A way to measure progress for products that don't have meaningful revenue yet — using cohort retention, customer behavior, and validated learning rather than vanity totals."
+        },
+        {
+          name: "Vanity metrics vs. actionable metrics",
+          explanation: "Vanity metrics (total downloads, cumulative signups) always go up and tell you nothing. Actionable metrics (conversion by cohort, retention curves) can show whether the product is improving or not."
+        }
       ],
       whoShouldRead: "Founders pre-PMF and PMs at early-stage companies. Still useful as a foundational text for anyone who hasn't read it, though the operational specifics are better covered in the books that followed it. Less applicable to hardware, biotech, or highly regulated industries.",
-      pairsWith: ["pm-3", "pm-8"],
-      relatedCaseStudies: ["cs-3", "cs-10"],
+      pairsWith: [
+        "pm-3",
+        "pm-8"
+      ],
+      relatedCaseStudies: [
+        "cs-3",
+        "cs-10"
+      ],
     },
   },
   {
@@ -507,7 +794,11 @@ export const books: Book[] = [
     rating: 4.8,
     pages: 304,
     year: 2014,
-    tags: ["leadership", "crisis", "culture"],
+    tags: [
+      "leadership",
+      "crisis",
+      "culture"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -517,18 +808,39 @@ export const books: Book[] = [
         "The most common misreading is treating it as a memoir to be read once and put down. The chapters are designed to be returned to when the specific situation arrives in your own company. Founders who read it preemptively often find it abstract; founders who read the relevant chapter the week they're firing an executive or laying off 30% of the team find it genuinely operational. The book functions more like a reference manual than a narrative.",
         "Its main limitation is that it's pitched at growth-stage and later startups — the dynamics it describes assume you already have 50-500 employees, real revenue, and external investors. Earlier-stage founders sometimes mistake the book for a pre-PMF survival guide and find it doesn't apply yet. The relevance curve is roughly: low pre-Series A, high Series A through C, lower again at IPO scale. Read it just in time, not far ahead of need.",
         "For Indian founders, this book has unusual cross-cultural relevance because the operational hardships it describes (executive turnover, founder conflict, layoffs in down cycles, demoting people you hired in your first ten) are present in every market. The Indian funding cycles of 2022-2024 saw many growth-stage Indian companies execute layoffs and exec changes their founding teams were unprepared for, and Horowitz's chapters on those specific decisions have been quietly circulated through Indian founder WhatsApp groups for two years. The directness is the value — Indian founders rarely get to read first-person accounts of these decisions from people they trust.",
-        "Pair with High Output Management for the operational management fundamentals Horowitz assumes you have, and with Lost and Founder for a different (Rand Fishkin's) and more bootstrapped-founder perspective on the same hard moments.",
+        "Pair with High Output Management for the operational management fundamentals Horowitz assumes you have, and with Lost and Founder for a different (Rand Fishkin's) and more bootstrapped-founder perspective on the same hard moments."
       ],
       keyConcepts: [
-        { name: "Wartime CEO vs. peacetime CEO", explanation: "Different stages of a company need different leadership styles. Peacetime CEOs optimize and expand; wartime CEOs make hard, decisive calls under existential pressure. Many CEOs fail by running the wrong mode at the wrong time." },
-        { name: "How to fire executives", explanation: "A specific playbook for one of the hardest tasks in management — recognizing the call early, having the conversation directly, preserving the person's dignity, and communicating it to the rest of the team without lying." },
-        { name: "Layoffs without lying", explanation: "When you have to do layoffs, tell the truth about why — the team will know anyway, and lying destroys trust with the people you're keeping. Horowitz's case is that honest layoffs are survivable; dishonest ones aren't." },
-        { name: "The struggle (and recognizing it)", explanation: "Horowitz's term for the specific psychological state of running a failing company — sleeplessness, dread, second-guessing every decision. Naming it makes it easier to function through it." },
-        { name: "Hiring 'product' vs. 'company' executives", explanation: "Some executives are great at building a product or a function (product execs); others are great at building the company's overall machinery (company execs). Companies need both, and confusing them in a hire is expensive." },
+        {
+          name: "Wartime CEO vs. peacetime CEO",
+          explanation: "Different stages of a company need different leadership styles. Peacetime CEOs optimize and expand; wartime CEOs make hard, decisive calls under existential pressure. Many CEOs fail by running the wrong mode at the wrong time."
+        },
+        {
+          name: "How to fire executives",
+          explanation: "A specific playbook for one of the hardest tasks in management — recognizing the call early, having the conversation directly, preserving the person's dignity, and communicating it to the rest of the team without lying."
+        },
+        {
+          name: "Layoffs without lying",
+          explanation: "When you have to do layoffs, tell the truth about why — the team will know anyway, and lying destroys trust with the people you're keeping. Horowitz's case is that honest layoffs are survivable; dishonest ones aren't."
+        },
+        {
+          name: "The struggle (and recognizing it)",
+          explanation: "Horowitz's term for the specific psychological state of running a failing company — sleeplessness, dread, second-guessing every decision. Naming it makes it easier to function through it."
+        },
+        {
+          name: "Hiring 'product' vs. 'company' executives",
+          explanation: "Some executives are great at building a product or a function (product execs); others are great at building the company's overall machinery (company execs). Companies need both, and confusing them in a hire is expensive."
+        }
       ],
       whoShouldRead: "Founders and CEOs at growth-stage companies (Series A through Series C). Heads of product transitioning toward CEO or COO roles. Less immediately useful for pre-PMF founders or IC PMs. Return to specific chapters as the situations arise.",
-      pairsWith: ["mg-1", "st-9"],
-      relatedCaseStudies: ["cs-8", "cs-15"],
+      pairsWith: [
+        "mg-1",
+        "st-9"
+      ],
+      relatedCaseStudies: [
+        "cs-8",
+        "cs-15"
+      ],
     },
   },
   {
@@ -543,7 +855,11 @@ export const books: Book[] = [
     rating: 4.3,
     pages: 336,
     year: 2018,
-    tags: ["scaling", "growth", "network"],
+    tags: [
+      "scaling",
+      "growth",
+      "network"
+    ],
     summary: {
       analysis: [
         "Blitzscaling is an artifact of its specific historical moment. Reid Hoffman (LinkedIn co-founder, prominent angel and partner at Greylock) co-wrote it with Chris Yeh in 2018, based on his Stanford CS183C lecture series. The book argues that in winner-take-most markets — particularly network-effect businesses — prioritizing speed over efficiency is the rational strategy, even when it looks reckless to outsiders.",
@@ -552,18 +868,40 @@ export const books: Book[] = [
         "The most common misreading is applying blitzscaling logic to markets that don't have winner-take-most dynamics. Hoffman is explicit that the framework only makes sense when network effects, switching costs, or scale economies create real winner-takes-most outcomes — most markets don't have these properties. Founders who blitzscale a regional service business, a vertical SaaS in a non-WTA category, or a content business usually destroy more value than they create. The book's framework requires a careful market diagnosis before applying.",
         "Its hardest limitation, visible after 2022, is that blitzscaling implicitly assumes infinite cheap capital. When interest rates went from 0% to 5% and growth-at-all-costs SaaS multiples compressed, the survivability of blitzscaled companies dropped sharply. The 2022-2024 cohort of layoffs (Meta, Salesforce, Stripe, ShareChat, Byju's) was largely a correction against blitzscaled headcount that the underlying revenue couldn't support. The book doesn't address what blitzscaling looks like in a cost-of-capital environment above 0%.",
         "For Indian founders, the book has been historically influential and is now controversial. The 2017-2021 Indian funding boom was effectively a blitzscaling era, and the 2022-2024 correction (Byju's, Unacademy, BharatPe, OYO, Paytm) is largely the consequence. Indian founders who absorbed the book uncritically tended to over-hire and over-spend in pursuit of dominance in markets that turned out not to have winner-take-most dynamics. Worth reading as a historical document and as a diagnostic tool, but recalibrate for the post-2022 environment.",
-        "Pair with Zero to One for the strategic positioning that should precede any scaling decision, and with The Hard Thing About Hard Things for the operational reality of executing on the kinds of decisions Blitzscaling argues are correct.",
+        "Pair with Zero to One for the strategic positioning that should precede any scaling decision, and with The Hard Thing About Hard Things for the operational reality of executing on the kinds of decisions Blitzscaling argues are correct."
       ],
       keyConcepts: [
-        { name: "Winner-take-most markets", explanation: "Markets where network effects, switching costs, or scale economies mean the leading player captures disproportionate value. Blitzscaling only makes sense in these markets — not in normal ones." },
-        { name: "Speed over efficiency in WTA contexts", explanation: "In a winner-take-most race, getting to scale first matters more than getting there profitably. This justifies decisions that look reckless under normal business logic — but only if the market actually has WTA dynamics." },
-        { name: "Family → Tribe → Village → City → Nation", explanation: "A five-stage scaling progression based on company size, with different operating priorities at each stage. The mistakes that work at Family stage break things at City stage." },
-        { name: "Counterintuitive rules of scale", explanation: "During hypergrowth, normal management instincts go wrong: tolerate fires you'd normally put out, hire people you'll later have to replace, ignore complaints from non-target customers." },
-        { name: "Network effects as defensibility", explanation: "Network effects (the product gets more valuable as more people use it) are the strongest form of moat, which is why Hoffman argues they're worth racing to capture even at high burn rates." },
+        {
+          name: "Winner-take-most markets",
+          explanation: "Markets where network effects, switching costs, or scale economies mean the leading player captures disproportionate value. Blitzscaling only makes sense in these markets — not in normal ones."
+        },
+        {
+          name: "Speed over efficiency in WTA contexts",
+          explanation: "In a winner-take-most race, getting to scale first matters more than getting there profitably. This justifies decisions that look reckless under normal business logic — but only if the market actually has WTA dynamics."
+        },
+        {
+          name: "Family → Tribe → Village → City → Nation",
+          explanation: "A five-stage scaling progression based on company size, with different operating priorities at each stage. The mistakes that work at Family stage break things at City stage."
+        },
+        {
+          name: "Counterintuitive rules of scale",
+          explanation: "During hypergrowth, normal management instincts go wrong: tolerate fires you'd normally put out, hire people you'll later have to replace, ignore complaints from non-target customers."
+        },
+        {
+          name: "Network effects as defensibility",
+          explanation: "Network effects (the product gets more valuable as more people use it) are the strongest form of moat, which is why Hoffman argues they're worth racing to capture even at high burn rates."
+        }
       ],
       whoShouldRead: "Founders in genuinely network-effect-driven markets considering whether to blitzscale. Senior PMs and VPs at hypergrowth companies trying to understand what's happening to them. Read critically alongside post-2022 examples of blitzscaling failures.",
-      pairsWith: ["st-1", "st-3"],
-      relatedCaseStudies: ["cs-6", "cs-12", "cs-25"],
+      pairsWith: [
+        "st-1",
+        "st-3"
+      ],
+      relatedCaseStudies: [
+        "cs-6",
+        "cs-12",
+        "cs-25"
+      ],
     },
   },
   {
@@ -578,7 +916,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 256,
     year: 2014,
-    tags: ["growth", "channels", "marketing"],
+    tags: [
+      "growth",
+      "channels",
+      "marketing"
+    ],
     summary: {
       analysis: [
         "Traction is the rare growth book written by founders who actually grew a company themselves. Gabriel Weinberg (DuckDuckGo) and Justin Mares wrote it in 2014, and the book's authority comes from the fact that DuckDuckGo had genuinely tested most of the channels it describes during its long climb from side project to default privacy-focused search engine. It reads as a working guide, not a theoretical taxonomy.",
@@ -587,18 +929,39 @@ export const books: Book[] = [
         "The most common misreading is treating Traction as a recipe book — read it, pick one channel, execute. The book is explicit that different products require different channels and that the matchup is non-obvious. Founders who pattern-match (we're a SaaS, so we'll do content marketing; we're a marketplace, so we'll do paid acquisition) miss the entire point of running the Bullseye exercise. The book's value is in the discipline of testing, not in the channel taxonomy.",
         "Its limitation is the rapid aging of the specific channel economics. The book's discussion of Facebook ads, Google AdWords, content marketing, and even Twitter (now X) reflects 2013-2014 conditions where channels were less efficient-market and many were genuinely undervalued. By 2026, paid acquisition costs across most channels have risen 5-20x, organic reach on social platforms has collapsed, and SEO has been disrupted by AI search. The framework still works; the underlying channel data does not.",
         "For Indian startups, Traction is unusually useful because the channel mix in India is genuinely different and less explored than the global default. SMS, WhatsApp, Bharat-tier YouTube, regional creator marketing, ground-team acquisition, and quick-commerce embed channels are all underused by Indian startups that default to copying US playbooks. The Bullseye discipline — test 19 channels, double down on the unexpected winner — is more valuable in Indian markets precisely because the unexpected winners are different and less obvious than in US markets.",
-        "Pair with Hacking Growth for the experiment-design layer (Sean Ellis's book is stronger on the actual experimentation methodology) and Product-Led Growth if the product itself is going to be the primary channel. The three together cover the full acquisition stack for most modern startups.",
+        "Pair with Hacking Growth for the experiment-design layer (Sean Ellis's book is stronger on the actual experimentation methodology) and Product-Led Growth if the product itself is going to be the primary channel. The three together cover the full acquisition stack for most modern startups."
       ],
       keyConcepts: [
-        { name: "Bullseye Framework (test 3, scale 1)", explanation: "Brainstorm all 19 possible channels → narrow to a middle ring of 3 most-promising → run small experiments on those 3 → double down on the one that works best. Most founders skip the brainstorm and jump to scaling." },
-        { name: "19 acquisition channels", explanation: "A complete taxonomy: SEO, paid acquisition, content marketing, sales, viral, partnerships, PR, trade shows, speaking, etc. The point is to test channels you don't believe in, not just the obvious ones." },
-        { name: "Channel testing as discipline", explanation: "Most channel decisions fail because founders never structurally test alternatives — they go with the channel their network endorses. The discipline of testing 3 unfamiliar channels is the book's main contribution." },
-        { name: "Critical Path Method (50% time on product, 50% on traction)", explanation: "From the earliest days, founders should split time evenly between building the product and proving traction. Building first and 'figuring out distribution later' is one of the most common failure modes." },
-        { name: "Channel-product fit", explanation: "Different products win on different channels. A B2B SaaS tool, a consumer app, and a marketplace each have a small set of channels that work for them — the framework is about finding yours, not optimizing one universal channel." },
+        {
+          name: "Bullseye Framework (test 3, scale 1)",
+          explanation: "Brainstorm all 19 possible channels → narrow to a middle ring of 3 most-promising → run small experiments on those 3 → double down on the one that works best. Most founders skip the brainstorm and jump to scaling."
+        },
+        {
+          name: "19 acquisition channels",
+          explanation: "A complete taxonomy: SEO, paid acquisition, content marketing, sales, viral, partnerships, PR, trade shows, speaking, etc. The point is to test channels you don't believe in, not just the obvious ones."
+        },
+        {
+          name: "Channel testing as discipline",
+          explanation: "Most channel decisions fail because founders never structurally test alternatives — they go with the channel their network endorses. The discipline of testing 3 unfamiliar channels is the book's main contribution."
+        },
+        {
+          name: "Critical Path Method (50% time on product, 50% on traction)",
+          explanation: "From the earliest days, founders should split time evenly between building the product and proving traction. Building first and 'figuring out distribution later' is one of the most common failure modes."
+        },
+        {
+          name: "Channel-product fit",
+          explanation: "Different products win on different channels. A B2B SaaS tool, a consumer app, and a marketplace each have a small set of channels that work for them — the framework is about finding yours, not optimizing one universal channel."
+        }
       ],
       whoShouldRead: "Founders post-PMF figuring out their growth motion, and heads of growth at early-stage startups. Especially valuable for Indian founders whose channel mix should diverge from the global default. Less useful for very early-stage (pre-PMF) or very late-stage (already-scaled) companies.",
-      pairsWith: ["st-8", "pm-6"],
-      relatedCaseStudies: ["cs-5", "cs-11"],
+      pairsWith: [
+        "st-8",
+        "pm-6"
+      ],
+      relatedCaseStudies: [
+        "cs-5",
+        "cs-11"
+      ],
     },
   },
   {
@@ -613,7 +976,11 @@ export const books: Book[] = [
     rating: 4.4,
     pages: 608,
     year: 2012,
-    tags: ["customer dev", "business model", "validation"],
+    tags: [
+      "customer dev",
+      "business model",
+      "validation"
+    ],
     summary: {
       analysis: [
         "The Startup Owner's Manual is the most encyclopedic and least-read book on this list. Steve Blank (Stanford / Berkeley / Columbia, four-time founder, originator of the customer development methodology) co-wrote it with Bob Dorf in 2012 as the operational companion to his earlier The Four Steps to the Epiphany. At 608 pages of checklists and step-by-step processes, it's deliberately a reference manual, not a narrative.",
@@ -622,18 +989,39 @@ export const books: Book[] = [
         "The most common misreading is treating the book as a checklist to be executed sequentially. Blank's actual argument is that customer development is iterative — you cycle through the four phases multiple times as the business model evolves, and the checklists are diagnostic tools, not project plans. Founders who execute the manual as a waterfall (do all of discovery, then all of validation) typically miss the iterative spirit and lose the methodology's main advantage.",
         "Its limitation is its weight. The book is genuinely long, dense, and structured for academic teaching rather than founder consumption. For most early-stage founders, the right move is to read The Lean Startup or The Lean Product Playbook as the primary text and treat Blank as a reference to consult when stuck on a specific stage. Treating Startup Owner's Manual as a cover-to-cover read often produces analysis paralysis rather than action.",
         "For Indian founders and university entrepreneurship programs, the book has unusual utility because the structured-academic framing fits well with the way most Indian business schools teach entrepreneurship — and because Blank's I-Corps program has been piloted at IIM Bangalore and IIT Madras. For self-taught Indian founders coming from engineering or product backgrounds without an MBA, the book is best dipped into for specific chapters rather than read linearly.",
-        "Pair with The Lean Startup as the readable on-ramp, and with The Lean Product Playbook as the practical worksheet. Reading all three exposes the lineage of ideas and helps you understand why certain frameworks (PMF Pyramid, MVP, pivot-or-persevere) feel slightly different across books — they're all descendants of Blank's original framework, refracted through different authors.",
+        "Pair with The Lean Startup as the readable on-ramp, and with The Lean Product Playbook as the practical worksheet. Reading all three exposes the lineage of ideas and helps you understand why certain frameworks (PMF Pyramid, MVP, pivot-or-persevere) feel slightly different across books — they're all descendants of Blank's original framework, refracted through different authors."
       ],
       keyConcepts: [
-        { name: "Customer development model (4 stages)", explanation: "Blank's foundational framework: startups are not small versions of large companies — they're temporary organizations searching for a repeatable business model, and the search has its own process." },
-        { name: "Customer Discovery → Validation → Creation → Building", explanation: "The four stages: figure out the problem worth solving, validate that customers will pay for the solution, scale up demand creation, then build the company. Most failed startups skipped one of the first two." },
-        { name: "Business Model Canvas integration", explanation: "The book pairs customer development with the Business Model Canvas — a one-page visualization of the nine components of a business model that gets iteratively refined as customer learning accumulates." },
-        { name: "Pivot-or-persevere decisions", explanation: "At the end of each stage, the founder makes an explicit decision: does the data support continuing on this hypothesis, or do we change a core assumption? Pivots should be conscious, not drifting." },
-        { name: "Search vs. execute", explanation: "Startups are in 'search mode' for a business model; established companies are in 'execute mode' on a known one. Confusing the two — running execution playbooks at a startup or search playbooks at a corporate — is the root cause of most failures in each context." },
+        {
+          name: "Customer development model (4 stages)",
+          explanation: "Blank's foundational framework: startups are not small versions of large companies — they're temporary organizations searching for a repeatable business model, and the search has its own process."
+        },
+        {
+          name: "Customer Discovery → Validation → Creation → Building",
+          explanation: "The four stages: figure out the problem worth solving, validate that customers will pay for the solution, scale up demand creation, then build the company. Most failed startups skipped one of the first two."
+        },
+        {
+          name: "Business Model Canvas integration",
+          explanation: "The book pairs customer development with the Business Model Canvas — a one-page visualization of the nine components of a business model that gets iteratively refined as customer learning accumulates."
+        },
+        {
+          name: "Pivot-or-persevere decisions",
+          explanation: "At the end of each stage, the founder makes an explicit decision: does the data support continuing on this hypothesis, or do we change a core assumption? Pivots should be conscious, not drifting."
+        },
+        {
+          name: "Search vs. execute",
+          explanation: "Startups are in 'search mode' for a business model; established companies are in 'execute mode' on a known one. Confusing the two — running execution playbooks at a startup or search playbooks at a corporate — is the root cause of most failures in each context."
+        }
       ],
       whoShouldRead: "Founders running a structured customer-development process and entrepreneurship educators. Best used as a reference rather than a cover-to-cover read. For most working founders, start with The Lean Startup and treat this as the source material to consult selectively.",
-      pairsWith: ["st-2", "pm-3"],
-      relatedCaseStudies: ["cs-3", "cs-10"],
+      pairsWith: [
+        "st-2",
+        "pm-3"
+      ],
+      relatedCaseStudies: [
+        "cs-3",
+        "cs-10"
+      ],
     },
   },
   {
@@ -648,7 +1036,11 @@ export const books: Book[] = [
     rating: 4.6,
     pages: 272,
     year: 2019,
-    tags: ["funding", "VC", "terms"],
+    tags: [
+      "funding",
+      "VC",
+      "terms"
+    ],
     summary: {
       analysis: [
         "Venture Deals is the closest thing to a translator's dictionary between founders and VCs. Brad Feld (Foundry Group co-founder, prolific writer, one of the originators of the modern term-sheet transparency movement) co-wrote it with Jason Mendelson, and the book has been updated through four editions (most recently 2019) as deal terminology evolved. The fact that Feld and Mendelson are practicing VCs writing this for founders is the entire reason the book has authority — it's a VC explaining VC terms in plain language, not a lawyer explaining law.",
@@ -657,18 +1049,39 @@ export const books: Book[] = [
         "The most common misreading is treating the book as adversarial intelligence ('learn the tricks VCs use against you'). Feld is explicit that the book's goal is the opposite — to lower the friction in negotiations by ensuring both sides understand what's being agreed to, which usually leads to faster closes and better long-term founder-investor relationships. Founders who read it as a combat manual and walk into negotiations with a chip on their shoulder usually do worse than founders who read it as a vocabulary lesson.",
         "Its main limitation is jurisdictional. The book is written from a US Delaware-C-corp perspective, with US securities law assumptions baked into every chapter. For founders raising in non-US jurisdictions, the terminology translates roughly but the legal mechanics behind the terms differ materially. Indian founders raising under Indian Companies Act, in particular, encounter different mechanics around CCPS structures, FEMA rules, and downstream-investment classifications that the book doesn't cover.",
         "For Indian founders, this is essential reading despite the US framing, for one specific reason: most Indian startups that raise institutional capital today do so under either Delaware structures (flips) or US-template Indian term sheets, and the underlying terminology is overwhelmingly US-derived. Reading Venture Deals as a vocabulary primer, then pairing it with an Indian VC lawyer for the local mechanics, is the typical playbook. The book also pairs well with iSpirt's open-source SHA templates, which are India-specific.",
-        "Pair with The Hard Thing About Hard Things for the operational reality of running the company you've raised money for, and with Lost and Founder for a founder-perspective view of how VC dynamics play out from the other side over a 10+ year journey.",
+        "Pair with The Hard Thing About Hard Things for the operational reality of running the company you've raised money for, and with Lost and Founder for a founder-perspective view of how VC dynamics play out from the other side over a 10+ year journey."
       ],
       keyConcepts: [
-        { name: "Term sheet anatomy (economic terms vs. control terms)", explanation: "Every term in a term sheet falls into one of two buckets: who gets how much money (economic) or who decides what (control). Sorting them this way makes negotiations much clearer." },
-        { name: "Liquidation preferences (1x non-participating vs. participating)", explanation: "The order and multiple in which investors get paid in an exit. 1x non-participating is standard and founder-friendly; participating preferred (double-dipping) tilts heavily toward investors and should be negotiated hard." },
-        { name: "Anti-dilution (broad-based weighted average vs. full ratchet)", explanation: "What happens to investor ownership if the next round prices lower than theirs. Broad-based weighted average is standard; full ratchet (investor's price resets to the new lower price) is brutal and should usually be refused." },
-        { name: "Option pool shuffle", explanation: "When investors require an option pool to be created or expanded before the round, the dilution comes out of the founders' pre-money stake — not from everyone. A frequently-missed cost to founders." },
-        { name: "Drag-along, tag-along, no-shop, MFN clauses", explanation: "Four common control terms: who can force whom to sell (drag), who can come along on a sale (tag), whether you can shop the round (no-shop), and whether earlier investors get the same deal as future ones (MFN). Each has real consequences founders should understand." },
+        {
+          name: "Term sheet anatomy (economic terms vs. control terms)",
+          explanation: "Every term in a term sheet falls into one of two buckets: who gets how much money (economic) or who decides what (control). Sorting them this way makes negotiations much clearer."
+        },
+        {
+          name: "Liquidation preferences (1x non-participating vs. participating)",
+          explanation: "The order and multiple in which investors get paid in an exit. 1x non-participating is standard and founder-friendly; participating preferred (double-dipping) tilts heavily toward investors and should be negotiated hard."
+        },
+        {
+          name: "Anti-dilution (broad-based weighted average vs. full ratchet)",
+          explanation: "What happens to investor ownership if the next round prices lower than theirs. Broad-based weighted average is standard; full ratchet (investor's price resets to the new lower price) is brutal and should usually be refused."
+        },
+        {
+          name: "Option pool shuffle",
+          explanation: "When investors require an option pool to be created or expanded before the round, the dilution comes out of the founders' pre-money stake — not from everyone. A frequently-missed cost to founders."
+        },
+        {
+          name: "Drag-along, tag-along, no-shop, MFN clauses",
+          explanation: "Four common control terms: who can force whom to sell (drag), who can come along on a sale (tag), whether you can shop the round (no-shop), and whether earlier investors get the same deal as future ones (MFN). Each has real consequences founders should understand."
+        }
       ],
       whoShouldRead: "Every first-time founder before raising their first priced round. Founders raising any round who don't fully understand their existing term sheets. Less useful for founders who have raised multiple priced rounds (you'll already know most of it).",
-      pairsWith: ["st-3", "st-9"],
-      relatedCaseStudies: ["cs-9", "cs-20"],
+      pairsWith: [
+        "st-3",
+        "st-9"
+      ],
+      relatedCaseStudies: [
+        "cs-9",
+        "cs-20"
+      ],
     },
   },
   {
@@ -683,7 +1096,11 @@ export const books: Book[] = [
     rating: 4.4,
     pages: 320,
     year: 2017,
-    tags: ["growth hacking", "experiments", "retention"],
+    tags: [
+      "growth hacking",
+      "experiments",
+      "retention"
+    ],
     summary: {
       analysis: [
         "Hacking Growth is the founding document of the modern growth function — written by the person who arguably invented the term 'growth hacker.' Sean Ellis coined the phrase in a 2010 blog post, ran growth at Dropbox, LogMeIn, and Eventbrite during their inflection years, and then co-wrote this book with Morgan Brown in 2017 to document the process he'd developed across those companies.",
@@ -692,18 +1109,39 @@ export const books: Book[] = [
         "The most common misreading is fixating on the experiment examples (the Dropbox referral, the Airbnb professional photography, the LinkedIn email gravity loop) and missing that those examples are illustrations of a process rather than tactics to copy. Founders who try to copy specific growth tactics typically fail because the tactics were calibrated to a specific product, audience, and channel environment that no longer exists. The book's actual value is the framework for generating and testing your own growth hypotheses, not the historical examples.",
         "Its limitation is that it assumes a mature analytics stack, a dedicated growth team, and product flexibility to ship experiments quickly. Early-stage startups without analytics infrastructure or without engineering capacity to ship A/B tests on a weekly cadence often find the book aspirational rather than operational. There's an implicit minimum company size (probably Series A and beyond, 30+ employees, real revenue and active users) below which the framework is more theatre than substance.",
         "For Indian product teams, this book pairs particularly well with the data-rich, high-volume consumer apps that have become the default in Indian product. Indian apps like Cred, Meesho, Dream11, and Zerodha have growth teams operating exactly on the cadence this book describes — and the book has been visibly influential in how Indian growth teams structure their weekly experiment cycles. The ICE framework specifically is the most common prioritization framework in Indian growth team rituals.",
-        "Pair with Traction for the channel-discovery layer (Weinberg's Bullseye comes before Ellis's experiment cadence — you need to know which channel to optimize before you start optimizing it) and Product-Led Growth for the product-led variant of the same operating model.",
+        "Pair with Traction for the channel-discovery layer (Weinberg's Bullseye comes before Ellis's experiment cadence — you need to know which channel to optimize before you start optimizing it) and Product-Led Growth for the product-led variant of the same operating model."
       ],
       keyConcepts: [
-        { name: "Growth team operating model", explanation: "A cross-functional team (PM, engineer, designer, analyst, marketer) that owns a specific funnel stage or metric, with the autonomy to ship experiments without going through the normal product backlog." },
-        { name: "ICE framework (Impact, Confidence, Ease)", explanation: "A prioritization scoring system for growth experiments. Each candidate gets rated 1-10 on expected impact, confidence in the hypothesis, and ease of shipping — and the highest scores go first." },
-        { name: "Weekly growth meeting cadence", explanation: "A weekly ritual: review last week's experiments, decide what to ship this week, document learnings. The cadence forces accountability and keeps the team moving even when individual experiments fail." },
-        { name: "North Star metric", explanation: "The single metric that best captures the value the product delivers to customers — chosen carefully because the whole org will optimize for it. Different from a business metric like revenue, which is downstream." },
-        { name: "Aha moment / activation event", explanation: "The specific moment a new user 'gets' the product — when they first experience its value clearly enough to come back. Engineering as many new users as possible to that moment, as quickly as possible, is most of activation work." },
+        {
+          name: "Growth team operating model",
+          explanation: "A cross-functional team (PM, engineer, designer, analyst, marketer) that owns a specific funnel stage or metric, with the autonomy to ship experiments without going through the normal product backlog."
+        },
+        {
+          name: "ICE framework (Impact, Confidence, Ease)",
+          explanation: "A prioritization scoring system for growth experiments. Each candidate gets rated 1-10 on expected impact, confidence in the hypothesis, and ease of shipping — and the highest scores go first."
+        },
+        {
+          name: "Weekly growth meeting cadence",
+          explanation: "A weekly ritual: review last week's experiments, decide what to ship this week, document learnings. The cadence forces accountability and keeps the team moving even when individual experiments fail."
+        },
+        {
+          name: "North Star metric",
+          explanation: "The single metric that best captures the value the product delivers to customers — chosen carefully because the whole org will optimize for it. Different from a business metric like revenue, which is downstream."
+        },
+        {
+          name: "Aha moment / activation event",
+          explanation: "The specific moment a new user 'gets' the product — when they first experience its value clearly enough to come back. Engineering as many new users as possible to that moment, as quickly as possible, is most of activation work."
+        }
       ],
       whoShouldRead: "Heads of growth, growth PMs, and founders at Series A+ companies with the infrastructure to support a structured experimentation cadence. Less useful for very early-stage startups without an analytics stack. Pair with Indian growth-team rituals for direct applicability.",
-      pairsWith: ["st-5", "pm-6"],
-      relatedCaseStudies: ["cs-5", "cs-11"],
+      pairsWith: [
+        "st-5",
+        "pm-6"
+      ],
+      relatedCaseStudies: [
+        "cs-5",
+        "cs-11"
+      ],
     },
   },
   {
@@ -718,7 +1156,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 336,
     year: 2018,
-    tags: ["honest", "founder", "lessons"],
+    tags: [
+      "honest",
+      "founder",
+      "lessons"
+    ],
     summary: {
       analysis: [
         "Lost and Founder is the anti-startup-memoir. Rand Fishkin (founder of Moz, the SEO software company) wrote it in 2018 as a deliberate counter-narrative to the success-porn that dominated startup books from 2010-2018. The book documents the messy parts: down rounds, mis-hiring, board conflicts, losing the CEO role at the company he founded, public mental health struggles. The book's authority comes precisely from how willing Fishkin is to look bad on the page.",
@@ -727,18 +1169,39 @@ export const books: Book[] = [
         "The most common misreading is treating the book as evidence that 'taking VC money is bad' or 'staying bootstrapped is better.' Fishkin is more nuanced than that — his actual argument is that founders should understand what the funding choice implies for their company and their life, and that many founders take VC money without genuinely understanding the operating consequences. He's specifically critical of mismatches between company model and funding choice, not of VC funding itself.",
         "Its main limitation is the same as its main strength: it's one founder's perspective on one specific company. The lessons are real but unevenly transferable — what worked or failed at Moz reflects SEO/SaaS industry dynamics, US market conditions, and Fishkin's specific personality. Readers who try to extract universal rules ('never raise from this kind of investor,' 'always do this in board meetings') typically over-generalize from his particular cases.",
         "For Indian founders, this book has higher applicability than most US founder memoirs because Moz's trajectory — bootstrapped to VC-backed, sub-$100M exit, founder-CEO transition under pressure — looks more like the realistic outcome distribution for most Indian SaaS companies than the Uber/Airbnb/Stripe trajectories that dominate other startup books. The 2022-2024 Indian startup correction has produced many founders facing similar 'I'm no longer CEO of the company I founded' moments, and Fishkin's chapter on that transition is genuinely useful reading.",
-        "Pair with The Hard Thing About Hard Things for the VC-backed-CEO perspective and with The $100 Startup for the fully-bootstrapped perspective. Reading the three together gives a more complete picture of the founding journey than any single book.",
+        "Pair with The Hard Thing About Hard Things for the VC-backed-CEO perspective and with The $100 Startup for the fully-bootstrapped perspective. Reading the three together gives a more complete picture of the founding journey than any single book."
       ],
       keyConcepts: [
-        { name: "Decision-level postmortems", explanation: "Instead of telling the company's story chronologically, Fishkin organizes the book around individual decisions — here's what I decided, why, and what happened. This format is more useful for building founder judgment than narrative memoirs." },
-        { name: "Bootstrapping vs. VC funding tradeoffs", explanation: "Both models have real costs. VC money buys speed but commits you to venture-scale outcomes; bootstrapping preserves optionality but limits ambition. The choice should match the business model and the founder's life, not be defaulted into." },
-        { name: "Founder-CEO transitions", explanation: "Many founders don't stay CEO through scale — and the transition (voluntary or otherwise) is one of the most psychologically loaded events in a company's life. Fishkin's chapter on losing the CEO role at Moz is one of the most candid public accounts available." },
-        { name: "Transparency as competitive advantage", explanation: "Fishkin argues that radical openness (sharing real numbers, strategy, failures publicly) builds trust with customers and employees in ways that closed-book competitors can't match. He practiced this at Moz, with mixed results he discusses honestly." },
-        { name: "Mental health and founder identity", explanation: "Founders' sense of self often fuses with their company, which makes setbacks at the company feel like personal failures. Fishkin writes about his own depression and the importance of separating identity from the venture." },
+        {
+          name: "Decision-level postmortems",
+          explanation: "Instead of telling the company's story chronologically, Fishkin organizes the book around individual decisions — here's what I decided, why, and what happened. This format is more useful for building founder judgment than narrative memoirs."
+        },
+        {
+          name: "Bootstrapping vs. VC funding tradeoffs",
+          explanation: "Both models have real costs. VC money buys speed but commits you to venture-scale outcomes; bootstrapping preserves optionality but limits ambition. The choice should match the business model and the founder's life, not be defaulted into."
+        },
+        {
+          name: "Founder-CEO transitions",
+          explanation: "Many founders don't stay CEO through scale — and the transition (voluntary or otherwise) is one of the most psychologically loaded events in a company's life. Fishkin's chapter on losing the CEO role at Moz is one of the most candid public accounts available."
+        },
+        {
+          name: "Transparency as competitive advantage",
+          explanation: "Fishkin argues that radical openness (sharing real numbers, strategy, failures publicly) builds trust with customers and employees in ways that closed-book competitors can't match. He practiced this at Moz, with mixed results he discusses honestly."
+        },
+        {
+          name: "Mental health and founder identity",
+          explanation: "Founders' sense of self often fuses with their company, which makes setbacks at the company feel like personal failures. Fishkin writes about his own depression and the importance of separating identity from the venture."
+        }
       ],
       whoShouldRead: "First-time founders considering whether to raise VC, founders in the middle of difficult board or co-founder dynamics, and anyone who wants a counter-narrative to startup success-porn. Highly applicable for Indian founders whose outcomes are more likely to resemble Moz than Stripe.",
-      pairsWith: ["st-3", "st-10"],
-      relatedCaseStudies: ["cs-8", "cs-21"],
+      pairsWith: [
+        "st-3",
+        "st-10"
+      ],
+      relatedCaseStudies: [
+        "cs-8",
+        "cs-21"
+      ],
     },
   },
   {
@@ -753,7 +1216,11 @@ export const books: Book[] = [
     rating: 4.3,
     pages: 304,
     year: 2012,
-    tags: ["bootstrapping", "lifestyle", "independence"],
+    tags: [
+      "bootstrapping",
+      "lifestyle",
+      "independence"
+    ],
     summary: {
       analysis: [
         "The $100 Startup is the book that legitimized the small-business-as-startup category before 'indie hacker' and 'bootstrapped SaaS' had names. Chris Guillebeau wrote it in 2012, drawing on interviews with 1,500 'unexpected entrepreneurs' — people who built profitable one-to-three-person businesses with under $100 of starting capital. The book sits in a deliberate opposition to the VC-backed startup canon and was one of the first popular books to argue that a profitable $50K-$500K solo business was a legitimate goal rather than a failed attempt at being Uber.",
@@ -762,22 +1229,41 @@ export const books: Book[] = [
         "The most common misreading is treating the book as a 'get rich quick' manual. Guillebeau is deliberate that the book's threshold for success is closer to $50K-$100K annual income for a solo operator — enough to live independently, not enough to retire on. Readers who pick up the book expecting it to be a path to $10M outcomes are reading the wrong book entirely. The genre it actually belongs to is 'how to build a livable independent business,' not 'how to build a venture-scale startup.'",
         "Its limitations are visible at modern reading. The case studies are 2010-2012 vintage, and many of the channels and tactics (Twitter-as-marketing, blog-as-funnel, the pre-iPhone consumer attention economy) have since shifted dramatically. The book's underlying thesis still works; the specific tactics often don't. A 2026 reader has to mentally substitute current channels (TikTok, YouTube Shorts, newsletter platforms, AI-assisted content tools) for the 2012 ones the book references.",
         "For Indian founders, this book has unusual relevance because the cost structure and addressable market for solo Indian founders in 2026 is genuinely different from the cost structure that Guillebeau wrote about. An Indian solo founder targeting a global SaaS niche, with India-level cost of living and US-level revenue potential, can build something at the $50K-$500K profit range that's life-changing in India in a way Guillebeau's US-based readers can't quite match. The 'creator economy' wave from India (newsletter writers, YouTube educators, niche SaaS builders) is essentially the Indian version of what Guillebeau described.",
-        "Pair with Lost and Founder for the more recent, more emotionally honest perspective on the bootstrap-vs-VC choice, and with Obviously Awesome for the positioning craft that solo founders need disproportionately (because they have no sales team to translate confused positioning into sales).",
+        "Pair with Lost and Founder for the more recent, more emotionally honest perspective on the bootstrap-vs-VC choice, and with Obviously Awesome for the positioning craft that solo founders need disproportionately (because they have no sales team to translate confused positioning into sales)."
       ],
       keyConcepts: [
-        { name: "Convergence (passion + skill + market)", explanation: "Sustainable solo businesses sit at the intersection of three circles: something you care about, something you're good at, and something a market will pay for. Missing any one of the three breaks the model." },
-        { name: "Microbusiness as legitimate outcome", explanation: "A profitable $50K-$500K business run by one person is a real success — not a failed attempt at being a $100M startup. Guillebeau's book legitimized this category before 'indie hacker' existed." },
-        { name: "Direct-to-customer monetization", explanation: "Bypass distributors, app stores, and ad networks; charge customers directly via your own site, store, or course platform. Higher margins, slower start, more durable business." },
-        { name: "Lifestyle business design", explanation: "Designing a business explicitly around the life you want to live (working hours, location, travel, calendar autonomy) rather than treating those as residuals after the business is built." },
-        { name: "Low-capital starting points", explanation: "Many of the case studies started with under $100 of capital. The bottleneck for most solo founders is not money — it's the willingness to ship something publicly and charge for it." },
+        {
+          name: "Convergence (passion + skill + market)",
+          explanation: "Sustainable solo businesses sit at the intersection of three circles: something you care about, something you're good at, and something a market will pay for. Missing any one of the three breaks the model."
+        },
+        {
+          name: "Microbusiness as legitimate outcome",
+          explanation: "A profitable $50K-$500K business run by one person is a real success — not a failed attempt at being a $100M startup. Guillebeau's book legitimized this category before 'indie hacker' existed."
+        },
+        {
+          name: "Direct-to-customer monetization",
+          explanation: "Bypass distributors, app stores, and ad networks; charge customers directly via your own site, store, or course platform. Higher margins, slower start, more durable business."
+        },
+        {
+          name: "Lifestyle business design",
+          explanation: "Designing a business explicitly around the life you want to live (working hours, location, travel, calendar autonomy) rather than treating those as residuals after the business is built."
+        },
+        {
+          name: "Low-capital starting points",
+          explanation: "Many of the case studies started with under $100 of capital. The bottleneck for most solo founders is not money — it's the willingness to ship something publicly and charge for it."
+        }
       ],
       whoShouldRead: "Aspiring solo founders, side-project builders considering going full-time, and creators thinking about productized services. Especially valuable for Indian founders targeting global niches with India-level cost structures. Less applicable for venture-track founders.",
-      pairsWith: ["st-9", "pm-7"],
-      relatedCaseStudies: ["cs-11", "cs-30"],
+      pairsWith: [
+        "st-9",
+        "pm-7"
+      ],
+      relatedCaseStudies: [
+        "cs-11",
+        "cs-30"
+      ],
     },
   },
-
-  // ─── MANAGEMENT ──────────────────────────────────────────────────────────
   {
     id: "mg-1",
     amazonUrl: "https://amzn.to/43hKYvw",
@@ -790,7 +1276,11 @@ export const books: Book[] = [
     rating: 4.8,
     pages: 272,
     year: 1995,
-    tags: ["operations", "OKRs", "leadership"],
+    tags: [
+      "operations",
+      "OKRs",
+      "leadership"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -800,18 +1290,39 @@ export const books: Book[] = [
         "The most common misreading is treating the book as dated because it was written in a hardware-manufacturing context. The opening chapters about breakfast factories and Intel fabs do feel anachronistic for software readers. But the underlying conceptual machinery — measurement, leverage, indicators, meeting design — is fully transferable, and Grove's discipline about output-as-the-metric is arguably more useful in knowledge-work contexts where output is harder to see than in manufacturing.",
         "Its main limitation is that it assumes a hierarchical organization with formal reporting structures, planning cycles, and a relatively stable strategic direction. The book is less directly useful for very early-stage startups (under 10 people) where management as a function barely exists, or for remote-first / asynchronous companies where Grove's meeting-heavy operating cadence doesn't quite fit. The principles still apply; the operational specifics need translation.",
         "For Indian managers and product leaders, this is the single most-applicable book on the management list. The Indian tech industry in 2026 is full of first-time managers who got promoted into management positions because they were good ICs, with little structured training in what management actually is. Grove's book is the textbook those promotions should have included. The OKR system, the 1:1 cadence, and the leverage frame are all things Indian middle management orgs systematically underuse.",
-        "Pair with Empowered for the product-leadership variant of the same operating discipline, and with Measure What Matters for the OKR-execution layer (Doerr's book is an extension of the goal-setting framework Grove pioneered at Intel).",
+        "Pair with Empowered for the product-leadership variant of the same operating discipline, and with Measure What Matters for the OKR-execution layer (Doerr's book is an extension of the goal-setting framework Grove pioneered at Intel)."
       ],
       keyConcepts: [
-        { name: "Management as production process", explanation: "Treat your team as a production line: inputs, process steps, outputs, indicators. Grove's reframe is that management has the same operational rigor as manufacturing — and most managers don't think this way." },
-        { name: "Leverage activities", explanation: "Activities where one hour of your time produces many hours of output from others — coaching, training, removing blockers. Spending more time on leverage activities is the single biggest determinant of a manager's output." },
-        { name: "One-on-ones as highest-leverage tool", explanation: "Weekly 1:1s with each direct report, run by the report (their agenda, their pace), are the highest-leverage management activity. Grove's argument is that skipping or rushing 1:1s is one of the most expensive mistakes a manager makes." },
-        { name: "Task-relevant maturity (delegation framework)", explanation: "How you should manage someone depends on how experienced they are at the specific task — not on their general seniority. Same person, different tasks, different management styles." },
-        { name: "Output indicators vs. activity indicators", explanation: "Activity indicators (hours worked, lines of code, meetings held) measure work being done. Output indicators (units shipped, deals closed, bugs fixed) measure work that produced value. Manage to outputs." },
+        {
+          name: "Management as production process",
+          explanation: "Treat your team as a production line: inputs, process steps, outputs, indicators. Grove's reframe is that management has the same operational rigor as manufacturing — and most managers don't think this way."
+        },
+        {
+          name: "Leverage activities",
+          explanation: "Activities where one hour of your time produces many hours of output from others — coaching, training, removing blockers. Spending more time on leverage activities is the single biggest determinant of a manager's output."
+        },
+        {
+          name: "One-on-ones as highest-leverage tool",
+          explanation: "Weekly 1:1s with each direct report, run by the report (their agenda, their pace), are the highest-leverage management activity. Grove's argument is that skipping or rushing 1:1s is one of the most expensive mistakes a manager makes."
+        },
+        {
+          name: "Task-relevant maturity (delegation framework)",
+          explanation: "How you should manage someone depends on how experienced they are at the specific task — not on their general seniority. Same person, different tasks, different management styles."
+        },
+        {
+          name: "Output indicators vs. activity indicators",
+          explanation: "Activity indicators (hours worked, lines of code, meetings held) measure work being done. Output indicators (units shipped, deals closed, bugs fixed) measure work that produced value. Manage to outputs."
+        }
       ],
       whoShouldRead: "First-time managers, engineering managers, heads of product, and founders growing their first management layer. Probably the single highest-ROI management book for anyone going from IC to manager. Less critical for senior executives who've already absorbed the principles through other books.",
-      pairsWith: ["pm-4", "mg-2"],
-      relatedCaseStudies: ["cs-13", "cs-18"],
+      pairsWith: [
+        "pm-4",
+        "mg-2"
+      ],
+      relatedCaseStudies: [
+        "cs-13",
+        "cs-18"
+      ],
     },
   },
   {
@@ -826,7 +1337,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 320,
     year: 2018,
-    tags: ["OKRs", "goals", "performance"],
+    tags: [
+      "OKRs",
+      "goals",
+      "performance"
+    ],
     summary: {
       analysis: [
         "Measure What Matters is the book that took OKRs from a private Intel/Google management practice to a mainstream framework adopted by basically every venture-backed company in the 2018-2024 era. John Doerr — Kleiner Perkins partner, the person who literally taught OKRs to Google in 1999 after learning them from Andy Grove at Intel — wrote it in 2018 as a long-overdue explainer for a framework that had been operating mostly through whisper networks.",
@@ -835,18 +1350,39 @@ export const books: Book[] = [
         "The most common misreading by far is treating OKRs as a performance management system. They are not, and Doerr is explicit about this — OKRs are a focus and alignment tool, and tying them directly to compensation breaks the ambition mechanism (people will sandbag KRs to ensure 1.0 scoring rather than aiming for the 0.7 sweet spot). The number of companies that ignored this warning and ended up with bureaucratic, gamed OKR systems is enormous, and most of them blame the framework rather than their implementation.",
         "Its main limitation is the case-study format. Roughly half the book is profile chapters of specific OKR implementations at Google, Intuit, the Gates Foundation, Bono's ONE Campaign, etc. These are fine as illustrations but skew Silicon Valley and large-NGO heavy. Readers looking for a structured how-to manual sometimes find the case-study density frustrating. The actual operating instructions are scattered across the book rather than concentrated in a single methodology chapter.",
         "For Indian companies, OKRs have been adopted broadly but unevenly. The Indian tech industry's promotion-and-compensation culture is often more directly tied to measured outputs than US tech, which makes the 'don't tie OKRs to performance reviews' rule harder to maintain in practice. Many Indian product teams in 2026 are running OKR systems that have gradually drifted into performance scorecards, with the predictable consequences. The book is most useful in India as ammunition for product leaders trying to defend the original framework from HR/compensation creep.",
-        "Pair with High Output Management for the underlying management philosophy OKRs are built on (Grove invented them at Intel; Doerr is essentially writing the second edition), and with Empowered for how OKRs interact with product-team autonomy.",
+        "Pair with High Output Management for the underlying management philosophy OKRs are built on (Grove invented them at Intel; Doerr is essentially writing the second edition), and with Empowered for how OKRs interact with product-team autonomy."
       ],
       keyConcepts: [
-        { name: "OKRs (Objectives + Key Results)", explanation: "Objectives are qualitative ambitions (where we want to go). Key Results are 3-5 measurable outcomes that show whether you got there. Together they form a structured goal-setting and alignment system." },
-        { name: "The 0.7 sweet spot", explanation: "OKRs should be set ambitiously enough that scoring 0.7 (70%) on average is the target — not 1.0. Teams that consistently score 1.0 are sandbagging; teams that score 0.3 are setting unrealistic goals." },
-        { name: "Public OKRs (transparency norm)", explanation: "Every team's OKRs should be visible to every other team. Public OKRs surface dependencies, enable bottom-up alignment, and prevent the silo-driven misalignment that destroys most strategy execution." },
-        { name: "CFRs (Conversations, Feedback, Recognition)", explanation: "Doerr's companion to OKRs — the soft-side rhythms of management (frequent 1:1s, continuous feedback, recognition of progress) that make the hard-side goal-setting actually work." },
-        { name: "Separate from compensation", explanation: "Doerr is explicit: never tie OKRs directly to bonuses or performance reviews. Doing so breaks the ambition mechanism — people will sandbag KRs to ensure 1.0 scoring rather than aiming high and falling short." },
+        {
+          name: "OKRs (Objectives + Key Results)",
+          explanation: "Objectives are qualitative ambitions (where we want to go). Key Results are 3-5 measurable outcomes that show whether you got there. Together they form a structured goal-setting and alignment system."
+        },
+        {
+          name: "The 0.7 sweet spot",
+          explanation: "OKRs should be set ambitiously enough that scoring 0.7 (70%) on average is the target — not 1.0. Teams that consistently score 1.0 are sandbagging; teams that score 0.3 are setting unrealistic goals."
+        },
+        {
+          name: "Public OKRs (transparency norm)",
+          explanation: "Every team's OKRs should be visible to every other team. Public OKRs surface dependencies, enable bottom-up alignment, and prevent the silo-driven misalignment that destroys most strategy execution."
+        },
+        {
+          name: "CFRs (Conversations, Feedback, Recognition)",
+          explanation: "Doerr's companion to OKRs — the soft-side rhythms of management (frequent 1:1s, continuous feedback, recognition of progress) that make the hard-side goal-setting actually work."
+        },
+        {
+          name: "Separate from compensation",
+          explanation: "Doerr is explicit: never tie OKRs directly to bonuses or performance reviews. Doing so breaks the ambition mechanism — people will sandbag KRs to ensure 1.0 scoring rather than aiming high and falling short."
+        }
       ],
       whoShouldRead: "CEOs and heads of operations / product / engineering rolling out or repairing an OKR system. Highly applicable for Indian product leaders defending OKR design against HR drift. Less useful for very small teams (under 20 people) where lightweight goal-setting is enough.",
-      pairsWith: ["mg-1", "pm-4"],
-      relatedCaseStudies: ["cs-13", "cs-16"],
+      pairsWith: [
+        "mg-1",
+        "pm-4"
+      ],
+      relatedCaseStudies: [
+        "cs-13",
+        "cs-16"
+      ],
     },
   },
   {
@@ -861,7 +1397,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 320,
     year: 2001,
-    tags: ["leadership", "culture", "discipline"],
+    tags: [
+      "leadership",
+      "culture",
+      "discipline"
+    ],
     summary: {
       analysis: [
         "Good to Great is the book that defined business-book-as-research-project for the early 2000s. Jim Collins led a five-year, 21-researcher study at Stanford comparing 11 companies that delivered sustained superior returns against carefully matched comparison companies, and the 2001 book reported the patterns the study uncovered. The methodological rigor (or appearance of rigor) is the entire reason the book has the authority it does — Collins's framework is presented as discovered, not invented.",
@@ -870,18 +1410,39 @@ export const books: Book[] = [
         "The most common and serious criticism is that several of Collins's 11 'great' companies subsequently failed dramatically — Circuit City (bankrupt in 2008), Fannie Mae (bailed out in 2008), Wells Fargo (multiple scandals). This raises a real methodological question about whether Collins identified durable greatness or just retroactively rationalized a temporary run of stock outperformance. Sophisticated readers treat the book's frameworks as useful management heuristics rather than as empirically validated predictors of long-term success.",
         "The most common misreading is treating the book as a recipe. Collins is explicit that his concepts emerged from comparison and that they describe what great companies do, but the book doesn't claim that adopting them mechanically will produce greatness. Companies that adopt the language (we have a Hedgehog! we have a Flywheel!) without the underlying decade-of-discipline that the great companies practiced typically don't produce the outcomes.",
         "For Indian managers and founders, the book has been culturally significant — particularly the First Who, Then What principle and Level 5 Leadership concept have been heavily referenced in Indian B-school curricula since the early 2000s. Less useful as an operational guide than as a vocabulary for talking about long-arc company building, which is genuinely relevant for the slow-and-steady Indian conglomerate model (TCS, Asian Paints, HDFC Bank) more than for venture-backed startups.",
-        "Pair with Built to Last (Collins's earlier book, which Good to Great is technically a prequel to) for the longer-arc view, and with The Hard Thing About Hard Things as a counter-narrative — Horowitz's book documents the messy operational reality that Collins's research-distanced framework abstracts away from.",
+        "Pair with Built to Last (Collins's earlier book, which Good to Great is technically a prequel to) for the longer-arc view, and with The Hard Thing About Hard Things as a counter-narrative — Horowitz's book documents the messy operational reality that Collins's research-distanced framework abstracts away from."
       ],
       keyConcepts: [
-        { name: "Level 5 Leadership", explanation: "The highest tier of executive: paradoxically humble about themselves and ferociously ambitious for the company. Collins's research argued this profile predicted long-term outperformance better than charismatic CEO archetypes." },
-        { name: "First Who, Then What", explanation: "Get the right people on the bus before deciding where the bus is going. Strategy should follow team composition, not the other way around." },
-        { name: "Hedgehog Concept", explanation: "The intersection of three questions: what can you be best in the world at, what drives your economic engine, and what are you deeply passionate about. Great companies live in that intersection; mediocre ones spread thin." },
-        { name: "The Flywheel", explanation: "Sustained results come from many small consistent pushes in the same direction over time, not from one breakthrough event. The flywheel metaphor: each push builds on the last until momentum becomes self-sustaining." },
-        { name: "Stockdale Paradox", explanation: "Maintain unwavering faith you'll prevail in the end, AND confront the most brutal facts of your current reality. Named after Admiral Stockdale, who survived 7 years as a POW by holding both at once." },
+        {
+          name: "Level 5 Leadership",
+          explanation: "The highest tier of executive: paradoxically humble about themselves and ferociously ambitious for the company. Collins's research argued this profile predicted long-term outperformance better than charismatic CEO archetypes."
+        },
+        {
+          name: "First Who, Then What",
+          explanation: "Get the right people on the bus before deciding where the bus is going. Strategy should follow team composition, not the other way around."
+        },
+        {
+          name: "Hedgehog Concept",
+          explanation: "The intersection of three questions: what can you be best in the world at, what drives your economic engine, and what are you deeply passionate about. Great companies live in that intersection; mediocre ones spread thin."
+        },
+        {
+          name: "The Flywheel",
+          explanation: "Sustained results come from many small consistent pushes in the same direction over time, not from one breakthrough event. The flywheel metaphor: each push builds on the last until momentum becomes self-sustaining."
+        },
+        {
+          name: "Stockdale Paradox",
+          explanation: "Maintain unwavering faith you'll prevail in the end, AND confront the most brutal facts of your current reality. Named after Admiral Stockdale, who survived 7 years as a POW by holding both at once."
+        }
       ],
       whoShouldRead: "Mid-to-senior executives, founders thinking about long-term company building, and Indian managers at incumbent companies pursuing steady compounding rather than venture-scale outcomes. Read critically — the frameworks are useful as heuristics, not as proven predictors.",
-      pairsWith: ["mg-1", "st-3"],
-      relatedCaseStudies: ["cs-14", "cs-22"],
+      pairsWith: [
+        "mg-1",
+        "st-3"
+      ],
+      relatedCaseStudies: [
+        "cs-14",
+        "cs-22"
+      ],
     },
   },
   {
@@ -896,7 +1457,11 @@ export const books: Book[] = [
     rating: 4.4,
     pages: 592,
     year: 2017,
-    tags: ["principles", "culture", "finance"],
+    tags: [
+      "principles",
+      "culture",
+      "finance"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -906,18 +1471,39 @@ export const books: Book[] = [
         "The most common misreading is treating the book as a copy-this-management-system manual. The system Dalio describes is calibrated to a specific kind of organization: a quantitative hedge fund where decisions can be back-tested against market outcomes, employees self-select for unusual personality types, and the financial rewards justify extreme cultural friction. Attempting to install radical transparency in a normal company without those conditions typically produces meeting paralysis and political theater rather than meritocratic decisions.",
         "Its main limitation is sheer length. At 592 pages with numbered principles and extensive autobiographical context, the book is structured for reference rather than narrative reading. Most readers extract value from the first 200 pages (the autobiography and Life Principles) and the framework chapters of Work Principles, and skim the rest. Treating it as a cover-to-cover read is not the most efficient way to consume it.",
         "For Indian managers, the book is most useful as a worldview-expansion read rather than as an operational template. The Indian corporate culture in 2026 is on average more hierarchical, more relationship-driven, and less directly confrontational than what Dalio describes. The principles around systematic decision-making, recording mistakes, and learning from failure are universally applicable; the radical-transparency cultural transplant is not. Most Indian managers will find Dalio's autobiographical sections (failing big in 1982, rebuilding from zero, philosophical conclusions about markets) more useful than the operational principles.",
-        "Pair with No Rules Rules (Reed Hastings on Netflix's culture, which is a less extreme version of similar ideas), and read alongside the journalistic counter-narratives about Bridgewater's actual culture to get a complete picture.",
+        "Pair with No Rules Rules (Reed Hastings on Netflix's culture, which is a less extreme version of similar ideas), and read alongside the journalistic counter-narratives about Bridgewater's actual culture to get a complete picture."
       ],
       keyConcepts: [
-        { name: "Radical transparency", explanation: "Record meetings, share critical feedback publicly, score people's track records openly. Dalio's argument is that surfacing everything reduces politics; critics argue it produces surveillance culture. Both can be true at the same company." },
-        { name: "Idea meritocracy", explanation: "The best idea wins regardless of who proposed it. Operationalized through structured dissent, public scoring of contributions, and explicit decoupling of seniority from being right." },
-        { name: "Believability-weighted decision making", explanation: "Not all opinions get equal weight. Track records on similar past decisions determine how much weight your opinion carries on the current one — calibrated empirically, not by seniority." },
-        { name: "Pain + Reflection = Progress", explanation: "Painful events are useful insofar as you reflect on them and extract a principle. Dalio's discipline: write down what went wrong, what general rule it implies, and how to encode the rule into future decisions." },
-        { name: "Five-step process (Goals → Problems → Diagnose → Design → Execute)", explanation: "Dalio's generic problem-solving sequence: set ambitious goals, identify obstacles, diagnose root causes, design a solution, execute relentlessly. Then loop." },
+        {
+          name: "Radical transparency",
+          explanation: "Record meetings, share critical feedback publicly, score people's track records openly. Dalio's argument is that surfacing everything reduces politics; critics argue it produces surveillance culture. Both can be true at the same company."
+        },
+        {
+          name: "Idea meritocracy",
+          explanation: "The best idea wins regardless of who proposed it. Operationalized through structured dissent, public scoring of contributions, and explicit decoupling of seniority from being right."
+        },
+        {
+          name: "Believability-weighted decision making",
+          explanation: "Not all opinions get equal weight. Track records on similar past decisions determine how much weight your opinion carries on the current one — calibrated empirically, not by seniority."
+        },
+        {
+          name: "Pain + Reflection = Progress",
+          explanation: "Painful events are useful insofar as you reflect on them and extract a principle. Dalio's discipline: write down what went wrong, what general rule it implies, and how to encode the rule into future decisions."
+        },
+        {
+          name: "Five-step process (Goals → Problems → Diagnose → Design → Execute)",
+          explanation: "Dalio's generic problem-solving sequence: set ambitious goals, identify obstacles, diagnose root causes, design a solution, execute relentlessly. Then loop."
+        }
       ],
       whoShouldRead: "Senior executives and founders interested in unusual organizational design experiments, and anyone who wants Dalio's autobiographical lessons from running a multi-decade investment firm. Less useful as an operational manual for normal companies. Read critically alongside the public reporting on Bridgewater's actual culture.",
-      pairsWith: ["mg-9", "mg-3"],
-      relatedCaseStudies: ["cs-23", "cs-35"],
+      pairsWith: [
+        "mg-9",
+        "mg-3"
+      ],
+      relatedCaseStudies: [
+        "cs-23",
+        "cs-35"
+      ],
     },
   },
   {
@@ -932,7 +1518,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 336,
     year: 1997,
-    tags: ["disruption", "innovation", "strategy"],
+    tags: [
+      "disruption",
+      "innovation",
+      "strategy"
+    ],
     summary: {
       analysis: [
         "The Innovator's Dilemma is the single most-cited and most-misunderstood business book of the last 30 years. Clayton Christensen, then a Harvard Business School professor, published it in 1997 based on his study of the disk-drive industry. The book introduced the concept of disruptive innovation — the specific mechanism by which competent, well-managed incumbent companies are systematically outcompeted by smaller entrants attacking from below — and Christensen's framework dominated strategic thinking in tech for two decades.",
@@ -941,18 +1531,39 @@ export const books: Book[] = [
         "The most common and serious misreading is using 'disruption' loosely to mean 'a new competitor entered the market.' Christensen was meticulous that disruption is a specific mechanism — entry at the low end with an initially inferior product, improvement over time, eventual displacement — and that not every new competitor is a 'disruptor' in his sense. By 2015-2020, Christensen himself was publicly frustrated that Silicon Valley had stripped his theory of its precision. Uber is not a disruptor in Christensen's framework (it entered at the high end against an undefended low-quality incumbent), but is universally called one anyway.",
         "Its main intellectual limitation, identified by various critics including Jill Lepore's 2014 New Yorker piece, is that the theory has a survivorship-bias problem — it identifies disruption patterns retroactively in industries that were already disrupted, but doesn't reliably predict which entrants will actually disrupt. The framework is more useful as a diagnostic for incumbents (am I vulnerable to low-end attack?) than as a predictive tool for investors picking disruptors.",
         "For Indian product leaders and incumbent-firm strategists, the book has direct utility. The Indian financial services, retail, telecom, and education industries in 2026 are all in active disruption cycles — Jio's disruption of telecom, UPI's disruption of card payments, Meesho's disruption of organized retail, Byju's-then-Allen's disruption of coaching — and Christensen's framework explains the mechanics of these cycles better than any indigenous Indian strategy literature. Particularly useful for executives at incumbent Indian firms (banks, telecoms, retailers) trying to figure out which new entrants are actually existential threats versus noise.",
-        "Pair with Zero to One for the founder-side perspective on monopoly creation and disruption, and with The Innovator's Solution (Christensen's 2003 follow-up) for the prescriptive 'what do I do about it' chapters that the first book deliberately doesn't cover.",
+        "Pair with Zero to One for the founder-side perspective on monopoly creation and disruption, and with The Innovator's Solution (Christensen's 2003 follow-up) for the prescriptive 'what do I do about it' chapters that the first book deliberately doesn't cover."
       ],
       keyConcepts: [
-        { name: "Disruptive vs. sustaining innovation", explanation: "Sustaining innovations improve existing products for existing customers (incumbents win these). Disruptive innovations are initially worse but cheaper or more accessible, and entrants serve a market the incumbent doesn't want — until they don't." },
-        { name: "Low-end disruption mechanism", explanation: "Entrants attack the bottom of the market with cheaper, lower-spec products. Incumbents rationally ignore them (low margins, marginal customers). The entrant improves over time and eventually displaces the incumbent from above." },
-        { name: "Job-to-be-done (introduced more fully in later Christensen books)", explanation: "Customers don't buy products; they 'hire' products to do a job in their lives. Reframing competition around the job (not the product category) often reveals threats from unexpected directions." },
-        { name: "Resource allocation as strategy", explanation: "Strategy isn't what executives say in offsites — it's the cumulative pattern of where engineers, salespeople, and capital actually get allocated. The allocation system inside incumbents systematically defunds disruptive responses, even when leaders see them coming." },
-        { name: "Performance overshoot", explanation: "When products improve faster than customers can use the new capabilities, the basis of competition shifts from performance to other dimensions (price, convenience, simplicity) — and that's the moment disruptors get the opening to win." },
+        {
+          name: "Disruptive vs. sustaining innovation",
+          explanation: "Sustaining innovations improve existing products for existing customers (incumbents win these). Disruptive innovations are initially worse but cheaper or more accessible, and entrants serve a market the incumbent doesn't want — until they don't."
+        },
+        {
+          name: "Low-end disruption mechanism",
+          explanation: "Entrants attack the bottom of the market with cheaper, lower-spec products. Incumbents rationally ignore them (low margins, marginal customers). The entrant improves over time and eventually displaces the incumbent from above."
+        },
+        {
+          name: "Job-to-be-done (introduced more fully in later Christensen books)",
+          explanation: "Customers don't buy products; they 'hire' products to do a job in their lives. Reframing competition around the job (not the product category) often reveals threats from unexpected directions."
+        },
+        {
+          name: "Resource allocation as strategy",
+          explanation: "Strategy isn't what executives say in offsites — it's the cumulative pattern of where engineers, salespeople, and capital actually get allocated. The allocation system inside incumbents systematically defunds disruptive responses, even when leaders see them coming."
+        },
+        {
+          name: "Performance overshoot",
+          explanation: "When products improve faster than customers can use the new capabilities, the basis of competition shifts from performance to other dimensions (price, convenience, simplicity) — and that's the moment disruptors get the opening to win."
+        }
       ],
       whoShouldRead: "Senior executives at incumbent companies, strategy and corporate development teams, and PMs at large companies trying to assess threat from smaller entrants. Less directly tactical for early-stage founders, but conceptually foundational.",
-      pairsWith: ["st-1", "mg-3"],
-      relatedCaseStudies: ["cs-14", "cs-28"],
+      pairsWith: [
+        "st-1",
+        "mg-3"
+      ],
+      relatedCaseStudies: [
+        "cs-14",
+        "cs-28"
+      ],
     },
   },
   {
@@ -967,7 +1578,11 @@ export const books: Book[] = [
     rating: 4.6,
     pages: 512,
     year: 2011,
-    tags: ["psychology", "decisions", "economics"],
+    tags: [
+      "psychology",
+      "decisions",
+      "economics"
+    ],
     summary: {
       analysis: [
         "Thinking, Fast and Slow is the closest the social sciences have come to producing a popular textbook. Daniel Kahneman — Nobel laureate in Economics (2002), Israeli-American cognitive psychologist who, with the late Amos Tversky, founded the field of behavioral economics — published it in 2011 as a career-spanning synthesis of four decades of research on how humans actually make decisions. The book sold over 3 million copies and became a kind of common-vocabulary reference inside venture capital, product, design, and policy circles.",
@@ -976,18 +1591,39 @@ export const books: Book[] = [
         "The most serious complication, which honest readers should know, is the replication crisis. Several of the studies Kahneman cited in the book — particularly in the social-priming chapter — have failed to replicate, and Kahneman himself publicly acknowledged in 2017 that he had given too much weight to underpowered studies in those sections. The core framework around heuristics and biases largely survives, but specific claims about social priming and ego depletion should be read with skepticism. Sophisticated readers in 2026 treat the book as foundational but partially outdated.",
         "The most common misreading is using the framework to make confident judgments about other people's biases while exempting oneself. Kahneman is explicit that knowing about a bias does not protect you from it — even decades of his own research did not stop him from making the same mistakes the book documents. Readers who come away thinking 'now I can spot the biases in others' decision-making' have learned the opposite of what the book is trying to teach.",
         "For Indian product and design teams, the book is directly applicable to consumer-app design and content/communication strategy. The framing effects and anchoring chapters in particular are operationally relevant for pricing pages, onboarding flows, and choice architecture in apps. The Indian consumer-app market — where loss aversion is a particularly strong driver, given how price-sensitive Indian users are — provides a richer testing ground for several of the book's claims than the original Western academic setting.",
-        "Pair with Hooked for the operational application of behavioral psychology to consumer-product design, and with Predictably Irrational (Dan Ariely) for a more accessible and tactical entry point — Kahneman's book is dense, and many readers find Ariely's lighter touch a better starting point before tackling the 512-page synthesis.",
+        "Pair with Hooked for the operational application of behavioral psychology to consumer-product design, and with Predictably Irrational (Dan Ariely) for a more accessible and tactical entry point — Kahneman's book is dense, and many readers find Ariely's lighter touch a better starting point before tackling the 512-page synthesis."
       ],
       keyConcepts: [
-        { name: "System 1 vs. System 2 thinking", explanation: "System 1: fast, automatic, intuitive (most of what your brain does). System 2: slow, deliberate, effortful (what we think of as 'thinking'). Most decisions are System 1; we just rationalize them with System 2 afterward." },
-        { name: "Anchoring", explanation: "The first number you see disproportionately influences your judgment, even when you know it's arbitrary. Why pricing pages, salary negotiations, and 'compare at' tags work the way they do." },
-        { name: "Availability heuristic", explanation: "We judge how common or likely something is by how easily examples come to mind. Vivid recent stories (plane crashes, shark attacks) feel more probable than statistically more common but less memorable events." },
-        { name: "Loss aversion / prospect theory", explanation: "Losses hurt roughly twice as much as equivalent gains feel good. This asymmetry drives most decision biases — and explains why people pay more to avoid risk than rational calculation would predict." },
-        { name: "The planning fallacy", explanation: "We systematically underestimate how long projects will take and how likely they are to fail, even when we have direct evidence of past similar projects taking longer. Knowing about the fallacy doesn't make you immune to it." },
+        {
+          name: "System 1 vs. System 2 thinking",
+          explanation: "System 1: fast, automatic, intuitive (most of what your brain does). System 2: slow, deliberate, effortful (what we think of as 'thinking'). Most decisions are System 1; we just rationalize them with System 2 afterward."
+        },
+        {
+          name: "Anchoring",
+          explanation: "The first number you see disproportionately influences your judgment, even when you know it's arbitrary. Why pricing pages, salary negotiations, and 'compare at' tags work the way they do."
+        },
+        {
+          name: "Availability heuristic",
+          explanation: "We judge how common or likely something is by how easily examples come to mind. Vivid recent stories (plane crashes, shark attacks) feel more probable than statistically more common but less memorable events."
+        },
+        {
+          name: "Loss aversion / prospect theory",
+          explanation: "Losses hurt roughly twice as much as equivalent gains feel good. This asymmetry drives most decision biases — and explains why people pay more to avoid risk than rational calculation would predict."
+        },
+        {
+          name: "The planning fallacy",
+          explanation: "We systematically underestimate how long projects will take and how likely they are to fail, even when we have direct evidence of past similar projects taking longer. Knowing about the fallacy doesn't make you immune to it."
+        }
       ],
       whoShouldRead: "Product managers, designers, and anyone making decisions about how users will respond to interfaces, pricing, or choice architecture. Senior executives and investors who want to understand decision biases. Read with awareness of which claims have been challenged by the replication crisis.",
-      pairsWith: ["pm-9", "mg-7"],
-      relatedCaseStudies: ["cs-22", "cs-40"],
+      pairsWith: [
+        "pm-9",
+        "mg-7"
+      ],
+      relatedCaseStudies: [
+        "cs-22",
+        "cs-40"
+      ],
     },
   },
   {
@@ -1002,7 +1638,11 @@ export const books: Book[] = [
     rating: 4.8,
     pages: 256,
     year: 2020,
-    tags: ["finance", "behavior", "wealth"],
+    tags: [
+      "finance",
+      "behavior",
+      "wealth"
+    ],
     featured: true,
     summary: {
       analysis: [
@@ -1012,18 +1652,39 @@ export const books: Book[] = [
         "The most common misreading is treating the book as personal-finance advice in the sense of asset allocation or tax strategy. It is not — Housel deliberately avoids prescriptive financial recommendations and offers no specific portfolio guidance. The book is almost entirely about decision-making and emotional discipline. Readers expecting a 'what stocks to buy' book are reading the wrong book. The actual prescription, if there is one, is approximately 'index funds, leave them alone for decades, ignore the noise.'",
         "Its main limitation is that the framework is implicitly written from a US-based investing context: low-fee index funds (Vanguard), long bull-market history, dollar-denominated savings, and relatively predictable inflation. Investors in higher-inflation, higher-volatility, or currency-controlled environments need to translate carefully — leaving assets alone for 30 years is a different decision in India (with structurally higher inflation and a more complex tax regime) than in the US.",
         "For Indian readers, the book is one of the most-recommended personal-finance books on Indian Twitter/X and in Indian creator-economy circles, and that recommendation traffic has driven Indian sales heavily since 2021. The behavioral framework genuinely translates — Indian investors face the same patience-vs-trading temptation, the same lifestyle-creep risks, the same envy-driven decisions. The specific tactical advice (index funds, low fees) translates roughly (Nifty index funds, low-expense-ratio funds) but the Indian regulatory and tax context requires substitution rather than direct copying.",
-        "Pair with Thinking, Fast and Slow for the underlying behavioral economics that Housel popularizes in a finance context, and with The $100 Startup for the lifestyle-design adjacency — both books argue that 'enough' is a personality trait more than a number.",
+        "Pair with Thinking, Fast and Slow for the underlying behavioral economics that Housel popularizes in a finance context, and with The $100 Startup for the lifestyle-design adjacency — both books argue that 'enough' is a personality trait more than a number."
       ],
       keyConcepts: [
-        { name: "Behavior beats intelligence in finance", explanation: "Most financial outcomes within a peer group come down to behavior (patience, discipline, not panicking), not knowledge or IQ. The smartest investors regularly underperform calmer ones." },
-        { name: "The role of luck and risk", explanation: "Luck and risk are siblings — both are the influence of outside forces on individual outcomes. Most success stories underweight luck and most failure stories underweight risk, which makes both kinds of stories misleading as templates." },
-        { name: "Compounding (time horizon as the variable)", explanation: "The difference between great investors and average ones is usually time horizon, not return rate. A modest return compounded for 60 years beats a high return compounded for 20." },
-        { name: "The cost of admission (volatility as fee, not fine)", explanation: "Market volatility is the price you pay for long-term returns — not a punishment to be avoided. Treating it as a fine (panic-selling during drawdowns) is what causes most investor underperformance." },
-        { name: "Reasonable beats rational", explanation: "A 'reasonable' financial plan you can actually stick with for 30 years beats a mathematically optimal plan you abandon during the first 20% drawdown. Sustainability beats theoretical optimality." },
+        {
+          name: "Behavior beats intelligence in finance",
+          explanation: "Most financial outcomes within a peer group come down to behavior (patience, discipline, not panicking), not knowledge or IQ. The smartest investors regularly underperform calmer ones."
+        },
+        {
+          name: "The role of luck and risk",
+          explanation: "Luck and risk are siblings — both are the influence of outside forces on individual outcomes. Most success stories underweight luck and most failure stories underweight risk, which makes both kinds of stories misleading as templates."
+        },
+        {
+          name: "Compounding (time horizon as the variable)",
+          explanation: "The difference between great investors and average ones is usually time horizon, not return rate. A modest return compounded for 60 years beats a high return compounded for 20."
+        },
+        {
+          name: "The cost of admission (volatility as fee, not fine)",
+          explanation: "Market volatility is the price you pay for long-term returns — not a punishment to be avoided. Treating it as a fine (panic-selling during drawdowns) is what causes most investor underperformance."
+        },
+        {
+          name: "Reasonable beats rational",
+          explanation: "A 'reasonable' financial plan you can actually stick with for 30 years beats a mathematically optimal plan you abandon during the first 20% drawdown. Sustainability beats theoretical optimality."
+        }
       ],
       whoShouldRead: "Anyone managing their own money or starting to. Founders and PMs thinking about lifestyle design and the patience required for long-arc outcomes. Especially recommended for Indian readers entering the new wave of retail investing post-2020. Translate the US-specific tactical advice for the Indian context.",
-      pairsWith: ["mg-6", "st-10"],
-      relatedCaseStudies: ["cs-22", "cs-35"],
+      pairsWith: [
+        "mg-6",
+        "st-10"
+      ],
+      relatedCaseStudies: [
+        "cs-22",
+        "cs-35"
+      ],
     },
   },
   {
@@ -1038,7 +1699,11 @@ export const books: Book[] = [
     rating: 4.4,
     pages: 288,
     year: 2018,
-    tags: ["marketing", "brand", "empathy"],
+    tags: [
+      "marketing",
+      "brand",
+      "empathy"
+    ],
     summary: {
       analysis: [
         "This Is Marketing is Seth Godin's career-summary book. Godin has been writing about marketing through twenty-plus books and a near-daily blog since the early 2000s (Permission Marketing, Purple Cow, Tribes, Linchpin), and the 2018 book is essentially the most consolidated version of his worldview — short essays clustered around a single thesis about what marketing actually is.",
@@ -1047,18 +1712,39 @@ export const books: Book[] = [
         "The most common misreading is treating Godin as anti-paid-marketing. He's not — the book acknowledges that paid acquisition can be appropriate, but argues that paid acquisition without permission, without smallest-viable-audience focus, and without an actual change-the-customer-seeks-to-make is just shouting into a crowd. The framework is about precision, not about ideology. Founders who absorb Godin as 'don't run ads' have misread him.",
         "Its main limitation is its essayistic structure. The book is not a step-by-step manual — it's a worldview restated repeatedly through anecdotes, philosophical asides, and quick examples. Readers expecting a tactical playbook find the book frustrating. Readers who want a worldview to internalize before doing their own tactical work find the format works. The book is best read alongside a more tactical companion (Obviously Awesome, Hacking Growth) that addresses the operational layer Godin deliberately abstracts away.",
         "For Indian product marketers and founders, the book is genuinely re-orienting for an industry that defaults toward feature-driven marketing and discount-driven acquisition. Godin's emphasis on worldview, story, and the smallest-viable-audience is mostly absent from Indian marketing playbooks in 2026, which still skew heavily toward broad-reach paid acquisition and mass-broadcast brand campaigns. Indian D2C brands (boAt, Mamaearth, Atomberg, Sleepy Owl) that have figured out audience-narrative marketing tend to do so by absorbing Godin's frame whether or not they've read the book.",
-        "Pair with Obviously Awesome for the tactical positioning craft that Godin's worldview sits on top of, and with Hooked for the consumer-behavior mechanics that Godin treats as outside his scope.",
+        "Pair with Obviously Awesome for the tactical positioning craft that Godin's worldview sits on top of, and with Hooked for the consumer-behavior mechanics that Godin treats as outside his scope."
       ],
       keyConcepts: [
-        { name: "Smallest viable audience", explanation: "Find the smallest specific group that genuinely needs what you make, serve them obsessively, and let growth happen from there. Mass-market thinking from day one usually produces nothing-for-anyone." },
-        { name: "Permission marketing", explanation: "Earn the right to keep showing up in customers' attention (email subscribers, newsletter readers) instead of buying attention through ads. Godin coined this idea in 1999, and it's only become more central since." },
-        { name: "Tribe-building (worldview as positioning)", explanation: "People don't join brands because of features — they join because the brand reflects a worldview they already hold. Marketing's job is to find the worldview your product fits and surface it." },
-        { name: "Marketing as making change", explanation: "The fundamental marketing question is 'what change are you trying to make, and in whom?' If you can't answer it specifically, your marketing will be unfocused regardless of channel or budget." },
-        { name: "Empathy and 'people like us do things like this'", explanation: "Most behavior is driven by group identity ('people like us read this newsletter / buy this brand / use this tool'). Marketing works by making your product part of how a specific group sees itself." },
+        {
+          name: "Smallest viable audience",
+          explanation: "Find the smallest specific group that genuinely needs what you make, serve them obsessively, and let growth happen from there. Mass-market thinking from day one usually produces nothing-for-anyone."
+        },
+        {
+          name: "Permission marketing",
+          explanation: "Earn the right to keep showing up in customers' attention (email subscribers, newsletter readers) instead of buying attention through ads. Godin coined this idea in 1999, and it's only become more central since."
+        },
+        {
+          name: "Tribe-building (worldview as positioning)",
+          explanation: "People don't join brands because of features — they join because the brand reflects a worldview they already hold. Marketing's job is to find the worldview your product fits and surface it."
+        },
+        {
+          name: "Marketing as making change",
+          explanation: "The fundamental marketing question is 'what change are you trying to make, and in whom?' If you can't answer it specifically, your marketing will be unfocused regardless of channel or budget."
+        },
+        {
+          name: "Empathy and 'people like us do things like this'",
+          explanation: "Most behavior is driven by group identity ('people like us read this newsletter / buy this brand / use this tool'). Marketing works by making your product part of how a specific group sees itself."
+        }
       ],
       whoShouldRead: "Founders thinking about brand and audience strategy, product marketers, and creators / D2C operators trying to define what their product stands for. Less useful as a tactical execution manual. Indian readers should pair with a tactical book to cover the operational layer Godin doesn't address.",
-      pairsWith: ["pm-7", "mg-3"],
-      relatedCaseStudies: ["cs-16", "cs-23"],
+      pairsWith: [
+        "pm-7",
+        "mg-3"
+      ],
+      relatedCaseStudies: [
+        "cs-16",
+        "cs-23"
+      ],
     },
   },
   {
@@ -1073,7 +1759,11 @@ export const books: Book[] = [
     rating: 4.5,
     pages: 336,
     year: 2020,
-    tags: ["culture", "freedom", "netflix"],
+    tags: [
+      "culture",
+      "freedom",
+      "netflix"
+    ],
     summary: {
       analysis: [
         "No Rules Rules is the official Netflix culture book. Reed Hastings (Netflix co-founder and then-CEO) co-wrote it with Erin Meyer, INSEAD professor and cross-cultural management researcher, in 2020. The book follows up on the famous 2009 Netflix Culture Deck — the 125-slide internal document that Sheryl Sandberg once called 'the most important document ever to come out of the Valley' — and elaborates the principles that the deck only sketched.",
@@ -1082,18 +1772,39 @@ export const books: Book[] = [
         "The most common misreading is treating Netflix's culture as a transplantable template. The book is fairly explicit that the system only works in a specific kind of company: high-value-per-employee knowledge work, generous severance budgets, ability to attract top-decile talent, and a business model that rewards big creative bets rather than steady operational reliability. Most companies trying to install Netflix-style 'freedom and responsibility' without those conditions end up with the freedom-without-the-talent-density, which is just chaos.",
         "Its honest limitation, which the book partly addresses and partly skates over, is that the keeper-test culture is genuinely brutal for the people who don't pass it. The book includes some interviews with former Netflix employees about the high-pressure environment, but most of those accounts come from people who chose to participate in the book. The Glassdoor reviews and the public reporting paint a more mixed picture: world-class for the top performers who stay, deeply stressful and sometimes traumatic for those on the wrong side of the keeper test.",
         "For Indian product leaders, the book has been culturally influential but operationally challenging. The Indian labor market in 2026 has different dynamics than the US tech labor market the Netflix system was designed for — notice periods are typically 60-90 days, terminations have higher legal complexity, and severance budgets in Indian startups are usually a fraction of what Netflix can deploy. The talent-density philosophy translates; the specific mechanics often don't. Indian companies that have tried to copy Netflix's culture wholesale (a few notable startup attempts) have generally failed to make the mechanics work.",
-        "Pair with Principles for the Bridgewater-flavored variant of similar ideas, and with High Output Management for the more universally applicable management fundamentals the Netflix system assumes its readers already understand.",
+        "Pair with Principles for the Bridgewater-flavored variant of similar ideas, and with High Output Management for the more universally applicable management fundamentals the Netflix system assumes its readers already understand."
       ],
       keyConcepts: [
-        { name: "Talent density (not talent quantity)", explanation: "Hire fewer, higher-paid people who individually outperform multiple average hires. The whole Netflix system only works if every team member is in the top decile — otherwise the high-freedom culture produces chaos." },
-        { name: "Keeper test", explanation: "Managers regularly ask themselves: if this employee told me they were leaving tomorrow, how hard would I fight to keep them? If the answer is 'not very,' they shouldn't be on the team — replace them with someone you'd fight for." },
-        { name: "Context, not control", explanation: "Managers give context (vision, strategy, constraints, data) and let teams decide what to do. The opposite of approval chains, sign-offs, and centralized decision-making." },
-        { name: "Radical candor (Netflix version)", explanation: "Direct, immediate, in-the-moment feedback as a cultural norm — not as a quarterly review event. Awkward at first, faster decision-making over time. Closely related to Kim Scott's concept but applied at company scale." },
-        { name: "Generous severance + low retention friction", explanation: "Pay above-market when people are right for the role; pay generously when they're not. The high severance budget is what makes the keeper test ethically and legally workable." },
+        {
+          name: "Talent density (not talent quantity)",
+          explanation: "Hire fewer, higher-paid people who individually outperform multiple average hires. The whole Netflix system only works if every team member is in the top decile — otherwise the high-freedom culture produces chaos."
+        },
+        {
+          name: "Keeper test",
+          explanation: "Managers regularly ask themselves: if this employee told me they were leaving tomorrow, how hard would I fight to keep them? If the answer is 'not very,' they shouldn't be on the team — replace them with someone you'd fight for."
+        },
+        {
+          name: "Context, not control",
+          explanation: "Managers give context (vision, strategy, constraints, data) and let teams decide what to do. The opposite of approval chains, sign-offs, and centralized decision-making."
+        },
+        {
+          name: "Radical candor (Netflix version)",
+          explanation: "Direct, immediate, in-the-moment feedback as a cultural norm — not as a quarterly review event. Awkward at first, faster decision-making over time. Closely related to Kim Scott's concept but applied at company scale."
+        },
+        {
+          name: "Generous severance + low retention friction",
+          explanation: "Pay above-market when people are right for the role; pay generously when they're not. The high severance budget is what makes the keeper test ethically and legally workable."
+        }
       ],
       whoShouldRead: "Founders and CEOs at high-talent-density companies considering culture transitions, and senior executives interested in the operating tradeoffs of high-freedom cultures. Read critically alongside public reporting on Netflix's actual culture and considering whether the labor-market conditions in your geography support the model.",
-      pairsWith: ["mg-4", "mg-1"],
-      relatedCaseStudies: ["cs-13", "cs-18"],
+      pairsWith: [
+        "mg-4",
+        "mg-1"
+      ],
+      relatedCaseStudies: [
+        "cs-13",
+        "cs-18"
+      ],
     },
   },
   {
@@ -1108,7 +1819,11 @@ export const books: Book[] = [
     rating: 4.4,
     pages: 288,
     year: 1995,
-    tags: ["systems", "operations", "entrepreneurship"],
+    tags: [
+      "systems",
+      "operations",
+      "entrepreneurship"
+    ],
     summary: {
       analysis: [
         "The E-Myth Revisited is the small-business-systems book that's been quietly required reading inside service businesses, agencies, and franchise operations for thirty years. Michael Gerber wrote the original E-Myth in 1986 and revised it in 1995, and the book has sold over a million copies despite never quite reaching the tech-founder canon. The book's audience has historically been restaurant owners, plumbers, dentists, and small agency operators — people who built a business around their own expertise and got trapped in it.",
@@ -1117,18 +1832,39 @@ export const books: Book[] = [
         "The most common misreading is treating the book as anti-craft. Gerber isn't arguing that craft doesn't matter — he's arguing that craft alone is insufficient to build a business, and that the founder who only does the work eventually becomes the bottleneck. Readers who pattern-match the book as 'don't be a technician' miss that Gerber's actual point is 'don't be only a technician.'",
         "Its main limitation is its audience-fit. The book is calibrated for service businesses with repeatable operations: a bakery, a law office, an agency, a clinic. It's less directly useful for product companies, software startups, or knowledge-work businesses where the value being delivered is non-repetitive creative output. Founders of product startups who read it sometimes find the franchise metaphor strained — though the underlying principle of building systems that don't depend on you personally does translate.",
         "For Indian service-business founders, agency operators, and consulting firm builders, this is genuinely the most operationally applicable book on the management list. The Indian services economy in 2026 has an enormous middle layer of founder-led service businesses (IT services boutiques, marketing agencies, content shops, legal practices, healthcare clinics, F&B chains) that are mostly stuck in the Technician trap Gerber describes. The book's prescription — systematize like you were going to franchise — is directly useful for that audience, and is probably underread compared to its applicability.",
-        "Pair with High Output Management for the management-fundamentals layer that supports Gerber's systematization framework, and with The $100 Startup for the lifestyle-design adjacency (Guillebeau and Gerber have different opinions on whether to scale at all, which makes them productive to read together).",
+        "Pair with High Output Management for the management-fundamentals layer that supports Gerber's systematization framework, and with The $100 Startup for the lifestyle-design adjacency (Guillebeau and Gerber have different opinions on whether to scale at all, which makes them productive to read together)."
       ],
       keyConcepts: [
-        { name: "Technician / Manager / Entrepreneur (three personalities)", explanation: "Every founder contains all three. The Technician does the craft, the Manager organizes the operation, the Entrepreneur designs the business. Most small businesses fail because the Technician dominates and the other two atrophy." },
-        { name: "Work on the business, not in it", explanation: "Spend less time doing the daily work and more time designing the systems that produce the daily work. Founders who only execute become bottlenecks; the business never grows past their personal capacity." },
-        { name: "Franchise prototype as design discipline", explanation: "Design your business as if you were going to franchise it — every process documented, every role defined, every customer interaction scripted. Even if you never franchise, the discipline produces a business that can run without you." },
-        { name: "Systems before people", explanation: "Build the system first, then hire ordinary people to run it. The opposite — hiring great people and hoping they'll figure it out — produces dependence on individual heroes and a business that collapses when they leave." },
-        { name: "The turnkey revolution", explanation: "Gerber's term for what McDonald's did to the restaurant business: an operating system so well-designed that a teenager can run it. The same discipline applied to any service business is the path to scale." },
+        {
+          name: "Technician / Manager / Entrepreneur (three personalities)",
+          explanation: "Every founder contains all three. The Technician does the craft, the Manager organizes the operation, the Entrepreneur designs the business. Most small businesses fail because the Technician dominates and the other two atrophy."
+        },
+        {
+          name: "Work on the business, not in it",
+          explanation: "Spend less time doing the daily work and more time designing the systems that produce the daily work. Founders who only execute become bottlenecks; the business never grows past their personal capacity."
+        },
+        {
+          name: "Franchise prototype as design discipline",
+          explanation: "Design your business as if you were going to franchise it — every process documented, every role defined, every customer interaction scripted. Even if you never franchise, the discipline produces a business that can run without you."
+        },
+        {
+          name: "Systems before people",
+          explanation: "Build the system first, then hire ordinary people to run it. The opposite — hiring great people and hoping they'll figure it out — produces dependence on individual heroes and a business that collapses when they leave."
+        },
+        {
+          name: "The turnkey revolution",
+          explanation: "Gerber's term for what McDonald's did to the restaurant business: an operating system so well-designed that a teenager can run it. The same discipline applied to any service business is the path to scale."
+        }
       ],
       whoShouldRead: "Founders of service businesses, agencies, consulting firms, restaurants, clinics, and any business built around repeatable operations. Most directly applicable book on the management list for Indian service-economy operators. Less useful for venture-track tech product founders.",
-      pairsWith: ["mg-1", "st-10"],
-      relatedCaseStudies: ["cs-23", "cs-30"],
+      pairsWith: [
+        "mg-1",
+        "st-10"
+      ],
+      relatedCaseStudies: [
+        "cs-23",
+        "cs-30"
+      ],
     },
   },
 ];

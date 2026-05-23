@@ -1,0 +1,460 @@
+// Sync markdown content → data/*.ts files.
+//
+// Run via: npx tsx scripts/sync-content.ts
+//
+// Reads every file in content/{topics,comparisons,books,case-studies}/
+// and regenerates the corresponding data/*.ts file. The data files are
+// auto-generated artifacts — markdown is the source of truth.
+//
+// Safe to re-run: deterministic output, full file regeneration.
+
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+
+const ROOT = process.cwd();
+const CONTENT = path.join(ROOT, "content");
+const DATA = path.join(ROOT, "data");
+
+function readAll(dir: string): Array<{ slug: string; data: any; body: string }> {
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(dir, f), "utf8");
+      const { data, content } = matter(raw);
+      return { slug: f.replace(/\.md$/, ""), data, body: content.trim() };
+    });
+}
+
+// TypeScript-safe string literal — JSON.stringify handles all edge cases
+// (quotes, newlines, unicode) and produces valid TS string literals.
+const ts = (s: any): string =>
+  s === undefined || s === null ? "null" : JSON.stringify(s);
+
+const tsArr = (arr: any[] | undefined, indent = 2): string => {
+  if (!arr || arr.length === 0) return "[]";
+  const pad = " ".repeat(indent);
+  return "[\n" + arr.map((x) => pad + ts(x)).join(",\n") + "\n" + " ".repeat(indent - 2) + "]";
+};
+
+const tsObjArr = (
+  arr: Record<string, any>[] | undefined,
+  indent = 2
+): string => {
+  if (!arr || arr.length === 0) return "[]";
+  const pad = " ".repeat(indent);
+  return (
+    "[\n" +
+    arr
+      .map((obj) => {
+        const inner = Object.entries(obj)
+          .map(([k, v]) => `${pad}  ${k}: ${ts(v)}`)
+          .join(",\n");
+        return `${pad}{\n${inner}\n${pad}}`;
+      })
+      .join(",\n") +
+    "\n" +
+    " ".repeat(indent - 2) +
+    "]"
+  );
+};
+
+const HEADER = `// ⚠️  AUTO-GENERATED — DO NOT EDIT BY HAND.
+// Source of truth is content/. Run \`npx tsx scripts/sync-content.ts\`
+// to regenerate after editing markdown files.
+`;
+
+// ─── TOPICS ─────────────────────────────────────────────────────────────
+function syncTopics() {
+  const entries = readAll(path.join(CONTENT, "topics"));
+  const body = entries
+    .map((e) => {
+      const d = e.data;
+      const fields: string[] = [];
+      fields.push(`    slug: ${ts(d.slug)}`);
+      fields.push(`    title: ${ts(d.title)}`);
+      fields.push(`    eyebrow: ${ts(d.eyebrow)}`);
+      fields.push(`    intro: ${ts(e.body)}`);
+      fields.push(`    metaTitle: ${ts(d.metaTitle)}`);
+      fields.push(`    metaDescription: ${ts(d.metaDescription)}`);
+      fields.push(`    keywords: ${tsArr(d.keywords, 6)}`);
+      fields.push(`    accentColor: ${ts(d.accentColor)}`);
+      fields.push(`    caseStudyIds: ${tsArr(d.caseStudyIds, 6)}`);
+      if (d.faqs) {
+        fields.push(`    faqs: ${tsObjArr(d.faqs, 6)}`);
+      }
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+export interface TopicFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface Topic {
+  slug: string;
+  title: string;
+  eyebrow: string;
+  intro: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  accentColor: string;
+  caseStudyIds: string[];
+  faqs?: TopicFAQ[];
+}
+
+export const topics: Topic[] = [
+${body},
+];
+
+export const getTopicBySlug = (slug: string): Topic | undefined =>
+  topics.find((t) => t.slug === slug);
+`;
+  fs.writeFileSync(path.join(DATA, "topics.ts"), out, "utf8");
+  console.log(`✓ data/topics.ts (${entries.length} entries)`);
+}
+
+// ─── COMPARISONS ────────────────────────────────────────────────────────
+function syncComparisons() {
+  const entries = readAll(path.join(CONTENT, "comparisons"));
+  const body = entries
+    .map((e) => {
+      const d = e.data;
+      const fields: string[] = [];
+      fields.push(`    slug: ${ts(d.slug)}`);
+      fields.push(`    companyA: ${ts(d.companyA)}`);
+      fields.push(`    companyB: ${ts(d.companyB)}`);
+      fields.push(`    title: ${ts(d.title)}`);
+      fields.push(`    eyebrow: ${ts(d.eyebrow)}`);
+      fields.push(`    intro: ${ts(e.body)}`);
+      fields.push(`    verdict: ${ts(d.verdict)}`);
+      fields.push(`    metaTitle: ${ts(d.metaTitle)}`);
+      fields.push(`    metaDescription: ${ts(d.metaDescription)}`);
+      fields.push(`    keywords: ${tsArr(d.keywords, 6)}`);
+      fields.push(`    accentColor: ${ts(d.accentColor)}`);
+      fields.push(`    rows: ${tsObjArr(d.rows, 6)}`);
+      if (d.faqs) fields.push(`    faqs: ${tsObjArr(d.faqs, 6)}`);
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+export interface ComparisonFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface Comparison {
+  slug: string;
+  companyA: string;
+  companyB: string;
+  title: string;
+  eyebrow: string;
+  intro: string;
+  verdict: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  accentColor: string;
+  rows: Array<{ label: string; a: string; b: string }>;
+  faqs?: ComparisonFAQ[];
+}
+
+export const comparisons: Comparison[] = [
+${body},
+];
+
+export const getComparisonBySlug = (slug: string): Comparison | undefined =>
+  comparisons.find((c) => c.slug === slug);
+`;
+  fs.writeFileSync(path.join(DATA, "comparisons.ts"), out, "utf8");
+  console.log(`✓ data/comparisons.ts (${entries.length} entries)`);
+}
+
+// ─── BOOKS ──────────────────────────────────────────────────────────────
+function syncBooks() {
+  const entries = readAll(path.join(CONTENT, "books"));
+  // Preserve original ordering (pm-1 → pm-10 → st-1 → st-10 → mg-1 → mg-10)
+  // by sorting on the id field rather than alphabetical slug.
+  entries.sort((a, b) => {
+    const order = ["pm", "st", "mg"];
+    const ax = order.indexOf((a.data.id as string).split("-")[0]);
+    const bx = order.indexOf((b.data.id as string).split("-")[0]);
+    if (ax !== bx) return ax - bx;
+    const an = parseInt((a.data.id as string).split("-")[1] || "0", 10);
+    const bn = parseInt((b.data.id as string).split("-")[1] || "0", 10);
+    return an - bn;
+  });
+
+  const body = entries
+    .map((e) => {
+      const d = e.data;
+      const fields: string[] = [];
+      fields.push(`    id: ${ts(d.id)}`);
+      if (d.amazonUrl) fields.push(`    amazonUrl: ${ts(d.amazonUrl)}`);
+      fields.push(`    title: ${ts(d.title)}`);
+      fields.push(`    author: ${ts(d.author)}`);
+      fields.push(`    category: ${ts(d.category)}`);
+      fields.push(`    thumbnailURL: ${ts(d.thumbnailURL)}`);
+      fields.push(`    link: ${ts(d.link)}`);
+      fields.push(`    description: ${ts(d.description)}`);
+      fields.push(`    rating: ${d.rating}`);
+      fields.push(`    pages: ${d.pages}`);
+      fields.push(`    year: ${d.year}`);
+      fields.push(`    tags: ${tsArr(d.tags, 6)}`);
+      if (d.featured) fields.push(`    featured: true`);
+      if (d.summary) {
+        const s = d.summary;
+        const sumLines: string[] = [];
+        sumLines.push(`      analysis: ${tsArr(s.analysis, 8)}`);
+        sumLines.push(
+          `      keyConcepts: ${tsObjArr(s.keyConcepts, 8)}`
+        );
+        sumLines.push(`      whoShouldRead: ${ts(s.whoShouldRead)}`);
+        if (s.pairsWith) sumLines.push(`      pairsWith: ${tsArr(s.pairsWith, 8)}`);
+        if (s.relatedCaseStudies)
+          sumLines.push(
+            `      relatedCaseStudies: ${tsArr(s.relatedCaseStudies, 8)}`
+          );
+        fields.push(`    summary: {\n${sumLines.join(",\n")},\n    }`);
+      }
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+export type Category = "Product Management" | "Startups" | "Management";
+
+// Amazon Associates India affiliate tag. All book links flow through here.
+export const AMAZON_AFFILIATE_TAG = "pmnorthstar-21";
+
+export interface BookSummary {
+  analysis: string[];
+  keyConcepts: Array<{ name: string; explanation: string }>;
+  whoShouldRead: string;
+  pairsWith?: string[];
+  relatedCaseStudies?: string[];
+}
+
+export interface Book {
+  id: string;
+  title: string;
+  author: string;
+  category: Category;
+  thumbnailURL: string;
+  link: string;
+  description: string;
+  rating: number;
+  pages: number;
+  year: number;
+  tags: string[];
+  featured?: boolean;
+  amazonUrl?: string;
+  summary?: BookSummary;
+}
+
+// Bumped when book content has meaningful refresh. Sitemap reads this.
+export const BOOKS_LAST_UPDATED = "2026-05-18";
+
+function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/['']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getBookSlug(book: Book): string {
+  return slugify(\`\${book.title} \${book.author.split(" ").pop()}\`);
+}
+
+export function getBookBySlug(slug: string, books: Book[]): Book | undefined {
+  return books.find((b) => getBookSlug(b) === slug);
+}
+
+export function getAmazonAffiliateUrl(book: Book): string {
+  if (book.amazonUrl) return book.amazonUrl;
+  const query = encodeURIComponent(\`\${book.title} \${book.author}\`);
+  return \`https://www.amazon.in/s?k=\${query}&tag=\${AMAZON_AFFILIATE_TAG}\`;
+}
+
+export const books: Book[] = [
+${body},
+];
+
+export const categories: Category[] = [
+  "Product Management",
+  "Startups",
+  "Management",
+];
+
+export const getBooksByCategory = (category: Category) =>
+  books.filter((b) => b.category === category);
+
+export const getFeaturedBooks = () => books.filter((b) => b.featured);
+`;
+  fs.writeFileSync(path.join(DATA, "books.ts"), out, "utf8");
+  console.log(`✓ data/books.ts (${entries.length} entries)`);
+}
+
+// ─── CASE STUDIES ───────────────────────────────────────────────────────
+function syncCaseStudies() {
+  const entries = readAll(path.join(CONTENT, "case-studies"));
+  // Preserve cs-N order — numeric, not alphabetical.
+  entries.sort((a, b) => {
+    const an = parseInt((a.data.id as string).split("-")[1] || "0", 10);
+    const bn = parseInt((b.data.id as string).split("-")[1] || "0", 10);
+    return an - bn;
+  });
+
+  const studyBody = entries
+    .map((e) => {
+      const d = e.data;
+      const fields: string[] = [];
+      fields.push(`    id: ${ts(d.id)}`);
+      fields.push(`    company: ${ts(d.company)}`);
+      fields.push(`    title: ${ts(d.title)}`);
+      fields.push(`    category: ${ts(d.category)}`);
+      fields.push(`    description: ${ts(d.description)}`);
+      fields.push(`    outcome: ${ts(d.outcome)}`);
+      fields.push(`    year: ${d.year}`);
+      fields.push(`    tags: ${tsArr(d.tags, 6)}`);
+      fields.push(`    content: ${ts(e.body)}`);
+      fields.push(`    logo: ${ts(d.logo)}`);
+      if (d.region) fields.push(`    region: ${ts(d.region)}`);
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  // Slug map preserves the legacy hand-curated slugs (e.g. cs-51 →
+  // "cred-design-fintech"). We read these from each entry's frontmatter.
+  const slugEntries = entries.map(
+    (e) => `  ${ts(e.data.id)}: ${ts(e.data.slug)},`
+  );
+
+  const out = `${HEADER}
+// Bumped when case studies are added, edited, or have material changes.
+// Sitemap reads this so Google sees an accurate lastModified date.
+export const CASE_STUDIES_LAST_UPDATED = "2026-05-18";
+
+export interface CaseStudy {
+  id: string;
+  company: string;
+  title: string;
+  category: "Product" | "Growth" | "Strategy" | "Design" | "Failure";
+  description: string;
+  outcome: string;
+  year: number;
+  tags: string[];
+  content: string;
+  logo: string;
+  region?: "India";
+}
+
+export const caseStudies: CaseStudy[] = [
+${studyBody},
+];
+
+export type CaseStudyCategory = "All" | "Product" | "Growth" | "Strategy" | "Design" | "Failure";
+
+export const caseStudyCategories: CaseStudyCategory[] = [
+  "All", "Product", "Growth", "Strategy", "Design", "Failure",
+];
+
+export const getCaseStudiesByCategory = (cat: CaseStudyCategory) =>
+  cat === "All" ? caseStudies : caseStudies.filter((c) => c.category === cat);
+
+export const getCaseStudyById = (id: string): CaseStudy | undefined =>
+  caseStudies.find((c) => c.id === id);
+
+export const getIndianCaseStudies = (): CaseStudy[] =>
+  caseStudies.filter((c) => c.region === "India");
+
+// Legacy slug map — keeps URL stability after the markdown migration.
+const SLUG_MAP: Record<string, string> = {
+${slugEntries.join("\n")}
+};
+
+const ID_BY_SLUG: Record<string, string> = Object.fromEntries(
+  Object.entries(SLUG_MAP).map(([id, slug]) => [slug, id])
+);
+
+export const getCaseStudySlug = (id: string): string =>
+  SLUG_MAP[id] || id;
+
+export const getCaseStudyBySlug = (slug: string): CaseStudy | undefined => {
+  const id = ID_BY_SLUG[slug];
+  return id ? getCaseStudyById(id) : undefined;
+};
+
+// True if param looks like a legacy cs-X identifier
+export const isLegacyId = (param: string): boolean =>
+  /^cs-\\d+$/.test(param);
+`;
+  fs.writeFileSync(path.join(DATA, "caseStudies.ts"), out, "utf8");
+  console.log(`✓ data/caseStudies.ts (${entries.length} entries)`);
+}
+
+// ─── CASE STUDY FAQs ────────────────────────────────────────────────────
+function syncCaseStudyFaqs() {
+  const entries = readAll(path.join(CONTENT, "case-studies"));
+  // Group FAQs by case study ID, preserving cs-N numerical order.
+  entries.sort((a, b) => {
+    const an = parseInt((a.data.id as string).split("-")[1] || "0", 10);
+    const bn = parseInt((b.data.id as string).split("-")[1] || "0", 10);
+    return an - bn;
+  });
+
+  const blocks = entries
+    .filter((e) => e.data.faqs && e.data.faqs.length > 0)
+    .map((e) => {
+      const inner = (e.data.faqs as { question: string; answer: string }[])
+        .map(
+          (f) =>
+            `    { question: ${ts(f.question)}, answer: ${ts(f.answer)} }`
+        )
+        .join(",\n");
+      return `  ${ts(e.data.id)}: [\n${inner},\n  ]`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+// FAQ entries — sourced from each case study's markdown frontmatter
+// in content/case-studies/. Regenerated by scripts/sync-content.ts.
+const MANUAL_FAQS: Record<string, FAQ[]> = {
+${blocks},
+};
+
+export function getCaseStudyFaqs(id: string): FAQ[] {
+  if (MANUAL_FAQS[id]) return MANUAL_FAQS[id];
+  return [];
+}
+`;
+  fs.writeFileSync(path.join(DATA, "caseStudyFaqs.ts"), out, "utf8");
+  const faqCount = entries.filter(
+    (e) => e.data.faqs && e.data.faqs.length > 0
+  ).length;
+  console.log(`✓ data/caseStudyFaqs.ts (${faqCount} case studies with FAQs)`);
+}
+
+function main() {
+  console.log("Syncing markdown content → data/*.ts...\n");
+  syncTopics();
+  syncComparisons();
+  syncBooks();
+  syncCaseStudies();
+  syncCaseStudyFaqs();
+  console.log("\nDone. Review the diff before committing.");
+}
+
+main();
