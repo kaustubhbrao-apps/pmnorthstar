@@ -8,11 +8,14 @@ const navLinks: Array<{ label: string; href: string }> = [
   { label: "Case studies", href: "/#casestudies" },
   { label: "Playlists", href: "/#playlists" },
   { label: "AI Decoded", href: "/ai-decoded" },
+  { label: "CheckIt", href: "/checkit" },
   { label: "India", href: "/india" },
+  { label: "About", href: "/about" },
 ];
 
 const metaLinks: Array<{ label: string; href: string }> = [
   { label: "Newsletter", href: "https://pmnorthstar.substack.com" },
+  { label: "Privacy", href: "/privacy" },
   { label: "Sitemap", href: "/sitemap.xml" },
   { label: "Robots", href: "/robots.txt" },
 ];

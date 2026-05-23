@@ -21,8 +21,10 @@ export const metadata: Metadata = {
     default: "northstar — Free Product Management Library",
     template: "%s | northstar",
   },
+  // 50-160 chars — Google truncates beyond that in SERPs. Wider context
+  // (counts, scope, the "no paywall" angle) lives in OpenGraph below.
   description:
-    `Free product management insights, case studies, and curated learning playlists. ${CASE_STUDY_COUNT} long-form case studies on the companies that built modern product (Apple, Spotify, Cred, Razorpay, Zerodha + more), original reviews and key takeaways for ${BOOK_COUNT} essential PM books — the short route for those who want the gist, plus Amazon affiliate links for the full book. ${PLAYLIST_COUNT} hand-picked YouTube playlists across design, data, marketing, branding, startups and finance. No paywall.`,
+    `Free PM library — ${CASE_STUDY_COUNT} case studies, ${BOOK_COUNT} book reviews, ${PLAYLIST_COUNT} curated playlists. Hand-picked, opinionated, no paywall.`,
   keywords: [
     "product management",
     "product manager",

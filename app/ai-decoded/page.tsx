@@ -5,6 +5,7 @@ import { getAllAIDecodedArticles } from "@/lib/ai-decoded";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SidebarShell } from "@/components/SidebarShell";
+import { SubscribeForm } from "@/components/SubscribeForm";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -169,6 +170,20 @@ export default function AIDecodedIndexPage() {
               ))}
             </ul>
           )}
+        </div>
+      </section>
+
+      <section
+        className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+        style={{ borderTop: "1px solid var(--card-border)" }}
+      >
+        <div className="max-w-3xl">
+          <SubscribeForm
+            variant="card"
+            surface="ai-decoded-index"
+            headline="Get the next decoded read in your inbox."
+            subhead="One sharp take on AI for PMs, marketers, founders, and operators — every few days. Free."
+          />
         </div>
       </section>
 

@@ -7,6 +7,25 @@ import { Byline } from "@/components/Byline";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 
+// Split rendered HTML at the </p> tag closest to `ratio` through the
+// article so we can inject a CTA mid-read. Keeps both halves valid HTML.
+function splitHtmlAtParagraph(
+  html: string,
+  ratio: number,
+): [string, string] {
+  const positions: number[] = [];
+  const closeTag = "</p>";
+  let idx = html.indexOf(closeTag);
+  while (idx !== -1) {
+    positions.push(idx + closeTag.length);
+    idx = html.indexOf(closeTag, idx + closeTag.length);
+  }
+  if (positions.length < 3) return [html, ""];
+  const splitIdx =
+    positions[Math.max(1, Math.floor(positions.length * ratio))];
+  return [html.slice(0, splitIdx), html.slice(splitIdx)];
+}
+
 export default function AIDecodedArticlePage({
   params,
 }: {
@@ -116,16 +135,53 @@ export default function AIDecodedArticlePage({
         </section>
       )}
 
-      {/* Article body */}
-      <section
-        className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
-        style={{ borderBottom: "1px solid var(--card-border)" }}
-      >
-        <div
-          className="max-w-3xl article-prose"
-          dangerouslySetInnerHTML={{ __html: article.htmlContent }}
-        />
-      </section>
+      {/* Article body — split at ~40% to inject a newsletter CTA mid-read */}
+      {(() => {
+        const [firstHalf, secondHalf] = splitHtmlAtParagraph(
+          article.htmlContent,
+          0.4,
+        );
+        return (
+          <>
+            <section
+              className="px-4 sm:px-8 lg:px-12 pt-10 sm:pt-14"
+              style={
+                secondHalf
+                  ? undefined
+                  : { borderBottom: "1px solid var(--card-border)", paddingBottom: "2.5rem" }
+              }
+            >
+              <div
+                className="max-w-3xl article-prose"
+                dangerouslySetInnerHTML={{ __html: firstHalf }}
+              />
+            </section>
+            {secondHalf && (
+              <>
+                <section className="px-4 sm:px-8 lg:px-12 py-8">
+                  <div className="max-w-3xl">
+                    <SubscribeForm
+                      variant="card"
+                      surface="ai-decoded-article"
+                      headline="Like this decoded read? Get the next one in your inbox."
+                      subhead="One sharp take on the latest in AI for PMs, founders and operators — every few days. Free."
+                    />
+                  </div>
+                </section>
+                <section
+                  className="px-4 sm:px-8 lg:px-12 pb-10 sm:pb-14"
+                  style={{ borderBottom: "1px solid var(--card-border)" }}
+                >
+                  <div
+                    className="max-w-3xl article-prose"
+                    dangerouslySetInnerHTML={{ __html: secondHalf }}
+                  />
+                </section>
+              </>
+            )}
+          </>
+        );
+      })()}
 
       {/* FAQ — AEO surface */}
       {fm.faqs && fm.faqs.length > 0 && (
@@ -167,20 +223,6 @@ export default function AIDecodedArticlePage({
           </div>
         </section>
       )}
-
-      {/* Newsletter */}
-      <section
-        className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
-        style={{ borderBottom: "1px solid var(--card-border)" }}
-      >
-        <div className="max-w-3xl">
-          <SubscribeForm
-            variant="card"
-            headline="Like this decoded read? Get the next one in your inbox."
-            subhead="One sharp take on the latest in AI for PMs, founders and operators — every few days. Free."
-          />
-        </div>
-      </section>
 
       <Footer />
     </SidebarShell>

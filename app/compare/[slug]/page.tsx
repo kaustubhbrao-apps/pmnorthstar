@@ -13,6 +13,7 @@ import { getCaseStudyById, getCaseStudySlug } from "@/data/caseStudies";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { getComparisonBySlug, comparisons } from "@/data/comparisons";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { ArrowLeft, ArrowUpRight, Menu } from "lucide-react";
 
 export default function ComparePage({ params }: { params: { slug: string } }) {
@@ -282,6 +283,23 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                   </div>
                 ))}
               </div>
+            </div>
+          </section>
+
+          {/* Newsletter — mid-page, after the table and before the verdict.
+              Gives readers who've absorbed the comparison a moment to commit
+              before they see the call. */}
+          <section
+            className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10"
+            style={{ borderBottom: "1px solid var(--card-border)" }}
+          >
+            <div className="max-w-2xl mx-auto">
+              <SubscribeForm
+                variant="card"
+                surface="compare-mid"
+                headline="More head-to-head product breakdowns — in your inbox."
+                subhead="One sharp comparison every few days. Free."
+              />
             </div>
           </section>
 

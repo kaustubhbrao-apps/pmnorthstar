@@ -2,12 +2,9 @@
 
 import { Search, X, LogOut } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import { Category } from "@/data/books";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface TopNavProps {
-  activeFilter: "All" | Category;
-  onFilterChange: (filter: "All" | Category) => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
   isDark: boolean;
@@ -18,16 +15,7 @@ interface TopNavProps {
   onAuthRequired?: () => void;
 }
 
-const filters: ("All" | Category)[] = [
-  "All",
-  "Product Management",
-  "Startups",
-  "Management",
-];
-
 export function TopNav({
-  activeFilter,
-  onFilterChange,
   searchQuery,
   onSearchChange,
   isDark,
@@ -89,20 +77,7 @@ export function TopNav({
         )}
       </div>
 
-      <div className="flex items-center gap-3">
-        {/* Filter chips */}
-        <div className="flex items-center gap-2 overflow-x-auto scroll-container pb-0.5 flex-1 min-w-0">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => onFilterChange(filter)}
-              className={`chip flex-shrink-0 ${activeFilter === filter ? "active" : ""}`}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-
+      <div className="flex items-center gap-3 sm:ml-auto">
         {/* Right actions */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <span className="hidden lg:inline-flex">

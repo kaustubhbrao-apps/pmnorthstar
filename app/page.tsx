@@ -5,7 +5,6 @@ import {
   books,
   categories,
   getFeaturedBooks,
-  Category,
 } from "@/data/books";
 import {
   caseStudies,
@@ -146,7 +145,6 @@ export default function HomePage() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
-  const [activeFilter, setActiveFilter] = useState<"All" | Category>("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCsFilter, setActiveCsFilter] = useState<CaseStudyCategory>("All");
   const [activeLearnFilter, setActiveLearnFilter] = useState<LearnFilter>("All");
@@ -177,7 +175,6 @@ export default function HomePage() {
 
   const filteredBooks = useMemo(() => {
     let result = books;
-    if (activeFilter !== "All") result = result.filter((b) => b.category === activeFilter);
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       result = result.filter((b) => {
@@ -208,7 +205,7 @@ export default function HomePage() {
       });
     }
     return result;
-  }, [activeFilter, searchQuery]);
+  }, [searchQuery]);
 
   const filteredCaseStudies = useMemo(
     () => getCaseStudiesByCategory(activeCsFilter),
@@ -341,7 +338,7 @@ export default function HomePage() {
   }, []);
 
   const heroBook = featured[0];
-  const isFiltered = activeFilter !== "All" || searchQuery.trim() !== "";
+  const isFiltered = searchQuery.trim() !== "";
 
   const csStats = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -1013,8 +1010,6 @@ export default function HomePage() {
         <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
 
         <TopNav
-          activeFilter={activeFilter}
-          onFilterChange={setActiveFilter}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
           isDark={isDark}
@@ -1067,11 +1062,11 @@ export default function HomePage() {
         </div>
 
         <main className="flex-1 overflow-y-auto scroll-container">
-          {authLoading ? (
-            <div className="flex items-center justify-center py-20">
-              <div className="w-6 h-6 border-2 rounded-full animate-spin" style={{ borderColor: "var(--card-border)", borderTopColor: "var(--brand-primary)" }} />
-            </div>
-          ) : !isFiltered ? (
+          {/* Render the library view immediately so the H1 + content reach
+              SSR HTML (good for SEO crawlers and CheckIt) — auth state
+              still resolves async but only changes save/like button
+              interactivity, not page structure. */}
+          {!isFiltered ? (
             <div className="pb-12">
               {heroBook && <HeroBanner onNavChange={setActiveNav} />}
 
@@ -1526,10 +1521,10 @@ export default function HomePage() {
               ) : (
                 <>
                   <div className="mb-6">
-                    <p className="eyebrow mb-1.5">Filter</p>
+                    <p className="eyebrow mb-1.5">Search</p>
                     <div className="flex items-baseline gap-3">
                       <h2 className="text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
-                        {activeFilter}
+                        Results for &ldquo;{searchQuery.trim()}&rdquo;
                       </h2>
                       <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
                         {String(filteredBooks.length)}

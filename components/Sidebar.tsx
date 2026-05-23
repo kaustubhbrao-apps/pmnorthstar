@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles } from "lucide-react";
+import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
 import { playlists } from "@/data/learn";
 import { topics } from "@/data/topics";
@@ -139,6 +139,19 @@ export function Sidebar({
           >
             <Sparkles size={15} strokeWidth={1.6} />
             <span style={{ letterSpacing: "-0.005em" }}>AI Decoded</span>
+          </Link>
+
+          {/* CheckIt — site readiness scorecard. Its own destination
+              since it's a tool, not a library section. NEW badge to
+              surface it while it's fresh. */}
+          <Link
+            href="/checkit"
+            onClick={onClose}
+            className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm"
+            style={{ color: "var(--text-muted)" }}
+          >
+            <Gauge size={15} strokeWidth={1.6} />
+            <span style={{ letterSpacing: "-0.005em" }}>CheckIt</span>
             <span
               className="ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded"
               style={{

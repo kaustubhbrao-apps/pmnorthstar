@@ -50,7 +50,22 @@ export type AnalyticsEvent =
   // ── Auth funnel ─────────────────────────────────────────────────
   | { name: "auth_modal_opened"; trigger: string }
   | { name: "auth_signup_completed" }
-  | { name: "auth_login_completed" };
+  | { name: "auth_login_completed" }
+  // ── CheckIt ─────────────────────────────────────────────────────
+  // Url is hashed/truncated on intake to keep PII out of analytics; we
+  // pass the host only so we can spot popular domains without leaking
+  // private query strings.
+  | { name: "checkit_audit_started"; host: string }
+  | { name: "checkit_audit_completed"; host: string; score: number; band: string }
+  | { name: "checkit_dimension_expanded"; dimension: string }
+  | {
+      name: "checkit_resource_clicked";
+      dimension: string;
+      resource_type: string; // 'case-study' | 'book'
+      resource_slug: string;
+    }
+  | { name: "checkit_share_clicked"; host: string; score: number }
+  | { name: "checkit_recheck_clicked"; host: string };
 
 export function track(event: AnalyticsEvent) {
   // Vercel Analytics accepts (name, props). Strip the discriminator.

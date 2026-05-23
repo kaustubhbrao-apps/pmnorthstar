@@ -13,6 +13,7 @@ import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { caseStudies } from "@/data/caseStudies";
 import { getTopicBySlug, topics } from "@/data/topics";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { ArrowLeft, ArrowUpRight, Menu } from "lucide-react";
 
 export default function TopicPage({ params }: { params: { slug: string } }) {
@@ -159,6 +160,23 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
               {cases.map((study, idx) => (
                 <CaseStudyCard key={study.id} study={study} index={idx} />
               ))}
+            </div>
+          </section>
+
+          {/* Newsletter — mid-page, after readers have scanned the case
+              study list and before the FAQ + cross-links. The natural
+              "commit point" in the page flow. */}
+          <section
+            className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10"
+            style={{ borderBottom: "1px solid var(--card-border)" }}
+          >
+            <div className="max-w-2xl mx-auto">
+              <SubscribeForm
+                variant="card"
+                surface="topic"
+                headline={`More case studies on ${topic.title.toLowerCase()} — in your inbox.`}
+                subhead="One product deep dive every few days. Free. No paywall."
+              />
             </div>
           </section>
 

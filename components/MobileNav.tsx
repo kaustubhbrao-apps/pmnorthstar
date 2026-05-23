@@ -8,6 +8,7 @@ import {
   MapPin,
   Layers,
   Sparkles,
+  Gauge,
 } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
 import { playlists } from "@/data/learn";
@@ -75,18 +76,19 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
         );
       })}
 
-      {/* AI Decoded — pinned high in the order with NEW badge so users
-          notice the section. It's the freshest content on the site. */}
+      {/* CheckIt — site readiness scorecard. Pinned at chip position
+          3 with NEW badge so the tool gets discovered alongside the
+          content sections. */}
       <Link
-        href="/ai-decoded"
+        href="/checkit"
         className="chip flex-shrink-0 inline-flex items-center gap-1.5"
         style={{
           borderColor: "rgba(243, 18, 60, 0.4)",
           background: "rgba(243, 18, 60, 0.08)",
         }}
       >
-        <Sparkles size={11} strokeWidth={1.6} style={{ color: "var(--brand-primary)" }} />
-        <span style={{ color: "var(--text-primary)" }}>AI Decoded</span>
+        <Gauge size={11} strokeWidth={1.6} style={{ color: "var(--brand-primary)" }} />
+        <span style={{ color: "var(--text-primary)" }}>CheckIt</span>
         <span
           className="text-[9px] font-semibold px-1 rounded"
           style={{
@@ -97,6 +99,15 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
         >
           NEW
         </span>
+      </Link>
+
+      {/* AI Decoded — editorial AI section, sits next to CheckIt. */}
+      <Link
+        href="/ai-decoded"
+        className="chip flex-shrink-0 inline-flex items-center gap-1.5"
+      >
+        <Sparkles size={11} strokeWidth={1.6} />
+        AI Decoded
       </Link>
 
       {items.slice(2).map(({ id, label, icon: Icon, count }) => {

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Mail, Twitter, LucideIcon } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SubscribeForm } from "@/components/SubscribeForm";
 import { SITE_INFO } from "@/lib/site";
 import { caseStudies } from "@/data/caseStudies";
 import { books } from "@/data/books";
@@ -158,6 +159,23 @@ export default function AboutPage() {
                 If a piece reads like a Wikipedia summary, it gets rewritten before it ships. If a take feels generic, it doesn&apos;t ship at all.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Mid-page newsletter — after the editorial principles, before
+            the "what's not here" section. Sits at the structural middle
+            of the page so readers get the ask while still engaged. */}
+        <section
+          className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10"
+          style={{ borderBottom: "1px solid var(--card-border)" }}
+        >
+          <div className="max-w-2xl mx-auto">
+            <SubscribeForm
+              variant="card"
+              surface="about"
+              headline="Want the newsletter?"
+              subhead="One product deep dive every few days. Free. No paywall."
+            />
           </div>
         </section>
 
