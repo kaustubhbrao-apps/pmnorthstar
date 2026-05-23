@@ -183,7 +183,7 @@ export function Sidebar({
 
         {/* Footer mark */}
         <div className="px-3 pt-4" style={{ borderTop: "1px solid var(--sidebar-border)" }}>
-          <p className="text-[11px]" style={{ color: "var(--text-faint)" }}>v2.1 — public beta</p>
+          <p className="text-[11px]" style={{ color: "var(--text-faint)" }}>v3 public beta</p>
         </div>
       </aside>
     </>
