@@ -155,3 +155,303 @@ export function ogTemplate({
 export function ogImage(props: OGTemplateProps) {
   return new ImageResponse(ogTemplate(props), OG_SIZE);
 }
+
+// ── CheckIt result share image ─────────────────────────────────────────
+//
+// Specialized OG card for /checkit?url=X. The background is the band
+// color (green / amber / red) so the score reads in the social preview
+// before any text loads. A huge centered number is the focal point.
+
+interface CheckitOGProps {
+  host: string;
+  score: number;
+  band: "ready" | "almost" | "polish" | "vibe";
+  bandLabel: string;
+  bandTagline: string;
+}
+
+const BAND_BG: Record<CheckitOGProps["band"], string> = {
+  ready: "#0F9D58",
+  almost: "#22C55E",
+  polish: "#F59E0B",
+  vibe: "#F3123C",
+};
+
+export function checkitOgTemplate({
+  host,
+  score,
+  band,
+  bandLabel,
+  bandTagline,
+}: CheckitOGProps) {
+  const bg = BAND_BG[band];
+  return (
+    <div
+      style={{
+        background: bg,
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: "64px 80px",
+        color: "#ffffff",
+        position: "relative",
+      }}
+    >
+      {/* Top: brand eyebrow */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+        }}
+      >
+        <div
+          style={{
+            width: 12,
+            height: 12,
+            borderRadius: 9999,
+            background: "#ffffff",
+            display: "flex",
+          }}
+        />
+        <span
+          style={{
+            color: "rgba(255, 255, 255, 0.92)",
+            fontSize: 22,
+            fontWeight: 700,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+          }}
+        >
+          northstar · checkit
+        </span>
+      </div>
+
+      {/* Middle: big score + band label */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-end",
+          gap: 32,
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "baseline",
+            color: "#ffffff",
+            fontWeight: 800,
+            letterSpacing: "-0.05em",
+            lineHeight: 0.9,
+          }}
+        >
+          <span style={{ fontSize: 280 }}>{score}</span>
+          <span
+            style={{
+              fontSize: 56,
+              opacity: 0.7,
+              marginLeft: 12,
+              fontWeight: 600,
+            }}
+          >
+            /100
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            paddingBottom: 24,
+            gap: 6,
+          }}
+        >
+          <span
+            style={{
+              fontSize: 56,
+              fontWeight: 700,
+              letterSpacing: "-0.025em",
+              lineHeight: 1,
+            }}
+          >
+            {bandLabel}
+          </span>
+          <span
+            style={{
+              fontSize: 26,
+              color: "rgba(255, 255, 255, 0.85)",
+              maxWidth: 540,
+              lineHeight: 1.3,
+            }}
+          >
+            {bandTagline}
+          </span>
+        </div>
+      </div>
+
+      {/* Bottom: host (left) + brand mark (right) */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          gap: 32,
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+          }}
+        >
+          <span
+            style={{
+              fontSize: 18,
+              fontWeight: 600,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "rgba(255, 255, 255, 0.75)",
+            }}
+          >
+            Site scored
+          </span>
+          <span
+            style={{
+              fontSize: 38,
+              fontWeight: 700,
+              letterSpacing: "-0.02em",
+              color: "#ffffff",
+            }}
+          >
+            {host}
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            gap: 4,
+          }}
+        >
+          <span
+            style={{
+              fontSize: 18,
+              color: "rgba(255, 255, 255, 0.75)",
+              fontWeight: 500,
+            }}
+          >
+            Score yours at
+          </span>
+          <span
+            style={{
+              fontSize: 26,
+              color: "#ffffff",
+              fontWeight: 700,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            pmnorthstar.in/checkit
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Promo card for /checkit when there's no specific URL being shared
+// (someone shares the bare /checkit page). Brand-red background.
+export function checkitPromoTemplate() {
+  return (
+    <div
+      style={{
+        background: "#F3123C",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: "72px 80px",
+        color: "#ffffff",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+        }}
+      >
+        <div
+          style={{
+            width: 12,
+            height: 12,
+            borderRadius: 9999,
+            background: "#ffffff",
+            display: "flex",
+          }}
+        />
+        <span
+          style={{
+            fontSize: 22,
+            fontWeight: 700,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "rgba(255, 255, 255, 0.92)",
+          }}
+        >
+          northstar · checkit
+        </span>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 24,
+        }}
+      >
+        <div
+          style={{
+            fontSize: 96,
+            fontWeight: 800,
+            letterSpacing: "-0.04em",
+            lineHeight: 1,
+            color: "#ffffff",
+          }}
+        >
+          Is your site ready for the business world?
+        </div>
+        <div
+          style={{
+            fontSize: 32,
+            color: "rgba(255, 255, 255, 0.9)",
+            lineHeight: 1.3,
+          }}
+        >
+          20 checks across brand, performance, SEO, UX, and trust. Free. 30 seconds.
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        <span
+          style={{
+            fontSize: 26,
+            fontWeight: 700,
+            letterSpacing: "-0.01em",
+            color: "#ffffff",
+          }}
+        >
+          pmnorthstar.in/checkit
+        </span>
+      </div>
+    </div>
+  );
+}
