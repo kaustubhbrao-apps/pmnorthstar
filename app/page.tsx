@@ -1146,7 +1146,7 @@ export default function HomePage() {
                   297KB) without hiding content from crawlers, since
                   every book gets its own page in the sitemap. */}
               <SectionRow title="Latest Picks" subtitle="Hand-curated for product learners" accentColor="#FF6B35">
-                {featured.slice(0, 8).map((book, index) => (
+                {featured.slice(0, 6).map((book, index) => (
                   <ResourceCard
                     key={book.id}
                     book={book}
@@ -1217,7 +1217,7 @@ export default function HomePage() {
                   </button>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {caseStudies.slice(0, 6).map((study, idx) => (
+                  {caseStudies.slice(0, 3).map((study, idx) => (
                     <CaseStudyCard
                       key={study.id}
                       study={study}
@@ -1308,7 +1308,7 @@ export default function HomePage() {
                   </button>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {interleavedPlaylists.slice(0, 6).map((playlist, idx) => (
+                  {interleavedPlaylists.slice(0, 3).map((playlist, idx) => (
                     <PlaylistCard
                       key={playlist.id}
                       playlist={playlist}
