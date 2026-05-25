@@ -1,14 +1,13 @@
-// CheckIt orchestrator. Single HTML fetch (with TTFB capture) + parallel
-// CrUX field-data lookup, then all 25 checks run in parallel. Some checks
-// issue additional sub-fetches (robots.txt, sitemap.xml, favicon HEAD,
-// og:image HEAD, apple-touch-icon HEAD, 404 probe); each has its own
-// 5-6s timeout so the audit always completes within the route's 60s
-// budget.
+// CheckIt orchestrator. Single HTML fetch (with TTFB capture), then all
+// 25 checks run in parallel. Some checks issue additional sub-fetches
+// (robots.txt, sitemap.xml, favicon HEAD, og:image HEAD, apple-touch-icon
+// HEAD, 404 probe); each has its own 5-6s timeout so the audit always
+// completes within the route's 60s budget.
 //
-// CrUX provides real user-experience field data for Core Web Vitals
-// (LCP, INP, CLS) when the site has enough Chrome traffic. Smaller
-// sites without field data get honest "no field data" messages on
-// those checks rather than synthetic guesses.
+// No external APIs (no PSI, no CrUX). Every check is fully deterministic
+// so the audit always returns full data regardless of site size or
+// Google API quota. Field-data signals like CWV would belong in a
+// separate informational surface, not in the 100-point scorecard.
 
 import * as Checks from "./checks";
 import type { FetchCtx } from "./checks";
@@ -16,7 +15,6 @@ import { DIMENSIONS } from "./dimensions";
 import type { AuditResult, DimensionResult } from "./types";
 import { bandFor } from "./types";
 import { fetchWithTimeout, normalizeUrl } from "./util";
-import { fetchCrux, originOf } from "./crux";
 
 const HTML_TIMEOUT_MS = 12_000;
 
@@ -26,15 +24,11 @@ export async function runAudit(rawUrl: string): Promise<AuditResult> {
     return fatalResult(rawUrl, `"${rawUrl}" isn't a valid URL.`);
   }
 
-  // 1. Fetch the HTML and the CrUX field data in parallel. CrUX is
-  //    independent of the HTML response so we can save a few hundred ms.
   let html = "";
   let finalUrl = url;
   let status = 0;
   let headers = new Headers();
   let ttfbMs = 0;
-
-  const cruxPromise = fetchCrux(originOf(url));
 
   try {
     const start = Date.now();
@@ -53,8 +47,6 @@ export async function runAudit(rawUrl: string): Promise<AuditResult> {
     return fatalResult(url.toString(), `Site returned HTTP ${status}. Audit needs a page that loads.`);
   }
 
-  const crux = await cruxPromise;
-
   const ctx: FetchCtx = {
     inputUrl: url,
     finalUrl,
@@ -62,10 +54,9 @@ export async function runAudit(rawUrl: string): Promise<AuditResult> {
     html,
     headers,
     ttfbMs,
-    crux,
   };
 
-  // 2. Run all 25 checks in parallel.
+  // 2. Run all 25 checks in parallel. All fully deterministic.
   const results = await Promise.all([
     // Brand & Identity (5)
     Checks.customDomain(ctx),
@@ -73,11 +64,11 @@ export async function runAudit(rawUrl: string): Promise<AuditResult> {
     Checks.ogCompleteness(ctx),
     Checks.realTitle(ctx),
     Checks.appleTouchIcon(ctx),
-    // Performance (5)
-    Checks.lcp(ctx),
-    Checks.inp(ctx),
-    Checks.cls(ctx),
+    // Performance (5) — all deterministic, no CWV field data
     Checks.ttfb(ctx),
+    Checks.layoutShiftPrevention(ctx),
+    Checks.htmlPayload(ctx),
+    Checks.renderBlockingScripts(ctx),
     Checks.modernImages(ctx),
     // SEO & Discoverability (5)
     Checks.metaDescription(ctx),

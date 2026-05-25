@@ -54,8 +54,8 @@ export const DIMENSIONS: DimensionConfig[] = [
     label: "Performance",
     oneLiner: "Does it load before users give up?",
     whyItMatters:
-      "Every 100ms of load time costs roughly 1% of conversions. On mobile 4G, where 60%+ of your traffic lives, a 4-second page loses more than half its visitors before they ever see your hero image. Performance isn't engineering vanity. It's the most direct lever on revenue you have. We measure three real Core Web Vitals from Chrome UX Report field data (LCP, INP, CLS), plus the server-side signals we can measure deterministically (TTFB, modern images). Field data tells you what real users actually experience; deterministic signals tell you what to fix.",
-    checkIds: ["lcp", "inp", "cls", "ttfb", "modern-images"],
+      "Every 100ms of load time costs roughly 1% of conversions. On mobile 4G, where 60%+ of your traffic lives, a 4-second page loses more than half its visitors before they ever see your hero image. Performance isn't engineering vanity. It's the most direct lever on revenue you have. We measure the causes of slow load: server response time (TTFB), how much markup ships before render (HTML payload), how aggressively JS delays paint (render-blocking scripts), whether images and fonts cause layout shift, and whether images use modern formats. Fix the causes and the user-perceived metrics improve predictably.",
+    checkIds: ["ttfb", "layout-shift-prevention", "html-payload", "render-blocking-scripts", "modern-images"],
     linkedResources: [
       {
         type: "case-study",
