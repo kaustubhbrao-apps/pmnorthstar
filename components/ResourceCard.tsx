@@ -259,7 +259,13 @@ export function ResourceCard({
               className="text-xs leading-relaxed line-clamp-2 mb-3"
               style={{ color: "var(--text-muted)" }}
             >
-              {book.description}
+              {/* Truncate the description in card render — line-clamp:2
+                  hides the overflow visually but the full string still
+                  ships in SSR HTML. Real truncation here cuts ~3-4KB
+                  off the home page payload across the rendered cards. */}
+              {book.description.length > 140
+                ? book.description.slice(0, 137).trimEnd() + "…"
+                : book.description}
             </p>
           )}
 
