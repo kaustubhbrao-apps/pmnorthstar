@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { aiDecodedManifest } from "@/data/aiDecodedManifest";
+import { caseStudies } from "@/data/caseStudies";
+import { books } from "@/data/books";
+import { playlists } from "@/data/learn";
 
 interface HeroBannerProps {
   onNavChange: (nav: string) => void;
@@ -20,6 +23,13 @@ interface HeroBannerProps {
 // Latest article surfaces in the AI Decoded card. The manifest is
 // already pre-sorted newest-first by sync-content.ts.
 const latestAI = aiDecodedManifest[0];
+
+// Counts auto-update with content sync. CheckIt total = 35 weighted
+// checks across 7 dimensions (see lib/checkit/dimensions.ts).
+const CASE_STUDY_COUNT = caseStudies.length;
+const BOOK_COUNT = books.length;
+const PLAYLIST_COUNT = playlists.length;
+const CHECKIT_TOTAL = 35;
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", {
@@ -74,9 +84,9 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
           className="text-sm sm:text-base leading-relaxed mb-6 max-w-md"
           style={{ color: "var(--text-muted)" }}
         >
-          65 case studies, 30 book reviews, 18 playlists. Hand-picked by
-          someone who actually read them. Free, no paywall, no email
-          gate.
+          {CASE_STUDY_COUNT} case studies, {BOOK_COUNT} book reviews,{" "}
+          {PLAYLIST_COUNT} playlists. Hand-picked by someone who actually
+          read them. Free, no paywall, no email gate.
         </p>
 
         <div className="flex flex-wrap items-center gap-2.5">
@@ -139,7 +149,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
               className="text-xs leading-snug mb-2.5"
               style={{ color: "rgba(255, 255, 255, 0.8)" }}
             >
-              20 checks. 30 seconds. Free.
+              {CHECKIT_TOTAL} checks. 30 seconds. Free.
             </p>
             <span
               className="inline-flex items-center gap-1 text-xs font-semibold transition-transform group-hover:translate-x-0.5"
