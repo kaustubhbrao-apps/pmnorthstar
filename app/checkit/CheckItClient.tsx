@@ -218,8 +218,9 @@ function Hero({
         className="text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed"
         style={{ color: "var(--text-muted)" }}
       >
-        We check 20 things across brand, performance, SEO, UX, and trust, the
-        basics that decide whether users treat you as a product or a project.
+        We check 35 things across performance, SEO, UX, brand, trust, polish,
+        and modern web standards — the basics that decide whether users treat
+        you as a product or a project.
       </p>
 
       <form onSubmit={onSubmit} className="max-w-2xl mx-auto">

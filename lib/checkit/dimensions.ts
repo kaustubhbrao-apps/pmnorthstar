@@ -1,4 +1,4 @@
-// Static configuration for the 5 CheckIt dimensions.
+// Static configuration for the 7 CheckIt dimensions.
 //
 // `whyItMatters` is the predefined essay shown on the result card.
 // Per the spec, the audit doesn't generate this. It's editorial content
@@ -25,42 +25,9 @@ export interface DimensionConfig {
   linkedResources: LinkedResource[];
 }
 
+// Display order on the result card: performance → seo → ux → brand → trust → polish → standards.
+// Ordered by "decides whether users stay/convert" first, then trust signals, then quiet polish.
 export const DIMENSIONS: DimensionConfig[] = [
-  {
-    id: "brand",
-    label: "Brand & Identity",
-    oneLiner: "Does it look credible in the first 3 seconds?",
-    whyItMatters:
-      "The first three seconds decide if a user trusts you with their email, their card, their time. A *.vercel.app URL and a default favicon tell users 'this is a side project,' even when the product underneath is brilliant. Brand isn't logos and color palettes. It's the dozen tiny signals (a custom domain, a real title tag, an OG image that doesn't render as a blank box in Slack) that say 'a real team built this.' Skip these and even your best users will treat you as disposable.",
-    // Brand totals 15. Custom domain is the loudest signal; apple-touch-icon is a small polish.
-    checks: [
-      { id: "custom-domain", points: 5 },
-      { id: "real-favicon", points: 3 },
-      { id: "og-completeness", points: 3 },
-      { id: "real-title", points: 3 },
-      { id: "apple-touch-icon", points: 1 },
-    ],
-    linkedResources: [
-      {
-        type: "case-study",
-        slug: "razorpay-pivot-fintech",
-        title: "Razorpay's brand polish at fintech scale",
-        hook: "How tiny trust signals decided who they could sell to.",
-      },
-      {
-        type: "case-study",
-        slug: "notion-all-in-one-workspace",
-        title: "Notion: identity through every surface",
-        hook: "Consistency turned a doc tool into a movement.",
-      },
-      {
-        type: "book",
-        slug: "obviously-awesome-dunford",
-        title: "Obviously Awesome by April Dunford",
-        hook: "Positioning is the layer above your features.",
-      },
-    ],
-  },
   {
     id: "performance",
     label: "Performance",
@@ -167,6 +134,76 @@ export const DIMENSIONS: DimensionConfig[] = [
     ],
   },
   {
+    id: "brand",
+    label: "Brand & Identity",
+    oneLiner: "Does it look credible in the first 3 seconds?",
+    whyItMatters:
+      "The first three seconds decide if a user trusts you with their email, their card, their time. A *.vercel.app URL and a default favicon tell users 'this is a side project,' even when the product underneath is brilliant. Brand isn't logos and color palettes. It's the dozen tiny signals (a custom domain, a real title tag, an OG image that doesn't render as a blank box in Slack) that say 'a real team built this.' Skip these and even your best users will treat you as disposable.",
+    // Brand totals 15. Custom domain is the loudest signal; apple-touch-icon is a small polish.
+    checks: [
+      { id: "custom-domain", points: 5 },
+      { id: "real-favicon", points: 3 },
+      { id: "og-completeness", points: 3 },
+      { id: "real-title", points: 3 },
+      { id: "apple-touch-icon", points: 1 },
+    ],
+    linkedResources: [
+      {
+        type: "case-study",
+        slug: "razorpay-pivot-fintech",
+        title: "Razorpay's brand polish at fintech scale",
+        hook: "How tiny trust signals decided who they could sell to.",
+      },
+      {
+        type: "case-study",
+        slug: "notion-all-in-one-workspace",
+        title: "Notion: identity through every surface",
+        hook: "Consistency turned a doc tool into a movement.",
+      },
+      {
+        type: "book",
+        slug: "obviously-awesome-dunford",
+        title: "Obviously Awesome by April Dunford",
+        hook: "Positioning is the layer above your features.",
+      },
+    ],
+  },
+  {
+    id: "trust",
+    label: "Trust & Compliance",
+    oneLiner: "Will users hand over their email?",
+    whyItMatters:
+      "The moment a user enters their email or their card, they're betting on you. HTTPS, a real privacy policy, a way to contact a human, a 404 page that isn't the framework's default. These aren't legal box-checks. They're trust signals. Skipping them tells users this is a project, not a product, and they'll behave accordingly. They bounce. They don't subscribe. They screenshot the broken 404 and post it. Trust takes years to build and 10 minutes to lose. The basics here cost a single afternoon.",
+    // Trust totals 17. HTTPS is non-negotiable; CSP and custom 404 are quieter signals.
+    checks: [
+      { id: "secure-transport", points: 5 },
+      { id: "privacy-link", points: 4 },
+      { id: "custom-404", points: 2 },
+      { id: "identity-signal", points: 4 },
+      { id: "csp-header", points: 2 },
+    ],
+    linkedResources: [
+      {
+        type: "case-study",
+        slug: "stripe-developer-first",
+        title: "Stripe: trust as architecture",
+        hook: "Why developers ship with Stripe before they're paid.",
+      },
+      {
+        type: "case-study",
+        slug: "theranos-fraud",
+        title: "Theranos: what happens when trust is staged",
+        hook: "The collapse was a trust failure, not a tech failure.",
+      },
+      {
+        type: "book",
+        slug: "this-is-marketing-godin",
+        title: "This Is Marketing by Seth Godin",
+        hook: "Permission is the currency the modern web runs on.",
+      },
+    ],
+  },
+  {
     id: "polish",
     label: "Polish & Foundations",
     oneLiner: "Are the small details handled?",
@@ -233,41 +270,6 @@ export const DIMENSIONS: DimensionConfig[] = [
         slug: "the-mom-test-fitzpatrick",
         title: "The Mom Test by Rob Fitzpatrick",
         hook: "Build for the user you actually have, not the user that looks like you.",
-      },
-    ],
-  },
-  {
-    id: "trust",
-    label: "Trust & Compliance",
-    oneLiner: "Will users hand over their email?",
-    whyItMatters:
-      "The moment a user enters their email or their card, they're betting on you. HTTPS, a real privacy policy, a way to contact a human, a 404 page that isn't the framework's default. These aren't legal box-checks. They're trust signals. Skipping them tells users this is a project, not a product, and they'll behave accordingly. They bounce. They don't subscribe. They screenshot the broken 404 and post it. Trust takes years to build and 10 minutes to lose. The basics here cost a single afternoon.",
-    // Trust totals 17. HTTPS is non-negotiable; CSP and custom 404 are quieter signals.
-    checks: [
-      { id: "secure-transport", points: 5 },
-      { id: "privacy-link", points: 4 },
-      { id: "custom-404", points: 2 },
-      { id: "identity-signal", points: 4 },
-      { id: "csp-header", points: 2 },
-    ],
-    linkedResources: [
-      {
-        type: "case-study",
-        slug: "stripe-developer-first",
-        title: "Stripe: trust as architecture",
-        hook: "Why developers ship with Stripe before they're paid.",
-      },
-      {
-        type: "case-study",
-        slug: "theranos-fraud",
-        title: "Theranos: what happens when trust is staged",
-        hook: "The collapse was a trust failure, not a tech failure.",
-      },
-      {
-        type: "book",
-        slug: "this-is-marketing-godin",
-        title: "This Is Marketing by Seth Godin",
-        hook: "Permission is the currency the modern web runs on.",
       },
     ],
   },

@@ -431,7 +431,7 @@ export function checkitPromoTemplate() {
             lineHeight: 1.3,
           }}
         >
-          20 checks across brand, performance, SEO, UX, and trust. Free. 30 seconds.
+          35 checks across performance, SEO, UX, brand, trust, polish & standards. Free.
         </div>
       </div>
 

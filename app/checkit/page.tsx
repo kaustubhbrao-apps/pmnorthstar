@@ -27,7 +27,7 @@ export async function generateMetadata({
   const shareUrl = `${SITE_URL}/checkit?url=${encodeURIComponent(raw!)}`;
   const ogImageUrl = `${SITE_URL}/api/checkit/og?url=${encodeURIComponent(raw!)}`;
   const title = `CheckIt scored ${host}`;
-  const description = `See how ${host} scored across 35 checks — brand, performance, SEO, UX, trust, polish, and standards. Free 30-second site readiness audit.`;
+  const description = `See how ${host} scored across 35 checks — performance, SEO, UX, brand, trust, polish, and modern web standards. Free 30-second site readiness audit.`;
 
   return {
     title,
