@@ -45,15 +45,15 @@ export const DIMENSIONS: DimensionConfig[] = [
     linkedResources: [
       {
         type: "case-study",
-        slug: "pinterest-waitlist",
-        title: "Pinterest: performance as growth lever",
-        hook: "40% load-time cut → 15% conversion lift in a week.",
+        slug: "walmart-performance-conversion",
+        title: "Walmart: every 1s of load time = 2% conversion",
+        hook: "The chart that turned web performance into a revenue line item.",
       },
       {
         type: "case-study",
-        slug: "vercel-developer-first",
-        title: "Vercel: speed as a product feature",
-        hook: "Built an entire company on 'your site should be fast.'",
+        slug: "pinterest-waitlist",
+        title: "Pinterest: performance as growth lever",
+        hook: "40% load-time cut → 15% conversion lift in a week.",
       },
       {
         type: "book",
@@ -80,15 +80,15 @@ export const DIMENSIONS: DimensionConfig[] = [
     linkedResources: [
       {
         type: "case-study",
-        slug: "hubspot-inbound-marketing",
-        title: "HubSpot: SEO as the entire growth engine",
-        hook: "Built a $30B company on free content + crawlable pages.",
+        slug: "airbnb-programmatic-seo",
+        title: "Airbnb: the largest programmatic SEO machine in travel",
+        hook: "Sitemaps, structured data, and canonicals shipped on millions of pages.",
       },
       {
         type: "case-study",
-        slug: "notion-all-in-one-workspace",
-        title: "Notion's template SEO moat",
-        hook: "Why their /templates pages still convert in 2026.",
+        slug: "hubspot-inbound-marketing",
+        title: "HubSpot: SEO as the entire growth engine",
+        hook: "Built a $30B company on free content + crawlable pages.",
       },
       {
         type: "book",
@@ -115,9 +115,9 @@ export const DIMENSIONS: DimensionConfig[] = [
     linkedResources: [
       {
         type: "case-study",
-        slug: "stripe-developer-first",
-        title: "Stripe: clarity at every step",
-        hook: "Why their homepage outsold a sales team.",
+        slug: "booking-cta-testing",
+        title: "Booking.com: 1,000 concurrent A/B tests on CTA, H1, viewport",
+        hook: "How obsessive testing built the largest OTA in the world.",
       },
       {
         type: "case-study",
@@ -150,15 +150,15 @@ export const DIMENSIONS: DimensionConfig[] = [
     linkedResources: [
       {
         type: "case-study",
-        slug: "razorpay-pivot-fintech",
-        title: "Razorpay's brand polish at fintech scale",
-        hook: "How tiny trust signals decided who they could sell to.",
+        slug: "linear-brand-from-day-one",
+        title: "Linear: looked like a $1B company at five engineers",
+        hook: "Real domain, real favicon, real OG image — shipped from week one.",
       },
       {
         type: "case-study",
-        slug: "notion-all-in-one-workspace",
-        title: "Notion: identity through every surface",
-        hook: "Consistency turned a doc tool into a movement.",
+        slug: "razorpay-pivot-fintech",
+        title: "Razorpay's brand polish at fintech scale",
+        hook: "How tiny trust signals decided who they could sell to.",
       },
       {
         type: "book",
@@ -185,9 +185,9 @@ export const DIMENSIONS: DimensionConfig[] = [
     linkedResources: [
       {
         type: "case-study",
-        slug: "stripe-developer-first",
-        title: "Stripe: trust as architecture",
-        hook: "Why developers ship with Stripe before they're paid.",
+        slug: "cloudflare-security-defaults",
+        title: "Cloudflare: shipping HTTPS, HSTS, CSP as defaults",
+        hook: "How sensible security defaults shortened enterprise sales cycles.",
       },
       {
         type: "case-study",
@@ -220,9 +220,9 @@ export const DIMENSIONS: DimensionConfig[] = [
     linkedResources: [
       {
         type: "case-study",
-        slug: "stripe-developer-first",
-        title: "Stripe: details as marketing",
-        hook: "Why every micro-decision in their dev experience shows up in their valuation.",
+        slug: "github-polish-as-marketing",
+        title: "GitHub: 404 pages, theme-color, easter eggs as recruiting funnel",
+        hook: "How small polish details became a brand-credibility machine.",
       },
       {
         type: "case-study",
@@ -255,21 +255,21 @@ export const DIMENSIONS: DimensionConfig[] = [
     linkedResources: [
       {
         type: "case-study",
+        slug: "figma-pwa-bet",
+        title: "Figma's PWA bet that paid off six years later",
+        hook: "Web manifest, service worker, ARIA landmarks shipped before they were required.",
+      },
+      {
+        type: "case-study",
         slug: "notion-all-in-one-workspace",
         title: "Notion: semantic structure as moat",
         hook: "Why their content compounds in search rankings year after year.",
       },
       {
-        type: "case-study",
-        slug: "figma-browser-design",
-        title: "Figma: standards-first design",
-        hook: "Browser-native design tools that work because the standards were respected.",
-      },
-      {
         type: "book",
-        slug: "the-mom-test-fitzpatrick",
-        title: "The Mom Test by Rob Fitzpatrick",
-        hook: "Build for the user you actually have, not the user that looks like you.",
+        slug: "the-lean-product-playbook-olsen",
+        title: "The Lean Product Playbook by Dan Olsen",
+        hook: "Why MVP without polish ships features but not products.",
       },
     ],
   },
