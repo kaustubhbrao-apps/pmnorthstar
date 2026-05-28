@@ -6,6 +6,7 @@ import { aiDecodedManifest } from "@/data/aiDecodedManifest";
 import { caseStudies } from "@/data/caseStudies";
 import { books } from "@/data/books";
 import { playlists } from "@/data/learn";
+import { drills } from "@/data/drills";
 
 interface HeroBannerProps {
   onNavChange: (nav: string) => void;
@@ -30,6 +31,7 @@ const CASE_STUDY_COUNT = caseStudies.length;
 const BOOK_COUNT = books.length;
 const PLAYLIST_COUNT = playlists.length;
 const CHECKIT_TOTAL = 35;
+const DRILLS_TOTAL = drills.length;
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", {
@@ -161,6 +163,54 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
           </div>
         </Link>
 
+        {/* SimulateIt — solid purple, white type, decision grid visual.
+            Sibling to CheckIt but for product judgement rather than site
+            hygiene. Grid telegraphs the share mechanic. */}
+        <Link
+          href="/simulate"
+          className="group rounded-2xl px-5 py-5 sm:py-6 transition-all flex items-center gap-4 hover:opacity-95"
+          style={{
+            background: "#7C3AED",
+            border: "1.5px solid rgba(255, 255, 255, 0.12)",
+          }}
+        >
+          <DecisionGrid />
+
+          <div className="flex-1 min-w-0">
+            <p
+              className="text-[10px] font-mono uppercase mb-1"
+              style={{
+                color: "rgba(255, 255, 255, 0.75)",
+                letterSpacing: "0.14em",
+              }}
+            >
+              Tool
+            </p>
+            <h2
+              className="font-display text-lg font-bold leading-tight mb-1"
+              style={{
+                color: "#ffffff",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Train your product instincts.
+            </h2>
+            <p
+              className="text-xs leading-snug mb-2.5"
+              style={{ color: "rgba(255, 255, 255, 0.8)" }}
+            >
+              {DRILLS_TOTAL} drills. Two per week. Free.
+            </p>
+            <span
+              className="inline-flex items-center gap-1 text-xs font-semibold transition-transform group-hover:translate-x-0.5"
+              style={{ color: "#ffffff" }}
+            >
+              Play this week&apos;s drill
+              <ArrowUpRight size={12} strokeWidth={2} />
+            </span>
+          </div>
+        </Link>
+
         {/* AI Decoded — solid green, white type, real date + title */}
         <Link
           href={latestAI ? `/ai-decoded/${latestAI.slug}` : "/ai-decoded"}
@@ -214,6 +264,40 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
         </Link>
       </div>
     </section>
+  );
+}
+
+// SimulateIt visual hook — 2×3 grid of colored squares that mirrors
+// the Wordle-style share output of the actual drill result. Telegraphs
+// the share-result mechanic and the "you'll score across multiple
+// decisions" structure without claiming any specific user's score.
+//
+// Pattern is fixed (not randomized) so server and client render
+// identically — no hydration mismatch. Pattern picked to feel
+// reasonable: a mix of greens (got it right), one yellow (partial),
+// one red (wrong call).
+function DecisionGrid() {
+  const SQUARES: string[] = [
+    "#22C55E", "#22C55E", "#EAB308",
+    "#22C55E", "#F97316", "#22C55E",
+  ];
+  return (
+    <div
+      className="flex-shrink-0 grid grid-cols-3 gap-1.5 p-2 rounded-lg"
+      style={{ background: "rgba(255, 255, 255, 0.12)" }}
+    >
+      {SQUARES.map((color, i) => (
+        <div
+          key={i}
+          className="rounded-[3px]"
+          style={{
+            width: 14,
+            height: 14,
+            background: color,
+          }}
+        />
+      ))}
+    </div>
   );
 }
 
