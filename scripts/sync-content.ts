@@ -528,6 +528,231 @@ ${items},
   console.log(`✓ data/aiDecodedManifest.ts (${entries.length} entries)`);
 }
 
+// ─── DRILLS (SimulateIt) ────────────────────────────────────────────────
+// Branching decision drills. Each drill is a node graph with typed
+// options leading to other nodes or terminal outcome nodes. Validated
+// at build time so authoring errors (orphan nodes, typo'd leadsTo refs,
+// missing prompts) fail loudly here instead of at runtime.
+function validateDrillGraph(drill: any, slug: string) {
+  const nodes = drill.nodes as Record<string, any>;
+  if (!nodes || typeof nodes !== "object") {
+    throw new Error(`Drill ${slug}: missing or invalid 'nodes' object`);
+  }
+  if (!nodes.start) {
+    throw new Error(`Drill ${slug}: missing 'start' node`);
+  }
+  const nodeIds = Object.keys(nodes);
+  for (const [nodeId, node] of Object.entries(nodes)) {
+    if ((node as any).isOutcome) continue;
+    if (!(node as any).prompt) {
+      throw new Error(`Drill ${slug} node "${nodeId}": missing prompt`);
+    }
+    const opts = (node as any).options as any[] | undefined;
+    if (!opts || opts.length < 2) {
+      throw new Error(`Drill ${slug} node "${nodeId}": needs at least 2 options`);
+    }
+    for (const opt of opts) {
+      if (!opt.leadsTo) {
+        throw new Error(
+          `Drill ${slug} node "${nodeId}": option "${opt.text}" missing leadsTo`
+        );
+      }
+      if (!nodeIds.includes(opt.leadsTo)) {
+        throw new Error(
+          `Drill ${slug} node "${nodeId}": option leads to non-existent node "${opt.leadsTo}"`
+        );
+      }
+      if (typeof opt.points !== "number") {
+        throw new Error(
+          `Drill ${slug} node "${nodeId}": option "${opt.text}" missing numeric points`
+        );
+      }
+      if (!opt.rationale || !opt.consequence) {
+        throw new Error(
+          `Drill ${slug} node "${nodeId}": option "${opt.text}" missing rationale or consequence`
+        );
+      }
+    }
+  }
+  // Reachability check: every node must be reachable from "start".
+  const reachable = new Set<string>(["start"]);
+  let added = true;
+  while (added) {
+    added = false;
+    for (const nodeId of Array.from(reachable)) {
+      const node = nodes[nodeId];
+      const opts = (node as any).options as any[] | undefined;
+      if (opts) {
+        for (const opt of opts) {
+          if (!reachable.has(opt.leadsTo)) {
+            reachable.add(opt.leadsTo);
+            added = true;
+          }
+        }
+      }
+    }
+  }
+  for (const nodeId of nodeIds) {
+    if (!reachable.has(nodeId)) {
+      throw new Error(`Drill ${slug}: node "${nodeId}" is unreachable from start`);
+    }
+  }
+}
+
+function syncDrills() {
+  const DIR = path.join(CONTENT, "drills");
+  if (!fs.existsSync(DIR)) {
+    fs.writeFileSync(
+      path.join(DATA, "drills.ts"),
+      `${HEADER}
+export type DrillDimension = "product" | "business" | "founder";
+export type DrillType = "historical" | "current" | "hypothetical";
+
+export interface DrillOption {
+  text: string;
+  points: number;
+  pattern: string;
+  rationale: string;
+  consequence: string;
+  leadsTo: string;
+}
+
+export interface DrillNode {
+  dimension?: DrillDimension;
+  prompt?: string;
+  options?: DrillOption[];
+  isOutcome?: boolean;
+  summary?: string;
+}
+
+export interface Drill {
+  slug: string;
+  caseStudySlug?: string;
+  type: DrillType;
+  category: string;
+  publishedAt: string;
+  year?: number;
+  estimatedMinutes: number;
+  principle: string;
+  intro: string;
+  nodes: Record<string, DrillNode>;
+  outroBody: string;
+}
+
+export const drills: Drill[] = [];
+
+export const publishedDrills = (now: Date = new Date()): Drill[] =>
+  drills
+    .filter((d) => new Date(d.publishedAt) <= now)
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
+
+export const getDrillBySlug = (slug: string): Drill | undefined =>
+  drills.find((d) => d.slug === slug);
+
+export const getFeaturedDrill = (): Drill | undefined =>
+  publishedDrills()[0];
+`,
+      "utf8"
+    );
+    console.log("✓ data/drills.ts (no drills folder; empty stub)");
+    return;
+  }
+
+  const entries = readAll(DIR);
+  for (const e of entries) {
+    try {
+      validateDrillGraph(e.data, e.slug);
+    } catch (err) {
+      console.error(`\n✗ Drill validation failed for ${e.slug}:`);
+      console.error(`  ${(err as Error).message}\n`);
+      throw err;
+    }
+  }
+
+  // Sort by publishedAt descending so generated array order ≈ display order.
+  entries.sort(
+    (a, b) =>
+      new Date(b.data.publishedAt as string).getTime() -
+      new Date(a.data.publishedAt as string).getTime()
+  );
+
+  const items = entries
+    .map((e) => {
+      const d = e.data;
+      const fields: string[] = [];
+      fields.push(`    slug: ${ts(d.slug)}`);
+      if (d.caseStudySlug) fields.push(`    caseStudySlug: ${ts(d.caseStudySlug)}`);
+      fields.push(`    type: ${ts(d.type)}`);
+      fields.push(`    category: ${ts(d.category)}`);
+      fields.push(`    publishedAt: ${ts(d.publishedAt)}`);
+      if (d.year !== undefined) fields.push(`    year: ${d.year}`);
+      fields.push(`    estimatedMinutes: ${d.estimatedMinutes ?? 8}`);
+      fields.push(`    principle: ${ts(d.principle)}`);
+      fields.push(`    intro: ${ts(d.intro)}`);
+      // Nodes is a deep object — JSON.stringify produces a valid TS literal.
+      fields.push(`    nodes: ${ts(d.nodes)}`);
+      fields.push(`    outroBody: ${ts(e.body)}`);
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+export type DrillDimension = "product" | "business" | "founder";
+export type DrillType = "historical" | "current" | "hypothetical";
+
+export interface DrillOption {
+  text: string;
+  points: number;
+  pattern: string;
+  rationale: string;
+  consequence: string;
+  leadsTo: string;
+}
+
+export interface DrillNode {
+  dimension?: DrillDimension;
+  prompt?: string;
+  options?: DrillOption[];
+  isOutcome?: boolean;
+  summary?: string;
+}
+
+export interface Drill {
+  slug: string;
+  caseStudySlug?: string;
+  type: DrillType;
+  category: string;
+  publishedAt: string;
+  year?: number;
+  estimatedMinutes: number;
+  principle: string;
+  intro: string;
+  nodes: Record<string, DrillNode>;
+  outroBody: string;
+}
+
+export const drills: Drill[] = [
+${items},
+];
+
+// Returns drills whose publishedAt is in the past, newest first.
+// Future-dated drills are invisible until their timestamp passes — no
+// rebuild needed, the comparison happens server-side at each request.
+export const publishedDrills = (now: Date = new Date()): Drill[] =>
+  drills
+    .filter((d) => new Date(d.publishedAt) <= now)
+    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
+
+export const getDrillBySlug = (slug: string): Drill | undefined =>
+  drills.find((d) => d.slug === slug);
+
+export const getFeaturedDrill = (): Drill | undefined =>
+  publishedDrills()[0];
+`;
+  fs.writeFileSync(path.join(DATA, "drills.ts"), out, "utf8");
+  console.log(`✓ data/drills.ts (${entries.length} entries)`);
+}
+
 function main() {
   console.log("Syncing markdown content → data/*.ts...\n");
   syncTopics();
@@ -536,6 +761,7 @@ function main() {
   syncCaseStudies();
   syncCaseStudyFaqs();
   syncAIDecodedManifest();
+  syncDrills();
   console.log("\nDone. Review the diff before committing.");
 }
 

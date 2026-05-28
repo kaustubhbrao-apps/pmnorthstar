@@ -8,6 +8,7 @@ import { topics } from "@/data/topics";
 import { comparisons } from "@/data/comparisons";
 import { books, getBookSlug, BOOKS_LAST_UPDATED } from "@/data/books";
 import { getAllAIDecodedArticles } from "@/lib/ai-decoded";
+import { publishedDrills } from "@/data/drills";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -45,6 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/simulate`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
   ];
 
@@ -104,6 +111,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ),
       changeFrequency: "monthly",
       priority: 0.8,
+    });
+  }
+
+  // SimulateIt drills — only those whose publishedAt has passed.
+  // Future-dated drills are intentionally excluded so crawlers never
+  // see them before the launch moment, matching the on-site behavior.
+  for (const drill of publishedDrills(now)) {
+    routes.push({
+      url: `${SITE_URL}/simulate/${drill.slug}`,
+      lastModified: new Date(drill.publishedAt),
+      changeFrequency: "monthly",
+      priority: 0.75,
     });
   }
 

@@ -12,7 +12,14 @@ model User {
   id             String          @id @default(uuid())
   email          String          @unique
   name           String
-  passwordHash   String          @map("password_hash")
+  // Nullable — Google-only accounts have no password.
+  passwordHash   String?         @map("password_hash")
+  // Set when a user signs in via Google OAuth. Unique so we can
+  // look up users by their Google identity. Nullable for legacy /
+  // email-only accounts.
+  googleId       String?         @unique @map("google_id")
+  // Avatar URL from Google profile, harmless to store.
+  image          String?
   // Set on every successful login. Query in Supabase SQL Editor:
   //   SELECT email, name, last_login_at FROM users ORDER BY last_login_at DESC NULLS LAST;
   lastLoginAt    DateTime?       @map("last_login_at")
@@ -22,6 +29,7 @@ model User {
   savedResources      SavedResource[]
   sessions            Session[]
   passwordResetTokens PasswordResetToken[]
+  drillAttempts       DrillAttempt[]
 
   @@map("users")
 }
@@ -102,4 +110,31 @@ model CheckitAudit {
   @@index([fetchedAt])
   @@index([host])
   @@map("checkit_audits")
+}
+
+// One row per SimulateIt drill completion by a logged-in user.
+// Anonymous plays are tracked in localStorage only — those don't
+// persist here. Per-dimension scores stored so the user profile
+// page can render rollups without re-parsing pathTaken on every
+// request. pathTaken kept as JSON for completeness + future
+// features (replay, dimensional drill-down).
+model DrillAttempt {
+  id            String   @id @default(uuid())
+  userId        String   @map("user_id")
+  drillSlug     String   @map("drill_slug")
+  score         Int
+  maxPossible   Int      @map("max_possible")
+  productScore  Int      @default(0) @map("product_score")
+  productMax    Int      @default(0) @map("product_max")
+  businessScore Int      @default(0) @map("business_score")
+  businessMax   Int      @default(0) @map("business_max")
+  founderScore  Int      @default(0) @map("founder_score")
+  founderMax    Int      @default(0) @map("founder_max")
+  pathTaken     Json     @map("path_taken")
+  attemptedAt   DateTime @default(now()) @map("attempted_at")
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, attemptedAt])
+  @@index([drillSlug])
+  @@map("drill_attempts")
 }

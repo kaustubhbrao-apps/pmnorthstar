@@ -65,7 +65,24 @@ export type AnalyticsEvent =
       resource_slug: string;
     }
   | { name: "checkit_share_clicked"; host: string; score: number }
-  | { name: "checkit_recheck_clicked"; host: string };
+  | { name: "checkit_recheck_clicked"; host: string }
+  // ── SimulateIt ──────────────────────────────────────────────────
+  | { name: "simulateit_drill_started"; drill_slug: string }
+  | {
+      name: "simulateit_option_picked";
+      drill_slug: string;
+      node_id: string;
+      option_index: number;
+      points: number;
+    }
+  | {
+      name: "simulateit_drill_completed";
+      drill_slug: string;
+      node_id: string;
+      decisions: number;
+    }
+  | { name: "simulateit_drill_restarted"; drill_slug: string }
+  | { name: "simulateit_shared"; drill_slug: string };
 
 export function track(event: AnalyticsEvent) {
   // Vercel Analytics accepts (name, props). Strip the discriminator.

@@ -24,6 +24,18 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Google-only accounts have no passwordHash. Direct them to
+    // sign in with Google instead of returning a generic error.
+    if (!user.passwordHash) {
+      return NextResponse.json(
+        {
+          error:
+            "This account was created with Google. Use \"Continue with Google\" to sign in.",
+        },
+        { status: 401 }
+      );
+    }
+
     const valid = await comparePassword(password, user.passwordHash);
 
     if (!valid) {
