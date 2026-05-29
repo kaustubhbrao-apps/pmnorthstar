@@ -79,12 +79,14 @@ export default function CaseStudyLayout({
 
   const study = getCaseStudyBySlug(params.id);
   const slug = study ? getCaseStudySlug(study.id) : params.id;
+  const faqs = study ? getCaseStudyFaqs(study.id) : [];
 
   return (
     <>
       {study && (
         <>
           <script
+            id="ld-article"
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
@@ -109,24 +111,33 @@ export default function CaseStudyLayout({
               }),
             }}
           />
+          {/* Only emit FAQPage when the study actually has FAQs. An
+              empty mainEntity[] is malformed JSON-LD and Google was
+              flagging case studies as "Duplicate field FAQPage". Stable
+              id lets Google dedupe if React's RSC stream surfaces the
+              same content twice during hydration. */}
+          {faqs.length > 0 && (
+            <script
+              id="ld-faq"
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  mainEntity: faqs.map((f) => ({
+                    "@type": "Question",
+                    name: f.question,
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: f.answer,
+                    },
+                  })),
+                }),
+              }}
+            />
+          )}
           <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                mainEntity: getCaseStudyFaqs(study.id).map((f) => ({
-                  "@type": "Question",
-                  name: f.question,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: f.answer,
-                  },
-                })),
-              }),
-            }}
-          />
-          <script
+            id="ld-breadcrumbs"
             type="application/ld+json"
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({

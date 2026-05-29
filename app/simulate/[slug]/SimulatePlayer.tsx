@@ -192,10 +192,30 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
     });
   }, [drill.slug]);
 
+  // Running score. Sums points earned and the max points that *could*
+  // have been earned across every decision already locked in. Doesn't
+  // include the current (unanswered) node. Visible during decision +
+  // reveal so the player can track how they're tracking.
+  const runningTotals = useMemo(() => {
+    let score = 0;
+    let max = 0;
+    for (const h of state.history) {
+      const node = drill.nodes[h.nodeId];
+      if (!node?.options) continue;
+      score += h.points;
+      max += Math.max(...node.options.map((o) => o.points));
+    }
+    return { score, max };
+  }, [state.history, drill.nodes]);
+
+  const showRunningScore =
+    (state.phase === "decision" || state.phase === "reveal") &&
+    runningTotals.max > 0;
+
   return (
     <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-3xl mx-auto">
       {/* Top breadcrumb */}
-      <div className="flex items-center gap-2 mb-6">
+      <div className="flex items-center gap-2 mb-6 flex-wrap">
         <Link
           href="/simulate"
           className="text-[11px] font-mono uppercase hover:opacity-70"
@@ -221,6 +241,36 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
         >
           {drill.type}
         </span>
+        {showRunningScore && (
+          <span
+            className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-mono px-2 py-1 rounded-md"
+            style={{
+              background: "var(--card-bg)",
+              border: "1.5px solid var(--card-border)",
+              color: "var(--text-muted)",
+              letterSpacing: "0.08em",
+            }}
+            title="Your score so far across locked-in decisions"
+          >
+            <span
+              className="uppercase"
+              style={{ color: "var(--text-faint)" }}
+            >
+              Score
+            </span>
+            <span
+              style={{
+                color: scoreColor(runningTotals.score / runningTotals.max),
+                fontWeight: 600,
+              }}
+            >
+              {runningTotals.score}
+            </span>
+            <span style={{ color: "var(--text-faint)" }}>
+              / {runningTotals.max}
+            </span>
+          </span>
+        )}
       </div>
 
       {state.phase === "intro" && (
@@ -512,9 +562,12 @@ function RevealView({
                 }`,
               }}
             >
-              <div className="flex items-start gap-3 mb-2">
+              {/* Meta row: letter badge + pattern tag + points score.
+                  Lives on its own row so long pattern slugs can't squeeze
+                  the option text into a narrow column on mobile. */}
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <span
-                  className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-mono font-semibold mt-0.5"
+                  className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-mono font-semibold"
                   style={{
                     background: isBest
                       ? "rgba(34,197,94,0.15)"
@@ -531,23 +584,18 @@ function RevealView({
                   {String.fromCharCode(65 + i)}
                 </span>
                 <span
-                  className="text-sm font-semibold flex-1"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  {opt.text}
-                </span>
-                <span
-                  className="text-[10px] font-mono px-1.5 py-0.5 rounded flex-shrink-0"
+                  className="text-[10px] font-mono px-1.5 py-0.5 rounded"
                   style={{
                     background: "var(--tag-bg)",
                     color: "var(--text-faint)",
+                    wordBreak: "break-all",
                   }}
                   title="Mental-model pattern"
                 >
                   {opt.pattern}
                 </span>
                 <span
-                  className="text-[11px] font-mono font-semibold flex-shrink-0"
+                  className="ml-auto text-[11px] font-mono font-semibold flex-shrink-0"
                   style={{
                     color: isBest
                       ? "#22C55E"
@@ -556,11 +604,18 @@ function RevealView({
                       : "var(--text-muted)",
                   }}
                 >
-                  {opt.points}
+                  {opt.points} pts
                 </span>
               </div>
+              {/* Option text — full width, not squeezed by adjacent chips */}
               <p
-                className="text-xs sm:text-sm leading-relaxed ml-9"
+                className="text-sm font-semibold mb-2 leading-snug"
+                style={{ color: "var(--text-primary)" }}
+              >
+                {opt.text}
+              </p>
+              <p
+                className="text-xs sm:text-sm leading-relaxed"
                 style={{ color: "var(--text-muted)" }}
               >
                 {opt.rationale}

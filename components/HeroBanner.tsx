@@ -6,7 +6,7 @@ import { aiDecodedManifest } from "@/data/aiDecodedManifest";
 import { caseStudies } from "@/data/caseStudies";
 import { books } from "@/data/books";
 import { playlists } from "@/data/learn";
-import { drills } from "@/data/drills";
+import { DRILL_COUNT } from "@/data/drillsCount";
 
 interface HeroBannerProps {
   onNavChange: (nav: string) => void;
@@ -31,7 +31,7 @@ const CASE_STUDY_COUNT = caseStudies.length;
 const BOOK_COUNT = books.length;
 const PLAYLIST_COUNT = playlists.length;
 const CHECKIT_TOTAL = 35;
-const DRILLS_TOTAL = drills.length;
+const DRILLS_TOTAL = DRILL_COUNT;
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", {
