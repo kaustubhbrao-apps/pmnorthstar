@@ -10,6 +10,10 @@ import { solidColorFor } from "@/lib/category-colors";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
+// ISR: rebuild the index hourly so a scheduled article appears on its
+// publishedAt date without a redeploy.
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "AI Decoded — northstar",
   description:

@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
+// ISR: refresh hourly so a scheduled India case study appears on its
+// publishedAt date without a redeploy.
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Product Management for Builders in India",
   description:

@@ -4,6 +4,10 @@ import { topics, getTopicBySlug } from "@/data/topics";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
+// ISR: refresh hourly so a scheduled (future-dated) topic + its metadata go
+// live on its publishedAt date without a redeploy.
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   return topics.map((t) => ({ slug: t.slug }));
 }

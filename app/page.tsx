@@ -7,7 +7,7 @@ import {
   getFeaturedBooks,
 } from "@/data/books";
 import {
-  caseStudies,
+  publishedCaseStudies,
   getCaseStudiesByCategory,
   CaseStudyCategory,
 } from "@/data/caseStudies";
@@ -31,10 +31,10 @@ import { MobileNav } from "@/components/MobileNav";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { AuthModal } from "@/components/AuthModal";
 import { Footer } from "@/components/Footer";
-import { topics } from "@/data/topics";
-import { comparisons } from "@/data/comparisons";
+import { publishedTopics } from "@/data/topics";
+import { publishedComparisons } from "@/data/comparisons";
 import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
-import { aiDecodedManifest } from "@/data/aiDecodedManifest";
+import { publishedAIDecoded } from "@/data/aiDecodedManifest";
 import Link from "next/link";
 import {
   TrendingUp,
@@ -70,6 +70,15 @@ const caseStudyCategoryColors: Record<string, string> = {
 };
 
 export default function HomePage() {
+  // Scheduled (future-dated) content is hidden from every home surface so we
+  // never render a card or search hit that links to a still-gated page. No
+  // publish date = always live. useMemo keeps array refs stable across
+  // renders so downstream useMemos don't thrash.
+  const caseStudies = useMemo(() => publishedCaseStudies(), []);
+  const topics = useMemo(() => publishedTopics(), []);
+  const comparisons = useMemo(() => publishedComparisons(), []);
+  const aiDecodedManifest = useMemo(() => publishedAIDecoded(), []);
+
   // Lazy-init from localStorage so the home page doesn't flash light
   // when a user navigates here from a dark-mode page. SSR-safe: the
   // typeof check returns false on the server (initial HTML is light),

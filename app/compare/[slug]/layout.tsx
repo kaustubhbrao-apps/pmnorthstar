@@ -5,6 +5,10 @@ import { getCaseStudyById } from "@/data/caseStudies";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
+// ISR: refresh hourly so a scheduled comparison (and one gated by a not-yet-
+// published company) goes live on its date without a redeploy.
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   return comparisons.map((c) => ({ slug: c.slug }));
 }
