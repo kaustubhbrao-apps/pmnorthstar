@@ -103,12 +103,13 @@ export function TopNav({
           </span>
         </Link>
 
-        {/* CheckIt CTA — site readiness scorecard. */}
+        {/* CheckIt CTA — site readiness scorecard. Solid blue to match the
+            CheckIt hero banner (#2563EB), distinct from SimulateIt's pink. */}
         <Link
           href="/checkit"
           className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
           style={{
-            background: "var(--brand-primary)",
+            background: "#2563EB",
             color: "#ffffff",
             letterSpacing: "-0.005em",
           }}
