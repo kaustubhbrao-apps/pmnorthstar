@@ -129,10 +129,10 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
         <main className="flex-1 overflow-y-auto scroll-container">
           {/* Hero */}
           <div
-            className="dot-grid px-4 sm:px-8 lg:px-12 py-8 sm:py-10"
+            className="dot-grid px-4 sm:px-8 lg:px-12 py-8 sm:py-10 flex justify-center"
             style={{ borderBottom: "1.5px solid var(--card-border)" }}
           >
-            <div className="max-w-3xl">
+            <div className="w-full max-w-3xl">
               <Breadcrumbs
                 className="mb-4"
                 items={[
@@ -215,8 +215,8 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
           </div>
 
           {/* Content */}
-          <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10">
-            <div className="max-w-3xl">
+          <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 flex justify-center">
+            <div className="w-full max-w-3xl">
               {/* Outcome callout */}
               <div
                 className="text-sm px-5 py-4 rounded-xl mb-8 flex items-start gap-3"
