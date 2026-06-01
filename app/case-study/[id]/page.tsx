@@ -129,12 +129,12 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
         <main className="flex-1 overflow-y-auto scroll-container">
           {/* Hero */}
           <div
-            className="dot-grid px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+            className="dot-grid px-4 sm:px-8 lg:px-12 py-8 sm:py-10"
             style={{ borderBottom: "1.5px solid var(--card-border)" }}
           >
             <div className="max-w-3xl">
               <Breadcrumbs
-                className="mb-5"
+                className="mb-4"
                 items={[
                   { label: "northstar", href: "/" },
                   { label: "Case studies", href: "/#casestudies" },
@@ -142,7 +142,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                   { label: study.title },
                 ]}
               />
-              <div className="flex flex-wrap items-center gap-3 mb-5">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span
                   className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full"
                   style={{ background: `${color}14`, color }}
@@ -159,7 +159,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                 <span className="meta-mono">{study.company} · {study.year}</span>
               </div>
 
-              <div className="flex items-start gap-4 mb-5">
+              <div className="flex items-start gap-4 mb-4">
                 <span
                   className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl flex-shrink-0 mt-1 overflow-hidden"
                   style={{
@@ -202,27 +202,26 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                 {study.description}
               </p>
 
-              <div className="mb-6">
+              <div className="flex items-center justify-between flex-wrap gap-4 mt-6">
                 <Byline label="Written" date={SITE_LAST_REVIEWED} />
+                <ShareButton
+                  title={`${study.title} — northstar case study`}
+                  text={`${study.title}: ${study.description} — via @pmnorthstar`}
+                  label="Share this case study"
+                  variant="prominent"
+                />
               </div>
-
-              <ShareButton
-                title={`${study.title} — northstar case study`}
-                text={`${study.title}: ${study.description} — via @pmnorthstar`}
-                label="Share this case study"
-                variant="prominent"
-              />
             </div>
           </div>
 
           {/* Content */}
-          <div className="px-4 sm:px-8 lg:px-12 py-10 sm:py-12">
+          <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10">
             <div className="max-w-3xl">
               {/* Outcome callout */}
               <div
-                className="text-sm px-5 py-4 rounded-xl mb-10 flex items-start gap-3"
+                className="text-sm px-5 py-4 rounded-xl mb-8 flex items-start gap-3"
                 style={{
-                  background: "transparent",
+                  background: isFailure ? "rgba(255,75,75,0.05)" : "rgba(80,200,120,0.05)",
                   border: `1.5px solid ${isFailure ? "rgba(255,75,75,0.25)" : "rgba(80,200,120,0.25)"}`,
                   color: isFailure ? "#FF4B4B" : "#50C878",
                 }}
@@ -239,7 +238,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                   >
                     {isFailure ? "Outcome" : "Impact"}
                   </span>
-                  <span style={{ color: "var(--text-primary)" }}>{study.outcome}</span>
+                  <span style={{ color: "var(--text-primary)", lineHeight: 1.6 }}>{study.outcome}</span>
                 </div>
               </div>
 
