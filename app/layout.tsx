@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { caseStudies } from "@/data/caseStudies";
-import { playlists } from "@/data/learn";
-import { books } from "@/data/books";
+import {
+  CASE_STUDY_COUNT,
+  BOOK_COUNT,
+  PLAYLIST_COUNT,
+} from "@/data/inventory-counts";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import "./globals.css";
 
@@ -27,9 +29,6 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
-const CASE_STUDY_COUNT = caseStudies.length;
-const BOOK_COUNT = books.length;
-const PLAYLIST_COUNT = playlists.length;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

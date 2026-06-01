@@ -4,9 +4,11 @@ import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SITE_INFO } from "@/lib/site";
-import { caseStudies } from "@/data/caseStudies";
-import { books } from "@/data/books";
-import { playlists } from "@/data/learn";
+import {
+  CASE_STUDY_COUNT,
+  BOOK_COUNT,
+  PLAYLIST_COUNT,
+} from "@/data/inventory-counts";
 
 export default function AboutPage() {
   const socials: Array<{ href: string; label: string; icon: LucideIcon }> = [];
@@ -74,7 +76,7 @@ export default function AboutPage() {
               className="text-base sm:text-lg leading-relaxed"
               style={{ color: "var(--text-muted)" }}
             >
-              {caseStudies.length} long-form case studies. {books.length} original book reviews with takeaways. {playlists.length} hand-picked YouTube playlists. No paywall, no signup wall, no ads.
+              {CASE_STUDY_COUNT} long-form case studies. {BOOK_COUNT} original book reviews with takeaways. {PLAYLIST_COUNT} hand-picked YouTube playlists. No paywall, no signup wall, no ads.
             </p>
           </div>
         </section>

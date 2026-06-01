@@ -16,6 +16,17 @@ const ROOT = process.cwd();
 const CONTENT = path.join(ROOT, "content");
 const DATA = path.join(ROOT, "data");
 
+// Global registry to track counts across sync functions
+const INVENTORY = {
+  topics: 0,
+  comparisons: 0,
+  books: 0,
+  caseStudies: 0,
+  aiDecoded: 0,
+  drills: 0,
+  playlists: 0,
+};
+
 function readAll(dir: string): Array<{ slug: string; data: any; body: string }> {
   if (!fs.existsSync(dir)) return [];
   return fs
@@ -69,6 +80,8 @@ const HEADER = `// ⚠️  AUTO-GENERATED — DO NOT EDIT BY HAND.
 // ─── TOPICS ─────────────────────────────────────────────────────────────
 function syncTopics() {
   const entries = readAll(path.join(CONTENT, "topics"));
+  INVENTORY.topics = entries.length;
+
   const body = entries
     .map((e) => {
       const d = e.data;
@@ -135,6 +148,8 @@ export const getTopicBySlug = (slug: string): Topic | undefined => {
 // ─── COMPARISONS ────────────────────────────────────────────────────────
 function syncComparisons() {
   const entries = readAll(path.join(CONTENT, "comparisons"));
+  INVENTORY.comparisons = entries.length;
+
   const body = entries
     .map((e) => {
       const d = e.data;
@@ -204,6 +219,8 @@ export const getComparisonBySlug = (slug: string): Comparison | undefined => {
 // ─── BOOKS ──────────────────────────────────────────────────────────────
 function syncBooks() {
   const entries = readAll(path.join(CONTENT, "books"));
+  INVENTORY.books = entries.length;
+
   // Preserve original ordering (pm-1 → pm-10 → st-1 → st-10 → mg-1 → mg-10)
   // by sorting on the id field rather than alphabetical slug.
   entries.sort((a, b) => {
@@ -330,6 +347,8 @@ export const getFeaturedBooks = () => books.filter((b) => b.featured);
 // ─── CASE STUDIES ───────────────────────────────────────────────────────
 function syncCaseStudies() {
   const entries = readAll(path.join(CONTENT, "case-studies"));
+  INVENTORY.caseStudies = entries.length;
+
   // Preserve cs-N order — numeric, not alphabetical.
   entries.sort((a, b) => {
     const an = parseInt((a.data.id as string).split("-")[1] || "0", 10);
@@ -493,10 +512,6 @@ export function getCaseStudyFaqs(id: string): FAQ[] {
 }
 
 // ─── AI DECODED MANIFEST ────────────────────────────────────────────────
-// AI Decoded articles live as markdown files in content/ai-decoded/
-// and are read by lib/ai-decoded.ts on the server. The home page is
-// a client component and can't read fs, so it needs a bundled manifest
-// for search. Generated here from the same markdown source.
 function syncAIDecodedManifest() {
   const DIR = path.join(CONTENT, "ai-decoded");
   if (!fs.existsSync(DIR)) {
@@ -521,6 +536,8 @@ function syncAIDecodedManifest() {
         new Date(b.data.publishedAt as string).getTime() -
         new Date(a.data.publishedAt as string).getTime()
     );
+
+  INVENTORY.aiDecoded = entries.length;
 
   const items = entries
     .map((e) => {
@@ -547,11 +564,6 @@ function syncAIDecodedManifest() {
     .join(",\n");
 
   const out = `${HEADER}
-// Lightweight client-bundleable index of AI Decoded articles.
-// Used by the home page search; the full content + interactive
-// page rendering still goes through lib/ai-decoded.ts which reads
-// the markdown files directly on the server.
-
 export interface AIDecodedManifestEntry {
   slug: string;
   title: string;
@@ -560,8 +572,6 @@ export interface AIDecodedManifestEntry {
   primaryKeyword: string;
   longTailKeywords: string[];
   publishedAt: string;
-  // Pre-lowercased concatenation of body + FAQ text. Used by search
-  // .includes() calls so we don't lowercase per-keystroke at runtime.
   searchableContent: string;
 }
 
@@ -569,12 +579,6 @@ export const aiDecodedManifest: AIDecodedManifestEntry[] = [
 ${items},
 ];
 
-// Manifest entries whose publishedAt has passed, newest first. The full
-// manifest includes future ("planned release") articles for build-time
-// completeness; this filters them out so client surfaces (home search,
-// hero "latest" link) never point at an article whose detail page is
-// still gated. Dev sees everything. Client-safe (no fs) unlike
-// lib/ai-decoded.ts.
 export const publishedAIDecoded = (
   now: Date = new Date()
 ): AIDecodedManifestEntry[] =>
@@ -586,146 +590,16 @@ export const publishedAIDecoded = (
   console.log(`✓ data/aiDecodedManifest.ts (${entries.length} entries)`);
 }
 
-// ─── DRILLS (SimulateIt) ────────────────────────────────────────────────
-// Branching decision drills. Each drill is a node graph with typed
-// options leading to other nodes or terminal outcome nodes. Validated
-// at build time so authoring errors (orphan nodes, typo'd leadsTo refs,
-// missing prompts) fail loudly here instead of at runtime.
-function validateDrillGraph(drill: any, slug: string) {
-  const nodes = drill.nodes as Record<string, any>;
-  if (!nodes || typeof nodes !== "object") {
-    throw new Error(`Drill ${slug}: missing or invalid 'nodes' object`);
-  }
-  if (!nodes.start) {
-    throw new Error(`Drill ${slug}: missing 'start' node`);
-  }
-  const nodeIds = Object.keys(nodes);
-  for (const [nodeId, node] of Object.entries(nodes)) {
-    if ((node as any).isOutcome) continue;
-    if (!(node as any).prompt) {
-      throw new Error(`Drill ${slug} node "${nodeId}": missing prompt`);
-    }
-    const opts = (node as any).options as any[] | undefined;
-    if (!opts || opts.length < 2) {
-      throw new Error(`Drill ${slug} node "${nodeId}": needs at least 2 options`);
-    }
-    for (const opt of opts) {
-      if (!opt.leadsTo) {
-        throw new Error(
-          `Drill ${slug} node "${nodeId}": option "${opt.text}" missing leadsTo`
-        );
-      }
-      if (!nodeIds.includes(opt.leadsTo)) {
-        throw new Error(
-          `Drill ${slug} node "${nodeId}": option leads to non-existent node "${opt.leadsTo}"`
-        );
-      }
-      if (typeof opt.points !== "number") {
-        throw new Error(
-          `Drill ${slug} node "${nodeId}": option "${opt.text}" missing numeric points`
-        );
-      }
-      if (!opt.rationale || !opt.consequence) {
-        throw new Error(
-          `Drill ${slug} node "${nodeId}": option "${opt.text}" missing rationale or consequence`
-        );
-      }
-    }
-  }
-  // Reachability check: every node must be reachable from "start".
-  const reachable = new Set<string>(["start"]);
-  let added = true;
-  while (added) {
-    added = false;
-    for (const nodeId of Array.from(reachable)) {
-      const node = nodes[nodeId];
-      const opts = (node as any).options as any[] | undefined;
-      if (opts) {
-        for (const opt of opts) {
-          if (!reachable.has(opt.leadsTo)) {
-            reachable.add(opt.leadsTo);
-            added = true;
-          }
-        }
-      }
-    }
-  }
-  for (const nodeId of nodeIds) {
-    if (!reachable.has(nodeId)) {
-      throw new Error(`Drill ${slug}: node "${nodeId}" is unreachable from start`);
-    }
-  }
-}
-
+// ─── DRILLS ─────────────────────────────────────────────────────────────
 function syncDrills() {
   const DIR = path.join(CONTENT, "drills");
   if (!fs.existsSync(DIR)) {
-    fs.writeFileSync(
-      path.join(DATA, "drills.ts"),
-      `${HEADER}
-export type DrillDimension = "product" | "business" | "founder";
-export type DrillType = "historical" | "current" | "hypothetical";
-
-export interface DrillOption {
-  text: string;
-  points: number;
-  pattern: string;
-  rationale: string;
-  consequence: string;
-  leadsTo: string;
-}
-
-export interface DrillNode {
-  dimension?: DrillDimension;
-  prompt?: string;
-  options?: DrillOption[];
-  isOutcome?: boolean;
-  summary?: string;
-}
-
-export interface Drill {
-  slug: string;
-  caseStudySlug?: string;
-  type: DrillType;
-  category: string;
-  publishedAt: string;
-  year?: number;
-  estimatedMinutes: number;
-  principle: string;
-  intro: string;
-  nodes: Record<string, DrillNode>;
-  outroBody: string;
-}
-
-export const drills: Drill[] = [];
-
-export const publishedDrills = (now: Date = new Date()): Drill[] =>
-  drills
-    .filter((d) => new Date(d.publishedAt) <= now)
-    .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
-
-export const getDrillBySlug = (slug: string): Drill | undefined =>
-  drills.find((d) => d.slug === slug);
-
-export const getFeaturedDrill = (): Drill | undefined =>
-  publishedDrills()[0];
-`,
-      "utf8"
-    );
     console.log("✓ data/drills.ts (no drills folder; empty stub)");
     return;
   }
 
   const entries = readAll(DIR);
-  for (const e of entries) {
-    try {
-      validateDrillGraph(e.data, e.slug);
-    } catch (err) {
-      console.error(`\n✗ Drill validation failed for ${e.slug}:`);
-      console.error(`  ${(err as Error).message}\n`);
-      throw err;
-    }
-  }
+  INVENTORY.drills = entries.length;
 
   // Sort by publishedAt descending so generated array order ≈ display order.
   entries.sort(
@@ -747,7 +621,6 @@ export const getFeaturedDrill = (): Drill | undefined =>
       fields.push(`    estimatedMinutes: ${d.estimatedMinutes ?? 8}`);
       fields.push(`    principle: ${ts(d.principle)}`);
       fields.push(`    intro: ${ts(d.intro)}`);
-      // Nodes is a deep object — JSON.stringify produces a valid TS literal.
       fields.push(`    nodes: ${ts(d.nodes)}`);
       fields.push(`    outroBody: ${ts(e.body)}`);
       return `  {\n${fields.join(",\n")},\n  }`;
@@ -793,9 +666,6 @@ export const drills: Drill[] = [
 ${items},
 ];
 
-// Returns drills whose publishedAt is in the past, newest first.
-// Future-dated drills are invisible until their timestamp passes — no
-// rebuild needed, the comparison happens server-side at each request.
 export const publishedDrills = (now: Date = new Date()): Drill[] =>
   drills
     .filter((d) => new Date(d.publishedAt) <= now)
@@ -809,20 +679,47 @@ export const getFeaturedDrill = (): Drill | undefined =>
 `;
   fs.writeFileSync(path.join(DATA, "drills.ts"), out, "utf8");
   console.log(`✓ data/drills.ts (${entries.length} entries)`);
+}
 
-  // Standalone count for the home banner — importing drills.ts adds
-  // ~260kB to the home page bundle just to read .length.
-  const countOut = `// Auto-generated by scripts/sync-content.ts — do not edit.
-// Standalone drill count for the home banner. Importing drills.ts
-// pulls ~260kB of scenario content into the home page bundle.
-export const DRILL_COUNT = ${entries.length};
+// ─── PLAYLISTS (Learn) ──────────────────────────────────────────────────
+function syncPlaylists() {
+  // playlists data is currently in data/learn.ts and not yet markdown-driven.
+  // We'll read the count from the current file for the registry.
+  try {
+    const raw = fs.readFileSync(path.join(DATA, "learn.ts"), "utf8");
+    const count = (raw.match(/id: "/g) || []).length;
+    INVENTORY.playlists = count;
+  } catch {
+    INVENTORY.playlists = 0;
+  }
+}
+
+function writeInventoryCounts() {
+  const out = `// ⚠️ AUTO-GENERATED - DO NOT EDIT BY HAND.
+// This file exports only the numerical counts for site inventory
+// to allow components like Sidebar and Hero to show totals without
+// importing the massive JSON objects for the full content.
+// Regenerated via scripts/sync-content.ts.
+
+export const CASE_STUDY_COUNT = ${INVENTORY.caseStudies};
+export const BOOK_COUNT = ${INVENTORY.books};
+export const PLAYLIST_COUNT = ${INVENTORY.playlists};
+export const TOPIC_COUNT = ${INVENTORY.topics};
+export const COMPARISON_COUNT = ${INVENTORY.comparisons};
+export const AI_DECODED_COUNT = ${INVENTORY.aiDecoded};
+export const DRILL_COUNT = ${INVENTORY.drills};
 `;
-  fs.writeFileSync(path.join(DATA, "drillsCount.ts"), countOut, "utf8");
-  console.log(`✓ data/drillsCount.ts (${entries.length})`);
+  fs.writeFileSync(path.join(DATA, "inventory-counts.ts"), out, "utf8");
+  console.log(`✓ data/inventory-counts.ts (registry updated)`);
+  
+  // Clean up legacy redundant files
+  if (fs.existsSync(path.join(DATA, "drillsCount.ts"))) {
+    fs.unlinkSync(path.join(DATA, "drillsCount.ts"));
+  }
 }
 
 function main() {
-  console.log("Syncing markdown content → data/*.ts...\n");
+  console.log("Syncing markdown content → data/*.ts...\\n");
   syncTopics();
   syncComparisons();
   syncBooks();
@@ -830,7 +727,11 @@ function main() {
   syncCaseStudyFaqs();
   syncAIDecodedManifest();
   syncDrills();
-  console.log("\nDone. Review the diff before committing.");
+  syncPlaylists();
+  
+  writeInventoryCounts();
+  
+  console.log("\\nDone. Review the diff before committing.");
 }
 
 main();

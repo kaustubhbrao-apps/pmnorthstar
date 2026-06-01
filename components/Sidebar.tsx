@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain } from "lucide-react";
-import { caseStudies } from "@/data/caseStudies";
-import { playlists } from "@/data/learn";
-import { topics } from "@/data/topics";
-import { comparisons } from "@/data/comparisons";
+import {
+  CASE_STUDY_COUNT,
+  BOOK_COUNT,
+  PLAYLIST_COUNT,
+  TOPIC_COUNT,
+  COMPARISON_COUNT,
+} from "@/data/inventory-counts";
 
 interface SidebarProps {
   activeNav: string;
@@ -17,10 +20,10 @@ interface SidebarProps {
 }
 
 const primaryNav = [
-  { id: "home",         label: "Home",         icon: Home,           count: null as number | null },
-  { id: "casestudies",  label: "Case Studies", icon: FlameIcon,      count: caseStudies.length },
-  { id: "learn",        label: "Learn",        icon: GraduationCap,  count: playlists.length },
-  { id: "explore",      label: "Explore",      icon: Layers,         count: topics.length + comparisons.length },
+  { id: "home",         label: "Home",         icon: Home,           count: BOOK_COUNT },
+  { id: "casestudies",  label: "Case Studies", icon: FlameIcon,      count: CASE_STUDY_COUNT },
+  { id: "learn",        label: "Learn",        icon: GraduationCap,  count: PLAYLIST_COUNT },
+  { id: "explore",      label: "Explore",      icon: Layers,         count: TOPIC_COUNT + COMPARISON_COUNT },
 ];
 
 export function Sidebar({

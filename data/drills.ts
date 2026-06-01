@@ -364,9 +364,6 @@ export const drills: Drill[] = [
   },
 ];
 
-// Returns drills whose publishedAt is in the past, newest first.
-// Future-dated drills are invisible until their timestamp passes — no
-// rebuild needed, the comparison happens server-side at each request.
 export const publishedDrills = (now: Date = new Date()): Drill[] =>
   drills
     .filter((d) => new Date(d.publishedAt) <= now)

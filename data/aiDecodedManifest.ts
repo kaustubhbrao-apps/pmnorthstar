@@ -2,11 +2,6 @@
 // Source of truth is content/. Run `npx tsx scripts/sync-content.ts`
 // to regenerate after editing markdown files.
 
-// Lightweight client-bundleable index of AI Decoded articles.
-// Used by the home page search; the full content + interactive
-// page rendering still goes through lib/ai-decoded.ts which reads
-// the markdown files directly on the server.
-
 export interface AIDecodedManifestEntry {
   slug: string;
   title: string;
@@ -15,8 +10,6 @@ export interface AIDecodedManifestEntry {
   primaryKeyword: string;
   longTailKeywords: string[];
   publishedAt: string;
-  // Pre-lowercased concatenation of body + FAQ text. Used by search
-  // .includes() calls so we don't lowercase per-keystroke at runtime.
   searchableContent: string;
 }
 
@@ -507,12 +500,6 @@ export const aiDecodedManifest: AIDecodedManifestEntry[] = [
   },
 ];
 
-// Manifest entries whose publishedAt has passed, newest first. The full
-// manifest includes future ("planned release") articles for build-time
-// completeness; this filters them out so client surfaces (home search,
-// hero "latest" link) never point at an article whose detail page is
-// still gated. Dev sees everything. Client-safe (no fs) unlike
-// lib/ai-decoded.ts.
 export const publishedAIDecoded = (
   now: Date = new Date()
 ): AIDecodedManifestEntry[] =>

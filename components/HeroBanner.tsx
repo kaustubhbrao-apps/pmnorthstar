@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { aiDecodedManifest } from "@/data/aiDecodedManifest";
-import { caseStudies } from "@/data/caseStudies";
-import { books } from "@/data/books";
-import { playlists } from "@/data/learn";
-import { DRILL_COUNT } from "@/data/drillsCount";
+import {
+  CASE_STUDY_COUNT,
+  BOOK_COUNT,
+  PLAYLIST_COUNT,
+  DRILL_COUNT,
+} from "@/data/inventory-counts";
 
 interface HeroBannerProps {
   onNavChange: (nav: string) => void;
@@ -25,13 +27,8 @@ interface HeroBannerProps {
 // already pre-sorted newest-first by sync-content.ts.
 const latestAI = aiDecodedManifest[0];
 
-// Counts auto-update with content sync. CheckIt total = 35 weighted
-// checks across 7 dimensions (see lib/checkit/dimensions.ts).
-const CASE_STUDY_COUNT = caseStudies.length;
-const BOOK_COUNT = books.length;
-const PLAYLIST_COUNT = playlists.length;
+// CheckIt total = 35 weighted checks across 7 dimensions (see lib/checkit/dimensions.ts).
 const CHECKIT_TOTAL = 35;
-const DRILLS_TOTAL = DRILL_COUNT;
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", {
@@ -199,7 +196,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
               className="text-xs leading-snug mb-2.5"
               style={{ color: "rgba(255, 255, 255, 0.8)" }}
             >
-              {DRILLS_TOTAL} drills. Two per week. Free.
+              {DRILL_COUNT} drills. Two per week. Free.
             </p>
             <span
               className="inline-flex items-center gap-1 text-xs font-semibold transition-transform group-hover:translate-x-0.5"
