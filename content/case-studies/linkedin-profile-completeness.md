@@ -1,24 +1,41 @@
 ---
-id: "cs-14"
-slug: "linkedin-profile-completeness"
-company: "LinkedIn"
-title: "LinkedIn's Profile Completeness Nudge"
-category: "Growth"
-description: "LinkedIn introduced a profile strength meter that nudged users to complete their profiles. Complete profiles got more views — creating a self-reinforcing engagement loop."
-outcome: "Grew to 100M users by 2011. Acquired by Microsoft for $26.2B."
+id: cs-14
+slug: linkedin-profile-completeness
+company: LinkedIn
+title: LinkedIn's Profile Completeness Nudge
+category: Growth
+description: >-
+  LinkedIn introduced a profile strength meter that nudged users to complete
+  their profiles. Complete profiles got more views — creating a self-reinforcing
+  engagement loop.
+outcome: Grew to 100M users by 2011. Acquired by Microsoft for $26.2B.
 year: 2006
 tags:
-  - "engagement"
-  - "nudge"
-  - "profiles"
-logo: "💼"
+  - engagement
+  - nudge
+  - profiles
+logo: "\U0001F4BC"
 faqs:
-  - question: "Why does LinkedIn show a profile completeness meter?"
-    answer: "LinkedIn's profile-strength meter was a behavioral psychology bet: showing users how 'incomplete' their profile was created mild compulsion to fill it in. Each incremental field (skills, summary, photo) made users more findable to recruiters — which kept them engaged and coming back. The meter is one of the most-cited examples of nudge design in product."
-  - question: "How many users does LinkedIn have?"
-    answer: "LinkedIn has over 1 billion members globally as of 2025-26 — making it the largest professional network. India is LinkedIn's largest market by user count (over 130M users). Daily and monthly active users have grown steadily through every economic cycle since 2003."
-  - question: "Who owns LinkedIn?"
-    answer: "Microsoft acquired LinkedIn in 2016 for $26.2B in cash — at the time one of the largest tech acquisitions ever. LinkedIn operates as an independent subsidiary; Microsoft has used it for talent integrations with Office and Dynamics, and revenue has roughly tripled since the acquisition."
+  - question: Why does LinkedIn show a profile completeness meter?
+    answer: >-
+      LinkedIn's profile-strength meter was a behavioral psychology bet: showing
+      users how 'incomplete' their profile was created mild compulsion to fill
+      it in. Each incremental field (skills, summary, photo) made users more
+      findable to recruiters — which kept them engaged and coming back. The
+      meter is one of the most-cited examples of nudge design in product.
+  - question: How many users does LinkedIn have?
+    answer: >-
+      LinkedIn has over 1 billion members globally as of 2025-26 — making it the
+      largest professional network. India is LinkedIn's largest market by user
+      count (over 130M users). Daily and monthly active users have grown
+      steadily through every economic cycle since 2003.
+  - question: Who owns LinkedIn?
+    answer: >-
+      Microsoft acquired LinkedIn in 2016 for $26.2B in cash — at the time one
+      of the largest tech acquisitions ever. LinkedIn operates as an independent
+      subsidiary; Microsoft has used it for talent integrations with Office and
+      Dynamics, and revenue has roughly tripled since the acquisition.
+publishedAt: '2026-05-18'
 ---
 
 LinkedIn faced a classic cold-start problem that was particularly acute for a professional network. The platform was only valuable if people had complete, up-to-date profiles with their real professional history, but users had little immediate motivation to fill out detailed information on a new and unproven network. Unlike Facebook, where the social gratification of connecting with friends was instant, LinkedIn's value proposition, better career opportunities and professional networking, was diffuse and long-term. Most new users created an account with a name and a job title, and then abandoned the incomplete profile, creating a platform full of placeholder entries that were useless for networking or recruiting.

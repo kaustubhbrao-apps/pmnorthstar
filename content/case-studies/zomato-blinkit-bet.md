@@ -1,29 +1,65 @@
 ---
-id: "cs-66"
-slug: "zomato-blinkit-bet"
-company: "Zomato"
-title: "How Zomato Survived a 75% IPO Crash and Became India's Most Watched Post-IPO Story"
-category: "Strategy"
-description: "Zomato IPO'd at a $12B valuation, crashed 75% within 18 months, then quietly became more valuable than ever. The second act was a $568M acquisition of Blinkit when quick commerce looked unviable — a bet that aged perfectly."
-outcome: "Profitable by FY24. ₹4,000+ Cr annualized profit run rate. Quick commerce (Blinkit) became more profitable per order than food delivery. Stock recovered to all-time highs by 2026."
+id: cs-66
+slug: zomato-blinkit-bet
+company: Zomato
+title: >-
+  How Zomato Survived a 75% IPO Crash and Became India's Most Watched Post-IPO
+  Story
+category: Strategy
+description: >-
+  Zomato IPO'd at a $12B valuation, crashed 75% within 18 months, then quietly
+  became more valuable than ever. The second act was a $568M acquisition of
+  Blinkit when quick commerce looked unviable — a bet that aged perfectly.
+outcome: >-
+  Profitable by FY24. ₹4,000+ Cr annualized profit run rate. Quick commerce
+  (Blinkit) became more profitable per order than food delivery. Stock recovered
+  to all-time highs by 2026.
 year: 2008
 tags:
-  - "post-IPO"
-  - "quick commerce"
-  - "marketplace"
-logo: "🍅"
-region: "India"
+  - post-IPO
+  - quick commerce
+  - marketplace
+logo: "\U0001F345"
+region: India
 faqs:
-  - question: "Why did Zomato's stock crash 75% after IPO?"
-    answer: "Zomato listed in July 2021 at a $12B valuation, riding peak pandemic optimism. The crash was a combination of factors: persistent losses in the core food delivery business, the broader tech sell-off in 2022, fears about the cash-burn quick commerce bet (Blinkit acquisition), and skepticism about the unit economics of low-AOV Indian food delivery."
-  - question: "Why did Zomato acquire Blinkit?"
-    answer: "Zomato acquired Blinkit (then Grofers) in 2022 for $568M in an all-stock deal. The thesis was that the same delivery rider fleet and dark-store infrastructure could serve both food delivery and quick commerce, sharing fixed costs across two demand sources. The acquisition looked desperate at the time but became Zomato's most valuable business unit by 2025."
-  - question: "How did Zomato become profitable?"
-    answer: "Three structural moves: (1) killed underperforming verticals like Zomato Pro, Hyperpure cloud kitchens for restaurants, and the dining-out vertical to focus on food delivery + quick commerce. (2) Increased platform fees per order, accepting some volume loss for margin improvement. (3) Blinkit's unit economics flipped positive faster than food delivery, with higher AOVs and lower variable delivery cost per order."
-  - question: "Is quick commerce in India profitable?"
-    answer: "By 2025-26, top-3 quick commerce players (Blinkit, Zepto, Instamart) all hit contribution margin profitability per order in mature cities. Blinkit specifically reported positive EBITDA in metro markets through a combination of higher AOV, ad revenue from brands, and dark-store density that drove down per-order delivery cost. The 'quick commerce is unviable' narrative collapsed in 2024-25."
-  - question: "How big is Zomato now?"
-    answer: "By 2026, Zomato's market cap is back above its IPO peak. Annualized revenue crossed ₹20,000 Cr. Profitability hit ₹4,000+ Cr run rate. Blinkit became more valuable as a standalone unit than Zomato's food delivery business per most analyst estimates. The company is one of India's most-watched post-IPO turnaround stories."
+  - question: Why did Zomato's stock crash 75% after IPO?
+    answer: >-
+      Zomato listed in July 2021 at a $12B valuation, riding peak pandemic
+      optimism. The crash was a combination of factors: persistent losses in the
+      core food delivery business, the broader tech sell-off in 2022, fears
+      about the cash-burn quick commerce bet (Blinkit acquisition), and
+      skepticism about the unit economics of low-AOV Indian food delivery.
+  - question: Why did Zomato acquire Blinkit?
+    answer: >-
+      Zomato acquired Blinkit (then Grofers) in 2022 for $568M in an all-stock
+      deal. The thesis was that the same delivery rider fleet and dark-store
+      infrastructure could serve both food delivery and quick commerce, sharing
+      fixed costs across two demand sources. The acquisition looked desperate at
+      the time but became Zomato's most valuable business unit by 2025.
+  - question: How did Zomato become profitable?
+    answer: >-
+      Three structural moves: (1) killed underperforming verticals like Zomato
+      Pro, Hyperpure cloud kitchens for restaurants, and the dining-out vertical
+      to focus on food delivery + quick commerce. (2) Increased platform fees
+      per order, accepting some volume loss for margin improvement. (3)
+      Blinkit's unit economics flipped positive faster than food delivery, with
+      higher AOVs and lower variable delivery cost per order.
+  - question: Is quick commerce in India profitable?
+    answer: >-
+      By 2025-26, top-3 quick commerce players (Blinkit, Zepto, Instamart) all
+      hit contribution margin profitability per order in mature cities. Blinkit
+      specifically reported positive EBITDA in metro markets through a
+      combination of higher AOV, ad revenue from brands, and dark-store density
+      that drove down per-order delivery cost. The 'quick commerce is unviable'
+      narrative collapsed in 2024-25.
+  - question: How big is Zomato now?
+    answer: >-
+      By 2026, Zomato's market cap is back above its IPO peak. Annualized
+      revenue crossed ₹20,000 Cr. Profitability hit ₹4,000+ Cr run rate. Blinkit
+      became more valuable as a standalone unit than Zomato's food delivery
+      business per most analyst estimates. The company is one of India's
+      most-watched post-IPO turnaround stories.
+publishedAt: '2026-05-18'
 ---
 
 Zomato's IPO in July 2021 was the moment Indian tech finally arrived on the public market stage. The company listed at a $12 billion valuation, oversubscribed 38x, and the stock popped 65% on day one. For a few months, it looked like the validation Indian internet entrepreneurs had been waiting for. Then the same forces that lifted it started reversing. The Federal Reserve started raising rates, global tech multiples compressed, and Indian retail investors realized that food delivery was structurally hard to make profitable. By mid-2022, Zomato was trading 75% below its IPO peak. Most narratives stopped there: "the food delivery IPO crashed." But the actual interesting story is what Zomato did next.

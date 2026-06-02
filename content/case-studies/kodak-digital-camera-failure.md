@@ -1,24 +1,44 @@
 ---
-id: "cs-36"
-slug: "kodak-digital-camera-failure"
-company: "Kodak"
-title: "Kodak Invented Digital Camera and Still Failed"
-category: "Failure"
-description: "Kodak engineer Steve Sasson built the first digital camera in 1975. Management buried it to protect film revenue. By 2012, Kodak filed for bankruptcy — killed by their own invention."
-outcome: "Filed Chapter 11 in 2012. The ultimate innovator's dilemma cautionary tale."
+id: cs-36
+slug: kodak-digital-camera-failure
+company: Kodak
+title: Kodak Invented Digital Camera and Still Failed
+category: Failure
+description: >-
+  Kodak engineer Steve Sasson built the first digital camera in 1975. Management
+  buried it to protect film revenue. By 2012, Kodak filed for bankruptcy —
+  killed by their own invention.
+outcome: Filed Chapter 11 in 2012. The ultimate innovator's dilemma cautionary tale.
 year: 2012
 tags:
-  - "disruption"
-  - "innovator's dilemma"
-  - "film"
-logo: "📷"
+  - disruption
+  - innovator's dilemma
+  - film
+logo: "\U0001F4F7"
 faqs:
-  - question: "Did Kodak invent the digital camera?"
-    answer: "Yes — Kodak engineer Steve Sasson built the world's first digital camera in 1975. The 8-pound prototype recorded black-and-white images to cassette tape. Sasson showed it to Kodak management, who saw it as a threat to film and told him to keep quiet about it. Kodak owned the patent but suppressed the technology for ~25 years."
-  - question: "Why did Kodak go bankrupt?"
-    answer: "Kodak filed for bankruptcy in 2012. The root cause: management couldn't commit to killing the profitable film business to invest in digital, even though they knew digital was the future. By the time Kodak fully committed to digital cameras, the market had moved on — phones with built-in cameras (starting 2007 with iPhone) eliminated standalone cameras as a mass-market category."
-  - question: "What happened to Kodak after bankruptcy?"
-    answer: "Kodak emerged from bankruptcy in 2013 as a much smaller company focused on commercial printing, imaging chemicals, and licensing. The brand still exists but the company is a fraction of its 1996 peak ($30B+ market cap). The Kodak story is taught in business schools as the canonical example of disruption by an internally-known but suppressed innovation."
+  - question: Did Kodak invent the digital camera?
+    answer: >-
+      Yes — Kodak engineer Steve Sasson built the world's first digital camera
+      in 1975. The 8-pound prototype recorded black-and-white images to cassette
+      tape. Sasson showed it to Kodak management, who saw it as a threat to film
+      and told him to keep quiet about it. Kodak owned the patent but suppressed
+      the technology for ~25 years.
+  - question: Why did Kodak go bankrupt?
+    answer: >-
+      Kodak filed for bankruptcy in 2012. The root cause: management couldn't
+      commit to killing the profitable film business to invest in digital, even
+      though they knew digital was the future. By the time Kodak fully committed
+      to digital cameras, the market had moved on — phones with built-in cameras
+      (starting 2007 with iPhone) eliminated standalone cameras as a mass-market
+      category.
+  - question: What happened to Kodak after bankruptcy?
+    answer: >-
+      Kodak emerged from bankruptcy in 2013 as a much smaller company focused on
+      commercial printing, imaging chemicals, and licensing. The brand still
+      exists but the company is a fraction of its 1996 peak ($30B+ market cap).
+      The Kodak story is taught in business schools as the canonical example of
+      disruption by an internally-known but suppressed innovation.
+publishedAt: '2026-05-18'
 ---
 
 In 1975, Steven Sasson, a 24-year-old electrical engineer at Kodak's Apparatus Division research lab, built the world's first digital camera. The device was the size of a toaster, weighed eight pounds, took 23 seconds to capture a black-and-white image at 0.01 megapixels, and stored it on a cassette tape. It was primitive by any standard, but it demonstrated that light could be captured as digital information rather than as a chemical reaction on film. When Sasson presented his invention to Kodak's executive leadership, their response was immediate and emphatic: "That's cute, but don't tell anyone about it." Kodak was generating billions of dollars annually from film, chemicals, printing paper, and photo processing. A technology that eliminated the need for film was not an opportunity; it was an existential threat.

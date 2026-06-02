@@ -1,28 +1,66 @@
 ---
-id: "cs-70"
-slug: "walmart-performance-conversion"
-company: "Walmart"
-title: "How Walmart Turned Web Performance into a Revenue Lever"
-category: "Growth"
-description: "Walmart's e-commerce team ran a simple study in 2012 and found that every 1-second improvement in page load time increased conversions by 2%. The number was so large that performance went from being an engineering concern to a board-level KPI."
-outcome: "Walmart.com grew from $4.9B in 2012 to over $73B in online revenue by 2024. The performance team became a profit center. The 1s-=-2% finding became the most-cited number in web performance literature."
+id: cs-70
+slug: walmart-performance-conversion
+company: Walmart
+title: How Walmart Turned Web Performance into a Revenue Lever
+category: Growth
+description: >-
+  Walmart's e-commerce team ran a simple study in 2012 and found that every
+  1-second improvement in page load time increased conversions by 2%. The number
+  was so large that performance went from being an engineering concern to a
+  board-level KPI.
+outcome: >-
+  Walmart.com grew from $4.9B in 2012 to over $73B in online revenue by 2024.
+  The performance team became a profit center. The 1s-=-2% finding became the
+  most-cited number in web performance literature.
 year: 2012
 tags:
-  - "performance"
-  - "conversion"
-  - "e-commerce"
-logo: "W"
+  - performance
+  - conversion
+  - e-commerce
+logo: W
 faqs:
-  - question: "Did Walmart really find that 1 second of load time equals 2% conversion?"
-    answer: "Yes. Walmart's web performance team presented the finding at Velocity Conference in 2012 with the chart that became famous in the performance community. Pages that loaded faster than 1 second converted at roughly twice the rate of pages that loaded in 4 seconds. The study controlled for traffic source, device type, and product category. The 2% per second number has been replicated by Akamai, Aberdeen, and Cloudflare in subsequent studies."
-  - question: "What were Walmart's biggest performance wins?"
-    answer: "Three categories. First, server-side response time (TTFB): they rebuilt their server stack on Node.js in 2013 to cut TTFB by 60%. Second, image optimization: they shipped responsive images, lazy loading, and modern formats years before competitors. Third, eliminating render-blocking JavaScript: they aggressively inlined critical CSS and deferred non-essential scripts. Each lever was measured against revenue, not just against synthetic performance scores."
-  - question: "How does Walmart's approach compare to Amazon's?"
-    answer: "Amazon famously found a similar effect (every 100ms cost 1% of sales) but kept the number internal for years. Walmart published their data publicly, which made web performance a category that other e-commerce companies could justify investing in. Amazon optimized for its own platform; Walmart's published research lifted the entire industry."
-  - question: "What can smaller sites learn from this?"
-    answer: "The 2% per second number scales. A small site with 1000 monthly orders that improves load time by 1 second sees roughly 20 additional orders per month. The same engineering effort that gets a site from 4s to 3s gets it from 3s to 2s. The compounding is what makes performance such a high-ROI investment for sites at every scale, not just Walmart's."
-  - question: "Is web performance still a conversion lever in 2026?"
-    answer: "More than ever. Mobile traffic shares are 60-70% of e-commerce; mobile networks are slower than the desktop networks Walmart originally studied. The 2% per second number has held up in 2024-2025 studies, and Core Web Vitals are now a Google ranking factor — meaning slow sites lose conversions AND lose organic traffic. Performance compounds in two directions at once."
+  - question: Did Walmart really find that 1 second of load time equals 2% conversion?
+    answer: >-
+      Yes. Walmart's web performance team presented the finding at Velocity
+      Conference in 2012 with the chart that became famous in the performance
+      community. Pages that loaded faster than 1 second converted at roughly
+      twice the rate of pages that loaded in 4 seconds. The study controlled for
+      traffic source, device type, and product category. The 2% per second
+      number has been replicated by Akamai, Aberdeen, and Cloudflare in
+      subsequent studies.
+  - question: What were Walmart's biggest performance wins?
+    answer: >-
+      Three categories. First, server-side response time (TTFB): they rebuilt
+      their server stack on Node.js in 2013 to cut TTFB by 60%. Second, image
+      optimization: they shipped responsive images, lazy loading, and modern
+      formats years before competitors. Third, eliminating render-blocking
+      JavaScript: they aggressively inlined critical CSS and deferred
+      non-essential scripts. Each lever was measured against revenue, not just
+      against synthetic performance scores.
+  - question: How does Walmart's approach compare to Amazon's?
+    answer: >-
+      Amazon famously found a similar effect (every 100ms cost 1% of sales) but
+      kept the number internal for years. Walmart published their data publicly,
+      which made web performance a category that other e-commerce companies
+      could justify investing in. Amazon optimized for its own platform;
+      Walmart's published research lifted the entire industry.
+  - question: What can smaller sites learn from this?
+    answer: >-
+      The 2% per second number scales. A small site with 1000 monthly orders
+      that improves load time by 1 second sees roughly 20 additional orders per
+      month. The same engineering effort that gets a site from 4s to 3s gets it
+      from 3s to 2s. The compounding is what makes performance such a high-ROI
+      investment for sites at every scale, not just Walmart's.
+  - question: Is web performance still a conversion lever in 2026?
+    answer: >-
+      More than ever. Mobile traffic shares are 60-70% of e-commerce; mobile
+      networks are slower than the desktop networks Walmart originally studied.
+      The 2% per second number has held up in 2024-2025 studies, and Core Web
+      Vitals are now a Google ranking factor — meaning slow sites lose
+      conversions AND lose organic traffic. Performance compounds in two
+      directions at once.
+publishedAt: '2026-05-18'
 ---
 
 In 2012, Walmart's e-commerce arm was the third-largest online retailer in the United States behind Amazon and eBay, generating roughly $4.9 billion in annual web revenue. The retail giant had spent years investing in catalog breadth, search, and recommendations — the kinds of things conventional e-commerce strategy said would move the needle. The performance team, a small group buried inside engineering, was treated as a cost center responsible for keeping the site online. That status was about to change. In a series of studies conducted between 2010 and 2012, the team ran experiments correlating page load time against conversion rate, average order value, and bounce rate. The results were so dramatic that they reorganized how Walmart thought about its own website.

@@ -1,24 +1,45 @@
 ---
-id: "cs-26"
-slug: "google-maps-data-moat"
-company: "Google"
-title: "Google Maps' Moat Through Data Network Effects"
-category: "Strategy"
-description: "Google Maps improved as more people used it — traffic data, business reviews, street view. This data moat became nearly impossible for competitors to replicate."
-outcome: "1B+ monthly users. Estimated $11B annual revenue for the Maps business."
+id: cs-26
+slug: google-maps-data-moat
+company: Google
+title: Google Maps' Moat Through Data Network Effects
+category: Strategy
+description: >-
+  Google Maps improved as more people used it — traffic data, business reviews,
+  street view. This data moat became nearly impossible for competitors to
+  replicate.
+outcome: 1B+ monthly users. Estimated $11B annual revenue for the Maps business.
 year: 2005
 tags:
-  - "data"
-  - "network effects"
-  - "maps"
-logo: "🗺️"
+  - data
+  - network effects
+  - maps
+logo: "\U0001F5FA️"
 faqs:
-  - question: "Why is Google Maps better than competitors?"
-    answer: "Google Maps' moat is data — billions of daily probes from Android phones (anonymous location data) telling Google what every road looks like in real time. Traffic, road closures, business hours, restaurant popularity — all are by-products of having more devices reporting in than any competitor. Apple Maps closed the gap on visual quality but still can't match the live data layer."
-  - question: "How does Google Maps make money?"
-    answer: "Google Maps monetizes through local search ads (sponsored business listings, sponsored search results within Maps), the Google Maps Platform API (developers pay per request for embedding maps and using location data), and increasingly through Google Business Profile listings monetization. Revenue is meaningful but small relative to Google's core ad business."
-  - question: "Did Google buy or build Maps?"
-    answer: "Google Maps started as an acquisition — Google bought Where 2 Technologies, Keyhole, and ZipDash in 2004-2005 and combined their technology into Google Maps (launched 2005). Most of what makes Maps powerful today (Street View, real-time traffic, live business data) was built internally over the following decade."
+  - question: Why is Google Maps better than competitors?
+    answer: >-
+      Google Maps' moat is data — billions of daily probes from Android phones
+      (anonymous location data) telling Google what every road looks like in
+      real time. Traffic, road closures, business hours, restaurant popularity —
+      all are by-products of having more devices reporting in than any
+      competitor. Apple Maps closed the gap on visual quality but still can't
+      match the live data layer.
+  - question: How does Google Maps make money?
+    answer: >-
+      Google Maps monetizes through local search ads (sponsored business
+      listings, sponsored search results within Maps), the Google Maps Platform
+      API (developers pay per request for embedding maps and using location
+      data), and increasingly through Google Business Profile listings
+      monetization. Revenue is meaningful but small relative to Google's core ad
+      business.
+  - question: Did Google buy or build Maps?
+    answer: >-
+      Google Maps started as an acquisition — Google bought Where 2
+      Technologies, Keyhole, and ZipDash in 2004-2005 and combined their
+      technology into Google Maps (launched 2005). Most of what makes Maps
+      powerful today (Street View, real-time traffic, live business data) was
+      built internally over the following decade.
+publishedAt: '2026-05-18'
 ---
 
 When Google launched Maps in February 2005, it was a well-designed mapping application with an innovative Ajax-based interface that allowed smooth panning and zooming, but it was not fundamentally different in functionality from MapQuest, Yahoo Maps, or Microsoft's MapPoint. All mapping services drew from the same underlying geographic data providers, Navteq and Tele Atlas, meaning the base maps were essentially identical. Google's initial advantage was a better user interface and the brand trust that came from being Google. But what transformed Google Maps from a good product into an insurmountable moat was a strategic decision that took years to fully materialize: turning every user into an involuntary data contributor.

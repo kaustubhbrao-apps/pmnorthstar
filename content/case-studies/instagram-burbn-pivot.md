@@ -1,24 +1,42 @@
 ---
-id: "cs-10"
-slug: "instagram-burbn-pivot"
-company: "Instagram"
-title: "Instagram's Pivot from Burbn to Photo Sharing"
-category: "Product"
-description: "Burbn was a cluttered check-in app. Kevin Systrom noticed users only used the photo feature — so they stripped everything else and relaunched as Instagram."
-outcome: "Acquired by Facebook for $1B in 2012. 2B+ MAU today."
+id: cs-10
+slug: instagram-burbn-pivot
+company: Instagram
+title: Instagram's Pivot from Burbn to Photo Sharing
+category: Product
+description: >-
+  Burbn was a cluttered check-in app. Kevin Systrom noticed users only used the
+  photo feature — so they stripped everything else and relaunched as Instagram.
+outcome: Acquired by Facebook for $1B in 2012. 2B+ MAU today.
 year: 2010
 tags:
-  - "pivot"
-  - "simplicity"
-  - "social"
-logo: "📸"
+  - pivot
+  - simplicity
+  - social
+logo: "\U0001F4F8"
 faqs:
-  - question: "What did Burbn do before becoming Instagram?"
-    answer: "Burbn was Instagram's predecessor — a location-based check-in app with photo sharing as one of about 100 features. Kevin Systrom and Mike Krieger noticed users only engaged with the photo-sharing feature; they cut the other 99 features and rebuilt around it. Instagram launched in October 2010."
-  - question: "Why did Facebook buy Instagram?"
-    answer: "Facebook bought Instagram for $1B in April 2012, when Instagram had 30M users and 12 employees. The price looked insane in 2012 (it was 0.5% of Facebook's market cap for a tiny app), but Mark Zuckerberg saw mobile-first photo sharing as an existential threat to Facebook. The acquisition is now considered the best in tech history."
-  - question: "What were Instagram's original filters?"
-    answer: "Instagram launched with 11 filters — names like X-Pro II, Lo-Fi, Earlybird, Toaster. The filters weren't a vanity feature: they made average smartphone photos (which were technically poor in 2010-2011) look intentional and beautiful. The filters were the actual wedge that drove early adoption."
+  - question: What did Burbn do before becoming Instagram?
+    answer: >-
+      Burbn was Instagram's predecessor — a location-based check-in app with
+      photo sharing as one of about 100 features. Kevin Systrom and Mike Krieger
+      noticed users only engaged with the photo-sharing feature; they cut the
+      other 99 features and rebuilt around it. Instagram launched in October
+      2010.
+  - question: Why did Facebook buy Instagram?
+    answer: >-
+      Facebook bought Instagram for $1B in April 2012, when Instagram had 30M
+      users and 12 employees. The price looked insane in 2012 (it was 0.5% of
+      Facebook's market cap for a tiny app), but Mark Zuckerberg saw
+      mobile-first photo sharing as an existential threat to Facebook. The
+      acquisition is now considered the best in tech history.
+  - question: What were Instagram's original filters?
+    answer: >-
+      Instagram launched with 11 filters — names like X-Pro II, Lo-Fi,
+      Earlybird, Toaster. The filters weren't a vanity feature: they made
+      average smartphone photos (which were technically poor in 2010-2011) look
+      intentional and beautiful. The filters were the actual wedge that drove
+      early adoption.
+publishedAt: '2026-05-18'
 ---
 
 Kevin Systrom and Mike Krieger originally built Burbn, a location-based check-in app that competed in the crowded space alongside Foursquare, Gowalla, and a dozen other location-sharing services. Burbn was feature-rich, offering check-ins, plans, points, and photo sharing, all wrapped in an interface that tried to do too much and succeeded at none of it. The app had raised $500,000 in seed funding from Baseline Ventures and Andreessen Horowitz, but user engagement was tepid. The market for check-in apps was saturated, and Burbn offered no compelling reason to choose it over the established competitors.

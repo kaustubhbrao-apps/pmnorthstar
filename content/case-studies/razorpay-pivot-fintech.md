@@ -1,27 +1,50 @@
 ---
-id: "cs-52"
-slug: "razorpay-pivot-fintech"
-company: "Razorpay"
-title: "How Razorpay Pivoted from Payment Gateway to Banking Empire"
-category: "Strategy"
-description: "Two IIT Roorkee graduates built India's Stripe in 2014, then made the harder bet: turn a single product into an entire neo-banking infrastructure stack for Indian businesses. Now reverse-flipping back to India for an IPO."
-outcome: "$7.5B valuation. $150B+ annual payment volume. Eight acquisitions integrated into a single platform. Reverse-flipped from Delaware to India in 2025 ahead of IPO prep."
+id: cs-52
+slug: razorpay-pivot-fintech
+company: Razorpay
+title: How Razorpay Pivoted from Payment Gateway to Banking Empire
+category: Strategy
+description: >-
+  Two IIT Roorkee graduates built India's Stripe in 2014, then made the harder
+  bet: turn a single product into an entire neo-banking infrastructure stack for
+  Indian businesses. Now reverse-flipping back to India for an IPO.
+outcome: >-
+  $7.5B valuation. $150B+ annual payment volume. Eight acquisitions integrated
+  into a single platform. Reverse-flipped from Delaware to India in 2025 ahead
+  of IPO prep.
 year: 2014
 tags:
-  - "fintech"
-  - "platform"
-  - "B2B"
-logo: "💸"
-region: "India"
+  - fintech
+  - platform
+  - B2B
+logo: "\U0001F4B8"
+region: India
 faqs:
-  - question: "What does Razorpay do?"
-    answer: "Razorpay started in 2014 as a payment gateway — India's answer to Stripe — and expanded into a neo-banking infrastructure stack for Indian businesses. It now handles payments, banking (RazorpayX), lending (Razorpay Capital), payroll, checkout, and offline POS."
-  - question: "Why did Razorpay reverse flip to India?"
-    answer: "Razorpay was originally incorporated in Delaware. In 2024-25, it reverse-flipped its parent entity from Delaware to Bengaluru, paying nearly $200M in tax (one of the largest such bills in Indian startup history) specifically to enable an Indian IPO."
-  - question: "When will Razorpay IPO?"
-    answer: "Razorpay completed its reverse flip from Delaware to India in 2024-25 specifically to enable an Indian IPO. The listing is expected in 2025-26, with the company processing over $150B in annual payment volume and serving 10M+ businesses."
-  - question: "How does Razorpay make money?"
-    answer: "Razorpay charges merchants a percentage fee on payment processing (the core gateway business), plus subscription and transaction fees for RazorpayX banking products, lending interest through Razorpay Capital, and platform fees across payroll, payouts, and checkout products."
+  - question: What does Razorpay do?
+    answer: >-
+      Razorpay started in 2014 as a payment gateway — India's answer to Stripe —
+      and expanded into a neo-banking infrastructure stack for Indian
+      businesses. It now handles payments, banking (RazorpayX), lending
+      (Razorpay Capital), payroll, checkout, and offline POS.
+  - question: Why did Razorpay reverse flip to India?
+    answer: >-
+      Razorpay was originally incorporated in Delaware. In 2024-25, it
+      reverse-flipped its parent entity from Delaware to Bengaluru, paying
+      nearly $200M in tax (one of the largest such bills in Indian startup
+      history) specifically to enable an Indian IPO.
+  - question: When will Razorpay IPO?
+    answer: >-
+      Razorpay completed its reverse flip from Delaware to India in 2024-25
+      specifically to enable an Indian IPO. The listing is expected in 2025-26,
+      with the company processing over $150B in annual payment volume and
+      serving 10M+ businesses.
+  - question: How does Razorpay make money?
+    answer: >-
+      Razorpay charges merchants a percentage fee on payment processing (the
+      core gateway business), plus subscription and transaction fees for
+      RazorpayX banking products, lending interest through Razorpay Capital, and
+      platform fees across payroll, payouts, and checkout products.
+publishedAt: '2026-05-18'
 ---
 
 India's payments market in 2014 was bifurcated between two extremes. On one end were the legacy gateways like CCAvenue, Bill Desk, and PayU, built in the early 2000s for desktop e-commerce and offering byzantine integration paths that required a developer to dedicate weeks to onboarding. On the other end were the new wallet-first players like Paytm and MobiKwik, focused on consumer-side experiences and small-merchant scanning. Sitting in the middle was a gap that nobody seemed to be filling: modern API-first payments infrastructure for the new generation of Indian internet companies that were starting to build serious products. Stripe had launched in the US in 2010 and reshaped how American startups thought about payments. India had no equivalent. Harshil Mathur and Shashank Kumar, two IIT Roorkee graduates, decided to build it. Razorpay launched in 2014 with what was, in essence, a thinner, better-designed wrapper around the same gateway integrations every other company offered.

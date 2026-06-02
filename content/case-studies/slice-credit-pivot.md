@@ -1,27 +1,51 @@
 ---
-id: "cs-61"
-slug: "slice-credit-pivot"
-company: "Slice"
-title: "How Slice Pivoted from Credit Cards to Banking — Twice"
-category: "Strategy"
-description: "Rajan Bajaj built India's first credit card for Gen Z when no bank would issue cards to under-25s. The RBI changed the rules, the business model broke, and Slice had to reinvent itself as a UPI-first bank in 18 months — twice."
-outcome: "Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+ users. Successfully pivoted twice without losing the brand. The Slice card brand survived three regulatory shifts that broke most fintech peers."
+id: cs-61
+slug: slice-credit-pivot
+company: Slice
+title: How Slice Pivoted from Credit Cards to Banking — Twice
+category: Strategy
+description: >-
+  Rajan Bajaj built India's first credit card for Gen Z when no bank would issue
+  cards to under-25s. The RBI changed the rules, the business model broke, and
+  Slice had to reinvent itself as a UPI-first bank in 18 months — twice.
+outcome: >-
+  Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+
+  users. Successfully pivoted twice without losing the brand. The Slice card
+  brand survived three regulatory shifts that broke most fintech peers.
 year: 2016
 tags:
-  - "fintech"
-  - "regulatory"
-  - "pivot"
-logo: "💳"
-region: "India"
+  - fintech
+  - regulatory
+  - pivot
+logo: "\U0001F4B3"
+region: India
 faqs:
-  - question: "What happened to Slice credit card?"
-    answer: "In June 2022, RBI clarified that prepaid payment instruments could not be loaded with credit lines from non-bank entities — directly targeting Slice's model. Slice had to stop issuing new cards within weeks, refund customers, and rebuild as a UPI-first product. The brand survived through a forced pivot."
-  - question: "Is Slice a bank now?"
-    answer: "Yes — Slice merged with North East Small Finance Bank in 2024, completing the regulatory approval process. As a small finance bank, Slice now has its own banking license and can issue credit products without third-party bank dependencies that exposed it to the 2022 RBI disruption."
-  - question: "Did Slice fail?"
-    answer: "Slice didn't fail but did navigate two existential pivots. The original credit-card-for-Gen-Z model broke in 2022 due to RBI restrictions. Slice pivoted to UPI-first, then merged with NESFB to become a bank in 2024. Through both pivots, it retained 60%+ of its 10M+ user base."
-  - question: "Who founded Slice?"
-    answer: "Slice was founded by Rajan Bajaj in 2016, when he was 23 years old. Bajaj built the company specifically for India's Gen Z — a demographic locked out of credit cards because traditional Indian banks viewed them as too risky and unprofitable to serve."
+  - question: What happened to Slice credit card?
+    answer: >-
+      In June 2022, RBI clarified that prepaid payment instruments could not be
+      loaded with credit lines from non-bank entities — directly targeting
+      Slice's model. Slice had to stop issuing new cards within weeks, refund
+      customers, and rebuild as a UPI-first product. The brand survived through
+      a forced pivot.
+  - question: Is Slice a bank now?
+    answer: >-
+      Yes — Slice merged with North East Small Finance Bank in 2024, completing
+      the regulatory approval process. As a small finance bank, Slice now has
+      its own banking license and can issue credit products without third-party
+      bank dependencies that exposed it to the 2022 RBI disruption.
+  - question: Did Slice fail?
+    answer: >-
+      Slice didn't fail but did navigate two existential pivots. The original
+      credit-card-for-Gen-Z model broke in 2022 due to RBI restrictions. Slice
+      pivoted to UPI-first, then merged with NESFB to become a bank in 2024.
+      Through both pivots, it retained 60%+ of its 10M+ user base.
+  - question: Who founded Slice?
+    answer: >-
+      Slice was founded by Rajan Bajaj in 2016, when he was 23 years old. Bajaj
+      built the company specifically for India's Gen Z — a demographic locked
+      out of credit cards because traditional Indian banks viewed them as too
+      risky and unprofitable to serve.
+publishedAt: '2026-05-18'
 ---
 
 Indian credit card penetration in 2016 was a mess of contradictions. India had 1.3 billion people, a fast-growing middle class, and one of the world's largest pools of digitally-savvy young consumers. But credit card penetration was barely 3%, almost entirely concentrated in users over 25 with salaried jobs and credit scores built through years of banking history. The 18-25 demographic — students, early-career professionals, gig workers — were structurally locked out. Indian banks viewed them as too risky, too small in ticket size, and not worth the underwriting cost. Rajan Bajaj, a 23-year-old himself, founded Slice (originally SlicePay) in 2016 with a thesis nobody else was acting on: India's Gen Z would be the largest credit-card-using cohort in history, and the bank that captured them first would own a decade of customer relationships.

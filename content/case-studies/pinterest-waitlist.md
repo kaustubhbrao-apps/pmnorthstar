@@ -1,24 +1,43 @@
 ---
-id: "cs-15"
-slug: "pinterest-waitlist"
-company: "Pinterest"
-title: "Pinterest's Waitlist That Created Desire"
-category: "Growth"
-description: "Pinterest launched invite-only, creating scarcity and desire. They personally called new signups to learn about use cases — insights that shaped their entire product roadmap."
-outcome: "Reached 10M users faster than any site in history at the time."
+id: cs-15
+slug: pinterest-waitlist
+company: Pinterest
+title: Pinterest's Waitlist That Created Desire
+category: Growth
+description: >-
+  Pinterest launched invite-only, creating scarcity and desire. They personally
+  called new signups to learn about use cases — insights that shaped their
+  entire product roadmap.
+outcome: Reached 10M users faster than any site in history at the time.
 year: 2010
 tags:
-  - "waitlist"
-  - "community"
-  - "visual"
-logo: "📌"
+  - waitlist
+  - community
+  - visual
+logo: "\U0001F4CC"
 faqs:
-  - question: "How did Pinterest grow with a waitlist?"
-    answer: "Pinterest launched in March 2010 with a closed beta and waitlist. New users had to request invites — creating scarcity, signaling exclusivity, and giving the product team time to scale infrastructure carefully. The waitlist let demand build before supply was ready; when invites went out, conversion was near 100%."
-  - question: "How does Pinterest make money?"
-    answer: "Pinterest monetizes primarily through promoted Pins — ads that look like organic content in user feeds. Advertisers pay per click or per impression for product discovery. The platform's commerce angle (visual product search, shoppable Pins) drives high purchase intent, making CPCs competitive with Google Shopping in some categories."
-  - question: "Is Pinterest still relevant in 2026?"
-    answer: "Yes, though growth has plateaued. Pinterest's user base stabilized around 480M MAU through 2024-2026. The platform's defensible niche is visual discovery for purchase intent — different from Instagram's social-feed model and TikTok's entertainment model. AI-powered visual search and shop integrations are the 2026-2027 growth bets."
+  - question: How did Pinterest grow with a waitlist?
+    answer: >-
+      Pinterest launched in March 2010 with a closed beta and waitlist. New
+      users had to request invites — creating scarcity, signaling exclusivity,
+      and giving the product team time to scale infrastructure carefully. The
+      waitlist let demand build before supply was ready; when invites went out,
+      conversion was near 100%.
+  - question: How does Pinterest make money?
+    answer: >-
+      Pinterest monetizes primarily through promoted Pins — ads that look like
+      organic content in user feeds. Advertisers pay per click or per impression
+      for product discovery. The platform's commerce angle (visual product
+      search, shoppable Pins) drives high purchase intent, making CPCs
+      competitive with Google Shopping in some categories.
+  - question: Is Pinterest still relevant in 2026?
+    answer: >-
+      Yes, though growth has plateaued. Pinterest's user base stabilized around
+      480M MAU through 2024-2026. The platform's defensible niche is visual
+      discovery for purchase intent — different from Instagram's social-feed
+      model and TikTok's entertainment model. AI-powered visual search and shop
+      integrations are the 2026-2027 growth bets.
+publishedAt: '2026-05-18'
 ---
 
 When Ben Silbermann launched Pinterest in March 2010, he made a counterintuitive decision for a social network that aspired to reach millions of people: he restricted access. Instead of trying to grow as fast as possible, as the growth-at-all-costs Silicon Valley playbook dictated, Pinterest launched as invite-only, requiring new users to request an invitation and wait to be approved. The product was a visual bookmarking tool that let users "pin" images from around the web to themed boards, a concept that was simple but hard to explain without experiencing it. Silbermann believed that controlling early access was essential to building the right community and understanding the right use cases before scaling.

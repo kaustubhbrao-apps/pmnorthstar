@@ -1,27 +1,53 @@
 ---
-id: "cs-59"
-slug: "cult-fit-super-app"
-company: "Cult.fit"
-title: "Cult.fit's Wellness Super-App Bet (and the Return to Focus)"
-category: "Strategy"
-description: "Mukesh Bansal pioneered India's first 'lifestyle-as-subscription' brand. Then tried to bundle meal delivery, meditation, and telemedicine into one app. The bundle didn't hold, the company nearly broke, and the recovery has been a study in refocusing."
-outcome: "500+ fitness centers, India's largest chain. Tata Digital became a major shareholder in 2021. Founder Mukesh Bansal stepped back in 2023. 2025-26: a more focused, slowly-profitable business at a meaningfully lower valuation than the late-2021 peak."
+id: cs-59
+slug: cult-fit-super-app
+company: Cult.fit
+title: Cult.fit's Wellness Super-App Bet (and the Return to Focus)
+category: Strategy
+description: >-
+  Mukesh Bansal pioneered India's first 'lifestyle-as-subscription' brand. Then
+  tried to bundle meal delivery, meditation, and telemedicine into one app. The
+  bundle didn't hold, the company nearly broke, and the recovery has been a
+  study in refocusing.
+outcome: >-
+  500+ fitness centers, India's largest chain. Tata Digital became a major
+  shareholder in 2021. Founder Mukesh Bansal stepped back in 2023. 2025-26: a
+  more focused, slowly-profitable business at a meaningfully lower valuation
+  than the late-2021 peak.
 year: 2016
 tags:
-  - "subscription"
-  - "wellness"
-  - "brand"
-logo: "🏋️"
-region: "India"
+  - subscription
+  - wellness
+  - brand
+logo: "\U0001F3CB️"
+region: India
 faqs:
-  - question: "Who founded Cult.fit?"
-    answer: "Cult.fit was founded by Mukesh Bansal in 2016, with co-founder Ankit Nagori. Mukesh Bansal had previously founded Myntra, which he sold to Flipkart. He stepped back from operational leadership of Cult.fit in 2023 to enable refocus on the core fitness business."
-  - question: "What is Cult.fit's business model?"
-    answer: "Cult.fit's core business is premium group fitness studios sold via monthly subscription (₹3,000+ per month for unlimited classes). Adjacent products include digital fitness via the app, healthy meal delivery (Eat.fit), and earlier attempts at meditation and telemedicine that were wound down."
-  - question: "Did Cult.fit fail?"
-    answer: "Cult.fit didn't fail but did almost break under the super-app expansion. After scaling fitness studios, meal delivery, meditation, and telemedicine simultaneously, the company nearly collapsed during COVID. It refocused on fitness from 2023, took Tata investment in 2021, and is now slowly profitable with 500+ centers."
-  - question: "What is Cult.fit's valuation?"
-    answer: "Cult.fit was valued at around $1.6B at its 2021 peak. By 2024-26, secondary valuations have cooled significantly — closer to $700M-1B — reflecting both the broader Indian startup valuation reset and the company's narrower business focus after winding down adjacent verticals."
+  - question: Who founded Cult.fit?
+    answer: >-
+      Cult.fit was founded by Mukesh Bansal in 2016, with co-founder Ankit
+      Nagori. Mukesh Bansal had previously founded Myntra, which he sold to
+      Flipkart. He stepped back from operational leadership of Cult.fit in 2023
+      to enable refocus on the core fitness business.
+  - question: What is Cult.fit's business model?
+    answer: >-
+      Cult.fit's core business is premium group fitness studios sold via monthly
+      subscription (₹3,000+ per month for unlimited classes). Adjacent products
+      include digital fitness via the app, healthy meal delivery (Eat.fit), and
+      earlier attempts at meditation and telemedicine that were wound down.
+  - question: Did Cult.fit fail?
+    answer: >-
+      Cult.fit didn't fail but did almost break under the super-app expansion.
+      After scaling fitness studios, meal delivery, meditation, and telemedicine
+      simultaneously, the company nearly collapsed during COVID. It refocused on
+      fitness from 2023, took Tata investment in 2021, and is now slowly
+      profitable with 500+ centers.
+  - question: What is Cult.fit's valuation?
+    answer: >-
+      Cult.fit was valued at around $1.6B at its 2021 peak. By 2024-26,
+      secondary valuations have cooled significantly — closer to $700M-1B —
+      reflecting both the broader Indian startup valuation reset and the
+      company's narrower business focus after winding down adjacent verticals.
+publishedAt: '2026-05-18'
 ---
 
 India's fitness market in 2016 was a paradox. The middle-class population was the largest in the world. Gym memberships were rising. Personal trainers were popular among the urban elite. And yet, India's fitness penetration rate — gym memberships per capita — was barely 1 percent, compared to 18-22 percent in developed markets. The structural issue was a mix of price, geography, and habit. Gym chains charged premium prices that locked out most middle-class Indians. Standalone gyms varied wildly in quality. Fitness as a daily habit hadn't been culturally normalized outside small urban cohorts. Mukesh Bansal, who had recently sold Myntra to Flipkart, and Ankit Nagori, also ex-Flipkart, founded Cure.fit in 2016 with a thesis that India's fitness market needed something different — not better gyms, but a new product category entirely.

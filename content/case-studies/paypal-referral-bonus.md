@@ -1,24 +1,42 @@
 ---
-id: "cs-20"
-slug: "paypal-referral-bonus"
-company: "PayPal"
-title: "PayPal's $20 Referral That Built a Payments Empire"
-category: "Growth"
-description: "PayPal paid users $20 to sign up and $20 for each referral. They lost money on every user — but built critical mass on eBay and created network effects that made them unstoppable."
-outcome: "Acquired by eBay for $1.5B in 2002. Spun off, now worth $60B+."
+id: cs-20
+slug: paypal-referral-bonus
+company: PayPal
+title: PayPal's $20 Referral That Built a Payments Empire
+category: Growth
+description: >-
+  PayPal paid users $20 to sign up and $20 for each referral. They lost money on
+  every user — but built critical mass on eBay and created network effects that
+  made them unstoppable.
+outcome: 'Acquired by eBay for $1.5B in 2002. Spun off, now worth $60B+.'
 year: 1999
 tags:
-  - "referral"
-  - "network effects"
-  - "fintech"
-logo: "💳"
+  - referral
+  - network effects
+  - fintech
+logo: "\U0001F4B3"
 faqs:
-  - question: "How did PayPal's $10 referral work?"
-    answer: "Early PayPal paid $10 to anyone who signed up and $10 to whoever referred them — a total of $20 per acquisition. It looked insanely expensive, but in 2000-2001 there was no other way to drive trust in a brand-new payments product. The referral program drove most of PayPal's early growth from zero to millions of users."
-  - question: "Who founded PayPal?"
-    answer: "PayPal was the result of a 2000 merger between Confinity (founded by Max Levchin, Peter Thiel, Luke Nosek) and X.com (founded by Elon Musk). The combined company focused on online payments, IPO'd in 2002, and was acquired by eBay later that same year for $1.5B."
-  - question: "What is the PayPal Mafia?"
-    answer: "The 'PayPal Mafia' is the informal name for the early PayPal team — including Peter Thiel, Elon Musk, Reid Hoffman, Max Levchin, Steve Chen, Jawed Karim, Chad Hurley — who went on to found or co-found YouTube, LinkedIn, Tesla, SpaceX, Yelp, Affirm, and Palantir. The cohort produced more billion-dollar founders than any other in Silicon Valley history."
+  - question: How did PayPal's $10 referral work?
+    answer: >-
+      Early PayPal paid $10 to anyone who signed up and $10 to whoever referred
+      them — a total of $20 per acquisition. It looked insanely expensive, but
+      in 2000-2001 there was no other way to drive trust in a brand-new payments
+      product. The referral program drove most of PayPal's early growth from
+      zero to millions of users.
+  - question: Who founded PayPal?
+    answer: >-
+      PayPal was the result of a 2000 merger between Confinity (founded by Max
+      Levchin, Peter Thiel, Luke Nosek) and X.com (founded by Elon Musk). The
+      combined company focused on online payments, IPO'd in 2002, and was
+      acquired by eBay later that same year for $1.5B.
+  - question: What is the PayPal Mafia?
+    answer: >-
+      The 'PayPal Mafia' is the informal name for the early PayPal team —
+      including Peter Thiel, Elon Musk, Reid Hoffman, Max Levchin, Steve Chen,
+      Jawed Karim, Chad Hurley — who went on to found or co-found YouTube,
+      LinkedIn, Tesla, SpaceX, Yelp, Affirm, and Palantir. The cohort produced
+      more billion-dollar founders than any other in Silicon Valley history.
+publishedAt: '2026-05-18'
 ---
 
 In 1999, PayPal was burning through venture capital at a terrifying rate, hemorrhaging cash in a way that would give any traditional business executive a heart attack. The company was paying $20 to every new user who signed up and another $20 for every friend they referred, literally buying users at a time when the product had no clear revenue model. Peter Thiel, Max Levchin, and the PayPal team understood something that most observers missed: payments are a pure network-effects business. A payment platform with one user is worthless. A payment platform with a million users is invaluable. And the only way to get from one to a million fast enough to matter was to pay for it.

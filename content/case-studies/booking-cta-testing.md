@@ -1,28 +1,71 @@
 ---
-id: "cs-72"
-slug: "booking-cta-testing"
-company: "Booking.com"
-title: "How Booking.com Built a Conversion Machine on Obsessive A/B Testing"
-category: "Growth"
-description: "Booking.com runs roughly 1,000 concurrent A/B tests at any given time, the largest experimentation program in the consumer internet. The discipline that the primary CTA, the H1 value proposition, and the mobile viewport drive conversion above almost everything else became internal scripture."
-outcome: "Booking.com became the largest online travel agency in the world ($121B in gross bookings in 2024). The experimentation playbook was published in HBR (Stefan Thomke, 2020) and became the canonical reference for product testing at scale."
+id: cs-72
+slug: booking-cta-testing
+company: Booking.com
+title: How Booking.com Built a Conversion Machine on Obsessive A/B Testing
+category: Growth
+description: >-
+  Booking.com runs roughly 1,000 concurrent A/B tests at any given time, the
+  largest experimentation program in the consumer internet. The discipline that
+  the primary CTA, the H1 value proposition, and the mobile viewport drive
+  conversion above almost everything else became internal scripture.
+outcome: >-
+  Booking.com became the largest online travel agency in the world ($121B in
+  gross bookings in 2024). The experimentation playbook was published in HBR
+  (Stefan Thomke, 2020) and became the canonical reference for product testing
+  at scale.
 year: 2010
 tags:
-  - "experimentation"
-  - "conversion"
-  - "UX"
-logo: "B"
+  - experimentation
+  - conversion
+  - UX
+logo: B
 faqs:
-  - question: "Does Booking.com really run 1000 A/B tests at once?"
-    answer: "Yes. The exact number fluctuates, but the company has confirmed in conference talks and the 2020 HBR case study that the experimentation platform supports roughly 1,000 active experiments at any given time. Every product manager has the authority to launch an experiment without permission. The bar for shipping a change is winning the A/B test, not convincing the boss."
-  - question: "What kinds of things does Booking.com test?"
-    answer: "Everything visible to the user. Button copy ('Book Now' vs 'Reserve' vs 'Get this room'), button color (the famous Booking.com blue button), button placement (above vs below the fold), the H1 value proposition, the price display format, form field order, the placeholder text in the search box, the urgency messages ('Only 2 rooms left!'), mobile viewport behavior, font size, image sizes. No element of the page is exempt."
-  - question: "What did they find about primary CTAs?"
-    answer: "The single biggest learning was that CTA clarity matters more than CTA cleverness. Concrete, action-specific copy ('See availability', 'Reserve now') consistently beat clever or branded copy. Buttons that explicitly named what would happen next (price reveal, calendar, payment) beat buttons that asked the user to take a leap of faith. The lesson generalizes: the user should be able to predict what happens when they click."
-  - question: "How does this apply to small sites that can't run 1000 tests?"
-    answer: "Most of Booking.com's learnings are transferable without running the tests yourself. The big patterns (clear CTAs beat clever ones, mobile viewport beats desktop-first design, concrete value propositions beat vague ones) hold across categories. A small site that adopts the Booking.com defaults — explicit CTAs, mobile-first design, clear H1 — will outperform a similarly-sized competitor that doesn't, without needing to run the experiments to prove it locally."
-  - question: "What's the downside of Booking.com's approach?"
-    answer: "The interface evolved toward conversion-optimal at the expense of aesthetic restraint. Booking.com is famously busy: urgency banners, scarcity messages, social proof popups, comparison tables, sticky CTAs. Each element won its own A/B test, but the cumulative effect is a high-pressure shopping experience that some users find stressful. The lesson: A/B testing optimizes local maxima, not user experience overall — you have to occasionally test for global preference, not just incremental conversion lift."
+  - question: Does Booking.com really run 1000 A/B tests at once?
+    answer: >-
+      Yes. The exact number fluctuates, but the company has confirmed in
+      conference talks and the 2020 HBR case study that the experimentation
+      platform supports roughly 1,000 active experiments at any given time.
+      Every product manager has the authority to launch an experiment without
+      permission. The bar for shipping a change is winning the A/B test, not
+      convincing the boss.
+  - question: What kinds of things does Booking.com test?
+    answer: >-
+      Everything visible to the user. Button copy ('Book Now' vs 'Reserve' vs
+      'Get this room'), button color (the famous Booking.com blue button),
+      button placement (above vs below the fold), the H1 value proposition, the
+      price display format, form field order, the placeholder text in the search
+      box, the urgency messages ('Only 2 rooms left!'), mobile viewport
+      behavior, font size, image sizes. No element of the page is exempt.
+  - question: What did they find about primary CTAs?
+    answer: >-
+      The single biggest learning was that CTA clarity matters more than CTA
+      cleverness. Concrete, action-specific copy ('See availability', 'Reserve
+      now') consistently beat clever or branded copy. Buttons that explicitly
+      named what would happen next (price reveal, calendar, payment) beat
+      buttons that asked the user to take a leap of faith. The lesson
+      generalizes: the user should be able to predict what happens when they
+      click.
+  - question: How does this apply to small sites that can't run 1000 tests?
+    answer: >-
+      Most of Booking.com's learnings are transferable without running the tests
+      yourself. The big patterns (clear CTAs beat clever ones, mobile viewport
+      beats desktop-first design, concrete value propositions beat vague ones)
+      hold across categories. A small site that adopts the Booking.com defaults
+      — explicit CTAs, mobile-first design, clear H1 — will outperform a
+      similarly-sized competitor that doesn't, without needing to run the
+      experiments to prove it locally.
+  - question: What's the downside of Booking.com's approach?
+    answer: >-
+      The interface evolved toward conversion-optimal at the expense of
+      aesthetic restraint. Booking.com is famously busy: urgency banners,
+      scarcity messages, social proof popups, comparison tables, sticky CTAs.
+      Each element won its own A/B test, but the cumulative effect is a
+      high-pressure shopping experience that some users find stressful. The
+      lesson: A/B testing optimizes local maxima, not user experience overall —
+      you have to occasionally test for global preference, not just incremental
+      conversion lift.
+publishedAt: '2026-05-18'
 ---
 
 Booking.com in 2008 was a Dutch online travel agency owned by Priceline (now Booking Holdings), competing in a market dominated by Expedia, Travelocity, and Orbitz. The company had built strong inventory through hotelier-friendly business terms — no upfront fees, payment on commission, flexibility on cancellation — but conversion of website visitors into bookings lagged the larger competitors. The internal hypothesis was that the website itself was where the market would be won or lost. Inventory parity was achievable; UX parity was not yet achieved. The team made a decision that would shape the next fifteen years of the company: every UX decision would be made by experiment, not by opinion. No executive would be allowed to override an A/B test result. Every product manager would have the authority to launch experiments without permission.

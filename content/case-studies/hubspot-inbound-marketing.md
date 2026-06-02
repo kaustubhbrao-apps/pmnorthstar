@@ -1,24 +1,43 @@
 ---
-id: "cs-18"
-slug: "hubspot-inbound-marketing"
-company: "HubSpot"
-title: "HubSpot Invented Inbound Marketing"
-category: "Growth"
-description: "HubSpot coined and owned the term 'inbound marketing' — creating a movement, a certification, and a community around their product. Content became their primary acquisition channel."
-outcome: "$2.6B+ annual revenue. 200K+ customers."
+id: cs-18
+slug: hubspot-inbound-marketing
+company: HubSpot
+title: HubSpot Invented Inbound Marketing
+category: Growth
+description: >-
+  HubSpot coined and owned the term 'inbound marketing' — creating a movement, a
+  certification, and a community around their product. Content became their
+  primary acquisition channel.
+outcome: $2.6B+ annual revenue. 200K+ customers.
 year: 2006
 tags:
-  - "content"
-  - "SEO"
-  - "inbound"
-logo: "🧲"
+  - content
+  - SEO
+  - inbound
+logo: "\U0001F9F2"
 faqs:
-  - question: "What is inbound marketing?"
-    answer: "Inbound marketing is the philosophy that companies should attract customers through helpful content (blog posts, guides, free tools) rather than interrupt them with ads or cold outreach. HubSpot coined and evangelized the term in the late 2000s, and built a $30B+ business selling the software stack that powers inbound marketing programs."
-  - question: "Who founded HubSpot?"
-    answer: "HubSpot was founded in 2006 by Brian Halligan and Dharmesh Shah, who met at MIT. They built HubSpot around the thesis that the way businesses bought software was shifting — from interrupt-driven marketing to permission-driven content. The company IPO'd in 2014 and is now worth $30B+."
-  - question: "How much does HubSpot cost?"
-    answer: "HubSpot has a free CRM tier (genuinely useful, no expiry) and paid tiers for Marketing Hub, Sales Hub, Service Hub, CMS Hub, and Operations Hub. Pricing scales by contacts/seats — small teams start at ~$50/month; enterprise customers spend $10,000-100,000+/month. The free tier is the wedge that drives upmarket conversion."
+  - question: What is inbound marketing?
+    answer: >-
+      Inbound marketing is the philosophy that companies should attract
+      customers through helpful content (blog posts, guides, free tools) rather
+      than interrupt them with ads or cold outreach. HubSpot coined and
+      evangelized the term in the late 2000s, and built a $30B+ business selling
+      the software stack that powers inbound marketing programs.
+  - question: Who founded HubSpot?
+    answer: >-
+      HubSpot was founded in 2006 by Brian Halligan and Dharmesh Shah, who met
+      at MIT. They built HubSpot around the thesis that the way businesses
+      bought software was shifting — from interrupt-driven marketing to
+      permission-driven content. The company IPO'd in 2014 and is now worth
+      $30B+.
+  - question: How much does HubSpot cost?
+    answer: >-
+      HubSpot has a free CRM tier (genuinely useful, no expiry) and paid tiers
+      for Marketing Hub, Sales Hub, Service Hub, CMS Hub, and Operations Hub.
+      Pricing scales by contacts/seats — small teams start at ~$50/month;
+      enterprise customers spend $10,000-100,000+/month. The free tier is the
+      wedge that drives upmarket conversion.
+publishedAt: '2026-05-18'
 ---
 
 Brian Halligan and Dharmesh Shah did not just build a marketing software company; they invented a category and gave it a name. In 2006, they coined the term "inbound marketing" to describe a philosophy of attracting customers through valuable content rather than interrupting them with cold calls, trade show booths, and banner ads. At the time, B2B marketing was dominated by outbound tactics: sales development reps cold-calling from purchased lists, companies spending millions on trade shows, and demand generation teams buying email blasts. Halligan and Shah argued that the internet had fundamentally shifted power from sellers to buyers, who now researched solutions on their own before ever talking to a salesperson.

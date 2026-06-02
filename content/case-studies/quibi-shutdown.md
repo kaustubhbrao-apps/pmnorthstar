@@ -1,24 +1,46 @@
 ---
-id: "cs-40"
-slug: "quibi-shutdown"
-company: "Quibi"
-title: "Quibi Raised $1.75B and Shut Down in 6 Months"
-category: "Failure"
-description: "Quibi bet that people wanted premium short-form video only on mobile, only in portrait mode. They never validated whether the problem existed before raising nearly $2B."
-outcome: "Launched April 2020. Shut down October 2020. Assets sold for $100M."
+id: cs-40
+slug: quibi-shutdown
+company: Quibi
+title: Quibi Raised $1.75B and Shut Down in 6 Months
+category: Failure
+description: >-
+  Quibi bet that people wanted premium short-form video only on mobile, only in
+  portrait mode. They never validated whether the problem existed before raising
+  nearly $2B.
+outcome: Launched April 2020. Shut down October 2020. Assets sold for $100M.
 year: 2020
 tags:
-  - "validation"
-  - "mobile"
-  - "media"
-logo: "📺"
+  - validation
+  - mobile
+  - media
+logo: "\U0001F4FA"
 faqs:
-  - question: "Why did Quibi fail?"
-    answer: "Quibi raised $1.75B and launched in April 2020 — the start of the pandemic. Three things went wrong simultaneously: mobile-only meant nobody could watch on home TVs during lockdown; $100K+/minute production costs were Hollywood economics for a TikTok-length format; and the founders (Katzenberg, Whitman) had zero consumer-tech instincts. Shut down in October 2020 — 6 months alive."
-  - question: "How much money did Quibi lose?"
-    answer: "Quibi raised $1.75B in equity from major studios, tech investors, and Whitman/Katzenberg's networks. After paying out remaining content commitments and refunding subscribers, investors received an estimated $350M back at shutdown. Net losses were around $1.4B over 6 months of operation — one of the most expensive product failures in tech history per day of operation."
-  - question: "Could Quibi have worked with different timing?"
-    answer: "Possibly — but the format was structurally compromised. Mobile-only consumption of premium content competes with TikTok (free) and YouTube (free) and Instagram (free). Adding an HBO-level subscription price for the same length of content didn't make sense to consumers regardless of timing. The pandemic timing accelerated the death; the underlying model was likely doomed anyway."
+  - question: Why did Quibi fail?
+    answer: >-
+      Quibi raised $1.75B and launched in April 2020 — the start of the
+      pandemic. Three things went wrong simultaneously: mobile-only meant nobody
+      could watch on home TVs during lockdown; $100K+/minute production costs
+      were Hollywood economics for a TikTok-length format; and the founders
+      (Katzenberg, Whitman) had zero consumer-tech instincts. Shut down in
+      October 2020 — 6 months alive.
+  - question: How much money did Quibi lose?
+    answer: >-
+      Quibi raised $1.75B in equity from major studios, tech investors, and
+      Whitman/Katzenberg's networks. After paying out remaining content
+      commitments and refunding subscribers, investors received an estimated
+      $350M back at shutdown. Net losses were around $1.4B over 6 months of
+      operation — one of the most expensive product failures in tech history per
+      day of operation.
+  - question: Could Quibi have worked with different timing?
+    answer: >-
+      Possibly — but the format was structurally compromised. Mobile-only
+      consumption of premium content competes with TikTok (free) and YouTube
+      (free) and Instagram (free). Adding an HBO-level subscription price for
+      the same length of content didn't make sense to consumers regardless of
+      timing. The pandemic timing accelerated the death; the underlying model
+      was likely doomed anyway.
+publishedAt: '2026-05-18'
 ---
 
 Jeffrey Katzenberg, the legendary Hollywood executive who had run Walt Disney Studios and co-founded DreamWorks, raised $1.75 billion for Quibi based on a thesis that sounded plausible when pitched to investors in a boardroom: there was an untapped market for premium, short-form video content designed specifically for mobile viewing. The name stood for "quick bites," episodes under 10 minutes long, shot in both landscape and portrait modes using a patented "Turnstyle" technology that let viewers rotate their phone seamlessly without losing the frame. The content budget was staggering: $100,000 per minute of content, with A-list talent including Steven Spielberg, Liam Hemsworth, Jennifer Lopez, and Chrissy Teigen. Katzenberg's reputation and Hollywood connections allowed him to raise capital at a scale that would have been impossible for an unproven founder.

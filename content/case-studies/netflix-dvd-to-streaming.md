@@ -1,24 +1,40 @@
 ---
-id: "cs-4"
-slug: "netflix-dvd-to-streaming"
-company: "Netflix"
-title: "Netflix's Shift from DVD to Streaming"
-category: "Product"
-description: "Netflix deliberately cannibalized its own $1B DVD business to bet on streaming — a move that nearly split the company but ultimately defined its future."
-outcome: "290M+ subscribers globally. Market cap peaked over $300B."
+id: cs-4
+slug: netflix-dvd-to-streaming
+company: Netflix
+title: Netflix's Shift from DVD to Streaming
+category: Product
+description: >-
+  Netflix deliberately cannibalized its own $1B DVD business to bet on streaming
+  — a move that nearly split the company but ultimately defined its future.
+outcome: 290M+ subscribers globally. Market cap peaked over $300B.
 year: 2007
 tags:
-  - "streaming"
-  - "disruption"
-  - "pivot"
-logo: "🎬"
+  - streaming
+  - disruption
+  - pivot
+logo: "\U0001F3AC"
 faqs:
-  - question: "Why did Netflix shift from DVD to streaming?"
-    answer: "Reed Hastings announced the streaming pivot in 2007 — when DVD revenue was still over $1.2B and growing. The bet was structural: streaming was inevitable, and waiting until DVD declined would mean losing the transition. Netflix chose to cannibalize itself before a competitor did."
-  - question: "When did Netflix launch streaming?"
-    answer: "Netflix launched its streaming service in January 2007 as a free add-on for DVD subscribers — limited library, only on Windows desktops. The standalone streaming product matured over the following 5 years; by 2013, House of Cards launched the original-content era."
-  - question: "What was the Qwikster mistake?"
-    answer: "In 2011, Netflix tried to split DVD-by-mail (renamed Qwikster) from streaming into separate companies with separate billing. Customer backlash was immediate — Netflix lost ~800K subscribers in one quarter, and the stock dropped 77%. The Qwikster name was killed within weeks, but the strategic instinct (separate businesses) was right."
+  - question: Why did Netflix shift from DVD to streaming?
+    answer: >-
+      Reed Hastings announced the streaming pivot in 2007 — when DVD revenue was
+      still over $1.2B and growing. The bet was structural: streaming was
+      inevitable, and waiting until DVD declined would mean losing the
+      transition. Netflix chose to cannibalize itself before a competitor did.
+  - question: When did Netflix launch streaming?
+    answer: >-
+      Netflix launched its streaming service in January 2007 as a free add-on
+      for DVD subscribers — limited library, only on Windows desktops. The
+      standalone streaming product matured over the following 5 years; by 2013,
+      House of Cards launched the original-content era.
+  - question: What was the Qwikster mistake?
+    answer: >-
+      In 2011, Netflix tried to split DVD-by-mail (renamed Qwikster) from
+      streaming into separate companies with separate billing. Customer backlash
+      was immediate — Netflix lost ~800K subscribers in one quarter, and the
+      stock dropped 77%. The Qwikster name was killed within weeks, but the
+      strategic instinct (separate businesses) was right.
+publishedAt: '2026-05-18'
 ---
 
 In 2007, Netflix was the undisputed king of DVD-by-mail, with over 7.5 million subscribers and a billion dollars in annual revenue. The company had already vanquished Blockbuster through superior convenience and a recommendation algorithm that kept subscribers engaged. Reed Hastings had built a remarkably profitable business with low churn and high customer satisfaction. But Hastings had always viewed DVDs as a transitional format, a bridge to a streaming future that depended on broadband penetration reaching a critical threshold. The company's name itself, Netflix, pointed to the internet, not to physical media. When broadband adoption crossed 50% of US households, Hastings made the bold decision to launch streaming.

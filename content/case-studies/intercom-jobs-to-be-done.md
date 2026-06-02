@@ -1,24 +1,44 @@
 ---
-id: "cs-46"
-slug: "intercom-jobs-to-be-done"
-company: "Intercom"
-title: "Intercom's Jobs-to-Be-Done Product Framework"
-category: "Product"
-description: "Intercom built their entire product strategy around JTBD — understanding what job customers hire their product to do. This led them to build messaging, support, and marketing in one platform."
-outcome: "Valued at $1.27B. Used by 30K+ businesses."
+id: cs-46
+slug: intercom-jobs-to-be-done
+company: Intercom
+title: Intercom's Jobs-to-Be-Done Product Framework
+category: Product
+description: >-
+  Intercom built their entire product strategy around JTBD — understanding what
+  job customers hire their product to do. This led them to build messaging,
+  support, and marketing in one platform.
+outcome: Valued at $1.27B. Used by 30K+ businesses.
 year: 2011
 tags:
-  - "JTBD"
-  - "B2B"
-  - "messaging"
-logo: "💬"
+  - JTBD
+  - B2B
+  - messaging
+logo: "\U0001F4AC"
 faqs:
-  - question: "What is Jobs to be Done?"
-    answer: "Jobs to be Done (JTBD) is a framework that reframes customer needs around the 'job' the customer is hiring a product to do, rather than the product's features or the customer's demographic. Clayton Christensen popularized it; Intercom evangelized it for SaaS PM teams in the 2010s. The framework helps teams design products around customer outcomes instead of competitor features."
-  - question: "How did Intercom use Jobs to be Done?"
-    answer: "Intercom restructured its product team rituals around JTBD: customer interviews became JTBD interviews; sprint planning became 'what job are we serving'; messaging shifted from 'live chat tool' to 'conversational relationship platform.' The framework let Intercom expand beyond its initial wedge while keeping a consistent product narrative."
-  - question: "Who founded Intercom?"
-    answer: "Intercom was founded in 2011 by Eoghan McCabe, Des Traynor, Ciaran Lee, and David Barrett in Dublin. The company became one of Europe's most valuable SaaS startups, valued at $1.275B by 2018. By 2026, Intercom has expanded into AI-powered customer support and competes directly with Zendesk and HubSpot in customer messaging."
+  - question: What is Jobs to be Done?
+    answer: >-
+      Jobs to be Done (JTBD) is a framework that reframes customer needs around
+      the 'job' the customer is hiring a product to do, rather than the
+      product's features or the customer's demographic. Clayton Christensen
+      popularized it; Intercom evangelized it for SaaS PM teams in the 2010s.
+      The framework helps teams design products around customer outcomes instead
+      of competitor features.
+  - question: How did Intercom use Jobs to be Done?
+    answer: >-
+      Intercom restructured its product team rituals around JTBD: customer
+      interviews became JTBD interviews; sprint planning became 'what job are we
+      serving'; messaging shifted from 'live chat tool' to 'conversational
+      relationship platform.' The framework let Intercom expand beyond its
+      initial wedge while keeping a consistent product narrative.
+  - question: Who founded Intercom?
+    answer: >-
+      Intercom was founded in 2011 by Eoghan McCabe, Des Traynor, Ciaran Lee,
+      and David Barrett in Dublin. The company became one of Europe's most
+      valuable SaaS startups, valued at $1.275B by 2018. By 2026, Intercom has
+      expanded into AI-powered customer support and competes directly with
+      Zendesk and HubSpot in customer messaging.
+publishedAt: '2026-05-18'
 ---
 
 Intercom's founding team, led by Eoghan McCabe and Des Traynor in Dublin, Ireland, were early and vocal adopters of Clayton Christensen's Jobs-to-Be-Done framework at a time when most product teams were still organizing their work around feature requests and competitor analysis. JTBD posits that customers do not buy products; they "hire" them to accomplish a specific job in their lives. A person does not buy a drill because they want a drill; they buy it because they want a hole. The framework shifts focus from what the product is to what the customer is trying to accomplish, a reframing that changes every aspect of product strategy from feature prioritization to marketing messaging to competitive positioning.

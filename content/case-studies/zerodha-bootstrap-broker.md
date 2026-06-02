@@ -1,27 +1,50 @@
 ---
-id: "cs-53"
-slug: "zerodha-bootstrap-broker"
-company: "Zerodha"
-title: "How Zerodha Built India's Largest Broker Without Raising a Single Rupee"
-category: "Strategy"
-description: "The Kamath brothers refused venture capital, refused advertising, and built the cheapest brokerage in India. Fifteen years later, Zerodha is bigger than every VC-funded broker combined and one of India's most profitable startups, period."
-outcome: "FY24: ₹8,320 crore revenue, ₹4,700 crore profit. ~1.6M+ active users. $7-8B+ implied valuation. Still zero external funding."
+id: cs-53
+slug: zerodha-bootstrap-broker
+company: Zerodha
+title: How Zerodha Built India's Largest Broker Without Raising a Single Rupee
+category: Strategy
+description: >-
+  The Kamath brothers refused venture capital, refused advertising, and built
+  the cheapest brokerage in India. Fifteen years later, Zerodha is bigger than
+  every VC-funded broker combined and one of India's most profitable startups,
+  period.
+outcome: >-
+  FY24: ₹8,320 crore revenue, ₹4,700 crore profit. ~1.6M+ active users. $7-8B+
+  implied valuation. Still zero external funding.
 year: 2010
 tags:
-  - "fintech"
-  - "bootstrapping"
-  - "trust"
-logo: "📊"
-region: "India"
+  - fintech
+  - bootstrapping
+  - trust
+logo: "\U0001F4CA"
+region: India
 faqs:
-  - question: "How does Zerodha make money?"
-    answer: "Zerodha charges a flat ₹20 brokerage on each executed intraday/F&O trade, with zero brokerage on equity delivery. Despite 96% lower pricing than legacy brokers, this model produced ₹4,700 crore profit in FY24 because it eliminated marketing spend and operated with extreme cost discipline."
-  - question: "Why hasn't Zerodha raised VC money?"
-    answer: "Founders Nithin and Nikhil Kamath bootstrapped Zerodha from day one. Their reasoning: VC funding would force growth-at-all-costs behavior that erodes customer trust. Bootstrapping let them build for long-term retention rather than short-term metrics."
-  - question: "What is Zerodha's profit?"
-    answer: "Zerodha posted ₹8,320 crore revenue and ₹4,700 crore net profit in FY24 — a 56% profit margin that makes it one of the most profitable Indian companies of any vintage, not just startups. Implied valuation in secondary transactions exceeds $7-8 billion."
-  - question: "Will Zerodha IPO?"
-    answer: "Zerodha has consistently said it has no IPO plans. Since the company is bootstrapped and highly profitable, it has no investor pressure for liquidity. The founders have publicly stated they prefer staying private to preserve their long-term decision-making culture."
+  - question: How does Zerodha make money?
+    answer: >-
+      Zerodha charges a flat ₹20 brokerage on each executed intraday/F&O trade,
+      with zero brokerage on equity delivery. Despite 96% lower pricing than
+      legacy brokers, this model produced ₹4,700 crore profit in FY24 because it
+      eliminated marketing spend and operated with extreme cost discipline.
+  - question: Why hasn't Zerodha raised VC money?
+    answer: >-
+      Founders Nithin and Nikhil Kamath bootstrapped Zerodha from day one. Their
+      reasoning: VC funding would force growth-at-all-costs behavior that erodes
+      customer trust. Bootstrapping let them build for long-term retention
+      rather than short-term metrics.
+  - question: What is Zerodha's profit?
+    answer: >-
+      Zerodha posted ₹8,320 crore revenue and ₹4,700 crore net profit in FY24 —
+      a 56% profit margin that makes it one of the most profitable Indian
+      companies of any vintage, not just startups. Implied valuation in
+      secondary transactions exceeds $7-8 billion.
+  - question: Will Zerodha IPO?
+    answer: >-
+      Zerodha has consistently said it has no IPO plans. Since the company is
+      bootstrapped and highly profitable, it has no investor pressure for
+      liquidity. The founders have publicly stated they prefer staying private
+      to preserve their long-term decision-making culture.
+publishedAt: '2026-05-18'
 ---
 
 India's brokerage industry in 2010 was a money-printing oligopoly. Companies like ICICIdirect, HDFC Securities, Sharekhan, and Motilal Oswal charged 500 to 1,000 rupees in brokerage fees per trade, took percentage cuts on derivatives, and bundled services in ways that effectively hid pricing. Retail traders accepted these costs because there was no alternative. The market depended on banking relationships and offline branches that newer players could not easily replicate. Most brokers were uninterested in actually attracting new customers, because they made enough money on existing high-net-worth traders that customer acquisition was not a priority. Into this market walked Nithin Kamath and his brother Nikhil. Nithin had been a trader since 17, knew the brokerage industry's profit pools intimately, and had spent years frustrated by what he was paying to trade. Zerodha would be his attempt to build the kind of broker he wished existed.

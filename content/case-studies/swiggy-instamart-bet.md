@@ -1,27 +1,52 @@
 ---
-id: "cs-56"
-slug: "swiggy-instamart-bet"
-company: "Swiggy"
-title: "Swiggy's Unit Economics Bet: Why Being #2 Was Enough"
-category: "Strategy"
-description: "Swiggy spent a decade building India's most expensive food delivery infrastructure — in-house riders, owned operations, training, brand. The bet was that operational excellence at high cost would beat marketplace efficiency at low cost. By 2024, the public markets agreed."
-outcome: "$11B IPO in November 2024. Profitable food delivery business. Instamart processing $1B+ GMV annually. India's #2 food delivery + #2 quick commerce — both meaningful businesses."
+id: cs-56
+slug: swiggy-instamart-bet
+company: Swiggy
+title: 'Swiggy''s Unit Economics Bet: Why Being #2 Was Enough'
+category: Strategy
+description: >-
+  Swiggy spent a decade building India's most expensive food delivery
+  infrastructure — in-house riders, owned operations, training, brand. The bet
+  was that operational excellence at high cost would beat marketplace efficiency
+  at low cost. By 2024, the public markets agreed.
+outcome: >-
+  $11B IPO in November 2024. Profitable food delivery business. Instamart
+  processing $1B+ GMV annually. India's #2 food delivery + #2 quick commerce —
+  both meaningful businesses.
 year: 2014
 tags:
-  - "operations"
-  - "delivery"
-  - "quick-commerce"
-logo: "🛵"
-region: "India"
+  - operations
+  - delivery
+  - quick-commerce
+logo: "\U0001F6F5"
+region: India
 faqs:
-  - question: "What is Swiggy's business model?"
-    answer: "Swiggy runs two main businesses: food delivery (matching consumers with restaurants, with in-house delivery riders) and Instamart quick commerce (10-15 minute grocery delivery from owned dark stores). Revenue comes from restaurant commissions, delivery fees, and ad placements."
-  - question: "When did Swiggy IPO?"
-    answer: "Swiggy completed its IPO in November 2024 at approximately $11 billion valuation. The listing was carefully timed post-Zomato's recovery and after broad tech IPO conditions stabilized, with food delivery profitability proven and Instamart in growth mode."
-  - question: "Is Swiggy profitable?"
-    answer: "Swiggy's core food delivery business became profitable by 2024. The Instamart quick commerce business continues to lose money but is growing aggressively. The company overall reports profitability in some quarters and breakeven-or-negative in others depending on quick commerce growth investment."
-  - question: "What is Swiggy Instamart?"
-    answer: "Swiggy Instamart is Swiggy's quick commerce business — 10-15 minute delivery of groceries, household essentials, and small items from owned dark stores. Launched around 2020, it processes over $1B in annual GMV and competes directly with Zepto and Blinkit in Indian quick commerce."
+  - question: What is Swiggy's business model?
+    answer: >-
+      Swiggy runs two main businesses: food delivery (matching consumers with
+      restaurants, with in-house delivery riders) and Instamart quick commerce
+      (10-15 minute grocery delivery from owned dark stores). Revenue comes from
+      restaurant commissions, delivery fees, and ad placements.
+  - question: When did Swiggy IPO?
+    answer: >-
+      Swiggy completed its IPO in November 2024 at approximately $11 billion
+      valuation. The listing was carefully timed post-Zomato's recovery and
+      after broad tech IPO conditions stabilized, with food delivery
+      profitability proven and Instamart in growth mode.
+  - question: Is Swiggy profitable?
+    answer: >-
+      Swiggy's core food delivery business became profitable by 2024. The
+      Instamart quick commerce business continues to lose money but is growing
+      aggressively. The company overall reports profitability in some quarters
+      and breakeven-or-negative in others depending on quick commerce growth
+      investment.
+  - question: What is Swiggy Instamart?
+    answer: >-
+      Swiggy Instamart is Swiggy's quick commerce business — 10-15 minute
+      delivery of groceries, household essentials, and small items from owned
+      dark stores. Launched around 2020, it processes over $1B in annual GMV and
+      competes directly with Zepto and Blinkit in Indian quick commerce.
+publishedAt: '2026-05-18'
 ---
 
 Indian food delivery in 2014 was a fragmented mess. Foodpanda had launched a few years earlier and was bleeding cash. Zomato was a restaurant discovery platform pivoting toward delivery. TinyOwl was raising money but operating chaotically. The customers existed — middle-class Indians in Tier 1 cities who wanted restaurant food at home — but the operations were broken. Restaurant partnerships were ad-hoc. Delivery was outsourced to whoever was willing to ride a scooter. Order accuracy was abysmal. Sriharsha Majety, Nandan Reddy, and Rahul Jaimini, three engineers from BITS Pilani and IIT Kharagpur respectively, founded Swiggy in 2014 in Bengaluru with a thesis nobody else was acting on: that food delivery in India was an infrastructure problem, not a marketplace problem. The platforms were trying to match supply and demand, but the actual hard part — getting hot food from a restaurant to a customer in 30 minutes through Indian traffic — was unsolved.

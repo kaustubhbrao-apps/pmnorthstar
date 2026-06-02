@@ -1,24 +1,43 @@
 ---
-id: "cs-22"
-slug: "microsoft-cloud-turnaround"
-company: "Microsoft"
-title: "Satya Nadella's Cloud-First Cultural Turnaround"
-category: "Strategy"
-description: "When Nadella took over in 2014, Microsoft was seen as irrelevant. He killed the 'stack ranking' culture, embraced open source, pivoted to cloud (Azure), and rebuilt the company's identity."
-outcome: "Market cap grew from $300B to $3T+ under Nadella."
+id: cs-22
+slug: microsoft-cloud-turnaround
+company: Microsoft
+title: Satya Nadella's Cloud-First Cultural Turnaround
+category: Strategy
+description: >-
+  When Nadella took over in 2014, Microsoft was seen as irrelevant. He killed
+  the 'stack ranking' culture, embraced open source, pivoted to cloud (Azure),
+  and rebuilt the company's identity.
+outcome: Market cap grew from $300B to $3T+ under Nadella.
 year: 2014
 tags:
-  - "culture"
-  - "cloud"
-  - "turnaround"
-logo: "🪟"
+  - culture
+  - cloud
+  - turnaround
+logo: "\U0001FA9F"
 faqs:
-  - question: "How did Satya Nadella turn Microsoft around?"
-    answer: "Satya Nadella, who became CEO in 2014, killed Microsoft's 'Windows-everywhere' obsession and bet the company on cloud (Azure) and cross-platform productivity. He embraced iOS and Android as customer surfaces, open-sourced .NET, acquired GitHub and LinkedIn, and invested early in OpenAI. Market cap went from $300B in 2014 to $3T+ by 2026."
-  - question: "What did Microsoft buy from OpenAI?"
-    answer: "Microsoft has invested over $13B in OpenAI across multiple funding rounds (2019 onwards). The investments include cloud-compute commitments (Azure provides OpenAI's infrastructure), revenue-share arrangements, and equity. Microsoft has integrated OpenAI models across Copilot products in Office, GitHub, Dynamics, and Bing — making the OpenAI bet central to Microsoft's AI strategy."
-  - question: "Is Microsoft's market cap higher than Apple's?"
-    answer: "Microsoft and Apple have traded the title of world's most valuable company multiple times since 2020. As of mid-2026, Microsoft's market cap is around $3T+; Apple's is in a similar range. The two compete neck-and-neck, with Nvidia having joined the $3T club via AI infrastructure demand."
+  - question: How did Satya Nadella turn Microsoft around?
+    answer: >-
+      Satya Nadella, who became CEO in 2014, killed Microsoft's
+      'Windows-everywhere' obsession and bet the company on cloud (Azure) and
+      cross-platform productivity. He embraced iOS and Android as customer
+      surfaces, open-sourced .NET, acquired GitHub and LinkedIn, and invested
+      early in OpenAI. Market cap went from $300B in 2014 to $3T+ by 2026.
+  - question: What did Microsoft buy from OpenAI?
+    answer: >-
+      Microsoft has invested over $13B in OpenAI across multiple funding rounds
+      (2019 onwards). The investments include cloud-compute commitments (Azure
+      provides OpenAI's infrastructure), revenue-share arrangements, and equity.
+      Microsoft has integrated OpenAI models across Copilot products in Office,
+      GitHub, Dynamics, and Bing — making the OpenAI bet central to Microsoft's
+      AI strategy.
+  - question: Is Microsoft's market cap higher than Apple's?
+    answer: >-
+      Microsoft and Apple have traded the title of world's most valuable company
+      multiple times since 2020. As of mid-2026, Microsoft's market cap is
+      around $3T+; Apple's is in a similar range. The two compete neck-and-neck,
+      with Nvidia having joined the $3T club via AI infrastructure demand.
+publishedAt: '2026-05-18'
 ---
 
 When Satya Nadella became Microsoft's third CEO in February 2014, the company was widely considered a declining empire. Under Steve Ballmer, Microsoft had missed mobile entirely, laughing at the iPhone while Windows Phone languished. It had missed social media. It had missed the cloud computing wave that Amazon was riding with AWS. The company's stock had been essentially flat for a decade, earning it the derisive label of a "lost decade" on Wall Street. Internally, the culture was toxic. A stack-ranking system, forced employees into a bell curve of performance ratings, creating competition so fierce that teams sabotaged each other rather than collaborating. Microsoft was a company full of talented people trapped in a system that punished cooperation.

@@ -1,27 +1,52 @@
 ---
-id: "cs-58"
-slug: "nykaa-ipo-journey"
-company: "Nykaa"
-title: "Nykaa's 9-Year Slow Burn to a $13B IPO"
-category: "Strategy"
-description: "Falguni Nayar left a 28-year banking career at age 50 to start a beauty startup. While VC-funded competitors burned billions chasing scale, Nayar built profitably for a decade and then IPO'd at $13B — making her one of India's wealthiest self-made women."
-outcome: "IPO November 2021 at $13B valuation. Founder net worth crossed $7B. Profitable from early years. Stock corrected through 2022-23 but business continues to grow."
+id: cs-58
+slug: nykaa-ipo-journey
+company: Nykaa
+title: Nykaa's 9-Year Slow Burn to a $13B IPO
+category: Strategy
+description: >-
+  Falguni Nayar left a 28-year banking career at age 50 to start a beauty
+  startup. While VC-funded competitors burned billions chasing scale, Nayar
+  built profitably for a decade and then IPO'd at $13B — making her one of
+  India's wealthiest self-made women.
+outcome: >-
+  IPO November 2021 at $13B valuation. Founder net worth crossed $7B. Profitable
+  from early years. Stock corrected through 2022-23 but business continues to
+  grow.
 year: 2012
 tags:
-  - "e-commerce"
-  - "brand"
-  - "profitability"
-logo: "💄"
-region: "India"
+  - e-commerce
+  - brand
+  - profitability
+logo: "\U0001F484"
+region: India
 faqs:
-  - question: "Who is Falguni Nayar?"
-    answer: "Falguni Nayar founded Nykaa in 2012 at age 50 after a 28-year banking career at Kotak. She took the company public in November 2021 at a $13B valuation, becoming one of the wealthiest self-made women globally with a net worth that crossed $7 billion at IPO peak."
-  - question: "What is Nykaa's business model?"
-    answer: "Nykaa is India's largest beauty and personal care e-commerce platform, operating across online (Nykaa.com), physical retail (Nykaa Luxe and On Trend), private-label brands, and a fashion vertical. Revenue comes from commissions, private-label margins, and physical retail."
-  - question: "When did Nykaa IPO?"
-    answer: "Nykaa completed its IPO in November 2021 at a valuation of approximately $13 billion. The stock corrected significantly through 2022-23 in the broader tech selloff but has since stabilized as the underlying business continues to grow profitably."
-  - question: "Is Nykaa profitable?"
-    answer: "Yes, Nykaa was profitable from its early years — a rarity in Indian e-commerce. Founder Falguni Nayar built the company on disciplined unit economics rather than the burn-and-grow VC model. By 2025-26, Nykaa remains profitable with steady revenue growth across online and physical retail."
+  - question: Who is Falguni Nayar?
+    answer: >-
+      Falguni Nayar founded Nykaa in 2012 at age 50 after a 28-year banking
+      career at Kotak. She took the company public in November 2021 at a $13B
+      valuation, becoming one of the wealthiest self-made women globally with a
+      net worth that crossed $7 billion at IPO peak.
+  - question: What is Nykaa's business model?
+    answer: >-
+      Nykaa is India's largest beauty and personal care e-commerce platform,
+      operating across online (Nykaa.com), physical retail (Nykaa Luxe and On
+      Trend), private-label brands, and a fashion vertical. Revenue comes from
+      commissions, private-label margins, and physical retail.
+  - question: When did Nykaa IPO?
+    answer: >-
+      Nykaa completed its IPO in November 2021 at a valuation of approximately
+      $13 billion. The stock corrected significantly through 2022-23 in the
+      broader tech selloff but has since stabilized as the underlying business
+      continues to grow profitably.
+  - question: Is Nykaa profitable?
+    answer: >-
+      Yes, Nykaa was profitable from its early years — a rarity in Indian
+      e-commerce. Founder Falguni Nayar built the company on disciplined unit
+      economics rather than the burn-and-grow VC model. By 2025-26, Nykaa
+      remains profitable with steady revenue growth across online and physical
+      retail.
+publishedAt: '2026-05-18'
 ---
 
 Falguni Nayar was 50 years old in 2012, had worked at Kotak Investment Banking for nearly two decades (the last several as Managing Director), and was about to do something unusual: leave a high-paying corporate career to start a beauty startup. The Indian beauty market in 2012 was massive but underserved online. Sephora had partnered with the Arvind Group but had limited reach. Beauty discovery happened in brick-and-mortar stores or through women's magazines. Online options were either Amazon (no curation) or specialty sites that didn't carry the brands women actually wanted. Nayar's thesis was specific: Indian women wanted both authentic premium products and trustworthy curation, and no online platform was offering either. She founded Nykaa with her husband and a small team, putting personal capital and the kind of patient long-view thinking that comes from a 28-year corporate career.

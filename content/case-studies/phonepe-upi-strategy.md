@@ -1,27 +1,51 @@
 ---
-id: "cs-57"
-slug: "phonepe-upi-strategy"
-company: "PhonePe"
-title: "How PhonePe Beat Paytm and Google Pay at UPI"
-category: "Strategy"
-description: "Three Flipkart veterans bet that UPI — not wallets — would be the future of Indian payments. They built PhonePe as UPI-first while Paytm doubled down on wallets. Five years later, PhonePe processed half of all UPI transactions in India."
-outcome: "$12B valuation under Walmart. 50%+ UPI market share. 6B+ transactions/month. Reverse-flipped from Singapore to India in 2022 with a $1B tax bill. IPO prep underway 2025-26."
+id: cs-57
+slug: phonepe-upi-strategy
+company: PhonePe
+title: How PhonePe Beat Paytm and Google Pay at UPI
+category: Strategy
+description: >-
+  Three Flipkart veterans bet that UPI — not wallets — would be the future of
+  Indian payments. They built PhonePe as UPI-first while Paytm doubled down on
+  wallets. Five years later, PhonePe processed half of all UPI transactions in
+  India.
+outcome: >-
+  $12B valuation under Walmart. 50%+ UPI market share. 6B+ transactions/month.
+  Reverse-flipped from Singapore to India in 2022 with a $1B tax bill. IPO prep
+  underway 2025-26.
 year: 2015
 tags:
-  - "fintech"
-  - "UPI"
-  - "focus"
-logo: "📲"
-region: "India"
+  - fintech
+  - UPI
+  - focus
+logo: "\U0001F4F2"
+region: India
 faqs:
-  - question: "What is PhonePe's UPI market share?"
-    answer: "By 2024-26, PhonePe processes over 50% of all UPI transactions in India by volume — more than 6 billion transactions per month. This makes it the #1 UPI app in India, ahead of Google Pay (~35%) and Paytm (much smaller share)."
-  - question: "Who owns PhonePe?"
-    answer: "PhonePe is owned by Walmart, which took 100% ownership in 2022 as part of its broader investment in Flipkart's group. PhonePe was originally founded in 2015, acquired by Flipkart in 2016, and split out as Walmart's separate entity after the 2018 Flipkart acquisition."
-  - question: "Why did PhonePe reverse flip to India?"
-    answer: "PhonePe was incorporated in Singapore. In 2022, it reverse-flipped to India, paying nearly $1 billion in tax — the largest such tax bill in Indian startup history — specifically to enable an Indian IPO and align with Indian fintech regulations."
-  - question: "When will PhonePe IPO?"
-    answer: "PhonePe is preparing for an Indian IPO expected in 2025-26. The 2022 reverse flip from Singapore to India was the foundational move to enable this listing. With 50%+ UPI market share and $12B valuation, the IPO will be one of the most-watched Indian fintech listings."
+  - question: What is PhonePe's UPI market share?
+    answer: >-
+      By 2024-26, PhonePe processes over 50% of all UPI transactions in India by
+      volume — more than 6 billion transactions per month. This makes it the #1
+      UPI app in India, ahead of Google Pay (~35%) and Paytm (much smaller
+      share).
+  - question: Who owns PhonePe?
+    answer: >-
+      PhonePe is owned by Walmart, which took 100% ownership in 2022 as part of
+      its broader investment in Flipkart's group. PhonePe was originally founded
+      in 2015, acquired by Flipkart in 2016, and split out as Walmart's separate
+      entity after the 2018 Flipkart acquisition.
+  - question: Why did PhonePe reverse flip to India?
+    answer: >-
+      PhonePe was incorporated in Singapore. In 2022, it reverse-flipped to
+      India, paying nearly $1 billion in tax — the largest such tax bill in
+      Indian startup history — specifically to enable an Indian IPO and align
+      with Indian fintech regulations.
+  - question: When will PhonePe IPO?
+    answer: >-
+      PhonePe is preparing for an Indian IPO expected in 2025-26. The 2022
+      reverse flip from Singapore to India was the foundational move to enable
+      this listing. With 50%+ UPI market share and $12B valuation, the IPO will
+      be one of the most-watched Indian fintech listings.
+publishedAt: '2026-05-18'
 ---
 
 India's payments market in 2015 was a battle with no clear playbook. Paytm had spent five years building a wallet business and had raised significant capital. The launch of UPI in April 2016 by NPCI (the National Payments Corporation of India) was about to scramble everything, but few people in 2015 understood what was coming. Sameer Nigam, Rahul Chari, and Burzin Engineer — three Flipkart veterans — had been thinking about the future of Indian payments for years. Their conviction was that UPI, when it launched, would not be just another payment rail. It would be the rail. Paytm and other wallet players were building businesses that would be obsolete within five years if UPI worked as designed. PhonePe, founded in late 2015, was their bet on that future. Less than a year after launch, in April 2016, Flipkart acquired PhonePe — both because Flipkart needed payment infrastructure and because Sachin and Binny Bansal recognized the founders had a non-obvious thesis worth backing.

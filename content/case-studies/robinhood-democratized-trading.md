@@ -1,24 +1,45 @@
 ---
-id: "cs-48"
-slug: "robinhood-democratized-trading"
-company: "Robinhood"
-title: "Robinhood Democratized Trading and Sparked a Movement"
-category: "Product"
-description: "Robinhood eliminated trading commissions in 2013 — forcing Charles Schwab and Fidelity to follow years later. Their mobile-first, gamified interface brought millions of new investors to markets."
-outcome: "22M+ funded accounts. IPO in 2021 at $32B valuation."
+id: cs-48
+slug: robinhood-democratized-trading
+company: Robinhood
+title: Robinhood Democratized Trading and Sparked a Movement
+category: Product
+description: >-
+  Robinhood eliminated trading commissions in 2013 — forcing Charles Schwab and
+  Fidelity to follow years later. Their mobile-first, gamified interface brought
+  millions of new investors to markets.
+outcome: 22M+ funded accounts. IPO in 2021 at $32B valuation.
 year: 2013
 tags:
-  - "fintech"
-  - "democratization"
-  - "mobile"
-logo: "📈"
+  - fintech
+  - democratization
+  - mobile
+logo: "\U0001F4C8"
 faqs:
-  - question: "How does Robinhood make money with zero commissions?"
-    answer: "Robinhood monetizes through payment for order flow (PFOF) — selling order routing to high-frequency trading firms who pay Robinhood to execute trades. Critics argue this creates conflicts of interest; the SEC has investigated PFOF repeatedly. Robinhood also makes money on margin lending, securities lending, premium subscriptions (Gold), and crypto trading spreads."
-  - question: "What happened during the GameStop saga?"
-    answer: "In January 2021, Reddit's r/wallstreetbets community coordinated a buying spree of GameStop stock that drove the price from ~$20 to ~$483 within weeks. Robinhood halted GameStop buying on January 28 — citing clearing-house capital requirements but suffering massive user backlash. The episode triggered congressional hearings and lasting reputational damage."
-  - question: "Is Robinhood profitable?"
-    answer: "Robinhood became profitable in 2023-24 after years of losses. The 2025-26 quarters show sustained profitability driven by interest income (margin lending), PFOF, and Robinhood Gold subscriptions. The company has expanded into UK markets and crypto. Stock price has recovered substantially from 2022 lows but remains below the 2021 IPO highs."
+  - question: How does Robinhood make money with zero commissions?
+    answer: >-
+      Robinhood monetizes through payment for order flow (PFOF) — selling order
+      routing to high-frequency trading firms who pay Robinhood to execute
+      trades. Critics argue this creates conflicts of interest; the SEC has
+      investigated PFOF repeatedly. Robinhood also makes money on margin
+      lending, securities lending, premium subscriptions (Gold), and crypto
+      trading spreads.
+  - question: What happened during the GameStop saga?
+    answer: >-
+      In January 2021, Reddit's r/wallstreetbets community coordinated a buying
+      spree of GameStop stock that drove the price from ~$20 to ~$483 within
+      weeks. Robinhood halted GameStop buying on January 28 — citing
+      clearing-house capital requirements but suffering massive user backlash.
+      The episode triggered congressional hearings and lasting reputational
+      damage.
+  - question: Is Robinhood profitable?
+    answer: >-
+      Robinhood became profitable in 2023-24 after years of losses. The 2025-26
+      quarters show sustained profitability driven by interest income (margin
+      lending), PFOF, and Robinhood Gold subscriptions. The company has expanded
+      into UK markets and crypto. Stock price has recovered substantially from
+      2022 lows but remains below the 2021 IPO highs.
+publishedAt: '2026-05-18'
 ---
 
 When Vlad Tenev and Baiju Bhatt launched Robinhood in 2013, every major brokerage, Charles Schwab, Fidelity, E*Trade, and TD Ameritrade, charged between $7 and $10 per trade. This fee structure was a legacy of an era when executing a stock trade required human brokers, physical trading floors, and substantial operational infrastructure. By 2013, trades were executed electronically at near-zero cost, but the established brokerages maintained commission fees not because they needed to but because they could. Their existing customer base was accustomed to paying, no serious competitor had challenged the convention, and the fees generated billions in annual revenue. Robinhood's zero-commission model was not merely a pricing strategy; it was an implicit accusation that the entire industry had been overcharging its customers for decades.

@@ -1,24 +1,44 @@
 ---
-id: "cs-31"
-slug: "ipod-scroll-wheel"
-company: "Apple"
-title: "The iPod's Scroll Wheel UX Breakthrough"
-category: "Design"
-description: "The scroll wheel allowed navigation of 1000 songs with one thumb — a mechanical UX innovation that made MP3 players actually usable. 'A thousand songs in your pocket.'"
-outcome: "iPod sold 400M+ units. Funded Apple's smartphone ambitions."
+id: cs-31
+slug: ipod-scroll-wheel
+company: Apple
+title: The iPod's Scroll Wheel UX Breakthrough
+category: Design
+description: >-
+  The scroll wheel allowed navigation of 1000 songs with one thumb — a
+  mechanical UX innovation that made MP3 players actually usable. 'A thousand
+  songs in your pocket.'
+outcome: iPod sold 400M+ units. Funded Apple's smartphone ambitions.
 year: 2001
 tags:
-  - "hardware UX"
-  - "simplicity"
-  - "music"
-logo: "🎧"
+  - hardware UX
+  - simplicity
+  - music
+logo: "\U0001F3A7"
 faqs:
-  - question: "What made the iPod scroll wheel special?"
-    answer: "The iPod scroll wheel let users navigate hundreds of songs by feel — your thumb knew the distance to travel before your eyes did. Combined with the inertia mechanic (faster spins meant faster scrolling), it made the iPod feel responsive even with massive libraries. No competing MP3 player solved this UX problem; the scroll wheel was the moat for 5 years."
-  - question: "When did the iPod launch?"
-    answer: "The original iPod launched in October 2001 — 'a thousand songs in your pocket' was Steve Jobs's positioning. The launch was met with skepticism (Apple was still recovering from the late-90s near-bankruptcy), but the iPod went on to define digital music and set up the iTunes Store, which set up the iPhone."
-  - question: "Why did Apple kill the iPod?"
-    answer: "Apple discontinued the last iPod (iPod Touch) in May 2022. The product's job had been absorbed by the iPhone — which had the iPod's music functionality plus everything else. Discontinuing it was a symbolic closing of an era: the product that saved Apple in the early 2000s was killed by the product that made Apple the most valuable company in the world."
+  - question: What made the iPod scroll wheel special?
+    answer: >-
+      The iPod scroll wheel let users navigate hundreds of songs by feel — your
+      thumb knew the distance to travel before your eyes did. Combined with the
+      inertia mechanic (faster spins meant faster scrolling), it made the iPod
+      feel responsive even with massive libraries. No competing MP3 player
+      solved this UX problem; the scroll wheel was the moat for 5 years.
+  - question: When did the iPod launch?
+    answer: >-
+      The original iPod launched in October 2001 — 'a thousand songs in your
+      pocket' was Steve Jobs's positioning. The launch was met with skepticism
+      (Apple was still recovering from the late-90s near-bankruptcy), but the
+      iPod went on to define digital music and set up the iTunes Store, which
+      set up the iPhone.
+  - question: Why did Apple kill the iPod?
+    answer: >-
+      Apple discontinued the last iPod (iPod Touch) in May 2022. The product's
+      job had been absorbed by the iPhone — which had the iPod's music
+      functionality plus everything else. Discontinuing it was a symbolic
+      closing of an era: the product that saved Apple in the early 2000s was
+      killed by the product that made Apple the most valuable company in the
+      world.
+publishedAt: '2026-05-18'
 ---
 
 Before the iPod, MP3 players existed but were universally frustrating to use. The Creative Nomad, Diamond Rio, and Archos Jukebox could store hundreds or thousands of songs, but navigating a large music library using tiny buttons and cramped LCD menus was an exercise in patience that deterred all but the most dedicated technology enthusiasts. The devices were marketed on technical specifications, storage capacity, codec support, and battery life, but nobody was talking about the experience of actually finding and playing a song. Apple, under Steve Jobs's direction, identified that the core problem with MP3 players was not technology but interaction design.

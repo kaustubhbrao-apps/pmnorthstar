@@ -1,24 +1,41 @@
 ---
-id: "cs-5"
-slug: "spotify-streaming-war"
-company: "Spotify"
-title: "How Spotify Won the Music Streaming War"
-category: "Product"
-description: "Spotify's freemium model, personalization algorithms (Discover Weekly), and creator tools outmaneuvered Apple Music despite launching later."
-outcome: "600M+ MAU, 240M+ paid subscribers as of 2024."
+id: cs-5
+slug: spotify-streaming-war
+company: Spotify
+title: How Spotify Won the Music Streaming War
+category: Product
+description: >-
+  Spotify's freemium model, personalization algorithms (Discover Weekly), and
+  creator tools outmaneuvered Apple Music despite launching later.
+outcome: '600M+ MAU, 240M+ paid subscribers as of 2024.'
 year: 2008
 tags:
-  - "freemium"
-  - "personalization"
-  - "audio"
-logo: "🎵"
+  - freemium
+  - personalization
+  - audio
+logo: "\U0001F3B5"
 faqs:
-  - question: "How did Spotify beat Apple Music?"
-    answer: "Spotify out-competed Apple in music streaming through three things: algorithmic discovery (Discover Weekly, Daily Mix) that Apple hasn't matched, a free tier when Apple required payment, and refusing to bundle into hardware — keeping the subscriber relationship as the strategic asset."
-  - question: "When did Spotify launch?"
-    answer: "Spotify launched in Sweden in October 2008 and expanded to the US in July 2011. The 3-year gap before US launch was used to secure licensing deals with major labels — Daniel Ek personally spent years negotiating before launching in the largest music market."
-  - question: "How does Spotify make money?"
-    answer: "Spotify monetizes through Premium subscriptions (~$10-12/month, the dominant revenue line), ad-supported free tier (smaller share), and emerging revenue from podcasts and audiobooks. The free tier is loss-leading but drives conversion to paid; gross margins are tight because labels take ~70% of streaming revenue."
+  - question: How did Spotify beat Apple Music?
+    answer: >-
+      Spotify out-competed Apple in music streaming through three things:
+      algorithmic discovery (Discover Weekly, Daily Mix) that Apple hasn't
+      matched, a free tier when Apple required payment, and refusing to bundle
+      into hardware — keeping the subscriber relationship as the strategic
+      asset.
+  - question: When did Spotify launch?
+    answer: >-
+      Spotify launched in Sweden in October 2008 and expanded to the US in July
+      2011. The 3-year gap before US launch was used to secure licensing deals
+      with major labels — Daniel Ek personally spent years negotiating before
+      launching in the largest music market.
+  - question: How does Spotify make money?
+    answer: >-
+      Spotify monetizes through Premium subscriptions (~$10-12/month, the
+      dominant revenue line), ad-supported free tier (smaller share), and
+      emerging revenue from podcasts and audiobooks. The free tier is
+      loss-leading but drives conversion to paid; gross margins are tight
+      because labels take ~70% of streaming revenue.
+publishedAt: '2026-05-18'
 ---
 
 When Daniel Ek and Martin Lorentzon founded Spotify in Stockholm in 2006, the music industry was in existential crisis. Piracy through Napster, LimeWire, and BitTorrent had devastated revenue, with global recorded music sales falling from $23.3 billion in 1999 to $15 billion by 2006. Record labels were suing their own customers, a strategy that generated headlines and ill will but did nothing to stem the bleeding. Apple's iTunes Store had proven people would pay for digital music, but at $0.99 per track, it was an incremental improvement over piracy, not a paradigm shift. The industry needed a model that could compete with free.

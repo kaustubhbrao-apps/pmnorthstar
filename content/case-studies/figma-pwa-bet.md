@@ -1,28 +1,77 @@
 ---
-id: "cs-76"
-slug: "figma-pwa-bet"
-company: "Figma"
-title: "Figma's Progressive Web App Bet That Paid Off Six Years Later"
-category: "Strategy"
-description: "Figma shipped a web app manifest, service worker, and PWA installability in 2017 — three years before iOS supported PWAs and five years before Chrome made them genuinely first-class. The bet looked premature at the time and paid off when Apple finally enabled PWA installation on iPad in 2023."
-outcome: "Adobe acquired Figma for $20B in 2022 (deal blocked by EU regulators in 2023, paid $1B breakup fee). Figma reached 4M+ users by 2023 with the web-and-PWA strategy. The standards-first approach became the canonical pattern for browser-native creative tools."
+id: cs-76
+slug: figma-pwa-bet
+company: Figma
+title: Figma's Progressive Web App Bet That Paid Off Six Years Later
+category: Strategy
+description: >-
+  Figma shipped a web app manifest, service worker, and PWA installability in
+  2017 — three years before iOS supported PWAs and five years before Chrome made
+  them genuinely first-class. The bet looked premature at the time and paid off
+  when Apple finally enabled PWA installation on iPad in 2023.
+outcome: >-
+  Adobe acquired Figma for $20B in 2022 (deal blocked by EU regulators in 2023,
+  paid $1B breakup fee). Figma reached 4M+ users by 2023 with the web-and-PWA
+  strategy. The standards-first approach became the canonical pattern for
+  browser-native creative tools.
 year: 2017
 tags:
-  - "PWA"
-  - "browser-native"
-  - "standards"
-logo: "F"
+  - PWA
+  - browser-native
+  - standards
+logo: F
 faqs:
-  - question: "What is a Progressive Web App (PWA)?"
-    answer: "A PWA is a web app that can be installed on a device like a native app, runs offline through a service worker, and integrates with the OS through a web app manifest. The manifest defines the app's icon, name, theme color, and launch behavior. When installed, a PWA appears in the home screen or app launcher and runs in its own window without the browser chrome around it. The underlying code is still web code, but the user experience approximates a native app."
-  - question: "Why was shipping PWA features in 2017 a bet?"
-    answer: "PWAs were a Google-led standard in 2017. Chrome supported them well, but iOS Safari did not support installability, and Android Chrome's support was uneven. Building a PWA in 2017 was investing in a category where the largest mobile platform (iOS) actively did not support it. The bet was that web standards would eventually win out, that Apple would eventually have to support PWAs, and that being ready when that happened would be more valuable than building duplicate native apps. The bet took six years to pay off, but when it did, it paid off significantly."
-  - question: "How did Figma's PWA strategy compare to native apps?"
-    answer: "Figma chose to ship one codebase that ran in every browser instead of building separate iOS, Android, macOS, and Windows native apps. The trade-off was that performance on lower-end devices was slightly worse than equivalent native apps, but the development velocity was significantly faster (one codebase, one team, one release cycle) and the user experience was identical across platforms. Competitors who built native apps (Sketch on macOS, Adobe XD on macOS/Windows) couldn't match Figma's cross-platform consistency."
-  - question: "What standards did Figma ship that competitors didn't?"
-    answer: "A complete web app manifest with the right icon sizes and theme colors. A service worker that enabled offline mode (cached assets, queued operations). A custom Twitter card and OpenGraph metadata so URL shares rendered correctly. Strict ARIA landmarks throughout the canvas-driven interface (header, nav, main, footer with proper roles). Clean heading hierarchy on marketing pages. Title-length discipline in the 30-60 char sweet spot for SERP rendering. Most competitors shipped one or two of these; Figma shipped all of them by 2018."
-  - question: "What can other browser-based products learn?"
-    answer: "Three things. First, betting on web standards is undervalued because the payoff is delayed; the companies that ship to standards before they're enforced build moats that are revealed when standards become universal. Second, one cross-platform codebase beats four native codebases for most products, because the operational simplicity compounds into faster shipping over years. Third, the small standards details (manifest, service worker, Twitter card, ARIA, heading hierarchy) are usually skipped because they don't show up in conversion metrics, but the cumulative effect on indexability, shareability, and installability is significant."
+  - question: What is a Progressive Web App (PWA)?
+    answer: >-
+      A PWA is a web app that can be installed on a device like a native app,
+      runs offline through a service worker, and integrates with the OS through
+      a web app manifest. The manifest defines the app's icon, name, theme
+      color, and launch behavior. When installed, a PWA appears in the home
+      screen or app launcher and runs in its own window without the browser
+      chrome around it. The underlying code is still web code, but the user
+      experience approximates a native app.
+  - question: Why was shipping PWA features in 2017 a bet?
+    answer: >-
+      PWAs were a Google-led standard in 2017. Chrome supported them well, but
+      iOS Safari did not support installability, and Android Chrome's support
+      was uneven. Building a PWA in 2017 was investing in a category where the
+      largest mobile platform (iOS) actively did not support it. The bet was
+      that web standards would eventually win out, that Apple would eventually
+      have to support PWAs, and that being ready when that happened would be
+      more valuable than building duplicate native apps. The bet took six years
+      to pay off, but when it did, it paid off significantly.
+  - question: How did Figma's PWA strategy compare to native apps?
+    answer: >-
+      Figma chose to ship one codebase that ran in every browser instead of
+      building separate iOS, Android, macOS, and Windows native apps. The
+      trade-off was that performance on lower-end devices was slightly worse
+      than equivalent native apps, but the development velocity was
+      significantly faster (one codebase, one team, one release cycle) and the
+      user experience was identical across platforms. Competitors who built
+      native apps (Sketch on macOS, Adobe XD on macOS/Windows) couldn't match
+      Figma's cross-platform consistency.
+  - question: What standards did Figma ship that competitors didn't?
+    answer: >-
+      A complete web app manifest with the right icon sizes and theme colors. A
+      service worker that enabled offline mode (cached assets, queued
+      operations). A custom Twitter card and OpenGraph metadata so URL shares
+      rendered correctly. Strict ARIA landmarks throughout the canvas-driven
+      interface (header, nav, main, footer with proper roles). Clean heading
+      hierarchy on marketing pages. Title-length discipline in the 30-60 char
+      sweet spot for SERP rendering. Most competitors shipped one or two of
+      these; Figma shipped all of them by 2018.
+  - question: What can other browser-based products learn?
+    answer: >-
+      Three things. First, betting on web standards is undervalued because the
+      payoff is delayed; the companies that ship to standards before they're
+      enforced build moats that are revealed when standards become universal.
+      Second, one cross-platform codebase beats four native codebases for most
+      products, because the operational simplicity compounds into faster
+      shipping over years. Third, the small standards details (manifest, service
+      worker, Twitter card, ARIA, heading hierarchy) are usually skipped because
+      they don't show up in conversion metrics, but the cumulative effect on
+      indexability, shareability, and installability is significant.
+publishedAt: '2026-05-18'
 ---
 
 Figma in 2016 was a small startup competing against Sketch — the dominant design tool on macOS — with a fundamentally different bet about where design work would happen. Sketch was a native macOS application; Adobe XD was a native macOS and Windows application; the entire category lived on the desktop, with files passed around as static exports. Figma's bet was that design work would migrate to the browser, the way that document work had migrated from Office to Google Docs and the way that engineering work had migrated from local IDEs to web-based collaboration tools. The bet was contrarian. Designers in 2016 cared deeply about performance and offline reliability, and the browser was considered unsuitable for creative tools. Figma had to prove not just that the browser could be fast enough, but that the browser advantages (real-time collaboration, single source of truth, instant sharing) outweighed the disadvantages.

@@ -1,24 +1,44 @@
 ---
-id: "cs-16"
-slug: "uber-blitzscaling"
-company: "Uber"
-title: "Uber's City-by-City Blitzscaling Playbook"
-category: "Growth"
-description: "Uber perfected a repeatable playbook: launch in a new city, saturate with supply (drivers), achieve 15-min pickup times, then expand. Each city was a contained growth experiment."
-outcome: "Operates in 70+ countries. $31B+ annual revenue."
+id: cs-16
+slug: uber-blitzscaling
+company: Uber
+title: Uber's City-by-City Blitzscaling Playbook
+category: Growth
+description: >-
+  Uber perfected a repeatable playbook: launch in a new city, saturate with
+  supply (drivers), achieve 15-min pickup times, then expand. Each city was a
+  contained growth experiment.
+outcome: Operates in 70+ countries. $31B+ annual revenue.
 year: 2010
 tags:
-  - "marketplace"
-  - "supply"
-  - "expansion"
-logo: "🚗"
+  - marketplace
+  - supply
+  - expansion
+logo: "\U0001F697"
 faqs:
-  - question: "How did Uber blitzscale?"
-    answer: "Uber's playbook was city-by-city aggressive market entry: drop subsidies for drivers + riders, achieve liquidity faster than competitors, then raise prices once the network effect locked. Combined with regulatory ambushes (launching first, asking permission later), Uber captured majority share in ~50 markets in under 5 years. The strategy required ~$25B of cumulative VC funding."
-  - question: "Is Uber profitable?"
-    answer: "Uber turned profitable in 2023 — 14 years after founding. The path required exiting unprofitable markets (China sold to Didi, SEA sold to Grab), monetizing more aggressively (rider service fees, surge pricing), and growing the Uber Eats business to operating profitability. The 2024-26 quarters have shown sustained operating profit."
-  - question: "Why did Uber lose to Lyft in some markets?"
-    answer: "Uber didn't fully lose to Lyft — Uber still has majority US share. But Lyft survived as a legitimate #2 with about 10% of Uber's capital because riders and drivers preferred Lyft's softer brand and union-friendly approach after Uber's 2017 culture crisis. The duopoly outcome (vs winner-takes-all) was worse for Uber than expected."
+  - question: How did Uber blitzscale?
+    answer: >-
+      Uber's playbook was city-by-city aggressive market entry: drop subsidies
+      for drivers + riders, achieve liquidity faster than competitors, then
+      raise prices once the network effect locked. Combined with regulatory
+      ambushes (launching first, asking permission later), Uber captured
+      majority share in ~50 markets in under 5 years. The strategy required
+      ~$25B of cumulative VC funding.
+  - question: Is Uber profitable?
+    answer: >-
+      Uber turned profitable in 2023 — 14 years after founding. The path
+      required exiting unprofitable markets (China sold to Didi, SEA sold to
+      Grab), monetizing more aggressively (rider service fees, surge pricing),
+      and growing the Uber Eats business to operating profitability. The 2024-26
+      quarters have shown sustained operating profit.
+  - question: Why did Uber lose to Lyft in some markets?
+    answer: >-
+      Uber didn't fully lose to Lyft — Uber still has majority US share. But
+      Lyft survived as a legitimate #2 with about 10% of Uber's capital because
+      riders and drivers preferred Lyft's softer brand and union-friendly
+      approach after Uber's 2017 culture crisis. The duopoly outcome (vs
+      winner-takes-all) was worse for Uber than expected.
+publishedAt: '2026-05-18'
 ---
 
 Uber's growth story is fundamentally about the industrialization of market expansion. After Travis Kalanick and Garrett Camp proved the concept of app-based ride-hailing in San Francisco in 2010, the challenge shifted from product-market fit to replicable scaling. Every new city presented the same chicken-and-egg marketplace problem: riders would not download the app without available drivers, and drivers would not sign up without rider demand. Solving this problem once was hard; solving it hundreds of times in different cities, countries, and regulatory environments required a systematic playbook that could be executed by local teams with minimal improvisation.

@@ -1,24 +1,43 @@
 ---
-id: "cs-32"
-slug: "gmail-inbox-redesign"
-company: "Google"
-title: "Gmail's Radical Inbox Redesign"
-category: "Design"
-description: "Gmail introduced threaded conversations, labels instead of folders, and 1GB storage in 2004 when competitors offered 4MB. The design philosophy reshaped all email clients."
-outcome: "1.8B+ active users. Dominant email platform globally."
+id: cs-32
+slug: gmail-inbox-redesign
+company: Google
+title: Gmail's Radical Inbox Redesign
+category: Design
+description: >-
+  Gmail introduced threaded conversations, labels instead of folders, and 1GB
+  storage in 2004 when competitors offered 4MB. The design philosophy reshaped
+  all email clients.
+outcome: 1.8B+ active users. Dominant email platform globally.
 year: 2004
 tags:
-  - "email"
-  - "UX"
-  - "information architecture"
-logo: "📧"
+  - email
+  - UX
+  - information architecture
+logo: "\U0001F4E7"
 faqs:
-  - question: "What made Gmail revolutionary at launch?"
-    answer: "Gmail launched in 2004 with 1 GB of free storage — at a time when Hotmail and Yahoo Mail offered 2-4 MB. The storage difference was so extreme it sounded fake; many users assumed the April 1 launch date was a joke. Combined with thread-based conversation view (instead of individual messages) and aggressive spam filtering, Gmail redefined what webmail could be."
-  - question: "Why was Gmail launched on April Fools' Day?"
-    answer: "Gmail launched April 1, 2004 — and the 1GB storage was so extreme that many tech writers assumed it was an April Fools' prank. Larry Page reportedly chose the date deliberately, knowing the storage offering would sound like a joke. The 'this can't be real' reaction was free marketing."
-  - question: "How many people use Gmail?"
-    answer: "Gmail has over 1.8 billion active users globally as of 2025-26 — making it the world's most-used webmail service. It's the default email for most Android phones (via the Google account requirement) and integrated tightly with Google Workspace for businesses. Microsoft Outlook is the largest enterprise competitor but trails on consumer share."
+  - question: What made Gmail revolutionary at launch?
+    answer: >-
+      Gmail launched in 2004 with 1 GB of free storage — at a time when Hotmail
+      and Yahoo Mail offered 2-4 MB. The storage difference was so extreme it
+      sounded fake; many users assumed the April 1 launch date was a joke.
+      Combined with thread-based conversation view (instead of individual
+      messages) and aggressive spam filtering, Gmail redefined what webmail
+      could be.
+  - question: Why was Gmail launched on April Fools' Day?
+    answer: >-
+      Gmail launched April 1, 2004 — and the 1GB storage was so extreme that
+      many tech writers assumed it was an April Fools' prank. Larry Page
+      reportedly chose the date deliberately, knowing the storage offering would
+      sound like a joke. The 'this can't be real' reaction was free marketing.
+  - question: How many people use Gmail?
+    answer: >-
+      Gmail has over 1.8 billion active users globally as of 2025-26 — making it
+      the world's most-used webmail service. It's the default email for most
+      Android phones (via the Google account requirement) and integrated tightly
+      with Google Workspace for businesses. Microsoft Outlook is the largest
+      enterprise competitor but trails on consumer share.
+publishedAt: '2026-05-18'
 ---
 
 When Gmail launched on April 1, 2004, many people thought it was an elaborate April Fools' joke, and the date was deliberately chosen by Google to generate exactly that kind of buzz. The announcement challenged every established assumption about email. Hotmail and Yahoo Mail offered 2 to 4 megabytes of storage, forcing users to constantly delete messages or pay for more space. Gmail offered 1 gigabyte, a 250 to 500 times increase, for free. This was not just a generous allocation; it was a philosophical statement about what email should be. Google declared that email was not a mailbox to be emptied but an archive to be searched, and that with sufficient storage, you would never need to delete anything again.

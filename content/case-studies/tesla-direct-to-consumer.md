@@ -1,24 +1,43 @@
 ---
-id: "cs-23"
-slug: "tesla-direct-to-consumer"
-company: "Tesla"
-title: "Tesla's Direct-to-Consumer Model"
-category: "Strategy"
-description: "Tesla refused to use dealerships — selling directly to consumers online and in-store. This let them control pricing, experience, and data, while traditional automakers couldn't adapt."
-outcome: "Most valuable automaker by market cap. $100B+ annual revenue."
+id: cs-23
+slug: tesla-direct-to-consumer
+company: Tesla
+title: Tesla's Direct-to-Consumer Model
+category: Strategy
+description: >-
+  Tesla refused to use dealerships — selling directly to consumers online and
+  in-store. This let them control pricing, experience, and data, while
+  traditional automakers couldn't adapt.
+outcome: Most valuable automaker by market cap. $100B+ annual revenue.
 year: 2008
 tags:
-  - "DTC"
-  - "automotive"
-  - "distribution"
-logo: "⚡"
+  - DTC
+  - automotive
+  - distribution
+logo: ⚡
 faqs:
-  - question: "Why does Tesla sell direct to consumers?"
-    answer: "Tesla refused to use independent dealerships from day one. Dealers structurally don't want to sell electric vehicles (lower service revenue, lower margin). Direct-to-consumer let Tesla control brand, pricing, software updates, and customer relationships. The cost: ongoing legal battles in 20+ states where dealer franchise laws ban direct sales."
-  - question: "How does Tesla market without ads?"
-    answer: "Tesla spent essentially zero on traditional advertising until 2024. Brand awareness came from Elon Musk's reach on social media, Model S's role in defining the EV category, the Supercharger network, and obsessive press coverage. The implicit advertising budget (Musk's attention) was worth more than any paid campaign — though the ad-free era ended in 2024."
-  - question: "What is the Tesla Supercharger network?"
-    answer: "The Supercharger network is Tesla's proprietary fast-charging infrastructure — over 50,000 connectors globally by 2026. Tesla built it before EVs were mainstream, locking customers into the ecosystem. In 2024-25, Tesla opened the network to other manufacturers (Ford, GM, Rivian) — turning a moat into a revenue line through charging fees."
+  - question: Why does Tesla sell direct to consumers?
+    answer: >-
+      Tesla refused to use independent dealerships from day one. Dealers
+      structurally don't want to sell electric vehicles (lower service revenue,
+      lower margin). Direct-to-consumer let Tesla control brand, pricing,
+      software updates, and customer relationships. The cost: ongoing legal
+      battles in 20+ states where dealer franchise laws ban direct sales.
+  - question: How does Tesla market without ads?
+    answer: >-
+      Tesla spent essentially zero on traditional advertising until 2024. Brand
+      awareness came from Elon Musk's reach on social media, Model S's role in
+      defining the EV category, the Supercharger network, and obsessive press
+      coverage. The implicit advertising budget (Musk's attention) was worth
+      more than any paid campaign — though the ad-free era ended in 2024.
+  - question: What is the Tesla Supercharger network?
+    answer: >-
+      The Supercharger network is Tesla's proprietary fast-charging
+      infrastructure — over 50,000 connectors globally by 2026. Tesla built it
+      before EVs were mainstream, locking customers into the ecosystem. In
+      2024-25, Tesla opened the network to other manufacturers (Ford, GM,
+      Rivian) — turning a moat into a revenue line through charging fees.
+publishedAt: '2026-05-18'
 ---
 
 When Tesla decided to sell cars directly to consumers rather than through franchise dealerships, it was challenging an industry structure that had been legally codified for nearly a century. In most US states, franchise laws prohibited automobile manufacturers from selling directly to consumers, a protection originally designed to prevent manufacturers from exploiting small-business dealers but which had evolved into an entrenched system that benefited nobody except the dealers themselves. Traditional automakers like GM, Ford, and Toyota were legally bound by their existing franchise agreements, meaning they could not adopt a direct model even if they wanted to. Tesla, as a new entrant with no existing dealer relationships, had the structural freedom to build something entirely different.

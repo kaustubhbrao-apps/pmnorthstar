@@ -1,24 +1,45 @@
 ---
-id: "cs-49"
-slug: "whatsapp-no-ads-growth"
-company: "Whatsapp"
-title: "WhatsApp's No-Ads, No-Games, No-Gimmicks Growth"
-category: "Product"
-description: "WhatsApp grew to 450M users with a team of 55 people and zero marketing budget. Their philosophy: no ads, no games, no gimmicks. Pure messaging utility at the lowest possible friction."
-outcome: "Acquired by Facebook for $19B in 2014. 2B+ users today."
+id: cs-49
+slug: whatsapp-no-ads-growth
+company: Whatsapp
+title: 'WhatsApp''s No-Ads, No-Games, No-Gimmicks Growth'
+category: Product
+description: >-
+  WhatsApp grew to 450M users with a team of 55 people and zero marketing
+  budget. Their philosophy: no ads, no games, no gimmicks. Pure messaging
+  utility at the lowest possible friction.
+outcome: Acquired by Facebook for $19B in 2014. 2B+ users today.
 year: 2009
 tags:
-  - "messaging"
-  - "simplicity"
-  - "international"
-logo: "💚"
+  - messaging
+  - simplicity
+  - international
+logo: "\U0001F49A"
 faqs:
-  - question: "Why did WhatsApp's founders refuse ads?"
-    answer: "WhatsApp founders Jan Koum and Brian Acton hung a sign in their office: 'No Ads. No Games. No Gimmicks.' The principled stance was core to their identity — they believed messaging should be a utility, not a surveillance vector. The product had no ads for 5 years, charged $1/year in some markets, and grew to over 1B users on quality alone."
-  - question: "Why did Facebook buy WhatsApp?"
-    answer: "Facebook acquired WhatsApp in 2014 for $19B — at the time the largest tech acquisition ever. Zuckerberg saw WhatsApp's messaging dominance (especially in markets where SMS was expensive) as a strategic threat to Facebook. The acquisition price was justified by WhatsApp's potential to keep Facebook relevant in messaging — even though monetization had no clear path at the time of acquisition."
-  - question: "Does WhatsApp have ads now?"
-    answer: "WhatsApp launched WhatsApp Business (free for small businesses, paid messaging for larger ones) and WhatsApp Payments in markets like India and Brazil. Status Ads launched around 2024-25. The original 'no ads' principle is effectively dead under Meta ownership — though the main messaging interface still has no ads in 2026. Both original founders left Meta years ago, reportedly over monetization disagreements."
+  - question: Why did WhatsApp's founders refuse ads?
+    answer: >-
+      WhatsApp founders Jan Koum and Brian Acton hung a sign in their office:
+      'No Ads. No Games. No Gimmicks.' The principled stance was core to their
+      identity — they believed messaging should be a utility, not a surveillance
+      vector. The product had no ads for 5 years, charged $1/year in some
+      markets, and grew to over 1B users on quality alone.
+  - question: Why did Facebook buy WhatsApp?
+    answer: >-
+      Facebook acquired WhatsApp in 2014 for $19B — at the time the largest tech
+      acquisition ever. Zuckerberg saw WhatsApp's messaging dominance
+      (especially in markets where SMS was expensive) as a strategic threat to
+      Facebook. The acquisition price was justified by WhatsApp's potential to
+      keep Facebook relevant in messaging — even though monetization had no
+      clear path at the time of acquisition.
+  - question: Does WhatsApp have ads now?
+    answer: >-
+      WhatsApp launched WhatsApp Business (free for small businesses, paid
+      messaging for larger ones) and WhatsApp Payments in markets like India and
+      Brazil. Status Ads launched around 2024-25. The original 'no ads'
+      principle is effectively dead under Meta ownership — though the main
+      messaging interface still has no ads in 2026. Both original founders left
+      Meta years ago, reportedly over monetization disagreements.
+publishedAt: '2026-05-18'
 ---
 
 Jan Koum grew up in a village outside Kyiv, Ukraine, in conditions of poverty and surveillance that shaped his worldview permanently. His family shared a single phone line in an era when the Soviet government monitored communications as a matter of routine. The experience of not being able to speak freely left an indelible mark. When Koum and Brian Acton, both former Yahoo engineers who had been rejected by Facebook in job interviews, founded WhatsApp in 2009, the product's DNA reflected Koum's personal history: it would be a utility for private, reliable communication, with no ads, no games, no gimmicks, no data collection, and no compromises on user privacy. The $0.99 annual fee was not just a business model; it was a statement of principles that aligned the company's incentives with its users' rather than with advertisers.

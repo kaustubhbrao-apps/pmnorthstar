@@ -1,24 +1,42 @@
 ---
-id: "cs-17"
-slug: "tiktok-algorithm"
-company: "TikTok"
-title: "TikTok's Algorithm-First Content Strategy"
-category: "Growth"
-description: "Unlike every other social network, TikTok's FYP serves content from strangers — not friends. The algorithm, not social graph, drives discovery. New creators get immediate reach."
-outcome: "1B+ MAU in 5 years. Fastest app to reach 1B users ever."
+id: cs-17
+slug: tiktok-algorithm
+company: TikTok
+title: TikTok's Algorithm-First Content Strategy
+category: Growth
+description: >-
+  Unlike every other social network, TikTok's FYP serves content from strangers
+  — not friends. The algorithm, not social graph, drives discovery. New creators
+  get immediate reach.
+outcome: 1B+ MAU in 5 years. Fastest app to reach 1B users ever.
 year: 2018
 tags:
-  - "algorithm"
-  - "content"
-  - "virality"
-logo: "🎭"
+  - algorithm
+  - content
+  - virality
+logo: "\U0001F3AD"
 faqs:
-  - question: "How does TikTok's algorithm work?"
-    answer: "TikTok's For You feed uses signals beyond your social graph — what you've watched, how long, what you skipped, who's in the video, audio used, captions. The algorithm shows new users content from anywhere on the platform, not just from accounts they follow. That broke the 'follower graph' moat every other social platform was built on."
-  - question: "Who owns TikTok?"
-    answer: "TikTok is owned by ByteDance, a Beijing-headquartered tech company founded by Zhang Yiming in 2012. ByteDance also owns Douyin (TikTok's China-only counterpart). The 2024-2026 period saw multiple US regulatory threats to force a divestiture of TikTok US operations."
-  - question: "How is TikTok different from Instagram?"
-    answer: "TikTok's discovery is algorithmic-first; Instagram's was historically social-graph-first (though Reels has moved toward algorithmic). TikTok rewards new creators equally; Instagram's algorithm has historically favored established accounts. TikTok's average video length is shorter, and the editing tools are more sophisticated for non-pro creators."
+  - question: How does TikTok's algorithm work?
+    answer: >-
+      TikTok's For You feed uses signals beyond your social graph — what you've
+      watched, how long, what you skipped, who's in the video, audio used,
+      captions. The algorithm shows new users content from anywhere on the
+      platform, not just from accounts they follow. That broke the 'follower
+      graph' moat every other social platform was built on.
+  - question: Who owns TikTok?
+    answer: >-
+      TikTok is owned by ByteDance, a Beijing-headquartered tech company founded
+      by Zhang Yiming in 2012. ByteDance also owns Douyin (TikTok's China-only
+      counterpart). The 2024-2026 period saw multiple US regulatory threats to
+      force a divestiture of TikTok US operations.
+  - question: How is TikTok different from Instagram?
+    answer: >-
+      TikTok's discovery is algorithmic-first; Instagram's was historically
+      social-graph-first (though Reels has moved toward algorithmic). TikTok
+      rewards new creators equally; Instagram's algorithm has historically
+      favored established accounts. TikTok's average video length is shorter,
+      and the editing tools are more sophisticated for non-pro creators.
+publishedAt: '2026-05-18'
 ---
 
 Every social network before TikTok was built on the social graph: you followed people you knew, and your feed showed their content. Facebook showed your friends' posts. Instagram showed the photos of accounts you followed. Twitter showed tweets from people in your network. This architecture had a fundamental limitation: the quality of your feed was determined by the quality of your friends' content, not by the quality of all content on the platform. If your friends posted boring photos, your Instagram feed was boring, regardless of the millions of fascinating posts from strangers you would never see. TikTok threw this model away entirely.

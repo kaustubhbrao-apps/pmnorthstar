@@ -1,24 +1,43 @@
 ---
-id: "cs-9"
-slug: "duolingo-gamification"
-company: "Duolingo"
-title: "Duolingo's Gamification of Language Learning"
-category: "Product"
-description: "Duolingo turned language learning into a game with streaks, XP, leaderboards, and a passive-aggressive owl. Their A/B testing culture runs 500+ experiments simultaneously."
-outcome: "500M+ downloads. DAU surpassed Rosetta Stone's total user base."
+id: cs-9
+slug: duolingo-gamification
+company: Duolingo
+title: Duolingo's Gamification of Language Learning
+category: Product
+description: >-
+  Duolingo turned language learning into a game with streaks, XP, leaderboards,
+  and a passive-aggressive owl. Their A/B testing culture runs 500+ experiments
+  simultaneously.
+outcome: 500M+ downloads. DAU surpassed Rosetta Stone's total user base.
 year: 2011
 tags:
-  - "gamification"
-  - "retention"
-  - "education"
-logo: "🦉"
+  - gamification
+  - retention
+  - education
+logo: "\U0001F989"
 faqs:
-  - question: "How does Duolingo make money?"
-    answer: "Duolingo monetizes through Super Duolingo (formerly Duolingo Plus, ~$7/month for hearts, ad-free, offline access) and Duolingo Max (~$30/month, adds AI tutoring features). The free tier is loss-leading; paid users subsidize the free experience that drives daily-active-user growth."
-  - question: "Why is Duolingo so addictive?"
-    answer: "Duolingo applies habit-forming psychology systematically: streaks (loss aversion when you break one), variable rewards (random XP, surprise league promotions), the green owl notifications that escalate in intensity, gem economies, and competitive leaderboards. The product team explicitly designs for daily-app-open behavior."
-  - question: "How many users does Duolingo have?"
-    answer: "Duolingo has over 100 million monthly active users in 2025-26, with about 30M+ daily active users. It IPO'd in 2021 and has remained one of the most retention-strong consumer apps. The 100M MAU number puts it in rare consumer app territory — comparable to ChatGPT, Spotify, or major social networks at certain points."
+  - question: How does Duolingo make money?
+    answer: >-
+      Duolingo monetizes through Super Duolingo (formerly Duolingo Plus,
+      ~$7/month for hearts, ad-free, offline access) and Duolingo Max
+      (~$30/month, adds AI tutoring features). The free tier is loss-leading;
+      paid users subsidize the free experience that drives daily-active-user
+      growth.
+  - question: Why is Duolingo so addictive?
+    answer: >-
+      Duolingo applies habit-forming psychology systematically: streaks (loss
+      aversion when you break one), variable rewards (random XP, surprise league
+      promotions), the green owl notifications that escalate in intensity, gem
+      economies, and competitive leaderboards. The product team explicitly
+      designs for daily-app-open behavior.
+  - question: How many users does Duolingo have?
+    answer: >-
+      Duolingo has over 100 million monthly active users in 2025-26, with about
+      30M+ daily active users. It IPO'd in 2021 and has remained one of the most
+      retention-strong consumer apps. The 100M MAU number puts it in rare
+      consumer app territory — comparable to ChatGPT, Spotify, or major social
+      networks at certain points.
+publishedAt: '2026-05-18'
 ---
 
 Luis von Ahn, the inventor of CAPTCHA and reCAPTCHA and a MacArthur Fellow at Carnegie Mellon, founded Duolingo with a radical premise: language education should be free and accessible to everyone, not locked behind a $500 Rosetta Stone box set or a $2,000 Berlitz course. The business model was initially unclear, and the team explored several directions including a crowdsourced translation service and advertising before settling on a freemium subscription model. But the product insight was crystalline from day one: the biggest problem in language learning is not pedagogy but motivation. People do not quit learning Spanish because the lessons are bad; they quit because they lose the habit and momentum.

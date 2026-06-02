@@ -1,28 +1,71 @@
 ---
-id: "cs-73"
-slug: "linear-brand-from-day-one"
-company: "Linear"
-title: "How Linear Looked Like a $1B Company at Five Engineers"
-category: "Design"
-description: "Linear launched in 2019 with a real domain (linear.app), a real favicon, a real OG image, a real title tag, and a brand identity that felt like Stripe or Notion's design team had spent six months on it. The team was five engineers and one designer. The brand discipline became as much of their competitive advantage as the product."
-outcome: "Linear became the default issue tracker for modern software teams within four years. $400M+ ARR by 2025. Brand-first approach became a category convention — every new dev tool now ships with Linear-grade brand polish from day one."
+id: cs-73
+slug: linear-brand-from-day-one
+company: Linear
+title: How Linear Looked Like a $1B Company at Five Engineers
+category: Design
+description: >-
+  Linear launched in 2019 with a real domain (linear.app), a real favicon, a
+  real OG image, a real title tag, and a brand identity that felt like Stripe or
+  Notion's design team had spent six months on it. The team was five engineers
+  and one designer. The brand discipline became as much of their competitive
+  advantage as the product.
+outcome: >-
+  Linear became the default issue tracker for modern software teams within four
+  years. $400M+ ARR by 2025. Brand-first approach became a category convention —
+  every new dev tool now ships with Linear-grade brand polish from day one.
 year: 2019
 tags:
-  - "brand"
-  - "design"
-  - "developer-tools"
-logo: "L"
+  - brand
+  - design
+  - developer-tools
+logo: L
 faqs:
-  - question: "What did Linear ship on day one that most startups don't?"
-    answer: "Six things every visitor saw immediately. A real custom domain (linear.app, not linear.vercel.app). A real favicon (a designed mark, not a default browser icon). A real meta title and description on every page. A custom OG image that rendered correctly when the URL was shared in Slack or Twitter. A custom 404 page. A web app manifest with the brand colors set. These are the things most startups never get around to. Linear shipped them at launch."
-  - question: "Why does brand polish matter for a developer tool?"
-    answer: "Developer tools are sold to engineering teams that have to convince finance to pay for them. The first impression of the website affects whether the engineer believes the tool is production-grade. A *.vercel.app URL and a default favicon tell the engineer 'this is a side project'; a polished domain and brand tell them 'this is something I can defend buying with company money.' Linear's brand discipline removed an objection that competitors hadn't realized they had."
-  - question: "How small was the team when they shipped?"
-    answer: "Linear's founding team was three: Karri Saarinen (CEO, ex-Airbnb designer), Tuomas Artman (CTO, ex-Uber), and Jori Lallo (engineer). The team was five to six people for most of 2019, including a designer (Saarinen wears both hats), and the company hit roughly 20 employees in early 2021. The level of brand polish they shipped at launch is typical of companies with 50+ people; they did it with six."
-  - question: "Is Linear's approach replicable for non-design-led founders?"
-    answer: "Yes, partially. The visible brand polish (custom domain, real favicon, OG image, title tags, custom 404) is achievable in a weekend of work by any team that knows what to ship. The deeper brand discipline (visual consistency, voice, animation style, attention to micro-interactions) requires either a designer co-founder or a designer-grade hire early. The minimum viable version of 'looking like a real company' is the first list; the version that wins category awards is the second."
-  - question: "What does Linear's case prove about brand-first launches?"
-    answer: "That the brand and the product compound together. A polished brand makes the first-time visitor take the product seriously; the serious-taken product wins early customer trust; the early customers become evangelists who recommend it to peer companies; the recommendation arrives wrapped in the same brand polish, which closes the loop. A scrappy MVP launch can't initiate that cycle; a polished launch can. The investment pays back through compounding word of mouth, not through marketing spend."
+  - question: What did Linear ship on day one that most startups don't?
+    answer: >-
+      Six things every visitor saw immediately. A real custom domain
+      (linear.app, not linear.vercel.app). A real favicon (a designed mark, not
+      a default browser icon). A real meta title and description on every page.
+      A custom OG image that rendered correctly when the URL was shared in Slack
+      or Twitter. A custom 404 page. A web app manifest with the brand colors
+      set. These are the things most startups never get around to. Linear
+      shipped them at launch.
+  - question: Why does brand polish matter for a developer tool?
+    answer: >-
+      Developer tools are sold to engineering teams that have to convince
+      finance to pay for them. The first impression of the website affects
+      whether the engineer believes the tool is production-grade. A *.vercel.app
+      URL and a default favicon tell the engineer 'this is a side project'; a
+      polished domain and brand tell them 'this is something I can defend buying
+      with company money.' Linear's brand discipline removed an objection that
+      competitors hadn't realized they had.
+  - question: How small was the team when they shipped?
+    answer: >-
+      Linear's founding team was three: Karri Saarinen (CEO, ex-Airbnb
+      designer), Tuomas Artman (CTO, ex-Uber), and Jori Lallo (engineer). The
+      team was five to six people for most of 2019, including a designer
+      (Saarinen wears both hats), and the company hit roughly 20 employees in
+      early 2021. The level of brand polish they shipped at launch is typical of
+      companies with 50+ people; they did it with six.
+  - question: Is Linear's approach replicable for non-design-led founders?
+    answer: >-
+      Yes, partially. The visible brand polish (custom domain, real favicon, OG
+      image, title tags, custom 404) is achievable in a weekend of work by any
+      team that knows what to ship. The deeper brand discipline (visual
+      consistency, voice, animation style, attention to micro-interactions)
+      requires either a designer co-founder or a designer-grade hire early. The
+      minimum viable version of 'looking like a real company' is the first list;
+      the version that wins category awards is the second.
+  - question: What does Linear's case prove about brand-first launches?
+    answer: >-
+      That the brand and the product compound together. A polished brand makes
+      the first-time visitor take the product seriously; the serious-taken
+      product wins early customer trust; the early customers become evangelists
+      who recommend it to peer companies; the recommendation arrives wrapped in
+      the same brand polish, which closes the loop. A scrappy MVP launch can't
+      initiate that cycle; a polished launch can. The investment pays back
+      through compounding word of mouth, not through marketing spend.
+publishedAt: '2026-05-18'
 ---
 
 Linear in 2019 was a small team building a project-management tool for software companies. The category was crowded: Jira was the incumbent with massive market share, GitHub Issues was the free default for open-source teams, Asana and Monday occupied the cross-functional market, and Pivotal Tracker, Trello, and a dozen others competed at various levels. Conventional startup wisdom said the way to break into a crowded category was to find a 10x better experience in some narrow use case, ship it as fast as possible, iterate based on feedback, and worry about polish later. Linear's founders did the opposite. They invested in brand and visual design before the product had been validated in market, building a website and a product that looked like established players from the first day of public availability. The bet paid off — and the playbook they established became a category convention.

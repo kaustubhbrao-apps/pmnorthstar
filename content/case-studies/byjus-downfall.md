@@ -1,27 +1,53 @@
 ---
-id: "cs-54"
-slug: "byjus-downfall"
-company: "Byju's"
-title: "How BYJU'S Lost $20 Billion in Two Years"
-category: "Failure"
-description: "BYJU'S became India's most valuable startup at $22B by aggressively acquiring twelve companies and selling expensive contracts to anxious parents. Then the music stopped, and almost everything that could break, did. By 2026, the company is in NCLT proceedings and effectively dismantled."
-outcome: "Peak $22B valuation collapsed to effectively zero. Insolvency proceedings initiated 2024. Aakash separated. Acquired assets sold off or written down to nothing. One of the largest valuation destructions in startup history."
+id: cs-54
+slug: byjus-downfall
+company: Byju's
+title: How BYJU'S Lost $20 Billion in Two Years
+category: Failure
+description: >-
+  BYJU'S became India's most valuable startup at $22B by aggressively acquiring
+  twelve companies and selling expensive contracts to anxious parents. Then the
+  music stopped, and almost everything that could break, did. By 2026, the
+  company is in NCLT proceedings and effectively dismantled.
+outcome: >-
+  Peak $22B valuation collapsed to effectively zero. Insolvency proceedings
+  initiated 2024. Aakash separated. Acquired assets sold off or written down to
+  nothing. One of the largest valuation destructions in startup history.
 year: 2011
 tags:
-  - "edtech"
-  - "M&A"
-  - "growth"
-logo: "📚"
-region: "India"
+  - edtech
+  - M&A
+  - growth
+logo: "\U0001F4DA"
+region: India
 faqs:
-  - question: "Why did BYJU'S fail?"
-    answer: "BYJU'S aggressive M&A spree (12+ acquisitions for over $2.5B between 2020-2022) compounded with high-pressure sales tactics, unsustainable customer acquisition costs, and weak post-COVID demand. Each acquired company carried unique unit economics that never integrated, leading to operational paralysis and debt default."
-  - question: "How much money did BYJU'S lose?"
-    answer: "BYJU'S peak valuation was $22 billion. By 2024-25, the company entered NCLT insolvency proceedings with effective valuation near zero — over $20 billion in equity destruction. Investor Prosus alone took a 90% writedown on its position."
-  - question: "Is BYJU'S still operating in 2026?"
-    answer: "BYJU'S entered NCLT insolvency proceedings in 2024-25 and is being effectively dismantled. Aakash was separated, WhiteHat Jr was wound down, and Great Learning was sold. What remains is a shell of acquisitions being unwound and ongoing legal proceedings against the founder."
-  - question: "What was BYJU'S M&A strategy?"
-    answer: "BYJU'S spent over $2.5B on acquisitions between 2020-2022, including WhiteHat Jr ($300M), Aakash ($950M), Great Learning ($600M), Toppr, Tynker, and Epic. The thesis was vertical integration across edtech; the reality was unmanageable conglomerate complexity that none of these businesses integrated into."
+  - question: Why did BYJU'S fail?
+    answer: >-
+      BYJU'S aggressive M&A spree (12+ acquisitions for over $2.5B between
+      2020-2022) compounded with high-pressure sales tactics, unsustainable
+      customer acquisition costs, and weak post-COVID demand. Each acquired
+      company carried unique unit economics that never integrated, leading to
+      operational paralysis and debt default.
+  - question: How much money did BYJU'S lose?
+    answer: >-
+      BYJU'S peak valuation was $22 billion. By 2024-25, the company entered
+      NCLT insolvency proceedings with effective valuation near zero — over $20
+      billion in equity destruction. Investor Prosus alone took a 90% writedown
+      on its position.
+  - question: Is BYJU'S still operating in 2026?
+    answer: >-
+      BYJU'S entered NCLT insolvency proceedings in 2024-25 and is being
+      effectively dismantled. Aakash was separated, WhiteHat Jr was wound down,
+      and Great Learning was sold. What remains is a shell of acquisitions being
+      unwound and ongoing legal proceedings against the founder.
+  - question: What was BYJU'S M&A strategy?
+    answer: >-
+      BYJU'S spent over $2.5B on acquisitions between 2020-2022, including
+      WhiteHat Jr ($300M), Aakash ($950M), Great Learning ($600M), Toppr,
+      Tynker, and Epic. The thesis was vertical integration across edtech; the
+      reality was unmanageable conglomerate complexity that none of these
+      businesses integrated into.
+publishedAt: '2026-05-18'
 ---
 
 BYJU'S was for a brief moment the most valuable startup in India and one of the most valuable edtech companies in the world. Founded in 2011 by Byju Raveendran, a charismatic former teacher from Kerala, the company began as offline coaching for competitive exams (CAT, JEE) before transitioning to a digital learning app in 2015. The shift to digital coincided with India's smartphone boom; suddenly the parents of school-age children had a device through which premium tutoring could be delivered. BYJU'S positioned itself as that delivery mechanism. By 2022, the company was valued at $22 billion, employed over 50,000 people, had acquired more than a dozen edtech businesses, and was a regular feature in Indian newspapers. By 2024, the same company was valued under $2 billion, the founder had been removed from the board, the company was facing SEC investigations and creditor lawsuits, and the company's Ireland-based subsidiary had been frozen by lenders. The collapse was one of the largest valuation destructions in startup history.

@@ -1,24 +1,43 @@
 ---
-id: "cs-37"
-slug: "blackberry-touchscreen-refusal"
-company: "Blackberry"
-title: "BlackBerry's Refusal to Accept the Touchscreen Era"
-category: "Failure"
-description: "BlackBerry owned 43% of the US smartphone market in 2010. Their CEO famously said 'nobody wants a touchscreen phone.' Four years later their market share was 1%."
-outcome: "From 80M users to near-irrelevance. Pivoted to software."
+id: cs-37
+slug: blackberry-touchscreen-refusal
+company: Blackberry
+title: BlackBerry's Refusal to Accept the Touchscreen Era
+category: Failure
+description: >-
+  BlackBerry owned 43% of the US smartphone market in 2010. Their CEO famously
+  said 'nobody wants a touchscreen phone.' Four years later their market share
+  was 1%.
+outcome: From 80M users to near-irrelevance. Pivoted to software.
 year: 2013
 tags:
-  - "disruption"
-  - "hubris"
-  - "mobile"
-logo: "📱"
+  - disruption
+  - hubris
+  - mobile
+logo: "\U0001F4F1"
 faqs:
-  - question: "Why did BlackBerry fail to compete with iPhone?"
-    answer: "BlackBerry believed the physical keyboard was its moat. In reality, the moat was secure email + enterprise IT integration. By optimizing for the wrong attribute (the keyboard), BlackBerry missed that consumers had shifted to apps + delight + touch-first interfaces. By the time BlackBerry launched its all-touch Z10 in 2013, iPhone and Android had won."
-  - question: "When did BlackBerry stop making phones?"
-    answer: "BlackBerry officially stopped supporting its proprietary BlackBerry OS smartphones in 2022. The company had pivoted years earlier to enterprise software (cybersecurity, IoT) and licensed the BlackBerry brand to third parties for occasional retro hardware releases. The BlackBerry brand survived; the smartphone business did not."
-  - question: "Was BlackBerry ever the market leader?"
-    answer: "Yes — BlackBerry held over 50% of the US smartphone market in 2010, when Apple's iPhone had ~25%. Within 6 years, BlackBerry's market share fell to essentially zero. The decline was one of the fastest in tech history and is studied alongside Kodak and Blockbuster as canonical examples of incumbents missing platform shifts."
+  - question: Why did BlackBerry fail to compete with iPhone?
+    answer: >-
+      BlackBerry believed the physical keyboard was its moat. In reality, the
+      moat was secure email + enterprise IT integration. By optimizing for the
+      wrong attribute (the keyboard), BlackBerry missed that consumers had
+      shifted to apps + delight + touch-first interfaces. By the time BlackBerry
+      launched its all-touch Z10 in 2013, iPhone and Android had won.
+  - question: When did BlackBerry stop making phones?
+    answer: >-
+      BlackBerry officially stopped supporting its proprietary BlackBerry OS
+      smartphones in 2022. The company had pivoted years earlier to enterprise
+      software (cybersecurity, IoT) and licensed the BlackBerry brand to third
+      parties for occasional retro hardware releases. The BlackBerry brand
+      survived; the smartphone business did not.
+  - question: Was BlackBerry ever the market leader?
+    answer: >-
+      Yes — BlackBerry held over 50% of the US smartphone market in 2010, when
+      Apple's iPhone had ~25%. Within 6 years, BlackBerry's market share fell to
+      essentially zero. The decline was one of the fastest in tech history and
+      is studied alongside Kodak and Blockbuster as canonical examples of
+      incumbents missing platform shifts.
+publishedAt: '2026-05-18'
 ---
 
 In 2007, when Steve Jobs unveiled the iPhone at Macworld, BlackBerry was the undisputed king of smartphones. The company, then called Research In Motion, had captured 43% of the US smartphone market. Its devices were so addictive that they earned the nickname "CrackBerries," and the physical QWERTY keyboard was considered essential for the business email that drove smartphone adoption. BlackBerry's security infrastructure was trusted by the US government, the military, and Fortune 500 companies worldwide. The BBM messaging platform had a devoted user base in the millions. From BlackBerry's perspective, the iPhone was a consumer toy with no keyboard, no enterprise security, and no relevance to serious business users.

@@ -1,24 +1,45 @@
 ---
-id: "cs-42"
-slug: "facebook-home-failure"
-company: "Facebook"
-title: "Facebook Home: When Feature Becomes Prison"
-category: "Failure"
-description: "Facebook Home replaced Android's home screen with a Facebook feed. Users hated losing control of their own phones. It had a 1.5-star rating within days and was quietly abandoned."
-outcome: "Downloaded by only 500K users. Quietly discontinued."
+id: cs-42
+slug: facebook-home-failure
+company: Facebook
+title: 'Facebook Home: When Feature Becomes Prison'
+category: Failure
+description: >-
+  Facebook Home replaced Android's home screen with a Facebook feed. Users hated
+  losing control of their own phones. It had a 1.5-star rating within days and
+  was quietly abandoned.
+outcome: Downloaded by only 500K users. Quietly discontinued.
 year: 2013
 tags:
-  - "mobile"
-  - "UX"
-  - "overreach"
-logo: "👤"
+  - mobile
+  - UX
+  - overreach
+logo: "\U0001F464"
 faqs:
-  - question: "What was Facebook Home?"
-    answer: "Facebook Home was an Android launcher (released April 2013) that replaced the phone's home screen with Facebook's interface — friends' photos as wallpapers, Messenger as the default messaging app, Facebook notifications front-and-center. The idea was to make Facebook the OS-level surface on Android phones. Users hated it; the launcher was effectively dead within months."
-  - question: "Why did Facebook Home fail?"
-    answer: "Facebook Home assumed users wanted Facebook to be the dominant interface of their phone. The actual user behavior was the opposite — people used Facebook as one app among many, not as a phone OS. Adoption was extremely low, the HTC First (the partner phone) sold poorly, and the launcher was effectively abandoned within a year of release."
-  - question: "What did Facebook Home cost?"
-    answer: "Facebook Home was free to download, but Facebook invested heavily in development and marketing (estimated tens of millions). The partner phone, HTC First, was discounted to $0.99 within months due to poor sales. The lesson Facebook took: don't try to be the OS; be the best app on whatever OS you're on. The Instagram acquisition strategy made far more sense than Facebook Home ever did."
+  - question: What was Facebook Home?
+    answer: >-
+      Facebook Home was an Android launcher (released April 2013) that replaced
+      the phone's home screen with Facebook's interface — friends' photos as
+      wallpapers, Messenger as the default messaging app, Facebook notifications
+      front-and-center. The idea was to make Facebook the OS-level surface on
+      Android phones. Users hated it; the launcher was effectively dead within
+      months.
+  - question: Why did Facebook Home fail?
+    answer: >-
+      Facebook Home assumed users wanted Facebook to be the dominant interface
+      of their phone. The actual user behavior was the opposite — people used
+      Facebook as one app among many, not as a phone OS. Adoption was extremely
+      low, the HTC First (the partner phone) sold poorly, and the launcher was
+      effectively abandoned within a year of release.
+  - question: What did Facebook Home cost?
+    answer: >-
+      Facebook Home was free to download, but Facebook invested heavily in
+      development and marketing (estimated tens of millions). The partner phone,
+      HTC First, was discounted to $0.99 within months due to poor sales. The
+      lesson Facebook took: don't try to be the OS; be the best app on whatever
+      OS you're on. The Instagram acquisition strategy made far more sense than
+      Facebook Home ever did.
+publishedAt: '2026-05-18'
 ---
 
 In April 2013, Facebook launched Home, an Android launcher that replaced the phone's entire home screen experience with a constantly updating Facebook feed called Cover Feed. The ambition was staggering: instead of being an app you opened, Facebook would become the operating layer of your mobile experience, the first thing you saw every time you picked up your phone. Mark Zuckerberg positioned Home as a paradigm shift: "We're not building a phone, and we're not building an operating system. We're building something that's a whole lot deeper than an app." HTC partnered with Facebook to produce a dedicated phone, the HTC First, with Home pre-installed as the default experience.

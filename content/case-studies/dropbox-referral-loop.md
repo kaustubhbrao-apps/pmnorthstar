@@ -1,24 +1,42 @@
 ---
-id: "cs-11"
-slug: "dropbox-referral-loop"
-company: "Dropbox"
-title: "Dropbox's Referral Loop That Grew 3900%"
-category: "Growth"
-description: "Dropbox's referral program — give storage, get storage — grew their user base from 100K to 4M in 15 months without paid advertising."
-outcome: "IPO in 2018. 700M+ registered users."
+id: cs-11
+slug: dropbox-referral-loop
+company: Dropbox
+title: Dropbox's Referral Loop That Grew 3900%
+category: Growth
+description: >-
+  Dropbox's referral program — give storage, get storage — grew their user base
+  from 100K to 4M in 15 months without paid advertising.
+outcome: IPO in 2018. 700M+ registered users.
 year: 2008
 tags:
-  - "referral"
-  - "viral"
-  - "PLG"
-logo: "📦"
+  - referral
+  - viral
+  - PLG
+logo: "\U0001F4E6"
 faqs:
-  - question: "How did Dropbox's referral program work?"
-    answer: "Dropbox gave both the referrer AND the referee 500MB of free storage when someone signed up via a referral link (up to a cap). The reward was the product itself — storage — making the alignment perfect. Within 15 months, the referral loop grew Dropbox from 100K to 4M users — a 3,900% growth driven mostly by word of mouth."
-  - question: "Why was Drew Houston's Dropbox demo video famous?"
-    answer: "Before Dropbox had a working product, Drew Houston posted a 4-minute screencast on Hacker News showing how Dropbox would work. The video drove 70,000 signups overnight — 75x more than expected — and proved demand before they'd built the actual product. The video is studied as a textbook example of demonstration-driven validation."
-  - question: "What happened to Dropbox?"
-    answer: "Dropbox IPO'd in 2018 at a $10B valuation. The consumer storage market got commoditized (Google Drive, iCloud, OneDrive bundled with everything), so Dropbox pivoted to enterprise productivity (Paper, HelloSign, Dropbox Capture). The company is profitable but the growth story is no longer the storage primitive — it's the productivity layer on top."
+  - question: How did Dropbox's referral program work?
+    answer: >-
+      Dropbox gave both the referrer AND the referee 500MB of free storage when
+      someone signed up via a referral link (up to a cap). The reward was the
+      product itself — storage — making the alignment perfect. Within 15 months,
+      the referral loop grew Dropbox from 100K to 4M users — a 3,900% growth
+      driven mostly by word of mouth.
+  - question: Why was Drew Houston's Dropbox demo video famous?
+    answer: >-
+      Before Dropbox had a working product, Drew Houston posted a 4-minute
+      screencast on Hacker News showing how Dropbox would work. The video drove
+      70,000 signups overnight — 75x more than expected — and proved demand
+      before they'd built the actual product. The video is studied as a textbook
+      example of demonstration-driven validation.
+  - question: What happened to Dropbox?
+    answer: >-
+      Dropbox IPO'd in 2018 at a $10B valuation. The consumer storage market got
+      commoditized (Google Drive, iCloud, OneDrive bundled with everything), so
+      Dropbox pivoted to enterprise productivity (Paper, HelloSign, Dropbox
+      Capture). The company is profitable but the growth story is no longer the
+      storage primitive — it's the productivity layer on top.
+publishedAt: '2026-05-18'
 ---
 
 In 2008, Dropbox was spending $300 on Google Ads to acquire each new customer for a product that cost $99 per year. The unit economics were catastrophically unsustainable, and Drew Houston knew that paid acquisition alone would never build the company he envisioned. The problem was that cloud storage was a hard product to advertise: describing it in a search ad was confusing, and the people who needed it most, those overwhelmed by file management across multiple devices, did not know to search for it. Houston needed a growth mechanism that was both capital-efficient and capable of explaining the product through personal recommendation rather than impersonal advertising.

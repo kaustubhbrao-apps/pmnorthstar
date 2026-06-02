@@ -1,27 +1,53 @@
 ---
-id: "cs-55"
-slug: "paytm-super-app-comeback"
-company: "Paytm"
-title: "Paytm's Super-App Bet: From Collapse to Comeback"
-category: "Strategy"
-description: "Paytm rode demonetization to 200M users overnight, then tried to become India's WeChat — and almost broke. The IPO collapsed 75%, the bank got shut down, and the super-app thesis became a cautionary tale. Then it came back."
-outcome: "$20B IPO valuation crashed under $5B in 2024 after the RBI shut down Paytm Payments Bank. Recovered substantially by 2025-26 as a focused payments and lending business — back to EBITDA positive."
+id: cs-55
+slug: paytm-super-app-comeback
+company: Paytm
+title: 'Paytm''s Super-App Bet: From Collapse to Comeback'
+category: Strategy
+description: >-
+  Paytm rode demonetization to 200M users overnight, then tried to become
+  India's WeChat — and almost broke. The IPO collapsed 75%, the bank got shut
+  down, and the super-app thesis became a cautionary tale. Then it came back.
+outcome: >-
+  $20B IPO valuation crashed under $5B in 2024 after the RBI shut down Paytm
+  Payments Bank. Recovered substantially by 2025-26 as a focused payments and
+  lending business — back to EBITDA positive.
 year: 2010
 tags:
-  - "super-app"
-  - "payments"
-  - "regulatory"
-logo: "📱"
-region: "India"
+  - super-app
+  - payments
+  - regulatory
+logo: "\U0001F4F1"
+region: India
 faqs:
-  - question: "Why did Paytm's IPO fail?"
-    answer: "Paytm IPO'd in November 2021 at ~$20B valuation. The stock crashed 27% on day one and lost 75% within 18 months because the market couldn't value a sprawling super-app with unclear profitability path. Mounting losses and the 2024 RBI bank shutdown deepened the crisis."
-  - question: "Why did RBI shut down Paytm Payments Bank?"
-    answer: "In January 2024, the Reserve Bank of India effectively shut down Paytm Payments Bank for persistent compliance failures around KYC, customer onboarding, and related-party transactions. The shutdown removed a core infrastructure pillar overnight and forced Paytm to migrate millions of merchants to partner banks."
-  - question: "Is Paytm profitable now?"
-    answer: "Yes, by 2025-26 Paytm has stabilized into a more focused, profitable business — reporting positive EBITDA in multiple quarters. After the 2024 RBI disruption, the company refocused on merchant payments and lending, wound down failed super-app verticals (Paytm Mall, Paytm Games), and the stock has rallied substantially from its lows."
-  - question: "What was Paytm's super-app strategy?"
-    answer: "Paytm tried to become India's WeChat — bundling payments, e-commerce (Paytm Mall), gaming (Paytm First Games), banking, brokerage, insurance, and lending into one app. The strategy failed because payments users didn't have the social-graph lock-in that made WeChat's bundle work in China."
+  - question: Why did Paytm's IPO fail?
+    answer: >-
+      Paytm IPO'd in November 2021 at ~$20B valuation. The stock crashed 27% on
+      day one and lost 75% within 18 months because the market couldn't value a
+      sprawling super-app with unclear profitability path. Mounting losses and
+      the 2024 RBI bank shutdown deepened the crisis.
+  - question: Why did RBI shut down Paytm Payments Bank?
+    answer: >-
+      In January 2024, the Reserve Bank of India effectively shut down Paytm
+      Payments Bank for persistent compliance failures around KYC, customer
+      onboarding, and related-party transactions. The shutdown removed a core
+      infrastructure pillar overnight and forced Paytm to migrate millions of
+      merchants to partner banks.
+  - question: Is Paytm profitable now?
+    answer: >-
+      Yes, by 2025-26 Paytm has stabilized into a more focused, profitable
+      business — reporting positive EBITDA in multiple quarters. After the 2024
+      RBI disruption, the company refocused on merchant payments and lending,
+      wound down failed super-app verticals (Paytm Mall, Paytm Games), and the
+      stock has rallied substantially from its lows.
+  - question: What was Paytm's super-app strategy?
+    answer: >-
+      Paytm tried to become India's WeChat — bundling payments, e-commerce
+      (Paytm Mall), gaming (Paytm First Games), banking, brokerage, insurance,
+      and lending into one app. The strategy failed because payments users
+      didn't have the social-graph lock-in that made WeChat's bundle work in
+      China.
+publishedAt: '2026-05-18'
 ---
 
 Paytm started in 2010 as a mobile recharge service in a market that was about to be transformed by smartphones. Founded by Vijay Shekhar Sharma, a serial entrepreneur from Aligarh, the company spent its first six years quietly building infrastructure for digital payments in a country where digital payments barely existed. Then in November 2016, the Indian government suddenly demonetized 86 percent of the country's currency, and Paytm became, almost overnight, the most-used digital wallet in India. The next eight years would test whether Sharma could turn that wallet windfall into a durable business. The answer turned out to be more complicated than anyone expected. Paytm became simultaneously one of India's most-recognized brands, one of its most spectacular IPO disappointments, and a case study in how a super-app strategy can become a strategic trap.

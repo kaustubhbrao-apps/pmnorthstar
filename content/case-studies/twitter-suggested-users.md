@@ -1,24 +1,42 @@
 ---
-id: "cs-13"
-slug: "twitter-suggested-users"
-company: "Twitter"
-title: "Twitter's 'Suggested Users' Retention Fix"
-category: "Growth"
-description: "Twitter discovered users who followed 30+ people retained far better. They redesigned onboarding around a 'suggested users' list — retention jumped overnight."
-outcome: "Monthly active users grew from 30M to 100M in one year."
+id: cs-13
+slug: twitter-suggested-users
+company: Twitter
+title: Twitter's 'Suggested Users' Retention Fix
+category: Growth
+description: >-
+  Twitter discovered users who followed 30+ people retained far better. They
+  redesigned onboarding around a 'suggested users' list — retention jumped
+  overnight.
+outcome: Monthly active users grew from 30M to 100M in one year.
 year: 2009
 tags:
-  - "onboarding"
-  - "retention"
-  - "aha moment"
-logo: "🐦"
+  - onboarding
+  - retention
+  - aha moment
+logo: "\U0001F426"
 faqs:
-  - question: "How did Twitter fix its retention problem?"
-    answer: "Twitter's 2009 'Suggested Users List' (SUL) algorithmically recommended high-quality accounts to new users during onboarding. New users who followed 5-30 people retained dramatically better than those who followed 0. The SUL solved the cold-start problem — without a feed full of content, Twitter felt empty and users churned."
-  - question: "When did Twitter launch?"
-    answer: "Twitter launched in March 2006 as an internal project at Odeo (a podcasting startup that was losing to Apple's iTunes podcast support). Jack Dorsey, Biz Stone, Ev Williams, and Noah Glass built it as a side project. By late 2006 it was spun out as a standalone company."
-  - question: "What happened to Twitter under Elon Musk?"
-    answer: "Elon Musk acquired Twitter in October 2022 for $44B and rebranded it to X. The platform underwent dramatic changes: ~80% workforce cuts, paid verification (X Premium), algorithmic feed prioritization for paid users, content moderation policy changes. User experience and advertiser sentiment fluctuated sharply post-acquisition."
+  - question: How did Twitter fix its retention problem?
+    answer: >-
+      Twitter's 2009 'Suggested Users List' (SUL) algorithmically recommended
+      high-quality accounts to new users during onboarding. New users who
+      followed 5-30 people retained dramatically better than those who followed
+      0. The SUL solved the cold-start problem — without a feed full of content,
+      Twitter felt empty and users churned.
+  - question: When did Twitter launch?
+    answer: >-
+      Twitter launched in March 2006 as an internal project at Odeo (a
+      podcasting startup that was losing to Apple's iTunes podcast support).
+      Jack Dorsey, Biz Stone, Ev Williams, and Noah Glass built it as a side
+      project. By late 2006 it was spun out as a standalone company.
+  - question: What happened to Twitter under Elon Musk?
+    answer: >-
+      Elon Musk acquired Twitter in October 2022 for $44B and rebranded it to X.
+      The platform underwent dramatic changes: ~80% workforce cuts, paid
+      verification (X Premium), algorithmic feed prioritization for paid users,
+      content moderation policy changes. User experience and advertiser
+      sentiment fluctuated sharply post-acquisition.
+publishedAt: '2026-05-18'
 ---
 
 By 2009, Twitter had a massive problem hiding behind impressive signup numbers. The platform was generating enormous media attention, celebrities were joining daily, and the concept of microblogging had captured public imagination. But the internal data told a sobering story: millions of people were creating accounts, tweeting once or twice, and never coming back. The new user experience was bewildering. You signed up, saw a blank timeline with a blinking cursor, and had no idea what to do. There was no content to consume, no people to interact with, and no obvious value proposition beyond what you had heard about in the media. Twitter was hemorrhaging new users at a rate that threatened to undermine its entire growth trajectory.

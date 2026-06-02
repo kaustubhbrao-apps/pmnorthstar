@@ -1,24 +1,43 @@
 ---
-id: "cs-34"
-slug: "monzo-hot-coral-card"
-company: "Monzo"
-title: "Monzo's Hot Coral Card That Sparked Word of Mouth"
-category: "Design"
-description: "Monzo's bright coral debit card was a deliberate design choice — it stood out in wallets and prompted questions. The card became a conversation starter that drove organic acquisition."
-outcome: "9M+ UK customers. Fastest growing bank in UK history."
+id: cs-34
+slug: monzo-hot-coral-card
+company: Monzo
+title: Monzo's Hot Coral Card That Sparked Word of Mouth
+category: Design
+description: >-
+  Monzo's bright coral debit card was a deliberate design choice — it stood out
+  in wallets and prompted questions. The card became a conversation starter that
+  drove organic acquisition.
+outcome: 9M+ UK customers. Fastest growing bank in UK history.
 year: 2015
 tags:
-  - "branding"
-  - "word of mouth"
-  - "fintech"
-logo: "🏦"
+  - branding
+  - word of mouth
+  - fintech
+logo: "\U0001F3E6"
 faqs:
-  - question: "Why is the Monzo card hot coral?"
-    answer: "Monzo's neon hot-coral card was the deliberate antithesis of every legacy bank card — which were uniformly black, grey, gold, or platinum. The card stood out in physical settings (paying at restaurants) and on social media (people posting their cards as status signals). The color became the brand's most recognizable asset and drove organic word-of-mouth marketing."
-  - question: "Is Monzo profitable?"
-    answer: "Monzo turned profitable in 2024 — its first full-year profitable quarter came after about 10 years of operating losses. The UK digital bank had to navigate regulatory scrutiny, multiple capital raises, and intense competition from Starling Bank and Revolut. Profitability is driven by interchange revenue, lending, FX, and the Monzo Plus/Premium tiers."
-  - question: "How many users does Monzo have?"
-    answer: "Monzo has over 9 million customers as of 2025-26, mostly in the UK with some US expansion. The customer growth rate accelerated after Monzo achieved profitability — the trust signal of a profitable digital bank changed how mainstream UK consumers perceived the brand. Valuation in 2024 secondary trades was around $5-6B."
+  - question: Why is the Monzo card hot coral?
+    answer: >-
+      Monzo's neon hot-coral card was the deliberate antithesis of every legacy
+      bank card — which were uniformly black, grey, gold, or platinum. The card
+      stood out in physical settings (paying at restaurants) and on social media
+      (people posting their cards as status signals). The color became the
+      brand's most recognizable asset and drove organic word-of-mouth marketing.
+  - question: Is Monzo profitable?
+    answer: >-
+      Monzo turned profitable in 2024 — its first full-year profitable quarter
+      came after about 10 years of operating losses. The UK digital bank had to
+      navigate regulatory scrutiny, multiple capital raises, and intense
+      competition from Starling Bank and Revolut. Profitability is driven by
+      interchange revenue, lending, FX, and the Monzo Plus/Premium tiers.
+  - question: How many users does Monzo have?
+    answer: >-
+      Monzo has over 9 million customers as of 2025-26, mostly in the UK with
+      some US expansion. The customer growth rate accelerated after Monzo
+      achieved profitability — the trust signal of a profitable digital bank
+      changed how mainstream UK consumers perceived the brand. Valuation in 2024
+      secondary trades was around $5-6B.
+publishedAt: '2026-05-18'
 ---
 
 Every bank card in the United Kingdom was some variation of dark blue, black, silver, or gold. These colors were not chosen by individual banks based on brand strategy; they were inherited from decades of convention in which financial institutions signaled seriousness, trustworthiness, and prestige through muted, conservative color palettes. The uniformity was so complete that bank cards were functionally invisible: you could not tell one from another at a glance, and no card had ever prompted a conversation between strangers at a checkout counter. When Monzo launched its prepaid card with a bright, almost aggressive coral color, the design team knew it would stand out. They did not anticipate that the card would become the most effective customer acquisition tool in the history of UK banking.

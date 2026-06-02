@@ -1,24 +1,43 @@
 ---
-id: "cs-6"
-slug: "figma-browser-design"
-company: "Figma"
-title: "Figma's Browser-First Design Revolution"
-category: "Product"
-description: "Figma bet on the browser when every design tool was desktop-only. Real-time multiplayer collaboration — like Google Docs for design — created a new category."
-outcome: "Adobe acquisition attempt at $20B blocked by regulators. 4M+ users."
+id: cs-6
+slug: figma-browser-design
+company: Figma
+title: Figma's Browser-First Design Revolution
+category: Product
+description: >-
+  Figma bet on the browser when every design tool was desktop-only. Real-time
+  multiplayer collaboration — like Google Docs for design — created a new
+  category.
+outcome: Adobe acquisition attempt at $20B blocked by regulators. 4M+ users.
 year: 2016
 tags:
-  - "collaboration"
-  - "SaaS"
-  - "design tools"
-logo: "🎨"
+  - collaboration
+  - SaaS
+  - design tools
+logo: "\U0001F3A8"
 faqs:
-  - question: "How did Figma beat Sketch?"
-    answer: "Figma won by building real-time multiplayer collaboration as the default — not a feature. Sketch was native desktop with no easy way to retrofit collaboration; Figma was browser-first and built for it. Once teams adopted Figma, switching back required losing the collaboration layer entirely."
-  - question: "Why was the Figma-Adobe deal blocked?"
-    answer: "Adobe announced a $20B acquisition of Figma in 2022. UK and EU regulators raised antitrust concerns about Adobe absorbing its main competitor in design tools. Adobe and Figma terminated the deal in December 2023 — Adobe paid Figma a $1B breakup fee. Figma stayed independent and is now worth more."
-  - question: "Is Figma free?"
-    answer: "Figma has a generous free tier — unlimited personal files, up to 3 collaborative team files, browser access. Paid tiers (Professional, Organization, Enterprise) add unlimited team files, advanced permissions, design systems support, and SSO. The free tier was the wedge that beat Sketch's paid-only model."
+  - question: How did Figma beat Sketch?
+    answer: >-
+      Figma won by building real-time multiplayer collaboration as the default —
+      not a feature. Sketch was native desktop with no easy way to retrofit
+      collaboration; Figma was browser-first and built for it. Once teams
+      adopted Figma, switching back required losing the collaboration layer
+      entirely.
+  - question: Why was the Figma-Adobe deal blocked?
+    answer: >-
+      Adobe announced a $20B acquisition of Figma in 2022. UK and EU regulators
+      raised antitrust concerns about Adobe absorbing its main competitor in
+      design tools. Adobe and Figma terminated the deal in December 2023 — Adobe
+      paid Figma a $1B breakup fee. Figma stayed independent and is now worth
+      more.
+  - question: Is Figma free?
+    answer: >-
+      Figma has a generous free tier — unlimited personal files, up to 3
+      collaborative team files, browser access. Paid tiers (Professional,
+      Organization, Enterprise) add unlimited team files, advanced permissions,
+      design systems support, and SSO. The free tier was the wedge that beat
+      Sketch's paid-only model.
+publishedAt: '2026-05-18'
 ---
 
 When Dylan Field dropped out of Brown University in 2012 to start Figma, the design tool market was dominated by Sketch on Mac and Adobe's Creative Suite on both Mac and Windows. Both were desktop applications, both saved files locally, and both required designers to export screenshots or PDFs when they wanted feedback from non-designers. The design process was littered with friction: version conflicts when two designers edited the same file, email chains full of annotated screenshots, and developers who could never find the latest mockup. Field's thesis was that design was fundamentally a collaborative activity trapped in single-player tools, and that the browser, not the desktop, was the right platform to fix this.

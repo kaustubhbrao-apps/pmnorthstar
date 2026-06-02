@@ -1,26 +1,50 @@
 ---
-id: "cs-63"
-slug: "loom-async-video"
-company: "Loom"
-title: "How Loom Made Async Video the New Default — Then Sold for $975M"
-category: "Product"
-description: "Joe Thomas, Vinay Hiremath, and Shahed Khan thought screen recordings should be as easy as sending a text. They built a product so frictionless it changed how distributed teams communicate — and got acquired by Atlassian."
-outcome: "Sold to Atlassian for $975M in 2023. 25M+ users at peak. The product category they defined (async video messaging) became standard across remote work."
+id: cs-63
+slug: loom-async-video
+company: Loom
+title: How Loom Made Async Video the New Default — Then Sold for $975M
+category: Product
+description: >-
+  Joe Thomas, Vinay Hiremath, and Shahed Khan thought screen recordings should
+  be as easy as sending a text. They built a product so frictionless it changed
+  how distributed teams communicate — and got acquired by Atlassian.
+outcome: >-
+  Sold to Atlassian for $975M in 2023. 25M+ users at peak. The product category
+  they defined (async video messaging) became standard across remote work.
 year: 2015
 tags:
-  - "async"
-  - "remote-work"
-  - "video"
-logo: "🎥"
+  - async
+  - remote-work
+  - video
+logo: "\U0001F3A5"
 faqs:
-  - question: "When did Atlassian acquire Loom?"
-    answer: "Atlassian acquired Loom in 2023 for $975 million. The deal price was below Loom's 2021 peak valuation of $1.5B but came at a time when many SaaS companies were taking deeper haircuts. Loom continued operating as a product within Atlassian's portfolio."
-  - question: "How much did Loom sell for?"
-    answer: "Loom sold to Atlassian for $975 million in 2023. The acquisition closed at a discount to Loom's 2021 peak valuation but was viewed as a strong strategic outcome — Atlassian got async video communication for its work-graph platform, and Loom got integration depth it couldn't have built alone."
-  - question: "What is Loom used for?"
-    answer: "Loom is used for async screen recording — record yourself walking through a screen or explaining something, send it as a video message instead of scheduling a meeting. It became the default async video tool for distributed teams in software, design, customer support, and sales."
-  - question: "Why is Loom so popular?"
-    answer: "Loom won by optimizing ruthlessly for time-to-value. Users go from install to first recording in under 30 seconds, with no friction. Every step that could have UX overhead was stripped away. Combined with browser-based playback (no app required for viewers), it removed friction at every layer."
+  - question: When did Atlassian acquire Loom?
+    answer: >-
+      Atlassian acquired Loom in 2023 for $975 million. The deal price was below
+      Loom's 2021 peak valuation of $1.5B but came at a time when many SaaS
+      companies were taking deeper haircuts. Loom continued operating as a
+      product within Atlassian's portfolio.
+  - question: How much did Loom sell for?
+    answer: >-
+      Loom sold to Atlassian for $975 million in 2023. The acquisition closed at
+      a discount to Loom's 2021 peak valuation but was viewed as a strong
+      strategic outcome — Atlassian got async video communication for its
+      work-graph platform, and Loom got integration depth it couldn't have built
+      alone.
+  - question: What is Loom used for?
+    answer: >-
+      Loom is used for async screen recording — record yourself walking through
+      a screen or explaining something, send it as a video message instead of
+      scheduling a meeting. It became the default async video tool for
+      distributed teams in software, design, customer support, and sales.
+  - question: Why is Loom so popular?
+    answer: >-
+      Loom won by optimizing ruthlessly for time-to-value. Users go from install
+      to first recording in under 30 seconds, with no friction. Every step that
+      could have UX overhead was stripped away. Combined with browser-based
+      playback (no app required for viewers), it removed friction at every
+      layer.
+publishedAt: '2026-05-18'
 ---
 
 Workplace communication in 2015 was bifurcating fast. Slack had eaten internal chat. Zoom was about to eat synchronous video. But a third mode — async video, the kind where you record yourself walking through a screen or explaining something and send it as a message — was structurally unsolved. Loom (originally Opentest) was a tools startup pivoting toward usability testing when the founders noticed something: their users kept asking for the screen-recording feature, not the testing feature. People wanted to record themselves explaining things and send the recording to colleagues, without setting up a meeting. The friction in existing tools was enormous: QuickTime required manual saving, uploading to a cloud, sharing a link, hoping the recipient could play the format. Joe Thomas, Vinay Hiremath, and Shahed Khan pivoted Loom in 2016 to be exactly the tool that solved this: one click to record, instant link to share, browser-based playback.

@@ -1,24 +1,44 @@
 ---
-id: "cs-35"
-slug: "superhuman-product-market-fit"
-company: "Superhuman"
-title: "Superhuman's Product-Market Fit Engine"
-category: "Design"
-description: "Superhuman built a systematic PMF process: surveying users on 'very disappointed' if product disappeared. They only scaled when >40% said yes — then optimized for the disenchanted segment."
-outcome: "$75M raised. $33/month pricing with waiting list for years."
+id: cs-35
+slug: superhuman-product-market-fit
+company: Superhuman
+title: Superhuman's Product-Market Fit Engine
+category: Design
+description: >-
+  Superhuman built a systematic PMF process: surveying users on 'very
+  disappointed' if product disappeared. They only scaled when >40% said yes —
+  then optimized for the disenchanted segment.
+outcome: $75M raised. $33/month pricing with waiting list for years.
 year: 2017
 tags:
-  - "PMF"
-  - "email"
-  - "premium"
-logo: "⚡"
+  - PMF
+  - email
+  - premium
+logo: ⚡
 faqs:
-  - question: "What is Superhuman's product-market fit framework?"
-    answer: "Superhuman uses Sean Ellis's 'how would you feel if you could no longer use the product' question — segmenting users into Very Disappointed, Somewhat Disappointed, Not Disappointed. The Very Disappointed cohort is the actual product-market-fit signal; product teams focus relentlessly on understanding and expanding that cohort instead of optimizing for general retention."
-  - question: "Why is Superhuman so expensive?"
-    answer: "Superhuman charges $30/month — multiples more than competing email apps. The pricing is deliberate: it signals quality, attracts users who value their time, and lets Superhuman invest deeply in keyboard shortcuts, AI features, and polish. The high price was also a filter — early customers were exactly the high-intent users Superhuman wanted to serve."
-  - question: "Who founded Superhuman?"
-    answer: "Superhuman was founded in 2014 by Rahul Vohra (CEO), Vivek Sodera, and Conrad Irwin. Vohra had previously founded Rapportive (email contact intelligence, acquired by LinkedIn in 2012). Superhuman's hidden product-market-fit framework writeup became one of the most-shared startup essays of the late 2010s."
+  - question: What is Superhuman's product-market fit framework?
+    answer: >-
+      Superhuman uses Sean Ellis's 'how would you feel if you could no longer
+      use the product' question — segmenting users into Very Disappointed,
+      Somewhat Disappointed, Not Disappointed. The Very Disappointed cohort is
+      the actual product-market-fit signal; product teams focus relentlessly on
+      understanding and expanding that cohort instead of optimizing for general
+      retention.
+  - question: Why is Superhuman so expensive?
+    answer: >-
+      Superhuman charges $30/month — multiples more than competing email apps.
+      The pricing is deliberate: it signals quality, attracts users who value
+      their time, and lets Superhuman invest deeply in keyboard shortcuts, AI
+      features, and polish. The high price was also a filter — early customers
+      were exactly the high-intent users Superhuman wanted to serve.
+  - question: Who founded Superhuman?
+    answer: >-
+      Superhuman was founded in 2014 by Rahul Vohra (CEO), Vivek Sodera, and
+      Conrad Irwin. Vohra had previously founded Rapportive (email contact
+      intelligence, acquired by LinkedIn in 2012). Superhuman's hidden
+      product-market-fit framework writeup became one of the most-shared startup
+      essays of the late 2010s.
+publishedAt: '2026-05-18'
 ---
 
 Rahul Vohra, founder of Superhuman, was obsessed with a question that most startups treat as a binary yes-or-no: do we have product-market fit? The conventional approach was to feel it in qualitative signals, were users excited, was growth accelerating, did the product feel right, but Vohra wanted something quantitative and actionable. He built a systematic engine to measure and improve product-market fit, adapting a framework from growth expert Sean Ellis. The core metric was a single survey question sent to active users: "How would you feel if you could no longer use Superhuman?" with options of "Very disappointed," "Somewhat disappointed," and "Not disappointed." Ellis had found through research across hundreds of startups that if more than 40% of surveyed users answered "Very disappointed," the product had achieved product-market fit.

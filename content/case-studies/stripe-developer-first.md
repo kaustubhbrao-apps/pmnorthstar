@@ -1,26 +1,49 @@
 ---
-id: "cs-27"
-slug: "stripe-developer-first"
-company: "Stripe"
-title: "Stripe's Developer-First GTM Strategy"
-category: "Strategy"
-description: "Stripe targeted developers with 7-line integration code instead of pitching CFOs. Developers adopted it bottom-up, then pushed it to their companies. Classic developer-led growth."
-outcome: "Valued at $65B. Processes hundreds of billions in payments annually."
+id: cs-27
+slug: stripe-developer-first
+company: Stripe
+title: Stripe's Developer-First GTM Strategy
+category: Strategy
+description: >-
+  Stripe targeted developers with 7-line integration code instead of pitching
+  CFOs. Developers adopted it bottom-up, then pushed it to their companies.
+  Classic developer-led growth.
+outcome: Valued at $65B. Processes hundreds of billions in payments annually.
 year: 2010
 tags:
-  - "developer"
-  - "bottom-up"
-  - "fintech"
-logo: "💻"
+  - developer
+  - bottom-up
+  - fintech
+logo: "\U0001F4BB"
 faqs:
-  - question: "How did Stripe become a developer favorite?"
-    answer: "Stripe optimized obsessively for developer experience: clean documentation, 7-line code integrations, beautiful APIs. While competitors required weeks of contract negotiation and complex integration, Stripe let developers be live with payments in an afternoon. That developer love compounded into category dominance."
-  - question: "What does Stripe do?"
-    answer: "Stripe is a payments infrastructure company that lets businesses accept and manage online payments. Its API processes payments, handles subscriptions, manages billing, supports global currencies, and integrates with thousands of platforms. Stripe powers payments for Amazon, Shopify, OpenAI, and hundreds of thousands of others."
-  - question: "Is Stripe public?"
-    answer: "Stripe remains private as of 2025-26, despite years of IPO speculation. The company has raised at valuations up to $95 billion. Reports suggest IPO prep is ongoing but the founders have prioritized maintaining the long-term product focus that private status enables."
-  - question: "Who founded Stripe?"
-    answer: "Stripe was founded in 2010 by Irish brothers Patrick and John Collison while they were college students. They built it after experiencing how painful it was to accept online payments in the early 2010s. They're now both billionaires and Stripe is one of the most valuable private companies."
+  - question: How did Stripe become a developer favorite?
+    answer: >-
+      Stripe optimized obsessively for developer experience: clean
+      documentation, 7-line code integrations, beautiful APIs. While competitors
+      required weeks of contract negotiation and complex integration, Stripe let
+      developers be live with payments in an afternoon. That developer love
+      compounded into category dominance.
+  - question: What does Stripe do?
+    answer: >-
+      Stripe is a payments infrastructure company that lets businesses accept
+      and manage online payments. Its API processes payments, handles
+      subscriptions, manages billing, supports global currencies, and integrates
+      with thousands of platforms. Stripe powers payments for Amazon, Shopify,
+      OpenAI, and hundreds of thousands of others.
+  - question: Is Stripe public?
+    answer: >-
+      Stripe remains private as of 2025-26, despite years of IPO speculation.
+      The company has raised at valuations up to $95 billion. Reports suggest
+      IPO prep is ongoing but the founders have prioritized maintaining the
+      long-term product focus that private status enables.
+  - question: Who founded Stripe?
+    answer: >-
+      Stripe was founded in 2010 by Irish brothers Patrick and John Collison
+      while they were college students. They built it after experiencing how
+      painful it was to accept online payments in the early 2010s. They're now
+      both billionaires and Stripe is one of the most valuable private
+      companies.
+publishedAt: '2026-05-18'
 ---
 
 When Patrick and John Collison, two brothers from rural Ireland, started Stripe in 2010, accepting payments on the internet was a process that made developers want to scream. Integrating a payment gateway required navigating a maze of merchant accounts, payment processors, and banking relationships. The paperwork took weeks. The API documentation was impenetrable. The error messages were cryptic. And the integration code was so complex and fragile that developers budgeted days or weeks for what should have been a straightforward task. The payment processing industry was run by financial institutions for financial institutions, and developers were an afterthought in a process designed by compliance officers and banking regulators.

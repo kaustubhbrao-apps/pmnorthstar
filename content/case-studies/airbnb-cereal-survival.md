@@ -1,26 +1,47 @@
 ---
-id: "cs-3"
-slug: "airbnb-cereal-survival"
-company: "Airbnb"
-title: "Airbnb's Near-Death and Cereal Box Survival"
-category: "Product"
-description: "Airbnb was rejected by 7 investors, nearly bankrupt, and sold themed cereal boxes to survive. Their focus on host experience and photography quality changed everything."
-outcome: "IPO valued at $47B in 2020. Over 4M hosts globally."
+id: cs-3
+slug: airbnb-cereal-survival
+company: Airbnb
+title: Airbnb's Near-Death and Cereal Box Survival
+category: Product
+description: >-
+  Airbnb was rejected by 7 investors, nearly bankrupt, and sold themed cereal
+  boxes to survive. Their focus on host experience and photography quality
+  changed everything.
+outcome: IPO valued at $47B in 2020. Over 4M hosts globally.
 year: 2008
 tags:
-  - "marketplace"
-  - "trust"
-  - "growth"
-logo: "🏠"
+  - marketplace
+  - trust
+  - growth
+logo: "\U0001F3E0"
 faqs:
-  - question: "Why did Airbnb sell cereal boxes?"
-    answer: "In 2008, Airbnb was nearly bankrupt after being rejected by 7 investors. The founders created limited-edition Obama O's and Cap'n McCain cereal boxes during the 2008 US presidential election, earning $30,000 that kept the company alive long enough to join Y Combinator and pivot the product."
-  - question: "How did Airbnb start?"
-    answer: "In 2008, founders Brian Chesky and Joe Gebbia couldn't pay rent in San Francisco. They put air mattresses in their living room and offered breakfast to conference attendees who couldn't find hotel rooms — literally 'air bed and breakfast'. The name and concept evolved from there."
-  - question: "How does Airbnb make money?"
-    answer: "Airbnb charges hosts a service fee (~3% of the booking) and guests a service fee (~6-14% of the booking) for each reservation. The platform owns zero properties — it monetizes purely through facilitating trust between strangers who want to host and travel."
-  - question: "What is Airbnb worth?"
-    answer: "Airbnb IPO'd in December 2020 at a valuation of $47 billion — more than Hilton and Marriott combined despite owning zero properties. As of 2025-26, the company has over 4 million hosts globally and facilitated over 1 billion guest arrivals cumulatively."
+  - question: Why did Airbnb sell cereal boxes?
+    answer: >-
+      In 2008, Airbnb was nearly bankrupt after being rejected by 7 investors.
+      The founders created limited-edition Obama O's and Cap'n McCain cereal
+      boxes during the 2008 US presidential election, earning $30,000 that kept
+      the company alive long enough to join Y Combinator and pivot the product.
+  - question: How did Airbnb start?
+    answer: >-
+      In 2008, founders Brian Chesky and Joe Gebbia couldn't pay rent in San
+      Francisco. They put air mattresses in their living room and offered
+      breakfast to conference attendees who couldn't find hotel rooms —
+      literally 'air bed and breakfast'. The name and concept evolved from
+      there.
+  - question: How does Airbnb make money?
+    answer: >-
+      Airbnb charges hosts a service fee (~3% of the booking) and guests a
+      service fee (~6-14% of the booking) for each reservation. The platform
+      owns zero properties — it monetizes purely through facilitating trust
+      between strangers who want to host and travel.
+  - question: What is Airbnb worth?
+    answer: >-
+      Airbnb IPO'd in December 2020 at a valuation of $47 billion — more than
+      Hilton and Marriott combined despite owning zero properties. As of
+      2025-26, the company has over 4 million hosts globally and facilitated
+      over 1 billion guest arrivals cumulatively.
+publishedAt: '2026-05-18'
 ---
 
 In 2008, Brian Chesky and Joe Gebbia were so broke they could not pay rent in San Francisco. They put air mattresses in their living room and offered breakfast to conference attendees, literally "air bed and breakfast." The idea was born from desperation, not strategic planning, and the initial concept was modest: help people find affordable accommodations during sold-out conferences when hotels were full. The broader hospitality industry was a $500 billion market dominated by hotel chains that had not meaningfully innovated in decades, but nobody was thinking about disrupting it from a living room floor. The idea was met with universal skepticism: no investor believed strangers would sleep in other strangers' homes.

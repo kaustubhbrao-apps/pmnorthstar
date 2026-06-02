@@ -1,24 +1,41 @@
 ---
-id: "cs-12"
-slug: "hotmail-viral-growth-hack"
-company: "Hotmail"
-title: "The First Viral Growth Hack in History"
-category: "Growth"
-description: "Hotmail appended 'PS I Love You. Get your free email at Hotmail' to every outgoing email. This single hack acquired 12M users in 18 months in 1996."
-outcome: "Acquired by Microsoft for $400M. Blueprint for every viral loop since."
+id: cs-12
+slug: hotmail-viral-growth-hack
+company: Hotmail
+title: The First Viral Growth Hack in History
+category: Growth
+description: >-
+  Hotmail appended 'PS I Love You. Get your free email at Hotmail' to every
+  outgoing email. This single hack acquired 12M users in 18 months in 1996.
+outcome: Acquired by Microsoft for $400M. Blueprint for every viral loop since.
 year: 1996
 tags:
-  - "viral loop"
-  - "email"
-  - "growth hack"
-logo: "📧"
+  - viral loop
+  - email
+  - growth hack
+logo: "\U0001F4E7"
 faqs:
-  - question: "What was the Hotmail growth hack?"
-    answer: "Hotmail added the line 'PS: I love you. Get your free e-mail at Hotmail' at the bottom of every email sent through the service. Every email became free marketing. Within 18 months of launch, Hotmail had 12 million users — at a time when the total internet population was ~70 million. It's the canonical example of viral growth design."
-  - question: "When did Hotmail launch?"
-    answer: "Hotmail launched on July 4, 1996 (the date was symbolic — independence from ISP-bound email). It was one of the first webmail services. Microsoft acquired Hotmail in 1997 for $400M when it had ~9M users — a price that seemed huge at the time and turned out to be a steal."
-  - question: "Why was Hotmail revolutionary?"
-    answer: "Before Hotmail, email was tied to your ISP — change your internet provider, lose your email address. Hotmail let people have a free email account independent of any ISP, accessible from any web browser. Combined with the viral signature growth hack, that decoupling reshaped how people thought about online identity."
+  - question: What was the Hotmail growth hack?
+    answer: >-
+      Hotmail added the line 'PS: I love you. Get your free e-mail at Hotmail'
+      at the bottom of every email sent through the service. Every email became
+      free marketing. Within 18 months of launch, Hotmail had 12 million users —
+      at a time when the total internet population was ~70 million. It's the
+      canonical example of viral growth design.
+  - question: When did Hotmail launch?
+    answer: >-
+      Hotmail launched on July 4, 1996 (the date was symbolic — independence
+      from ISP-bound email). It was one of the first webmail services. Microsoft
+      acquired Hotmail in 1997 for $400M when it had ~9M users — a price that
+      seemed huge at the time and turned out to be a steal.
+  - question: Why was Hotmail revolutionary?
+    answer: >-
+      Before Hotmail, email was tied to your ISP — change your internet
+      provider, lose your email address. Hotmail let people have a free email
+      account independent of any ISP, accessible from any web browser. Combined
+      with the viral signature growth hack, that decoupling reshaped how people
+      thought about online identity.
+publishedAt: '2026-05-18'
 ---
 
 In 1996, Sabeer Bhatia and Jack Smith were building one of the first web-based email services at a time when email meant using a client like Outlook or Eudora tied to a specific computer and internet service provider. Web-based email was a radical concept: you could check your messages from any computer with a browser, anywhere in the world. The product was genuinely useful, but Bhatia and Smith had no marketing budget and no way to reach the millions of internet users who would benefit from the service. Traditional advertising was expensive and poorly targeted for a free product. They needed a way to spread the word that cost nothing and scaled with usage.

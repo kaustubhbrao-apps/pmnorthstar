@@ -1,27 +1,53 @@
 ---
-id: "cs-62"
-slug: "groww-zerodha-challenger"
-company: "Groww"
-title: "How Groww Took on Zerodha by Being Slightly Less Hardcore"
-category: "Product"
-description: "Lalit Keshre and his Flipkart-veteran co-founders looked at Zerodha's massive market lead and built the opposite product. Mobile-first instead of desktop-first. Mutual funds instead of trading. Tutorials instead of professional terminals. Five years later, Groww has more users than Zerodha."
-outcome: "13M+ active users (more than Zerodha by user count). $3B valuation. IPO prep in 2025-26. Largest Indian broker by user count, though Zerodha leads by trading volume."
+id: cs-62
+slug: groww-zerodha-challenger
+company: Groww
+title: How Groww Took on Zerodha by Being Slightly Less Hardcore
+category: Product
+description: >-
+  Lalit Keshre and his Flipkart-veteran co-founders looked at Zerodha's massive
+  market lead and built the opposite product. Mobile-first instead of
+  desktop-first. Mutual funds instead of trading. Tutorials instead of
+  professional terminals. Five years later, Groww has more users than Zerodha.
+outcome: >-
+  13M+ active users (more than Zerodha by user count). $3B valuation. IPO prep
+  in 2025-26. Largest Indian broker by user count, though Zerodha leads by
+  trading volume.
 year: 2017
 tags:
-  - "fintech"
-  - "mobile-first"
-  - "challenger"
-logo: "📈"
-region: "India"
+  - fintech
+  - mobile-first
+  - challenger
+logo: "\U0001F4C8"
+region: India
 faqs:
-  - question: "Is Groww better than Zerodha?"
-    answer: "Groww and Zerodha serve different audiences. Zerodha is optimized for serious traders with its powerful Kite platform; Groww is built for first-time investors with mobile-first design and mutual-fund-first sequencing. Groww has more total users (13M+); Zerodha leads by trading volume."
-  - question: "Who founded Groww?"
-    answer: "Groww was founded in 2017 by Lalit Keshre, Harsh Jain, Ishan Bansal, and Neeraj Singh — all former Flipkart product managers. They built Groww specifically for first-time Indian investors that Zerodha's hardcore-trader product never optimized for."
-  - question: "Is Groww profitable?"
-    answer: "Groww achieved profitability in 2023-24 after years of VC-driven growth. Profitability is thinner than Zerodha's (per-user revenue is lower because the user base skews toward smaller, less-active investors) but the business is healthy and IPO prep is underway for 2025-26 at ~$3B valuation."
-  - question: "Does Groww have stock trading?"
-    answer: "Yes — Groww added stock trading in 2020, two years after launch. The sequencing was intentional: lead with mutual funds (lower-stakes for first-time investors), build trust, then add stocks. This contrasts with Zerodha's trading-first approach that targets active traders."
+  - question: Is Groww better than Zerodha?
+    answer: >-
+      Groww and Zerodha serve different audiences. Zerodha is optimized for
+      serious traders with its powerful Kite platform; Groww is built for
+      first-time investors with mobile-first design and mutual-fund-first
+      sequencing. Groww has more total users (13M+); Zerodha leads by trading
+      volume.
+  - question: Who founded Groww?
+    answer: >-
+      Groww was founded in 2017 by Lalit Keshre, Harsh Jain, Ishan Bansal, and
+      Neeraj Singh — all former Flipkart product managers. They built Groww
+      specifically for first-time Indian investors that Zerodha's
+      hardcore-trader product never optimized for.
+  - question: Is Groww profitable?
+    answer: >-
+      Groww achieved profitability in 2023-24 after years of VC-driven growth.
+      Profitability is thinner than Zerodha's (per-user revenue is lower because
+      the user base skews toward smaller, less-active investors) but the
+      business is healthy and IPO prep is underway for 2025-26 at ~$3B
+      valuation.
+  - question: Does Groww have stock trading?
+    answer: >-
+      Yes — Groww added stock trading in 2020, two years after launch. The
+      sequencing was intentional: lead with mutual funds (lower-stakes for
+      first-time investors), build trust, then add stocks. This contrasts with
+      Zerodha's trading-first approach that targets active traders.
+publishedAt: '2026-05-18'
 ---
 
 When Lalit Keshre and three other Flipkart veterans started Groww in 2017, Indian retail investing was effectively a Zerodha monopoly with a long tail of older banks (ICICIdirect, HDFC Securities, Sharekhan) servicing wealthier investors with high-fee, low-UX products. Zerodha had spent seven years building the dominant discount broker, attracting India's serious traders with its powerful Kite platform, ₹20 brokerage, and Varsity educational content. Anyone wanting to compete with Zerodha had to either match its frugality (impossible without giving up VC funding) or find a fundamentally different audience. The Groww founders, all former Flipkart product managers, looked at the Zerodha user base and noticed something: it was overwhelmingly male, urban, technically proficient, and trading-focused. The 90% of Indians who didn't fit that profile — first-time investors, mutual fund buyers, women, Tier 2-3 city users — had no good product. Groww would build for them.

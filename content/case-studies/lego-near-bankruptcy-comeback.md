@@ -1,24 +1,45 @@
 ---
-id: "cs-28"
-slug: "lego-near-bankruptcy-comeback"
-company: "Lego"
-title: "How Lego Came Back from Near-Bankruptcy"
-category: "Strategy"
-description: "By 2003, Lego was nearly bankrupt — over-expanded into theme parks and clothing. They refocused on core products, partnered with Star Wars and Harry Potter, and rediscovered what made them special."
-outcome: "Became the world's most powerful brand in 2015. Revenue tripled."
+id: cs-28
+slug: lego-near-bankruptcy-comeback
+company: Lego
+title: How Lego Came Back from Near-Bankruptcy
+category: Strategy
+description: >-
+  By 2003, Lego was nearly bankrupt — over-expanded into theme parks and
+  clothing. They refocused on core products, partnered with Star Wars and Harry
+  Potter, and rediscovered what made them special.
+outcome: Became the world's most powerful brand in 2015. Revenue tripled.
 year: 2004
 tags:
-  - "turnaround"
-  - "focus"
-  - "brand"
-logo: "🧱"
+  - turnaround
+  - focus
+  - brand
+logo: "\U0001F9F1"
 faqs:
-  - question: "How did Lego come back from bankruptcy?"
-    answer: "In 2003, Lego was 6 months from bankruptcy after years of expansion into theme parks, video games, and unrelated product lines. New CEO Jørgen Vig Knudstorp killed half the SKU count, exited adjacent businesses, returned to core (small bricks, building sets, kids), and signed licensing deals (Star Wars, Harry Potter) that let the brick + story formula compound. Lego became the world's most valuable toy company by 2015."
-  - question: "Why was Lego losing money in the early 2000s?"
-    answer: "Lego had expanded into too many adjacent categories — theme parks, jewelry, branded apparel, video games — none of which leveraged the core brick competency. Product line proliferation made manufacturing complex; design was outsourced; the brand diluted. The 2003 turnaround was about cutting back to what Lego actually did well."
-  - question: "What is Lego's strategy in 2026?"
-    answer: "Lego continues the focus strategy that saved it: deep partnership with licensing IP (Star Wars, Marvel, Harry Potter, Disney), adult-fan products (Lego Architecture, Botanicals, Ideas), and incremental digital integration (Lego Mindstorms, Lego Boost). Revenue is around $9B+, profit margins among the highest in toy industry, still privately held by the Kirk Kristiansen family."
+  - question: How did Lego come back from bankruptcy?
+    answer: >-
+      In 2003, Lego was 6 months from bankruptcy after years of expansion into
+      theme parks, video games, and unrelated product lines. New CEO Jørgen Vig
+      Knudstorp killed half the SKU count, exited adjacent businesses, returned
+      to core (small bricks, building sets, kids), and signed licensing deals
+      (Star Wars, Harry Potter) that let the brick + story formula compound.
+      Lego became the world's most valuable toy company by 2015.
+  - question: Why was Lego losing money in the early 2000s?
+    answer: >-
+      Lego had expanded into too many adjacent categories — theme parks,
+      jewelry, branded apparel, video games — none of which leveraged the core
+      brick competency. Product line proliferation made manufacturing complex;
+      design was outsourced; the brand diluted. The 2003 turnaround was about
+      cutting back to what Lego actually did well.
+  - question: What is Lego's strategy in 2026?
+    answer: >-
+      Lego continues the focus strategy that saved it: deep partnership with
+      licensing IP (Star Wars, Marvel, Harry Potter, Disney), adult-fan products
+      (Lego Architecture, Botanicals, Ideas), and incremental digital
+      integration (Lego Mindstorms, Lego Boost). Revenue is around $9B+, profit
+      margins among the highest in toy industry, still privately held by the
+      Kirk Kristiansen family.
+publishedAt: '2026-05-18'
 ---
 
 In 2003, Lego was losing a million dollars a day. The Danish toymaker, founded in 1932 and beloved by generations of children, had diversified so wildly that it had lost sight of what made it special. The company operated Legoland theme parks, produced a clothing line, sold jewelry, published magazines, developed video games, and produced children's television programming. The product line had ballooned to over 12,000 unique components, and the supply chain was a nightmare of complexity and waste. Management had pursued a strategy of becoming a "lifestyle brand" that stretched far beyond the plastic brick, and the result was a company that did many things poorly rather than one thing brilliantly.

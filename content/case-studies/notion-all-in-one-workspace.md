@@ -1,26 +1,46 @@
 ---
-id: "cs-7"
-slug: "notion-all-in-one-workspace"
-company: "Notion"
-title: "Notion's All-in-One Workspace Bet"
-category: "Product"
-description: "Notion almost shut down in 2015. The team moved to Kyoto, cut costs, and rebuilt from scratch — emerging with a product that collapsed note-taking, wikis, and project management into one."
-outcome: "Valued at $10B. Used by 30M+ people."
+id: cs-7
+slug: notion-all-in-one-workspace
+company: Notion
+title: Notion's All-in-One Workspace Bet
+category: Product
+description: >-
+  Notion almost shut down in 2015. The team moved to Kyoto, cut costs, and
+  rebuilt from scratch — emerging with a product that collapsed note-taking,
+  wikis, and project management into one.
+outcome: Valued at $10B. Used by 30M+ people.
 year: 2018
 tags:
-  - "productivity"
-  - "PLG"
-  - "workspace"
-logo: "📝"
+  - productivity
+  - PLG
+  - workspace
+logo: "\U0001F4DD"
 faqs:
-  - question: "What is Notion's pricing?"
-    answer: "Notion has a generous free tier with personal use, a Plus plan for small teams (~$10/user/month), Business (~$15/user/month), and Enterprise pricing. The free tier was strategic — it let individual users adopt Notion and then drag their teams in."
-  - question: "Why is Notion popular?"
-    answer: "Notion replaced fragmented tools (Confluence + Trello + Google Docs + Evernote + spreadsheets) with a single workspace built around blocks. The all-in-one bet meant teams could use one tool instead of five, and the flexibility let it adapt to any use case."
-  - question: "Did Notion struggle initially?"
-    answer: "Yes — Notion's first version in 2015 nearly killed the company. It was slow, buggy, and didn't catch on. Founders Ivan Zhao and Simon Last rebuilt the entire app from scratch in 2018 — that V2 was when Notion finally took off."
-  - question: "Who founded Notion?"
-    answer: "Notion was founded by Ivan Zhao and Simon Last in 2013. After the initial V1 nearly failed, they rebuilt the entire product from scratch in 2018. The company is famously small for its scale — fewer than 1000 employees serving tens of millions of users."
+  - question: What is Notion's pricing?
+    answer: >-
+      Notion has a generous free tier with personal use, a Plus plan for small
+      teams (~$10/user/month), Business (~$15/user/month), and Enterprise
+      pricing. The free tier was strategic — it let individual users adopt
+      Notion and then drag their teams in.
+  - question: Why is Notion popular?
+    answer: >-
+      Notion replaced fragmented tools (Confluence + Trello + Google Docs +
+      Evernote + spreadsheets) with a single workspace built around blocks. The
+      all-in-one bet meant teams could use one tool instead of five, and the
+      flexibility let it adapt to any use case.
+  - question: Did Notion struggle initially?
+    answer: >-
+      Yes — Notion's first version in 2015 nearly killed the company. It was
+      slow, buggy, and didn't catch on. Founders Ivan Zhao and Simon Last
+      rebuilt the entire app from scratch in 2018 — that V2 was when Notion
+      finally took off.
+  - question: Who founded Notion?
+    answer: >-
+      Notion was founded by Ivan Zhao and Simon Last in 2013. After the initial
+      V1 nearly failed, they rebuilt the entire product from scratch in 2018.
+      The company is famously small for its scale — fewer than 1000 employees
+      serving tens of millions of users.
+publishedAt: '2026-05-18'
 ---
 
 Notion's origin story is one of near-death and reinvention. Ivan Zhao, a designer-turned-founder with a vision of making software creation as fluid as writing, launched the first version of Notion in 2015. It failed almost immediately. The product was buggy, slow, and tried to do too much without doing anything well. The architecture could not support the ambition, and users bounced within minutes of trying it. Running out of money and options, Zhao made a drastic decision that most Silicon Valley advisors would have called career suicide: he moved the small team to Kyoto, Japan, where the cost of living was low enough to extend their dwindling runway by months.

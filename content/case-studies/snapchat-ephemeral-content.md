@@ -1,24 +1,44 @@
 ---
-id: "cs-47"
-slug: "snapchat-ephemeral-content"
-company: "Snapchat"
-title: "Snapchat's Ephemeral Content Revolution"
-category: "Product"
-description: "Snapchat introduced disappearing messages — not because of privacy, but because impermanence made sharing feel less risky. Stories, AR filters, and Discover all flowed from this insight."
-outcome: "400M+ DAU. Pioneered AR filters copied by Instagram and TikTok."
+id: cs-47
+slug: snapchat-ephemeral-content
+company: Snapchat
+title: Snapchat's Ephemeral Content Revolution
+category: Product
+description: >-
+  Snapchat introduced disappearing messages — not because of privacy, but
+  because impermanence made sharing feel less risky. Stories, AR filters, and
+  Discover all flowed from this insight.
+outcome: 400M+ DAU. Pioneered AR filters copied by Instagram and TikTok.
 year: 2011
 tags:
-  - "ephemeral"
-  - "AR"
-  - "Gen-Z"
-logo: "👻"
+  - ephemeral
+  - AR
+  - Gen-Z
+logo: "\U0001F47B"
 faqs:
-  - question: "Why is Snapchat content ephemeral?"
-    answer: "Snapchat's founders bet that disappearing content reduced posting anxiety — you can share something silly or unflattering knowing it won't haunt you forever. The disappearance was the feature, not a bug. It made daily use safer, more frequent, and more authentic than Facebook or Instagram, where every post is forever."
-  - question: "Did Instagram copy Snapchat Stories?"
-    answer: "Yes — Instagram launched Stories in August 2016, four years after Snapchat invented the format. Adam Mosseri (then Instagram product head) publicly credited Snapchat for the idea. Instagram Stories grew faster than Snapchat ever did because Instagram had a larger pre-existing user base; Snapchat's growth slowed dramatically as a result."
-  - question: "How does Snapchat make money?"
-    answer: "Snapchat monetizes through advertising (Snap Ads, AR Lenses, Discover ads) and subscriptions (Snapchat+, ~$4/month for early features). The AR Lens business is genuinely novel — brands pay millions to develop and sponsor AR Lenses for product launches. Revenue is around $5B annually, profitable in some quarters, with public markets generally skeptical of growth durability."
+  - question: Why is Snapchat content ephemeral?
+    answer: >-
+      Snapchat's founders bet that disappearing content reduced posting anxiety
+      — you can share something silly or unflattering knowing it won't haunt you
+      forever. The disappearance was the feature, not a bug. It made daily use
+      safer, more frequent, and more authentic than Facebook or Instagram, where
+      every post is forever.
+  - question: Did Instagram copy Snapchat Stories?
+    answer: >-
+      Yes — Instagram launched Stories in August 2016, four years after Snapchat
+      invented the format. Adam Mosseri (then Instagram product head) publicly
+      credited Snapchat for the idea. Instagram Stories grew faster than
+      Snapchat ever did because Instagram had a larger pre-existing user base;
+      Snapchat's growth slowed dramatically as a result.
+  - question: How does Snapchat make money?
+    answer: >-
+      Snapchat monetizes through advertising (Snap Ads, AR Lenses, Discover ads)
+      and subscriptions (Snapchat+, ~$4/month for early features). The AR Lens
+      business is genuinely novel — brands pay millions to develop and sponsor
+      AR Lenses for product launches. Revenue is around $5B annually, profitable
+      in some quarters, with public markets generally skeptical of growth
+      durability.
+publishedAt: '2026-05-18'
 ---
 
 When Evan Spiegel, Bobby Murphy, and Reggie Brown launched Snapchat from a Stanford dorm room in 2011, the concept of disappearing messages struck most observers as either a sexting app or a gimmick with no sustainable use case. The technology press was dismissive, investors were skeptical, and the idea of content that destroyed itself seemed antithetical to the internet's fundamental nature of permanent, searchable, shareable information. But Spiegel understood something profound about social media psychology that his competitors had entirely missed: permanence creates performance anxiety. On Facebook and Instagram, every post was a permanent addition to your public identity, a record that could be searched, screenshot, and judged by anyone at any time. This permanence made sharing feel like work.

@@ -1,26 +1,48 @@
 ---
-id: "cs-2"
-slug: "slack-gaming-pivot"
-company: "Slack"
-title: "Slack's Pivot from Gaming to Messaging"
-category: "Product"
-description: "Slack started as an internal tool built while making a game called Glitch. When the game failed, the team pivoted to the tool — and changed workplace communication forever."
-outcome: "Acquired by Salesforce for $27.7B in 2021."
+id: cs-2
+slug: slack-gaming-pivot
+company: Slack
+title: Slack's Pivot from Gaming to Messaging
+category: Product
+description: >-
+  Slack started as an internal tool built while making a game called Glitch.
+  When the game failed, the team pivoted to the tool — and changed workplace
+  communication forever.
+outcome: Acquired by Salesforce for $27.7B in 2021.
 year: 2013
 tags:
-  - "pivot"
-  - "B2B"
-  - "SaaS"
-logo: "💬"
+  - pivot
+  - B2B
+  - SaaS
+logo: "\U0001F4AC"
 faqs:
-  - question: "Was Slack originally a game?"
-    answer: "Yes — Slack started as the internal communication tool inside Tiny Speck, a gaming company building Glitch (a massively multiplayer online game). When Glitch failed to gain traction in 2012, founder Stewart Butterfield pivoted Tiny Speck to focus on the internal tool, which became Slack."
-  - question: "How did Slack grow without sales?"
-    answer: "Slack pursued bottom-up adoption: individual teams started using Slack for free, fell in love with the product, and then pushed for company-wide adoption. By the time a CTO evaluated Slack, dozens of teams were already using it daily — making the decision feel like ratifying reality, not buying software."
-  - question: "Who acquired Slack?"
-    answer: "Salesforce acquired Slack for $27.7 billion in 2021 — one of the largest enterprise software acquisitions in history. The deal brought Slack into Salesforce's customer-360 strategy and effectively ended Slack as an independent company."
-  - question: "How does Slack make money?"
-    answer: "Slack monetizes through paid subscription tiers (Pro, Business+, Enterprise Grid). Free users get core messaging; paid tiers add unlimited message history, group video calls, advanced security, compliance features, and enterprise integrations. The freemium-to-paid conversion drove most of Slack's growth."
+  - question: Was Slack originally a game?
+    answer: >-
+      Yes — Slack started as the internal communication tool inside Tiny Speck,
+      a gaming company building Glitch (a massively multiplayer online game).
+      When Glitch failed to gain traction in 2012, founder Stewart Butterfield
+      pivoted Tiny Speck to focus on the internal tool, which became Slack.
+  - question: How did Slack grow without sales?
+    answer: >-
+      Slack pursued bottom-up adoption: individual teams started using Slack for
+      free, fell in love with the product, and then pushed for company-wide
+      adoption. By the time a CTO evaluated Slack, dozens of teams were already
+      using it daily — making the decision feel like ratifying reality, not
+      buying software.
+  - question: Who acquired Slack?
+    answer: >-
+      Salesforce acquired Slack for $27.7 billion in 2021 — one of the largest
+      enterprise software acquisitions in history. The deal brought Slack into
+      Salesforce's customer-360 strategy and effectively ended Slack as an
+      independent company.
+  - question: How does Slack make money?
+    answer: >-
+      Slack monetizes through paid subscription tiers (Pro, Business+,
+      Enterprise Grid). Free users get core messaging; paid tiers add unlimited
+      message history, group video calls, advanced security, compliance
+      features, and enterprise integrations. The freemium-to-paid conversion
+      drove most of Slack's growth.
+publishedAt: '2026-05-18'
 ---
 
 Stewart Butterfield's company Tiny Speck spent four years and millions of dollars building Glitch, a massively multiplayer online game set in a whimsical world of imagination. The team was distributed across San Francisco, Vancouver, and New York, and existing communication tools were failing them. IRC was functional but ugly and lacked search. Email was too slow and formal for rapid collaboration. Campfire existed but felt like an afterthought. During Glitch's development, the engineering team built an internal communication tool that stitched together messaging, file sharing, and searchable archives into something that made distributed collaboration feel effortless. Nobody thought of it as a product; it was just how they worked.

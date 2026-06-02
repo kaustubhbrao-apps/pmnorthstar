@@ -1,24 +1,43 @@
 ---
-id: "cs-30"
-slug: "canva-freemium-design"
-company: "Canva"
-title: "Canva's Freemium Design Democracy"
-category: "Strategy"
-description: "Canva democratized design by making professional templates free. They targeted non-designers — a segment Adobe completely ignored. The freemium model converted millions to paid."
-outcome: "Valued at $26B. 170M+ monthly active users."
+id: cs-30
+slug: canva-freemium-design
+company: Canva
+title: Canva's Freemium Design Democracy
+category: Strategy
+description: >-
+  Canva democratized design by making professional templates free. They targeted
+  non-designers — a segment Adobe completely ignored. The freemium model
+  converted millions to paid.
+outcome: Valued at $26B. 170M+ monthly active users.
 year: 2013
 tags:
-  - "freemium"
-  - "design"
-  - "democratization"
-logo: "🖌️"
+  - freemium
+  - design
+  - democratization
+logo: "\U0001F58C️"
 faqs:
-  - question: "What makes Canva successful?"
-    answer: "Canva democratized design by templating it. Most people who need design tools aren't designers — they need a flyer, a presentation, a social post. Canva's massive template library lets non-designers create acceptable work in minutes. Adobe's tools were powerful but unusable for this audience. Canva captured the gap."
-  - question: "How much is Canva worth?"
-    answer: "Canva was last valued at $26B in a 2021 secondary transaction; private valuations in 2024-25 suggested $40B+. The company has been profitable for years and is one of the largest privately-held SaaS companies globally. IPO is rumored repeatedly but the founders have prioritized staying private to maintain product autonomy."
-  - question: "Who founded Canva?"
-    answer: "Canva was founded in 2013 by Melanie Perkins, Cliff Obrecht, and Cameron Adams in Perth, Australia. Perkins (CEO) had previously built a yearbook design tool — the learning from that product (most people need design tools but can't use Photoshop) became Canva's thesis. The company is now one of Australia's most valuable startups."
+  - question: What makes Canva successful?
+    answer: >-
+      Canva democratized design by templating it. Most people who need design
+      tools aren't designers — they need a flyer, a presentation, a social post.
+      Canva's massive template library lets non-designers create acceptable work
+      in minutes. Adobe's tools were powerful but unusable for this audience.
+      Canva captured the gap.
+  - question: How much is Canva worth?
+    answer: >-
+      Canva was last valued at $26B in a 2021 secondary transaction; private
+      valuations in 2024-25 suggested $40B+. The company has been profitable for
+      years and is one of the largest privately-held SaaS companies globally.
+      IPO is rumored repeatedly but the founders have prioritized staying
+      private to maintain product autonomy.
+  - question: Who founded Canva?
+    answer: >-
+      Canva was founded in 2013 by Melanie Perkins, Cliff Obrecht, and Cameron
+      Adams in Perth, Australia. Perkins (CEO) had previously built a yearbook
+      design tool — the learning from that product (most people need design
+      tools but can't use Photoshop) became Canva's thesis. The company is now
+      one of Australia's most valuable startups.
+publishedAt: '2026-05-18'
 ---
 
 Melanie Perkins was a 19-year-old university student in Perth, Australia, when she had the insight that would eventually build a $26 billion company. While teaching students to use design software, she observed that Adobe's Creative Suite, the industry standard, was an impenetrable fortress of complexity. Programs like Photoshop and Illustrator were powerful enough to create anything imaginable, but they required months of dedicated learning before a beginner could produce something that looked professional. The gap between "I want to make a poster" and "I can make a poster" was measured in semesters of training and hundreds of dollars in software licenses. For the vast majority of people who needed to create visual content, professional design tools were effectively inaccessible.

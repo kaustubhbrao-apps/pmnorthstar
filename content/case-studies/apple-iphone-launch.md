@@ -1,26 +1,49 @@
 ---
-id: "cs-1"
-slug: "apple-iphone-launch"
-company: "Apple"
-title: "How Apple Reinvented the Phone with iPhone"
-category: "Product"
-description: "Steve Jobs's decision to build a touchscreen smartphone without a keyboard — against all industry wisdom — redefined an entire category."
-outcome: "iPhone became the most profitable product in history, generating over $1T in cumulative revenue."
+id: cs-1
+slug: apple-iphone-launch
+company: Apple
+title: How Apple Reinvented the Phone with iPhone
+category: Product
+description: >-
+  Steve Jobs's decision to build a touchscreen smartphone without a keyboard —
+  against all industry wisdom — redefined an entire category.
+outcome: >-
+  iPhone became the most profitable product in history, generating over $1T in
+  cumulative revenue.
 year: 2007
 tags:
-  - "hardware"
-  - "UX"
-  - "disruption"
-logo: "🍎"
+  - hardware
+  - UX
+  - disruption
+logo: "\U0001F34E"
 faqs:
-  - question: "Why did Apple build the iPhone without a keyboard?"
-    answer: "Steve Jobs and the iPhone team believed physical keyboards were a structural compromise that limited what a phone could become. Multi-touch technology would let one device flexibly become any input mode, while a physical keyboard locked the form factor permanently. The bet against industry consensus defined the modern smartphone."
-  - question: "When did the iPhone launch?"
-    answer: "The iPhone was unveiled by Steve Jobs at Macworld 2007 in January and shipped in June 2007. It launched without copy-paste, MMS, and a physical keyboard — features competitors considered essential — and triggered a complete restructuring of the mobile industry."
-  - question: "What made the iPhone successful?"
-    answer: "Three things: a capacitive multi-touch screen that responded to finger gestures (no stylus required), a stripped-down macOS that gave it desktop-class software, and an unprecedented carrier deal with AT&T that gave Apple complete control over software, design, and updates. Hardware-software integration was the moat."
-  - question: "How much revenue did the iPhone generate?"
-    answer: "The iPhone generated over $1 trillion in cumulative revenue within its first decade. By 2017, iPhone alone was generating more revenue annually than all of Microsoft's products combined. The App Store ecosystem added hundreds of billions in additional value."
+  - question: Why did Apple build the iPhone without a keyboard?
+    answer: >-
+      Steve Jobs and the iPhone team believed physical keyboards were a
+      structural compromise that limited what a phone could become. Multi-touch
+      technology would let one device flexibly become any input mode, while a
+      physical keyboard locked the form factor permanently. The bet against
+      industry consensus defined the modern smartphone.
+  - question: When did the iPhone launch?
+    answer: >-
+      The iPhone was unveiled by Steve Jobs at Macworld 2007 in January and
+      shipped in June 2007. It launched without copy-paste, MMS, and a physical
+      keyboard — features competitors considered essential — and triggered a
+      complete restructuring of the mobile industry.
+  - question: What made the iPhone successful?
+    answer: >-
+      Three things: a capacitive multi-touch screen that responded to finger
+      gestures (no stylus required), a stripped-down macOS that gave it
+      desktop-class software, and an unprecedented carrier deal with AT&T that
+      gave Apple complete control over software, design, and updates.
+      Hardware-software integration was the moat.
+  - question: How much revenue did the iPhone generate?
+    answer: >-
+      The iPhone generated over $1 trillion in cumulative revenue within its
+      first decade. By 2017, iPhone alone was generating more revenue annually
+      than all of Microsoft's products combined. The App Store ecosystem added
+      hundreds of billions in additional value.
+publishedAt: '2026-05-18'
 ---
 
 In 2005, the smartphone market was dominated by BlackBerry and Nokia, both of which treated the physical keyboard as sacred. Carriers held enormous power over device design, dictating everything from preinstalled software to button placement. Apple was a computer and music company with zero experience in telecommunications, and the mobile industry viewed it as an outsider incapable of navigating the complex web of carrier relationships, regulatory requirements, and component supply chains that defined the phone business. Inside Apple, two competing projects were underway: one to build a tablet, and another to build a phone. Steve Jobs made the fateful decision to take the multi-touch technology being developed for the tablet and shrink it into a phone-sized device.

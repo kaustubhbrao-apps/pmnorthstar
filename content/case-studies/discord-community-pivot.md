@@ -1,26 +1,52 @@
 ---
-id: "cs-64"
-slug: "discord-community-pivot"
-company: "Discord"
-title: "How Discord Pivoted from Gaming Chat to Community Infrastructure"
-category: "Strategy"
-description: "Jason Citron built a chat tool for gamers because Skype and TeamSpeak were terrible. Then a global pandemic, a wave of online communities, and the rise of Web3 turned Discord into the default platform for every internet community that wasn't on Reddit."
-outcome: "$15B valuation. 200M+ monthly active users. Default platform for crypto communities, creator economies, open-source projects, learning groups, and study circles globally."
+id: cs-64
+slug: discord-community-pivot
+company: Discord
+title: How Discord Pivoted from Gaming Chat to Community Infrastructure
+category: Strategy
+description: >-
+  Jason Citron built a chat tool for gamers because Skype and TeamSpeak were
+  terrible. Then a global pandemic, a wave of online communities, and the rise
+  of Web3 turned Discord into the default platform for every internet community
+  that wasn't on Reddit.
+outcome: >-
+  $15B valuation. 200M+ monthly active users. Default platform for crypto
+  communities, creator economies, open-source projects, learning groups, and
+  study circles globally.
 year: 2015
 tags:
-  - "community"
-  - "pivot"
-  - "platform"
-logo: "💬"
+  - community
+  - pivot
+  - platform
+logo: "\U0001F4AC"
 faqs:
-  - question: "Why did Discord turn down Microsoft's offer?"
-    answer: "Discord reportedly rejected a Microsoft acquisition offer of $10-12 billion in 2021. The founders bet that Discord's evolution from gaming-only to general community platform would create more value over time as creator economies, crypto communities, and AI groups adopted it. By 2025-26, that bet has been substantially vindicated."
-  - question: "Was Discord originally for gaming?"
-    answer: "Yes — Discord was built in 2015 specifically for gamers, replacing terrible voice chat tools like Skype and TeamSpeak. The product expanded to general community use during COVID as study groups, learning circles, and creator communities adopted it. Less than half of active Discord users today are primarily gaming-focused."
-  - question: "How does Discord make money?"
-    answer: "Discord monetizes through Nitro subscriptions (paid tier with cosmetic perks and HD streaming), Server Boost subscriptions, and emerging platform fees. The company is profitable on Nitro alone and is preparing for an IPO targeting 2026-27."
-  - question: "What is Discord's valuation?"
-    answer: "Discord was last valued at $15 billion in a 2021 funding round. By 2025-26, with 200M+ monthly active users and growing creator/AI community usage, secondary valuations suggest higher — though the company has stayed private and is preparing for an IPO."
+  - question: Why did Discord turn down Microsoft's offer?
+    answer: >-
+      Discord reportedly rejected a Microsoft acquisition offer of $10-12
+      billion in 2021. The founders bet that Discord's evolution from
+      gaming-only to general community platform would create more value over
+      time as creator economies, crypto communities, and AI groups adopted it.
+      By 2025-26, that bet has been substantially vindicated.
+  - question: Was Discord originally for gaming?
+    answer: >-
+      Yes — Discord was built in 2015 specifically for gamers, replacing
+      terrible voice chat tools like Skype and TeamSpeak. The product expanded
+      to general community use during COVID as study groups, learning circles,
+      and creator communities adopted it. Less than half of active Discord users
+      today are primarily gaming-focused.
+  - question: How does Discord make money?
+    answer: >-
+      Discord monetizes through Nitro subscriptions (paid tier with cosmetic
+      perks and HD streaming), Server Boost subscriptions, and emerging platform
+      fees. The company is profitable on Nitro alone and is preparing for an IPO
+      targeting 2026-27.
+  - question: What is Discord's valuation?
+    answer: >-
+      Discord was last valued at $15 billion in a 2021 funding round. By
+      2025-26, with 200M+ monthly active users and growing creator/AI community
+      usage, secondary valuations suggest higher — though the company has stayed
+      private and is preparing for an IPO.
+publishedAt: '2026-05-18'
 ---
 
 Voice chat for gamers in 2015 was a fragmented mess. Skype was bloated and unreliable. TeamSpeak required hosting your own server. Mumble was barebones but technical. Ventrilo was a relic. Gamers who played multiplayer games together — League of Legends, Counter-Strike, World of Warcraft — needed real-time voice communication, and every existing tool was either bad or required system administration skills nobody wanted to develop. Jason Citron had previously founded Fates Forever, a mobile MOBA that didn't take off, and the experience left him with an obsession: the voice chat infrastructure for gamers needed to be 10x better than what existed. Discord, founded in 2015, was his second attempt to build something at the intersection of gaming and community. This time the product was the tool itself, not the game it was built for.

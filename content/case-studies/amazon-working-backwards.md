@@ -1,24 +1,44 @@
 ---
-id: "cs-21"
-slug: "amazon-working-backwards"
-company: "Amazon"
-title: "Amazon's Jeff Bezos 'Working Backwards' Method"
-category: "Strategy"
-description: "Amazon's product process starts with writing the press release before building anything. If you can't write a compelling press release, the product isn't worth building."
-outcome: "AWS, Kindle, Alexa, Prime all born from this process. $500B+ revenue."
+id: cs-21
+slug: amazon-working-backwards
+company: Amazon
+title: Amazon's Jeff Bezos 'Working Backwards' Method
+category: Strategy
+description: >-
+  Amazon's product process starts with writing the press release before building
+  anything. If you can't write a compelling press release, the product isn't
+  worth building.
+outcome: 'AWS, Kindle, Alexa, Prime all born from this process. $500B+ revenue.'
 year: 2004
 tags:
-  - "process"
-  - "innovation"
-  - "customer obsession"
-logo: "📦"
+  - process
+  - innovation
+  - customer obsession
+logo: "\U0001F4E6"
 faqs:
-  - question: "What is Amazon's 'working backwards' process?"
-    answer: "Amazon's working-backwards process starts every new product or feature with a written press release — describing the launch as if it were happening tomorrow. If the press release doesn't sound compelling, the product isn't worth building. The PR forces clarity about customer benefit, market positioning, and why-now before any code gets written."
-  - question: "What does the FAQ in working backwards include?"
-    answer: "Working-backwards documents include an FAQ section that anticipates the hard questions: Why would customers care? Why is this better than alternatives? What could go wrong? What does success look like? The FAQ surfaces disagreements within the team early — much cheaper than discovering them after 6 months of engineering."
-  - question: "Has working backwards killed Amazon products?"
-    answer: "Yes — repeatedly. Many internal Amazon ideas die at the working-backwards stage because the press release reveals the idea doesn't actually solve a customer problem worth solving. Most famously, the process killed earlier versions of the Fire Phone proposal — though one version eventually got past the gate and launched anyway, becoming one of Amazon's biggest product failures."
+  - question: What is Amazon's 'working backwards' process?
+    answer: >-
+      Amazon's working-backwards process starts every new product or feature
+      with a written press release — describing the launch as if it were
+      happening tomorrow. If the press release doesn't sound compelling, the
+      product isn't worth building. The PR forces clarity about customer
+      benefit, market positioning, and why-now before any code gets written.
+  - question: What does the FAQ in working backwards include?
+    answer: >-
+      Working-backwards documents include an FAQ section that anticipates the
+      hard questions: Why would customers care? Why is this better than
+      alternatives? What could go wrong? What does success look like? The FAQ
+      surfaces disagreements within the team early — much cheaper than
+      discovering them after 6 months of engineering.
+  - question: Has working backwards killed Amazon products?
+    answer: >-
+      Yes — repeatedly. Many internal Amazon ideas die at the working-backwards
+      stage because the press release reveals the idea doesn't actually solve a
+      customer problem worth solving. Most famously, the process killed earlier
+      versions of the Fire Phone proposal — though one version eventually got
+      past the gate and launched anyway, becoming one of Amazon's biggest
+      product failures.
+publishedAt: '2026-05-18'
 ---
 
 At Amazon, every new product begins not with a specification document, a prototype, or a competitive analysis, but with a press release. The "Working Backwards" process, formalized around 2004, requires product teams to write the announcement that would go out on launch day before writing a single line of code. The press release must include the customer problem being solved, the solution Amazon is proposing, the key benefits expressed in customer language, and a fictional customer quote expressing genuine delight. If the press release reads as boring, confusing, or unconvincing, the product does not move forward regardless of how technically feasible or strategically interesting it might be.

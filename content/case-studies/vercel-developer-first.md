@@ -1,26 +1,53 @@
 ---
-id: "cs-65"
-slug: "vercel-developer-first"
-company: "Vercel"
-title: "How Vercel Won Frontend by Making Deployment Stupidly Easy"
-category: "Growth"
-description: "Guillermo Rauch built a deployment tool that took 30 seconds to set up, while AWS took 30 hours. Then he gave away the open-source framework underneath (Next.js) and watched developers carry his platform into every company they joined."
-outcome: "$3.25B valuation. Powers websites for OpenAI, Stripe, Notion, Hashnode, McDonald's, Washington Post, GitHub. Next.js downloads cross 8M+ weekly. Frontend developer experience standard."
+id: cs-65
+slug: vercel-developer-first
+company: Vercel
+title: How Vercel Won Frontend by Making Deployment Stupidly Easy
+category: Growth
+description: >-
+  Guillermo Rauch built a deployment tool that took 30 seconds to set up, while
+  AWS took 30 hours. Then he gave away the open-source framework underneath
+  (Next.js) and watched developers carry his platform into every company they
+  joined.
+outcome: >-
+  $3.25B valuation. Powers websites for OpenAI, Stripe, Notion, Hashnode,
+  McDonald's, Washington Post, GitHub. Next.js downloads cross 8M+ weekly.
+  Frontend developer experience standard.
 year: 2015
 tags:
-  - "developer-tools"
-  - "open-source"
-  - "PLG"
-logo: "▲"
+  - developer-tools
+  - open-source
+  - PLG
+logo: ▲
 faqs:
-  - question: "Is Next.js owned by Vercel?"
-    answer: "Yes — Next.js is the open-source React framework built and maintained by Vercel. The framework is free and open source; Vercel monetizes through its hosting platform optimized for Next.js apps. The framework-platform integration is Vercel's core competitive moat."
-  - question: "What does Vercel do?"
-    answer: "Vercel is a frontend infrastructure platform — developers push code and Vercel handles deployment, hosting, edge functions, image optimization, and AI infrastructure. It's the default deployment platform for modern React/Next.js applications, powering sites for OpenAI, Stripe, Notion, and thousands of others."
-  - question: "How does Vercel make money?"
-    answer: "Vercel monetizes through tiered hosting (Pro, Enterprise) with usage-based pricing on bandwidth, compute, and serverless functions. The open-source Next.js framework is free; the hosting platform is the revenue engine. Enterprise contracts with companies like McDonald's and Hulu drive significant revenue."
-  - question: "Why do developers love Vercel?"
-    answer: "Vercel optimized ruthlessly for developer experience: 30-second deployments, automatic preview URLs per pull request, beautiful CLI, polished dashboard. Compared to AWS or Heroku, the time-to-first-deploy is an order of magnitude faster — and developers carry that preference into every company they join."
+  - question: Is Next.js owned by Vercel?
+    answer: >-
+      Yes — Next.js is the open-source React framework built and maintained by
+      Vercel. The framework is free and open source; Vercel monetizes through
+      its hosting platform optimized for Next.js apps. The framework-platform
+      integration is Vercel's core competitive moat.
+  - question: What does Vercel do?
+    answer: >-
+      Vercel is a frontend infrastructure platform — developers push code and
+      Vercel handles deployment, hosting, edge functions, image optimization,
+      and AI infrastructure. It's the default deployment platform for modern
+      React/Next.js applications, powering sites for OpenAI, Stripe, Notion, and
+      thousands of others.
+  - question: How does Vercel make money?
+    answer: >-
+      Vercel monetizes through tiered hosting (Pro, Enterprise) with usage-based
+      pricing on bandwidth, compute, and serverless functions. The open-source
+      Next.js framework is free; the hosting platform is the revenue engine.
+      Enterprise contracts with companies like McDonald's and Hulu drive
+      significant revenue.
+  - question: Why do developers love Vercel?
+    answer: >-
+      Vercel optimized ruthlessly for developer experience: 30-second
+      deployments, automatic preview URLs per pull request, beautiful CLI,
+      polished dashboard. Compared to AWS or Heroku, the time-to-first-deploy is
+      an order of magnitude faster — and developers carry that preference into
+      every company they join.
+publishedAt: '2026-05-18'
 ---
 
 Frontend deployment in 2015 was a disaster. A developer who wanted to put a JavaScript application on the internet had a choice between three painful paths: rent an AWS server and spend hours configuring nginx, write Dockerfiles, set up CI/CD pipelines (good luck); use Heroku, which was easier but expensive and rigid; or pay a frontend agency to handle it. None of these were good. Guillermo Rauch, an Argentine engineer who had founded LearnBoost and then a company called Zeit, saw the gap clearly. The promise of serverless was that developers should be able to push code and have it live within seconds, with no servers to manage. The reality was that the existing serverless platforms (AWS Lambda, GCP Cloud Functions) were configured for engineers who lived in their respective ecosystems already. Vercel — originally called Now — would be the deployment tool that any frontend developer could use without learning ops.

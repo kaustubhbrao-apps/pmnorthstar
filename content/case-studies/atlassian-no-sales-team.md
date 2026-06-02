@@ -1,24 +1,45 @@
 ---
-id: "cs-50"
-slug: "atlassian-no-sales-team"
-company: "Atlassian"
-title: "Atlassian's $0 Sales Team That Built a $50B Company"
-category: "Strategy"
-description: "Atlassian never had a traditional sales team for the first decade. They priced low, let users self-serve, and relied on word of mouth in developer communities. Sales came last, product came first."
-outcome: "IPO in 2015. $50B+ market cap. Used by 300K+ companies."
+id: cs-50
+slug: atlassian-no-sales-team
+company: Atlassian
+title: Atlassian's $0 Sales Team That Built a $50B Company
+category: Strategy
+description: >-
+  Atlassian never had a traditional sales team for the first decade. They priced
+  low, let users self-serve, and relied on word of mouth in developer
+  communities. Sales came last, product came first.
+outcome: IPO in 2015. $50B+ market cap. Used by 300K+ companies.
 year: 2002
 tags:
-  - "PLG"
-  - "developer"
-  - "no-sales"
-logo: "🔷"
+  - PLG
+  - developer
+  - no-sales
+logo: "\U0001F537"
 faqs:
-  - question: "How did Atlassian build a company without sales?"
-    answer: "Atlassian focused entirely on developer adoption — devs found Jira/Confluence via Google, signed up for free trials, fell in love, and then advocated internally for company-wide adoption. The company had essentially no outbound sales team for the first decade. Bottom-up adoption bypassed traditional B2B procurement and made the products feel inevitable to enterprise buyers."
-  - question: "When did Atlassian IPO?"
-    answer: "Atlassian went public in December 2015 at $4.4B valuation. It was one of the first major SaaS IPOs to be profitable at IPO time — Atlassian had been profitable for years thanks to the bootstrapped, no-sales-team model. By 2026, the company is worth around $50B and is a major enterprise software player."
-  - question: "Why did Atlassian buy Trello?"
-    answer: "Atlassian acquired Trello in January 2017 for $425M. The strategic rationale: Trello's freemium model and consumer-friendly UI brought small teams and individual users into the Atlassian funnel, where they could be upsold to Jira and Confluence over time. The acquisition expanded Atlassian's top-of-funnel and worked particularly well in markets where Jira was perceived as too complex."
+  - question: How did Atlassian build a company without sales?
+    answer: >-
+      Atlassian focused entirely on developer adoption — devs found
+      Jira/Confluence via Google, signed up for free trials, fell in love, and
+      then advocated internally for company-wide adoption. The company had
+      essentially no outbound sales team for the first decade. Bottom-up
+      adoption bypassed traditional B2B procurement and made the products feel
+      inevitable to enterprise buyers.
+  - question: When did Atlassian IPO?
+    answer: >-
+      Atlassian went public in December 2015 at $4.4B valuation. It was one of
+      the first major SaaS IPOs to be profitable at IPO time — Atlassian had
+      been profitable for years thanks to the bootstrapped, no-sales-team model.
+      By 2026, the company is worth around $50B and is a major enterprise
+      software player.
+  - question: Why did Atlassian buy Trello?
+    answer: >-
+      Atlassian acquired Trello in January 2017 for $425M. The strategic
+      rationale: Trello's freemium model and consumer-friendly UI brought small
+      teams and individual users into the Atlassian funnel, where they could be
+      upsold to Jira and Confluence over time. The acquisition expanded
+      Atlassian's top-of-funnel and worked particularly well in markets where
+      Jira was perceived as too complex.
+publishedAt: '2026-05-18'
 ---
 
 When Mike Cannon-Brookes and Scott Farquhar founded Atlassian in Sydney, Australia in 2002, they were two university students with a $10,000 credit card loan and absolutely no ability to hire a sales team. What began as a financial constraint evolved into a philosophy and eventually into a competitive advantage that redefined how enterprise software companies could grow. They priced their first product, Jira, a bug and issue tracker for software teams, at $800 for a 10-user license, a price point chosen specifically because it was low enough that a development team lead could put it on a corporate credit card without triggering a procurement review. This eliminated the enterprise sales cycle entirely: no demos, no pilots, no negotiations, no RFPs, no months-long evaluation processes.

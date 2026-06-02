@@ -1,24 +1,44 @@
 ---
-id: "cs-39"
-slug: "wework-ipo-collapse"
-company: "WeWork"
-title: "WeWork's $47B to $8B: The IPO Collapse"
-category: "Failure"
-description: "WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann, and a fundamentally broken business model. Investors finally read the fine print — and fled."
-outcome: "Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023."
+id: cs-39
+slug: wework-ipo-collapse
+company: WeWork
+title: 'WeWork''s $47B to $8B: The IPO Collapse'
+category: Failure
+description: >-
+  WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann,
+  and a fundamentally broken business model. Investors finally read the fine
+  print — and fled.
+outcome: Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023.
 year: 2019
 tags:
-  - "governance"
-  - "real estate"
-  - "startup"
-logo: "🏢"
+  - governance
+  - real estate
+  - startup
+logo: "\U0001F3E2"
 faqs:
-  - question: "Why did the WeWork IPO collapse?"
-    answer: "WeWork's August 2019 S-1 IPO filing revealed massive losses ($1.6B in 2018), a sprawling and incoherent corporate structure, and Adam Neumann personally licensing the 'We' trademark back to his own company for ~$6M. Public investors balked. Within 6 weeks, the IPO was withdrawn, the valuation collapsed from $47B to $8B, and Neumann was ousted."
-  - question: "What is WeWork worth in 2026?"
-    answer: "WeWork filed for Chapter 11 bankruptcy in November 2023 — completing a $47B → ~$0 collapse over 4 years. The company emerged from bankruptcy in 2024 as a smaller, restructured entity focused on premium coworking. Public market valuation in 2026 is in the hundreds of millions, not billions."
-  - question: "How much did SoftBank lose on WeWork?"
-    answer: "SoftBank invested over $18B in WeWork at peak valuations. After the 2019 IPO collapse, additional bailout investments, and the 2023 bankruptcy, SoftBank's total losses on WeWork are estimated at $14-16B. The WeWork loss is the single largest single-investment loss in SoftBank's Vision Fund history — and contributed to broader credibility damage for the Vision Fund as a whole."
+  - question: Why did the WeWork IPO collapse?
+    answer: >-
+      WeWork's August 2019 S-1 IPO filing revealed massive losses ($1.6B in
+      2018), a sprawling and incoherent corporate structure, and Adam Neumann
+      personally licensing the 'We' trademark back to his own company for ~$6M.
+      Public investors balked. Within 6 weeks, the IPO was withdrawn, the
+      valuation collapsed from $47B to $8B, and Neumann was ousted.
+  - question: What is WeWork worth in 2026?
+    answer: >-
+      WeWork filed for Chapter 11 bankruptcy in November 2023 — completing a
+      $47B → ~$0 collapse over 4 years. The company emerged from bankruptcy in
+      2024 as a smaller, restructured entity focused on premium coworking.
+      Public market valuation in 2026 is in the hundreds of millions, not
+      billions.
+  - question: How much did SoftBank lose on WeWork?
+    answer: >-
+      SoftBank invested over $18B in WeWork at peak valuations. After the 2019
+      IPO collapse, additional bailout investments, and the 2023 bankruptcy,
+      SoftBank's total losses on WeWork are estimated at $14-16B. The WeWork
+      loss is the single largest single-investment loss in SoftBank's Vision
+      Fund history — and contributed to broader credibility damage for the
+      Vision Fund as a whole.
+publishedAt: '2026-05-18'
 ---
 
 WeWork's IPO filing in August 2019 was supposed to be the victory lap of a company that had redefined how people work. The company had raised over $12 billion in venture capital, primarily from SoftBank's Vision Fund, and was valued at $47 billion, making it the most valuable startup in the United States. CEO Adam Neumann was a charismatic, barefoot visionary who spoke of WeWork's mission to "elevate the world's consciousness" and described the company not as a real estate business but as a technology platform. The S-1 filing mentioned the word "community" over 150 times and the word "technology" dozens of times. But when public market investors, who tend to read financial statements more carefully than venture capitalists, actually examined the filing, they saw something very different.

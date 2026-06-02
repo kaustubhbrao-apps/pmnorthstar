@@ -1,27 +1,52 @@
 ---
-id: "cs-51"
-slug: "cred-design-fintech"
-company: "Cred"
-title: "How Cred Built India's Most Designed Fintech"
-category: "Design"
-description: "Kunal Shah turned credit card bill payments into a status product. Cred rejected two-thirds of users, spent obscenely on design and brand, and built India's most-watched premium fintech. The monetization story finally started cohering in 2024-26."
-outcome: "$6.4B peak valuation, held flat through 2024 raise. 13M+ members. Cred Cash, Cred Money, Cred Garage layering monetization on top of the original brand asset."
+id: cs-51
+slug: cred-design-fintech
+company: Cred
+title: How Cred Built India's Most Designed Fintech
+category: Design
+description: >-
+  Kunal Shah turned credit card bill payments into a status product. Cred
+  rejected two-thirds of users, spent obscenely on design and brand, and built
+  India's most-watched premium fintech. The monetization story finally started
+  cohering in 2024-26.
+outcome: >-
+  $6.4B peak valuation, held flat through 2024 raise. 13M+ members. Cred Cash,
+  Cred Money, Cred Garage layering monetization on top of the original brand
+  asset.
 year: 2018
 tags:
-  - "design"
-  - "fintech"
-  - "exclusivity"
-logo: "💳"
-region: "India"
+  - design
+  - fintech
+  - exclusivity
+logo: "\U0001F4B3"
+region: India
 faqs:
-  - question: "What is Cred's business model?"
-    answer: "Cred operates as a members-only credit card bill payment app for users with credit scores above 750. It earns through Cred Cash (lending), Cred Money (wealth management), partner commissions, and Cred Garage. The brand asset built through obsessive design and exclusivity now monetizes through these adjacent financial products."
-  - question: "Why does Cred reject 70% of users?"
-    answer: "Cred's 750+ credit score gate is intentional. By turning away most applicants, Cred created scarcity and status. The rejection messages themselves became viral marketing as users screenshotted and shared them on Twitter — making exclusivity itself the product."
-  - question: "Who founded Cred?"
-    answer: "Cred was founded by Kunal Shah in 2018. Shah previously founded FreeCharge, which he sold to Snapdeal for ~$400M in 2015. He spent his post-exit years thinking about what India's most affluent users needed but weren't getting."
-  - question: "What is Cred's valuation in 2026?"
-    answer: "Cred held its $6.4B valuation flat through a 2024 fundraise rather than accepting a markdown. The company now has 13M+ members and is finally translating the brand asset into monetization through Cred Cash, Cred Money, and Cred Garage."
+  - question: What is Cred's business model?
+    answer: >-
+      Cred operates as a members-only credit card bill payment app for users
+      with credit scores above 750. It earns through Cred Cash (lending), Cred
+      Money (wealth management), partner commissions, and Cred Garage. The brand
+      asset built through obsessive design and exclusivity now monetizes through
+      these adjacent financial products.
+  - question: Why does Cred reject 70% of users?
+    answer: >-
+      Cred's 750+ credit score gate is intentional. By turning away most
+      applicants, Cred created scarcity and status. The rejection messages
+      themselves became viral marketing as users screenshotted and shared them
+      on Twitter — making exclusivity itself the product.
+  - question: Who founded Cred?
+    answer: >-
+      Cred was founded by Kunal Shah in 2018. Shah previously founded
+      FreeCharge, which he sold to Snapdeal for ~$400M in 2015. He spent his
+      post-exit years thinking about what India's most affluent users needed but
+      weren't getting.
+  - question: What is Cred's valuation in 2026?
+    answer: >-
+      Cred held its $6.4B valuation flat through a 2024 fundraise rather than
+      accepting a markdown. The company now has 13M+ members and is finally
+      translating the brand asset into monetization through Cred Cash, Cred
+      Money, and Cred Garage.
+publishedAt: '2026-05-18'
 ---
 
 In 2018, India had a credit card market that was dysfunctional but enormous. Around 50 million cards were in circulation, dominated by HDFC, SBI, Axis, and ICICI, with users mostly servicing them through clunky bank apps that seemed designed to actively discourage use. Bill payment was a pain point: users would forget due dates, get hit with late fees, or pay through a maze of net banking redirects. Kunal Shah, founder of FreeCharge (which he had sold to Snapdeal for around $400M in 2015), spent his post-exit years thinking about what India's most affluent users actually needed but were not getting. The answer he arrived at was unconventional. India had built an entire fintech sector serving the unbanked and underbanked. Nobody was building specifically for the top of the credit-card pyramid. Cred would be that.

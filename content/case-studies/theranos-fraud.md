@@ -1,26 +1,50 @@
 ---
-id: "cs-43"
-slug: "theranos-fraud"
-company: "Theranos"
-title: "Theranos: When Product Fakery Goes Criminal"
-category: "Failure"
-description: "Elizabeth Holmes raised $900M claiming her blood-testing device could run 200 tests from a finger prick. The technology never worked. She faked demos using competitors' machines."
-outcome: "Holmes convicted of fraud in 2022. Sentenced to 11 years in prison."
+id: cs-43
+slug: theranos-fraud
+company: Theranos
+title: 'Theranos: When Product Fakery Goes Criminal'
+category: Failure
+description: >-
+  Elizabeth Holmes raised $900M claiming her blood-testing device could run 200
+  tests from a finger prick. The technology never worked. She faked demos using
+  competitors' machines.
+outcome: Holmes convicted of fraud in 2022. Sentenced to 11 years in prison.
 year: 2015
 tags:
-  - "fraud"
-  - "healthtech"
-  - "ethics"
-logo: "🩸"
+  - fraud
+  - healthtech
+  - ethics
+logo: "\U0001FA78"
 faqs:
-  - question: "What did Theranos lie about?"
-    answer: "Theranos claimed its Edison machine could run hundreds of medical tests from a single finger-prick of blood. In reality, the technology never worked. Theranos used commercial Siemens machines for most tests, diluted blood samples to make them work in other devices, and reported fabricated results to patients and partners."
-  - question: "How did Theranos fool investors?"
-    answer: "Theranos raised $700M+ at a $9B valuation through founder charisma, celebrity board members (Kissinger, Mattis, Shultz), and the promise of revolutionizing healthcare. Founder Elizabeth Holmes carefully controlled information flow — investors never saw a working demo of the actual technology before investing."
-  - question: "What happened to Elizabeth Holmes?"
-    answer: "Elizabeth Holmes was convicted in January 2022 on four counts of investor fraud. She was sentenced to over 11 years in federal prison and is currently serving her sentence. Her conviction marked the symbolic end of the 'fake it till you make it' Silicon Valley founder culture of the 2010s."
-  - question: "Was Theranos technology real?"
-    answer: "No — the core Edison machine never worked as claimed. Internal Theranos engineers raised concerns repeatedly that were dismissed by leadership. The company knew the technology was non-functional but continued to claim otherwise to investors, patients, and partners — which is what made it a criminal fraud rather than just a failure."
+  - question: What did Theranos lie about?
+    answer: >-
+      Theranos claimed its Edison machine could run hundreds of medical tests
+      from a single finger-prick of blood. In reality, the technology never
+      worked. Theranos used commercial Siemens machines for most tests, diluted
+      blood samples to make them work in other devices, and reported fabricated
+      results to patients and partners.
+  - question: How did Theranos fool investors?
+    answer: >-
+      Theranos raised $700M+ at a $9B valuation through founder charisma,
+      celebrity board members (Kissinger, Mattis, Shultz), and the promise of
+      revolutionizing healthcare. Founder Elizabeth Holmes carefully controlled
+      information flow — investors never saw a working demo of the actual
+      technology before investing.
+  - question: What happened to Elizabeth Holmes?
+    answer: >-
+      Elizabeth Holmes was convicted in January 2022 on four counts of investor
+      fraud. She was sentenced to over 11 years in federal prison and is
+      currently serving her sentence. Her conviction marked the symbolic end of
+      the 'fake it till you make it' Silicon Valley founder culture of the
+      2010s.
+  - question: Was Theranos technology real?
+    answer: >-
+      No — the core Edison machine never worked as claimed. Internal Theranos
+      engineers raised concerns repeatedly that were dismissed by leadership.
+      The company knew the technology was non-functional but continued to claim
+      otherwise to investors, patients, and partners — which is what made it a
+      criminal fraud rather than just a failure.
+publishedAt: '2026-05-18'
 ---
 
 Elizabeth Holmes dropped out of Stanford at 19 to found Theranos in 2003, driven by a fear of needles and a vision of revolutionizing blood testing. The promise was extraordinary: a small proprietary device called the Edison that could run hundreds of diagnostic tests from a single drop of blood obtained through a painless finger prick, delivering results in minutes rather than days, at a fraction of the cost of traditional laboratory work. The vision was so compelling, the elimination of needles, the democratization of diagnostics, the potential to catch diseases earlier, that Holmes raised over $900 million from investors including Rupert Murdoch, the Walton family, Betsy DeVos, and Larry Ellison, reaching a peak valuation of $9 billion and making Holmes the youngest self-made female billionaire in history.

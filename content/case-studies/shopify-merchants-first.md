@@ -1,24 +1,44 @@
 ---
-id: "cs-25"
-slug: "shopify-merchants-first"
-company: "Shopify"
-title: "Shopify's Bet on Merchants Over Consumers"
-category: "Strategy"
-description: "Shopify made a counterintuitive bet: empower merchants instead of building a consumer marketplace. While Amazon fought merchants, Shopify armed them — becoming the anti-Amazon."
-outcome: "$7B+ annual revenue. Powers 10% of all US e-commerce."
+id: cs-25
+slug: shopify-merchants-first
+company: Shopify
+title: Shopify's Bet on Merchants Over Consumers
+category: Strategy
+description: >-
+  Shopify made a counterintuitive bet: empower merchants instead of building a
+  consumer marketplace. While Amazon fought merchants, Shopify armed them —
+  becoming the anti-Amazon.
+outcome: $7B+ annual revenue. Powers 10% of all US e-commerce.
 year: 2006
 tags:
-  - "platform"
-  - "e-commerce"
-  - "ecosystem"
-logo: "🛍️"
+  - platform
+  - e-commerce
+  - ecosystem
+logo: "\U0001F6CD️"
 faqs:
-  - question: "What is Shopify's product strategy?"
-    answer: "Shopify positioned itself as 'Amazon's adversary' — building tools for merchants to run independent online businesses, rather than aggregating them into a marketplace where Amazon controls the customer. Every product decision had to pass one test: does this make our merchant more independent? That focus is what made Shopify defensible against larger competitors."
-  - question: "How does Shopify make money?"
-    answer: "Shopify monetizes through Subscription Solutions (monthly plans, $39-$2000+/month based on tier) and Merchant Solutions (payment processing, Shop Pay, Shopify Capital, shipping). Merchant Solutions is now the bigger revenue line and grows with merchant GMV — meaning Shopify's revenue scales with merchant success."
-  - question: "Is Shopify bigger than Amazon for sellers?"
-    answer: "No, but they target different sellers. Amazon's marketplace has higher traffic but takes ~15-30% in fees and owns the customer relationship. Shopify lets merchants own their brand, customer data, and pricing — at the cost of self-driving traffic. Most successful Shopify merchants sell on both, but Shopify is where they build their durable brand asset."
+  - question: What is Shopify's product strategy?
+    answer: >-
+      Shopify positioned itself as 'Amazon's adversary' — building tools for
+      merchants to run independent online businesses, rather than aggregating
+      them into a marketplace where Amazon controls the customer. Every product
+      decision had to pass one test: does this make our merchant more
+      independent? That focus is what made Shopify defensible against larger
+      competitors.
+  - question: How does Shopify make money?
+    answer: >-
+      Shopify monetizes through Subscription Solutions (monthly plans,
+      $39-$2000+/month based on tier) and Merchant Solutions (payment
+      processing, Shop Pay, Shopify Capital, shipping). Merchant Solutions is
+      now the bigger revenue line and grows with merchant GMV — meaning
+      Shopify's revenue scales with merchant success.
+  - question: Is Shopify bigger than Amazon for sellers?
+    answer: >-
+      No, but they target different sellers. Amazon's marketplace has higher
+      traffic but takes ~15-30% in fees and owns the customer relationship.
+      Shopify lets merchants own their brand, customer data, and pricing — at
+      the cost of self-driving traffic. Most successful Shopify merchants sell
+      on both, but Shopify is where they build their durable brand asset.
+publishedAt: '2026-05-18'
 ---
 
 Tobias Lutke built the first version of Shopify because he wanted to sell snowboards online and found every existing e-commerce solution either too expensive, too complex, or too restrictive. This origin story is strategically significant because it meant Shopify was designed from the merchant's perspective, not the platform's. Every design decision, from the dashboard layout to the checkout flow to the pricing model, was made by someone who had personally experienced the frustration of trying to run an online store. While Amazon was building a consumer marketplace where merchants were interchangeable suppliers competing on price, Shopify made a deliberately different strategic choice: empower individual merchants to build their own brands, their own stores, and their own customer relationships.

@@ -1,24 +1,44 @@
 ---
-id: "cs-41"
-slug: "microsoft-zune-failure"
-company: "Microsoft"
-title: "Microsoft Zune: Too Little, Too Late"
-category: "Failure"
-description: "Microsoft's Zune was technically superior to the iPod in some ways — better screen, FM radio, sharing. But the iPod had network effects, iTunes, and brand. Zune was discontinued in 2011."
-outcome: "Total market share never exceeded 10%. Discontinued in 2011."
+id: cs-41
+slug: microsoft-zune-failure
+company: Microsoft
+title: 'Microsoft Zune: Too Little, Too Late'
+category: Failure
+description: >-
+  Microsoft's Zune was technically superior to the iPod in some ways — better
+  screen, FM radio, sharing. But the iPod had network effects, iTunes, and
+  brand. Zune was discontinued in 2011.
+outcome: Total market share never exceeded 10%. Discontinued in 2011.
 year: 2006
 tags:
-  - "hardware"
-  - "network effects"
-  - "competition"
-logo: "🎵"
+  - hardware
+  - network effects
+  - competition
+logo: "\U0001F3B5"
 faqs:
-  - question: "Why did the Microsoft Zune fail?"
-    answer: "Microsoft launched Zune in 2006 — 5 years after the iPod and during peak iPod dominance. The product was technically competent but lacked the iTunes ecosystem, lacked the cool factor, and arrived years too late. By 2008 the iPhone was eating MP3 players entirely. Zune was discontinued in 2011 with cumulative sales of under 5M units."
-  - question: "When was the Zune discontinued?"
-    answer: "Microsoft discontinued Zune hardware in 2011 and shut down the Zune Music service in 2012 (it merged into Xbox Music, then Groove Music, then was killed entirely in favor of streaming partners). The Zune brand survives only as a nostalgic reference in tech circles — a textbook example of why entering a category late often doesn't work even with deep pockets."
-  - question: "What did Microsoft learn from Zune?"
-    answer: "Microsoft's Zune failure taught lessons that shaped later strategy: don't chase markets where you're 5 years late; ecosystem (iTunes) matters more than hardware; entering at parity isn't enough — you need significant differentiation. These lessons influenced Microsoft's Surface strategy (entering tablets at differentiation, not parity) and Xbox Game Pass (ecosystem play, not just hardware)."
+  - question: Why did the Microsoft Zune fail?
+    answer: >-
+      Microsoft launched Zune in 2006 — 5 years after the iPod and during peak
+      iPod dominance. The product was technically competent but lacked the
+      iTunes ecosystem, lacked the cool factor, and arrived years too late. By
+      2008 the iPhone was eating MP3 players entirely. Zune was discontinued in
+      2011 with cumulative sales of under 5M units.
+  - question: When was the Zune discontinued?
+    answer: >-
+      Microsoft discontinued Zune hardware in 2011 and shut down the Zune Music
+      service in 2012 (it merged into Xbox Music, then Groove Music, then was
+      killed entirely in favor of streaming partners). The Zune brand survives
+      only as a nostalgic reference in tech circles — a textbook example of why
+      entering a category late often doesn't work even with deep pockets.
+  - question: What did Microsoft learn from Zune?
+    answer: >-
+      Microsoft's Zune failure taught lessons that shaped later strategy: don't
+      chase markets where you're 5 years late; ecosystem (iTunes) matters more
+      than hardware; entering at parity isn't enough — you need significant
+      differentiation. These lessons influenced Microsoft's Surface strategy
+      (entering tablets at differentiation, not parity) and Xbox Game Pass
+      (ecosystem play, not just hardware).
+publishedAt: '2026-05-18'
 ---
 
 When Microsoft launched the Zune in November 2006, it was entering the portable music player market five years after Apple had defined it with the iPod. On paper, the Zune was a capable and in some ways superior device. The 30GB player had a larger screen than the comparable iPod, an FM radio tuner, and a wireless sharing feature called "squirting" that let users beam songs to nearby Zune owners. The Zune Marketplace offered a subscription model at $14.99 per month for unlimited music alongside per-track purchases, a model that was arguably ahead of its time and predated Spotify by several years. Microsoft brought significant resources to the effort, including a dedicated hardware team, a substantial marketing budget, and the backing of the world's largest software company.

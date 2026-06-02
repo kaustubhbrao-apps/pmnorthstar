@@ -1,24 +1,45 @@
 ---
-id: "cs-33"
-slug: "headspace-meditation-design"
-company: "Headspace"
-title: "Headspace's Approachable Design for Meditation"
-category: "Design"
-description: "Headspace made meditation non-intimidating through friendly illustration, simple language, and short sessions. They proved UX and content design could make a behavior change app succeed."
-outcome: "65M+ downloads. $3B valuation."
+id: cs-33
+slug: headspace-meditation-design
+company: Headspace
+title: Headspace's Approachable Design for Meditation
+category: Design
+description: >-
+  Headspace made meditation non-intimidating through friendly illustration,
+  simple language, and short sessions. They proved UX and content design could
+  make a behavior change app succeed.
+outcome: 65M+ downloads. $3B valuation.
 year: 2010
 tags:
-  - "wellness"
-  - "illustration"
-  - "onboarding"
-logo: "🧘"
+  - wellness
+  - illustration
+  - onboarding
+logo: "\U0001F9D8"
 faqs:
-  - question: "Why is Headspace popular?"
-    answer: "Headspace took meditation — historically positioned as serious spiritual practice — and made it approachable for skeptical Western audiences. Andy Puddicombe's calm British narration, friendly animations, and beginner-friendly programming removed the barrier of feeling 'unqualified' to meditate. The product design was the differentiator, not the content alone."
-  - question: "How does Headspace make money?"
-    answer: "Headspace monetizes through subscription (~$70/year for Headspace Plus, with corporate plans for employer wellness programs). The company also has a B2B arm (Headspace for Work) selling to enterprises for employee wellness. Combined with the 2021 Ginger acquisition (mental health on-demand therapy), the company offers an integrated mental health stack."
-  - question: "Who founded Headspace?"
-    answer: "Headspace was co-founded in 2010 by Andy Puddicombe (a former Buddhist monk and the voice of Headspace's meditations) and Rich Pierson (the business/operations co-founder). Puddicombe's monk background gave the brand authentic credibility; Pierson's product/business skills scaled it. The two-founder split worked because their skills genuinely didn't overlap."
+  - question: Why is Headspace popular?
+    answer: >-
+      Headspace took meditation — historically positioned as serious spiritual
+      practice — and made it approachable for skeptical Western audiences. Andy
+      Puddicombe's calm British narration, friendly animations, and
+      beginner-friendly programming removed the barrier of feeling 'unqualified'
+      to meditate. The product design was the differentiator, not the content
+      alone.
+  - question: How does Headspace make money?
+    answer: >-
+      Headspace monetizes through subscription (~$70/year for Headspace Plus,
+      with corporate plans for employer wellness programs). The company also has
+      a B2B arm (Headspace for Work) selling to enterprises for employee
+      wellness. Combined with the 2021 Ginger acquisition (mental health
+      on-demand therapy), the company offers an integrated mental health stack.
+  - question: Who founded Headspace?
+    answer: >-
+      Headspace was co-founded in 2010 by Andy Puddicombe (a former Buddhist
+      monk and the voice of Headspace's meditations) and Rich Pierson (the
+      business/operations co-founder). Puddicombe's monk background gave the
+      brand authentic credibility; Pierson's product/business skills scaled it.
+      The two-founder split worked because their skills genuinely didn't
+      overlap.
+publishedAt: '2026-05-18'
 ---
 
 Meditation apps in 2010 were austere, spiritual, and intimidating. They featured lotus flowers, om symbols, and language borrowed from Buddhist traditions, including terms like "mindfulness practice," "dharma," and "sangha" that meant nothing to someone who had never meditated. The visual design leaned heavily on soft purples, images of serene monks, and nature photography that felt disconnected from the stress and chaos of everyday life. These design choices appealed to existing meditators but actively repelled the much larger audience of stressed, curious beginners who had never meditated and were not sure they wanted to start something that looked like joining a spiritual movement.

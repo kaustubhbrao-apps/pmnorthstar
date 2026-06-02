@@ -1,28 +1,68 @@
 ---
-id: "cs-71"
-slug: "airbnb-programmatic-seo"
-company: "Airbnb"
-title: "How Airbnb Built the Largest Programmatic SEO Machine in Travel"
-category: "Growth"
-description: "Airbnb generated tens of thousands of neighborhood pages with structured data, sitemaps, and canonical URLs in the early 2010s. By 2018, organic search was the largest customer acquisition channel for the company, dwarfing paid spend in CAC efficiency."
-outcome: "Roughly 100M+ organic search visitors per year by 2018-2019. Programmatic SEO became the canonical playbook for marketplace companies. The /s/{city}/homes URL structure became a category convention."
+id: cs-71
+slug: airbnb-programmatic-seo
+company: Airbnb
+title: How Airbnb Built the Largest Programmatic SEO Machine in Travel
+category: Growth
+description: >-
+  Airbnb generated tens of thousands of neighborhood pages with structured data,
+  sitemaps, and canonical URLs in the early 2010s. By 2018, organic search was
+  the largest customer acquisition channel for the company, dwarfing paid spend
+  in CAC efficiency.
+outcome: >-
+  Roughly 100M+ organic search visitors per year by 2018-2019. Programmatic SEO
+  became the canonical playbook for marketplace companies. The /s/{city}/homes
+  URL structure became a category convention.
 year: 2012
 tags:
-  - "SEO"
-  - "growth"
-  - "marketplace"
-logo: "A"
+  - SEO
+  - growth
+  - marketplace
+logo: A
 faqs:
-  - question: "What is programmatic SEO?"
-    answer: "Programmatic SEO is the strategy of generating large numbers of search-targeted landing pages from a structured data source — neighborhoods, cities, categories, attributes — rather than writing each page by hand. Airbnb generated a unique landing page for every combination of (city × neighborhood × property attributes), giving them coverage on hundreds of thousands of long-tail queries like 'lofts in brooklyn williamsburg' that competitors didn't target at all."
-  - question: "How many pages did Airbnb generate?"
-    answer: "Estimates vary because the page count grew continuously and many pages were dynamic, but by 2018-2019 Airbnb was indexing on the order of 10-15 million URLs, with several million driving meaningful organic traffic. The combination of (cities × neighborhoods × filters × dates) produces a combinatorial explosion that, done correctly, captures search demand at every level of specificity."
-  - question: "What did Airbnb get right that other marketplaces got wrong?"
-    answer: "Three things. First, structured data on every page (JSON-LD schemas for LocalBusiness, Product, Review, FAQ) so search engines understood what each page was about. Second, aggressive canonical URL discipline so duplicate-looking pages didn't compete with each other. Third, sitemap automation so new pages were crawled within hours, not weeks. Most marketplaces shipped two of three; Airbnb shipped all three by 2014."
-  - question: "Is programmatic SEO still effective in 2026?"
-    answer: "Effective but harder. Google's 2022 'helpful content update' penalized low-quality programmatic content (pages with no original information), and AI-generated content has made the strategy more crowded. The version that still works is what Airbnb did originally: pages that contain genuinely useful information (real listings, real reviews, real pricing) wrapped in SEO-friendly structure. Pages built from boilerplate templates with no real data are now penalized aggressively."
-  - question: "Can small companies do programmatic SEO?"
-    answer: "Yes, and many do. The strategy doesn't require Airbnb-scale data. It requires (a) a structured data source with enough rows to be interesting, (b) a templated page that surfaces that data usefully, (c) a sitemap and meta-description pipeline that doesn't break at scale. The minimum viable version is 100-1000 pages — enough to capture long-tail demand without triggering quality penalties."
+  - question: What is programmatic SEO?
+    answer: >-
+      Programmatic SEO is the strategy of generating large numbers of
+      search-targeted landing pages from a structured data source —
+      neighborhoods, cities, categories, attributes — rather than writing each
+      page by hand. Airbnb generated a unique landing page for every combination
+      of (city × neighborhood × property attributes), giving them coverage on
+      hundreds of thousands of long-tail queries like 'lofts in brooklyn
+      williamsburg' that competitors didn't target at all.
+  - question: How many pages did Airbnb generate?
+    answer: >-
+      Estimates vary because the page count grew continuously and many pages
+      were dynamic, but by 2018-2019 Airbnb was indexing on the order of 10-15
+      million URLs, with several million driving meaningful organic traffic. The
+      combination of (cities × neighborhoods × filters × dates) produces a
+      combinatorial explosion that, done correctly, captures search demand at
+      every level of specificity.
+  - question: What did Airbnb get right that other marketplaces got wrong?
+    answer: >-
+      Three things. First, structured data on every page (JSON-LD schemas for
+      LocalBusiness, Product, Review, FAQ) so search engines understood what
+      each page was about. Second, aggressive canonical URL discipline so
+      duplicate-looking pages didn't compete with each other. Third, sitemap
+      automation so new pages were crawled within hours, not weeks. Most
+      marketplaces shipped two of three; Airbnb shipped all three by 2014.
+  - question: Is programmatic SEO still effective in 2026?
+    answer: >-
+      Effective but harder. Google's 2022 'helpful content update' penalized
+      low-quality programmatic content (pages with no original information), and
+      AI-generated content has made the strategy more crowded. The version that
+      still works is what Airbnb did originally: pages that contain genuinely
+      useful information (real listings, real reviews, real pricing) wrapped in
+      SEO-friendly structure. Pages built from boilerplate templates with no
+      real data are now penalized aggressively.
+  - question: Can small companies do programmatic SEO?
+    answer: >-
+      Yes, and many do. The strategy doesn't require Airbnb-scale data. It
+      requires (a) a structured data source with enough rows to be interesting,
+      (b) a templated page that surfaces that data usefully, (c) a sitemap and
+      meta-description pipeline that doesn't break at scale. The minimum viable
+      version is 100-1000 pages — enough to capture long-tail demand without
+      triggering quality penalties.
+publishedAt: '2026-05-18'
 ---
 
 Airbnb in 2011 was a marketplace with traction but not yet escape velocity. The company had cracked the chicken-and-egg problem of hosts versus guests in San Francisco, New York, and a handful of other early cities, but customer acquisition was expensive. Paid acquisition through Google Ads was a losing battle against hotel brands with massive ad budgets. Direct traffic was growing but slowly. The team needed a customer acquisition channel that compounded over time and didn't bid against hotel chains for every search term. They chose SEO, and the version they built became one of the most studied growth machines in modern internet history.

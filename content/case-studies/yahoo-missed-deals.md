@@ -1,24 +1,44 @@
 ---
-id: "cs-45"
-slug: "yahoo-missed-deals"
-company: "Yahoo"
-title: "Yahoo Turned Down Google for $1M and Microsoft for $45B"
-category: "Failure"
-description: "Yahoo had two legendary opportunities: acquire Google in 2002 for $1M and sell to Microsoft in 2008 for $45B. They declined both. In 2016, Verizon bought them for $4.8B."
-outcome: "Sold to Verizon for $4.8B. A masterclass in strategic indecision."
+id: cs-45
+slug: yahoo-missed-deals
+company: Yahoo
+title: Yahoo Turned Down Google for $1M and Microsoft for $45B
+category: Failure
+description: >-
+  Yahoo had two legendary opportunities: acquire Google in 2002 for $1M and sell
+  to Microsoft in 2008 for $45B. They declined both. In 2016, Verizon bought
+  them for $4.8B.
+outcome: Sold to Verizon for $4.8B. A masterclass in strategic indecision.
 year: 2008
 tags:
-  - "acquisition"
-  - "strategy"
-  - "decline"
-logo: "🟣"
+  - acquisition
+  - strategy
+  - decline
+logo: "\U0001F7E3"
 faqs:
-  - question: "Did Yahoo really turn down Google for $1 million?"
-    answer: "Yes — in 1998, Yahoo had the chance to buy Google for around $1 million when Sergey Brin and Larry Page were still graduate students. Yahoo declined; Google was just a research project at the time with no clear business model. Today, Alphabet (Google's parent) is worth over $2 trillion. The Yahoo decision is one of the most-cited 'what if' moments in tech history."
-  - question: "What about the Microsoft Yahoo deal?"
-    answer: "Microsoft offered to buy Yahoo for $44.6B in February 2008. Jerry Yang (Yahoo CEO) rejected the offer, holding out for more. Microsoft walked away. Yahoo's stock collapsed; the company never recovered to that valuation. Yahoo eventually sold its core business to Verizon in 2017 for $4.5B — a 90%+ haircut from the Microsoft offer."
-  - question: "What is Yahoo worth in 2026?"
-    answer: "Yahoo's core business was sold to Verizon in 2017 for $4.5B, then resold to Apollo Global in 2021 for $5B. The Yahoo brand still exists (mail, finance, sports, news) but is a fraction of its 1999 peak market cap of $125B+. The Alibaba and Yahoo Japan stakes Yahoo held during its decline were worth more than the entire core business by 2015."
+  - question: Did Yahoo really turn down Google for $1 million?
+    answer: >-
+      Yes — in 1998, Yahoo had the chance to buy Google for around $1 million
+      when Sergey Brin and Larry Page were still graduate students. Yahoo
+      declined; Google was just a research project at the time with no clear
+      business model. Today, Alphabet (Google's parent) is worth over $2
+      trillion. The Yahoo decision is one of the most-cited 'what if' moments in
+      tech history.
+  - question: What about the Microsoft Yahoo deal?
+    answer: >-
+      Microsoft offered to buy Yahoo for $44.6B in February 2008. Jerry Yang
+      (Yahoo CEO) rejected the offer, holding out for more. Microsoft walked
+      away. Yahoo's stock collapsed; the company never recovered to that
+      valuation. Yahoo eventually sold its core business to Verizon in 2017 for
+      $4.5B — a 90%+ haircut from the Microsoft offer.
+  - question: What is Yahoo worth in 2026?
+    answer: >-
+      Yahoo's core business was sold to Verizon in 2017 for $4.5B, then resold
+      to Apollo Global in 2021 for $5B. The Yahoo brand still exists (mail,
+      finance, sports, news) but is a fraction of its 1999 peak market cap of
+      $125B+. The Alibaba and Yahoo Japan stakes Yahoo held during its decline
+      were worth more than the entire core business by 2015.
+publishedAt: '2026-05-18'
 ---
 
 Yahoo's history reads like a Greek tragedy of missed opportunities, a company that repeatedly held the future in its hands and let it slip through its fingers. The first missed opportunity came in 1998, when Yahoo had the chance to acquire Google. Larry Page and Sergey Brin, then Stanford PhD students, offered their search engine technology to Yahoo for $1 million. Yahoo's leadership declined because they did not want to send users away from Yahoo.com to external search results. Search was viewed as a utility that should keep users on Yahoo's portal, not as a standalone product worth owning. By the time Yahoo reconsidered in 2002 and offered $3 billion, Google's founders demanded $5 billion. Yahoo balked at the price, and Google went on to become one of the most valuable companies in the history of the world.

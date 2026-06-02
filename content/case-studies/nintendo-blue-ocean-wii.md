@@ -1,24 +1,44 @@
 ---
-id: "cs-24"
-slug: "nintendo-blue-ocean-wii"
-company: "Nintendo"
-title: "Nintendo's Blue Ocean Strategy with Wii"
-category: "Strategy"
-description: "Instead of competing on specs against PlayStation and Xbox, Nintendo targeted non-gamers with the motion-control Wii. They created a new market instead of fighting for an existing one."
-outcome: "Wii sold 101M units. Nintendo survived near-bankruptcy to become iconic again."
+id: cs-24
+slug: nintendo-blue-ocean-wii
+company: Nintendo
+title: Nintendo's Blue Ocean Strategy with Wii
+category: Strategy
+description: >-
+  Instead of competing on specs against PlayStation and Xbox, Nintendo targeted
+  non-gamers with the motion-control Wii. They created a new market instead of
+  fighting for an existing one.
+outcome: Wii sold 101M units. Nintendo survived near-bankruptcy to become iconic again.
 year: 2006
 tags:
-  - "blue ocean"
-  - "gaming"
-  - "positioning"
-logo: "🎮"
+  - blue ocean
+  - gaming
+  - positioning
+logo: "\U0001F3AE"
 faqs:
-  - question: "What is Nintendo's blue ocean strategy?"
-    answer: "When the Wii launched in 2006, the PlayStation 3 and Xbox 360 were competing on processing power and graphics — fighting for the same hardcore-gamer audience. Nintendo went the other direction: lower-spec hardware, motion controls, family-friendly games, lower price. The Wii created a new market (casual + family gamers) instead of fighting in the existing one. It outsold both competitors."
-  - question: "Why did Wii beat PlayStation 3 and Xbox 360?"
-    answer: "The Wii sold over 100 million units globally — outselling both PS3 and Xbox 360 in the same generation. Motion controls (Wii Remote) made games accessible to non-gamers. Wii Sports, Wii Fit, and Mario Kart Wii became cultural phenomena. Nintendo's bet that casual gamers were an untapped market turned out to be massively correct."
-  - question: "What happened after the Wii?"
-    answer: "The Wii U (2012) was a commercial disaster — confusing branding made it seem like a Wii accessory rather than a new console. Nintendo recovered with the Switch in 2017, which sold over 130M units and is now one of the best-selling consoles in history. The Switch combined Wii's casual appeal with portability — a different blue ocean play that worked again."
+  - question: What is Nintendo's blue ocean strategy?
+    answer: >-
+      When the Wii launched in 2006, the PlayStation 3 and Xbox 360 were
+      competing on processing power and graphics — fighting for the same
+      hardcore-gamer audience. Nintendo went the other direction: lower-spec
+      hardware, motion controls, family-friendly games, lower price. The Wii
+      created a new market (casual + family gamers) instead of fighting in the
+      existing one. It outsold both competitors.
+  - question: Why did Wii beat PlayStation 3 and Xbox 360?
+    answer: >-
+      The Wii sold over 100 million units globally — outselling both PS3 and
+      Xbox 360 in the same generation. Motion controls (Wii Remote) made games
+      accessible to non-gamers. Wii Sports, Wii Fit, and Mario Kart Wii became
+      cultural phenomena. Nintendo's bet that casual gamers were an untapped
+      market turned out to be massively correct.
+  - question: What happened after the Wii?
+    answer: >-
+      The Wii U (2012) was a commercial disaster — confusing branding made it
+      seem like a Wii accessory rather than a new console. Nintendo recovered
+      with the Switch in 2017, which sold over 130M units and is now one of the
+      best-selling consoles in history. The Switch combined Wii's casual appeal
+      with portability — a different blue ocean play that worked again.
+publishedAt: '2026-05-18'
 ---
 
 By the mid-2000s, the gaming console wars had become an unsustainable arms race of processing power and graphics fidelity. Sony's PlayStation 3 cost $599 at launch and included a Blu-ray player, positioning itself as a premium entertainment system. Microsoft's Xbox 360 competed head-to-head on specifications and online gaming capabilities. Each generation required more expensive hardware, more expensive game development, and higher consumer prices, narrowing the market to dedicated gamers willing to invest hundreds of dollars and hundreds of hours into complex gaming experiences. Nintendo, after the relative commercial failure of the GameCube, was in a precarious financial position and could not win a specifications war against Sony and Microsoft's massive R&D budgets.

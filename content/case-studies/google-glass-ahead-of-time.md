@@ -1,24 +1,46 @@
 ---
-id: "cs-38"
-slug: "google-glass-ahead-of-time"
-company: "Google"
-title: "Google Glass: A Product Ahead of Its Time"
-category: "Failure"
-description: "Google Glass was technically impressive but socially toxic. 'Glassholes' became a cultural term. The product failed not from technology but from ignoring social context and privacy concerns."
-outcome: "Consumer launch scrapped in 2015. Enterprise version survived quietly."
+id: cs-38
+slug: google-glass-ahead-of-time
+company: Google
+title: 'Google Glass: A Product Ahead of Its Time'
+category: Failure
+description: >-
+  Google Glass was technically impressive but socially toxic. 'Glassholes'
+  became a cultural term. The product failed not from technology but from
+  ignoring social context and privacy concerns.
+outcome: Consumer launch scrapped in 2015. Enterprise version survived quietly.
 year: 2013
 tags:
-  - "AR"
-  - "wearables"
-  - "social context"
-logo: "👓"
+  - AR
+  - wearables
+  - social context
+logo: "\U0001F453"
 faqs:
-  - question: "Why did Google Glass fail?"
-    answer: "Google Glass launched in 2013 as an explorer-program developer device priced at $1,500. Three things killed it: privacy backlash from people who felt unsafe being near a wearable camera, awkward social signaling (early users were nicknamed 'glassholes'), and lack of compelling daily-use cases. Google paused the consumer version in 2015 and pivoted to enterprise-only deployments."
-  - question: "Is Google Glass still around?"
-    answer: "The consumer version of Google Glass was discontinued in 2015. An enterprise version (Glass Enterprise Edition) continued for workplace use cases — warehouses, surgery, manufacturing — until being formally discontinued in early 2023. Apple Vision Pro, Meta Ray-Bans, and other smart-glasses products picked up where Glass left off, with mixed early results."
-  - question: "When did Google Glass launch?"
-    answer: "Google Glass was announced in April 2012 and shipped to developers/'Explorers' in 2013 at $1,500 per unit. The consumer launch never fully happened — Google paused the program in January 2015 amid mounting criticism and pivoted to enterprise-only sales. The device has become a textbook case study of timing and social acceptance in wearable tech."
+  - question: Why did Google Glass fail?
+    answer: >-
+      Google Glass launched in 2013 as an explorer-program developer device
+      priced at $1,500. Three things killed it: privacy backlash from people who
+      felt unsafe being near a wearable camera, awkward social signaling (early
+      users were nicknamed 'glassholes'), and lack of compelling daily-use
+      cases. Google paused the consumer version in 2015 and pivoted to
+      enterprise-only deployments.
+  - question: Is Google Glass still around?
+    answer: >-
+      The consumer version of Google Glass was discontinued in 2015. An
+      enterprise version (Glass Enterprise Edition) continued for workplace use
+      cases — warehouses, surgery, manufacturing — until being formally
+      discontinued in early 2023. Apple Vision Pro, Meta Ray-Bans, and other
+      smart-glasses products picked up where Glass left off, with mixed early
+      results.
+  - question: When did Google Glass launch?
+    answer: >-
+      Google Glass was announced in April 2012 and shipped to
+      developers/'Explorers' in 2013 at $1,500 per unit. The consumer launch
+      never fully happened — Google paused the program in January 2015 amid
+      mounting criticism and pivoted to enterprise-only sales. The device has
+      become a textbook case study of timing and social acceptance in wearable
+      tech.
+publishedAt: '2026-05-18'
 ---
 
 Google Glass was one of the most technically ambitious and publicly hyped consumer products ever launched. A miniaturized heads-up display mounted on eyeglass frames could take photos, record video, display notifications, provide turn-by-turn navigation, and access Google Search, all controlled by voice commands, a touchpad on the temple, and head movements. When Google co-founder Sergey Brin demoed Glass by having skydivers wearing the device parachute into a Google I/O conference and beam live video to the audience, the technology world was mesmerized. The product represented Google's vision of ambient computing, where information was always available without the barrier of pulling out a phone.

@@ -1,26 +1,48 @@
 ---
-id: "cs-29"
-slug: "chatgpt-consumer-launch"
-company: "OpenAI"
-title: "ChatGPT's Consumer Launch That Changed AI"
-category: "Strategy"
-description: "OpenAI launched ChatGPT as a free research preview expecting moderate interest. It reached 100M users in 2 months — the fastest consumer app in history. The strategy: show, don't tell."
-outcome: "Valued at $157B. Triggered an industry-wide AI arms race."
+id: cs-29
+slug: chatgpt-consumer-launch
+company: OpenAI
+title: ChatGPT's Consumer Launch That Changed AI
+category: Strategy
+description: >-
+  OpenAI launched ChatGPT as a free research preview expecting moderate
+  interest. It reached 100M users in 2 months — the fastest consumer app in
+  history. The strategy: show, don't tell.
+outcome: Valued at $157B. Triggered an industry-wide AI arms race.
 year: 2022
 tags:
-  - "AI"
-  - "consumer"
-  - "launch"
-logo: "🤖"
+  - AI
+  - consumer
+  - launch
+logo: "\U0001F916"
 faqs:
-  - question: "How did ChatGPT grow to 100 million users?"
-    answer: "ChatGPT reached 100 million monthly users in roughly 60 days from its November 30, 2022 launch — the fastest consumer product growth in history. The free web interface, conversational format, and surprisingly capable responses made it instantly shareable, with users discovering it through social media."
-  - question: "When was ChatGPT launched?"
-    answer: "ChatGPT launched on November 30, 2022, as a free 'research preview' of OpenAI's GPT-3.5 model. The intent was a low-key release to gather feedback; the response was an unprecedented consumer surge that defined the modern AI era."
-  - question: "How does OpenAI make money?"
-    answer: "OpenAI monetizes through ChatGPT subscriptions (Plus, Pro, Team, Enterprise tiers), API access for developers, Microsoft Copilot revenue share, and an evolving enterprise business. By 2026, the company is approaching tens of billions in annual revenue, primarily from consumer and enterprise subscriptions."
-  - question: "Was ChatGPT the first chatbot?"
-    answer: "No — chatbots existed for decades before ChatGPT. What ChatGPT did was combine genuine conversational capability (driven by the underlying GPT-3.5 then GPT-4 models) with a frictionless free interface that anyone could use. The combination of capability and accessibility was new."
+  - question: How did ChatGPT grow to 100 million users?
+    answer: >-
+      ChatGPT reached 100 million monthly users in roughly 60 days from its
+      November 30, 2022 launch — the fastest consumer product growth in history.
+      The free web interface, conversational format, and surprisingly capable
+      responses made it instantly shareable, with users discovering it through
+      social media.
+  - question: When was ChatGPT launched?
+    answer: >-
+      ChatGPT launched on November 30, 2022, as a free 'research preview' of
+      OpenAI's GPT-3.5 model. The intent was a low-key release to gather
+      feedback; the response was an unprecedented consumer surge that defined
+      the modern AI era.
+  - question: How does OpenAI make money?
+    answer: >-
+      OpenAI monetizes through ChatGPT subscriptions (Plus, Pro, Team,
+      Enterprise tiers), API access for developers, Microsoft Copilot revenue
+      share, and an evolving enterprise business. By 2026, the company is
+      approaching tens of billions in annual revenue, primarily from consumer
+      and enterprise subscriptions.
+  - question: Was ChatGPT the first chatbot?
+    answer: >-
+      No — chatbots existed for decades before ChatGPT. What ChatGPT did was
+      combine genuine conversational capability (driven by the underlying
+      GPT-3.5 then GPT-4 models) with a frictionless free interface that anyone
+      could use. The combination of capability and accessibility was new.
+publishedAt: '2026-05-18'
 ---
 
 On November 30, 2022, OpenAI quietly launched ChatGPT as a "research preview," a free demo of their GPT-3.5 language model wrapped in a simple chat interface. The company expected modest interest from AI researchers and technology enthusiasts. OpenAI had been operating primarily as an AI research lab and API provider, selling access to its language models through a developer API that required technical skills to use. The launch of ChatGPT was not a major strategic initiative; it was conceived as a low-risk experiment to gather user feedback and demonstrate the capabilities of the latest model. Nobody at OpenAI anticipated what happened next.

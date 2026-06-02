@@ -1,27 +1,52 @@
 ---
-id: "cs-60"
-slug: "meesho-social-commerce"
-company: "Meesho"
-title: "How Meesho Built Social Commerce for Bharat"
-category: "Growth"
-description: "Meesho turned 14 million Indian women into entrepreneurs running social commerce businesses from their WhatsApp groups. Then pivoted entirely to a zero-commission marketplace and almost broke itself before becoming profitable."
-outcome: "$4.9B+ valuation. 14M+ resellers. 175M+ users across 27,000 PIN codes. India's largest social commerce platform — and the first major Indian e-commerce company to become profitable."
+id: cs-60
+slug: meesho-social-commerce
+company: Meesho
+title: How Meesho Built Social Commerce for Bharat
+category: Growth
+description: >-
+  Meesho turned 14 million Indian women into entrepreneurs running social
+  commerce businesses from their WhatsApp groups. Then pivoted entirely to a
+  zero-commission marketplace and almost broke itself before becoming
+  profitable.
+outcome: >-
+  $4.9B+ valuation. 14M+ resellers. 175M+ users across 27,000 PIN codes. India's
+  largest social commerce platform — and the first major Indian e-commerce
+  company to become profitable.
 year: 2015
 tags:
-  - "social-commerce"
-  - "rural"
-  - "marketplace"
-logo: "🛍️"
-region: "India"
+  - social-commerce
+  - rural
+  - marketplace
+logo: "\U0001F6CD️"
+region: India
 faqs:
-  - question: "What is Meesho?"
-    answer: "Meesho is India's largest social commerce platform, with 14M+ resellers (mostly women) selling products through WhatsApp groups, plus a direct-to-consumer marketplace. It bridges manufacturers in cities like Surat and Tirupur with consumers in Tier 3+ Indian towns."
-  - question: "How does Meesho social commerce work?"
-    answer: "A reseller on Meesho browses products from manufacturers, shares them with her customers via WhatsApp at a markup, and earns the difference when the customer orders. Meesho handles inventory, payments, shipping, and returns — the reseller's role is trust and curation."
-  - question: "Is Meesho profitable?"
-    answer: "Yes — Meesho became the first major Indian e-commerce platform to achieve sustained profitability, reaching positive unit economics in 2024. The zero-commission seller model (counterintuitive vs Flipkart/Amazon's 5-30% commissions) actually built the moat by attracting more sellers at lower prices."
-  - question: "When will Meesho IPO?"
-    answer: "Meesho is preparing for an Indian IPO expected in 2025-26. With $4.9B+ valuation, 14M+ resellers, 175M+ users across 27,000 PIN codes, and now sustained profitability, it's positioned as one of the most-watched upcoming Indian e-commerce listings."
+  - question: What is Meesho?
+    answer: >-
+      Meesho is India's largest social commerce platform, with 14M+ resellers
+      (mostly women) selling products through WhatsApp groups, plus a
+      direct-to-consumer marketplace. It bridges manufacturers in cities like
+      Surat and Tirupur with consumers in Tier 3+ Indian towns.
+  - question: How does Meesho social commerce work?
+    answer: >-
+      A reseller on Meesho browses products from manufacturers, shares them with
+      her customers via WhatsApp at a markup, and earns the difference when the
+      customer orders. Meesho handles inventory, payments, shipping, and returns
+      — the reseller's role is trust and curation.
+  - question: Is Meesho profitable?
+    answer: >-
+      Yes — Meesho became the first major Indian e-commerce platform to achieve
+      sustained profitability, reaching positive unit economics in 2024. The
+      zero-commission seller model (counterintuitive vs Flipkart/Amazon's 5-30%
+      commissions) actually built the moat by attracting more sellers at lower
+      prices.
+  - question: When will Meesho IPO?
+    answer: >-
+      Meesho is preparing for an Indian IPO expected in 2025-26. With $4.9B+
+      valuation, 14M+ resellers, 175M+ users across 27,000 PIN codes, and now
+      sustained profitability, it's positioned as one of the most-watched
+      upcoming Indian e-commerce listings.
+publishedAt: '2026-05-18'
 ---
 
 Indian e-commerce in 2015 was a Tier 1 city game. Flipkart and Amazon dominated metros and Tier 2 cities; Snapdeal had a shot at Tier 3 but was burning cash. Beyond that, the next 600 million Indians — Tier 4 cities, towns, villages — were considered structurally unreachable by online commerce. The reasoning seemed airtight: digital literacy was low, credit card penetration was negligible, distrust of online payments ran deep, and last-mile logistics to remote PIN codes broke unit economics. Vidit Aatrey and Sanjeev Barnwal, two IIT Delhi graduates, founded Fashnear in 2015 as a hyperlocal fashion delivery service. It failed within six months. What they noticed during that failure changed everything: the women selling clothes through hyperlocal experiments weren't selling to friends physically nearby — they were selling to friends on WhatsApp who lived hours away. The product wasn't the inventory or the delivery. The product was the social trust embedded in those WhatsApp groups.

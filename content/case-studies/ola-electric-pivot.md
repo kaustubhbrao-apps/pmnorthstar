@@ -1,29 +1,66 @@
 ---
-id: "cs-67"
-slug: "ola-electric-pivot"
-company: "Ola"
-title: "How Ola Lost Cabs to Uber and Bet the Company on Electric Two-Wheelers"
-category: "Strategy"
-description: "Ola Cabs raised $5B+ to win Indian ride-hailing and slowly lost the urban consumer to Uber. Then Bhavish Aggarwal made the most contrarian pivot in Indian startup history: bet the entire company on building electric scooters in a country that wasn't asking for them."
-outcome: "Ola Electric became India's #1 electric two-wheeler company within 3 years of launch. 30%+ market share. ₹5,000+ Cr revenue. Listed publicly in August 2024. Ola Cabs is now the smaller business."
+id: cs-67
+slug: ola-electric-pivot
+company: Ola
+title: How Ola Lost Cabs to Uber and Bet the Company on Electric Two-Wheelers
+category: Strategy
+description: >-
+  Ola Cabs raised $5B+ to win Indian ride-hailing and slowly lost the urban
+  consumer to Uber. Then Bhavish Aggarwal made the most contrarian pivot in
+  Indian startup history: bet the entire company on building electric scooters
+  in a country that wasn't asking for them.
+outcome: >-
+  Ola Electric became India's #1 electric two-wheeler company within 3 years of
+  launch. 30%+ market share. ₹5,000+ Cr revenue. Listed publicly in August 2024.
+  Ola Cabs is now the smaller business.
 year: 2010
 tags:
-  - "pivot"
-  - "EV"
-  - "manufacturing"
-logo: "🛵"
-region: "India"
+  - pivot
+  - EV
+  - manufacturing
+logo: "\U0001F6F5"
+region: India
 faqs:
-  - question: "Why did Ola lose to Uber in India?"
-    answer: "Three structural reasons: (1) Uber's global scale meant their tech stack and driver app were better, even for the Indian market. (2) Ola spread itself thin across too many products (Ola Foods, Ola Money, Ola Play, Ola Cabs) while Uber stayed focused. (3) Uber's brand carried global cachet that mattered with India's growing urban middle class. By 2022, Uber was meaningfully ahead in metros."
-  - question: "Why did Ola pivot to electric two-wheelers?"
-    answer: "Bhavish Aggarwal saw three things: India's two-wheeler market is 3x its car market by volume (~20M units/year), electrification was structurally inevitable as battery costs dropped, and no incumbent (Honda, Hero, TVS) was moving aggressively. The bet was that being first with credible product + manufacturing scale would establish category leadership before the OEMs reacted."
-  - question: "When did Ola Electric launch?"
-    answer: "Ola Electric launched its first scooter (Ola S1) in August 2021 after building India's largest electric two-wheeler manufacturing facility in Tamil Nadu. The factory had 10 million unit annual capacity at launch — more than the entire Indian electric two-wheeler market at the time, by 10x. The capacity bet looked insane in 2021 and visionary by 2024."
-  - question: "Is Ola Electric profitable?"
-    answer: "Ola Electric is still loss-making at the consolidated level as of 2025-26, but the gap is narrowing each quarter as scale improves unit economics. Contribution margin per scooter is positive in most variants. Path to overall profitability depends on hitting 60-80K monthly unit sales sustainably, which the company is approaching but hasn't consistently maintained."
-  - question: "What is Krutrim AI?"
-    answer: "Krutrim is Ola's AI lab, launched in 2023, building large language models trained on Indian languages. It's Ola's third bet after cabs and electric scooters: that India needs its own AI infrastructure rather than depending on US-built models. The first Krutrim model launched in 2024. It's early but represents the same pattern: Aggarwal making contrarian, capital-intensive bets on Indian infrastructure."
+  - question: Why did Ola lose to Uber in India?
+    answer: >-
+      Three structural reasons: (1) Uber's global scale meant their tech stack
+      and driver app were better, even for the Indian market. (2) Ola spread
+      itself thin across too many products (Ola Foods, Ola Money, Ola Play, Ola
+      Cabs) while Uber stayed focused. (3) Uber's brand carried global cachet
+      that mattered with India's growing urban middle class. By 2022, Uber was
+      meaningfully ahead in metros.
+  - question: Why did Ola pivot to electric two-wheelers?
+    answer: >-
+      Bhavish Aggarwal saw three things: India's two-wheeler market is 3x its
+      car market by volume (~20M units/year), electrification was structurally
+      inevitable as battery costs dropped, and no incumbent (Honda, Hero, TVS)
+      was moving aggressively. The bet was that being first with credible
+      product + manufacturing scale would establish category leadership before
+      the OEMs reacted.
+  - question: When did Ola Electric launch?
+    answer: >-
+      Ola Electric launched its first scooter (Ola S1) in August 2021 after
+      building India's largest electric two-wheeler manufacturing facility in
+      Tamil Nadu. The factory had 10 million unit annual capacity at launch —
+      more than the entire Indian electric two-wheeler market at the time, by
+      10x. The capacity bet looked insane in 2021 and visionary by 2024.
+  - question: Is Ola Electric profitable?
+    answer: >-
+      Ola Electric is still loss-making at the consolidated level as of 2025-26,
+      but the gap is narrowing each quarter as scale improves unit economics.
+      Contribution margin per scooter is positive in most variants. Path to
+      overall profitability depends on hitting 60-80K monthly unit sales
+      sustainably, which the company is approaching but hasn't consistently
+      maintained.
+  - question: What is Krutrim AI?
+    answer: >-
+      Krutrim is Ola's AI lab, launched in 2023, building large language models
+      trained on Indian languages. It's Ola's third bet after cabs and electric
+      scooters: that India needs its own AI infrastructure rather than depending
+      on US-built models. The first Krutrim model launched in 2024. It's early
+      but represents the same pattern: Aggarwal making contrarian,
+      capital-intensive bets on Indian infrastructure.
+publishedAt: '2026-05-18'
 ---
 
 Ola Cabs was India's tech success story in the mid-2010s. Bhavish Aggarwal had taken on Uber — the most aggressive global startup of its era — and built a credible Indian competitor that, for a while, was actually ahead in metro cities. By 2018, Ola had raised over $4 billion, expanded to four countries (UK, Australia, New Zealand, Bangladesh), and reached a $7 billion valuation. The script said this was the company that would prove Indian tech could win against Silicon Valley. The execution did not follow the script. By 2020, Uber was ahead in most Indian metros. Ola had quietly retreated from international markets, killed product after product, and was visibly losing engineering talent. The original story had broken.

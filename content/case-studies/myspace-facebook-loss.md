@@ -1,24 +1,44 @@
 ---
-id: "cs-44"
-slug: "myspace-facebook-loss"
-company: "Myspace"
-title: "MySpace Lost to Facebook by Ignoring Developers"
-category: "Failure"
-description: "MySpace had 100M users and could have bought Facebook for $75M. They chose monetization over experience, allowed chaotic profile customization, and closed their platform to developers."
-outcome: "Sold to News Corp for $580M in 2005. Sold again for $35M in 2011."
+id: cs-44
+slug: myspace-facebook-loss
+company: Myspace
+title: MySpace Lost to Facebook by Ignoring Developers
+category: Failure
+description: >-
+  MySpace had 100M users and could have bought Facebook for $75M. They chose
+  monetization over experience, allowed chaotic profile customization, and
+  closed their platform to developers.
+outcome: Sold to News Corp for $580M in 2005. Sold again for $35M in 2011.
 year: 2008
 tags:
-  - "social"
-  - "platform"
-  - "developer"
-logo: "💀"
+  - social
+  - platform
+  - developer
+logo: "\U0001F480"
 faqs:
-  - question: "Why did Myspace lose to Facebook?"
-    answer: "Myspace had 75M users when Facebook had 1M. Three years later, Myspace was a punchline. The structural causes: Myspace let users customize profile pages (UX disaster), failed to build a developer ecosystem (no platform play), and News Corp's $580M acquisition in 2005 led to product stagnation. Facebook was simply better engineered and made better strategic bets."
-  - question: "When did News Corp buy Myspace?"
-    answer: "News Corp acquired Myspace for $580M in July 2005. Six years later, in 2011, News Corp sold Myspace to Specific Media for $35M — a 94% loss. The acquisition is studied as an example of what happens when traditional-media owners try to operate a fast-moving tech platform with traditional-media instincts."
-  - question: "Does Myspace still exist?"
-    answer: "Yes — Myspace is still online as of 2026, owned by Time Inc/Meredith. The site has pivoted to focus on music discovery for indie artists. Active usage is a small fraction of its 2007-2008 peak. The Myspace brand survives as a nostalgic reference and a cautionary tale about social platform durability."
+  - question: Why did Myspace lose to Facebook?
+    answer: >-
+      Myspace had 75M users when Facebook had 1M. Three years later, Myspace was
+      a punchline. The structural causes: Myspace let users customize profile
+      pages (UX disaster), failed to build a developer ecosystem (no platform
+      play), and News Corp's $580M acquisition in 2005 led to product
+      stagnation. Facebook was simply better engineered and made better
+      strategic bets.
+  - question: When did News Corp buy Myspace?
+    answer: >-
+      News Corp acquired Myspace for $580M in July 2005. Six years later, in
+      2011, News Corp sold Myspace to Specific Media for $35M — a 94% loss. The
+      acquisition is studied as an example of what happens when
+      traditional-media owners try to operate a fast-moving tech platform with
+      traditional-media instincts.
+  - question: Does Myspace still exist?
+    answer: >-
+      Yes — Myspace is still online as of 2026, owned by Time Inc/Meredith. The
+      site has pivoted to focus on music discovery for indie artists. Active
+      usage is a small fraction of its 2007-2008 peak. The Myspace brand
+      survives as a nostalgic reference and a cautionary tale about social
+      platform durability.
+publishedAt: '2026-05-18'
 ---
 
 In 2006, MySpace was the most visited website in the United States, surpassing even Google in total page views. With over 100 million users, it was the undeniable king of social networking, the place where bands launched careers, where teenagers crafted their online identities through customized profiles, and where an entire generation first experienced the possibilities of social media. MySpace had every structural advantage: massive user base, deep cultural relevance, first-mover status, and the substantial resources of its parent company News Corp, which had acquired it for $580 million in 2005. Facebook, by contrast, was a college-only network with a fraction of MySpace's users and no clear path to catching up.

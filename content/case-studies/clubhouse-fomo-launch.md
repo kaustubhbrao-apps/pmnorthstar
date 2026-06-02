@@ -1,24 +1,43 @@
 ---
-id: "cs-19"
-slug: "clubhouse-fomo-launch"
-company: "Clubhouse"
-title: "Clubhouse's FOMO-Driven Invite Launch"
-category: "Growth"
-description: "Clubhouse launched invite-only during COVID lockdowns. Elon Musk and Mark Zuckerberg appearing on the platform caused explosive FOMO. The waitlist hit millions overnight."
-outcome: "Peaked at $4B valuation. Later declined — a cautionary tale about retention."
+id: cs-19
+slug: clubhouse-fomo-launch
+company: Clubhouse
+title: Clubhouse's FOMO-Driven Invite Launch
+category: Growth
+description: >-
+  Clubhouse launched invite-only during COVID lockdowns. Elon Musk and Mark
+  Zuckerberg appearing on the platform caused explosive FOMO. The waitlist hit
+  millions overnight.
+outcome: Peaked at $4B valuation. Later declined — a cautionary tale about retention.
 year: 2020
 tags:
-  - "FOMO"
-  - "audio"
-  - "invite"
-logo: "🎙️"
+  - FOMO
+  - audio
+  - invite
+logo: "\U0001F399️"
 faqs:
-  - question: "Why did Clubhouse fail?"
-    answer: "Clubhouse's ephemeral live-only audio rooms didn't compound. Once the novelty faded in 2022, content disappeared after each room closed — no library, no playback, no compounding usage value. Discord and Twitter Spaces absorbed the use case with persistent and recording-friendly versions. Clubhouse couldn't pivot fast enough."
-  - question: "When was Clubhouse popular?"
-    answer: "Clubhouse peaked in early 2021, during pandemic isolation when live audio felt novel. Elon Musk and Mark Zuckerberg made appearances. Valuation peaked at $4B. By mid-2022, usage was declining sharply; by 2023, the company laid off most staff. The brand survived in name but the original product is effectively dead."
-  - question: "What was Clubhouse's invite system?"
-    answer: "Clubhouse launched with iOS-only invite-only access — each user got 1-2 invites to give out. The scarcity drove FOMO, made invites trade for hundreds of dollars on eBay, and gave the product social signaling power. The downside: by the time Clubhouse opened to everyone, the novelty had faded and Twitter Spaces had launched a public alternative."
+  - question: Why did Clubhouse fail?
+    answer: >-
+      Clubhouse's ephemeral live-only audio rooms didn't compound. Once the
+      novelty faded in 2022, content disappeared after each room closed — no
+      library, no playback, no compounding usage value. Discord and Twitter
+      Spaces absorbed the use case with persistent and recording-friendly
+      versions. Clubhouse couldn't pivot fast enough.
+  - question: When was Clubhouse popular?
+    answer: >-
+      Clubhouse peaked in early 2021, during pandemic isolation when live audio
+      felt novel. Elon Musk and Mark Zuckerberg made appearances. Valuation
+      peaked at $4B. By mid-2022, usage was declining sharply; by 2023, the
+      company laid off most staff. The brand survived in name but the original
+      product is effectively dead.
+  - question: What was Clubhouse's invite system?
+    answer: >-
+      Clubhouse launched with iOS-only invite-only access — each user got 1-2
+      invites to give out. The scarcity drove FOMO, made invites trade for
+      hundreds of dollars on eBay, and gave the product social signaling power.
+      The downside: by the time Clubhouse opened to everyone, the novelty had
+      faded and Twitter Spaces had launched a public alternative.
+publishedAt: '2026-05-18'
 ---
 
 Clubhouse's rise was one of the most dramatic growth stories in technology history, and its decline was equally instructive. Launched in April 2020 by Paul Davison and Rohan Seth, the audio-only social network arrived at a moment of perfect contextual alignment. COVID lockdowns had isolated millions of people who craved human connection and spontaneous conversation. Clubhouse offered something irresistible: the feeling of being in a room with interesting, sometimes famous people, during a time when physical gatherings were impossible. The format was live audio rooms where speakers held conversations that listeners could join, like a conference panel or a dinner party that you could drop into from your couch.

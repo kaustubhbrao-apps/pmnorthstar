@@ -1,24 +1,41 @@
 ---
-id: "cs-8"
-slug: "zoom-frictionless-video"
-company: "Zoom"
-title: "Zoom's Obsession with Frictionless Video"
-category: "Product"
-description: "Eric Yuan left Cisco/WebEx because customers kept complaining. He built Zoom with a single obsession: make video calls that just work, every time."
-outcome: "Revenue grew 326% during COVID. 300M+ daily meeting participants."
+id: cs-8
+slug: zoom-frictionless-video
+company: Zoom
+title: Zoom's Obsession with Frictionless Video
+category: Product
+description: >-
+  Eric Yuan left Cisco/WebEx because customers kept complaining. He built Zoom
+  with a single obsession: make video calls that just work, every time.
+outcome: Revenue grew 326% during COVID. 300M+ daily meeting participants.
 year: 2013
 tags:
-  - "video"
-  - "simplicity"
-  - "enterprise"
-logo: "📹"
+  - video
+  - simplicity
+  - enterprise
+logo: "\U0001F4F9"
 faqs:
-  - question: "Why is Zoom better than competitors?"
-    answer: "Zoom optimized obsessively for one metric: time from clicking a link to joining a call. Most competitors had multi-minute friction (install apps, sign in, configure audio). Zoom let guests join in seconds with no install required. Eric Yuan personally read customer support tickets for years to maintain that ruthless focus on the join experience."
-  - question: "Who founded Zoom?"
-    answer: "Zoom was founded in 2011 by Eric Yuan, who was previously employee #20 at WebEx. He left because Cisco wouldn't ship the things customers needed. Zoom's first 10 years were preparation; the 2020 pandemic surge wasn't luck — it was a decade of engineering meeting a moment."
-  - question: "Is Zoom still relevant in 2026?"
-    answer: "Yes, though competitive pressure is intense. Microsoft Teams has bundling power; Google Meet has the workspace tie-in. Zoom's bet is on AI features (Zoom IQ, AI Companion) and developer ecosystem (Zoom Apps). Revenue growth has slowed from pandemic peaks but the user base remains massive — over 300M daily meeting participants at peak."
+  - question: Why is Zoom better than competitors?
+    answer: >-
+      Zoom optimized obsessively for one metric: time from clicking a link to
+      joining a call. Most competitors had multi-minute friction (install apps,
+      sign in, configure audio). Zoom let guests join in seconds with no install
+      required. Eric Yuan personally read customer support tickets for years to
+      maintain that ruthless focus on the join experience.
+  - question: Who founded Zoom?
+    answer: >-
+      Zoom was founded in 2011 by Eric Yuan, who was previously employee #20 at
+      WebEx. He left because Cisco wouldn't ship the things customers needed.
+      Zoom's first 10 years were preparation; the 2020 pandemic surge wasn't
+      luck — it was a decade of engineering meeting a moment.
+  - question: Is Zoom still relevant in 2026?
+    answer: >-
+      Yes, though competitive pressure is intense. Microsoft Teams has bundling
+      power; Google Meet has the workspace tie-in. Zoom's bet is on AI features
+      (Zoom IQ, AI Companion) and developer ecosystem (Zoom Apps). Revenue
+      growth has slowed from pandemic peaks but the user base remains massive —
+      over 300M daily meeting participants at peak.
+publishedAt: '2026-05-18'
 ---
 
 Eric Yuan spent 14 years at Cisco working on WebEx, watching customer satisfaction scores decline year after year. Users complained constantly about dropped calls, confusing interfaces, the need to install Java plugins, and the awkward dance of "Can you hear me? Can you see my screen?" that began every meeting. Yuan proposed a complete rebuild of WebEx from scratch, one built on modern cloud architecture rather than the aging codebase that had accumulated 15 years of technical debt. Cisco's leadership refused: the existing product was generating reliable revenue, and a ground-up rebuild was too risky and too expensive. So Yuan left in 2011, taking 40 engineers with him, to build the video conferencing tool he had always wanted WebEx to be.
