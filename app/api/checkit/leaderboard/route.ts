@@ -5,40 +5,37 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    // We want the most recent *distinct* audits. 
-    // If someone spams audit on 'apple.com', it should only show up once.
-    // In PostgreSQL, DISTINCT ON is the standard way to do this.
-    const recentDistinctAudits = await prisma.$queryRaw`
-      SELECT DISTINCT ON (host) 
+    // We want the absolute highest scores achieved by unique hosts.
+    // Grouping by host and taking the MAX(score) ensures we don't
+    // get 5 entries of "pmnorthstar.in" just because it was audited 5 times.
+    const topAudits = await prisma.$queryRaw`
+      SELECT 
         host, 
-        score, 
-        band, 
-        fetched_at 
+        MAX(score) as best_score, 
+        MAX(band) as band,
+        MAX(fetched_at) as last_checked
       FROM checkit_audits 
-      ORDER BY host, fetched_at DESC 
-      LIMIT 100
+      GROUP BY host
+      ORDER BY best_score DESC 
+      LIMIT 5
     `;
     
-    // Sort the distinct results by time descending, take the top 5, 
-    // and format them for the client.
-    const sortedAudits = (recentDistinctAudits as any[])
-      .sort((a, b) => new Date(b.fetched_at).getTime() - new Date(a.fetched_at).getTime())
-      .slice(0, 5)
-      .map(audit => {
-        // Simple heuristic to get a "company name" from a host:
-        // 'www.stripe.com' -> 'stripe' -> 'Stripe'
-        const rawHost = audit.host.replace(/^www\./, '');
-        const firstPart = rawHost.split('.')[0] || rawHost;
-        const companyName = firstPart.charAt(0).toUpperCase() + firstPart.slice(1);
-        
-        return {
-          company: companyName,
-          url: audit.host,
-          score: audit.score,
-          band: audit.band,
-          timestamp: audit.fetched_at,
-        };
-      });
+    // Format them for the client.
+    const sortedAudits = (topAudits as any[]).map(audit => {
+      // Simple heuristic to get a "company name" from a host:
+      // 'www.stripe.com' -> 'stripe' -> 'Stripe'
+      const rawHost = audit.host.replace(/^www\./, '');
+      const firstPart = rawHost.split('.')[0] || rawHost;
+      const companyName = firstPart.charAt(0).toUpperCase() + firstPart.slice(1);
+      
+      return {
+        company: companyName,
+        url: audit.host,
+        score: Number(audit.best_score), // BigInt from raw query needs conversion
+        band: audit.band,
+        timestamp: audit.last_checked,
+      };
+    });
 
     return NextResponse.json(
       { leaderboard: sortedAudits },
