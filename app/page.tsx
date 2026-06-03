@@ -672,19 +672,21 @@ export default function HomePage() {
           <main className="flex-1 overflow-y-auto scroll-container">
               <>
                 {/* Hero strip */}
-                <div className="dot-grid px-4 sm:px-8 py-10 sm:py-14" style={{ borderBottom: "1.5px solid var(--card-border)" }}>
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="eyebrow">{caseStudies.length} studies</span>
-                    <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
-                    <span className="eyebrow">5 categories</span>
+                <div className="dot-grid px-4 sm:px-8 py-10 sm:py-14 flex justify-center" style={{ borderBottom: "1.5px solid var(--card-border)" }}>
+                  <div className="w-full max-w-4xl">
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <span className="eyebrow">{caseStudies.length} studies</span>
+                      <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
+                      <span className="eyebrow">5 categories</span>
+                    </div>
+                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
+                      Real product wins,<br className="hidden sm:block" />
+                      <span className="gradient-warm">and the failures behind them.</span>
+                    </h2>
+                    <p className="text-base sm:text-lg lg:text-xl max-w-xl" style={{ color: "var(--text-muted)" }}>
+                      {caseStudies.length} deep-dives — pivots, growth loops, design bets, hard lessons.
+                    </p>
                   </div>
-                  <h2 className="text-2xl sm:text-4xl font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
-                    Real product wins,<br className="hidden sm:block" />
-                    <span className="gradient-warm">and the failures behind them.</span>
-                  </h2>
-                  <p className="text-sm max-w-xl" style={{ color: "var(--text-muted)" }}>
-                    {caseStudies.length} deep-dives — pivots, growth loops, design bets, hard lessons.
-                  </p>
                 </div>
 
                 <div className="px-4 sm:px-6 py-6">
@@ -948,7 +950,7 @@ export default function HomePage() {
                 <p className="eyebrow mb-4" style={{ color: "#26A69A" }}>
                   Curated paths through the library
                 </p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] mb-5 sm:mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}>
+                <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-5 sm:mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em" }}>
                   <span className="gradient-warm">Different ways</span> to navigate the case studies.
                 </h2>
                 <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl" style={{ color: "var(--text-muted)" }}>
@@ -1267,7 +1269,7 @@ export default function HomePage() {
                         onAuthRequired={() => setShowAuthModal(true)}
                         onSavedChange={handleSavedChange}
                         onLikedChange={handleLikedChange}
-                        hideCategory={true}
+                        hideCategory={activeBookFilter !== "All"}
                       />
                     ))}
                   </div>

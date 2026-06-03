@@ -171,7 +171,7 @@ export function ResourceCard({
             initials avatar as fallback. Same size and position either way
             so the layout doesn't shift when the photo loads. */}
         <div
-          className="flex items-center gap-3 px-4 pt-4 pb-3"
+          className="flex items-center gap-3 px-4 pt-3.5 pb-2.5"
           style={{ borderBottom: "1.5px solid var(--card-border)" }}
         >
           {/* Avatar slot — always reserves a fixed 40x40 box via explicit
@@ -234,7 +234,7 @@ export function ResourceCard({
         </div>
 
         {/* Content */}
-        <div className="px-4 pt-3 pb-3">
+        <div className="px-4 pt-3 pb-2.5">
           {!hideCategory && (
             <span
               className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md mb-2.5"
@@ -249,7 +249,7 @@ export function ResourceCard({
           )}
 
           <h3
-            className="text-base font-semibold leading-tight mb-3 line-clamp-2"
+            className="text-base font-semibold leading-tight mb-2.5 line-clamp-2"
             style={{
               color: "var(--text-primary)",
               letterSpacing: "-0.02em",
