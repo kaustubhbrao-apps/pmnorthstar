@@ -129,19 +129,11 @@ export function CaseStudyCard({
           </p>
         </div>
         <h3
-          className="text-lg sm:text-xl font-semibold leading-tight mb-2"
+          className="text-lg sm:text-xl font-semibold leading-tight mb-4"
           style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
         >
           {study.title}
         </h3>
-
-        <p className="text-sm leading-relaxed line-clamp-2 mb-4" style={{ color: "var(--text-muted)" }}>
-          {/* Truncate in render — line-clamp:2 only hides visually; the
-              full string still inflates the SSR HTML payload. */}
-          {study.description.length > 140
-            ? study.description.slice(0, 137).trimEnd() + "…"
-            : study.description}
-        </p>
 
         {/* Outcome strip */}
         <div

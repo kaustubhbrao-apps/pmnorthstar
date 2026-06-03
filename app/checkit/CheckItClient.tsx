@@ -382,7 +382,7 @@ function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) 
             </h2>
           </div>
           <span className="text-sm font-mono text-muted" style={{ color: "var(--text-faint)" }}>
-            RECENTLY SCORED SITES
+            HIGHEST RATED SITES YET
           </span>
         </div>
 
