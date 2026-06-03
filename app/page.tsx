@@ -1207,7 +1207,7 @@ export default function HomePage() {
                     ))}
                   </SectionRow>
 
-                  <div className="section-divider my-8" id="books-section" />
+                  <div className="section-divider my-10" id="books-section" />
 
                   {/* Per-Category Rows */}
                   {categories.map((cat) => {
@@ -1215,7 +1215,7 @@ export default function HomePage() {
                     const shown = catBooks;
                     const subtitle = `${catBooks.length} essential books`;
                     return (
-                      <div key={cat} className="mt-8">
+                      <div key={cat}>
                         <SectionRow title={cat} subtitle={subtitle} accentColor={categoryAccents[cat]}>
                           {shown.map((book, index) => (
                             <ResourceCard
@@ -1233,7 +1233,7 @@ export default function HomePage() {
                             />
                           ))}
                         </SectionRow>
-                        <div className="section-divider mt-8" />
+                        <div className="section-divider my-10" />
                       </div>
                     );
                   })}
@@ -1314,8 +1314,10 @@ export default function HomePage() {
                 </button>
               </div>
 
+              <div className="section-divider my-10" />
+
               {/* Explore preview — small teaser, full version on /explore tab */}
-              <div className="px-4 sm:px-6 mt-10 mb-8">
+              <div className="px-4 sm:px-6 mb-8">
                 <div className="flex items-end justify-between mb-5">
                   <div>
                     <p className="eyebrow mb-1.5" style={{ color: "#26A69A", opacity: 0.85 }}>Explore</p>
