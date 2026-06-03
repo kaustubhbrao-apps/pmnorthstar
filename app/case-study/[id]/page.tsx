@@ -88,8 +88,66 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
     .slice(0, 4)
     .map((x) => x.study);
 
+  const faqs = getCaseStudyFaqs(study.id);
+
+  // ─── Structured Data (JSON-LD) ──────────────────────────────────────────
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
+  const studyUrl = `${SITE_URL}/case-study/${getCaseStudySlug(study.id)}`;
+  
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": study.title,
+    "description": study.description,
+    "image": logoUrl && !logoFailed ? logoUrl : `${SITE_URL}/logo-icon.svg`,
+    "author": {
+      "@type": "Organization",
+      "name": "northstar editorial",
+      "url": SITE_URL
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "northstar",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/logo-icon.svg`
+      }
+    },
+    "datePublished": study.publishedAt || "2026-05-18",
+    "dateModified": SITE_LAST_REVIEWED,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": studyUrl
+    }
+  };
+
+  const faqSchema = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.answer
+      }
+    }))
+  } : null;
+
   return (
     <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
+      {/* SEO / AI Metadata */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <Sidebar
         activeNav="casestudies"
         onNavChange={handleNavChange}
