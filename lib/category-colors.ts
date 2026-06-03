@@ -51,6 +51,42 @@ export const CATEGORY_COLORS: Record<string, CategoryColor> = {
     bg: "rgba(255, 75, 75, 0.12)",
     border: "rgba(255, 75, 75, 0.30)",
   },
+  // AI Decoded categories
+  Agents: {
+    color: "#7C3AED", // Purple
+    bg: "rgba(124, 58, 237, 0.12)",
+    border: "rgba(124, 58, 237, 0.30)",
+  },
+  "AI Launches": {
+    color: "#0F9D58", // Green
+    bg: "rgba(15, 157, 88, 0.12)",
+    border: "rgba(15, 157, 88, 0.30)",
+  },
+  Careers: {
+    color: "#0891B2", // Teal
+    bg: "rgba(8, 145, 178, 0.12)",
+    border: "rgba(8, 145, 178, 0.30)",
+  },
+  Models: {
+    color: "#2563EB", // Blue
+    bg: "rgba(37, 99, 235, 0.12)",
+    border: "rgba(37, 99, 235, 0.30)",
+  },
+  "Search & SEO": {
+    color: "#EA580C", // Orange
+    bg: "rgba(234, 88, 12, 0.12)",
+    border: "rgba(234, 88, 12, 0.30)",
+  },
+  Standards: {
+    color: "#4B5563", // Gray
+    bg: "rgba(75, 85, 99, 0.12)",
+    border: "rgba(75, 85, 99, 0.30)",
+  },
+  Tooling: {
+    color: "#DB2777", // Magenta
+    bg: "rgba(219, 39, 119, 0.12)",
+    border: "rgba(219, 39, 119, 0.30)",
+  },
 };
 
 const FALLBACK: CategoryColor = {

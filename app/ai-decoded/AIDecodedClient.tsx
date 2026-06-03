@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Clock } from "lucide-react";
-import { solidColorFor } from "@/lib/category-colors";
+import { getCategoryColor } from "@/lib/category-colors";
 import type { AIDecodedArticle } from "@/lib/ai-decoded";
 
 export function AIDecodedClient({ articles }: { articles: AIDecodedArticle[] }) {
@@ -32,6 +32,10 @@ export function AIDecodedClient({ articles }: { articles: AIDecodedArticle[] }) 
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 className={`chip ${activeFilter === cat ? "active" : ""}`}
+                style={{ 
+                  ["--active-bg" as any]: getCategoryColor(cat).color,
+                  ["--active-border" as any]: getCategoryColor(cat).color 
+                } as React.CSSProperties}
               >
                 {cat}{" "}
                 <span className="chip-count">
@@ -60,7 +64,7 @@ export function AIDecodedClient({ articles }: { articles: AIDecodedArticle[] }) 
                       <span
                         className="inline-block text-sm font-bold uppercase px-2.5 py-1 rounded-md"
                         style={{
-                          background: solidColorFor(a.frontmatter.category),
+                          background: getCategoryColor(a.frontmatter.category).color,
                           color: "#ffffff",
                           letterSpacing: "0.12em",
                         }}

@@ -357,6 +357,10 @@ export default function HomePage() {
     return counts;
   }, []);
 
+  const shuffledCsCategories = useMemo(() => {
+    return Object.entries(csStats).sort(() => Math.random() - 0.5);
+  }, [csStats]);
+
   // ── Derived lists (used across views + sidebar counts) ─────────────────
   const savedBooks = books.filter((b) => savedIds.has(b.id) && !likedIds.has(b.id));
   const savedStudies = caseStudies.filter((s) => savedIds.has(s.id) && !likedIds.has(s.id));
@@ -675,7 +679,7 @@ export default function HomePage() {
                     <button onClick={() => setActiveCsFilter("All")} className={`chip ${activeCsFilter === "All" ? "active" : ""}`}>
                       All <span className="chip-count">{caseStudies.length}</span>
                     </button>
-                    {Object.entries(csStats).map(([cat, count]) => (
+                    {shuffledCsCategories.map(([cat, count]) => (
                       <button
                         key={cat}
                         onClick={() => setActiveCsFilter(cat as CaseStudyCategory)}
