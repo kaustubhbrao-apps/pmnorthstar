@@ -1175,6 +1175,10 @@ export default function HomePage() {
                       key={cat}
                       onClick={() => setActiveBookFilter(cat)}
                       className={`chip ${activeBookFilter === cat ? "active" : ""}`}
+                      style={activeBookFilter === cat ? {
+                        ["--active-bg" as any]: categoryAccents[cat],
+                        ["--active-border" as any]: categoryAccents[cat]
+                      } : {} as React.CSSProperties}
                     >
                       {cat} <span className="chip-count">{books.filter(b => b.category === cat).length}</span>
                     </button>
