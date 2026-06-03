@@ -742,8 +742,9 @@ export default function HomePage() {
                         initialSaved={savedIds.has(study.id)}
                         initialLiked={likedIds.has(study.id)}
                         onAuthRequired={() => setShowAuthModal(true)}
-                          onSavedChange={handleSavedChange}
-                          onLikedChange={handleLikedChange}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                        hideCategory={activeCsFilter !== "All"}
                       />
                     ))}
                   </div>
@@ -963,11 +964,8 @@ export default function HomePage() {
                     <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: t.accentColor, opacity: 0.85 }}>
                       {t.eyebrow}
                     </p>
-                    <p className="text-base sm:text-lg font-semibold leading-snug mb-2" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
+                    <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
                       {t.title}
-                    </p>
-                    <p className="text-sm sm:text-base line-clamp-2 mb-3" style={{ color: "var(--text-muted)" }}>
-                      {t.intro}
                     </p>
                     <p className="text-sm font-medium" style={{ color: t.accentColor }}>
                       {t.caseStudyIds.length} case studies →
@@ -998,13 +996,10 @@ export default function HomePage() {
                     <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: c.accentColor, opacity: 0.85 }}>
                       {c.eyebrow}
                     </p>
-                    <p className="text-base sm:text-lg font-semibold leading-snug mb-2" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                      {c.title.split(" — ")[0]}
+                    <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
+                      {c.title}
                     </p>
-                    <p className="text-sm sm:text-base line-clamp-2" style={{ color: "var(--text-muted)" }}>
-                      {c.intro.split(". ")[0]}.
-                    </p>
-                  </Link>
+                    </Link>
                 ))}
               </div>
             </section>
@@ -1283,12 +1278,12 @@ export default function HomePage() {
                         {t.eyebrow}
                       </span>
                       <p
-                        className="text-base sm:text-lg font-semibold leading-snug mb-2"
+                        className="text-base sm:text-lg font-semibold leading-snug group-hover:underline"
                         style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
                       >
                         {t.title}
                       </p>
-                      <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+                      <p className="text-sm" style={{ color: "var(--text-muted)" }}>
                         {t.caseStudyIds.length} case studies
                       </p>
                     </Link>
@@ -1507,16 +1502,10 @@ export default function HomePage() {
                                   Topic
                                 </p>
                                 <p
-                                  className="text-sm font-semibold leading-snug mb-1.5 line-clamp-2"
+                                  className="text-sm font-semibold leading-snug group-hover:underline"
                                   style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
                                 >
                                   {t.title}
-                                </p>
-                                <p
-                                  className="text-sm leading-relaxed line-clamp-2"
-                                  style={{ color: "var(--text-muted)" }}
-                                >
-                                  {t.eyebrow}
                                 </p>
                               </Link>
                             ))}
@@ -1548,16 +1537,10 @@ export default function HomePage() {
                                   Comparison
                                 </p>
                                 <p
-                                  className="text-sm font-semibold leading-snug mb-1.5 line-clamp-2"
+                                  className="text-sm font-semibold leading-snug group-hover:underline"
                                   style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
                                 >
                                   {c.title}
-                                </p>
-                                <p
-                                  className="text-sm leading-relaxed line-clamp-2"
-                                  style={{ color: "var(--text-muted)" }}
-                                >
-                                  {c.eyebrow}
                                 </p>
                               </Link>
                             ))}

@@ -450,12 +450,6 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                           >
                             {r.title}
                           </p>
-                          <p
-                            className="text-xs mt-2 line-clamp-2"
-                            style={{ color: "var(--text-muted)" }}
-                          >
-                            {r.description}
-                          </p>
                         </Link>
                       );
                     })}

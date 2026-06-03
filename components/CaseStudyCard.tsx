@@ -17,6 +17,7 @@ interface CaseStudyCardProps {
   onAuthRequired?: () => void;
   onSavedChange?: (id: string, saved: boolean) => void;
   onLikedChange?: (id: string, liked: boolean) => void;
+  hideCategory?: boolean;
 }
 
 const categoryColors: Record<string, string> = {
@@ -36,10 +37,10 @@ export function CaseStudyCard({
   onAuthRequired = () => {},
   onSavedChange,
   onLikedChange,
+  hideCategory = false,
 }: CaseStudyCardProps) {
   const isFailure = study.category === "Failure";
   const color = categoryColors[study.category] ?? "var(--brand-primary)";
-  const indexLabel = typeof index === "number" ? String(index + 1).padStart(2, "0") : "·";
   const logoUrl = getCompanyLogoUrl(study.company);
   const [logoFailed, setLogoFailed] = useState(false);
 
@@ -78,16 +79,20 @@ export function CaseStudyCard({
       )}
       <Link href={`/case-study/${getCaseStudySlug(study.id)}`} className="block px-5 pt-5 pb-4 group">
         <div className="flex items-center justify-between mb-5">
-          <span
-            className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md truncate"
-            style={{
-              background: color,
-              color: "#ffffff",
-              letterSpacing: "0.12em",
-            }}
-          >
-            {study.category}
-          </span>
+          {!hideCategory ? (
+            <span
+              className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md truncate"
+              style={{
+                background: color,
+                color: "#ffffff",
+                letterSpacing: "0.12em",
+              }}
+            >
+              {study.category}
+            </span>
+          ) : (
+            <div />
+          )}
           <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
             style={{ border: "1.5px solid var(--card-border)", color }}>
             <ArrowUpRight size={14} strokeWidth={1.6} />
@@ -95,9 +100,6 @@ export function CaseStudyCard({
         </div>
 
         <div className="flex items-center gap-2 mb-2">
-          {/* Fixed 28px slot — always reserved whether the logo loads,
-              fails, or falls back to the emoji. Prevents CLS when the
-              Google Favicon fetch resolves async. */}
           <span
             className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
             style={{
@@ -154,9 +156,6 @@ export function CaseStudyCard({
           </span>
         </div>
 
-        {/* Tags — each gets its own deterministic color from the
-            palette so a row of tags reads as a varied multi-color band
-            (not a monochrome echo of the category chip above). */}
         {study.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
             {study.tags.slice(0, 3).map((tag) => (

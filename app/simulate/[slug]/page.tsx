@@ -46,7 +46,14 @@ export default function DrillPage({ params }: PageProps) {
   if (!isDev && new Date(drill.publishedAt) > new Date()) notFound();
 
   return (
-    <SidebarShell>
+    <SidebarShell
+      activeNav="simulate"
+      backHref="/simulate"
+      backLabelDesktop="SimulateIt"
+      backLabelMobile="Back"
+      shareTitle={`SimulateIt Drill: ${drillTitle(drill)}`}
+      shareText={drill.principle}
+    >
       <Suspense fallback={<div className="p-12 text-center opacity-50">Loading simulation...</div>}>
         <SimulatePlayer drill={drill} />
       </Suspense>

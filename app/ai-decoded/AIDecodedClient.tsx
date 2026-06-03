@@ -61,18 +61,20 @@ export function AIDecodedClient({ articles }: { articles: AIDecodedArticle[] }) 
                     style={{ borderRadius: 12 }}
                   >
                     <div className="flex items-center gap-2.5 mb-3 flex-wrap">
-                      <span
-                        className="inline-block text-sm font-bold uppercase px-2.5 py-1 rounded-md"
-                        style={{
-                          background: getCategoryColor(a.frontmatter.category).color,
-                          color: "#ffffff",
-                          letterSpacing: "0.12em",
-                        }}
-                      >
-                        {a.frontmatter.category}
-                      </span>
+                      {activeFilter === "All" && (
+                        <span
+                          className="inline-block text-sm font-bold uppercase px-2.5 py-1 rounded-md"
+                          style={{
+                            background: getCategoryColor(a.frontmatter.category).color,
+                            color: "#ffffff",
+                            letterSpacing: "0.12em",
+                          }}
+                        >
+                          {a.frontmatter.category}
+                        </span>
+                      )}
                       <span className="meta-mono inline-flex items-center gap-1">
-                        <Clock size={12} strokeWidth={1.6} />
+                        <Clock size={13} strokeWidth={1.6} />
                         {a.readTime} min
                       </span>
                       <span className="meta-mono" style={{ color: "var(--text-faint)" }}>
@@ -92,12 +94,6 @@ export function AIDecodedClient({ articles }: { articles: AIDecodedArticle[] }) 
                     >
                       {a.frontmatter.title}
                     </h2>
-                    <p
-                      className="text-sm sm:text-base leading-relaxed mb-4"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {a.frontmatter.excerpt}
-                    </p>
                     <span
                       className="inline-flex items-center gap-1 text-sm font-semibold"
                       style={{ color: "var(--brand-primary)" }}

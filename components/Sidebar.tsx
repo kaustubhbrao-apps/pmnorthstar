@@ -137,8 +137,8 @@ export function Sidebar({
           <Link
             href="/ai-decoded"
             onClick={onClose}
-            className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm"
-            style={{ color: "var(--text-muted)" }}
+            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "ai-decoded" ? "active" : ""}`}
+            style={{ color: activeNav === "ai-decoded" ? "var(--text-primary)" : "var(--text-muted)" }}
           >
             <Sparkles size={15} strokeWidth={1.6} />
             <span style={{ letterSpacing: "-0.005em" }}>AI Decoded</span>
@@ -149,8 +149,8 @@ export function Sidebar({
           <Link
             href="/checkit"
             onClick={onClose}
-            className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm"
-            style={{ color: "var(--text-muted)" }}
+            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "checkit" ? "active" : ""}`}
+            style={{ color: activeNav === "checkit" ? "var(--text-primary)" : "var(--text-muted)" }}
           >
             <Gauge size={15} strokeWidth={1.6} />
             <span style={{ letterSpacing: "-0.005em" }}>CheckIt</span>
@@ -161,16 +161,16 @@ export function Sidebar({
           <Link
             href="/simulate"
             onClick={onClose}
-            className="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm"
-            style={{ color: "var(--text-muted)" }}
+            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "simulate" ? "active" : ""}`}
+            style={{ color: activeNav === "simulate" ? "var(--text-primary)" : "var(--text-muted)" }}
           >
             <Brain size={15} strokeWidth={1.6} />
             <span style={{ letterSpacing: "-0.005em" }}>SimulateIt</span>
             <span
               className="ml-auto text-xs font-semibold px-1.5 py-0.5 rounded"
               style={{
-                background: "rgba(219, 39, 119, 0.18)",
-                color: "#DB2777",
+                background: activeNav === "simulate" ? "rgba(255, 255, 255, 0.2)" : "rgba(219, 39, 119, 0.18)",
+                color: activeNav === "simulate" ? "#ffffff" : "#DB2777",
               }}
             >
               NEW

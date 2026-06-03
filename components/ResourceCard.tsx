@@ -65,6 +65,7 @@ interface ResourceCardProps {
   onAuthRequired?: () => void;
   onSavedChange?: (id: string, saved: boolean) => void;
   onLikedChange?: (id: string, liked: boolean) => void;
+  hideCategory?: boolean;
 }
 
 function StarRating({ rating, size = 9 }: { rating: number; size?: number }) {
@@ -109,6 +110,7 @@ export function ResourceCard({
   onAuthRequired = () => {},
   onSavedChange,
   onLikedChange,
+  hideCategory = false,
 }: ResourceCardProps) {
   const authorPhoto = useAuthorPhoto(book.author);
   const cat = getCategoryColor(book.category);
@@ -233,19 +235,21 @@ export function ResourceCard({
 
         {/* Content */}
         <div className="px-4 pt-3 pb-3">
-          <span
-            className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md mb-2.5"
-            style={{
-              background: cat.color,
-              color: "#ffffff",
-              letterSpacing: "0.12em",
-            }}
-          >
-            {book.category}
-          </span>
+          {!hideCategory && (
+            <span
+              className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md mb-2.5"
+              style={{
+                background: cat.color,
+                color: "#ffffff",
+                letterSpacing: "0.12em",
+              }}
+            >
+              {book.category}
+            </span>
+          )}
 
           <h3
-            className="text-base font-semibold leading-tight mb-2 line-clamp-2"
+            className="text-base font-semibold leading-tight mb-3 line-clamp-2"
             style={{
               color: "var(--text-primary)",
               letterSpacing: "-0.02em",
@@ -253,21 +257,6 @@ export function ResourceCard({
           >
             {book.title}
           </h3>
-
-          {variant !== "list" && (
-            <p
-              className="text-sm leading-relaxed line-clamp-2 mb-3"
-              style={{ color: "var(--text-muted)" }}
-            >
-              {/* Truncate the description in card render — line-clamp:2
-                  hides the overflow visually but the full string still
-                  ships in SSR HTML. Real truncation here cuts ~3-4KB
-                  off the home page payload across the rendered cards. */}
-              {book.description.length > 140
-                ? book.description.slice(0, 137).trimEnd() + "…"
-                : book.description}
-            </p>
-          )}
 
           <div className="flex items-center justify-between">
             <StarRating rating={book.rating} />

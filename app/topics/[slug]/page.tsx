@@ -78,7 +78,7 @@ export default function TopicPage({ params }: PageProps) {
               {topic.eyebrow}
             </span>
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-5 sm:mb-6"
+              className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"
               style={{
                 color: "var(--text-primary)",
                 letterSpacing: "-0.03em",
@@ -114,7 +114,7 @@ export default function TopicPage({ params }: PageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {cases.map((study, idx) => (
-              <CaseStudyCard key={study.id} study={study} index={idx} />
+              <CaseStudyCard key={study.id} study={study} index={idx} hideCategory={true} />
             ))}
           </div>
         </section>
@@ -217,7 +217,7 @@ export default function TopicPage({ params }: PageProps) {
                     {t.eyebrow}
                   </span>
                   <p
-                    className="text-base font-semibold leading-snug mb-1.5"
+                    className="text-base font-semibold leading-snug mb-3"
                     style={{
                       color: "var(--text-primary)",
                       letterSpacing: "-0.01em",
@@ -226,7 +226,7 @@ export default function TopicPage({ params }: PageProps) {
                     {t.title}
                   </p>
                   <p
-                    className="text-xs"
+                    className="text-sm"
                     style={{ color: "var(--text-muted)" }}
                   >
                     {t.caseStudyIds.length} case studies

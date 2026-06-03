@@ -128,7 +128,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                 {cmp.eyebrow}
               </span>
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-5 sm:mb-6"
+                className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"
                 style={{
                   color: "var(--text-primary)",
                   letterSpacing: "-0.03em",
@@ -183,7 +183,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                       <span className="text-2xl sm:text-3xl">{study.logo}</span>
                     )}
                     <h2
-                      className="text-lg sm:text-2xl font-semibold"
+                      className="text-lg sm:text-2xl font-semibold mb-6"
                       style={{
                         color: "var(--text-primary)",
                         letterSpacing: "-0.02em",
@@ -192,12 +192,6 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                       {study.company}
                     </h2>
                   </div>
-                  <p
-                    className="text-sm sm:text-base line-clamp-3"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {study.description}
-                  </p>
                   <p
                     className="text-sm mt-3 font-medium uppercase tracking-wider inline-flex items-center gap-1"
                     style={{ color: cmp.accentColor }}
@@ -421,7 +415,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                       {c.eyebrow}
                     </span>
                     <p
-                      className="text-base font-semibold leading-snug"
+                      className="text-base font-semibold leading-snug mb-3"
                       style={{
                         color: "var(--text-primary)",
                         letterSpacing: "-0.01em",
