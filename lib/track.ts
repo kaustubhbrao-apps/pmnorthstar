@@ -82,7 +82,8 @@ export type AnalyticsEvent =
       decisions: number;
     }
   | { name: "simulateit_drill_restarted"; drill_slug: string }
-  | { name: "simulateit_shared"; drill_slug: string };
+  | { name: "simulateit_shared"; drill_slug: string }
+  | { name: "simulateit_challenge_created"; drill_slug: string };
 
 export function track(event: AnalyticsEvent) {
   // Vercel Analytics accepts (name, props). Strip the discriminator.

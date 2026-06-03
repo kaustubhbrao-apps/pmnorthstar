@@ -715,6 +715,20 @@ function OutcomeView({
   history: HistoryEntry[];
   onRestart: () => void;
 }) {
+  // ─── Challenge Logic ──────────────────────────────────────────────────
+  const [challenger, setChallenger] = useState<{ score: number; max: number; blocks: string } | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const c = params.get("challenge"); // format: score_max_blocks (e.g. 85_100_GGYRG)
+    if (c) {
+      const [s, m, b] = c.split("_");
+      if (s && m && b) {
+        setChallenger({ score: parseInt(s, 10), max: parseInt(m, 10), blocks: b });
+      }
+    }
+  }, []);
+
   // Score math — per-dimension and total.
   const dims: DrillDimension[] = ["product", "business", "founder"];
   const scoreByDim = useMemo(() => {
@@ -823,8 +837,24 @@ function OutcomeView({
     }
   }, [shareString, letterBlocks, drill, totalScore, totalMax]);
 
+  const handleChallenge = useCallback(() => {
+    track({ name: "simulateit_challenge_created", drill_slug: drill.slug });
+    const origin = typeof window !== "undefined" ? window.location.origin : "https://pmnorthstar.in";
+    // Challenge URL encodes the current user's performance
+    const challengeUrl = `${origin}/simulate/${drill.slug}?challenge=${totalScore}_${totalMax}_${letterBlocks}`;
+    const text = `I just scored ${totalScore}/${totalMax} on the "${drillTitle(drill)}" drill. Think you can beat my decisions? \n\nAccept the challenge: ${challengeUrl}`;
+    
+    if (typeof navigator !== "undefined" && navigator.share) {
+      navigator.share({ title: "SimulateIt Challenge", text, url: challengeUrl })
+        .catch(() => { /* user cancelled */ });
+    } else if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+      alert("Challenge link copied! Send it to a colleague.");
+    }
+  }, [drill, totalScore, totalMax, letterBlocks]);
+
   return (
-    <div>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       {/* Title */}
       <h1
         className="font-display font-bold mb-2"
@@ -836,6 +866,23 @@ function OutcomeView({
       >
         Result
       </h1>
+      
+      {challenger && (
+        <div className="mb-6 p-4 rounded-xl flex items-center justify-between border-dashed border-2" style={{ borderColor: "var(--brand-primary)", background: "var(--brand-soft)" }}>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-xl shadow-sm">🥊</div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--brand-primary)" }}>Versus Match</p>
+              <p className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>You vs. Your Challenger</p>
+            </div>
+          </div>
+          <div className="text-right">
+            <p className="text-[10px] font-mono opacity-60">CHALLENGER SCORE</p>
+            <p className="text-lg font-bold" style={{ color: scoreColor(challenger.score / challenger.max) }}>{challenger.score}/{challenger.max}</p>
+          </div>
+        </div>
+      )}
+
       <p
         className="text-sm mb-6"
         style={{ color: "var(--text-muted)" }}
@@ -843,49 +890,76 @@ function OutcomeView({
         {drillTitle(drill)}
       </p>
 
-      {/* Big score — score color shifts on percentage band, surface stays
-          neutral so the page doesn't feel like a stop-sign. */}
-      <div
-        className="rounded-2xl px-6 py-8 sm:px-8 sm:py-10 mb-6"
-        style={{
-          background: "var(--card-bg)",
-          border: "1.5px solid var(--card-border)",
-          borderLeft: `4px solid ${scoreColor(totalScore / totalMax)}`,
-        }}
-      >
+      {/* Comparison Grid if challenger exists */}
+      {challenger ? (
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ background: "var(--card-bg)", border: "1.5px solid var(--card-border)" }}>
+            <p className="text-[10px] font-mono uppercase mb-2 opacity-50">You</p>
+            <p className="text-4xl font-bold mb-1" style={{ color: scoreColor(totalScore / totalMax) }}>{totalScore}</p>
+            <p className="text-xs font-mono opacity-50">/{totalMax}</p>
+            <div className="flex justify-center gap-1 mt-4">
+              {letterBlocks.split('').map((b, i) => (
+                <div key={i} className="w-3 h-3 rounded-sm" style={{ background: b === 'G' ? '#0F9D58' : b === 'Y' ? '#D97706' : '#DC2626' }} />
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl p-5 sm:p-6 text-center opacity-80" style={{ background: "var(--card-bg)", border: "1.5px solid var(--card-border)" }}>
+            <p className="text-[10px] font-mono uppercase mb-2 opacity-50">Challenger</p>
+            <p className="text-4xl font-bold mb-1" style={{ color: scoreColor(challenger.score / challenger.max) }}>{challenger.score}</p>
+            <p className="text-xs font-mono opacity-50">/{challenger.max}</p>
+            <div className="flex justify-center gap-1 mt-4">
+              {challenger.blocks.split('').map((b, i) => (
+                <div key={i} className="w-3 h-3 rounded-sm" style={{ background: b === 'G' ? '#0F9D58' : b === 'Y' ? '#D97706' : '#DC2626' }} />
+              ))}
+            </div>
+          </div>
+          {totalScore > challenger.score && <div className="col-span-2 text-center py-2 bg-green-500/10 text-green-600 rounded-lg text-sm font-bold animate-bounce">🏆 You beat the challenger!</div>}
+          {totalScore < challenger.score && <div className="col-span-2 text-center py-2 bg-red-500/10 text-red-600 rounded-lg text-sm font-bold">🎯 The challenger took the lead. Try again?</div>}
+        </div>
+      ) : (
+        /* Standard big score if no challenger */
         <div
-          className="text-[10px] font-mono uppercase mb-1"
+          className="rounded-2xl px-6 py-8 sm:px-8 sm:py-10 mb-6"
           style={{
-            color: "var(--text-faint)",
-            letterSpacing: "0.16em",
+            background: "var(--card-bg)",
+            border: "1.5px solid var(--card-border)",
+            borderLeft: `4px solid ${scoreColor(totalScore / totalMax)}`,
           }}
         >
-          Your score
-        </div>
-        <div className="flex items-baseline gap-2 mb-3">
-          <span
-            className="font-display font-bold"
+          <div
+            className="text-[10px] font-mono uppercase mb-1"
             style={{
-              color: scoreColor(totalScore / totalMax),
-              fontSize: "clamp(48px, 9vw, 80px)",
+              color: "var(--text-faint)",
+              letterSpacing: "0.16em",
             }}
           >
-            {totalScore}
-          </span>
-          <span
-            className="text-2xl font-mono"
-            style={{ color: "var(--text-faint)" }}
+            Your score
+          </div>
+          <div className="flex items-baseline gap-2 mb-3">
+            <span
+              className="font-display font-bold"
+              style={{
+                color: scoreColor(totalScore / totalMax),
+                fontSize: "clamp(48px, 9vw, 80px)",
+              }}
+            >
+              {totalScore}
+            </span>
+            <span
+              className="text-2xl font-mono"
+              style={{ color: "var(--text-faint)" }}
+            >
+              / {totalMax}
+            </span>
+          </div>
+          <div
+            className="text-base sm:text-lg leading-relaxed mb-1"
+            style={{ color: "var(--text-primary)" }}
           >
-            / {totalMax}
-          </span>
+            {pctVerdict(totalScore / totalMax)}
+          </div>
         </div>
-        <div
-          className="text-base sm:text-lg leading-relaxed mb-1"
-          style={{ color: "var(--text-primary)" }}
-        >
-          {pctVerdict(totalScore / totalMax)}
-        </div>
-      </div>
+      )}
 
       {/* Dimensional breakdown */}
       <h3
@@ -1061,6 +1135,17 @@ function OutcomeView({
         >
           <Share2 size={14} strokeWidth={2} />
           Share result
+        </button>
+        <button
+          onClick={handleChallenge}
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-transform hover:scale-[1.02]"
+          style={{
+            background: "var(--text-primary)",
+            color: "var(--page-bg)",
+          }}
+        >
+          <Users size={14} strokeWidth={2} />
+          Challenge a colleague
         </button>
         <button
           onClick={onRestart}

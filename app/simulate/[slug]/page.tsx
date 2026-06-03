@@ -5,6 +5,7 @@
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getDrillBySlug, publishedDrills } from "@/data/drills";
 import { SidebarShell } from "@/components/SidebarShell";
 import { SimulatePlayer } from "./SimulatePlayer";
@@ -46,7 +47,9 @@ export default function DrillPage({ params }: PageProps) {
 
   return (
     <SidebarShell>
-      <SimulatePlayer drill={drill} />
+      <Suspense fallback={<div className="p-12 text-center opacity-50">Loading simulation...</div>}>
+        <SimulatePlayer drill={drill} />
+      </Suspense>
     </SidebarShell>
   );
 }
