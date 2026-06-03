@@ -8,15 +8,20 @@ export async function GET() {
     // We want the absolute highest scores achieved by unique hosts.
     // Grouping by host and taking the MAX(score) ensures we don't
     // get 5 entries of "pmnorthstar.in" just because it was audited 5 times.
+    // We want the most recent score for each unique host.
+    // If a site has improved (or worsened), the leaderboard should reflect 
+    // its latest state.
+    // Logic: 
+    // 1. Get the most recent row for every distinct host.
+    // 2. Sort those "latest states" by score descending.
     const topAudits = await prisma.$queryRaw`
-      SELECT 
-        host, 
-        MAX(score) as best_score, 
-        MAX(band) as band,
-        MAX(fetched_at) as last_checked
-      FROM checkit_audits 
-      GROUP BY host
-      ORDER BY best_score DESC 
+      SELECT host, score, band, fetched_at as last_checked
+      FROM (
+        SELECT DISTINCT ON (host) host, score, band, fetched_at
+        FROM checkit_audits
+        ORDER BY host, fetched_at DESC
+      ) as latest_audits
+      ORDER BY score DESC
       LIMIT 5
     `;
     
@@ -31,7 +36,7 @@ export async function GET() {
       return {
         company: companyName,
         url: audit.host,
-        score: Number(audit.best_score), // BigInt from raw query needs conversion
+        score: Number(audit.score), 
         band: audit.band,
         timestamp: audit.last_checked,
       };
