@@ -849,7 +849,7 @@ function OutcomeView({
         .catch(() => { /* user cancelled */ });
     } else if (typeof navigator !== "undefined" && navigator.clipboard) {
       navigator.clipboard.writeText(text);
-      alert("Challenge link copied! Send it to a colleague.");
+      alert("Challenge link copied! Send it to a buddy.");
     }
   }, [drill, totalScore, totalMax, letterBlocks]);
 
@@ -1145,7 +1145,7 @@ function OutcomeView({
           }}
         >
           <Users size={14} strokeWidth={2} />
-          Challenge a colleague
+          Challenge a buddy
         </button>
         <button
           onClick={onRestart}
