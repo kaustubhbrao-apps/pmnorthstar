@@ -4,7 +4,7 @@ slug: "zee-world-cup-launch-2026"
 caseStudySlug: "zee-fifa-world-cup-bet"
 type: "current"
 category: "product"
-publishedAt: "2026-05-31T19:00:00+05:30"
+publishedAt: "2026-06-01T20:00:00+05:30"
 estimatedMinutes: 8
 principle: |
   In live high-concurrency events, availability is the only feature that 
