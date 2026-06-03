@@ -15,6 +15,7 @@ export async function GET() {
         MAX(band) as band,
         MAX(fetched_at) as last_checked
       FROM checkit_audits 
+      WHERE host NOT LIKE '%pmnorthstar.in'
       GROUP BY host
       ORDER BY best_score DESC 
       LIMIT 5
