@@ -361,6 +361,12 @@ export default function HomePage() {
     return Object.entries(csStats).sort(() => Math.random() - 0.5);
   }, [csStats]);
 
+  // ── Featured selection for Home Tab ────────────────────────────────────
+  const homeFeaturedCaseStudies = useMemo(() => {
+    const cats = Array.from(new Set(caseStudies.map(s => s.category)));
+    return cats.map(cat => caseStudies.find(s => s.category === cat)!).filter(Boolean);
+  }, []);
+
   // ── Derived lists (used across views + sidebar counts) ─────────────────
   const savedBooks = books.filter((b) => savedIds.has(b.id) && !likedIds.has(b.id));
   const savedStudies = caseStudies.filter((s) => savedIds.has(s.id) && !likedIds.has(s.id));
@@ -1204,11 +1210,11 @@ export default function HomePage() {
                 );
               })}
 
-              {/* Case Studies Preview — horizontal carousel, 8 cards.
+              {/* Case Studies Preview — horizontal carousel, one from each category.
                   Wrapped in fixed-width containers so SectionRow's
                   horizontal-scroll can do its job. */}
-              <SectionRow title="Case Studies" subtitle="Featured deep dives" accentColor="#F3123C">
-                {caseStudies.slice(0, 8).map((study, idx) => (
+              <SectionRow title="Case Studies" subtitle="Featured deep dives across all categories" accentColor="#F3123C">
+                {homeFeaturedCaseStudies.map((study, idx) => (
                   <div
                     key={study.id}
                     className="flex-shrink-0 w-[280px] sm:w-[320px]"
@@ -1222,6 +1228,7 @@ export default function HomePage() {
                       onAuthRequired={() => setShowAuthModal(true)}
                       onSavedChange={handleSavedChange}
                       onLikedChange={handleLikedChange}
+                      hideCategory={false}
                     />
                   </div>
                 ))}

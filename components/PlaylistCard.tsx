@@ -46,8 +46,6 @@ export function PlaylistCard({
   // URL-pattern extraction for single-video URLs, fall back to gradient+emoji.
   const thumbnail = playlist.imageUrl || (hasUrl ? getYouTubeThumbnail(playlist.url) : null);
   const [thumbFailed, setThumbFailed] = useState(false);
-  const indexLabel =
-    typeof index === "number" ? String(index + 1).padStart(2, "0") : "·";
 
   return (
     <div
@@ -167,7 +165,7 @@ export function PlaylistCard({
 
         {/* Channel + meta */}
         <p
-          className="text-xs mb-3"
+          className="text-sm mb-4"
           style={{ color: "var(--text-muted)" }}
         >
           {playlist.channel}
@@ -175,17 +173,9 @@ export function PlaylistCard({
           {playlist.level ? ` · ${playlist.level}` : ""}
         </p>
 
-        {/* Description */}
-        <p
-          className="text-sm leading-relaxed line-clamp-2"
-          style={{ color: "var(--text-muted)" }}
-        >
-          {playlist.description}
-        </p>
-
         {/* Tags */}
         {playlist.tags && playlist.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-4">
+          <div className="flex flex-wrap gap-1.5">
             {playlist.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
@@ -209,7 +199,7 @@ export function PlaylistCard({
         style={{ borderTop: "1.5px solid var(--card-border)" }}
       >
         <span
-          className="text-xs"
+          className="text-sm"
           style={{ color: hasUrl ? "var(--text-muted)" : "var(--text-faint)" }}
         >
           {hasUrl ? "Watch on YouTube" : "Coming soon"}

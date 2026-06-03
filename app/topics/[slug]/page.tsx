@@ -45,7 +45,7 @@ export default function TopicPage({ params }: PageProps) {
 
   return (
     <SidebarShell
-      activeNav="home"
+      activeNav="explore"
       backHref="/"
       backLabelDesktop="Home"
       backLabelMobile="Home"
@@ -81,7 +81,7 @@ export default function TopicPage({ params }: PageProps) {
               className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"
               style={{
                 color: "var(--text-primary)",
-                letterSpacing: "-0.03em",
+                letterSpacing: "-0.04em",
               }}
             >
               {topic.title}

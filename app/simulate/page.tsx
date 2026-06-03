@@ -216,7 +216,7 @@ function ArchiveCard({ drill }: { drill: Drill }) {
     >
       <div className="flex items-center gap-2 mb-2">
         <span
-          className="text-[9px] font-mono uppercase px-1.5 py-0.5 rounded"
+          className="text-sm font-mono uppercase px-1.5 py-0.5 rounded"
           style={{
             background: `color-mix(in srgb, ${badge.color} 18%, transparent)`,
             color: badge.color,
