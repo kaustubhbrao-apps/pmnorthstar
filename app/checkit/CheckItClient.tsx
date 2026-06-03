@@ -207,7 +207,7 @@ function Hero({
       </div>
 
       <h1
-        className="font-display text-3xl sm:text-5xl lg:text-8xl font-bold mb-4"
+        className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold mb-4"
         style={{
           color: "var(--text-primary)",
           letterSpacing: "-0.03em",

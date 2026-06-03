@@ -65,10 +65,10 @@ export default function AIDecodedIndexPage() {
             </span>
           </div>
           <h1
-            className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.02] mb-6"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.02] mb-6"
             style={{
               color: "var(--text-primary)",
-              letterSpacing: "-0.04em",
+              letterSpacing: "-0.03em",
             }}
           >
             What&apos;s actually happening in AI.

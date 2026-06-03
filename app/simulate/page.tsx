@@ -62,7 +62,7 @@ export default async function SimulatePage() {
           style={{
             color: "var(--text-primary)",
             letterSpacing: "-0.035em",
-            fontSize: "clamp(40px, 8vw, 80px)",
+            fontSize: "clamp(32px, 5vw, 56px)",
           }}
         >
           Practice the decisions that built<br className="hidden sm:block" />
@@ -184,11 +184,18 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
         </div>
 
         <h2
-          className="font-display text-2xl sm:text-3xl font-bold mb-6"
+          className="font-display text-2xl sm:text-3xl font-bold mb-3"
           style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
         >
           {drillTitle(drill)}
         </h2>
+
+        <p
+          className="text-sm sm:text-base leading-relaxed mb-5 line-clamp-4"
+          style={{ color: "var(--text-muted)" }}
+        >
+          {drill.intro.split("\n\n")[0]}
+        </p>
 
         <span className="btn-primary group">
           Play this drill
@@ -233,11 +240,17 @@ function ArchiveCard({ drill }: { drill: Drill }) {
         </span>
       </div>
       <h3
-        className="font-display text-base font-semibold group-hover:underline"
+        className="font-display text-base font-semibold mb-1 group-hover:underline"
         style={{ color: "var(--text-primary)" }}
       >
         {drillTitle(drill)}
       </h3>
+      <p
+        className="text-sm leading-relaxed line-clamp-2"
+        style={{ color: "var(--text-muted)" }}
+      >
+        {drill.intro.split("\n\n")[0]}
+      </p>
     </Link>
   );
 }
