@@ -63,7 +63,7 @@ export default function AIDecodedArticlePage({
           />
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span
-              className="inline-block text-[10px] font-bold uppercase px-2.5 py-1 rounded-md"
+              className="inline-block text-sm font-bold uppercase px-2.5 py-1 rounded-md"
               style={{
                 background: solidColorFor(fm.category),
                 color: "#ffffff",

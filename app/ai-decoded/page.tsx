@@ -59,7 +59,7 @@ export default function AIDecodedIndexPage() {
               style={{ background: "#0F9D58" }}
             />
             <span
-              className="text-[10px] font-mono uppercase"
+              className="text-sm font-mono uppercase"
               style={{ color: "#0F9D58", letterSpacing: "0.16em" }}
             >
               AI Decoded
@@ -115,7 +115,7 @@ export default function AIDecodedIndexPage() {
                   >
                     <div className="flex items-center gap-2.5 mb-3 flex-wrap">
                       <span
-                        className="inline-block text-[10px] font-bold uppercase px-2 py-0.5 rounded-md"
+                        className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md"
                         style={{
                           background: solidColorFor(a.frontmatter.category),
                           color: "#ffffff",

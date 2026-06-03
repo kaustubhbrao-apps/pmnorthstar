@@ -46,7 +46,7 @@ export default async function SimulatePage() {
             style={{ background: "var(--brand-primary)" }}
           />
           <span
-            className="text-[10px] font-mono uppercase"
+            className="text-sm font-mono uppercase"
             style={{
               color: "var(--brand-primary)",
               letterSpacing: "0.16em",
@@ -81,7 +81,7 @@ export default async function SimulatePage() {
 
         {plays > 0 && (
           <p
-            className="text-xs font-mono uppercase mb-8 -mt-4"
+            className="text-sm font-mono uppercase mb-8 -mt-4"
             style={{
               color: "var(--text-faint)",
               letterSpacing: "0.12em",
@@ -156,7 +156,7 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
       <div className="px-6 py-8 sm:px-10 sm:py-12">
         <div className="flex items-center gap-2 mb-4 flex-wrap">
           <span
-            className="text-[10px] font-mono uppercase px-2 py-1 rounded"
+            className="text-sm font-mono uppercase px-2 py-1 rounded"
             style={{
               background: "color-mix(in srgb, var(--brand-primary) 12%, transparent)",
               color: "var(--brand-primary)",
@@ -166,7 +166,7 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
             Featured drill
           </span>
           <span
-            className="text-[10px] font-mono uppercase px-2 py-1 rounded"
+            className="text-sm font-mono uppercase px-2 py-1 rounded"
             style={{
               background: `color-mix(in srgb, ${badge.color} 14%, transparent)`,
               color: badge.color,
@@ -176,7 +176,7 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
             {badge.label}
           </span>
           <span
-            className="text-[10px] font-mono"
+            className="text-sm font-mono"
             style={{ color: "var(--text-faint)" }}
           >
             ~{drill.estimatedMinutes} min
@@ -233,7 +233,7 @@ function ArchiveCard({ drill }: { drill: Drill }) {
           {badge.label}
         </span>
         <span
-          className="text-[10px] font-mono"
+          className="text-sm font-mono"
           style={{ color: "var(--text-faint)" }}
         >
           ~{drill.estimatedMinutes} min
@@ -246,7 +246,7 @@ function ArchiveCard({ drill }: { drill: Drill }) {
         {drillTitle(drill)}
       </h3>
       <p
-        className="text-xs leading-relaxed line-clamp-2"
+        className="text-sm leading-relaxed line-clamp-2"
         style={{ color: "var(--text-muted)" }}
       >
         {drill.intro.split("\n\n")[0]}
@@ -285,7 +285,7 @@ function ExplainerTile({
         {title}
       </h3>
       <p
-        className="text-xs leading-relaxed"
+        className="text-sm leading-relaxed"
         style={{ color: "var(--text-muted)" }}
       >
         {body}

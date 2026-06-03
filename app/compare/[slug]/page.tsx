@@ -118,7 +118,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                 ]}
               />
               <span
-                className="inline-block text-[10px] sm:text-xs font-bold uppercase px-2.5 py-1 rounded-md mb-4 sm:mb-5"
+                className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md mb-4 sm:mb-5"
                 style={{
                   background: cmp.accentColor,
                   color: "#ffffff",
@@ -193,13 +193,13 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     </h2>
                   </div>
                   <p
-                    className="text-xs sm:text-sm line-clamp-3"
+                    className="text-sm sm:text-base line-clamp-3"
                     style={{ color: "var(--text-muted)" }}
                   >
                     {study.description}
                   </p>
                   <p
-                    className="text-[11px] mt-3 font-medium uppercase tracking-wider inline-flex items-center gap-1"
+                    className="text-sm mt-3 font-medium uppercase tracking-wider inline-flex items-center gap-1"
                     style={{ color: cmp.accentColor }}
                   >
                     Read full case study
@@ -242,7 +242,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
               >
                 {/* Header row */}
                 <div
-                  className="grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 text-[11px] sm:text-xs font-semibold uppercase tracking-wider"
+                  className="grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 text-sm sm:text-sm font-semibold uppercase tracking-wider"
                   style={{
                     color: "var(--text-muted)",
                     borderBottom: "1.5px solid var(--card-border)",
@@ -258,7 +258,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                 {cmp.rows.map((row, i) => (
                   <div
                     key={i}
-                    className="grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 text-xs sm:text-sm items-start"
+                    className="grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 text-sm sm:text-base items-start"
                     style={{
                       borderBottom:
                         i < cmp.rows.length - 1
@@ -411,7 +411,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     }
                   >
                     <span
-                      className="inline-block text-[10px] font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                      className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
                       style={{
                         background: c.accentColor,
                         color: "#ffffff",

@@ -37,7 +37,7 @@ export function RecommendationsBlock({
       style={{ borderRadius: 12 }}
     >
       <p
-        className="text-xs font-semibold uppercase tracking-[0.16em] mb-2"
+        className="text-sm font-semibold uppercase tracking-[0.16em] mb-2"
         style={{ color: "var(--brand-primary)" }}
       >
         For you
@@ -50,7 +50,7 @@ export function RecommendationsBlock({
       </h3>
       {subhead && (
         <p
-          className="text-xs sm:text-sm leading-relaxed mb-4"
+          className="text-sm sm:text-base leading-relaxed mb-4"
           style={{ color: "var(--text-muted)" }}
         >
           {subhead}
@@ -74,7 +74,7 @@ export function RecommendationsBlock({
             >
               <div className="min-w-0">
                 <p
-                  className="text-[10px] font-medium uppercase tracking-wider mb-1"
+                  className="text-sm font-medium uppercase tracking-wider mb-1"
                   style={{ color: "var(--text-faint)" }}
                 >
                   {rec.eyebrow}

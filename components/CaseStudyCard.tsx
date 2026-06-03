@@ -79,7 +79,7 @@ export function CaseStudyCard({
       <Link href={`/case-study/${getCaseStudySlug(study.id)}`} className="block px-5 pt-5 pb-4 group">
         <div className="flex items-center justify-between mb-5">
           <span
-            className="inline-flex items-center text-[10px] font-bold uppercase px-2.5 py-1 rounded-md truncate"
+            className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md truncate"
             style={{
               background: color,
               color: "#ffffff",
@@ -157,7 +157,7 @@ export function CaseStudyCard({
           ) : (
             <TrendingUp size={12} strokeWidth={1.6} />
           )}
-          <span className="line-clamp-1 text-[11px]">
+          <span className="line-clamp-1 text-sm">
             {study.outcome}
           </span>
         </div>
@@ -170,7 +170,7 @@ export function CaseStudyCard({
             {study.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="text-[10px] font-semibold px-2 py-0.5 rounded-md"
+                className="text-xs font-semibold px-2 py-0.5 rounded-md"
                 style={{
                   background: solidColorFor(tag),
                   color: "#ffffff",

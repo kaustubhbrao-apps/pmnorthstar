@@ -413,7 +413,7 @@ export default function HomePage() {
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Books</p>
-                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(savedBooks.length)}</span>
+                    <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(savedBooks.length)}</span>
                   </div>
                   {savedBooks.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No saved books yet.</p>
@@ -440,7 +440,7 @@ export default function HomePage() {
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Case Studies</p>
-                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(savedStudies.length)}</span>
+                    <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(savedStudies.length)}</span>
                   </div>
                   {savedStudies.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No saved case studies yet.</p>
@@ -466,7 +466,7 @@ export default function HomePage() {
                 <div>
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Playlists</p>
-                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(savedPlaylists.length)}</span>
+                    <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(savedPlaylists.length)}</span>
                   </div>
                   {savedPlaylists.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No saved playlists yet.</p>
@@ -539,7 +539,7 @@ export default function HomePage() {
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Books</p>
-                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(favouriteBooks.length)}</span>
+                    <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(favouriteBooks.length)}</span>
                   </div>
                   {favouriteBooks.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No favourite books yet.</p>
@@ -566,7 +566,7 @@ export default function HomePage() {
                 <div className="mb-8">
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Case Studies</p>
-                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(favouriteStudies.length)}</span>
+                    <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(favouriteStudies.length)}</span>
                   </div>
                   {favouriteStudies.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No favourite case studies yet.</p>
@@ -592,7 +592,7 @@ export default function HomePage() {
                 <div>
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Playlists</p>
-                    <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>{String(favouritePlaylists.length)}</span>
+                    <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(favouritePlaylists.length)}</span>
                   </div>
                   {favouritePlaylists.length === 0 ? (
                     <p className="text-sm" style={{ color: "var(--text-faint)" }}>No favourite playlists yet.</p>
@@ -700,7 +700,7 @@ export default function HomePage() {
                       <div className="flex items-center justify-between mb-5 gap-3">
                         <div className="flex items-center gap-2.5 flex-wrap">
                           <span
-                            className="inline-block text-[10px] sm:text-xs font-bold uppercase px-2.5 py-1 rounded-md"
+                            className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
                             style={{
                               background: csColor,
                               color: "#ffffff",
@@ -710,7 +710,7 @@ export default function HomePage() {
                             {csLabel}
                           </span>
                           <span
-                            className="font-mono text-[11px]"
+                            className="font-mono text-sm"
                             style={{ color: "var(--text-faint)" }}
                           >
                             {filteredCaseStudies.length} {filteredCaseStudies.length === 1 ? "study" : "studies"}
@@ -841,7 +841,7 @@ export default function HomePage() {
                       <div className="flex items-center mb-5">
                         <div className="flex items-center gap-2.5 flex-wrap">
                           <span
-                            className="inline-block text-[10px] sm:text-xs font-bold uppercase px-2.5 py-1 rounded-md"
+                            className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
                             style={{
                               background: lnColor,
                               color: "#ffffff",
@@ -851,7 +851,7 @@ export default function HomePage() {
                             {lnLabel}
                           </span>
                           <span
-                            className="font-mono text-[11px]"
+                            className="font-mono text-sm"
                             style={{ color: "var(--text-faint)" }}
                           >
                             {filteredPlaylists.length} {filteredPlaylists.length === 1 ? "playlist" : "playlists"}
@@ -956,16 +956,16 @@ export default function HomePage() {
                     className="playlist-card surface p-4 sm:p-5 group"
                     style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}
                   >
-                    <p className="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider mb-2" style={{ color: t.accentColor, opacity: 0.85 }}>
+                    <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: t.accentColor, opacity: 0.85 }}>
                       {t.eyebrow}
                     </p>
                     <p className="text-base sm:text-lg font-semibold leading-snug mb-2" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
                       {t.title}
                     </p>
-                    <p className="text-xs sm:text-sm line-clamp-2 mb-3" style={{ color: "var(--text-muted)" }}>
+                    <p className="text-sm sm:text-base line-clamp-2 mb-3" style={{ color: "var(--text-muted)" }}>
                       {t.intro}
                     </p>
-                    <p className="text-xs font-medium" style={{ color: t.accentColor }}>
+                    <p className="text-sm font-medium" style={{ color: t.accentColor }}>
                       {t.caseStudyIds.length} case studies →
                     </p>
                   </Link>
@@ -991,13 +991,13 @@ export default function HomePage() {
                     className="playlist-card surface p-4 sm:p-5 group"
                     style={{ ["--accent-color" as any]: c.accentColor } as React.CSSProperties}
                   >
-                    <p className="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider mb-2" style={{ color: c.accentColor, opacity: 0.85 }}>
+                    <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: c.accentColor, opacity: 0.85 }}>
                       {c.eyebrow}
                     </p>
                     <p className="text-base sm:text-lg font-semibold leading-snug mb-2" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
                       {c.title.split(" — ")[0]}
                     </p>
-                    <p className="text-xs sm:text-sm line-clamp-2" style={{ color: "var(--text-muted)" }}>
+                    <p className="text-sm sm:text-base line-clamp-2" style={{ color: "var(--text-muted)" }}>
                       {c.intro.split(". ")[0]}.
                     </p>
                   </Link>
@@ -1065,14 +1065,14 @@ export default function HomePage() {
           className={`${user ? "flex" : "hidden sm:flex"} flex-wrap items-center justify-between gap-2 px-4 sm:px-6 py-2`}
           style={{ borderBottom: "1.5px solid var(--card-border)", background: "var(--nav-bg)" }}
         >
-          <p className="text-[11px] sm:text-xs truncate flex-shrink min-w-0" style={{ color: "var(--text-muted)" }}>
+          <p className="text-sm sm:text-xs truncate flex-shrink min-w-0" style={{ color: "var(--text-muted)" }}>
             {user ? `Welcome back, ${user.name}` : "Browse freely. Sign in only if you want to save."}
           </p>
           {user ? (
             <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
               <button
                 onClick={() => setActiveNav("saved")}
-                className="text-[11px] font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
+                className="text-sm font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
                 style={{ background: "transparent", border: "1.5px solid var(--card-border)", color: "var(--text-muted)" }}
               >
                 <Bookmark size={10} strokeWidth={1.6} />
@@ -1080,7 +1080,7 @@ export default function HomePage() {
               </button>
               <button
                 onClick={() => setActiveNav("favourites")}
-                className="text-[11px] font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
+                className="text-sm font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
                 style={{ background: "transparent", border: "1.5px solid var(--card-border)", color: "var(--text-muted)" }}
               >
                 <Heart size={10} strokeWidth={1.6} />
@@ -1088,7 +1088,7 @@ export default function HomePage() {
               </button>
               <button
                 onClick={handleLogout}
-                className="text-[11px] font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
+                className="text-sm font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
                 style={{ background: "transparent", border: "1.5px solid var(--card-border)", color: "var(--text-muted)" }}
               >
                 <LogOut size={10} strokeWidth={1.6} />
@@ -1127,7 +1127,7 @@ export default function HomePage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span
-                        className="text-[11px] font-semibold tracking-wider uppercase"
+                        className="text-sm font-semibold tracking-wider uppercase"
                         style={{ color: "rgba(255, 255, 255, 0.85)" }}
                       >
                         {label}
@@ -1237,7 +1237,7 @@ export default function HomePage() {
                       <h2 className="text-base sm:text-lg font-semibold" style={{ color: "#26A69A", letterSpacing: "-0.02em" }}>
                         Topics & comparisons
                       </h2>
-                      <span className="font-mono text-[11px]" style={{ color: "var(--text-faint)" }}>
+                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>
                         [{topics.length + comparisons.length}]
                       </span>
                     </div>
@@ -1259,7 +1259,7 @@ export default function HomePage() {
                       style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}
                     >
                       <span
-                        className="inline-block text-[10px] font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                        className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
                         style={{
                           background: t.accentColor,
                           color: "#ffffff",
@@ -1344,7 +1344,7 @@ export default function HomePage() {
                         <div className="mb-10">
                           <div className="flex items-baseline gap-3 mb-4">
                             <p className="eyebrow">Books</p>
-                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                            <span className="text-sm" style={{ color: "var(--text-faint)" }}>
                               {String(filteredBooks.length)}
                             </span>
                           </div>
@@ -1372,7 +1372,7 @@ export default function HomePage() {
                         <div className="mb-10">
                           <div className="flex items-baseline gap-3 mb-4">
                             <p className="eyebrow">Case Studies</p>
-                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                            <span className="text-sm" style={{ color: "var(--text-faint)" }}>
                               {String(searchedCaseStudies.length)}
                             </span>
                           </div>
@@ -1402,7 +1402,7 @@ export default function HomePage() {
                             <p className="eyebrow" style={{ color: "var(--brand-primary)" }}>
                               AI Decoded
                             </p>
-                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                            <span className="text-sm" style={{ color: "var(--text-faint)" }}>
                               {String(searchedAIDecoded.length)}
                             </span>
                           </div>
@@ -1418,7 +1418,7 @@ export default function HomePage() {
                                 }}
                               >
                                 <p
-                                  className="text-[10px] font-medium uppercase tracking-wider mb-1.5 inline-flex items-center gap-1"
+                                  className="text-sm font-medium uppercase tracking-wider mb-1.5 inline-flex items-center gap-1"
                                   style={{ color: "var(--brand-primary)" }}
                                 >
                                   <Sparkles size={10} strokeWidth={1.8} />
@@ -1431,7 +1431,7 @@ export default function HomePage() {
                                   {a.title}
                                 </p>
                                 <p
-                                  className="text-xs leading-relaxed line-clamp-2"
+                                  className="text-sm leading-relaxed line-clamp-2"
                                   style={{ color: "var(--text-muted)" }}
                                 >
                                   {a.excerpt}
@@ -1447,7 +1447,7 @@ export default function HomePage() {
                         <div className="mb-10">
                           <div className="flex items-baseline gap-3 mb-4">
                             <p className="eyebrow">Playlists</p>
-                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                            <span className="text-sm" style={{ color: "var(--text-faint)" }}>
                               {String(searchedPlaylists.length)}
                             </span>
                           </div>
@@ -1474,7 +1474,7 @@ export default function HomePage() {
                         <div className="mb-10">
                           <div className="flex items-baseline gap-3 mb-4">
                             <p className="eyebrow">Topics</p>
-                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                            <span className="text-sm" style={{ color: "var(--text-faint)" }}>
                               {String(searchedTopics.length)}
                             </span>
                           </div>
@@ -1487,7 +1487,7 @@ export default function HomePage() {
                                 style={{ borderRadius: 12 }}
                               >
                                 <p
-                                  className="text-[10px] font-medium uppercase tracking-wider mb-1.5"
+                                  className="text-sm font-medium uppercase tracking-wider mb-1.5"
                                   style={{ color: t.accentColor }}
                                 >
                                   Topic
@@ -1499,7 +1499,7 @@ export default function HomePage() {
                                   {t.title}
                                 </p>
                                 <p
-                                  className="text-xs leading-relaxed line-clamp-2"
+                                  className="text-sm leading-relaxed line-clamp-2"
                                   style={{ color: "var(--text-muted)" }}
                                 >
                                   {t.eyebrow}
@@ -1515,7 +1515,7 @@ export default function HomePage() {
                         <div>
                           <div className="flex items-baseline gap-3 mb-4">
                             <p className="eyebrow">Comparisons</p>
-                            <span className="text-[11px]" style={{ color: "var(--text-faint)" }}>
+                            <span className="text-sm" style={{ color: "var(--text-faint)" }}>
                               {String(searchedComparisons.length)}
                             </span>
                           </div>
@@ -1528,7 +1528,7 @@ export default function HomePage() {
                                 style={{ borderRadius: 12 }}
                               >
                                 <p
-                                  className="text-[10px] font-medium uppercase tracking-wider mb-1.5"
+                                  className="text-sm font-medium uppercase tracking-wider mb-1.5"
                                   style={{ color: c.accentColor }}
                                 >
                                   Comparison
@@ -1540,7 +1540,7 @@ export default function HomePage() {
                                   {c.title}
                                 </p>
                                 <p
-                                  className="text-xs leading-relaxed line-clamp-2"
+                                  className="text-sm leading-relaxed line-clamp-2"
                                   style={{ color: "var(--text-muted)" }}
                                 >
                                   {c.eyebrow}

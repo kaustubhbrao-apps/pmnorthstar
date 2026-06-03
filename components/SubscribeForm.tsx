@@ -95,7 +95,7 @@ export function SubscribeForm({
       </div>
 
       <p
-        className="text-[11px] mt-3"
+        className="text-sm mt-3"
         style={{ color: "var(--text-faint)" }}
       >
         Free forever. Unsubscribe anytime. No spam.

@@ -81,7 +81,7 @@ export default function IndiaPage() {
                 style={{ background: "#FF6B35" }}
               />
               <span
-                className="text-[10px] font-mono uppercase"
+                className="text-sm font-mono uppercase"
                 style={{ color: "#FF6B35", letterSpacing: "0.16em" }}
               >
                 For builders in India
@@ -139,7 +139,7 @@ export default function IndiaPage() {
                 style={{ borderColor: "var(--card-border)" }}
               >
                 <div
-                  className="text-[10px] sm:text-[11px] font-medium tracking-wider uppercase mb-1 sm:mb-2"
+                  className="text-sm sm:text-base font-medium tracking-wider uppercase mb-1 sm:mb-2"
                   style={{ color: "var(--text-faint)" }}
                 >
                   {label}
@@ -242,14 +242,14 @@ export default function IndiaPage() {
                         {entry.company}
                       </span>
                       <span
-                        className="text-[10px] font-medium uppercase tracking-wider"
+                        className="text-sm font-medium uppercase tracking-wider"
                         style={{ color: "var(--text-faint)" }}
                       >
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                     </div>
                     <p
-                      className="text-xs leading-relaxed"
+                      className="text-sm leading-relaxed"
                       style={{ color: "var(--text-muted)" }}
                     >
                       {entry.angle}

@@ -112,7 +112,7 @@ export function SaveButton({
       <button
         onClick={handleSave}
         disabled={savingLoading}
-        className="flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all"
+        className="flex items-center gap-1 px-2 py-1 rounded-lg text-sm font-medium transition-all"
         style={{
           background: saved ? "var(--brand-primary)" : "var(--tag-bg)",
           color: saved ? "#ffffff" : "var(--text-muted)",
@@ -130,7 +130,7 @@ export function SaveButton({
       <button
         onClick={handleLike}
         disabled={likingLoading}
-        className="flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium transition-all"
+        className="flex items-center gap-1 px-2 py-1 rounded-lg text-sm font-medium transition-all"
         style={{
           background: liked ? "rgba(243,18,60,0.1)" : "var(--tag-bg)",
           color: liked ? "var(--brand-primary)" : "var(--text-muted)",

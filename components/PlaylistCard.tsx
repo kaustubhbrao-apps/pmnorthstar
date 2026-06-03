@@ -136,7 +136,7 @@ export function PlaylistCard({
         {/* Top row: category · arrow */}
         <div className="flex items-center justify-between mb-5">
           <span
-            className="inline-flex items-center text-[10px] font-bold uppercase px-2.5 py-1 rounded-md truncate"
+            className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md truncate"
             style={{
               background: color,
               color: "#ffffff",
@@ -177,7 +177,7 @@ export function PlaylistCard({
 
         {/* Description */}
         <p
-          className="text-xs leading-relaxed line-clamp-2"
+          className="text-sm leading-relaxed line-clamp-2"
           style={{ color: "var(--text-muted)" }}
         >
           {playlist.description}
@@ -189,7 +189,7 @@ export function PlaylistCard({
             {playlist.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] px-2 py-0.5 rounded-full"
+                className="text-sm px-2 py-0.5 rounded-full"
                 style={{
                   background: "var(--tag-bg)",
                   color: "var(--text-muted)",

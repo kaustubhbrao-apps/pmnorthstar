@@ -171,19 +171,19 @@ export default async function SimulateMePage() {
         <div className="flex items-center gap-2 mb-2">
           <Link
             href="/simulate"
-            className="text-[11px] font-mono uppercase hover:opacity-70"
+            className="text-sm font-mono uppercase hover:opacity-70"
             style={{ color: "var(--text-faint)", letterSpacing: "0.14em" }}
           >
             ← simulateit
           </Link>
           <span
-            className="text-[11px] font-mono"
+            className="text-sm font-mono"
             style={{ color: "var(--text-faint)" }}
           >
             /
           </span>
           <span
-            className="text-[11px] font-mono uppercase"
+            className="text-sm font-mono uppercase"
             style={{ color: "var(--brand-primary)", letterSpacing: "0.14em" }}
           >
             your stats
@@ -243,7 +243,7 @@ export default async function SimulateMePage() {
 
             {/* Dimensional breakdown */}
             <h3
-              className="text-[11px] font-mono uppercase mb-3"
+              className="text-sm font-mono uppercase mb-3"
               style={{ color: "var(--text-faint)", letterSpacing: "0.14em" }}
             >
               How you score across the three dimensions
@@ -275,7 +275,7 @@ export default async function SimulateMePage() {
                         {DIMENSION_LABEL[dim]}
                       </span>
                       <span
-                        className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded"
+                        className="text-sm font-mono uppercase px-1.5 py-0.5 rounded"
                         style={{
                           background: "var(--tag-bg)",
                           color: "var(--text-faint)",
@@ -309,7 +309,7 @@ export default async function SimulateMePage() {
                       />
                     </div>
                     <p
-                      className="text-[11px] mt-1.5 font-mono"
+                      className="text-sm mt-1.5 font-mono"
                       style={{ color: "var(--text-faint)" }}
                     >
                       {score} / {max} pts across drills that tested this
@@ -331,7 +331,7 @@ export default async function SimulateMePage() {
                 }}
               >
                 <h3
-                  className="text-[11px] font-mono uppercase mb-2 inline-flex items-center gap-1.5"
+                  className="text-sm font-mono uppercase mb-2 inline-flex items-center gap-1.5"
                   style={{
                     color: DIMENSION_COLOR[weakest.dim],
                     letterSpacing: "0.14em",
@@ -361,7 +361,7 @@ export default async function SimulateMePage() {
 
             {/* Recent attempts */}
             <h3
-              className="text-[11px] font-mono uppercase mb-3"
+              className="text-sm font-mono uppercase mb-3"
               style={{ color: "var(--text-faint)", letterSpacing: "0.14em" }}
             >
               Recent attempts
@@ -389,7 +389,7 @@ export default async function SimulateMePage() {
                           {drill ? drillTitle(drill.slug) : a.drillSlug}
                         </p>
                         <p
-                          className="text-[11px] font-mono mt-0.5"
+                          className="text-sm font-mono mt-0.5"
                           style={{ color: "var(--text-faint)" }}
                         >
                           {new Date(a.attemptedAt).toLocaleDateString("en-IN", {
@@ -422,7 +422,7 @@ export default async function SimulateMePage() {
                           {a.score}
                         </span>
                         <span
-                          className="text-xs font-mono ml-0.5"
+                          className="text-sm font-mono ml-0.5"
                           style={{ color: "var(--text-faint)" }}
                         >
                           /{a.maxPossible}
@@ -491,7 +491,7 @@ function StatTile({
         className="mb-2"
       />
       <p
-        className="text-[10px] font-mono uppercase mb-1"
+        className="text-sm font-mono uppercase mb-1"
         style={{ color: "var(--text-faint)", letterSpacing: "0.14em" }}
       >
         {label}
@@ -503,7 +503,7 @@ function StatTile({
         {value}
       </p>
       <p
-        className="text-[11px] font-mono mt-0.5"
+        className="text-sm font-mono mt-0.5"
         style={{ color: "var(--text-faint)" }}
       >
         {sub}

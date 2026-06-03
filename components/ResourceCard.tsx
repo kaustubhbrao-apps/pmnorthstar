@@ -208,7 +208,7 @@ export function ResourceCard({
 
           <div className="min-w-0 flex-1">
             <p
-              className="text-[10px] font-medium uppercase tracking-wider"
+              className="text-sm font-medium uppercase tracking-wider"
               style={{ color: "var(--text-faint)" }}
             >
               Author
@@ -234,7 +234,7 @@ export function ResourceCard({
         {/* Content */}
         <div className="px-4 pt-3 pb-3">
           <span
-            className="inline-flex items-center text-[10px] font-bold uppercase px-2.5 py-1 rounded-md mb-2.5"
+            className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md mb-2.5"
             style={{
               background: cat.color,
               color: "#ffffff",
@@ -256,7 +256,7 @@ export function ResourceCard({
 
           {variant !== "list" && (
             <p
-              className="text-xs leading-relaxed line-clamp-2 mb-3"
+              className="text-sm leading-relaxed line-clamp-2 mb-3"
               style={{ color: "var(--text-muted)" }}
             >
               {/* Truncate the description in card render — line-clamp:2
@@ -272,7 +272,7 @@ export function ResourceCard({
           <div className="flex items-center justify-between">
             <StarRating rating={book.rating} />
             <span
-              className="text-[11px] font-mono"
+              className="text-sm font-mono"
               style={{ color: "var(--text-faint)" }}
             >
               {book.rating.toFixed(1)}

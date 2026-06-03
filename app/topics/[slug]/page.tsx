@@ -68,7 +68,7 @@ export default function TopicPage({ params }: PageProps) {
               ]}
             />
             <span
-              className="inline-block text-[10px] sm:text-xs font-bold uppercase px-2.5 py-1 rounded-md mb-4 sm:mb-5"
+              className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md mb-4 sm:mb-5"
               style={{
                 background: topic.accentColor,
                 color: "#ffffff",
@@ -207,7 +207,7 @@ export default function TopicPage({ params }: PageProps) {
                   }
                 >
                   <span
-                    className="inline-block text-[10px] font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                    className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
                     style={{
                       background: t.accentColor,
                       color: "#ffffff",

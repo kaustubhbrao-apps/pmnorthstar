@@ -252,7 +252,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       <div className="flex items-center gap-2 mb-6 flex-wrap">
         <Link
           href="/simulate"
-          className="text-[11px] font-mono uppercase hover:opacity-70"
+          className="text-sm font-mono uppercase hover:opacity-70"
           style={{
             color: "var(--text-faint)",
             letterSpacing: "0.14em",
@@ -261,13 +261,13 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
           ← simulateit
         </Link>
         <span
-          className="text-[11px] font-mono"
+          className="text-sm font-mono"
           style={{ color: "var(--text-faint)" }}
         >
           /
         </span>
         <span
-          className="text-[11px] font-mono uppercase"
+          className="text-sm font-mono uppercase"
           style={{
             color: "var(--brand-primary)",
             letterSpacing: "0.14em",
@@ -277,7 +277,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
         </span>
         {showRunningScore && (
           <span
-            className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-mono px-2 py-1 rounded-md"
+            className="ml-auto inline-flex items-center gap-1.5 text-sm font-mono px-2 py-1 rounded-md"
             style={{
               background: "var(--card-bg)",
               border: "1.5px solid var(--card-border)",
@@ -380,7 +380,7 @@ function IntroView({
       </h1>
 
       <div
-        className="text-[10px] font-mono uppercase mb-5 inline-flex items-center gap-2 flex-wrap"
+        className="text-sm font-mono uppercase mb-5 inline-flex items-center gap-2 flex-wrap"
         style={{
           color: "var(--text-faint)",
           letterSpacing: "0.14em",
@@ -449,7 +449,7 @@ function DecisionView({
       {/* Step indicator */}
       <div className="flex items-center gap-2 mb-3">
         <span
-          className="text-[10px] font-mono uppercase px-2 py-1 rounded inline-flex items-center gap-1.5"
+          className="text-sm font-mono uppercase px-2 py-1 rounded inline-flex items-center gap-1.5"
           style={{
             background: `color-mix(in srgb, ${dimColor} 14%, transparent)`,
             color: dimColor,
@@ -564,7 +564,7 @@ function RevealView({
       >
         <div className="flex items-center gap-3 mb-2">
           <span
-            className="text-[10px] font-mono uppercase"
+            className="text-sm font-mono uppercase"
             style={{
               color: "var(--text-faint)",
               letterSpacing: "0.14em",
@@ -573,7 +573,7 @@ function RevealView({
             Decision {step} · Your pick
           </span>
           <span
-            className="text-[10px] font-mono ml-auto px-2 py-0.5 rounded"
+            className="text-sm font-mono ml-auto px-2 py-0.5 rounded"
             style={{
               background: "var(--card-bg)",
               color: "var(--text-primary)",
@@ -593,7 +593,7 @@ function RevealView({
 
       {/* All option rationales — the educational meat */}
       <h3
-        className="text-[11px] font-mono uppercase mb-3"
+        className="text-sm font-mono uppercase mb-3"
         style={{
           color: "var(--text-faint)",
           letterSpacing: "0.14em",
@@ -623,7 +623,7 @@ function RevealView({
                   the option text into a narrow column on mobile. */}
               <div className="flex items-center gap-2 mb-2 flex-wrap">
                 <span
-                  className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-mono font-semibold"
+                  className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-mono font-semibold"
                   style={{
                     background: isBest
                       ? "rgba(34,197,94,0.15)"
@@ -640,7 +640,7 @@ function RevealView({
                   {String.fromCharCode(65 + i)}
                 </span>
                 <span
-                  className="text-[10px] font-mono px-1.5 py-0.5 rounded"
+                  className="text-sm font-mono px-1.5 py-0.5 rounded"
                   style={{
                     background: "var(--tag-bg)",
                     color: "var(--text-faint)",
@@ -651,7 +651,7 @@ function RevealView({
                   {opt.pattern}
                 </span>
                 <span
-                  className="ml-auto text-[11px] font-mono font-semibold flex-shrink-0"
+                  className="ml-auto text-sm font-mono font-semibold flex-shrink-0"
                   style={{
                     color: isBest
                       ? "#22C55E"
@@ -671,7 +671,7 @@ function RevealView({
                 {opt.text}
               </p>
               <p
-                className="text-xs sm:text-sm leading-relaxed"
+                className="text-sm sm:text-base leading-relaxed"
                 style={{ color: "var(--text-muted)" }}
               >
                 {opt.rationale}
@@ -872,12 +872,12 @@ function OutcomeView({
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-xl shadow-sm">🥊</div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--brand-primary)" }}>Versus Match</p>
+              <p className="text-sm font-bold uppercase tracking-widest" style={{ color: "var(--brand-primary)" }}>Versus Match</p>
               <p className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>You vs. Your Challenger</p>
             </div>
           </div>
           <div className="text-right">
-            <p className="text-[10px] font-mono opacity-60">CHALLENGER SCORE</p>
+            <p className="text-sm font-mono opacity-60">CHALLENGER SCORE</p>
             <p className="text-lg font-bold" style={{ color: scoreColor(challenger.score / challenger.max) }}>{challenger.score}/{challenger.max}</p>
           </div>
         </div>
@@ -894,9 +894,9 @@ function OutcomeView({
       {challenger ? (
         <div className="grid grid-cols-2 gap-4 mb-8">
           <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ background: "var(--card-bg)", border: "1.5px solid var(--card-border)" }}>
-            <p className="text-[10px] font-mono uppercase mb-2 opacity-50">You</p>
+            <p className="text-sm font-mono uppercase mb-2 opacity-50">You</p>
             <p className="text-4xl font-bold mb-1" style={{ color: scoreColor(totalScore / totalMax) }}>{totalScore}</p>
-            <p className="text-xs font-mono opacity-50">/{totalMax}</p>
+            <p className="text-sm font-mono opacity-50">/{totalMax}</p>
             <div className="flex justify-center gap-1 mt-4">
               {letterBlocks.split('').map((b, i) => (
                 <div key={i} className="w-3 h-3 rounded-sm" style={{ background: b === 'G' ? '#0F9D58' : b === 'Y' ? '#D97706' : '#DC2626' }} />
@@ -904,9 +904,9 @@ function OutcomeView({
             </div>
           </div>
           <div className="rounded-2xl p-5 sm:p-6 text-center opacity-80" style={{ background: "var(--card-bg)", border: "1.5px solid var(--card-border)" }}>
-            <p className="text-[10px] font-mono uppercase mb-2 opacity-50">Challenger</p>
+            <p className="text-sm font-mono uppercase mb-2 opacity-50">Challenger</p>
             <p className="text-4xl font-bold mb-1" style={{ color: scoreColor(challenger.score / challenger.max) }}>{challenger.score}</p>
-            <p className="text-xs font-mono opacity-50">/{challenger.max}</p>
+            <p className="text-sm font-mono opacity-50">/{challenger.max}</p>
             <div className="flex justify-center gap-1 mt-4">
               {challenger.blocks.split('').map((b, i) => (
                 <div key={i} className="w-3 h-3 rounded-sm" style={{ background: b === 'G' ? '#0F9D58' : b === 'Y' ? '#D97706' : '#DC2626' }} />
@@ -927,7 +927,7 @@ function OutcomeView({
           }}
         >
           <div
-            className="text-[10px] font-mono uppercase mb-1"
+            className="text-sm font-mono uppercase mb-1"
             style={{
               color: "var(--text-faint)",
               letterSpacing: "0.16em",
@@ -963,7 +963,7 @@ function OutcomeView({
 
       {/* Dimensional breakdown */}
       <h3
-        className="text-[11px] font-mono uppercase mb-3"
+        className="text-sm font-mono uppercase mb-3"
         style={{
           color: "var(--text-faint)",
           letterSpacing: "0.14em",
@@ -1035,7 +1035,7 @@ function OutcomeView({
           }}
         >
           <h3
-            className="text-[11px] font-mono uppercase mb-3"
+            className="text-sm font-mono uppercase mb-3"
             style={{
               color: "var(--text-faint)",
               letterSpacing: "0.14em",
@@ -1065,7 +1065,7 @@ function OutcomeView({
         }}
       >
         <h3
-          className="text-[11px] font-mono uppercase mb-3 inline-flex items-center gap-1.5"
+          className="text-sm font-mono uppercase mb-3 inline-flex items-center gap-1.5"
           style={{
             color: "var(--brand-primary)",
             letterSpacing: "0.14em",

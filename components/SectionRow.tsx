@@ -35,7 +35,7 @@ export function SectionRow({ title, subtitle, children, accentColor }: SectionRo
         <div className="min-w-0">
           <div className="flex items-center gap-2.5 mb-2 flex-wrap">
             <span
-              className="inline-block text-[10px] sm:text-xs font-bold uppercase px-2.5 py-1 rounded-md"
+              className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
               style={{
                 background: chipColor,
                 color: "#ffffff",
@@ -45,7 +45,7 @@ export function SectionRow({ title, subtitle, children, accentColor }: SectionRo
               {title}
             </span>
             <span
-              className="font-mono text-[11px]"
+              className="font-mono text-sm"
               style={{ color: "var(--text-faint)" }}
             >
               {count} {count === 1 ? "item" : "items"}

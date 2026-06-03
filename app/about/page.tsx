@@ -54,7 +54,7 @@ export default function AboutPage() {
                 style={{ background: "var(--brand-primary)" }}
               />
               <span
-                className="text-[10px] font-mono uppercase"
+                className="text-sm font-mono uppercase"
                 style={{
                   color: "var(--brand-primary)",
                   letterSpacing: "0.16em",

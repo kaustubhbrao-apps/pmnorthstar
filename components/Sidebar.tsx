@@ -111,12 +111,12 @@ export function Sidebar({
               <span className="font-display text-[16px] font-bold tracking-tight" style={{ color: "var(--brand-primary)", letterSpacing: "-0.02em" }}>star</span>
             </div>
           </div>
-          <p className="text-[11px] mt-2 ml-0.5" style={{ color: "var(--text-faint)" }}>PM resources, curated</p>
+          <p className="text-sm mt-2 ml-0.5" style={{ color: "var(--text-faint)" }}>PM resources, curated</p>
         </div>
 
         {/* Nav */}
         <nav className="flex-1 space-y-0.5 overflow-y-auto scroll-container">
-          <p className="text-[11px] font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Navigate</p>
+          <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Navigate</p>
 
           {primaryNav.map((item) => (
             <NavButton key={item.id} {...item} />
@@ -167,7 +167,7 @@ export function Sidebar({
             <Brain size={15} strokeWidth={1.6} />
             <span style={{ letterSpacing: "-0.005em" }}>SimulateIt</span>
             <span
-              className="ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded"
+              className="ml-auto text-xs font-semibold px-1.5 py-0.5 rounded"
               style={{
                 background: "rgba(219, 39, 119, 0.18)",
                 color: "#DB2777",
@@ -178,7 +178,7 @@ export function Sidebar({
           </Link>
 
           <div className="pt-5">
-            <p className="text-[11px] font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Library</p>
+            <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Library</p>
 
             <NavButton
               id="saved"
@@ -197,7 +197,7 @@ export function Sidebar({
 
         {/* Footer mark */}
         <div className="px-3 pt-4" style={{ borderTop: "1.5px solid var(--sidebar-border)" }}>
-          <p className="text-[11px]" style={{ color: "var(--text-faint)" }}>v3 public beta</p>
+          <p className="text-sm" style={{ color: "var(--text-faint)" }}>v3 public beta</p>
         </div>
       </aside>
     </>

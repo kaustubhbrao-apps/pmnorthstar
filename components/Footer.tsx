@@ -59,7 +59,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-x-10 gap-y-2 sm:gap-y-3">
             <div className="flex flex-col gap-2">
               <p
-                className="text-[10px] font-semibold uppercase tracking-wider mb-1"
+                className="text-sm font-semibold uppercase tracking-wider mb-1"
                 style={{ color: "var(--text-faint)" }}
               >
                 Browse
@@ -77,7 +77,7 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-2">
               <p
-                className="text-[10px] font-semibold uppercase tracking-wider mb-1"
+                className="text-sm font-semibold uppercase tracking-wider mb-1"
                 style={{ color: "var(--text-faint)" }}
               >
                 More

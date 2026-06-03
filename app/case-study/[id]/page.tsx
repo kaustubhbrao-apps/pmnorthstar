@@ -202,7 +202,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
               />
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span
-                  className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-0.5 rounded-full"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium px-2.5 py-0.5 rounded-full"
                   style={{ background: `${color}14`, color }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} />
@@ -291,7 +291,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                 )}
                 <div>
                   <span
-                    className="text-xs font-bold uppercase tracking-wider block mb-1.5"
+                    className="text-sm font-bold uppercase tracking-wider block mb-1.5"
                     style={{ opacity: 0.8 }}
                   >
                     {isFailure ? "Outcome" : "Impact"}
@@ -438,7 +438,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                           <div className="flex items-center gap-2 mb-2">
                             <span className="text-base">{r.logo}</span>
                             <span
-                              className="text-[10px] font-medium uppercase tracking-wider"
+                              className="text-sm font-medium uppercase tracking-wider"
                               style={{ color: rColor }}
                             >
                               {r.company} · {r.year}

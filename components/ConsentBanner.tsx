@@ -50,13 +50,13 @@ export function ConsentBanner() {
       >
         <div className="flex-1 min-w-0">
           <p
-            className="text-xs sm:text-sm font-semibold mb-1"
+            className="text-sm sm:text-base font-semibold mb-1"
             style={{ color: "var(--text-primary)" }}
           >
             northstar uses minimal cookies + privacy-friendly analytics.
           </p>
           <p
-            className="text-[11px] sm:text-xs leading-relaxed"
+            className="text-sm sm:text-sm leading-relaxed"
             style={{ color: "var(--text-muted)" }}
           >
             We use Vercel Analytics (no third-party trackers) and JWT cookies for login. We don&apos;t sell your data, run display ads, or share with advertisers.{" "}

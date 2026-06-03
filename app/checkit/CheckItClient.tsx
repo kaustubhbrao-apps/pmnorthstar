@@ -199,7 +199,7 @@ function Hero({
       >
         <Sparkles size={12} style={{ color: "var(--brand-primary)" }} />
         <span
-          className="text-xs font-medium"
+          className="text-sm font-medium"
           style={{ color: "var(--brand-primary)", letterSpacing: "0.02em" }}
         >
           CheckIt, by northstar
@@ -286,7 +286,7 @@ function Hero({
                 type="button"
                 onClick={() => onPickExample(url)}
                 disabled={isLoading}
-                className="text-xs font-mono transition-opacity hover:opacity-80 disabled:opacity-40"
+                className="text-sm font-mono transition-opacity hover:opacity-80 disabled:opacity-40"
                 style={{ color: "var(--brand-primary)" }}
               >
                 {url}
@@ -381,7 +381,7 @@ function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) 
               Live Audit Feed
             </h2>
           </div>
-          <span className="text-[10px] font-mono text-muted" style={{ color: "var(--text-faint)" }}>
+          <span className="text-sm font-mono text-muted" style={{ color: "var(--text-faint)" }}>
             RECENTLY SCORED SITES
           </span>
         </div>
@@ -403,7 +403,7 @@ function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) 
                   <p className="text-sm font-bold group-hover:text-[var(--brand-primary)] transition-colors">
                     {entry.company}
                   </p>
-                  <p className="text-[10px] font-mono opacity-50">{entry.url}</p>
+                  <p className="text-sm font-mono opacity-50">{entry.url}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -423,10 +423,10 @@ function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) 
         </div>
 
         <div className="mt-6 p-4 rounded-xl text-center" style={{ background: "var(--brand-soft)", border: "1.5px dashed rgba(243, 18, 60, 0.3)" }}>
-          <p className="text-xs font-medium mb-1" style={{ color: "var(--brand-primary)" }}>
+          <p className="text-sm font-medium mb-1" style={{ color: "var(--brand-primary)" }}>
             Think your landing page can beat these scores?
           </p>
-          <p className="text-[10px]" style={{ color: "var(--text-muted)" }}>
+          <p className="text-xs" style={{ color: "var(--text-muted)" }}>
             Paste your URL above to join the leaderboard. No signup required.
           </p>
         </div>
@@ -588,7 +588,7 @@ function ScoreHeader({
         <ScoreRing score={score} color="#ffffff" onColor />
         <div className="min-w-0">
           <p
-            className="text-[10px] uppercase tracking-wider mb-1 font-semibold"
+            className="text-sm uppercase tracking-wider mb-1 font-semibold"
             style={{ color: "rgba(255, 255, 255, 0.85)" }}
           >
             CheckIt score
@@ -603,7 +603,7 @@ function ScoreHeader({
             {bandLabel}
           </p>
           <p
-            className="text-xs sm:text-sm leading-snug"
+            className="text-sm sm:text-base leading-snug"
             style={{ color: "rgba(255, 255, 255, 0.85)" }}
           >
             {bandTagline}
@@ -613,7 +613,7 @@ function ScoreHeader({
 
       <div className="sm:ml-auto flex flex-col sm:items-end gap-2 w-full sm:w-auto">
         <p
-          className="text-xs font-mono truncate max-w-full"
+          className="text-sm font-mono truncate max-w-full"
           style={{ color: "rgba(255, 255, 255, 0.75)" }}
         >
           {host}
@@ -694,7 +694,7 @@ function ScoreRing({
       >
         <span className="text-[34px] font-bold">{score}</span>
         <span
-          className="text-[10px] mt-1.5 font-mono uppercase tracking-wider"
+          className="text-xs mt-1.5 font-mono uppercase tracking-wider"
           style={{ color: subTextColor }}
         >
           /100
@@ -750,7 +750,7 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
             <span className="font-display text-lg sm:text-xl font-bold">
               {dimension.score}
             </span>
-            <span className="text-[10px] opacity-70 font-mono">/{dimension.maxScore}</span>
+            <span className="text-xs opacity-70 font-mono">/{dimension.maxScore}</span>
           </div>
         </div>
         <div className="flex-1 min-w-0">
@@ -764,7 +764,7 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
             {dimension.label}
           </h3>
           <p
-            className="text-xs sm:text-sm"
+            className="text-sm sm:text-base"
             style={{ color: "var(--text-muted)" }}
           >
             {config.oneLiner}
@@ -772,7 +772,7 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
         </div>
         <div className="flex items-center gap-2.5 flex-shrink-0">
           <span
-            className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded"
+            className="hidden sm:inline-flex items-center gap-1 text-sm font-mono px-2 py-0.5 rounded"
             style={{
               color: "var(--text-faint)",
               background: "var(--tag-bg)",
@@ -841,7 +841,7 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
                         {c.label}
                       </p>
                       <span
-                        className="text-[10px] font-mono px-1.5 py-0.5 rounded"
+                        className="text-sm font-mono px-1.5 py-0.5 rounded"
                         style={{
                           color: "var(--text-faint)",
                           background: "var(--tag-bg)",
@@ -919,7 +919,7 @@ function Section({
   return (
     <div className="pt-5">
       <p
-        className="text-[11px] uppercase tracking-wider mb-3 font-medium"
+        className="text-sm uppercase tracking-wider mb-3 font-medium"
         style={{ color: "var(--text-faint)" }}
       >
         {title}

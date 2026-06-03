@@ -172,7 +172,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
               />
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span
-                  className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-0.5 rounded-full"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium px-2.5 py-0.5 rounded-full"
                   style={{
                     background: cat.bg,
                     color: cat.color,
@@ -268,7 +268,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                 />
               </div>
 
-              <p className="text-[11px] mt-3" style={{ color: "var(--text-faint)" }}>
+              <p className="text-sm mt-3" style={{ color: "var(--text-faint)" }}>
                 The short route — our review and key takeaways, 5 min read. The long route — buy the book on Amazon if you want to go deeper. Both routes work.
               </p>
             </div>
@@ -335,7 +335,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                   {book.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] px-2 py-0.5 rounded-full"
+                      className="text-sm px-2 py-0.5 rounded-full"
                       style={{
                         background: "var(--tag-bg)",
                         color: "var(--text-muted)",
@@ -571,7 +571,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                       }
                     >
                       <p
-                        className="text-[10px] font-medium uppercase tracking-wider mb-1.5"
+                        className="text-sm font-medium uppercase tracking-wider mb-1.5"
                         style={{ color: "var(--text-muted)" }}
                       >
                         {cs.category}
@@ -623,7 +623,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                     }
                   >
                     <p
-                      className="text-[10px] font-medium uppercase tracking-wider mb-2"
+                      className="text-sm font-medium uppercase tracking-wider mb-2"
                       style={{
                         color: "var(--brand-primary)",
                         opacity: 0.85,

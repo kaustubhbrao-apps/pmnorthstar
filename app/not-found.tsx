@@ -37,7 +37,7 @@ export default function NotFound() {
               style={{ color: "var(--brand-primary)" }}
             />
             <span
-              className="text-xs font-semibold uppercase tracking-[0.18em]"
+              className="text-sm font-semibold uppercase tracking-[0.18em]"
               style={{ color: "var(--brand-primary)" }}
             >
               northstar · off course

@@ -56,7 +56,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
             style={{ background: "var(--brand-primary)" }}
           />
           <span
-            className="text-[10px] font-mono uppercase"
+            className="text-sm font-mono uppercase"
             style={{
               color: "var(--brand-primary)",
               letterSpacing: "0.16em",
@@ -127,7 +127,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
 
           <div className="flex-1 min-w-0">
             <p
-              className="text-[10px] font-mono uppercase mb-1"
+              className="text-sm font-mono uppercase mb-1"
               style={{
                 color: "rgba(255, 255, 255, 0.75)",
                 letterSpacing: "0.14em",
@@ -175,7 +175,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
 
           <div className="flex-1 min-w-0">
             <p
-              className="text-[10px] font-mono uppercase mb-1"
+              className="text-sm font-mono uppercase mb-1"
               style={{
                 color: "rgba(255, 255, 255, 0.75)",
                 letterSpacing: "0.14em",
@@ -219,7 +219,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
         >
           <div className="flex items-center gap-3 mb-2">
             <p
-              className="text-[10px] font-mono uppercase"
+              className="text-sm font-mono uppercase"
               style={{
                 color: "rgba(255, 255, 255, 0.85)",
                 letterSpacing: "0.14em",
@@ -234,7 +234,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
                   style={{ background: "rgba(255, 255, 255, 0.6)" }}
                 />
                 <p
-                  className="text-[10px] font-mono"
+                  className="text-sm font-mono"
                   style={{ color: "rgba(255, 255, 255, 0.7)" }}
                 >
                   {formatDate(latestAI.publishedAt)}
