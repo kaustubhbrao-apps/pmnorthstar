@@ -8,6 +8,7 @@ const navLinks: Array<{ label: string; href: string }> = [
   { label: "Case studies", href: "/#casestudies" },
   { label: "Playlists", href: "/#playlists" },
   { label: "AI Decoded", href: "/ai-decoded" },
+  { label: "SimulateIt", href: "/simulate" },
   { label: "CheckIt", href: "/checkit" },
   { label: "India", href: "/india" },
   { label: "About", href: "/about" },
