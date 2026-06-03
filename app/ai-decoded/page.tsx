@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowUpRight, Clock } from "lucide-react";
 import { getAllAIDecodedArticles } from "@/lib/ai-decoded";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SidebarShell } from "@/components/SidebarShell";
 import { SubscribeForm } from "@/components/SubscribeForm";
-import { solidColorFor } from "@/lib/category-colors";
+import { AIDecodedClient } from "./AIDecodedClient";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -42,18 +40,18 @@ export default function AIDecodedIndexPage() {
       {/* Hero — neutral background, green eyebrow accent ties back to
           the AI Decoded card on the home page without overwhelming. */}
       <section
-        className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16"
+        className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
         style={{ borderBottom: "1.5px solid var(--card-border)" }}
       >
-        <div className="max-w-3xl">
+        <div className="w-full max-w-4xl">
           <Breadcrumbs
-            className="mb-5"
+            className="mb-6"
             items={[
               { label: "northstar", href: "/" },
               { label: "AI Decoded" },
             ]}
           />
-          <div className="flex items-center gap-2.5 mb-4">
+          <div className="flex items-center gap-2.5 mb-5">
             <span
               className="w-5 h-px"
               style={{ background: "#0F9D58" }}
@@ -66,7 +64,7 @@ export default function AIDecodedIndexPage() {
             </span>
           </div>
           <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.02] mb-5"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.02] mb-6"
             style={{
               color: "var(--text-primary)",
               letterSpacing: "-0.03em",
@@ -75,7 +73,7 @@ export default function AIDecodedIndexPage() {
             What&apos;s actually happening in AI.
           </h1>
           <p
-            className="text-base sm:text-lg leading-relaxed max-w-2xl"
+            className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl"
             style={{ color: "var(--text-muted)" }}
           >
             Editorial commentary on AI launches, conferences, and tools, plus what PMs, marketers, founders, and operators should do about them. No hype. No fluff. Just the moves worth making.
@@ -83,96 +81,14 @@ export default function AIDecodedIndexPage() {
         </div>
       </section>
 
-      {/* Articles list */}
-      <section className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-        <div className="max-w-3xl">
-          {articles.length === 0 ? (
-            <div
-              className="surface p-8 text-center"
-              style={{ borderRadius: 12 }}
-            >
-              <p
-                className="text-base font-semibold mb-2"
-                style={{ color: "var(--text-primary)" }}
-              >
-                First decoded read is coming soon.
-              </p>
-              <p
-                className="text-sm"
-                style={{ color: "var(--text-muted)" }}
-              >
-                Working on the inaugural batch. Subscribe to the newsletter to know when they drop.
-              </p>
-            </div>
-          ) : (
-            <ul className="space-y-3">
-              {articles.map((a) => (
-                <li key={a.frontmatter.slug}>
-                  <Link
-                    href={`/ai-decoded/${a.frontmatter.slug}`}
-                    className="surface p-5 sm:p-6 block group transition-colors"
-                    style={{ borderRadius: 12 }}
-                  >
-                    <div className="flex items-center gap-2.5 mb-3 flex-wrap">
-                      <span
-                        className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md"
-                        style={{
-                          background: solidColorFor(a.frontmatter.category),
-                          color: "#ffffff",
-                          letterSpacing: "0.12em",
-                        }}
-                      >
-                        {a.frontmatter.category}
-                      </span>
-                      <span className="meta-mono inline-flex items-center gap-1">
-                        <Clock size={10} strokeWidth={1.6} />
-                        {a.readTime} min
-                      </span>
-                      <span
-                        className="meta-mono"
-                        style={{ color: "var(--text-faint)" }}
-                      >
-                        {new Date(a.frontmatter.publishedAt).toLocaleDateString(
-                          "en-IN",
-                          { day: "numeric", month: "short", year: "numeric" }
-                        )}
-                      </span>
-                    </div>
-                    <h2
-                      className="text-xl sm:text-2xl font-semibold mb-2 leading-tight group-hover:underline"
-                      style={{
-                        color: "var(--text-primary)",
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
-                      {a.frontmatter.title}
-                    </h2>
-                    <p
-                      className="text-sm leading-relaxed mb-3"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {a.frontmatter.excerpt}
-                    </p>
-                    <span
-                      className="inline-flex items-center gap-1 text-xs font-semibold"
-                      style={{ color: "var(--brand-primary)" }}
-                    >
-                      Read the decoded take
-                      <ArrowUpRight size={11} strokeWidth={1.8} />
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </section>
+      {/* Interactive Filter and List */}
+      <AIDecodedClient articles={articles} />
 
       <section
-        className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+        className="px-4 sm:px-8 lg:px-12 py-10 sm:py-16 flex justify-center"
         style={{ borderTop: "1.5px solid var(--card-border)" }}
       >
-        <div className="max-w-3xl">
+        <div className="w-full max-w-4xl">
           <SubscribeForm
             variant="card"
             surface="ai-decoded-index"
