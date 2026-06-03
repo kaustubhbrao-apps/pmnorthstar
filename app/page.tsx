@@ -1227,6 +1227,16 @@ export default function HomePage() {
                   </div>
                 ))}
               </SectionRow>
+              
+              <div className="px-4 sm:px-6 mt-2 mb-8">
+                <button 
+                  onClick={() => setActiveNav("casestudies")} 
+                  className="btn-ghost inline-flex text-sm"
+                >
+                  See all {caseStudies.length} case studies
+                  <ArrowUpRight size={14} strokeWidth={1.8} className="ml-1" />
+                </button>
+              </div>
 
               {/* Explore preview — small teaser, full version on /explore tab */}
               <div className="px-4 sm:px-6 mt-10 mb-8">
