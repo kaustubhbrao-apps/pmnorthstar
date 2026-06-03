@@ -618,7 +618,7 @@ export const topics: Topic[] = [
 ];
 
 export const isTopicPublished = (t: Topic, now: Date = new Date()): boolean =>
-  !t.publishedAt || process.env.NODE_ENV !== "production" || new Date(t.publishedAt) <= now;
+  !t.publishedAt || new Date(t.publishedAt) <= now;
 
 export const publishedTopics = (now: Date = new Date()): Topic[] =>
   topics.filter((t) => isTopicPublished(t, now));

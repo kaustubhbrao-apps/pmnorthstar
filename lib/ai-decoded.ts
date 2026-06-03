@@ -80,11 +80,12 @@ export function getAIDecodedArticleBySlug(
 }
 
 export function getAllAIDecodedArticles(): AIDecodedArticle[] {
+  const now = new Date();
   const slugs = getAllAIDecodedSlugs();
   return slugs
     .map((s) => getAIDecodedArticleBySlug(s))
     .filter((a): a is AIDecodedArticle => a !== null)
-    .filter((a) => !!a.frontmatter.publishedAt)
+    .filter((a) => !!a.frontmatter.publishedAt && new Date(a.frontmatter.publishedAt) <= now)
     .sort((a, b) => {
       // Most recent first.
       return (
