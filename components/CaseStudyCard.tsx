@@ -78,8 +78,8 @@ export function CaseStudyCard({
         </div>
       )}
       <Link href={`/case-study/${getCaseStudySlug(study.id)}`} className="block px-5 pt-5 pb-4 group">
-        <div className="flex items-center justify-between mb-5">
-          {!hideCategory ? (
+        {!hideCategory && (
+          <div className="flex items-center justify-between mb-5">
             <span
               className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md truncate"
               style={{
@@ -90,46 +90,53 @@ export function CaseStudyCard({
             >
               {study.category}
             </span>
-          ) : (
-            <div />
-          )}
-          <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
-            style={{ border: "1.5px solid var(--card-border)", color }}>
-            <ArrowUpRight size={14} strokeWidth={1.6} />
+            <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
+              style={{ border: "1.5px solid var(--card-border)", color }}>
+              <ArrowUpRight size={14} strokeWidth={1.6} />
+            </div>
           </div>
+        )}
+
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-2">
+            <span
+              className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
+              style={{
+                aspectRatio: "1 / 1",
+                background: logoUrl && !logoFailed ? "#fff" : "transparent",
+                border:
+                  logoUrl && !logoFailed
+                    ? "1.5px solid var(--card-border)"
+                    : "none",
+              }}
+            >
+              {logoUrl && !logoFailed ? (
+                <img
+                  src={logoUrl}
+                  alt={`${study.company} logo — ${study.category} case study on northstar`}
+                  loading="lazy"
+                  width={28}
+                  height={28}
+                  onError={() => setLogoFailed(true)}
+                  className="max-w-full max-h-full object-contain"
+                  style={{ padding: "3px" }}
+                />
+              ) : (
+                <span className="text-lg leading-none">{study.logo}</span>
+              )}
+            </span>
+            <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+              {study.company} · {study.year}
+            </p>
+          </div>
+          {hideCategory && (
+            <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
+              style={{ border: "1.5px solid var(--card-border)", color }}>
+              <ArrowUpRight size={14} strokeWidth={1.6} />
+            </div>
+          )}
         </div>
 
-        <div className="flex items-center gap-2 mb-2">
-          <span
-            className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
-            style={{
-              aspectRatio: "1 / 1",
-              background: logoUrl && !logoFailed ? "#fff" : "transparent",
-              border:
-                logoUrl && !logoFailed
-                  ? "1.5px solid var(--card-border)"
-                  : "none",
-            }}
-          >
-            {logoUrl && !logoFailed ? (
-              <img
-                src={logoUrl}
-                alt={`${study.company} logo — ${study.category} case study on northstar`}
-                loading="lazy"
-                width={28}
-                height={28}
-                onError={() => setLogoFailed(true)}
-                className="max-w-full max-h-full object-contain"
-                style={{ padding: "3px" }}
-              />
-            ) : (
-              <span className="text-lg leading-none">{study.logo}</span>
-            )}
-          </span>
-          <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-            {study.company} · {study.year}
-          </p>
-        </div>
         <h3
           className="text-lg sm:text-xl font-semibold leading-tight mb-4"
           style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
@@ -161,7 +168,7 @@ export function CaseStudyCard({
             {study.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="text-xs font-semibold px-2 py-0.5 rounded-md"
+                className="text-sm px-2 py-0.5 rounded-md"
                 style={{
                   background: solidColorFor(tag),
                   color: "#ffffff",

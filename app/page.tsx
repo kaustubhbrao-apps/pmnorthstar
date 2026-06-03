@@ -159,6 +159,7 @@ export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCsFilter, setActiveCsFilter] = useState<CaseStudyCategory>("All");
   const [activeLearnFilter, setActiveLearnFilter] = useState<LearnFilter>("All");
+  const [activeBookFilter, setActiveBookFilter] = useState<string>("All");
 
   // When navigated in from another route (e.g. /india) with a hash like
   // #casestudies, set the active tab on mount so the right view loads.
@@ -184,8 +185,15 @@ export default function HomePage() {
     return result;
   })();
 
+  const bookCategories = useMemo(() => {
+    return Array.from(new Set(books.map((b) => b.category))).sort();
+  }, []);
+
   const filteredBooks = useMemo(() => {
     let result = books;
+    if (activeBookFilter !== "All") {
+      result = result.filter((b) => b.category === activeBookFilter);
+    }
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       result = result.filter((b) => {
@@ -216,7 +224,7 @@ export default function HomePage() {
       });
     }
     return result;
-  }, [searchQuery]);
+  }, [searchQuery, activeBookFilter]);
 
   const filteredCaseStudies = useMemo(
     () => getCaseStudiesByCategory(activeCsFilter),
@@ -1154,61 +1162,117 @@ export default function HomePage() {
                 ))}
               </div>
 
-              {/* Featured Row. Capped at 8 picks on the home view — the
-                  full set lives on the per-category rows below. Keeps
-                  the initial SSR payload lean (CheckIt was flagging
-                  297KB) without hiding content from crawlers, since
-                  every book gets its own page in the sitemap. */}
-              <SectionRow title="Latest Picks" subtitle="Hand-curated for product learners" accentColor="#FF6B35">
-                {featured.slice(0, 6).map((book, index) => (
-                  <ResourceCard
-                    key={book.id}
-                    book={book}
-                    index={index}
-                    variant="featured"
-                    isLoggedIn={!!user}
-                    initialSaved={savedIds.has(book.id)}
-                    initialLiked={likedIds.has(book.id)}
-                    onAuthRequired={() => setShowAuthModal(true)}
-                          onSavedChange={handleSavedChange}
-                          onLikedChange={handleLikedChange}
-                  />
-                ))}
-              </SectionRow>
+              <div className="px-4 sm:px-6 mt-2 mb-8">
+                {/* Filter chips for books */}
+                <div className="flex items-center gap-2 mb-6 overflow-x-auto scroll-container -mx-4 sm:-mx-6 px-4 sm:px-6 pb-1">
+                  <button onClick={() => setActiveBookFilter("All")} className={`chip ${activeBookFilter === "All" ? "active" : ""}`}>
+                    All <span className="chip-count">{books.length}</span>
+                  </button>
+                  {bookCategories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setActiveBookFilter(cat)}
+                      className={`chip ${activeBookFilter === cat ? "active" : ""}`}
+                    >
+                      {cat} <span className="chip-count">{books.filter(b => b.category === cat).length}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-              <div className="section-divider my-8" id="books-section" />
+              {activeBookFilter === "All" ? (
+                <>
+                  {/* Featured Row */}
+                  <SectionRow title="Latest Picks" subtitle="Hand-curated for product learners" accentColor="#FF6B35">
+                    {featured.slice(0, 6).map((book, index) => (
+                      <ResourceCard
+                        key={book.id}
+                        book={book}
+                        index={index}
+                        variant="featured"
+                        isLoggedIn={!!user}
+                        initialSaved={savedIds.has(book.id)}
+                        initialLiked={likedIds.has(book.id)}
+                        onAuthRequired={() => setShowAuthModal(true)}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                        hideCategory={false}
+                      />
+                    ))}
+                  </SectionRow>
 
-              {/* Per-Category Rows. All books per category visible in
-                  the horizontal-scroll SectionRow. The font preload
-                  conversion (next/font) recovers far more perceived
-                  perf than card trimming ever did, so payload isn't
-                  the binding constraint here anymore. */}
-              {categories.map((cat) => {
-                const catBooks = books.filter((b) => b.category === cat);
-                const shown = catBooks;
-                const subtitle = `${catBooks.length} essential books`;
-                return (
-                  <div key={cat} className="mt-8">
-                    <SectionRow title={cat} subtitle={subtitle} accentColor={categoryAccents[cat]}>
-                      {shown.map((book, index) => (
-                        <ResourceCard
-                          key={book.id}
-                          book={book}
-                          index={index}
-                          variant="default"
-                          isLoggedIn={!!user}
-                          initialSaved={savedIds.has(book.id)}
-                          initialLiked={likedIds.has(book.id)}
-                          onAuthRequired={() => setShowAuthModal(true)}
-                          onSavedChange={handleSavedChange}
-                          onLikedChange={handleLikedChange}
-                        />
-                      ))}
-                    </SectionRow>
-                    <div className="section-divider mt-8" />
+                  <div className="section-divider my-8" id="books-section" />
+
+                  {/* Per-Category Rows */}
+                  {categories.map((cat) => {
+                    const catBooks = books.filter((b) => b.category === cat);
+                    const shown = catBooks;
+                    const subtitle = `${catBooks.length} essential books`;
+                    return (
+                      <div key={cat} className="mt-8">
+                        <SectionRow title={cat} subtitle={subtitle} accentColor={categoryAccents[cat]}>
+                          {shown.map((book, index) => (
+                            <ResourceCard
+                              key={book.id}
+                              book={book}
+                              index={index}
+                              variant="default"
+                              isLoggedIn={!!user}
+                              initialSaved={savedIds.has(book.id)}
+                              initialLiked={likedIds.has(book.id)}
+                              onAuthRequired={() => setShowAuthModal(true)}
+                              onSavedChange={handleSavedChange}
+                              onLikedChange={handleLikedChange}
+                              hideCategory={true}
+                            />
+                          ))}
+                        </SectionRow>
+                        <div className="section-divider mt-8" />
+                      </div>
+                    );
+                  })}
+                </>
+              ) : (
+                <div className="px-4 sm:px-6">
+                  <div className="flex items-center justify-between mb-5 gap-3">
+                    <div className="flex items-center gap-2.5 flex-wrap">
+                      <span
+                        className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
+                        style={{
+                          background: categoryAccents[activeBookFilter],
+                          color: "#ffffff",
+                          letterSpacing: "0.12em",
+                        }}
+                      >
+                        {activeBookFilter}
+                      </span>
+                      <span
+                        className="font-mono text-sm"
+                        style={{ color: "var(--text-faint)" }}
+                      >
+                        {filteredBooks.length} {filteredBooks.length === 1 ? "book" : "books"}
+                      </span>
+                    </div>
                   </div>
-                );
-              })}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                    {filteredBooks.map((book, index) => (
+                      <ResourceCard
+                        key={book.id}
+                        book={book}
+                        index={index}
+                        variant="list"
+                        isLoggedIn={!!user}
+                        initialSaved={savedIds.has(book.id)}
+                        initialLiked={likedIds.has(book.id)}
+                        onAuthRequired={() => setShowAuthModal(true)}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                        hideCategory={true}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Case Studies Preview — horizontal carousel, one from each category.
                   Wrapped in fixed-width containers so SectionRow's
