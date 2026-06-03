@@ -46,7 +46,7 @@ export function CaseStudyCard({
 
   return (
     <div
-      className="playlist-card surface overflow-hidden relative"
+      className="playlist-card surface overflow-hidden relative flex flex-col h-full"
       style={
         {
           ["--accent-color" as any]: color,
@@ -77,7 +77,7 @@ export function CaseStudyCard({
           )}
         </div>
       )}
-      <Link href={`/case-study/${getCaseStudySlug(study.id)}`} className="block px-5 pt-5 pb-4 group">
+      <Link href={`/case-study/${getCaseStudySlug(study.id)}`} className="flex-1 flex flex-col px-5 pt-5 pb-4 group">
         {!hideCategory && (
           <div className="flex items-center justify-between mb-5">
             <span
@@ -97,7 +97,7 @@ export function CaseStudyCard({
           </div>
         )}
 
-        <div className="flex items-center justify-between mb-2">
+        <div className={`flex items-center justify-between ${hideCategory ? 'mb-4' : 'mb-3'}`}>
           <div className="flex items-center gap-2">
             <span
               className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
@@ -138,15 +138,15 @@ export function CaseStudyCard({
         </div>
 
         <h3
-          className="text-lg sm:text-xl font-semibold leading-tight mb-4"
-          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+          className="text-lg sm:text-xl font-semibold leading-tight mb-4 line-clamp-2"
+          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em", minHeight: '3.5rem' }}
         >
           {study.title}
         </h3>
 
         {/* Outcome strip */}
         <div
-          className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg mb-3"
+          className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg mb-4 mt-auto"
           style={{
             background: "transparent",
             border: `1.5px solid ${isFailure ? "rgba(255,75,75,0.25)" : "rgba(80,200,120,0.25)"}`,
@@ -164,7 +164,7 @@ export function CaseStudyCard({
         </div>
 
         {study.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-1.5 mt-2">
             {study.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}

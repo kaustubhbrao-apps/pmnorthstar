@@ -30,7 +30,7 @@ export function SectionRow({ title, subtitle, children, accentColor }: SectionRo
   const chipColor = accentColor || "var(--brand-primary)";
 
   return (
-    <section className="animate-section pt-10">
+    <section className="animate-section pt-6">
       <div className="flex items-end justify-between mb-4 px-4 sm:px-6 gap-3">
         <div className="min-w-0">
           <div className="flex items-center gap-2.5 mb-2 flex-wrap">
