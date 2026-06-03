@@ -14,6 +14,7 @@ import {
 import { SidebarShell } from "@/components/SidebarShell";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { CASE_STUDY_COUNT } from "@/data/inventory-counts";
+import { CHECKIT_WAR_LEADERBOARD, type LeaderboardEntry } from "@/data/checkit-leaderboard";
 import { DIMENSIONS } from "@/lib/checkit/dimensions";
 import { BAND_COPY } from "@/lib/checkit/types";
 import type { AuditResult, DimensionResult, Band } from "@/lib/checkit/types";
@@ -25,9 +26,6 @@ type ViewState =
   | { kind: "error"; message: string }
   | { kind: "ready"; result: AuditResult };
 
-// Color per band, a 10-step red → green gradient matching the
-// 10-point buckets in bandFor(). The two greens at the top read as
-// "shipped"; the four reds at the bottom read as "broken."
 const BAND_COLOR: Record<Band, string> = {
   stellar: "#0F9D58",
   ready: "#22C55E",
@@ -41,8 +39,6 @@ const BAND_COLOR: Record<Band, string> = {
   missing: "#7F1D1D",
 };
 
-// Per-dimension accent, color-codes the left border of each result
-// card so users can scan their scorecard at a glance.
 const DIMENSION_ACCENT: Record<string, string> = {
   brand: "#9B8FFF",
   performance: "#FF6B35",
@@ -51,7 +47,6 @@ const DIMENSION_ACCENT: Record<string, string> = {
   trust: "#F3123C",
 };
 
-// Curated example sites users can click to try the tool without typing.
 const EXAMPLE_URLS = ["stripe.com", "linear.app", "vercel.com"];
 
 function safeHost(url: string): string {
@@ -72,13 +67,8 @@ export default function CheckItClient() {
   const [input, setInput] = useState("");
   const [view, setView] = useState<ViewState>({ kind: "idle" });
   const [stats, setStats] = useState<CheckitStats | null>(null);
-  // Sequence id so a slow earlier audit can't overwrite a newer one's
-  // result (e.g. submit a slow site, then click a fast example URL).
   const reqIdRef = useRef(0);
 
-  // Pull aggregate usage counts for the hero social-proof line. Best-
-  // effort — if the endpoint fails or returns zeros, the line just
-  // doesn't render.
   useEffect(() => {
     fetch("/api/checkit/stats")
       .then((r) => (r.ok ? r.json() : null))
@@ -91,7 +81,6 @@ export default function CheckItClient() {
   const runAudit = useCallback(async (url: string) => {
     const reqId = ++reqIdRef.current;
     setView({ kind: "loading", url });
-    // Reflect in address bar so the result is shareable.
     const params = new URLSearchParams({ url });
     window.history.replaceState(null, "", `/checkit?${params}`);
 
@@ -101,7 +90,6 @@ export default function CheckItClient() {
     try {
       const res = await fetch(`/api/checkit/audit?url=${encodeURIComponent(url)}`);
       const data = await res.json();
-      // Drop the result if a newer audit has since been kicked off.
       if (reqId !== reqIdRef.current) return;
       if (!res.ok || data.error) {
         setView({ kind: "error", message: data.error || "Audit failed." });
@@ -125,9 +113,6 @@ export default function CheckItClient() {
     }
   }, []);
 
-  // Read ?url= from the address bar on mount and auto-run. Pure client
-  // read (window.location), avoids the useSearchParams Suspense
-  // requirement in Next 14.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const initialUrl = params.get("url");
@@ -175,13 +160,18 @@ export default function CheckItClient() {
           <ErrorState message={view.message} onReset={handleReset} />
         )}
         {view.kind === "ready" && <ResultView result={view.result} />}
-        {view.kind === "idle" && <IdleProof />}
+        {view.kind === "idle" && (
+          <IdleProof 
+            onPickExample={(url) => {
+              setInput(url);
+              runAudit(url);
+            }} 
+          />
+        )}
       </div>
     </SidebarShell>
   );
 }
-
-// ── Hero ────────────────────────────────────────────────────────────────
 
 function Hero({
   input,
@@ -329,45 +319,121 @@ function Hero({
   );
 }
 
-// ── Idle proof strip ───────────────────────────────────────────────────
+function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) {
+  const [liveLeaderboard, setLiveLeaderboard] = useState<LeaderboardEntry[]>([]);
 
-function IdleProof() {
+  useEffect(() => {
+    fetch("/api/checkit/leaderboard")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (d && d.leaderboard && d.leaderboard.length > 0) {
+          setLiveLeaderboard(d.leaderboard);
+        } else {
+          setLiveLeaderboard(CHECKIT_WAR_LEADERBOARD); // Fallback to static
+        }
+      })
+      .catch(() => {
+        setLiveLeaderboard(CHECKIT_WAR_LEADERBOARD); // Fallback to static on error
+      });
+  }, []);
+
+  // Use live data if available, otherwise show the static "war" data initially
+  const displayBoard = liveLeaderboard.length > 0 ? liveLeaderboard : CHECKIT_WAR_LEADERBOARD.slice(0, 5);
+
   const items = [
     { num: "35", label: "weighted checks across 7 dimensions" },
     { num: "<30s", label: "to a full audit" },
     { num: "0", label: "signups, paywalls, accounts" },
   ];
   return (
-    <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
-      {items.map((p, i) => (
-        <div
-          key={i}
-          className="text-center px-4 py-5 rounded-xl"
-          style={{
-            background: "var(--card-bg)",
-            border: "1.5px solid var(--card-border)",
-          }}
-        >
-          <p
-            className="font-display text-2xl font-bold mb-1"
+    <div className="mt-8 space-y-10 sm:space-y-12">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {items.map((p, i) => (
+          <div
+            key={i}
+            className="text-center px-4 py-5 rounded-xl"
             style={{
-              color: "var(--brand-primary)",
-              letterSpacing: "-0.02em",
+              background: "var(--card-bg)",
+              border: "1.5px solid var(--card-border)",
             }}
           >
-            {p.num}
+            <p
+              className="font-display text-2xl font-bold mb-1"
+              style={{
+                color: "var(--brand-primary)",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {p.num}
+            </p>
+            <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+              {p.label}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="max-w-3xl mx-auto">
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--brand-primary)" }} />
+            <h2 className="text-sm font-bold uppercase tracking-wider" style={{ color: "var(--text-primary)" }}>
+              Live Audit Feed
+            </h2>
+          </div>
+          <span className="text-[10px] font-mono text-muted" style={{ color: "var(--text-faint)" }}>
+            RECENTLY SCORED SITES
+          </span>
+        </div>
+
+        <div className="space-y-2">
+          {displayBoard.map((entry, i) => (
+            <button
+              key={`${entry.url}-${i}`}
+              onClick={() => onPickExample(entry.url)}
+              className="w-full flex items-center justify-between p-3.5 sm:px-5 rounded-xl group transition-all"
+              style={{
+                background: "var(--card-bg)",
+                border: "1.5px solid var(--card-border)",
+              }}
+            >
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-xs opacity-40 w-4">{i + 1}</span>
+                <div className="text-left">
+                  <p className="text-sm font-bold group-hover:text-[var(--brand-primary)] transition-colors">
+                    {entry.company}
+                  </p>
+                  <p className="text-[10px] font-mono opacity-50">{entry.url}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div 
+                  className="px-2.5 py-1 rounded-lg font-display font-bold text-sm"
+                  style={{
+                    background: `${BAND_COLOR[entry.band]}15`,
+                    color: BAND_COLOR[entry.band]
+                  }}
+                >
+                  {entry.score}
+                </div>
+                <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[var(--brand-primary)]" />
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-6 p-4 rounded-xl text-center" style={{ background: "var(--brand-soft)", border: "1.5px dashed rgba(243, 18, 60, 0.3)" }}>
+          <p className="text-xs font-medium mb-1" style={{ color: "var(--brand-primary)" }}>
+            Think your landing page can beat these scores?
           </p>
-          <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-            {p.label}
+          <p className="text-[10px]" style={{ color: "var(--text-muted)" }}>
+            Paste your URL above to join the leaderboard. No signup required.
           </p>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
-
-// ── Loading & error ────────────────────────────────────────────────────
-
 function LoadingState({ url }: { url: string }) {
   return (
     <div
@@ -434,8 +500,6 @@ function ErrorState({
     </div>
   );
 }
-
-// ── Result ──────────────────────────────────────────────────────────────
 
 function ResultView({ result }: { result: AuditResult }) {
   const band = BAND_COPY[result.band];
@@ -512,10 +576,6 @@ function ScoreHeader({
   host: string;
   onShare: () => void;
 }) {
-  // CheckIt score header. Solid band-colored background so the result
-  // announces itself before the user reads a single word. White type
-  // on color, white score ring with translucent track. The color signals
-  // the band tier visually: green = ready, amber = polish, red = vibe.
   return (
     <div
       className="rounded-2xl px-5 sm:px-8 py-6 sm:py-7 flex flex-col sm:flex-row items-start sm:items-center gap-5"
@@ -643,8 +703,6 @@ function ScoreRing({
     </div>
   );
 }
-
-// ── Dimension card ────────────────────────────────────────────────────
 
 function DimensionCard({ dimension }: { dimension: DimensionResult }) {
   const [open, setOpen] = useState(false);
@@ -870,8 +928,6 @@ function Section({
     </div>
   );
 }
-
-// ── Footer CTA back to the library ────────────────────────────────────
 
 function FooterCta() {
   return (
