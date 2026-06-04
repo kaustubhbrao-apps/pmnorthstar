@@ -1,22 +1,74 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+// Sliding window rate limit store (In-memory on the Edge)
+// Note: This is per-edge-region and per-instance. It's not a global sync 
+// (like Redis), but it's extremely effective at stopping script-based spam 
+// and basic Layer 7 DDoS without adding latency or cost.
+const rateLimitStore = new Map<string, { count: number; reset: number }>();
+
+// Rate limit config: 5 requests per 60 seconds
+const LIMIT = 5;
+const WINDOW_MS = 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitStore.get(ip);
+
+  if (!record || now > record.reset) {
+    rateLimitStore.set(ip, { count: 1, reset: now + WINDOW_MS });
+    return false;
+  }
+
+  record.count++;
+  if (record.count > LIMIT) {
+    return true;
+  }
+
+  return false;
+}
+
 // Strip invisible Unicode characters (non-breaking space, zero-width space,
 // BOM) that occasionally end up in pasted URLs and turn legitimate paths
 // into 404s. Observed in Vercel Analytics: /%C2%A0 (URL-encoded nbsp).
-// Sources are usually external — Notion / Slack / Twitter copy-paste,
-// not anything we generate.
 const INVISIBLE_CHARS = /%C2%A0|%E2%80%8B|%EF%BB%BF/gi;
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
-  if (!INVISIBLE_CHARS.test(pathname)) return;
-  const cleaned = pathname.replace(INVISIBLE_CHARS, "");
-  const url = req.nextUrl.clone();
-  url.pathname = cleaned || "/";
-  return NextResponse.redirect(url, 308);
+  const ip = req.ip || "127.0.0.1";
+
+  // ─── 1. Rate Limiting for CheckIt Audit ───
+  // This is the most expensive route (calls external fetch + DB write).
+  if (pathname.startsWith("/api/checkit/audit")) {
+    if (isRateLimited(ip)) {
+      console.warn(`Rate limit exceeded for IP: ${ip} on ${pathname}`);
+      return new NextResponse(
+        JSON.stringify({ 
+          error: "Too many audits. Please wait a minute before trying again.",
+          rateLimited: true 
+        }),
+        { 
+          status: 429, 
+          headers: { "Content-Type": "application/json" } 
+        }
+      );
+    }
+  }
+
+  // ─── 2. URL Sanitization (Existing Logic) ───
+  if (INVISIBLE_CHARS.test(pathname)) {
+    const cleaned = pathname.replace(INVISIBLE_CHARS, "");
+    const url = req.nextUrl.clone();
+    url.pathname = cleaned || "/";
+    return NextResponse.redirect(url, 308);
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  // We now include /api in the matcher so we can rate limit the audit tool.
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|logo-icon.svg|logo-cover.svg).*)",
+  ],
 };
