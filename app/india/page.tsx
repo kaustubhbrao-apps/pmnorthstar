@@ -56,7 +56,7 @@ export default function IndiaPage() {
 
   return (
     <SidebarShell
-      activeNav="india"
+      activeNav=""
       backHref="/"
       backLabelDesktop="Back to the library"
       backLabelMobile="Back"

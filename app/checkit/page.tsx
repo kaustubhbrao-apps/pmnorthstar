@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import CheckItClient from "./CheckItClient";
+import dynamic from "next/dynamic";
 import { normalizeUrl } from "@/lib/checkit/util";
+
+const CheckItClient = dynamic(
+  () => import("./CheckItClient"),
+  { ssr: false }
+);
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
