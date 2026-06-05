@@ -43,6 +43,15 @@ export async function generateMetadata({
   return {
     title: `${book.title} by ${book.author}`,
     description: book.description,
+    keywords: [
+      book.title,
+      book.author,
+      book.category,
+      "book review",
+      "book takeaways",
+      `${book.title} summary`,
+      "product management books",
+    ],
     alternates: { canonical: url },
     openGraph: {
       type: "book",

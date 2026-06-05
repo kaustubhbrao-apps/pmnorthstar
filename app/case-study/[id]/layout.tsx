@@ -46,6 +46,16 @@ export async function generateMetadata(
   return {
     title: titleField,
     description: study.description,
+    keywords: [
+      study.company,
+      ...study.tags,
+      "case study",
+      "product management",
+      "product strategy",
+      `${study.company} product strategy`,
+      `${study.company} growth hack`,
+      `${study.company} case study`,
+    ],
     alternates: { canonical: url },
     openGraph: {
       type: "article",

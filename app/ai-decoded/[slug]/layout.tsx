@@ -33,7 +33,15 @@ export async function generateMetadata({
   return {
     title: titleField,
     description: fm.excerpt,
-    keywords: [fm.primaryKeyword, ...fm.longTailKeywords],
+    keywords: [
+      fm.primaryKeyword,
+      ...fm.longTailKeywords,
+      "AI product management",
+      "AI strategy",
+      "product management",
+      "AI Decoded",
+      "tech trends 2026",
+    ],
     alternates: { canonical: url },
     openGraph: {
       type: "article",

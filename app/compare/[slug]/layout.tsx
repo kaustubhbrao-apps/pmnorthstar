@@ -24,7 +24,13 @@ export async function generateMetadata({
   return {
     title: cmp.metaTitle,
     description: cmp.metaDescription,
-    keywords: cmp.keywords,
+    keywords: [
+      ...(cmp.keywords || []),
+      "product comparison",
+      "competitor analysis",
+      "product strategy",
+      cmp.title,
+    ],
     alternates: { canonical: url },
     openGraph: {
       type: "article",

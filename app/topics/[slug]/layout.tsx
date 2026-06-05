@@ -23,7 +23,13 @@ export async function generateMetadata({
   return {
     title: topic.metaTitle,
     description: topic.metaDescription,
-    keywords: topic.keywords,
+    keywords: [
+      ...(topic.keywords || []),
+      "product management",
+      "product strategy",
+      "PM resource",
+      topic.title,
+    ],
     alternates: { canonical: url },
     openGraph: {
       type: "website",

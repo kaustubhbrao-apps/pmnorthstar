@@ -124,10 +124,10 @@ export default function AboutPage() {
 
         {/* How the editorial works */}
         <section
-          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
           style={{ borderBottom: "1.5px solid var(--card-border)" }}
         >
-          <div className="max-w-3xl">
+          <div className="w-full max-w-4xl">
             <p
               className="eyebrow mb-3"
               style={{ color: "var(--brand-primary)", opacity: 0.85 }}
@@ -167,10 +167,10 @@ export default function AboutPage() {
             the "what's not here" section. Sits at the structural middle
             of the page so readers get the ask while still engaged. */}
         <section
-          className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10"
+          className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 flex justify-center"
           style={{ borderBottom: "1.5px solid var(--card-border)" }}
         >
-          <div className="max-w-2xl mx-auto">
+          <div className="w-full max-w-2xl">
             <SubscribeForm
               variant="card"
               surface="about"
@@ -182,10 +182,10 @@ export default function AboutPage() {
 
         {/* What's deliberately NOT here */}
         <section
-          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
           style={{ borderBottom: "1.5px solid var(--card-border)" }}
         >
-          <div className="max-w-3xl">
+          <div className="w-full max-w-4xl">
             <p
               className="eyebrow mb-3"
               style={{ color: "var(--brand-primary)", opacity: 0.85 }}
@@ -230,10 +230,10 @@ export default function AboutPage() {
         {/* Contact */}
         {socials.length > 0 && (
           <section
-            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
             style={{ borderBottom: "1.5px solid var(--card-border)" }}
           >
-            <div className="max-w-3xl">
+            <div className="w-full max-w-4xl">
               <p
                 className="eyebrow mb-3"
                 style={{ color: "var(--brand-primary)", opacity: 0.85 }}
