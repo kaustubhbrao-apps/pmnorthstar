@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowUpRight, Mail, Twitter, LucideIcon } from "lucide-react
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { SidebarShell } from "@/components/SidebarShell";
 import { SITE_INFO } from "@/lib/site";
 import {
   CASE_STUDY_COUNT,
@@ -22,11 +23,13 @@ export default function AboutPage() {
     });
 
   return (
-    <div
-      className="min-h-screen flex flex-col"
-      style={{ background: "var(--page-bg)" }}
+    <SidebarShell
+      activeNav=""
+      backHref="/"
+      backLabelDesktop="Back to the library"
+      backLabelMobile="Back"
     >
-      <main className="flex-1">
+      <div className="flex flex-col min-w-0">
         {/* Hero — neutral background, brand-red eyebrow accent only */}
         <section
           className="px-4 sm:px-8 lg:px-12 py-10 sm:py-16 flex justify-center"
@@ -282,7 +285,7 @@ export default function AboutPage() {
         )}
 
         <Footer />
-      </main>
-    </div>
+      </div>
+    </SidebarShell>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { SidebarShell } from "@/components/SidebarShell";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 const LAST_UPDATED = "2026-05-24";
@@ -17,16 +18,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div
-      className="min-h-screen flex flex-col"
-      style={{ background: "var(--page-bg)" }}
+    <SidebarShell
+      activeNav=""
+      backHref="/"
+      backLabelDesktop="Back to the library"
+      backLabelMobile="Back"
     >
-      <main className="flex-1">
+      <div className="flex flex-col min-w-0">
         <section
-          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
+          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
           style={{ borderBottom: "1.5px solid var(--card-border)" }}
         >
-          <div className="max-w-3xl">
+          <div className="w-full max-w-4xl">
             <Breadcrumbs
               className="mb-5"
               items={[
@@ -60,9 +63,9 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
+        <section className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center">
           <div
-            className="max-w-3xl space-y-8"
+            className="w-full max-w-4xl space-y-8"
             style={{ color: "var(--text-muted)" }}
           >
             <Block title="The short version">
@@ -158,8 +161,8 @@ export default function PrivacyPage() {
         </section>
 
         <Footer />
-      </main>
-    </div>
+      </div>
+    </SidebarShell>
   );
 }
 
@@ -171,7 +174,7 @@ function Block({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="max-w-3xl">
       <h2
         className="text-xl sm:text-2xl font-semibold mb-3"
         style={{
