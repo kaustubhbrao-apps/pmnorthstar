@@ -214,70 +214,119 @@ export default async function SimulatePage() {
 
 function FeaturedDrillCard({ drill }: { drill: Drill }) {
   const badge = TYPE_BADGE[drill.type];
+  
+  // Calculate max points to detect "the big one"
+  let maxPoints = 0;
+  if (drill.nodes) {
+    for (const nodeId in drill.nodes) {
+      const node = drill.nodes[nodeId];
+      if (node.options && node.options.length > 0) {
+        maxPoints += Math.max(...node.options.map((o) => o.points));
+      }
+    }
+  }
+  
+  // If it's a 100+ point drill, it gets the crazy animation
+  const isBigOne = maxPoints >= 100;
+
   return (
-    <Link
-      href={`/simulate/${drill.slug}`}
-      className="block rounded-2xl overflow-hidden transition-all hover:opacity-95 group"
-      style={{
-        background: "var(--card-bg)",
-        border: "1.5px solid var(--card-border)",
-        borderLeft: "4px solid var(--brand-primary)",
-      }}
-    >
-      <div className="px-6 py-8 sm:px-10 sm:py-12">
-        <div className="flex items-center gap-2 mb-4 flex-wrap">
-          <span
-            className="text-sm font-mono uppercase px-2 py-1 rounded"
-            style={{
-              background: "color-mix(in srgb, var(--brand-primary) 12%, transparent)",
-              color: "var(--brand-primary)",
-              letterSpacing: "0.14em",
-            }}
-          >
-            Featured drill
-          </span>
-          <span
-            className="text-sm font-mono uppercase px-2 py-1 rounded"
-            style={{
-              background: `color-mix(in srgb, ${badge.color} 14%, transparent)`,
-              color: badge.color,
-              letterSpacing: "0.14em",
-            }}
-          >
-            {badge.label}
-          </span>
-          <span
-            className="text-sm font-mono"
-            style={{ color: "var(--text-faint)" }}
-          >
-            ~{drill.estimatedMinutes} min
-          </span>
-        </div>
-
-        <h2
-          className="font-display text-2xl sm:text-3xl font-bold mb-3"
-          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+    <>
+      {isBigOne && (
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes border-shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          .featured-drill-shimmer {
+            position: relative;
+          }
+          .featured-drill-shimmer::before {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            border-radius: 18px;
+            background: linear-gradient(90deg, #FF4B4B, #F5C842, #50C878, #2563EB, #9B8FFF, #FF4B4B);
+            background-size: 300% 300%;
+            animation: border-shimmer 4s ease infinite;
+            z-index: -1;
+          }
+        `}} />
+      )}
+      <div className={isBigOne ? "featured-drill-shimmer mb-6 z-0" : "mb-6"}>
+        <Link
+          href={`/simulate/${drill.slug}`}
+          className="block rounded-2xl overflow-hidden transition-all hover:opacity-95 group h-full"
+          style={{
+            background: "var(--card-bg)",
+            border: isBigOne ? "none" : "1.5px solid var(--card-border)",
+            borderLeft: isBigOne ? "none" : "4px solid var(--brand-primary)",
+          }}
         >
-          {drillTitle(drill)}
-        </h2>
+          <div className="px-6 py-8 sm:px-10 sm:py-12 relative z-10" style={{ background: "var(--card-bg)", borderRadius: isBigOne ? "15px" : "0" }}>
+            <div className="flex items-center gap-2 mb-4 flex-wrap">
+              <span
+                className="text-sm font-mono uppercase px-2 py-1 rounded"
+                style={{
+                  background: isBigOne ? "rgba(245, 200, 66, 0.15)" : "color-mix(in srgb, var(--brand-primary) 12%, transparent)",
+                  color: isBigOne ? "#F5C842" : "var(--brand-primary)",
+                  letterSpacing: "0.14em",
+                }}
+              >
+                {isBigOne ? "Major Matchday" : "Featured drill"}
+              </span>
+              <span
+                className="text-sm font-mono uppercase px-2 py-1 rounded"
+                style={{
+                  background: `color-mix(in srgb, ${badge.color} 14%, transparent)`,
+                  color: badge.color,
+                  letterSpacing: "0.14em",
+                }}
+              >
+                {badge.label}
+              </span>
+              <span
+                className="text-sm font-mono"
+                style={{ color: "var(--text-faint)" }}
+              >
+                ~{drill.estimatedMinutes} min
+              </span>
+              {isBigOne && (
+                <span
+                  className="text-sm font-mono font-bold ml-auto animate-pulse"
+                  style={{ color: "#F5C842" }}
+                >
+                  {maxPoints} PTS
+                </span>
+              )}
+            </div>
 
-        <p
-          className="text-sm sm:text-base leading-relaxed mb-5 line-clamp-4"
-          style={{ color: "var(--text-muted)" }}
-        >
-          {drill.intro.split("\n\n")[0]}
-        </p>
+            <h2
+              className="font-display text-2xl sm:text-3xl font-bold mb-3"
+              style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+            >
+              {drillTitle(drill)}
+            </h2>
 
-        <span className="btn-primary group">
-          Play this drill
-          <ArrowUpRight
-            size={14}
-            strokeWidth={1.8}
-            className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
-        </span>
+            <p
+              className="text-sm sm:text-base leading-relaxed mb-5 line-clamp-4"
+              style={{ color: "var(--text-muted)" }}
+            >
+              {drill.intro.split("\n\n")[0]}
+            </p>
+
+            <span className="btn-primary group" style={isBigOne ? { background: "#F5C842", color: "#000" } : {}}>
+              Play this drill
+              <ArrowUpRight
+                size={14}
+                strokeWidth={1.8}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </span>
+          </div>
+        </Link>
       </div>
-    </Link>
+    </>
   );
 }
 
