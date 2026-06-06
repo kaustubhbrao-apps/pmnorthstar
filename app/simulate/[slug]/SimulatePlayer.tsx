@@ -143,6 +143,11 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
   }, [drill.slug]);
 
   const begin = useCallback(() => {
+    if (process.env.NEXT_PUBLIC_ENABLE_LEAGUE !== "true") {
+      startDrillLogic();
+      return;
+    }
+
     if (authLoading) return;
     if (!isLoggedIn) {
       setPendingAction(() => startDrillLogic);
@@ -213,18 +218,20 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
           if (!node?.options) return sum;
           return sum + Math.max(...node.options.map((o) => o.points));
         }, 0);
-        fetch("/api/simulate/save-attempt", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            drillSlug: drill.slug,
-            pathTaken: state.history,
-            ref: referrerId,
-          }),
-          keepalive: true,
-        }).catch(() => {
-          /* swallow */
-        });
+        if (process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true") {
+          fetch("/api/simulate/save-attempt", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              drillSlug: drill.slug,
+              pathTaken: state.history,
+              ref: referrerId,
+            }),
+            keepalive: true,
+          }).catch(() => {
+            /* swallow */
+          });
+        }
 
         fetch("/api/simulate/log-attempt", {
           method: "POST",
@@ -468,15 +475,21 @@ function IntroView({
 
       <button
         onClick={onBegin}
-        disabled={authLoading}
-        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+        disabled={process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && authLoading}
+        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
         style={{
           background: "var(--brand-primary)",
           color: "#ffffff",
         }}
       >
         <Sparkles size={16} strokeWidth={2} />
-        {authLoading ? "Loading..." : isLoggedIn ? "Begin the drill" : "Log in to play for the League"}
+        {process.env.NEXT_PUBLIC_ENABLE_LEAGUE !== "true"
+          ? "Begin the drill"
+          : authLoading
+          ? "Loading..."
+          : isLoggedIn
+          ? "Begin the drill"
+          : "Log in to play for the League"}
         <ArrowRight size={16} strokeWidth={2} />
       </button>
     </div>

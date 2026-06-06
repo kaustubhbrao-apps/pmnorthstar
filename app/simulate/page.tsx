@@ -127,15 +127,23 @@ export default async function SimulatePage() {
             title="Three dimensions"
             body="Every drill scores you on product thinking, business judgement, and founder calls."
           />
-          <ExplainerTile
-            icon={Trophy}
-            title="Simulation League"
-            body="Log in to play for points. Compete on the leaderboard and earn bonuses by challenging friends."
-          />
+          {process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" ? (
+            <ExplainerTile
+              icon={Trophy}
+              title="Simulation League"
+              body="Log in to play for points. Compete on the leaderboard and earn bonuses by challenging friends."
+            />
+          ) : (
+            <ExplainerTile
+              icon={Clock}
+              title="~10 minutes"
+              body="Branching scenarios with rationales for every choice. Free, no signup."
+            />
+          )}
         </div>
 
         {/* The League Leaderboard */}
-        {leaderboard.length > 0 && (
+        {process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && leaderboard.length > 0 && (
           <section className="mb-12">
             <div className="flex items-center gap-3 mb-5">
               <Trophy size={20} strokeWidth={2} style={{ color: "var(--brand-primary)" }} />
@@ -226,8 +234,8 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
     }
   }
   
-  // If it's a 100+ point drill, it gets the crazy animation
-  const isBigOne = maxPoints >= 100;
+  // If it's a 100+ point drill AND the league is active, it gets the crazy animation
+  const isBigOne = process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && maxPoints >= 100;
 
   return (
     <>
