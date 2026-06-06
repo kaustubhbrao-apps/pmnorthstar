@@ -110,13 +110,25 @@ export async function POST(req: NextRequest) {
     });
     const isFirstAttempt = !previousAttempt;
 
-    // 2. Is this the active drill?
+    // 2. Is this an active League Match within its scoring window?
     const activeDrill = publishedDrills()[0];
-    const isActive = activeDrill && activeDrill.slug === drillSlug;
+    let isActiveLeagueMatch = false;
+
+    if (activeDrill && activeDrill.slug === drillSlug && drill.isLeagueMatch) {
+      const now = new Date();
+      // If the drill has a strict end time (Saturday midnight), enforce it.
+      if (drill.leagueEndsAt) {
+        if (now <= new Date(drill.leagueEndsAt)) {
+          isActiveLeagueMatch = true;
+        }
+      } else {
+        isActiveLeagueMatch = true;
+      }
+    }
 
     // 3. Points assignment
     let leaguePointsEarned = 0;
-    if (isFirstAttempt && isActive) {
+    if (isFirstAttempt && isActiveLeagueMatch) {
       leaguePointsEarned = score;
     }
 
@@ -158,7 +170,7 @@ export async function POST(req: NextRequest) {
       }
 
       // Process referral bonus
-      if (ref && ref !== session.id && isActive) {
+      if (ref && ref !== session.id && isActiveLeagueMatch) {
         // Attempt to insert a referral record (Unique constraint prevents abuse: one bonus per referrer per drill)
         try {
           await tx.leagueReferral.create({
