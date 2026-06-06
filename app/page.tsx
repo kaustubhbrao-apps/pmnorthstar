@@ -1229,7 +1229,7 @@ export default function HomePage() {
                               onAuthRequired={() => setShowAuthModal(true)}
                               onSavedChange={handleSavedChange}
                               onLikedChange={handleLikedChange}
-                              hideCategory={false}
+                              hideCategory={true}
                             />
                           ))}
                         </SectionRow>
