@@ -4,7 +4,7 @@
 // out by publishedDrills() at request time.
 
 import Link from "next/link";
-import { ArrowUpRight, Brain, Clock, Target } from "lucide-react";
+import { ArrowUpRight, Brain, Clock, Target, Trophy } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { prisma } from "@/lib/prisma";
@@ -18,6 +18,19 @@ async function totalPlays(): Promise<number> {
     return await prisma.simulateAttempt.count();
   } catch {
     return 0;
+  }
+}
+
+async function getLeaderboard() {
+  try {
+    return await prisma.user.findMany({
+      where: { leaguePoints: { gt: 0 } },
+      orderBy: { leaguePoints: 'desc' },
+      take: 10,
+      select: { id: true, name: true, leaguePoints: true }
+    });
+  } catch {
+    return [];
   }
 }
 
@@ -35,6 +48,7 @@ export default async function SimulatePage() {
   const all = publishedDrills(cutoff);
   const featured = all[0];
   const plays = await totalPlays();
+  const leaderboard = await getLeaderboard();
 
   return (
     <SidebarShell activeNav="simulate">
@@ -114,11 +128,68 @@ export default async function SimulatePage() {
             body="Every drill scores you on product thinking, business judgement, and founder calls."
           />
           <ExplainerTile
-            icon={Clock}
-            title="~10 minutes"
-            body="Branching scenarios with rationales for every choice. Free, no signup."
+            icon={Trophy}
+            title="Simulation League"
+            body="Log in to play for points. Compete on the leaderboard and earn bonuses by challenging friends."
           />
         </div>
+
+        {/* The League Leaderboard */}
+        {leaderboard.length > 0 && (
+          <section className="mb-12">
+            <div className="flex items-center gap-3 mb-5">
+              <Trophy size={20} strokeWidth={2} style={{ color: "var(--brand-primary)" }} />
+              <h2
+                className="font-display text-2xl font-bold"
+                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+              >
+                Simulation League
+              </h2>
+            </div>
+            
+            <div 
+              className="rounded-2xl overflow-hidden"
+              style={{
+                background: "var(--card-bg)",
+                border: "1.5px solid var(--card-border)",
+              }}
+            >
+              <div className="flex items-center justify-between px-5 py-3 border-b" style={{ borderColor: "var(--card-border)", background: "color-mix(in srgb, var(--card-border) 40%, transparent)" }}>
+                <span className="text-xs font-mono uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Rank & Player</span>
+                <span className="text-xs font-mono uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>League Points</span>
+              </div>
+              
+              <div className="flex flex-col">
+                {leaderboard.map((user, idx) => (
+                  <div 
+                    key={user.id} 
+                    className="flex items-center justify-between px-5 py-3.5 transition-colors"
+                    style={{ 
+                      borderTop: idx > 0 ? "1px solid var(--card-border)" : "none",
+                      background: "transparent"
+                    }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div 
+                        className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold font-mono"
+                        style={{
+                          background: idx === 0 ? "rgba(250, 204, 21, 0.2)" : idx === 1 ? "rgba(156, 163, 175, 0.2)" : idx === 2 ? "rgba(180, 83, 9, 0.2)" : "transparent",
+                          color: idx === 0 ? "#FACC15" : idx === 1 ? "#9CA3AF" : idx === 2 ? "#B45309" : "var(--text-faint)",
+                        }}
+                      >
+                        {idx + 1}
+                      </div>
+                      <span className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>{user.name}</span>
+                    </div>
+                    <span className="text-sm font-mono font-bold" style={{ color: "var(--brand-primary)" }}>
+                      {user.leaguePoints.toLocaleString()}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Archive — all published drills */}
         {all.length > 1 && (

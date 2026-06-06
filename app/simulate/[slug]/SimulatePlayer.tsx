@@ -15,6 +15,7 @@
 
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -35,6 +36,8 @@ import type {
 } from "@/data/drills";
 import { track } from "@/lib/track";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { useUserState } from "@/lib/use-user-state";
+import { AuthModal } from "@/components/AuthModal";
 
 type Phase = "intro" | "decision" | "reveal" | "outcome";
 
@@ -81,6 +84,11 @@ function storageKey(slug: string): string {
 }
 
 export function SimulatePlayer({ drill }: { drill: Drill }) {
+  const { isLoggedIn, loading: authLoading } = useUserState();
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const searchParams = useSearchParams();
+  const referrerId = searchParams?.get("ref") || undefined;
+
   const [state, setState] = useState<PlayState>(() => ({
     phase: "intro",
     currentNodeId: "start",
@@ -121,7 +129,9 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
   // attempts into the usage counter.
   const loggedCompletionRef = useRef(false);
 
-  const begin = useCallback(() => {
+  const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
+
+  const startDrillLogic = useCallback(() => {
     track({ name: "simulateit_drill_started", drill_slug: drill.slug });
     loggedCompletionRef.current = false;
     setState({
@@ -131,6 +141,16 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       startedAt: Date.now(),
     });
   }, [drill.slug]);
+
+  const begin = useCallback(() => {
+    if (authLoading) return;
+    if (!isLoggedIn) {
+      setPendingAction(() => startDrillLogic);
+      setShowAuthModal(true);
+      return;
+    }
+    startDrillLogic();
+  }, [authLoading, isLoggedIn, startDrillLogic]);
 
   const selectOption = useCallback(
     (optionIndex: number) => {
@@ -193,6 +213,19 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
           if (!node?.options) return sum;
           return sum + Math.max(...node.options.map((o) => o.points));
         }, 0);
+        fetch("/api/simulate/save-attempt", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            drillSlug: drill.slug,
+            pathTaken: state.history,
+            ref: referrerId,
+          }),
+          keepalive: true,
+        }).catch(() => {
+          /* swallow */
+        });
+
         fetch("/api/simulate/log-attempt", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -308,7 +341,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       </div>
 
       {state.phase === "intro" && (
-        <IntroView drill={drill} onBegin={begin} />
+        <IntroView drill={drill} onBegin={begin} isLoggedIn={isLoggedIn} authLoading={authLoading} />
       )}
       {state.phase === "decision" && currentNode && (
         <DecisionView
@@ -339,6 +372,26 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
           onRestart={restart}
         />
       )}
+
+      {showAuthModal && (
+        <AuthModal
+          onClose={() => {
+            setShowAuthModal(false);
+            setPendingAction(null);
+          }}
+          onSuccess={() => {
+            setShowAuthModal(false);
+            if (pendingAction) {
+              pendingAction();
+              setPendingAction(null);
+            } else {
+              // Trigger a window reload so the user state hook refreshes
+              // across the whole application, including the header.
+              window.location.reload();
+            }
+          }}
+        />
+      )}
     </div>
   );
 }
@@ -348,9 +401,13 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
 function IntroView({
   drill,
   onBegin,
+  isLoggedIn,
+  authLoading,
 }: {
   drill: Drill;
   onBegin: () => void;
+  isLoggedIn?: boolean;
+  authLoading?: boolean;
 }) {
   // Per-drill play count for social proof at the point of attempt —
   // the SimulateIt analog to CheckIt's "X sites scored" hero line.
@@ -411,14 +468,15 @@ function IntroView({
 
       <button
         onClick={onBegin}
-        className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02]"
+        disabled={authLoading}
+        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
         style={{
           background: "var(--brand-primary)",
           color: "#ffffff",
         }}
       >
         <Sparkles size={16} strokeWidth={2} />
-        Begin the drill
+        {authLoading ? "Loading..." : isLoggedIn ? "Begin the drill" : "Log in to play for the League"}
         <ArrowRight size={16} strokeWidth={2} />
       </button>
     </div>

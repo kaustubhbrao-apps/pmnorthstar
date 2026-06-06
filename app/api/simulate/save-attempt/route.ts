@@ -10,7 +10,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
-import { getDrillBySlug } from "@/data/drills";
+import { getDrillBySlug, publishedDrills } from "@/data/drills";
 import type { DrillDimension } from "@/data/drills";
 
 export const runtime = "nodejs";
@@ -31,9 +31,10 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { drillSlug, pathTaken } = body as {
+    const { drillSlug, pathTaken, ref } = body as {
       drillSlug?: string;
       pathTaken?: PathStep[];
+      ref?: string;
     };
 
     if (!drillSlug || !Array.isArray(pathTaken) || pathTaken.length === 0) {
@@ -52,8 +53,6 @@ export async function POST(req: NextRequest) {
     }
 
     // Server-side score derivation — never trust client totals.
-    // Walk pathTaken, sum points + max per dimension, validate each
-    // step traces back to a legit leadsTo edge.
     let score = 0;
     let maxPossible = 0;
     const dims: Record<DrillDimension, { score: number; max: number }> = {
@@ -95,7 +94,6 @@ export async function POST(req: NextRequest) {
       cursor = opt.leadsTo;
     }
 
-    // Final node should be an outcome — sanity check.
     const finalNode = drill.nodes[cursor];
     if (!finalNode?.isOutcome) {
       return NextResponse.json(
@@ -104,26 +102,85 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const attempt = await prisma.drillAttempt.create({
-      data: {
-        userId: session.id,
-        drillSlug,
-        score,
-        maxPossible,
-        productScore: dims.product.score,
-        productMax: dims.product.max,
-        businessScore: dims.business.score,
-        businessMax: dims.business.max,
-        founderScore: dims.founder.score,
-        founderMax: dims.founder.max,
-        pathTaken: pathTaken as unknown as object,
-      },
-      select: {
-        id: true,
-        score: true,
-        maxPossible: true,
-        attemptedAt: true,
-      },
+    // ─── Simulation League Logic ─────────────────────────────────────────
+
+    // 1. Is this the first attempt?
+    const previousAttempt = await prisma.drillAttempt.findFirst({
+      where: { userId: session.id, drillSlug },
+    });
+    const isFirstAttempt = !previousAttempt;
+
+    // 2. Is this the active drill?
+    const activeDrill = publishedDrills()[0];
+    const isActive = activeDrill && activeDrill.slug === drillSlug;
+
+    // 3. Points assignment
+    let leaguePointsEarned = 0;
+    if (isFirstAttempt && isActive) {
+      leaguePointsEarned = score;
+    }
+
+    // 4. Record the attempt in a transaction to ensure points sync
+    const attempt = await prisma.$transaction(async (tx) => {
+      // Create the attempt
+      const newAttempt = await tx.drillAttempt.create({
+        data: {
+          userId: session.id,
+          drillSlug,
+          score,
+          maxPossible,
+          productScore: dims.product.score,
+          productMax: dims.product.max,
+          businessScore: dims.business.score,
+          businessMax: dims.business.max,
+          founderScore: dims.founder.score,
+          founderMax: dims.founder.max,
+          pathTaken: pathTaken as unknown as object,
+          isFirstAttempt,
+          leaguePointsEarned,
+        },
+        select: {
+          id: true,
+          score: true,
+          maxPossible: true,
+          attemptedAt: true,
+          isFirstAttempt: true,
+          leaguePointsEarned: true,
+        },
+      });
+
+      // Update user score
+      if (leaguePointsEarned > 0) {
+        await tx.user.update({
+          where: { id: session.id },
+          data: { leaguePoints: { increment: leaguePointsEarned } },
+        });
+      }
+
+      // Process referral bonus
+      if (ref && ref !== session.id && isActive) {
+        // Attempt to insert a referral record (Unique constraint prevents abuse: one bonus per referrer per drill)
+        try {
+          await tx.leagueReferral.create({
+            data: {
+              referrerId: ref,
+              referredId: session.id,
+              drillSlug,
+              points: 3,
+            },
+          });
+          // Reward the referrer
+          await tx.user.update({
+            where: { id: ref },
+            data: { leaguePoints: { increment: 3 } },
+          });
+        } catch (e) {
+          // Unique constraint violation: referrer already got points for this drill.
+          // Or invalid referrerId (foreign key constraint). Safe to ignore.
+        }
+      }
+
+      return newAttempt;
     });
 
     return NextResponse.json({ ok: true, attempt });
