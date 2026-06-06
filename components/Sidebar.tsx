@@ -39,7 +39,7 @@ export function Sidebar({
     onClose?.();
   };
 
-  const NavButton = ({
+  const NavLink = ({
     id,
     label,
     icon: Icon,
@@ -51,9 +51,19 @@ export function Sidebar({
     count: number | null;
   }) => {
     const active = activeNav === id;
+    // Map internal nav IDs to the hash fragments used on the home page
+    const href = id === "home" ? "/" : `/#${id}`;
+    
     return (
-      <button
-        onClick={() => handleNavClick(id)}
+      <Link
+        href={href}
+        onClick={(e) => {
+          // If we're already on the home page, let the standard hash 
+          // navigation / onNavChange handle it. If not, the Link will 
+          // navigate to /#id and onNavChange will fire after mount.
+          onNavChange(id);
+          onClose?.();
+        }}
         className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${active ? "active" : ""}`}
       >
         <Icon size={15} strokeWidth={1.6} />
@@ -70,7 +80,7 @@ export function Sidebar({
             {String(count).padStart(2, "0")}
           </span>
         )}
-      </button>
+      </Link>
     );
   };
 
@@ -118,7 +128,7 @@ export function Sidebar({
           <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Navigate</p>
 
           {primaryNav.map((item) => (
-            <NavButton key={item.id} {...item} />
+            <NavLink key={item.id} {...item} />
           ))}
 
           {/* India — separate Link because it's a different route (not a tab) */}
@@ -175,13 +185,13 @@ export function Sidebar({
           <div className="pt-5">
             <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Library</p>
 
-            <NavButton
+            <NavLink
               id="saved"
               label="Saved"
               icon={BookMarked}
               count={savedCount > 0 ? savedCount : null}
             />
-            <NavButton
+            <NavLink
               id="favourites"
               label="Favourites"
               icon={Star}

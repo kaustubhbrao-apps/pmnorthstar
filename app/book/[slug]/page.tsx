@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -303,10 +304,10 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                       .join("")}
                   </span>
                   {authorPhoto.url && !authorPhoto.failed && (
-                    <img
+                    <Image
                       src={authorPhoto.url}
                       alt={`${book.author} — author of ${book.title}`}
-                      loading="lazy"
+                      priority
                       width={112}
                       height={112}
                       className="absolute inset-0 w-full h-full object-cover"

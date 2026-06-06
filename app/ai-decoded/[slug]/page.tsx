@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Clock } from "lucide-react";
 import { getAIDecodedArticleBySlug } from "@/lib/ai-decoded";
@@ -114,12 +115,12 @@ export default function AIDecodedArticlePage({
         >
           <div className="w-full max-w-4xl">
             <figure>
-              <img
+              <Image
                 src={fm.heroImage.src}
                 alt={fm.heroImage.alt}
-                width={1600}
-                height={900}
-                loading="eager"
+                width={1200}
+                height={675}
+                priority
                 className="w-full h-auto rounded-xl"
                 style={{ aspectRatio: "16 / 9", objectFit: "cover" }}
               />

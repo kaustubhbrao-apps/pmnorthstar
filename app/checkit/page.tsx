@@ -1,10 +1,10 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { normalizeUrl } from "@/lib/checkit/util";
 
 const CheckItClient = dynamic(
-  () => import("./CheckItClient"),
-  { ssr: false }
+  () => import("./CheckItClient")
 );
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
@@ -63,5 +63,9 @@ export async function generateMetadata({
 }
 
 export default function CheckItPage() {
-  return <CheckItClient />;
+  return (
+    <Suspense fallback={null}>
+      <CheckItClient />
+    </Suspense>
+  );
 }

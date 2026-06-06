@@ -9,7 +9,7 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { prisma } from "@/lib/prisma";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60; // ISR: Revalidate the leaderboard and play count every 60 seconds
 
 // Site-wide drill-completion count for the hero social-proof line.
 // Best-effort — a DB hiccup returns 0 and the line simply doesn't render.
