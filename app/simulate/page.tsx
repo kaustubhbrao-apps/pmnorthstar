@@ -27,7 +27,15 @@ async function getLeaderboard() {
       where: { leaguePoints: { gt: 0 } },
       orderBy: { leaguePoints: 'desc' },
       take: 10,
-      select: { id: true, name: true, leaguePoints: true }
+      select: { 
+        id: true, 
+        name: true, 
+        leaguePoints: true,
+        image: true,
+        _count: {
+          select: { drillAttempts: { where: { leaguePointsEarned: { gt: 0 } } } }
+        }
+      }
     });
   } catch {
     return [];
@@ -49,6 +57,10 @@ export default async function SimulatePage() {
   const featured = all[0];
   const plays = await totalPlays();
   const leaderboard = await getLeaderboard();
+
+  // Season config (Mock for UI)
+  const totalMatchdays = 50;
+  const completedMatchdays = all.filter(d => d.isLeagueMatch && new Date(d.publishedAt) <= new Date()).length;
 
   return (
     <SidebarShell activeNav="simulate">
@@ -145,14 +157,28 @@ export default async function SimulatePage() {
         {/* The League Leaderboard */}
         {process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && leaderboard.length > 0 && (
           <section className="mb-12">
-            <div className="flex items-center gap-3 mb-5">
-              <Trophy size={20} strokeWidth={2} style={{ color: "var(--brand-primary)" }} />
-              <h2
-                className="font-display text-2xl font-bold"
-                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-              >
-                Simulation League
-              </h2>
+            <div className="flex items-center justify-between gap-3 mb-5">
+              <div className="flex items-center gap-3">
+                <Trophy size={20} strokeWidth={2} style={{ color: "var(--brand-primary)" }} />
+                <h2
+                  className="font-display text-2xl font-bold"
+                  style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+                >
+                  Season 1 Standings
+                </h2>
+              </div>
+              <div className="hidden sm:flex items-center gap-2 text-xs font-mono" style={{ color: "var(--text-faint)" }}>
+                <span>Matchday {completedMatchdays} of {totalMatchdays}</span>
+                <div className="w-24 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                  <div 
+                    className="h-full bg-brand-primary" 
+                    style={{ 
+                      width: `${(completedMatchdays / totalMatchdays) * 100}%`,
+                      background: "var(--brand-primary)"
+                    }} 
+                  />
+                </div>
+              </div>
             </div>
             
             <div 
@@ -162,40 +188,66 @@ export default async function SimulatePage() {
                 border: "1.5px solid var(--card-border)",
               }}
             >
-              <div className="flex items-center justify-between px-5 py-3 border-b" style={{ borderColor: "var(--card-border)", background: "color-mix(in srgb, var(--card-border) 40%, transparent)" }}>
-                <span className="text-xs font-mono uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Rank & Player</span>
-                <span className="text-xs font-mono uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>League Points</span>
+              <div className="grid grid-cols-[3rem_1fr_8rem_6rem] items-center px-5 py-3 border-b text-xs font-mono uppercase tracking-wider" style={{ borderColor: "var(--card-border)", background: "rgba(255,255,255,0.02)" }}>
+                <span style={{ color: "var(--text-faint)" }}>Pos</span>
+                <span style={{ color: "var(--text-faint)" }}>Player</span>
+                <span className="text-right" style={{ color: "var(--text-faint)" }}>Played</span>
+                <span className="text-right" style={{ color: "var(--text-faint)" }}>Points</span>
               </div>
               
               <div className="flex flex-col">
                 {leaderboard.map((user, idx) => (
                   <div 
                     key={user.id} 
-                    className="flex items-center justify-between px-5 py-3.5 transition-colors"
+                    className="grid grid-cols-[3rem_1fr_8rem_6rem] items-center px-5 py-4 transition-colors hover:bg-white/[0.02]"
                     style={{ 
                       borderTop: idx > 0 ? "1px solid var(--card-border)" : "none",
-                      background: "transparent"
                     }}
                   >
-                    <div className="flex items-center gap-4">
+                    {/* Position */}
+                    <div className="flex items-center">
                       <div 
-                        className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold font-mono"
+                        className="flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold font-mono"
                         style={{
-                          background: idx === 0 ? "rgba(250, 204, 21, 0.2)" : idx === 1 ? "rgba(156, 163, 175, 0.2)" : idx === 2 ? "rgba(180, 83, 9, 0.2)" : "transparent",
+                          background: idx === 0 ? "rgba(250, 204, 21, 0.15)" : idx === 1 ? "rgba(156, 163, 175, 0.15)" : idx === 2 ? "rgba(180, 83, 9, 0.15)" : "rgba(255,255,255,0.05)",
                           color: idx === 0 ? "#FACC15" : idx === 1 ? "#9CA3AF" : idx === 2 ? "#B45309" : "var(--text-faint)",
+                          border: idx <= 2 ? `1px solid ${idx === 0 ? "#FACC1544" : idx === 1 ? "#9CA3AF44" : "#B4530944"}` : "none"
                         }}
                       >
                         {idx + 1}
                       </div>
-                      <span className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>{user.name}</span>
                     </div>
-                    <span className="text-sm font-mono font-bold" style={{ color: "var(--brand-primary)" }}>
-                      {user.leaguePoints.toLocaleString()}
-                    </span>
+
+                    {/* Name/Avatar */}
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
+                        {user.image ? (
+                          <img src={user.image} alt="" className="w-full h-full object-cover" />
+                        ) : (
+                          <span className="text-[10px] font-bold uppercase opacity-50">{user.name.slice(0, 1)}</span>
+                        )}
+                      </div>
+                      <span className="text-sm font-semibold truncate" style={{ color: "var(--text-primary)" }}>{user.name}</span>
+                    </div>
+
+                    {/* Played */}
+                    <div className="text-right text-sm font-mono" style={{ color: "var(--text-muted)" }}>
+                      {user._count.drillAttempts}
+                    </div>
+
+                    {/* Points */}
+                    <div className="text-right">
+                      <span className="text-sm font-mono font-bold" style={{ color: "var(--brand-primary)" }}>
+                        {user.leaguePoints.toLocaleString()}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
+            <p className="mt-4 text-[11px] font-mono leading-relaxed" style={{ color: "var(--text-faint)" }}>
+              * Only your first attempt at the active Matchday counts. +3 bonus points awarded for successful friend challenges. Season 1 ends after 50 matches.
+            </p>
           </section>
         )}
 
