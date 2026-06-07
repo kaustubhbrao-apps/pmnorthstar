@@ -18,6 +18,10 @@ model User {
   lastLoginAt         DateTime?            @map("last_login_at")
   googleId            String?              @unique @map("google_id")
   image               String?
+  username            String?              @unique
+  usernameChangedAt   DateTime?            @map("username_changed_at")
+  isAdmin             Boolean              @default(false) @map("is_admin")
+  emailOptOut         Boolean              @default(false) @map("email_opt_out")
   leaguePoints        Int                  @default(0) @map("league_points")
   likedResources      LikedResource[]
   passwordResetTokens PasswordResetToken[]

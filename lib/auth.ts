@@ -42,6 +42,8 @@ export async function getSession() {
         id: true,
         email: true,
         name: true,
+        username: true,
+        isAdmin: true,
         createdAt: true,
       },
     });

@@ -12,6 +12,7 @@ import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { getDrillBySlug, publishedDrills } from "@/data/drills";
 import type { DrillDimension } from "@/data/drills";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -28,6 +29,11 @@ export async function POST(req: NextRequest) {
         { error: "Not authenticated" },
         { status: 401 }
       );
+    }
+
+    const { ok } = checkRateLimit(`save-attempt-${session.id}`, 10, 60_000);
+    if (!ok) {
+      return NextResponse.json({ error: "Too many attempts. Please slow down." }, { status: 429 });
     }
 
     const body = await req.json();
@@ -170,25 +176,36 @@ export async function POST(req: NextRequest) {
       }
 
       // Process referral bonus
-      if (ref && ref !== session.id && isActiveLeagueMatch) {
-        // Attempt to insert a referral record (Unique constraint prevents abuse: one bonus per referrer per drill)
-        try {
-          await tx.leagueReferral.create({
-            data: {
-              referrerId: ref,
-              referredId: session.id,
-              drillSlug,
-              points: 3,
-            },
+      if (ref && isActiveLeagueMatch) {
+        // Resolve ref: it could be a UUID (legacy) or a username
+        let referrerIdToUse = ref;
+        if (!ref.includes("-")) {
+          const referrerUser = await tx.user.findUnique({
+            where: { username: ref },
+            select: { id: true }
           });
-          // Reward the referrer
-          await tx.user.update({
-            where: { id: ref },
-            data: { leaguePoints: { increment: 3 } },
-          });
-        } catch (e) {
-          // Unique constraint violation: referrer already got points for this drill.
-          // Or invalid referrerId (foreign key constraint). Safe to ignore.
+          if (referrerUser) referrerIdToUse = referrerUser.id;
+        }
+
+        if (referrerIdToUse !== session.id) {
+          // Attempt to insert a referral record (Unique constraint prevents abuse: one bonus per referrer per drill)
+          try {
+            await tx.leagueReferral.create({
+              data: {
+                referrerId: referrerIdToUse,
+                referredId: session.id,
+                drillSlug,
+                points: 3,
+              },
+            });
+            // Reward the referrer
+            await tx.user.update({
+              where: { id: referrerIdToUse },
+              data: { leaguePoints: { increment: 3 } },
+            });
+          } catch (e) {
+            // Unique constraint violation or invalid referrerId. Safe to ignore.
+          }
         }
       }
 

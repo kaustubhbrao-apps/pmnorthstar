@@ -89,6 +89,7 @@ export default function TopicLayout({
       {/* FAQPage — eligible for People-Also-Ask rich snippets */}
       {topic.faqs && topic.faqs.length > 0 && (
         <script
+          id="ld-faq"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({

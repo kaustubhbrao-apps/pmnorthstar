@@ -84,7 +84,7 @@ function storageKey(slug: string): string {
 }
 
 export function SimulatePlayer({ drill }: { drill: Drill }) {
-  const { isLoggedIn, loading: authLoading } = useUserState();
+  const { isLoggedIn, loading: authLoading, username } = useUserState();
   const [showAuthModal, setShowAuthModal] = useState(false);
   const searchParams = useSearchParams();
   const referrerId = searchParams?.get("ref") || undefined;
@@ -95,6 +95,15 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
     history: [],
     startedAt: Date.now(),
   }));
+
+  // Enforce username selection for league
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && !authLoading && isLoggedIn && !username) {
+      if (typeof window !== "undefined") {
+        window.location.href = `/pick-username?next=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+      }
+    }
+  }, [authLoading, isLoggedIn, username]);
 
   // Restore mid-drill state from localStorage if a session exists.
   useEffect(() => {
@@ -377,6 +386,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
           finalNode={currentNode}
           history={state.history}
           onRestart={restart}
+          username={username}
         />
       )}
 
@@ -780,11 +790,13 @@ function OutcomeView({
   finalNode,
   history,
   onRestart,
+  username,
 }: {
   drill: Drill;
   finalNode: DrillNode;
   history: HistoryEntry[];
   onRestart: () => void;
+  username?: string;
 }) {
   // ─── Challenge Logic ──────────────────────────────────────────────────
   const [challenger, setChallenger] = useState<{ score: number; max: number; blocks: string } | null>(null);
@@ -911,8 +923,11 @@ function OutcomeView({
   const handleChallenge = useCallback(() => {
     track({ name: "simulateit_challenge_created", drill_slug: drill.slug });
     const origin = typeof window !== "undefined" ? window.location.origin : "https://pmnorthstar.in";
-    // Challenge URL encodes the current user's performance
-    const challengeUrl = `${origin}/simulate/${drill.slug}?challenge=${totalScore}_${totalMax}_${letterBlocks}`;
+    // Challenge URL encodes the current user's performance and username as ref
+    let challengeUrl = `${origin}/simulate/${drill.slug}?challenge=${totalScore}_${totalMax}_${letterBlocks}`;
+    if (username) {
+      challengeUrl += `&ref=${username}`;
+    }
     const text = `I just scored ${totalScore}/${totalMax} on the "${drillTitle(drill)}" drill. Think you can beat my decisions? \n\nAccept the challenge: ${challengeUrl}`;
     
     if (typeof navigator !== "undefined" && navigator.share) {

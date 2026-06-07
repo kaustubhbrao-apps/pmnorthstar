@@ -8,6 +8,8 @@ import { ArrowUpRight, Brain, Clock, Target, Trophy } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { prisma } from "@/lib/prisma";
+import { getSession } from "@/lib/auth";
+import { isLeagueVisible } from "@/lib/admin";
 
 export const revalidate = 60; // ISR: Revalidate the leaderboard and play count every 60 seconds
 
@@ -30,6 +32,7 @@ async function getLeaderboard() {
       select: { 
         id: true, 
         name: true, 
+        username: true,
         leaguePoints: true,
         image: true,
         _count: {
@@ -39,6 +42,16 @@ async function getLeaderboard() {
     });
   } catch {
     return [];
+  }
+}
+
+async function getUserRank(userId: string, userPoints: number) {
+  try {
+    const rank = await prisma.user.count({ where: { leaguePoints: { gt: userPoints } } }) + 1;
+    const total = await prisma.user.count({ where: { leaguePoints: { gt: 0 } } });
+    return { rank, total };
+  } catch {
+    return { rank: 0, total: 0 };
   }
 }
 
@@ -57,6 +70,19 @@ export default async function SimulatePage() {
   const featured = all[0];
   const plays = await totalPlays();
   const leaderboard = await getLeaderboard();
+  const session = await getSession();
+  const showLeague = isLeagueVisible(session);
+  
+  let userRankInfo = null;
+  const isUserInTop10 = session ? leaderboard.some(u => u.id === session.id) : false;
+  
+  if (session && !isUserInTop10) {
+    const user = await prisma.user.findUnique({ where: { id: session.id }, select: { leaguePoints: true, username: true, name: true, image: true, _count: { select: { drillAttempts: { where: { leaguePointsEarned: { gt: 0 } } } } } } });
+    if (user && user.leaguePoints > 0) {
+      const { rank } = await getUserRank(session.id, user.leaguePoints);
+      userRankInfo = { ...user, id: session.id, rank };
+    }
+  }
 
   // Season config (Mock for UI)
   const totalMatchdays = 50;
@@ -139,7 +165,7 @@ export default async function SimulatePage() {
             title="Three dimensions"
             body="Every drill scores you on product thinking, business judgement, and founder calls."
           />
-          {process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" ? (
+          {showLeague ? (
             <ExplainerTile
               icon={Trophy}
               title="Simulation League"
@@ -155,7 +181,7 @@ export default async function SimulatePage() {
         </div>
 
         {/* The League Leaderboard */}
-        {process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && leaderboard.length > 0 && (
+        {showLeague && leaderboard.length > 0 && (
           <section className="mb-12">
             <div className="flex items-center justify-between gap-3 mb-5">
               <div className="flex items-center gap-3">
@@ -227,7 +253,9 @@ export default async function SimulatePage() {
                           <span className="text-[10px] font-bold uppercase opacity-50">{user.name.slice(0, 1)}</span>
                         )}
                       </div>
-                      <span className="text-sm font-semibold truncate" style={{ color: "var(--text-primary)" }}>{user.name}</span>
+                      <span className="text-sm font-semibold truncate" style={{ color: "var(--text-primary)" }}>
+                        {user.username ? `@${user.username}` : user.name}
+                      </span>
                     </div>
 
                     {/* Played */}
@@ -243,6 +271,45 @@ export default async function SimulatePage() {
                     </div>
                   </div>
                 ))}
+
+                {userRankInfo && (
+                  <>
+                    <div className="px-5 py-2 flex items-center justify-center border-t" style={{ borderColor: "var(--card-border)" }}>
+                      <span className="text-xl font-bold" style={{ color: "var(--text-faint)", letterSpacing: "2px" }}>···</span>
+                    </div>
+                    <div 
+                      className="grid grid-cols-[3rem_1fr_8rem_6rem] items-center px-5 py-4 transition-colors hover:bg-white/[0.02]"
+                      style={{ borderTop: "1px solid var(--card-border)", borderLeft: "2px solid var(--brand-primary)" }}
+                    >
+                      <div className="flex items-center">
+                        <div className="flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold font-mono" style={{ color: "var(--text-muted)" }}>
+                          {userRankInfo.rank}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
+                          {userRankInfo.image ? (
+                            <img src={userRankInfo.image} alt="" className="w-full h-full object-cover" />
+                          ) : (
+                            <span className="text-[10px] font-bold uppercase opacity-50">{userRankInfo.name.slice(0, 1)}</span>
+                          )}
+                        </div>
+                        <span className="text-sm font-semibold truncate flex items-center gap-2" style={{ color: "var(--text-primary)" }}>
+                          {userRankInfo.username ? `@${userRankInfo.username}` : userRankInfo.name}
+                          <span className="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10" style={{ color: "var(--text-faint)" }}>You</span>
+                        </span>
+                      </div>
+                      <div className="text-right text-sm font-mono" style={{ color: "var(--text-muted)" }}>
+                        {userRankInfo._count.drillAttempts}
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm font-mono font-bold" style={{ color: "var(--brand-primary)" }}>
+                          {userRankInfo.leaguePoints.toLocaleString()}
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
             <p className="mt-4 text-[11px] font-mono leading-relaxed" style={{ color: "var(--text-faint)" }}>

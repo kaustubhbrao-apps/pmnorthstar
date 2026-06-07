@@ -98,6 +98,7 @@ export default function CompareLayout({
       {/* FAQPage — eligible for People-Also-Ask rich snippets */}
       {cmp.faqs && cmp.faqs.length > 0 && (
         <script
+          id="ld-faq"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({

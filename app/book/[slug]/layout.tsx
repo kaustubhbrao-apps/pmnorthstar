@@ -145,6 +145,7 @@ export default function BookLayout({
           for the People-Also-Ask rich-snippet treatment on Google. */}
       {faqs.length > 0 && (
         <script
+          id="ld-faq"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
