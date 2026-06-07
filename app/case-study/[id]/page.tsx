@@ -121,18 +121,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
     }
   };
 
-  const faqSchema = faqs.length > 0 ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
-      "@type": "Question",
-      "name": f.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": f.answer
-      }
-    }))
-  } : null;
+
 
   return (
     <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
@@ -141,12 +130,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+
 
       <Sidebar
         activeNav="casestudies"

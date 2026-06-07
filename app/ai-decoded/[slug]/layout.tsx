@@ -120,6 +120,7 @@ export default function AIDecodedArticleLayout({
       {/* FAQPage — eligible for People-Also-Ask rich snippets */}
       {fm.faqs && fm.faqs.length > 0 && (
         <script
+          id="ld-faq"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
