@@ -25,11 +25,11 @@ export default function LeagueHypePage() {
 
         {/* Ambient Brand Glow */}
         <div 
-          className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none opacity-20" 
+          className="absolute top-[-10%] left-[-20%] w-[300px] h-[300px] md:top-[-20%] md:left-[-10%] md:w-[600px] md:h-[600px] rounded-full blur-[80px] md:blur-[120px] pointer-events-none opacity-20" 
           style={{ background: "radial-gradient(circle, var(--brand-primary) 0%, transparent 70%)" }} 
         />
 
-        <div className="flex-1 flex flex-col px-4 sm:px-12 pt-20 pb-16 max-w-7xl mx-auto w-full relative z-10">
+        <div className="flex-1 flex flex-col px-4 sm:px-8 md:px-12 pt-12 md:pt-20 pb-16 max-w-7xl mx-auto w-full relative z-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
             
@@ -48,13 +48,13 @@ export default function LeagueHypePage() {
               </div>
 
               {/* Stark Editorial Header */}
-              <h1 className="font-display text-7xl sm:text-8xl md:text-[8rem] font-black tracking-tighter mb-8 uppercase leading-[0.85]" style={{ color: "var(--text-primary)" }}>
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] font-black tracking-tighter mb-6 md:mb-8 uppercase leading-[0.9] md:leading-[0.85]" style={{ color: "var(--text-primary)" }}>
                 SIMULATION<br />
                 <span style={{ color: "var(--brand-primary)" }}>LEAGUE</span>
               </h1>
 
-              <p className="text-xl sm:text-2xl mb-12 leading-relaxed max-w-xl font-medium" style={{ color: "var(--text-muted)" }}>
-                The ultimate proving ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Global leaderboards. Real crisis scenarios. No do-overs.
+              <p className="text-lg sm:text-xl md:text-2xl mb-10 md:mb-12 leading-relaxed max-w-xl font-medium" style={{ color: "var(--text-muted)" }}>
+                The ultimate proving and learning ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Global leaderboards. Real crisis scenarios. No do-overs.
               </p>
 
               {/* Waitlist Box */}

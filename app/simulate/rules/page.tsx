@@ -21,11 +21,11 @@ export default function RulesPage() {
 
         {/* Ambient Brand Glow */}
         <div 
-          className="absolute top-[0%] left-[50%] -translate-x-1/2 w-[800px] h-[400px] rounded-[100%] blur-[120px] pointer-events-none opacity-10" 
+          className="absolute top-[0%] left-[50%] -translate-x-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[400px] rounded-[100%] blur-[80px] md:blur-[120px] pointer-events-none opacity-10" 
           style={{ background: "radial-gradient(ellipse, var(--brand-primary) 0%, transparent 70%)" }} 
         />
 
-        <div className="flex-1 flex flex-col px-4 sm:px-6 pt-12 pb-20 max-w-4xl mx-auto w-full relative z-10">
+        <div className="flex-1 flex flex-col px-4 sm:px-6 pt-8 md:pt-12 pb-16 md:pb-20 max-w-4xl mx-auto w-full relative z-10">
           
           <Link
             href="/league"
@@ -36,13 +36,13 @@ export default function RulesPage() {
             Back to League
           </Link>
 
-          <div className="mb-20">
-            <h1 className="font-display text-5xl sm:text-7xl font-black tracking-tighter mb-6 uppercase leading-[0.9]" style={{ color: "var(--text-primary)" }}>
+          <div className="mb-16 md:mb-20">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-4 md:mb-6 uppercase leading-[0.9]" style={{ color: "var(--text-primary)" }}>
               Official<br />
               <span style={{ color: "var(--brand-primary)" }}>Rulebook</span>
             </h1>
-            <p className="text-lg sm:text-xl leading-relaxed max-w-2xl font-medium" style={{ color: "var(--text-muted)" }}>
-              The League is a time-gated, high-stakes proving ground. You have one shot per matchday to make the right calls. Here is how it works.
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl font-medium" style={{ color: "var(--text-muted)" }}>
+              The League is a time-gated, high-stakes proving and learning ground. You have one shot per matchday to make the right calls. Here is how it works.
             </p>
           </div>
 
