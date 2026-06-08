@@ -1,164 +1,120 @@
 "use client";
 
 import Link from "next/link";
-import { Trophy, Zap, Shield, Clock, Crosshair, Award, TrendingUp, Swords, ChevronRight, Star } from "lucide-react";
+import { Trophy, Shield, Clock, Crosshair, Award, TrendingUp, Swords, ChevronRight } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 
 export default function LeagueHypePage() {
   return (
     <SidebarShell activeNav="league" backLabelDesktop="Back to Simulation" backHref="/simulate">
-      <div 
-        className="flex-1 flex flex-col w-full relative overflow-hidden"
-        style={{
-          // Deep midnight blue/black background typical of Champions League
-          background: "radial-gradient(circle at top center, #0B132B 0%, #02040A 100%)"
-        }}
-      >
+      <div className="flex-1 flex flex-col w-full relative overflow-hidden bg-black selection:bg-[#0047FF] selection:text-white pb-24">
         
-        {/* Dynamic Champions League inspired Starball / Glow background */}
-        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] opacity-20 pointer-events-none" style={{
-          background: "radial-gradient(circle, rgba(0, 191, 255, 0.4) 0%, transparent 60%)",
-          filter: "blur(60px)"
-        }} />
-        
-        {/* Subtle floating stars in background */}
-        <div className="absolute top-20 left-1/4 opacity-10"><Star size={120} className="animate-pulse" /></div>
-        <div className="absolute top-60 right-1/4 opacity-5"><Star size={200} className="animate-pulse" style={{ animationDelay: "1s" }} /></div>
-        <div className="absolute bottom-40 left-1/3 opacity-10"><Star size={150} className="animate-pulse" style={{ animationDelay: "2s" }} /></div>
+        {/* Subtle SVG Noise Texture for Premium Editorial Feel */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-[0.03] z-50 mix-blend-overlay"
+          style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}
+        />
 
-        <div className="flex-1 flex flex-col px-4 sm:px-6 py-20 text-center max-w-5xl mx-auto w-full relative z-10">
+        {/* Abstract Architectural/Sports Element */}
+        <div className="absolute top-0 right-0 w-[50vw] h-[100vh] opacity-20 pointer-events-none overflow-hidden">
+          <div className="absolute -right-[20%] top-[10%] w-[800px] h-[800px] border-[1px] border-white/20 rounded-full" />
+          <div className="absolute -right-[10%] top-[20%] w-[600px] h-[600px] border-[1px] border-white/10 rounded-full" />
+          <div className="absolute right-[0%] top-[30%] w-[400px] h-[400px] border-[1px] border-[#0047FF]/30 rounded-full" />
+        </div>
+
+        {/* Massive Ambient Blue Glow */}
+        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(0, 71, 255, 0.15) 0%, transparent 70%)" }} />
+
+        <div className="flex-1 flex flex-col px-4 sm:px-12 pt-20 pb-16 max-w-7xl mx-auto w-full relative z-10">
           
-          {/* Badge */}
-          <div className="mb-10 relative group flex justify-center w-full">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#C0C0C0] to-[#FFFFFF] rounded-full blur opacity-20 group-hover:opacity-50 transition duration-500 max-w-[200px]" />
-            <div className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full font-mono font-bold tracking-[0.2em] uppercase text-xs" 
-              style={{ 
-                background: "rgba(2, 4, 10, 0.8)", 
-                color: "#E2E8F0", 
-                border: "1px solid rgba(192, 192, 192, 0.3)",
-                backdropFilter: "blur(10px)"
-              }}>
-              <Star size={14} fill="currentColor" />
-              Season 1 Coming Soon
-            </div>
-          </div>
-
-          {/* Massive Prestige Header */}
-          <h1 
-            className="font-display text-6xl sm:text-8xl md:text-[7rem] font-black tracking-tighter mb-6 uppercase leading-[0.9] text-center w-full"
-            style={{ 
-              // Metallic silver gradient text
-              background: "linear-gradient(to bottom, #FFFFFF 0%, #94A3B8 50%, #475569 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter: "drop-shadow(0px 4px 20px rgba(0, 191, 255, 0.2))"
-            }}
-          >
-            SIMULATION<br />
-            LEAGUE
-          </h1>
-
-          <p className="text-xl sm:text-2xl mb-16 leading-relaxed max-w-2xl mx-auto font-medium text-center w-full" style={{ color: "#94A3B8" }}>
-            The ultimate proving ground for <span className="text-white">Builders, Founders, and Operators</span>. Real-world crisis scenarios. Global leaderboards. No do-overs.
-          </p>
-
-          {/* Call to Action / Substack Form */}
-          <div className="w-full max-w-md mx-auto text-left mb-24 relative">
-            {/* Glowing border effect for the form */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#00BFFF] via-[#FFFFFF] to-[#00BFFF] rounded-2xl blur opacity-30" />
-            <div className="relative p-1 rounded-2xl" style={{ background: "rgba(2, 4, 10, 0.9)", border: "1px solid rgba(255,255,255,0.1)" }}>
-              <SubscribeForm
-                variant="card"
-                surface="league_hype"
-                headline="Join the Waitlist."
-                subhead="Drop your email to get an alert the moment Matchday 1 goes live."
-              />
-            </div>
-          </div>
-
-          {/* League Mechanics Section - Premium Dark Cards */}
-          <div className="w-full text-left mt-10">
-            <div className="flex items-center justify-center gap-4 mb-16 pb-6 relative">
-              {/* Central glowing separator */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-px bg-gradient-to-r from-transparent via-[#00BFFF] to-transparent opacity-50" />
-              <h2 className="font-display text-3xl font-bold uppercase tracking-widest text-center" style={{ color: "#E2E8F0" }}>League Mechanics</h2>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
-              <LeagueCard 
-                title="The Matchday" 
-                desc="A new high-stakes simulation drops every Wednesday and Sunday. You are dropped into the most critical moments in tech history with the exact data the founders had."
-                icon={Clock}
-              />
-              <LeagueCard 
-                title="One Shot Only" 
-                desc="There are no do-overs in a crisis. You must log in with a verified Google account to play. Only your very first attempt counts for points on the global standings table. Make the right call."
-                icon={Shield}
-              />
-              <LeagueCard 
-                title="The Standings" 
-                desc="Every decision is scored. We track your cumulative points across the entire season. The top 100 players are immortalized on the public leaderboard. Earning a gold badge means you saw what nobody else did."
-                icon={Trophy}
-              />
-              <LeagueCard 
-                title="Buddy Challenge" 
-                desc="Completed a drill? Challenge your friends using your unique referral link. If they log in and play your scenario, you earn a flat +3 Point bonus to your League total."
-                icon={Swords}
-              />
+            {/* Left Column: Typography & Hype */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left">
+              
+              {/* Badge */}
+              <div className="mb-10 inline-flex items-center gap-3 px-4 py-1.5 border border-white/10 rounded-full">
+                <div className="w-2 h-2 rounded-full bg-[#0047FF] animate-pulse" />
+                <span className="font-mono font-bold tracking-widest uppercase text-xs text-white/70">Season 1 Launching June 12</span>
+              </div>
+
+              {/* Stark Editorial Header */}
+              <h1 className="font-display text-7xl sm:text-8xl md:text-[8rem] font-black tracking-tighter mb-8 uppercase leading-[0.85] text-white">
+                SIMULATION<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0047FF] to-[#0094FF]">LEAGUE</span>
+              </h1>
+
+              <p className="text-xl sm:text-2xl mb-12 leading-relaxed max-w-xl font-medium text-white/60">
+                The ultimate proving ground for <span className="text-white">Builders, Founders, and Operators</span>. Global leaderboards. Real crisis scenarios. No do-overs.
+              </p>
+
+              {/* Waitlist Box */}
+              <div className="w-full max-w-md mb-16 relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0047FF] to-[#0094FF] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500" />
+                <div className="relative p-[1px] bg-white/10 rounded-xl overflow-hidden">
+                  <div className="bg-black p-1 rounded-[11px]">
+                    <SubscribeForm
+                      variant="card"
+                      surface="league_hype"
+                      headline="Join the Roster."
+                      subhead="Enter your email to get drafted when Matchday 1 goes live."
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            {/* Rules Button */}
-            <div className="mt-8 flex justify-center w-full">
+
+            {/* Right Column: Mechanics (Structured Grid) */}
+            <div className="lg:col-span-5 lg:mt-12 flex flex-col gap-6">
+              <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-white/40 mb-2 border-b border-white/10 pb-4">League Rules & Mechanics</h2>
+              
+              <EditorialCard 
+                num="01"
+                title="The Matchday"
+                desc="A high-stakes drill drops every Wednesday and Sunday. You have until the next drop to lock in your score."
+              />
+              <EditorialCard 
+                num="02"
+                title="One Shot Only"
+                desc="No do-overs in a crisis. You must log in. Only your absolute first attempt counts for leaderboard points."
+              />
+              <EditorialCard 
+                num="03"
+                title="The Standings"
+                desc="Cumulative points across the entire season. The top 100 are immortalized. Gold badges for perfect logic."
+              />
+              <EditorialCard 
+                num="04"
+                title="Buddy Bonus"
+                desc="Challenge friends with your unique referral link. Earn +3 bonus points when they log in and play your drill."
+              />
+
               <Link 
                 href="/simulate/rules"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm font-bold uppercase tracking-[0.15em] transition-all hover:scale-105 overflow-hidden"
-                style={{ 
-                  background: "rgba(2, 4, 10, 0.8)", 
-                  border: "1px solid rgba(192, 192, 192, 0.3)", 
-                  color: "#FFFFFF",
-                  boxShadow: "0 0 20px rgba(0, 191, 255, 0.1)"
-                }}
+                className="mt-6 flex items-center justify-between p-6 border border-white/10 hover:border-[#0047FF]/50 hover:bg-[#0047FF]/5 transition-all group rounded-xl"
               >
-                {/* Silver shimmer effect on hover */}
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.1)] to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                Read Official Rules <ChevronRight size={16} />
+                <span className="font-bold uppercase tracking-wider text-sm text-white/80 group-hover:text-white">Read Official Rulebook</span>
+                <ChevronRight size={20} className="text-white/40 group-hover:text-[#0047FF] transition-colors" />
               </Link>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </SidebarShell>
   );
 }
 
-function LeagueCard({ title, desc, icon: Icon }: { title: string, desc: string, icon: any }) {
+function EditorialCard({ num, title, desc }: { num: string, title: string, desc: string }) {
   return (
-    <div 
-      className="p-8 flex flex-col h-full rounded-2xl group transition-all duration-500 relative overflow-hidden" 
-      style={{ 
-        background: "rgba(11, 19, 43, 0.6)", 
-        border: "1px solid rgba(255,255,255,0.05)",
-        backdropFilter: "blur(10px)"
-      }}
-    >
-      {/* Top metallic border highlight */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C0C0C0] to-transparent opacity-30" />
-      
-      {/* Hover glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[rgba(0,191,255,0.05)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-      <div className="flex items-center gap-4 mb-6 relative z-10">
-        <div className="w-12 h-12 rounded-full flex items-center justify-center border" style={{ background: "rgba(0,0,0,0.5)", borderColor: "rgba(192,192,192,0.2)", color: "#00BFFF" }}>
-          <Icon size={24} strokeWidth={2} />
-        </div>
-        <h3 className="text-xl font-bold tracking-wide" style={{ color: "#FFFFFF" }}>{title}</h3>
+    <div className="p-6 border border-white/5 bg-white/[0.02] rounded-xl hover:bg-white/[0.04] transition-colors relative group">
+      <div className="absolute top-0 left-0 w-1 h-0 bg-[#0047FF] group-hover:h-full transition-all duration-300 rounded-l-xl" />
+      <div className="flex items-baseline gap-4 mb-3">
+        <span className="font-mono text-xs text-[#0047FF] font-bold">{num}</span>
+        <h3 className="text-lg font-bold uppercase tracking-tight text-white/90">{title}</h3>
       </div>
-      
-      <p className="text-base leading-relaxed relative z-10" style={{ color: "#94A3B8" }}>
-        {desc}
-      </p>
+      <p className="text-sm leading-relaxed text-white/50">{desc}</p>
     </div>
   );
 }
