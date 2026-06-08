@@ -1,6 +1,7 @@
 "use client";
 
-import { Trophy, Zap, Shield, Clock, Crosshair, Award, TrendingUp, Swords } from "lucide-react";
+import Link from "next/link";
+import { Trophy, Zap, Shield, Clock, Crosshair, Award, TrendingUp, Swords, ChevronRight } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 
@@ -66,7 +67,7 @@ export default function LeagueHypePage() {
               <LeagueCard 
                 num="01" 
                 title="The Matchday" 
-                desc="A new high-stakes simulation drops every Wednesday. You are dropped into the most critical moments in tech history with the exact data the founders had. You have until Saturday to play."
+                desc="A new high-stakes simulation drops every Wednesday and Sunday. You are dropped into the most critical moments in tech history with the exact data the founders had."
                 color="#E90052"
                 icon={Clock}
               />
@@ -91,6 +92,16 @@ export default function LeagueHypePage() {
                 color="#FACC15"
                 icon={Swords}
               />
+            </div>
+            
+            <div className="mt-12 flex justify-center w-full">
+              <Link 
+                href="/simulate/rules"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all hover:scale-105"
+                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", color: "var(--text-primary)" }}
+              >
+                Read Official Rules <ChevronRight size={16} />
+              </Link>
             </div>
           </div>
 
