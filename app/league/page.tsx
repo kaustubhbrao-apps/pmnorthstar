@@ -1,167 +1,114 @@
 "use client";
 
-import { Trophy, Zap, Shield, Clock, Crosshair, Award, TrendingUp, Swords } from "lucide-react";
+import { Trophy, Zap, Shield, Clock, Crosshair, Award, TrendingUp, Swords, ChevronRight } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 
 export default function LeagueHypePage() {
   return (
     <SidebarShell activeNav="league" backLabelDesktop="Back to Simulation" backHref="/simulate">
-      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-12 text-center max-w-3xl mx-auto w-full">
-        {/* Brutalist "Launching Soon" chip */}
-        <div 
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-mono font-bold tracking-widest uppercase mb-8" 
-          style={{ background: "#FACC15", color: "#000" }}
-        >
-          <Trophy size={14} strokeWidth={2.5} />
-          Launching Soon
-        </div>
+      <div className="flex-1 flex flex-col w-full relative overflow-hidden bg-[#0A0A0A]">
+        
+        {/* Dynamic Premier League inspired geometric background */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] opacity-20 pointer-events-none" style={{
+          background: "linear-gradient(135deg, #E90052 0%, transparent 50%)",
+          transform: "rotate(-15deg) translate(20%, -20%)"
+        }} />
+        <div className="absolute bottom-0 left-0 w-[800px] h-[800px] opacity-10 pointer-events-none" style={{
+          background: "linear-gradient(45deg, #00FF85 0%, transparent 50%)",
+          transform: "rotate(15deg) translate(-20%, 20%)"
+        }} />
 
-        {/* Clean, Sharp Title */}
-        <h1 
-          className="font-display text-5xl sm:text-7xl font-extrabold tracking-tight mb-6 leading-none"
-          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-        >
-          Simulation League
-        </h1>
-
-        <p 
-          className="text-lg sm:text-xl mb-12 leading-relaxed"
-          style={{ color: "var(--text-muted)" }}
-        >
-          The ultimate proving ground for Product Managers. Real-world crisis scenarios. Global leaderboards.{" "}
-          <strong className="text-white">One shot to make the right call.</strong>
-        </p>
-
-        {/* Call to Action / Substack Form */}
-        <div className="w-full max-w-md mx-auto text-left mb-16">
-          <SubscribeForm
-            variant="card"
-            surface="league_hype"
-            headline="Get notified when Season 1 starts."
-            subhead="Drop your email to get an alert the moment the first Matchday goes live. It's free."
-          />
-        </div>
-
-        {/* Feature Grid - Flat Northstar style */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left pb-16">
-          <HypeFeature 
-            icon={Clock} 
-            title="Weekly Drops" 
-            desc="A new high-stakes simulation drops every Wednesday."
-            color="#2563EB"
-          />
-          <HypeFeature 
-            icon={Shield} 
-            title="Verified Accounts" 
-            desc="You must log in with a verified Google account to play."
-            color="#059669"
-          />
-          <HypeFeature 
-            icon={Zap} 
-            title="No Do-Overs" 
-            desc="Only your first attempt counts on the global standings."
-            color="#DC2626"
-          />
-        </div>
-
-        {/* Deep Dive Hype Section - Flat styling */}
-        <div className="w-full mt-4 pt-16 border-t border-white/5">
-          <h2 
-            className="font-display text-3xl sm:text-4xl font-bold mb-12 text-center" 
-            style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-          >
-            What is the League?
-          </h2>
+        <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-16 text-center max-w-4xl mx-auto w-full relative z-10">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto pb-16">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <div 
-                  className="w-10 h-10 rounded flex items-center justify-center border" 
-                  style={{ background: "rgba(250, 204, 21, 0.1)", borderColor: "rgba(250, 204, 21, 0.2)", color: "#FACC15" }}
-                >
-                  <Crosshair size={20} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-2">High-Stakes Scenarios</h3>
-                <p className="leading-relaxed text-sm sm:text-base" style={{ color: "var(--text-muted)" }}>
-                  You are dropped into the most critical moments in tech history. The Slack pivot. The Airbnb survival crisis. You have the exact data the founders had. Can you make the call that saves the company?
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <div 
-                  className="w-10 h-10 rounded flex items-center justify-center border" 
-                  style={{ background: "rgba(219, 39, 119, 0.1)", borderColor: "rgba(219, 39, 119, 0.2)", color: "#DB2777" }}
-                >
-                  <Award size={20} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-2">Bragging Rights</h3>
-                <p className="leading-relaxed text-sm sm:text-base" style={{ color: "var(--text-muted)" }}>
-                  Every decision you make is scored against thousands of other PMs, Founders, and Builders. A gold badge on your profile means you saw what nobody else did. Prove your product intuition.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <div 
-                  className="w-10 h-10 rounded flex items-center justify-center border" 
-                  style={{ background: "rgba(16, 185, 129, 0.1)", borderColor: "rgba(16, 185, 129, 0.2)", color: "#10B981" }}
-                >
-                  <TrendingUp size={20} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-2">Global Leaderboard</h3>
-                <p className="leading-relaxed text-sm sm:text-base" style={{ color: "var(--text-muted)" }}>
-                  We track your cumulative points across the entire season. The top 100 players are immortalized on the public standings. Climbing the ranks takes consistency, sharp execution, and flawless logic.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 mt-1">
-                <div 
-                  className="w-10 h-10 rounded flex items-center justify-center border" 
-                  style={{ background: "rgba(59, 130, 246, 0.1)", borderColor: "rgba(59, 130, 246, 0.2)", color: "#3B82F6" }}
-                >
-                  <Swords size={20} />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-2">The Buddy Challenge</h3>
-                <p className="leading-relaxed text-sm sm:text-base" style={{ color: "var(--text-muted)" }}>
-                  Completed a drill? Copy your unique referral link and challenge your friends. If they log in and play your scenario, you earn a flat +3 Point bonus to your League total. May the best PM win.
-                </p>
-              </div>
+          {/* Badge */}
+          <div className="mb-8 relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#00FF85] to-[#00FFFF] rounded-full blur opacity-25 group-hover:opacity-75 transition duration-500" />
+            <div className="relative inline-flex items-center gap-2 px-5 py-2 rounded-full font-mono font-bold tracking-[0.2em] uppercase text-xs" style={{ background: "#111", color: "#00FF85", border: "1px solid rgba(0, 255, 133, 0.3)" }}>
+              <Trophy size={14} strokeWidth={3} />
+              Season 1 Coming Soon
             </div>
           </div>
+
+          {/* Massive Editorial Header */}
+          <h1 
+            className="font-display text-6xl sm:text-8xl md:text-[7rem] font-black tracking-tighter mb-6 uppercase italic leading-[0.85]"
+            style={{ color: "#FFF" }}
+          >
+            SIMULATION<br />
+            <span style={{ color: "#E90052" }}>LEAGUE</span>
+          </h1>
+
+          <p className="text-xl sm:text-2xl mb-16 leading-relaxed max-w-2xl font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>
+            The ultimate proving ground for <span className="text-white">Builders, Founders, and Operators</span>. Real-world crisis scenarios. Global leaderboards. No do-overs.
+          </p>
+
+          {/* Call to Action / Substack Form */}
+          <div className="w-full max-w-md mx-auto text-left mb-20">
+            <div className="p-1 rounded-2xl" style={{ background: "linear-gradient(135deg, #111, #222)" }}>
+              <SubscribeForm
+                variant="card"
+                surface="league_hype"
+                headline="Join the Waitlist."
+                subhead="Drop your email to get an alert the moment Matchday 1 goes live."
+              />
+            </div>
+          </div>
+
+          {/* League Mechanics Section */}
+          <div className="w-full text-left">
+            <div className="flex items-center gap-4 mb-10 border-b border-white/10 pb-4">
+              <div className="w-3 h-8 bg-[#00FF85] skew-x-[-15deg]" />
+              <h2 className="font-display text-4xl font-black uppercase tracking-tight italic">League Mechanics</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+              
+              <div className="group">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="text-3xl font-black italic opacity-20 group-hover:opacity-100 group-hover:text-[#E90052] transition-colors font-mono">01</div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">The Matchday</h3>
+                </div>
+                <p className="text-base leading-relaxed pl-12 border-l-2 border-white/5" style={{ color: "var(--text-muted)" }}>
+                  A new high-stakes simulation drops every Wednesday. You are dropped into the most critical moments in tech history with the exact data the founders had. You have until Saturday to play.
+                </p>
+              </div>
+
+              <div className="group">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="text-3xl font-black italic opacity-20 group-hover:opacity-100 group-hover:text-[#00FFFF] transition-colors font-mono">02</div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">One Shot Only</h3>
+                </div>
+                <p className="text-base leading-relaxed pl-12 border-l-2 border-white/5" style={{ color: "var(--text-muted)" }}>
+                  There are no do-overs in a crisis. You must log in with a verified Google account to play. Only your very first attempt counts for points on the global standings table. Make the right call.
+                </p>
+              </div>
+
+              <div className="group">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="text-3xl font-black italic opacity-20 group-hover:opacity-100 group-hover:text-[#00FF85] transition-colors font-mono">03</div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">The Standings</h3>
+                </div>
+                <p className="text-base leading-relaxed pl-12 border-l-2 border-white/5" style={{ color: "var(--text-muted)" }}>
+                  Every decision is scored. We track your cumulative points across the entire season. The top 100 players are immortalized on the public leaderboard. Earning a gold badge means you saw what nobody else did.
+                </p>
+              </div>
+
+              <div className="group">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="text-3xl font-black italic opacity-20 group-hover:opacity-100 group-hover:text-[#FACC15] transition-colors font-mono">04</div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight">Buddy Challenge</h3>
+                </div>
+                <p className="text-base leading-relaxed pl-12 border-l-2 border-white/5" style={{ color: "var(--text-muted)" }}>
+                  Completed a drill? Challenge your friends using your unique referral link. If they log in and play your scenario, you earn a flat +3 Point bonus to your League total.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </SidebarShell>
-  );
-}
-
-function HypeFeature({ icon: Icon, title, desc, color }: { icon: any, title: string, desc: string, color: string }) {
-  return (
-    <div 
-      className="p-5 flex flex-col h-full rounded-xl" 
-      style={{ 
-        background: "var(--card-bg)", 
-        border: "1.5px solid var(--card-border)",
-        borderTop: `4px solid ${color}`
-      }}
-    >
-      <Icon size={20} className="mb-3" style={{ color }} strokeWidth={2} />
-      <h3 className="text-white font-bold mb-1.5">{title}</h3>
-      <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{desc}</p>
-    </div>
   );
 }
