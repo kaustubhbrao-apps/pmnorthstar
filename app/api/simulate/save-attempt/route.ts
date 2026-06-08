@@ -13,8 +13,6 @@ import { getSession } from "@/lib/auth";
 import { getDrillBySlug, publishedDrills } from "@/data/drills";
 import type { DrillDimension } from "@/data/drills";
 import { checkRateLimit } from "@/lib/rate-limit";
-import { sendLeagueEmail, generateUnsubscribeToken } from "@/lib/email";
-import { referralBonusTemplate } from "@/lib/email-templates";
 
 export const runtime = "nodejs";
 
@@ -204,21 +202,19 @@ export async function POST(req: NextRequest) {
             const referrerUser = await tx.user.update({
               where: { id: referrerIdToUse },
               data: { leaguePoints: { increment: 3 } },
-              select: { email: true, username: true, emailOptOut: true }
+              select: { username: true }
             });
 
-            // Fire and forget the email notification
-            if (!referrerUser.emailOptOut) {
-              generateUnsubscribeToken(referrerIdToUse).then(token => {
-                const html = referralBonusTemplate({
-                  referrerUsername: referrerUser.username || "player",
-                  buddyUsername: session.username || session.name,
-                  drillTitle: drill.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-                  unsubscribeToken: token
-                });
-                sendLeagueEmail(referrerUser.email, "You earned +3 league points 🏆", html).catch(() => {});
-              }).catch(() => {});
-            }
+            // Create an in-app notification
+            const buddyName = session.username ? `@${session.username}` : session.name;
+            const drillTitleStr = drill.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+            await tx.inAppNotification.create({
+              data: {
+                userId: referrerIdToUse,
+                type: "referral_bonus",
+                message: `${buddyName} played "${drillTitleStr}" using your link. You earned +3 League Points! 🏆`,
+              }
+            });
           } catch (e) {
             // Unique constraint violation or invalid referrerId. Safe to ignore.
           }

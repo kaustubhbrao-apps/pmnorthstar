@@ -8,6 +8,7 @@ import {
   PLAYLIST_COUNT,
 } from "@/data/inventory-counts";
 import { ConsentBanner } from "@/components/ConsentBanner";
+import { NotificationToaster } from "@/components/NotificationToaster";
 import "./globals.css";
 
 // Self-hosted fonts via next/font. Eliminates the render-blocking
@@ -162,6 +163,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <NotificationToaster />
         <ConsentBanner />
         <Analytics />
         <SpeedInsights />

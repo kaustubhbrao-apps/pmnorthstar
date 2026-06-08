@@ -30,8 +30,21 @@ model User {
   drillAttempts       DrillAttempt[]
   leagueReferrals     LeagueReferral[]     @relation("Referrer")
   leagueReferred      LeagueReferral[]     @relation("Referred")
+  inAppNotifications  InAppNotification[]
 
   @@map("users")
+}
+
+model InAppNotification {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  type      String   // e.g., "referral_bonus"
+  message   String
+  isRead    Boolean  @default(false) @map("is_read")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@map("in_app_notifications")
 }
 
 model Session {
