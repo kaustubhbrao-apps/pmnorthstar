@@ -13,6 +13,8 @@ import { getSession } from "@/lib/auth";
 import { getDrillBySlug, publishedDrills } from "@/data/drills";
 import type { DrillDimension } from "@/data/drills";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { sendLeagueEmail, generateUnsubscribeToken } from "@/lib/email";
+import { referralBonusTemplate } from "@/lib/email-templates";
 
 export const runtime = "nodejs";
 
@@ -199,10 +201,24 @@ export async function POST(req: NextRequest) {
               },
             });
             // Reward the referrer
-            await tx.user.update({
+            const referrerUser = await tx.user.update({
               where: { id: referrerIdToUse },
               data: { leaguePoints: { increment: 3 } },
+              select: { email: true, username: true, emailOptOut: true }
             });
+
+            // Fire and forget the email notification
+            if (!referrerUser.emailOptOut) {
+              generateUnsubscribeToken(referrerIdToUse).then(token => {
+                const html = referralBonusTemplate({
+                  referrerUsername: referrerUser.username || "player",
+                  buddyUsername: session.username || session.name,
+                  drillTitle: drill.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+                  unsubscribeToken: token
+                });
+                sendLeagueEmail(referrerUser.email, "You earned +3 league points 🏆", html).catch(() => {});
+              }).catch(() => {});
+            }
           } catch (e) {
             // Unique constraint violation or invalid referrerId. Safe to ignore.
           }
