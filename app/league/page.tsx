@@ -54,7 +54,7 @@ export default function LeagueHypePage() {
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl mb-10 md:mb-12 leading-relaxed max-w-xl font-medium" style={{ color: "var(--text-muted)" }}>
-                The ultimate proving and learning ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Global leaderboards. Real crisis scenarios. No do-overs.
+                The ultimate proving and learning ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Score points. Climb the ranks. Can you stay at the top across 50 intense Matchdays?
               </p>
 
               {/* Waitlist Box */}
@@ -89,7 +89,7 @@ export default function LeagueHypePage() {
               <EditorialCard 
                 num="03"
                 title="The Standings"
-                desc="Cumulative points across the entire season. The top 100 are immortalized. Gold badges for perfect logic."
+                desc="It's all about scoring points. We track your cumulative total across 50 matchdays. Prove you're the absolute best."
               />
               <EditorialCard 
                 num="04"
