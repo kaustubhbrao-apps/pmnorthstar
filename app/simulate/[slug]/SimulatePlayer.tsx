@@ -1264,7 +1264,7 @@ function OutcomeView({
           variant="card"
           surface="simulateit_result"
           headline="We'll email you when the latest one drops."
-          subhead="Subscribe to get the newest Simulation League matchdays and product teardowns straight to your inbox."
+          subhead="Subscribe to get new branching simulations and product teardowns straight to your inbox."
         />
       </div>
     </div>
