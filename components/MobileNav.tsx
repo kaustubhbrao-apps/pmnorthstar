@@ -10,6 +10,7 @@ import {
   Sparkles,
   Gauge,
   Brain,
+  Trophy,
 } from "lucide-react";
 import { caseStudies } from "@/data/caseStudies";
 import { playlists } from "@/data/learn";
@@ -100,6 +101,19 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
         >
           NEW
         </span>
+      </Link>
+
+      {/* Simulation League — Hype page link in mobile nav */}
+      <Link
+        href="/league"
+        className="chip flex-shrink-0 inline-flex items-center gap-1.5"
+        style={{
+          borderColor: "rgba(250, 204, 21, 0.4)",
+          background: "rgba(250, 204, 21, 0.08)",
+        }}
+      >
+        <Trophy size={11} strokeWidth={1.6} style={{ color: "#FACC15" }} />
+        <span style={{ color: "var(--text-primary)" }}>League</span>
       </Link>
 
       {/* CheckIt — site readiness scorecard. */}

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain } from "lucide-react";
+import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, Trophy } from "lucide-react";
 import {
   CASE_STUDY_COUNT,
   BOOK_COUNT,
@@ -179,6 +179,21 @@ export function Sidebar({
               }}
             >
               NEW
+            </span>
+          </Link>
+
+          {/* Simulation League — The Hype Page */}
+          <Link
+            href="/league"
+            onClick={onClose}
+            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "league" ? "active" : ""}`}
+            style={{
+              background: activeNav === "league" ? "rgba(250, 204, 21, 0.1)" : "transparent",
+            }}
+          >
+            <Trophy size={15} strokeWidth={1.8} style={{ color: "#FACC15" }} />
+            <span style={{ letterSpacing: "-0.005em", color: activeNav === "league" ? "#FACC15" : "inherit" }}>
+              Simulation League
             </span>
           </Link>
 
