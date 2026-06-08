@@ -1,29 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowLeft, Trophy, Zap, Shield, Clock } from "lucide-react";
+import { Trophy, Zap, Shield, Clock } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { SidebarShell } from "@/components/SidebarShell";
 
 export default function LeagueHypePage() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: "var(--page-bg)" }}>
-      {/* Header */}
-      <div className="px-6 py-6 w-full max-w-5xl mx-auto flex items-center justify-between">
-        <Link
-          href="/simulate"
-          className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-white"
-          style={{ color: "var(--text-muted)" }}
-        >
-          <ArrowLeft size={16} />
-          Back to SimulateIt
-        </Link>
-        <div className="flex items-center gap-2 font-display font-bold text-white tracking-tight">
-          north<span style={{ color: "var(--brand-primary)" }}>star</span>
-        </div>
-      </div>
-
-      {/* Hero Content */}
-      <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-12 text-center max-w-3xl mx-auto w-full">
+    <SidebarShell activeNav="league" backLabelDesktop="Back to Simulation" backHref="/simulate">
+      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-12 text-center max-w-3xl mx-auto w-full">
         <div 
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-xs font-mono font-bold tracking-widest uppercase mb-8" 
           style={{ background: "#FACC15", color: "#000" }}
@@ -58,7 +42,7 @@ export default function LeagueHypePage() {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-left pb-16">
           <HypeFeature 
             icon={Clock} 
             title="Weekly Drops" 
@@ -78,8 +62,8 @@ export default function LeagueHypePage() {
             color="#DC2626"
           />
         </div>
-      </main>
-    </div>
+      </div>
+    </SidebarShell>
   );
 }
 
