@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { ChevronRight, Trophy, Info, ArrowUpRight } from "lucide-react";
+import { ChevronRight, ArrowUpRight } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
-import { prisma } from "@/lib/prisma";
-import { getSession } from "@/lib/auth";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
@@ -17,7 +15,6 @@ function drillTitle(drill: Drill): string {
 }
 
 export default async function LeagueHypePage() {
-  const session = await getSession();
 
   const isDev = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
   const cutoff = isDev ? new Date("2099-12-31") : new Date();
@@ -105,6 +102,7 @@ export default async function LeagueHypePage() {
                 <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--border-subtle)]">
                   <SubscribeForm
                     variant="card"
+                    surface="league"
                     headline="Join the Roster."
                     subhead="Enter your email to get drafted when Matchday 1 goes live."
                   />

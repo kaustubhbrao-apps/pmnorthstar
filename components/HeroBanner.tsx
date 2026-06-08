@@ -129,7 +129,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
       {/* ── Right: Tool Carousel ── */}
       <div 
         ref={scrollRef}
-        className="flex overflow-x-auto snap-x gap-4 sm:gap-5 pb-2 scroll-container"
+        className="flex overflow-x-auto snap-x snap-mandatory pb-2 scroll-container"
       >
         {/* Simulation League Banner */}
         <Link
@@ -175,8 +175,8 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
             <div className="w-full mt-8">
               <div className="p-4 rounded bg-[var(--page-bg)] border border-[var(--border-subtle)]">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Points close in</span>
-                  <span className="font-mono text-xs font-bold" style={{ color: "var(--text-primary)" }}>48:00:00</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>50 Matchdays</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "var(--text-muted)" }}>Season 1</span>
                 </div>
                 
                 <div className="btn-primary w-full flex justify-center items-center gap-2 text-sm py-2.5">
