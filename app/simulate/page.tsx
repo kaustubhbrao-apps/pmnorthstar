@@ -4,7 +4,7 @@
 // out by publishedDrills() at request time.
 
 import Link from "next/link";
-import { ArrowUpRight, Brain, Clock, Target, Trophy } from "lucide-react";
+import { ArrowUpRight, Brain, Clock, Target, Trophy, Info } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { prisma } from "@/lib/prisma";
@@ -184,14 +184,28 @@ export default async function SimulatePage() {
         {showLeague && leaderboard.length > 0 && (
           <section className="mb-12">
             <div className="flex items-center justify-between gap-3 mb-5">
-              <div className="flex items-center gap-3">
-                <Trophy size={20} strokeWidth={2} style={{ color: "var(--brand-primary)" }} />
-                <h2
-                  className="font-display text-2xl font-bold"
-                  style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
+                  <Trophy size={20} strokeWidth={2} style={{ color: "var(--brand-primary)" }} />
+                  <h2
+                    className="font-display text-2xl font-bold"
+                    style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+                  >
+                    Season 1 Standings
+                  </h2>
+                </div>
+                <Link
+                  href="/simulate/rules"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium font-mono transition-colors"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    color: "var(--text-muted)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                  }}
                 >
-                  Season 1 Standings
-                </h2>
+                  <Info size={14} />
+                  League Rules
+                </Link>
               </div>
               <div className="hidden sm:flex items-center gap-2 text-xs font-mono" style={{ color: "var(--text-faint)" }}>
                 <span>Matchday {completedMatchdays} of {totalMatchdays}</span>
