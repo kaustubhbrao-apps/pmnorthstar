@@ -1263,8 +1263,8 @@ function OutcomeView({
         <SubscribeForm
           variant="card"
           surface="simulateit_result"
-          headline="Get a new drill every week."
-          subhead="Branching decision drills from real startup moments, straight to your inbox. Free. No paywall."
+          headline="We'll email you when the latest one drops."
+          subhead="Subscribe to get the newest Simulation League matchdays and product teardowns straight to your inbox."
         />
       </div>
     </div>
