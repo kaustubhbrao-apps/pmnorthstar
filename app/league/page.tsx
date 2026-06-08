@@ -1,30 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { Trophy, Shield, Clock, Crosshair, Award, TrendingUp, Swords, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 
 export default function LeagueHypePage() {
   return (
     <SidebarShell activeNav="league" backLabelDesktop="Back to Simulation" backHref="/simulate">
-      <div className="flex-1 flex flex-col w-full relative overflow-hidden bg-black selection:bg-[#0047FF] selection:text-white pb-24">
+      <div className="flex-1 flex flex-col w-full relative overflow-hidden pb-24">
         
         {/* Subtle SVG Noise Texture for Premium Editorial Feel */}
         <div 
-          className="absolute inset-0 pointer-events-none opacity-[0.03] z-50 mix-blend-overlay"
+          className="absolute inset-0 pointer-events-none opacity-[0.04] z-50 mix-blend-overlay"
           style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}
         />
 
         {/* Abstract Architectural/Sports Element */}
-        <div className="absolute top-0 right-0 w-[50vw] h-[100vh] opacity-20 pointer-events-none overflow-hidden">
-          <div className="absolute -right-[20%] top-[10%] w-[800px] h-[800px] border-[1px] border-white/20 rounded-full" />
-          <div className="absolute -right-[10%] top-[20%] w-[600px] h-[600px] border-[1px] border-white/10 rounded-full" />
-          <div className="absolute right-[0%] top-[30%] w-[400px] h-[400px] border-[1px] border-[#0047FF]/30 rounded-full" />
+        <div className="absolute top-0 right-0 w-[50vw] h-[100vh] opacity-20 pointer-events-none overflow-hidden hidden md:block">
+          <div className="absolute -right-[20%] top-[10%] w-[800px] h-[800px] border border-[var(--border-subtle)] rounded-full" />
+          <div className="absolute -right-[10%] top-[20%] w-[600px] h-[600px] border border-[var(--border-subtle)] rounded-full" />
+          <div className="absolute right-[0%] top-[30%] w-[400px] h-[400px] border border-[var(--brand-primary)] opacity-30 rounded-full" />
         </div>
 
-        {/* Massive Ambient Blue Glow */}
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(0, 71, 255, 0.15) 0%, transparent 70%)" }} />
+        {/* Ambient Brand Glow */}
+        <div 
+          className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none opacity-20" 
+          style={{ background: "radial-gradient(circle, var(--brand-primary) 0%, transparent 70%)" }} 
+        />
 
         <div className="flex-1 flex flex-col px-4 sm:px-12 pt-20 pb-16 max-w-7xl mx-auto w-full relative z-10">
           
@@ -34,40 +37,44 @@ export default function LeagueHypePage() {
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               
               {/* Badge */}
-              <div className="mb-10 inline-flex items-center gap-3 px-4 py-1.5 border border-white/10 rounded-full">
-                <div className="w-2 h-2 rounded-full bg-[#0047FF] animate-pulse" />
-                <span className="font-mono font-bold tracking-widest uppercase text-xs text-white/70">Season 1 Launching June 12</span>
+              <div 
+                className="mb-10 inline-flex items-center gap-3 px-4 py-1.5 border rounded"
+                style={{ borderColor: "var(--border-subtle)" }}
+              >
+                <div className="w-2 h-2 bg-[var(--brand-primary)] animate-pulse" />
+                <span className="font-mono font-bold tracking-widest uppercase text-xs" style={{ color: "var(--text-muted)" }}>
+                  Season 1 Launching June 12
+                </span>
               </div>
 
               {/* Stark Editorial Header */}
-              <h1 className="font-display text-7xl sm:text-8xl md:text-[8rem] font-black tracking-tighter mb-8 uppercase leading-[0.85] text-white">
+              <h1 className="font-display text-7xl sm:text-8xl md:text-[8rem] font-black tracking-tighter mb-8 uppercase leading-[0.85]" style={{ color: "var(--text-primary)" }}>
                 SIMULATION<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0047FF] to-[#0094FF]">LEAGUE</span>
+                <span style={{ color: "var(--brand-primary)" }}>LEAGUE</span>
               </h1>
 
-              <p className="text-xl sm:text-2xl mb-12 leading-relaxed max-w-xl font-medium text-white/60">
-                The ultimate proving ground for <span className="text-white">Builders, Founders, and Operators</span>. Global leaderboards. Real crisis scenarios. No do-overs.
+              <p className="text-xl sm:text-2xl mb-12 leading-relaxed max-w-xl font-medium" style={{ color: "var(--text-muted)" }}>
+                The ultimate proving ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Global leaderboards. Real crisis scenarios. No do-overs.
               </p>
 
               {/* Waitlist Box */}
-              <div className="w-full max-w-md mb-16 relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0047FF] to-[#0094FF] rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500" />
-                <div className="relative p-[1px] bg-white/10 rounded-xl overflow-hidden">
-                  <div className="bg-black p-1 rounded-[11px]">
-                    <SubscribeForm
-                      variant="card"
-                      surface="league_hype"
-                      headline="Join the Roster."
-                      subhead="Enter your email to get drafted when Matchday 1 goes live."
-                    />
-                  </div>
+              <div className="w-full max-w-md mb-16 relative">
+                <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--border-subtle)]">
+                  <SubscribeForm
+                    variant="card"
+                    surface="league_hype"
+                    headline="Join the Roster."
+                    subhead="Enter your email to get drafted when Matchday 1 goes live."
+                  />
                 </div>
               </div>
             </div>
 
             {/* Right Column: Mechanics (Structured Grid) */}
             <div className="lg:col-span-5 lg:mt-12 flex flex-col gap-6">
-              <h2 className="font-mono text-sm uppercase tracking-[0.2em] text-white/40 mb-2 border-b border-white/10 pb-4">League Rules & Mechanics</h2>
+              <h2 className="font-mono text-sm uppercase tracking-[0.2em] mb-2 border-b pb-4" style={{ color: "var(--text-faint)", borderColor: "var(--border-subtle)" }}>
+                League Rules & Mechanics
+              </h2>
               
               <EditorialCard 
                 num="01"
@@ -92,10 +99,11 @@ export default function LeagueHypePage() {
 
               <Link 
                 href="/simulate/rules"
-                className="mt-6 flex items-center justify-between p-6 border border-white/10 hover:border-[#0047FF]/50 hover:bg-[#0047FF]/5 transition-all group rounded-xl"
+                className="mt-6 flex items-center justify-between p-6 border transition-all group rounded"
+                style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}
               >
-                <span className="font-bold uppercase tracking-wider text-sm text-white/80 group-hover:text-white">Read Official Rulebook</span>
-                <ChevronRight size={20} className="text-white/40 group-hover:text-[#0047FF] transition-colors" />
+                <span className="font-bold uppercase tracking-wider text-sm transition-colors" style={{ color: "var(--text-primary)" }}>Read Official Rulebook</span>
+                <ChevronRight size={20} className="transition-colors" style={{ color: "var(--text-faint)" }} />
               </Link>
             </div>
 
@@ -108,13 +116,16 @@ export default function LeagueHypePage() {
 
 function EditorialCard({ num, title, desc }: { num: string, title: string, desc: string }) {
   return (
-    <div className="p-6 border border-white/5 bg-white/[0.02] rounded-xl hover:bg-white/[0.04] transition-colors relative group">
-      <div className="absolute top-0 left-0 w-1 h-0 bg-[#0047FF] group-hover:h-full transition-all duration-300 rounded-l-xl" />
+    <div 
+      className="p-6 border rounded transition-colors relative group"
+      style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}
+    >
+      <div className="absolute top-0 left-0 w-1 h-0 bg-[var(--brand-primary)] group-hover:h-full transition-all duration-300 rounded-l" />
       <div className="flex items-baseline gap-4 mb-3">
-        <span className="font-mono text-xs text-[#0047FF] font-bold">{num}</span>
-        <h3 className="text-lg font-bold uppercase tracking-tight text-white/90">{title}</h3>
+        <span className="font-mono text-xs font-bold" style={{ color: "var(--brand-primary)" }}>{num}</span>
+        <h3 className="text-lg font-bold uppercase tracking-tight" style={{ color: "var(--text-primary)" }}>{title}</h3>
       </div>
-      <p className="text-sm leading-relaxed text-white/50">{desc}</p>
+      <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{desc}</p>
     </div>
   );
 }
