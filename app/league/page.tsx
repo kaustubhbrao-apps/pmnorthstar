@@ -1,6 +1,6 @@
 "use client";
 
-import { Trophy, Zap, Shield, Clock } from "lucide-react";
+import { Trophy, Zap, Shield, Clock, Crosshair, Award, TrendingUp, Swords } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 
@@ -89,6 +89,71 @@ export default function LeagueHypePage() {
             desc="Only your first attempt counts on the global standings."
             color="#EF4444"
           />
+        </div>
+
+        {/* Deep Dive Hype Section */}
+        <div className="w-full mt-8 pt-16 border-t border-white/5">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-12 text-center" style={{ color: "var(--text-primary)" }}>
+            What is the League?
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto pb-16">
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(250, 204, 21, 0.1)", color: "#FACC15", boxShadow: "inset 1px 1px 2px rgba(255,255,255,0.2)" }}>
+                  <Crosshair size={20} />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">High-Stakes Scenarios</h3>
+                <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                  You are dropped into the most critical moments in tech history. The Slack pivot. The Airbnb survival crisis. You have the exact data the founders had. Can you make the call that saves the company?
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(219, 39, 119, 0.1)", color: "#DB2777", boxShadow: "inset 1px 1px 2px rgba(255,255,255,0.2)" }}>
+                  <Award size={20} />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">Bragging Rights</h3>
+                <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                  Every decision you make is scored against thousands of other PMs, Founders, and Builders. A gold badge on your profile means you saw what nobody else did. Prove your product intuition.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(16, 185, 129, 0.1)", color: "#10B981", boxShadow: "inset 1px 1px 2px rgba(255,255,255,0.2)" }}>
+                  <TrendingUp size={20} />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">Global Leaderboard</h3>
+                <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                  We track your cumulative points across the entire season. The top 100 players are immortalized on the public standings. Climbing the ranks takes consistency, sharp execution, and flawless logic.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(59, 130, 246, 0.1)", color: "#3B82F6", boxShadow: "inset 1px 1px 2px rgba(255,255,255,0.2)" }}>
+                  <Swords size={20} />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">The Buddy Challenge</h3>
+                <p className="leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                  Completed a drill? Copy your unique referral link and challenge your friends. If they log in and play your scenario, you earn a flat +3 Point bonus to your League total. May the best PM win.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </SidebarShell>
