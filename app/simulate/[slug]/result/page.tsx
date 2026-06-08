@@ -129,7 +129,7 @@ export default function ResultSharePage({ params, searchParams }: PageProps) {
             className="text-sm font-medium"
             style={{ color: "var(--text-muted)" }}
           >
-            See all drills →
+            Back to the library →
           </Link>
         </div>
       </div>

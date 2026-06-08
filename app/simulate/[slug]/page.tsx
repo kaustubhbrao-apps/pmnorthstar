@@ -42,14 +42,14 @@ export default function DrillPage({ params }: PageProps) {
   if (!drill) notFound();
   // In production, future-dated drills 404. In dev, every drill is
   // reachable so we can author and test before publish.
-  const isDev = process.env.NODE_ENV !== "production";
+  const isDev = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
   if (!isDev && new Date(drill.publishedAt) > new Date()) notFound();
 
   return (
     <SidebarShell
       activeNav="simulate"
-      backHref="/simulate"
-      backLabelDesktop="SimulateIt"
+      backHref="/"
+      backLabelDesktop="Back to the library"
       backLabelMobile="Back"
       shareTitle={`SimulateIt Drill: ${drillTitle(drill)}`}
       shareText={drill.principle}

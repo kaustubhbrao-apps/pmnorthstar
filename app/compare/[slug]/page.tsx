@@ -32,7 +32,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
     <SidebarShell
       activeNav="explore"
       backHref="/"
-      backLabelDesktop="Home"
+      backLabelDesktop="Back to the library"
       backLabelMobile="Home"
       shareTitle={`${cmp.title} on northstar`}
       shareText={`${cmp.title}: ${cmp.intro}`}

@@ -146,7 +146,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
               style={{ color: "var(--text-muted)" }}
             >
               <ArrowLeft size={14} strokeWidth={1.6} />
-              <span className="hidden sm:inline">All books</span>
+              <span className="hidden sm:inline">Back to the library</span>
               <span className="sm:hidden">Back</span>
             </Link>
           </div>

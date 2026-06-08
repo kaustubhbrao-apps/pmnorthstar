@@ -38,6 +38,7 @@ import { track } from "@/lib/track";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { useUserState } from "@/lib/use-user-state";
 import { AuthModal } from "@/components/AuthModal";
+import { CountdownTimer } from "@/components/CountdownTimer";
 
 type Phase = "intro" | "decision" | "reveal" | "outcome";
 
@@ -470,6 +471,13 @@ function IntroView({
               {plays.toLocaleString()} {plays === 1 ? "play" : "plays"}
             </span>
           </>
+        )}
+        {drill.isLeagueMatch && drill.leagueEndsAt && (
+          <span className="flex items-center gap-2">
+            <span>•</span>
+            <span className="opacity-70">Points close in:</span>
+            <CountdownTimer targetDate={drill.leagueEndsAt} />
+          </span>
         )}
       </div>
 

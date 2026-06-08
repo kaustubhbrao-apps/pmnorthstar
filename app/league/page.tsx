@@ -1,22 +1,45 @@
-"use client";
-
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Trophy, Info, ArrowUpRight } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
+import { prisma } from "@/lib/prisma";
+import { getSession } from "@/lib/auth";
+import { publishedDrills, type Drill } from "@/data/drills";
+import { CountdownTimer } from "@/components/CountdownTimer";
 
-export default function LeagueHypePage() {
+export const revalidate = 60;
+
+function drillTitle(drill: Drill): string {
+  return drill.slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+export default async function LeagueHypePage() {
+  const session = await getSession();
+
+  const isDev = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
+  const cutoff = isDev ? new Date("2099-12-31") : new Date();
+  const all = publishedDrills(cutoff);
+  
+  // Find the active league match
+  const leagueMatches = all.filter(d => d.isLeagueMatch);
+  const activeMatch = leagueMatches.find(d => new Date(d.publishedAt) <= cutoff && d.leagueEndsAt && new Date(d.leagueEndsAt) > new Date());
+  const completedMatchdays = leagueMatches.filter(d => new Date(d.publishedAt) <= cutoff).length;
+  const totalMatchdays = 50;
+
   return (
-    <SidebarShell activeNav="league" backLabelDesktop="Back to Simulation" backHref="/simulate">
+    <SidebarShell activeNav="league" backLabelDesktop="Back to the library" backHref="/">
       <div className="flex-1 flex flex-col w-full relative overflow-hidden pb-24">
         
-        {/* Subtle SVG Noise Texture for Premium Editorial Feel */}
+        {/* Subtle SVG Noise Texture */}
         <div 
           className="absolute inset-0 pointer-events-none opacity-[0.04] z-50 mix-blend-overlay"
           style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}
         />
 
-        {/* Abstract Architectural/Sports Element */}
+        {/* Abstract Architectural Elements */}
         <div className="absolute top-0 right-0 w-[50vw] h-[100vh] opacity-20 pointer-events-none overflow-hidden hidden md:block">
           <div className="absolute -right-[20%] top-[10%] w-[800px] h-[800px] border border-[var(--border-subtle)] rounded-full" />
           <div className="absolute -right-[10%] top-[20%] w-[600px] h-[600px] border border-[var(--border-subtle)] rounded-full" />
@@ -31,23 +54,21 @@ export default function LeagueHypePage() {
 
         <div className="flex-1 flex flex-col px-4 sm:px-8 md:px-12 pt-12 md:pt-20 pb-16 max-w-7xl mx-auto w-full relative z-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start mb-20">
             
             {/* Left Column: Typography & Hype */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               
-              {/* Badge */}
               <div 
                 className="mb-10 inline-flex items-center gap-3 px-4 py-1.5 border rounded"
                 style={{ borderColor: "var(--border-subtle)" }}
               >
                 <div className="w-2 h-2 bg-[var(--brand-primary)] animate-pulse" />
                 <span className="font-mono font-bold tracking-widest uppercase text-xs" style={{ color: "var(--text-muted)" }}>
-                  Season 1 Launching June 12
+                  Matchday {completedMatchdays} of {totalMatchdays}
                 </span>
               </div>
 
-              {/* Stark Editorial Header */}
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] xl:text-[8rem] font-black tracking-tighter mb-4 md:mb-6 xl:mb-8 uppercase leading-[0.9] lg:leading-[0.85]" style={{ color: "var(--text-primary)" }}>
                 SIMULATION<br />
                 <span style={{ color: "var(--brand-primary)" }}>LEAGUE</span>
@@ -57,45 +78,50 @@ export default function LeagueHypePage() {
                 The ultimate proving and learning ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Score points. Climb the ranks. Can you stay at the top across 50 intense Matchdays?
               </p>
 
-              {/* Waitlist Box */}
-              <div className="w-full max-w-md mb-16 relative">
+              {activeMatch && activeMatch.leagueEndsAt && (
+                <div className="w-full max-w-md mb-16 relative">
+                  <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--border-subtle)]">
+                    <div className="p-5" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Points close in</span>
+                        <CountdownTimer targetDate={activeMatch.leagueEndsAt} />
+                      </div>
+                      <h3 className="font-display text-2xl font-bold mb-2" style={{ color: "var(--text-primary)" }}>{drillTitle(activeMatch)}</h3>
+                      <p className="text-sm line-clamp-2 mb-6" style={{ color: "var(--text-muted)" }}>{activeMatch.intro}</p>
+                      <Link 
+                        href={`/simulate/${activeMatch.slug}`}
+                        className="btn-primary w-full flex justify-center items-center gap-2"
+                      >
+                        Enter the Drill
+                        <ArrowUpRight size={16} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Substack Subscribe Box */}
+              <div className="w-full max-w-md relative">
                 <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--border-subtle)]">
                   <SubscribeForm
                     variant="card"
-                    surface="league_hype"
                     headline="Join the Roster."
                     subhead="Enter your email to get drafted when Matchday 1 goes live."
                   />
                 </div>
               </div>
+
             </div>
 
-            {/* Right Column: Mechanics (Structured Grid) */}
+            {/* Right Column: Mechanics */}
             <div className="lg:col-span-5 lg:mt-12 flex flex-col gap-6">
               <h2 className="font-mono text-sm uppercase tracking-[0.2em] mb-2 border-b pb-4" style={{ color: "var(--text-faint)", borderColor: "var(--border-subtle)" }}>
                 League Rules & Mechanics
               </h2>
               
-              <EditorialCard 
-                num="01"
-                title="The Matchday"
-                desc="A high-stakes drill drops every Wednesday and Sunday. You have until the next drop to lock in your score."
-              />
-              <EditorialCard 
-                num="02"
-                title="One Shot Only"
-                desc="No do-overs in a crisis. You must log in. Only your absolute first attempt counts for leaderboard points."
-              />
-              <EditorialCard 
-                num="03"
-                title="The Standings"
-                desc="It's all about scoring points. We track your cumulative total across 50 matchdays. Prove you're the absolute best."
-              />
-              <EditorialCard 
-                num="04"
-                title="Buddy Bonus"
-                desc="Challenge friends with your unique referral link. Earn +3 bonus points when they log in and play your drill."
-              />
+              <EditorialCard num="01" title="The Matchday" desc="A high-stakes drill drops every Wednesday and Sunday. You have until the next drop to lock in your score." />
+              <EditorialCard num="02" title="One Shot Only" desc="No do-overs in a crisis. You must log in. Only your absolute first attempt counts for leaderboard points." />
+              <EditorialCard num="03" title="The Standings" desc="It's all about scoring points. We track your cumulative total across 50 matchdays. Prove you're the absolute best." />
 
               <Link 
                 href="/simulate/rules"
@@ -106,8 +132,8 @@ export default function LeagueHypePage() {
                 <ChevronRight size={20} className="transition-colors" style={{ color: "var(--text-faint)" }} />
               </Link>
             </div>
-
           </div>
+
         </div>
       </div>
     </SidebarShell>

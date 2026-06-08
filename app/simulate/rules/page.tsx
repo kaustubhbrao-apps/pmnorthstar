@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RulesPage() {
   return (
-    <SidebarShell activeNav="simulate" backLabelDesktop="Back to Simulation" backHref="/simulate">
+    <SidebarShell activeNav="simulate" backLabelDesktop="Back to the library" backHref="/">
       <div className="flex-1 flex flex-col w-full relative overflow-hidden min-h-screen pb-24">
         
         {/* Subtle SVG Noise Texture */}
