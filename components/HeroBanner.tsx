@@ -81,7 +81,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
           border: "1.5px solid var(--card-border)",
         }}
       >
-        <div className="flex items-center gap-2.5 mb-5">
+        <div className="flex items-center gap-2.5 mb-7">
           <span
             className="w-5 h-px"
             style={{ background: "var(--brand-primary)" }}
