@@ -21,9 +21,12 @@ export function AuthModal({ onClose }: AuthModalProps) {
   const [googleHref, setGoogleHref] = useState("/api/auth/google/start");
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const next = params.get("next");
-    if (next) {
-      setGoogleHref(`/api/auth/google/start?next=${encodeURIComponent(next)}`);
+    const explicitNext = params.get("next");
+    const currentPath = window.location.pathname + window.location.search;
+    const targetNext = explicitNext || currentPath;
+
+    if (targetNext && targetNext !== "/") {
+      setGoogleHref(`/api/auth/google/start?next=${encodeURIComponent(targetNext)}`);
     }
   }, []);
 
