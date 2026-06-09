@@ -3,9 +3,9 @@ slug: netflix-dvd-streaming-bet-2007
 caseStudySlug: netflix-dvd-to-streaming
 type: historical
 category: strategic
-publishedAt: '2026-09-06T15:00:00+00:00'
+publishedAt: '2026-09-13T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-09T15:00:00+00:00'
+leagueEndsAt: '2026-09-16T15:00:00+00:00'
 year: 2007
 estimatedMinutes: 7
 principle: |

@@ -4,9 +4,9 @@ type: historical
 category: Founder
 year: 2017
 estimatedMinutes: 15
-publishedAt: '2026-11-04T15:00:00+00:00'
+publishedAt: '2026-11-22T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-11-08T15:00:00+00:00'
+leagueEndsAt: '2026-11-25T15:00:00+00:00'
 principle: Disguising a capital-intensive real estate business as a high-margin tech company will eventually collapse under public scrutiny.
 intro: |
   It's 2017. You are a senior executive at WeWork, working closely with charismatic founder Adam Neumann. SoftBank has just poured billions into the company, valuing it at $20 billion. The mandate from Neumann and Masa Son is simple: blitzscale. Grow at all costs, open locations globally, and dominate the market.

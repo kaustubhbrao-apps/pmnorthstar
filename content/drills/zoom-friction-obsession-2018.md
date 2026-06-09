@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 2018
 estimatedMinutes: 15
-publishedAt: '2026-11-15T15:00:00+00:00'
+publishedAt: '2026-12-02T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-11-18T15:00:00+00:00'
+leagueEndsAt: '2026-12-06T15:00:00+00:00'
 principle: Experience is the only defensible moat in a saturated commodity market.
 intro: |
   It is 2018. The enterprise video conferencing market is widely considered "solved." Giants like Cisco (WebEx), Microsoft (Skype for Business), and LogMeIn (GoToMeeting) control 90% of the Fortune 500. They have the sales teams, the security certifications, and the bundled contracts.

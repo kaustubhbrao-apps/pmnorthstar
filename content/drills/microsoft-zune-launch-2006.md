@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 2006
 estimatedMinutes: 15
-publishedAt: '2026-08-30T15:00:00+00:00'
+publishedAt: '2026-09-06T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-02T15:00:00+00:00'
+leagueEndsAt: '2026-09-09T15:00:00+00:00'
 principle: Entering a mature market requires a 10x differentiator, not just feature parity with the dominant incumbent.
 intro: |
   It's late 2006. Apple's iPod has an iron grip on the portable media player market, holding over 75% market share. The iTunes ecosystem is a fortress. 

@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 2011
 estimatedMinutes: 15
-publishedAt: '2026-08-12T15:00:00+00:00'
+publishedAt: '2026-08-19T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-16T15:00:00+00:00'
+leagueEndsAt: '2026-08-23T15:00:00+00:00'
 principle: Identity policies must align with user trust and platform culture, not just data aggregation goals.
 intro: |
   It's July 2011. Google has just launched Google+, its most ambitious attempt yet to challenge Facebook's dominance in social networking. Early traction is phenomenal—millions of users are signing up, drawn by Circles and a cleaner interface. 

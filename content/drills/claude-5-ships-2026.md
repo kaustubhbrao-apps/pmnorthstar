@@ -2,9 +2,9 @@
 slug: claude-5-ships-2026
 type: current
 category: strategic
-publishedAt: '2026-07-12T15:00:00+00:00'
+publishedAt: '2026-07-15T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-15T15:00:00+00:00'
+leagueEndsAt: '2026-07-19T15:00:00+00:00'
 estimatedMinutes: 7
 principle: |
   Don't pivot a production stack on a model release. The right time to

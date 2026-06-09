@@ -3,9 +3,9 @@ slug: slack-pivot-from-glitch-2013
 caseStudySlug: slack-gaming-pivot
 type: historical
 category: pivots
-publishedAt: '2026-10-04T15:00:00+00:00'
+publishedAt: '2026-10-18T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-07T15:00:00+00:00'
+leagueEndsAt: '2026-10-21T15:00:00+00:00'
 year: 2013
 estimatedMinutes: 8
 principle: |

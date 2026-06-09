@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 2017
 estimatedMinutes: 15
-publishedAt: '2026-10-25T15:00:00+00:00'
+publishedAt: '2026-11-08T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-28T15:00:00+00:00'
+leagueEndsAt: '2026-11-11T15:00:00+00:00'
 principle: In UGC media, securing foundational IP rights early is a competitive moat that prevents existential platform risk.
 intro: |
   It's late 2017. You are a key executive at ByteDance. You've recently acquired Musical.ly for $1 billion and merged it with your own app, Douyin, to create the global version: TikTok. 

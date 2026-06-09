@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 1975
 estimatedMinutes: 15
-publishedAt: '2026-10-11T15:00:00+00:00'
+publishedAt: '2026-10-25T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-14T15:00:00+00:00'
+leagueEndsAt: '2026-10-28T15:00:00+00:00'
 principle: In network effect markets, open standards and widespread adoption beat proprietary technical superiority.
 intro: |
   It's 1975. You are a senior executive at Sony. You are about to launch the Betamax, a revolutionary home video cassette recorder. It boasts superior picture quality, a compact tape design, and the unmatched engineering pedigree of Sony. You intend to own the living room.

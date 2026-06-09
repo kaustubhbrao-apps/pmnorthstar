@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 2018
 estimatedMinutes: 15
-publishedAt: '2026-10-18T15:00:00+00:00'
+publishedAt: '2026-11-01T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-21T15:00:00+00:00'
+leagueEndsAt: '2026-11-04T15:00:00+00:00'
 principle: Over-automation of complex physical processes leads to catastrophic bottlenecks; humans are underrated at complex dexterity.
 intro: |
   It's early 2018. Tesla is in "production hell" with the Model 3. The company’s survival depends on scaling production to 5,000 cars per week, but currently, you are barely scraping together a few hundred.

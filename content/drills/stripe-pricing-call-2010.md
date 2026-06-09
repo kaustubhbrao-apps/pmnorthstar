@@ -3,9 +3,9 @@ slug: stripe-pricing-call-2010
 caseStudySlug: stripe-developer-first
 type: historical
 category: pricing
-publishedAt: '2026-10-14T15:00:00+00:00'
+publishedAt: '2026-10-28T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-18T15:00:00+00:00'
+leagueEndsAt: '2026-11-01T15:00:00+00:00'
 year: 2010
 estimatedMinutes: 7
 principle: |

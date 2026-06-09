@@ -3,9 +3,9 @@ slug: quibi-pricing-2020
 caseStudySlug: quibi-shutdown
 type: historical
 category: pricing
-publishedAt: '2026-09-23T15:00:00+00:00'
+publishedAt: '2026-10-07T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-27T15:00:00+00:00'
+leagueEndsAt: '2026-10-11T15:00:00+00:00'
 year: 2020
 estimatedMinutes: 5
 principle: |

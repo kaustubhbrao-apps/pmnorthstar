@@ -4,9 +4,9 @@ type: historical
 category: Product
 year: 2016
 estimatedMinutes: 15
-publishedAt: '2026-10-07T15:00:00+00:00'
+publishedAt: '2026-10-21T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-11T15:00:00+00:00'
+leagueEndsAt: '2026-10-25T15:00:00+00:00'
 principle: Artificial scarcity drives initial hype, but failing to transition to scalable distribution destroys the business.
 intro: |
   It's late 2016. You are leading the launch of Snap Inc.'s first hardware product: Spectacles. They are stylish sunglasses with an integrated camera that records 10-second circular videos directly to Snapchat.

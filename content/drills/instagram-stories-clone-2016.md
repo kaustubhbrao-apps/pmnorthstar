@@ -4,9 +4,9 @@ type: historical
 category: Product Strategy
 year: 2016
 estimatedMinutes: 15
-publishedAt: '2026-08-16T15:00:00+00:00'
+publishedAt: '2026-08-23T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-19T15:00:00+00:00'
+leagueEndsAt: '2026-08-26T15:00:00+00:00'
 principle: Don't be too proud to steal a working format if it solves your user's exact problem.
 intro: |
   It is mid-2016. You are Kevin Systrom, CEO and co-founder of Instagram. 

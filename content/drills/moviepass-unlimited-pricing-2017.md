@@ -4,9 +4,9 @@ type: historical
 category: Business
 year: 2017
 estimatedMinutes: 15
-publishedAt: '2026-09-02T15:00:00+00:00'
+publishedAt: '2026-09-09T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-06T15:00:00+00:00'
+leagueEndsAt: '2026-09-13T15:00:00+00:00'
 principle: Unit economics cannot be ignored; subsidizing heavy usage without a clear path to monetization is fatal.
 intro: |
   It's August 2017. You are part of the leadership team at MoviePass. The company has been struggling for years with various pricing models, trying to build a subscription service for theatrical movies. 

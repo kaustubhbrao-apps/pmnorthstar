@@ -3,9 +3,9 @@ slug: linear-pricing-2019
 caseStudySlug: linear-brand-from-day-one
 type: historical
 category: pricing
-publishedAt: '2026-08-23T15:00:00+00:00'
+publishedAt: '2026-08-30T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-26T15:00:00+00:00'
+leagueEndsAt: '2026-09-02T15:00:00+00:00'
 year: 2019
 estimatedMinutes: 6
 principle: |

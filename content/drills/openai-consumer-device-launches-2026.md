@@ -2,9 +2,9 @@
 slug: openai-consumer-device-launches-2026
 type: current
 category: strategic
-publishedAt: '2026-09-13T15:00:00+00:00'
+publishedAt: '2026-09-23T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-16T15:00:00+00:00'
+leagueEndsAt: '2026-09-27T15:00:00+00:00'
 estimatedMinutes: 6
 principle: |
   When a foundation-model lab ships hardware, every AI app builder

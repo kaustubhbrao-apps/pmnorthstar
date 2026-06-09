@@ -4,9 +4,9 @@ type: historical
 category: Product
 year: 2010
 estimatedMinutes: 15
-publishedAt: '2026-07-26T15:00:00+00:00'
+publishedAt: '2026-07-29T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-29T15:00:00+00:00'
+leagueEndsAt: '2026-08-02T15:00:00+00:00'
 principle: Never alienate your core power users in pursuit of mainstream growth without a transition plan.
 intro: |
   It's August 2010. You are the product lead at Digg, the undisputed king of social news aggregation. Your platform defines internet culture, driving massive traffic and boasting a passionate community of millions.
