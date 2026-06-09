@@ -23,11 +23,11 @@ nodes:
       The automated "fluff bot" meant to place fiberglass mats on battery packs is failing repeatedly, halting the entire line. The engineering team wants to rewrite the computer vision code, which will take weeks. What is your call?
     options:
       - text: "Tear out the 'fluff bot' immediately and replace it with human workers. Humans are better at handling flexible materials."
-        next: "node_human_workers"
+        leadsTo: "node_human_workers"
         points: 50
         rationale: "Recognizing that humans excel at tactile, adaptive tasks while robots excel at precise, repeatable tasks is crucial."
       - text: "Double down on the automation. Bring in extra software engineers and halt the line until the vision system is perfected."
-        next: "node_double_down_automation"
+        leadsTo: "node_double_down_automation"
         points: 0
         rationale: "Stubbornly clinging to automation for tasks better suited to humans caused massive delays and nearly bankrupted the company."
         
@@ -37,11 +37,11 @@ nodes:
       You wait for the code rewrite. The line remains stalled. Wall Street is panicking, and short sellers are circling. Tesla's cash reserves will run out in a matter of months. How do you address the cash crunch while waiting?
     options:
       - text: "Ask suppliers for retroactive price cuts and delay payments to conserve cash."
-        next: "node_supplier_squeeze"
+        leadsTo: "node_supplier_squeeze"
         points: 0
         rationale: "Squeezing suppliers during a crisis destroys trust and threatens your supply chain."
       - text: "Open up pre-orders for a future vehicle (like the Roadster) to generate immediate cash deposits."
-        next: "node_preorder_cash"
+        leadsTo: "node_preorder_cash"
         points: 20
         rationale: "A clever financing trick, but it doesn't solve the core manufacturing bottleneck."
         
@@ -51,11 +51,11 @@ nodes:
       You replaced the bot with humans, and that segment of the line is moving. But overall throughput is still too low because the main factory building is physically out of space for final assembly. You need more capacity immediately.
     options:
       - text: "Construct a massive, sprung-structure tent in the parking lot and build a new, simplified assembly line inside it."
-        next: "node_tent_factory"
+        leadsTo: "node_tent_factory"
         points: 50
         rationale: "A radically scrappy, out-of-the-box solution that solved the space constraint rapidly."
       - text: "Halt production to radically redesign the existing factory floor layout to squeeze in a second line."
-        next: "node_factory_redesign"
+        leadsTo: "node_factory_redesign"
         points: 0
         rationale: "Halting production entirely would have guaranteed bankruptcy; you cannot stop the line."
         

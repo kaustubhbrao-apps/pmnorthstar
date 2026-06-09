@@ -23,11 +23,11 @@ nodes:
       Instagram is officially launching 15-second videos with filters. Your core product is 6 seconds, no filters, raw and authentic. What is your immediate product response?
     options:
       - text: "Stay true to 6 seconds. It's our unique constraint and breeds creativity. Focus on making creation tools better."
-        next: "node_stay"
+        leadsTo: "node_stay"
         points: 0
         rationale: "Constraint breeds creativity, but when a competitor offers 'more' to the mainstream, constraint feels like a limitation."
       - text: "Immediately expand video length to 15 seconds to match Instagram and add basic filters to retain mainstream users."
-        next: "node_match"
+        leadsTo: "node_match"
         points: 50
         rationale: "Matching parity neutralizes the immediate switching trigger for average users."
   node_stay:
@@ -36,11 +36,11 @@ nodes:
       You stay the course. Instagram Video launches and immediately cannibalizes your casual user growth. But your top creators are still making incredible 6-second loops. However, they are starting to ask how they can make money.
     options:
       - text: "Build a native monetization platform (rev-share, tipping, brand deals portal) immediately, even if it delays core product features."
-        next: "end_survive"
+        leadsTo: "end_survive"
         points: 100
         rationale: "Creators go where the money is. Securing the supply side is existential."
       - text: "Focus on growing the overall audience size. If we get big enough, the brands will come to them naturally."
-        next: "end_die"
+        leadsTo: "end_die"
         points: 0
         rationale: "Hope is not a strategy. Creators need direct financial incentives to stay exclusive."
   node_match:
@@ -49,11 +49,11 @@ nodes:
       You matched Instagram's features. It buys you some time, but Instagram's network effect is massive. Your top 6-second creators are getting courted by YouTube and Instagram, who offer monetization. How do you retain your talent?
     options:
       - text: "Build a native monetization platform immediately."
-        next: "end_survive"
+        leadsTo: "end_survive"
         points: 100
         rationale: "Creators go where the money is. Securing the supply side is existential."
       - text: "Rely on the culture. We are the cool place to be. Pay a few top creators directly out of pocket to stay."
-        next: "end_stall"
+        leadsTo: "end_stall"
         points: 50
         rationale: "A band-aid solution. It buys time but isn't scalable without a proper ad/rev-share model."
   end_survive:

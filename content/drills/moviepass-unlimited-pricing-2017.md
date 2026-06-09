@@ -23,11 +23,11 @@ nodes:
       The $9.95/month unlimited plan goes live, and the response is overwhelming. You hit 1 million subscribers in months, far exceeding the wildest projections. However, the cash burn is apocalyptic. You are losing millions of dollars a week. AMC Theaters, the largest chain, has publicly declared war on you and refuses to negotiate. What is your immediate strategy to manage the burn?
     options:
       - text: "Implement friction. Limit access to major blockbusters opening weekend, restrict repeat viewings, and require ticket stub photos."
-        next: "implement_friction"
+        leadsTo: "implement_friction"
         points: 50
         rationale: "You must stem the bleeding immediately, even if it hurts the user experience. Survival over hypergrowth."
       - text: "Double down on growth. Raise more capital, keep the unlimited promise pure, and force AMC to the table through sheer user demand."
-        next: "double_down"
+        leadsTo: "double_down"
         points: 0
         rationale: "Ignoring unit economics at this scale accelerates the death spiral. AMC has no incentive to rescue you."
 
@@ -37,11 +37,11 @@ nodes:
       The friction reduces the burn slightly, but users are furious. The app's ratings plummet, and churn spikes. You need a sustainable path forward that doesn't feel like a bait-and-switch. How do you restructure the product?
     options:
       - text: "Pivot to a tiered model: $9.95 for 3 movies a month, higher tiers for unlimited or premium formats (IMAX/3D)."
-        next: "tiered_model"
+        leadsTo: "tiered_model"
         points: 50
         rationale: "A capped model provides predictable costs and aligns value with price."
       - text: "Keep the unlimited model, but introduce surge pricing for popular movies and times to offset the cost."
-        next: "surge_pricing"
+        leadsTo: "surge_pricing"
         points: 0
         rationale: "Surge pricing on top of a subscription feels punitive and destroys the 'unlimited' value proposition."
 
@@ -51,11 +51,11 @@ nodes:
       You raise more money, but the cash incinerator is running too hot. The stock price of your parent company is crashing. The service is experiencing 'outages' because you literally cannot afford to load the debit cards. The SEC is asking questions. What is your final play?
     options:
       - text: "Halt the service immediately, declare bankruptcy, and try to sell the data assets to recoup some investor capital."
-        next: "declare_bankruptcy"
+        leadsTo: "declare_bankruptcy"
         points: 50
         rationale: "Recognize when the game is over. Protect what little value remains."
       - text: "Take out a high-interest emergency loan to turn the service back on for the weekend blockbusters to keep the illusion alive."
-        next: "emergency_loan"
+        leadsTo: "emergency_loan"
         points: 0
         rationale: "This is exactly what MoviePass did. It was a desperate, fatal move that just prolonged the inevitable collapse."
 

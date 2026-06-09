@@ -27,11 +27,11 @@ nodes:
       What is your call?
     options:
       - text: "Clone Snapchat's format exactly. Call it Stories. Users already know how it works."
-        next: "clone_format"
+        leadsTo: "clone_format"
         points: 50
         rationale: "Correct. A new format would require re-educating half a billion users. Stories is not just a feature, it's a format (like the feed). When a format works, you adopt it."
       - text: "Invent a new format. We are Instagram, we don't copy. We innovate."
-        next: "invent_format"
+        leadsTo: "invent_format"
         points: 0
         rationale: "Wrong. Pride is dangerous. If you invent a new format, you introduce friction. Users will stick to what they know (Snapchat)."
   
@@ -43,11 +43,11 @@ nodes:
       How do you frame this internally to rally the company?
     options:
       - text: "Tell the team: 'Snapchat didn't invent ephemeral video, they just popularized it. Just like Facebook didn't invent the feed. We are adopting a format.'"
-        next: "rally_team"
+        leadsTo: "rally_team"
         points: 50
         rationale: "Correct. Framing it as a 'format' rather than a 'feature' changes the narrative. It's like the hashtag or the feed—everyone uses it now."
       - text: "Tell the team: 'We are at war. If we don't do this, we die. Suck it up and build.'"
-        next: "war_mode"
+        leadsTo: "war_mode"
         points: 10
         rationale: "Partial. While true, war-time CEO mode on a creative team can cause massive attrition. The 'format' framing is much more intellectually honest and palatable."
 
@@ -59,11 +59,11 @@ nodes:
       Data comes back after 30 days: engagement is flat. Users are confused by the UI. Snapchat's growth accelerates. Your board is furious. What do you do?
     options:
       - text: "Swallow your pride, kill Moments, and clone Stories exactly."
-        next: "rally_team"
+        leadsTo: "rally_team"
         points: 20
         rationale: "You wasted months and lost momentum, but at least you course-corrected before it was fatal."
       - text: "Iterate on Moments. The users just need to get used to it."
-        next: "death"
+        leadsTo: "death"
         points: 0
         rationale: "Fatal error. You are suffering from sunk cost fallacy. Snapchat wins."
 
@@ -75,11 +75,11 @@ nodes:
       The feed is sacred real estate. The design team wants to put Stories in a separate tab to keep the main feed pure. The growth team wants them at the very top of the main feed.
     options:
       - text: "Put them at the very top of the main feed. Front and center."
-        next: "win"
+        leadsTo: "win"
         points: 50
         rationale: "Correct. If it's hidden in a tab, it will die. You have to force the behavior change by making it the first thing users see."
       - text: "Put them in a dedicated 'Stories' tab. Don't ruin the feed."
-        next: "slow_death"
+        leadsTo: "slow_death"
         points: 0
         rationale: "Wrong. IGTV was put in a separate tab and it failed. You have to leverage your existing feed distribution."
 
@@ -89,11 +89,11 @@ nodes:
       The team builds it, but moral is low. Now, placement. Where does it go?
     options:
       - text: "Top of the feed."
-        next: "win"
+        leadsTo: "win"
         points: 50
         rationale: "Correct placement, even if the team is unhappy."
       - text: "Separate tab."
-        next: "slow_death"
+        leadsTo: "slow_death"
         points: 0
         rationale: "Wrong placement."
 

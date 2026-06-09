@@ -23,11 +23,11 @@ nodes:
       The push for expansion is relentless. Adam wants to double the global square footage in the next 12 months. This requires signing hundreds of new, highly expensive long-term leases at market peak. The internal finance team is warning that a slight dip in occupancy will cause a severe cash crisis. What is your recommendation to the board?
     options:
       - text: "Advise pulling back. Focus on achieving profitability in existing mature locations before signing any new leases."
-        next: "pull_back"
+        leadsTo: "pull_back"
         points: 50
         rationale: "Fundamentals matter. A real estate business cannot scale infinitely without sound unit economics."
       - text: "Support the hypergrowth. SoftBank is demanding it, and capturing the market now will give you pricing power later."
-        next: "support_growth"
+        leadsTo: "support_growth"
         points: 0
         rationale: "This accelerates the massive liability mismatch. You are building a house of cards."
 
@@ -37,11 +37,11 @@ nodes:
       Adam Neumann is furious. He views your caution as a lack of vision. He threatens to push you out of the leadership team if you don't align with the "spiritual energy" of the company's growth. What do you do?
     options:
       - text: "Stand your ground. Present the hard financial data to the major investors, even if it means risking your job."
-        next: "stand_ground"
+        leadsTo: "stand_ground"
         points: 50
         rationale: "Fiduciary duty requires confronting a founder who is disconnected from financial reality."
       - text: "Back down. You can't fight the founder and SoftBank. Try to manage the margins incrementally from within."
-        next: "back_down"
+        leadsTo: "back_down"
         points: 0
         rationale: "Incremental margin management cannot fix a fundamentally broken business model."
 
@@ -51,11 +51,11 @@ nodes:
       The hypergrowth continues. The valuation hits $47 billion. You are preparing the S-1 document for the IPO. Adam insists on retaining absolute voting control, charging the company $5.9M for the "We" trademark, and including the "Community Adjusted EBITDA" metric. The bankers are getting nervous. What is your stance on the S-1?
     options:
       - text: "Force a rewrite. Remove the absurd metrics, limit Adam's control, and present WeWork honestly as a real estate company."
-        next: "force_rewrite"
+        leadsTo: "force_rewrite"
         points: 50
         rationale: "Public markets will not accept the reality distortion field that worked on private investors."
       - text: "Publish it as Adam wants. The tech-like narrative is the only way to justify the $47B valuation to the public markets."
-        next: "publish_s1"
+        leadsTo: "publish_s1"
         points: 0
         rationale: "This is the historical reality. The S-1 became a laughingstock and triggered the company's collapse."
 

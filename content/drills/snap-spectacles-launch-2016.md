@@ -23,11 +23,11 @@ nodes:
       The Snapbots have generated incredible buzz. The executive team is thrilled and wants to scale. They propose ordering hundreds of thousands of units from the manufacturer in China to meet what they perceive as massive pent-up demand. What is your supply chain recommendation?
     options:
       - text: "Keep supply tightly constrained. Slowly expand the Snapbots and launch a limited online store. Do not over-order."
-        next: "constrained_supply"
+        leadsTo: "constrained_supply"
         points: 50
         rationale: "Hype does not equal sustained demand. Hardware requires careful inventory management."
       - text: "Approve the massive order. Capitalize on the hype now before the momentum fades. Flood the market."
-        next: "massive_order"
+        leadsTo: "massive_order"
         points: 0
         rationale: "Mistaking artificial scarcity hype for broad market demand is a fatal hardware error."
 
@@ -37,11 +37,11 @@ nodes:
       You manage the inventory carefully. The hype slowly cools down, but you aren't sitting on massive unsold stock. However, data shows that retention is terrible. Users wear the glasses for a week, record a few videos, and then put them in a drawer. How do you iterate on the product?
     options:
       - text: "Focus entirely on software integration. Make it easier to edit and export the videos to other platforms."
-        next: "software_focus"
+        leadsTo: "software_focus"
         points: 0
         rationale: "If the core utility of capturing the moment isn't sticky, exporting won't save the product."
       - text: "Halt V2 development to deeply research why users abandon the hardware. Wait until you have a killer use case before launching again."
-        next: "halt_research"
+        leadsTo: "halt_research"
         points: 50
         rationale: "A cool toy isn't a sustained business. You need a sticky use case."
 
@@ -51,11 +51,11 @@ nodes:
       You approve the massive order of 800,000 units. By the time they arrive, the Snapbot hype has completely died. You finally open an online store, but sales are a trickle. The warehouses are full of unsold glasses. The CFO is panicking. What is your next move?
     options:
       - text: "Slash prices immediately, push them into big-box retailers (Target, Best Buy) to clear the inventory."
-        next: "slash_prices"
+        leadsTo: "slash_prices"
         points: 50
         rationale: "Accept the loss and clear the inventory. It hurts the brand, but saves cash."
       - text: "Hold the price to protect the premium brand. Launch a massive traditional ad campaign to reignite the hype."
-        next: "hold_price"
+        leadsTo: "hold_price"
         points: 0
         rationale: "Throwing good marketing money after bad inventory will only compound the financial disaster."
 

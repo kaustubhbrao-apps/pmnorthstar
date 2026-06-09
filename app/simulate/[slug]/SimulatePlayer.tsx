@@ -27,6 +27,7 @@ import {
   Brain,
   TrendingUp,
   Users,
+  Compass,
 } from "lucide-react";
 import type {
   Drill,
@@ -60,6 +61,7 @@ const DIMENSION_LABEL: Record<DrillDimension, string> = {
   product: "Product thinking",
   business: "Business judgement",
   founder: "Founder thinking",
+  strategy: "Strategic thinking",
 };
 
 // Three dimensions, three distinct hues — kept readable on both
@@ -69,6 +71,7 @@ const DIMENSION_COLOR: Record<DrillDimension, string> = {
   product: "#2563EB",
   business: "#0F9D58",
   founder: "#D97706",
+  strategy: "#9333EA",
 };
 
 const DIMENSION_ICON: Record<
@@ -78,6 +81,7 @@ const DIMENSION_ICON: Record<
   product: Brain,
   business: TrendingUp,
   founder: Users,
+  strategy: Compass,
 };
 
 function storageKey(slug: string): string {
@@ -205,7 +209,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
     if (state.phase !== "reveal") return;
     const last = state.history[state.history.length - 1];
     if (!last) return;
-    const nextId = currentNode.options[last.optionIndex].leadsTo;
+    const nextId = currentNode.options[last.optionIndex].leadsTo ?? "";
     const nextNode = drill.nodes[nextId];
     if (!nextNode) return;
     if (nextNode.isOutcome) {
@@ -821,12 +825,13 @@ function OutcomeView({
   }, []);
 
   // Score math — per-dimension and total.
-  const dims: DrillDimension[] = ["product", "business", "founder"];
+  const dims: DrillDimension[] = ["product", "business", "founder", "strategy"];
   const scoreByDim = useMemo(() => {
     const result: Record<DrillDimension, { score: number; max: number }> = {
       product: { score: 0, max: 0 },
       business: { score: 0, max: 0 },
       founder: { score: 0, max: 0 },
+      strategy: { score: 0, max: 0 },
     };
     for (const entry of history) {
       if (!entry.dimension) continue;

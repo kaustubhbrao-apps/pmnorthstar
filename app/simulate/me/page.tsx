@@ -13,6 +13,7 @@ import {
   Flame,
   Trophy,
   Sparkles,
+  Compass,
 } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { getSession } from "@/lib/auth";
@@ -26,18 +27,21 @@ const DIMENSION_LABEL: Record<DrillDimension, string> = {
   product: "Product thinking",
   business: "Business judgement",
   founder: "Founder thinking",
+  strategy: "Strategic thinking",
 };
 
 const DIMENSION_COLOR: Record<DrillDimension, string> = {
   product: "#2563EB",
   business: "#0F9D58",
   founder: "#D97706",
+  strategy: "#9333EA",
 };
 
 const DIMENSION_ICON: Record<DrillDimension, typeof Brain> = {
   product: Brain,
   business: TrendingUp,
   founder: Users,
+  strategy: Compass,
 };
 
 function weekKey(d: Date): string {
@@ -141,6 +145,8 @@ export default async function SimulateMePage() {
       businessMax: true,
       founderScore: true,
       founderMax: true,
+      strategyScore: true,
+      strategyMax: true,
       attemptedAt: true,
     },
   });
@@ -158,6 +164,8 @@ export default async function SimulateMePage() {
       acc.businessMax += a.businessMax;
       acc.founderScore += a.founderScore;
       acc.founderMax += a.founderMax;
+      acc.strategyScore += a.strategyScore;
+      acc.strategyMax += a.strategyMax;
       return acc;
     },
     {
@@ -169,6 +177,8 @@ export default async function SimulateMePage() {
       businessMax: 0,
       founderScore: 0,
       founderMax: 0,
+      strategyScore: 0,
+      strategyMax: 0,
     }
   );
 
@@ -177,11 +187,12 @@ export default async function SimulateMePage() {
     attempts.map((a) => a.attemptedAt)
   );
 
-  const dims: DrillDimension[] = ["product", "business", "founder"];
+  const dims: DrillDimension[] = ["product", "business", "founder", "strategy"];
   const dimData = dims.map((d) => {
     if (d === "product") return { dim: d, score: sum.productScore, max: sum.productMax };
     if (d === "business") return { dim: d, score: sum.businessScore, max: sum.businessMax };
-    return { dim: d, score: sum.founderScore, max: sum.founderMax };
+    if (d === "founder") return { dim: d, score: sum.founderScore, max: sum.founderMax };
+    return { dim: d, score: sum.strategyScore, max: sum.strategyMax };
   });
 
   const weakest = dimData

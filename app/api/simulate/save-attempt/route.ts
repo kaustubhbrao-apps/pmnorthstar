@@ -65,6 +65,7 @@ export async function POST(req: NextRequest) {
       product: { score: 0, max: 0 },
       business: { score: 0, max: 0 },
       founder: { score: 0, max: 0 },
+      strategy: { score: 0, max: 0 },
     };
     let cursor = "start";
     for (const step of pathTaken) {
@@ -97,7 +98,7 @@ export async function POST(req: NextRequest) {
         dims[node.dimension].score += opt.points;
         dims[node.dimension].max += nodeMax;
       }
-      cursor = opt.leadsTo;
+      cursor = opt.leadsTo ?? "";
     }
 
     const finalNode = drill.nodes[cursor];
@@ -153,6 +154,8 @@ export async function POST(req: NextRequest) {
           businessMax: dims.business.max,
           founderScore: dims.founder.score,
           founderMax: dims.founder.max,
+          strategyScore: dims.strategy.score,
+          strategyMax: dims.strategy.max,
           pathTaken: pathTaken as unknown as object,
           isFirstAttempt,
           leaguePointsEarned,

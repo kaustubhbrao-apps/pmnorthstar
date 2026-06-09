@@ -131,6 +131,8 @@ model DrillAttempt {
   businessMax        Int      @default(0) @map("business_max")
   founderScore       Int      @default(0) @map("founder_score")
   founderMax         Int      @default(0) @map("founder_max")
+  strategyScore      Int      @default(0) @map("strategy_score")
+  strategyMax        Int      @default(0) @map("strategy_max")
   pathTaken          Json     @map("path_taken")
   attemptedAt        DateTime @default(now()) @map("attempted_at")
   isFirstAttempt     Boolean  @default(false) @map("is_first_attempt")

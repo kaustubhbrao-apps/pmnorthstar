@@ -27,15 +27,15 @@ nodes:
       What is your call?
     options:
       - text: "Launch it at $79. It's not about math, it's about psychology. We want to change how people think about buying."
-        next: "launch_prime"
+        leadsTo: "launch_prime"
         points: 50
         rationale: "Correct. Bezos understood that if people pay $79 upfront, they feel compelled to 'get their money's worth' and will default to Amazon for everything, changing their buying psychology permanently."
       - text: "The CFO is right. Launch it, but price it at $149 to cover the freight costs."
-        next: "high_price"
+        leadsTo: "high_price"
         points: 0
         rationale: "Wrong. At $149, it's a rational math decision for the consumer. They will only buy it if they do complex math. At $79, it's an impulse buy that changes behavior."
       - text: "Kill the program. We can't afford to subsidize air freight. Just lower standard shipping prices."
-        next: "lower_shipping"
+        leadsTo: "lower_shipping"
         points: 0
         rationale: "Wrong. Lowering standard shipping is a commodity move. Anyone can do it. Prime creates a structural moat."
 
@@ -49,11 +49,11 @@ nodes:
       Do you include third-party items in Prime, or restrict it only to items Amazon fulfills?
     options:
       - text: "Restrict Prime exclusively to items fulfilled by Amazon. The two-day promise must be unbroken."
-        next: "fba_flywheel"
+        leadsTo: "fba_flywheel"
         points: 50
         rationale: "Correct. Breaking the promise destroys the magic. This also creates the 'Fulfilled by Amazon' (FBA) flywheel: sellers will BEG to put their inventory in your warehouses so they can get the Prime badge."
       - text: "Include third-party items but put a disclaimer that shipping might take longer."
-        next: "broken_promise"
+        leadsTo: "broken_promise"
         points: 10
         rationale: "Wrong. A disclaimer ruins the psychological safety of the program. Customers won't trust the 'Prime' brand."
 
@@ -65,11 +65,11 @@ nodes:
       Six months later, only 50,000 people have signed up. They are mostly small businesses using Amazon as a cheap supplier. You aren't changing consumer behavior at all. Wall Street asks about the program on the earnings call.
     options:
       - text: "Admit the pricing error, drop it to $79, and take the margin hit."
-        next: "launch_prime"
+        leadsTo: "launch_prime"
         points: 20
         rationale: "You lost a year of momentum, but you corrected course."
       - text: "Kill the program. It was a failed experiment."
-        next: "death"
+        leadsTo: "death"
         points: 0
         rationale: "You missed the biggest e-commerce moat in history."
 
@@ -79,11 +79,11 @@ nodes:
       You lower standard shipping from $6.99 to $3.99. Conversion rates go up slightly, but eBay and Walmart simply match your shipping prices. You are locked in a margin-destroying race to the bottom.
     options:
       - text: "Revisit the subscription shipping idea."
-        next: "launch_prime"
+        leadsTo: "launch_prime"
         points: 20
         rationale: "Better late than never."
       - text: "Focus on AWS instead, e-commerce is a commodity."
-        next: "death"
+        leadsTo: "death"
         points: 0
         rationale: "AWS is great, but you just surrendered retail dominance."
 
@@ -95,11 +95,11 @@ nodes:
       The board wants to cap Prime at 50 orders per year to stop the bleeding.
     options:
       - text: "Refuse the cap. The heavy users are driving our volume up, which lets us negotiate better rates with UPS/FedEx. The unit economics will flip over time."
-        next: "win"
+        leadsTo: "win"
         points: 50
         rationale: "Correct. This is economies of scale. The massive volume allowed Amazon to build its own logistics network, turning a massive cost center into an insurmountable moat."
       - text: "Agree to the cap. We have a fiduciary duty to stop the bleeding."
-        next: "mediocre_success"
+        leadsTo: "mediocre_success"
         points: 10
         rationale: "Wrong. A cap introduces friction. Users will start tracking their orders and treating Prime as a scarce resource instead of a default behavior."
 
@@ -109,7 +109,7 @@ nodes:
       Customers order Prime items and they arrive in 5 days instead of 2. The brand is diluted. People start canceling their $79 subscriptions.
     options:
       - text: "Pivot instantly: remove the Prime badge from all third-party fulfilled items."
-        next: "fba_flywheel"
+        leadsTo: "fba_flywheel"
         points: 30
         rationale: "You fixed the promise, but you damaged trust early on."
 

@@ -23,11 +23,11 @@ nodes:
       The volume of suspended accounts is spiking, and high-profile users are publicly deleting their profiles. The policy team argues that relaxing the rule will turn Google+ into a spam-filled wasteland like YouTube comments. What is your immediate response to the backlash?
     options:
       - text: "Double down on real names. The long-term value of verified identity across Google outweighs short-term PR pain."
-        next: "node_double_down"
+        leadsTo: "node_double_down"
         points: 0
         rationale: "Forcing real names alienated vulnerable users and early adopters, eroding trust right when the network needed growth."
       - text: "Immediately pause suspensions, apologize, and start allowing pseudonyms and nicknames to stem the bleeding."
-        next: "node_pause_suspensions"
+        leadsTo: "node_pause_suspensions"
         points: 50
         rationale: "Acknowledging the diverse needs for pseudonymity builds user trust and prevents a mass exodus of early influencers."
   
@@ -37,11 +37,11 @@ nodes:
       You stick to the real names policy. Suspensions continue. The press narrative shifts from "Google+ is a Facebook killer" to "Google+ is out of touch and authoritarian." Growth begins to stall. How do you attempt to restart momentum?
     options:
       - text: "Force Google+ integration into all other Google products (YouTube, Gmail) to force adoption."
-        next: "node_force_integration"
+        leadsTo: "node_force_integration"
         points: 0
         rationale: "Forced integration bred massive resentment and didn't create genuine social engagement."
       - text: "Shift focus to enterprise users, pitching Google+ as a corporate collaboration tool."
-        next: "node_enterprise"
+        leadsTo: "node_enterprise"
         points: 20
         rationale: "A safer pivot, but completely abandons the original consumer social goal."
         
@@ -51,11 +51,11 @@ nodes:
       You've stopped the suspensions. Now you need a long-term identity solution. How do you balance the need for a clean, spam-free network with user demands for privacy?
     options:
       - text: "Implement a verification system (like Twitter's blue check) for public figures, but allow anyone to use any name."
-        next: "node_verification"
+        leadsTo: "node_verification"
         points: 50
         rationale: "Solves the impersonation problem while maintaining freedom of expression."
       - text: "Require users to link a credit card or phone number to use a pseudonym."
-        next: "node_verification_friction"
+        leadsTo: "node_verification_friction"
         points: 10
         rationale: "Adds too much friction and privacy concern for the average user."
         

@@ -23,11 +23,11 @@ nodes:
       The major labels are demanding exorbitant, traditional streaming royalties (like Spotify pays) for the use of their music, arguing TikTok is a music consumption app. How do you negotiate?
     options:
       - text: "Argue TikTok is a promotional tool, not a streaming app. Pay a flat, upfront blanket license fee, refusing per-stream royalties."
-        next: "node_promotional_tool"
+        leadsTo: "node_promotional_tool"
         points: 50
         rationale: "Positioning TikTok as a powerful marketing engine for the labels allowed ByteDance to avoid the ruinous economics of per-stream payouts."
       - text: "Accept per-stream royalties. The music is essential; without it, the app dies. Pass the cost to creators eventually."
-        next: "node_per_stream"
+        leadsTo: "node_per_stream"
         points: 0
         rationale: "Accepting per-stream royalties on short-form video would have destroyed the company's margins and stunted growth."
         
@@ -37,11 +37,11 @@ nodes:
       You agreed to per-stream royalties. The bills are astronomical. To offset costs, you need to monetize aggressively. What's your product move?
     options:
       - text: "Insert unskippable pre-roll ads before every video."
-        next: "node_preroll_ads"
+        leadsTo: "node_preroll_ads"
         points: 0
         rationale: "Pre-roll ads would absolutely destroy the hyper-fast swipe mechanics of the 'For You' page."
       - text: "Launch a premium tier where users pay $5/month to use popular music."
-        next: "node_premium_music"
+        leadsTo: "node_premium_music"
         points: 10
         rationale: "Gating core creation tools stifles UGC growth, though it might save some cash."
         
@@ -51,11 +51,11 @@ nodes:
       You secured the flat-fee blanket licenses by proving TikTok makes songs go viral. Now, how do you handle user-generated, unlicensed audio (like remixes or TV show clips) to avoid future copyright strikes while keeping the platform creative?
     options:
       - text: "Implement a strict Content ID system that automatically mutes or deletes any video with unrecognized audio."
-        next: "node_strict_content_id"
+        leadsTo: "node_strict_content_id"
         points: 0
         rationale: "Over-aggressive takedowns kill the remix culture that makes TikTok unique."
       - text: "Build an 'Original Audio' feature allowing users to upload custom sounds, while aggressively striking deals with independent distributors."
-        next: "node_original_audio"
+        leadsTo: "node_original_audio"
         points: 50
         rationale: "Embracing 'Original Audio' created a new cultural paradigm, making sounds themselves viral templates."
         

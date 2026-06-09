@@ -23,11 +23,11 @@ nodes:
       Which operating system do you commit Nokia's future to?
     options:
       - text: "Go all-in on Microsoft Windows Phone. They offer billions in platform support, and we can be their flagship partner, avoiding the commoditization of Android."
-        next: "node_windows"
+        leadsTo: "node_windows"
         points: 0
         rationale: "You tie your world-class hardware to an OS with zero developer ecosystem and no consumer demand."
       - text: "Adopt Android. It's an open standard with a massive developer base. We can differentiate on our superior camera hardware and build a custom Nokia UI layer."
-        next: "node_android"
+        leadsTo: "node_android"
         points: 100
         rationale: "Android has the momentum. You can leverage their ecosystem while using hardware to stand out, like Samsung did."
   node_windows:
@@ -36,11 +36,11 @@ nodes:
       You choose Windows Phone. The Lumia line launches to critical acclaim for hardware design, but sales are dismal. Consumers walk into stores, see that Instagram, YouTube, and banking apps are missing, and buy an iPhone or Android instead. What do you do about the 'app gap'?
     options:
       - text: "Pay developers out of pocket to port their apps to Windows Phone. Subsidize the ecosystem."
-        next: "end_acquisition"
+        leadsTo: "end_acquisition"
         points: 0
         rationale: "You cannot buy a two-sided network effect. Developers will take the money, build a terrible port, and never update it."
       - text: "Pivot. Keep Windows Phone for high-end, but fork Android for cheap, entry-level phones in emerging markets (Project Normandy)."
-        next: "end_confused"
+        leadsTo: "end_confused"
         points: 50
         rationale: "Too little, too late, but it shows an understanding that Windows Phone cannot serve the volume market."
   node_android:
@@ -49,11 +49,11 @@ nodes:
       You adopt Android. Nokia's hardware with Android software is a massive hit. However, Samsung is heavily outspending you in marketing, and Google is dictating more and more of the OS experience. How do you maintain margins?
     options:
       - text: "Double down on what we do best: build the best camera phones in the world. Charge a premium for imaging excellence."
-        next: "end_samsung_rival"
+        leadsTo: "end_samsung_rival"
         points: 100
         rationale: "Hardware differentiation is hard on Android, but imaging was Nokia's historical moat and commands a premium."
       - text: "Try to build our own app store and services layer on top of Android to capture recurring revenue, like Amazon did."
-        next: "end_marginalized"
+        leadsTo: "end_marginalized"
         points: 0
         rationale: "Google will punish you, and consumers don't want a fragmented app experience on a premium device."
   end_acquisition:

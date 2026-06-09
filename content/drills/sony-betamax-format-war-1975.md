@@ -23,11 +23,11 @@ nodes:
       The Betamax is ready for launch. The engineering team has optimized it for a 1-hour recording time, perfect for high-quality playback and ensuring the cassette remains small. JVC's VHS tape is larger and aims for a 2-hour recording time. What is your tape length strategy?
     options:
       - text: "Stick with 1-hour. Emphasize the superior picture quality and compact design. Quality is Sony's brand."
-        next: "stick_1_hour"
+        leadsTo: "stick_1_hour"
         points: 0
         rationale: "Failing to understand the primary use case (recording full movies/sports games) is a fatal flaw."
       - text: "Delay the launch to re-engineer the tape and player for at least a 2-hour capacity, sacrificing some quality if necessary."
-        next: "delay_2_hours"
+        leadsTo: "delay_2_hours"
         points: 50
         rationale: "Aligning the product with consumer needs (recording a 2-hour movie) is more important than theoretical technical superiority."
 
@@ -37,11 +37,11 @@ nodes:
       You launch the 1-hour Betamax. It's a marvel, but consumers complain they can't record a full football game or movie. JVC launches VHS with a 2-hour capacity. JVC is also offering cheap licensing to Panasonic, Hitachi, and Sharp. What is your licensing strategy?
     options:
       - text: "Open up licensing immediately to other manufacturers, even if it means losing some control and initial hardware margins."
-        next: "open_licensing"
+        leadsTo: "open_licensing"
         points: 50
         rationale: "In a format war, market share and ecosystem size are everything. You must commoditize the hardware to win the standard."
       - text: "Keep tight control. Only license to a few select partners who agree to strict quality standards and high royalties."
-        next: "tight_control"
+        leadsTo: "tight_control"
         points: 0
         rationale: "This is exactly what Sony did. They lost the ecosystem war by prioritizing hardware margins over format dominance."
 
@@ -51,11 +51,11 @@ nodes:
       You delay the launch and re-engineer for a 2-hour tape. The product is slightly bulkier, but hits the critical consumer use case. JVC is still aggressively licensing VHS. How do you respond to their ecosystem play?
     options:
       - text: "Aggressively license Betamax to all manufacturers, subsidizing the tech to guarantee it becomes the dominant standard."
-        next: "aggressive_license"
+        leadsTo: "aggressive_license"
         points: 50
         rationale: "Combining a product that meets consumer needs with an open ecosystem strategy ensures victory."
       - text: "Rely on Sony's massive brand power and marketing budget to out-sell the combined forces of the VHS alliance."
-        next: "rely_on_brand"
+        leadsTo: "rely_on_brand"
         points: 0
         rationale: "Brand power alone cannot overcome a massive, multi-company network effect."
 

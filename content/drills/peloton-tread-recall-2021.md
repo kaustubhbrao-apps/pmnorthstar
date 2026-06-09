@@ -23,11 +23,11 @@ nodes:
       The CPSC just published their warning video showing a dummy being pulled under the Tread+. What is your immediate public response?
     options:
       - text: "Fight back. Issue a statement calling the CPSC warning 'inaccurate and misleading.' Emphasize that the product is safe when safety instructions are followed."
-        next: "node_fight"
+        leadsTo: "node_fight"
         points: 0
         rationale: "Fighting a safety regulator on a product involving children is a PR and brand disaster."
       - text: "Cooperate immediately. Halt sales, issue a voluntary recall in partnership with the CPSC, and apologize."
-        next: "node_recall"
+        leadsTo: "node_recall"
         points: 100
         rationale: "Taking immediate ownership minimizes long-term brand damage, even if the short-term financial hit is severe."
   node_fight:
@@ -36,11 +36,11 @@ nodes:
       You issue a defensive statement. The media cycle goes nuclear. Politicians are tweeting about you. The stock drops 15% in a day. Two weeks later, the pressure is unbearable. You have to back down. How do you handle the pivot?
     options:
       - text: "Issue the recall, but maintain it's an abundance of caution. Offer a software update to lock the tread."
-        next: "end_resignation"
+        leadsTo: "end_resignation"
         points: 0
         rationale: "A half-apology after a defensive stance looks incredibly weak and insincere."
       - text: "Total capitulation. The CEO must publicly apologize for the initial response, issue a full refund to anyone who wants it, and halt all Tread+ production."
-        next: "end_survive_damaged"
+        leadsTo: "end_survive_damaged"
         points: 50
         rationale: "Only total transparency and eating the cost can stop the bleeding after a botched initial response."
   node_recall:
@@ -49,11 +49,11 @@ nodes:
       You issue the recall immediately. The stock takes a hit, but the media cycle moves on quickly. Now you have to fix the hardware. It's a fundamental design flaw with the slat belt height.
     options:
       - text: "Redesign the rear guard completely. It will take 12 months and delay your revenue targets."
-        next: "end_rebound"
+        leadsTo: "end_rebound"
         points: 100
         rationale: "Safety cannot be compromised. A hardware fix is the only permanent solution."
       - text: "Implement a software fix that requires a pin code to unlock the tread. It's fast and gets you back to market."
-        next: "end_lawsuits"
+        leadsTo: "end_lawsuits"
         points: 0
         rationale: "A pin code doesn't stop a child from getting pulled under an active treadmill while an adult is using it."
   end_resignation:

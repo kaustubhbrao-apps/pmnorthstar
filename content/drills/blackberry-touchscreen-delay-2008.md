@@ -23,11 +23,11 @@ nodes:
       How do you design the touchscreen for the new BlackBerry Storm?
     options:
       - text: "Invent 'SurePress' - a clicky, mechanical touchscreen that simulates a physical button press to bridge the gap."
-        next: "node_surepress"
+        leadsTo: "node_surepress"
         points: 0
         rationale: "A mechanical touchscreen is complex, prone to hardware failure, and gives the worst of both worlds."
       - text: "Go full capacitive touchscreen like the iPhone. Abandon the physical click. It will take time to get the software right, but it's the future."
-        next: "node_capacitive"
+        leadsTo: "node_capacitive"
         points: 50
         rationale: "Skating to where the puck is going. The physical keyboard paradigm is dying for mainstream consumers."
   node_surepress:
@@ -36,11 +36,11 @@ nodes:
       You launch the Storm with SurePress. It's a buggy nightmare. The screen clicks get stuck, the OS is slow, and return rates at Verizon approach 100%. Verizon is furious. What is your immediate triage?
     options:
       - text: "Recall the device immediately. Take the financial hit and salvage the relationship with Verizon."
-        next: "end_recall"
+        leadsTo: "end_recall"
         points: 50
         rationale: "Trust with your biggest distribution partner is more valuable than short-term revenue."
       - text: "Push software updates to try and fix the lag. Keep selling the hardware to meet quarterly targets."
-        next: "end_brand_death"
+        leadsTo: "end_brand_death"
         points: 0
         rationale: "You can't fix a fundamental hardware design flaw with software patches. The brand damage becomes permanent."
   node_capacitive:
@@ -49,11 +49,11 @@ nodes:
       You build a capacitive touchscreen. But your legacy BlackBerry OS is built for trackballs, not touch. The UI is clunky. How do you fix the software experience?
     options:
       - text: "Acquire a company (like QNX) and rewrite the entire OS from scratch for touch, even if it delays the launch by 18 months."
-        next: "end_qnx"
+        leadsTo: "end_qnx"
         points: 100
         rationale: "A legacy OS bolted onto modern hardware is a dead end. You need a modern foundation."
       - text: "Slap a touch-friendly skin on top of the legacy Java-based BlackBerry OS to get to market faster."
-        next: "end_slow_death"
+        leadsTo: "end_slow_death"
         points: 0
         rationale: "Technical debt will drown you. The performance will never match iOS."
   end_recall:

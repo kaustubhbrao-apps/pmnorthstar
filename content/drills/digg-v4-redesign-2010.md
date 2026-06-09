@@ -23,11 +23,11 @@ nodes:
       The development of v4 is nearing completion, but beta feedback from power users is overwhelmingly negative. They hate the new publisher-focused features and the removal of the "bury" button. The CEO wants to launch next week to hit Q3 numbers. What is your move?
     options:
       - text: "Push back hard. Delay the launch to address power user concerns and reinstate core features."
-        next: "delay_launch"
+        leadsTo: "delay_launch"
         points: 50
         rationale: "Protecting your core user base is critical. Alienating them for potential mainstream growth is a massive risk."
       - text: "Proceed with the launch. The power users will complain, but the mainstream appeal will offset any losses."
-        next: "proceed_launch"
+        leadsTo: "proceed_launch"
         points: 0
         rationale: "Ignoring power users on a community-driven platform is a fatal error."
 
@@ -37,11 +37,11 @@ nodes:
       You successfully delay the launch. The executive team is furious, but you have time to iterate. You reinstate the "bury" button, but the publisher integration is still a core requirement from the board. How do you implement it?
     options:
       - text: "Create an opt-in 'Publisher Tier' that sits alongside user submissions, clearly marked as sponsored."
-        next: "opt_in_tier"
+        leadsTo: "opt_in_tier"
         points: 50
         rationale: "Transparency and choice keep the community happy while satisfying business needs."
       - text: "Auto-subscribe users to top publishers, but allow them to opt-out in settings."
-        next: "auto_subscribe"
+        leadsTo: "auto_subscribe"
         points: 0
         rationale: "Dark patterns alienate users. They will feel force-fed content."
 
@@ -51,11 +51,11 @@ nodes:
       Digg v4 launches. It's a disaster. The site crashes due to the rewrite, and when it comes back up, the front page is dominated by corporate spam. Power users are staging a revolt, actively promoting Reddit links on the Digg front page. Traffic is plummeting. What is your immediate response?
     options:
       - text: "Acknowledge the failure immediately, roll back to v3, and publicly apologize to the community."
-        next: "roll_back"
+        leadsTo: "roll_back"
         points: 50
         rationale: "A swift rollback is the only way to stop the bleeding and begin rebuilding trust."
       - text: "Stay the course. Release rapid patches to fix the bugs and tell the community to give the new design time."
-        next: "stay_course"
+        leadsTo: "stay_course"
         points: 0
         rationale: "Stubbornness in the face of a community revolt accelerates the exodus. This was Digg's actual mistake."
 

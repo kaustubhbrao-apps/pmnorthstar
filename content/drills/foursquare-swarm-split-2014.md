@@ -23,11 +23,11 @@ nodes:
       The decision is on the table. Do you unbundle the app?
     options:
       - text: "Yes, split them. Unbundling is the trend (like Facebook Messenger). We need a clean UX for local search to beat Yelp, and a dedicated app for social."
-        next: "node_split"
+        leadsTo: "node_split"
         points: 0
         rationale: "Checking in (social) generated the data that powered the search (utility). Separating them breaks the data flywheel."
       - text: "No, keep them together. The social check-in gamification is the engine that generates the reviews and data for local search. Redesign the UI, but keep the core loop intact."
-        next: "node_keep"
+        leadsTo: "node_keep"
         points: 100
         rationale: "The utility depends on the social habit. Break the habit, lose the utility."
   node_split:
@@ -36,11 +36,11 @@ nodes:
       You split the apps. You force users to download Swarm to check in. Users are furious about the forced migration. Check-in volume plummets. Foursquare (now just search) has no fresh data coming in.
     options:
       - text: "Reverse course immediately. Merge them back into one app and apologize to the user base."
-        next: "end_reversal"
+        leadsTo: "end_reversal"
         points: 50
         rationale: "Admitting a mistake quickly can save a dying network, though the whiplash is painful."
       - text: "Hold the line. Use aggressive push notifications and cross-app promos to force users to adopt the two-app paradigm."
-        next: "end_irrelevance"
+        leadsTo: "end_irrelevance"
         points: 0
         rationale: "You cannot force a user to adopt two apps for what used to take one. They will simply churn."
   node_keep:
@@ -49,11 +49,11 @@ nodes:
       You keep them together. The app is heavy, but the data flywheel continues. However, Yelp is crushing you on SEO and comprehensive reviews. How do you compete in local search?
     options:
       - text: "Pivot to a B2B data play. Stop fighting Yelp for consumers. Sell our incredible location intelligence and check-in data to other enterprises (Uber, Twitter, Apple)."
-        next: "end_b2b_pivot"
+        leadsTo: "end_b2b_pivot"
         points: 100
         rationale: "The consumer search war is lost to Google and Yelp. The proprietary data is where the real enterprise value lies."
       - text: "Double down on consumer gamification. Add more badges and points to drive even more reviews to beat Yelp."
-        next: "end_slow_bleed"
+        leadsTo: "end_slow_bleed"
         points: 0
         rationale: "Gamification is a novelty that fades. It won't beat Yelp's pure utility and network effects in search."
   end_reversal:

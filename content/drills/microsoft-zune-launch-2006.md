@@ -23,11 +23,11 @@ nodes:
       Your team proposes a unique feature: "Squirt." It allows Zune users to wirelessly share songs with other Zune users nearby. However, music labels are terrified of piracy. How do you implement this social sharing feature?
     options:
       - text: "Cap the sharing: Shared songs can only be played 3 times over 3 days, and add heavy DRM."
-        next: "node_capped_sharing"
+        leadsTo: "node_capped_sharing"
         points: 0
         rationale: "Heavy DRM and restrictions made the feature frustrating and virtually useless for consumers."
       - text: "Fight the labels for a subscription model: Anyone with a Zune Pass subscription can share and keep songs infinitely."
-        next: "node_subscription_sharing"
+        leadsTo: "node_subscription_sharing"
         points: 50
         rationale: "Leveraging the subscription model to remove friction from sharing would have been a massive differentiator."
         
@@ -37,11 +37,11 @@ nodes:
       The "Squirt" feature is launched with 3-play/3-day limits. Reviewers mock it. Sales are sluggish compared to the iPod. You need a marketing push for the holiday season. Where do you focus your budget?
     options:
       - text: "Run a massive, abstract lifestyle brand campaign ('Welcome to the Social') focusing on the Zune brand, not features."
-        next: "node_lifestyle_brand"
+        leadsTo: "node_lifestyle_brand"
         points: 0
         rationale: "Abstract marketing failed to explain *why* someone should buy a Zune over an iPod."
       - text: "Go head-to-head on specs: Highlight the larger screen, FM radio, and subscription music pass in aggressive comparison ads."
-        next: "node_spec_comparison"
+        leadsTo: "node_spec_comparison"
         points: 20
         rationale: "Better, but spec wars rarely win against a deeply entrenched ecosystem."
         
@@ -51,11 +51,11 @@ nodes:
       You pushed for Zune Pass integration. Now, how do you handle the software ecosystem? iTunes is ubiquitous. Do you try to integrate with existing Windows Media Player, or build a bespoke Zune desktop app?
     options:
       - text: "Build a brand new, beautifully designed Zune desktop software from scratch, dropping legacy WMP baggage."
-        next: "node_new_software"
+        leadsTo: "node_new_software"
         points: 50
         rationale: "A fresh, fast, dedicated app was necessary to compete with the iTunes experience."
       - text: "Skin the existing Windows Media Player to ensure backward compatibility and lower dev costs."
-        next: "node_skin_wmp"
+        leadsTo: "node_skin_wmp"
         points: 0
         rationale: "WMP was bloated and slow; it would have dragged down the premium feel of the hardware."
         
