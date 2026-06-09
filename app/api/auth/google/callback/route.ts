@@ -31,10 +31,15 @@ interface GoogleUserInfo {
   picture?: string;
 }
 
-function safeNext(next: string | null): string {
-  if (!next) return "/";
-  if (!next.startsWith("/") || next.startsWith("//")) return "/";
-  return next;
+function safeNext(nextRaw: string | null): string {
+  if (!nextRaw) return "/";
+  try {
+    const next = decodeURIComponent(nextRaw);
+    if (!next.startsWith("/") || next.startsWith("//")) return "/";
+    return next;
+  } catch {
+    return "/";
+  }
 }
 
 function errorRedirect(req: NextRequest, code: string): NextResponse {
