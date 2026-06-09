@@ -156,7 +156,7 @@ export async function GET(req: NextRequest) {
     }
 
     // Issue our own session token (matches existing /api/auth/login).
-    const token = await signToken(user.id);
+    const token = await signToken(user.id, user.username);
     await setTokenCookie(token);
 
     return NextResponse.redirect(new URL(next, req.nextUrl.origin));

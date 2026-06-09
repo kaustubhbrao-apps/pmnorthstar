@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { aiDecodedManifest } from "@/data/aiDecodedManifest";
@@ -40,6 +40,20 @@ function formatDate(iso: string): string {
 
 export function HeroBanner({ onNavChange }: HeroBannerProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const updateActiveSlide = useCallback(() => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, clientWidth } = scrollRef.current;
+    setActiveSlide(Math.round(scrollLeft / clientWidth));
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateActiveSlide, { passive: true });
+    return () => el.removeEventListener("scroll", updateActiveSlide);
+  }, [updateActiveSlide]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -280,6 +294,28 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
               <ArrowUpRight size={14} strokeWidth={2} />
             </span>
           </Link>
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="flex justify-center gap-2 mt-3">
+          {[0, 1].map((i) => (
+            <button
+              key={i}
+              onClick={() => {
+                scrollRef.current?.scrollTo({
+                  left: i * (scrollRef.current?.clientWidth ?? 0),
+                  behavior: "smooth",
+                });
+              }}
+              className="rounded-full transition-all"
+              style={{
+                width: activeSlide === i ? 20 : 6,
+                height: 6,
+                background: activeSlide === i ? "var(--brand-primary)" : "var(--card-border)",
+              }}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
+import { getSession, signToken, setTokenCookie } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { checkRateLimit } from "@/lib/rate-limit";
 
@@ -105,6 +105,10 @@ export async function POST(req: Request) {
           usernameChangedAt: new Date()
         },
       });
+
+      // Re-sign JWT with the new username so middleware stops redirecting
+      const newToken = await signToken(user.id, normalizedUsername);
+      await setTokenCookie(newToken);
 
       return NextResponse.json({ ok: true, username: normalizedUsername });
     } catch (e: any) {
