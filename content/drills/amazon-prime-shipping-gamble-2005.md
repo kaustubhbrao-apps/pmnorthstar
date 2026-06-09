@@ -4,9 +4,9 @@ type: historical
 category: Growth
 year: 2005
 estimatedMinutes: 15
-publishedAt: '2026-12-16T15:00:00+00:00'
+publishedAt: '2026-06-24T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-12-19T18:29:59+00:00'
+leagueEndsAt: '2026-06-28T15:00:00+00:00'
 principle: Create moats through irrational upfront value that changes consumer psychology.
 intro: |
   It is late 2004. You are Jeff Bezos, CEO of Amazon.

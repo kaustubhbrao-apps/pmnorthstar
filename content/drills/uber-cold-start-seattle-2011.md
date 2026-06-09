@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 2011
 estimatedMinutes: 16
-publishedAt: '2026-09-16T15:00:00+00:00'
+publishedAt: '2026-10-28T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-19T18:29:59+00:00'
+leagueEndsAt: '2026-11-01T15:00:00+00:00'
 principle: 'In a two-sided marketplace, liquidity is the only metric that matters.'
 intro: >
   It is March 2011. You are the Launch Lead for Uber. After a successful but

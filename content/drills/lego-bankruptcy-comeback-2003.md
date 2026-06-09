@@ -4,9 +4,9 @@ type: historical
 category: Strategy
 year: 2003
 estimatedMinutes: 18
-publishedAt: '2026-12-02T15:00:00+00:00'
+publishedAt: '2026-08-19T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-12-05T18:29:59+00:00'
+leagueEndsAt: '2026-08-23T15:00:00+00:00'
 principle: Complexity is the silent killer of iconic brands.
 intro: >
   It is early 2003. You are the newly appointed CEO of The LEGO Group. The

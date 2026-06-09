@@ -4,9 +4,9 @@ type: historical
 category: Growth
 year: 2020
 estimatedMinutes: 12
-publishedAt: '2026-10-21T15:00:00+00:00'
+publishedAt: '2026-07-15T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-24T18:29:59+00:00'
+leagueEndsAt: '2026-07-19T15:00:00+00:00'
 principle: Constraints are the only way to protect community quality during explosive growth.
 intro: |
   It is mid-2020. The world is in lockdown, and a new app called Clubhouse is the only place where people are "hanging out." It is a live audio social network, and it is currently the most exclusive club in Silicon Valley.

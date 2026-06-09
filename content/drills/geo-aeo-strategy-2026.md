@@ -2,7 +2,9 @@
 slug: geo-aeo-strategy-2026
 type: current
 category: growth
-publishedAt: "2026-07-27T19:00:00+05:30"
+publishedAt: '2026-08-09T15:00:00+00:00'
+isLeagueMatch: true
+leagueEndsAt: '2026-08-12T15:00:00+00:00'
 estimatedMinutes: 5
 principle: |
   When the discovery channel changes — search to social, social to

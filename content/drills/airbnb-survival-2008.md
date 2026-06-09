@@ -3,7 +3,9 @@ slug: airbnb-survival-2008
 caseStudySlug: airbnb-cereal-survival
 type: historical
 category: crisis
-publishedAt: "2026-05-29T01:00:00+05:30"
+publishedAt: '2026-06-21T15:00:00+00:00'
+isLeagueMatch: true
+leagueEndsAt: '2026-06-24T15:00:00+00:00'
 year: 2008
 estimatedMinutes: 10
 principle: |

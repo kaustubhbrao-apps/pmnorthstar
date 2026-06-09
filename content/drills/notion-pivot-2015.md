@@ -3,7 +3,9 @@ slug: notion-pivot-2015
 caseStudySlug: notion-all-in-one-workspace
 type: historical
 category: crisis
-publishedAt: "2026-06-19T19:00:00+05:30"
+publishedAt: '2026-09-09T15:00:00+00:00'
+isLeagueMatch: true
+leagueEndsAt: '2026-09-13T15:00:00+00:00'
 year: 2015
 estimatedMinutes: 7
 principle: |
