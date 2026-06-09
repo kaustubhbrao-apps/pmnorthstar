@@ -10,4 +10,4 @@ export const PLAYLIST_COUNT = 18;
 export const TOPIC_COUNT = 14;
 export const COMPARISON_COUNT = 15;
 export const AI_DECODED_COUNT = 26;
-export const DRILL_COUNT = 37;
+export const DRILL_COUNT = 39;
