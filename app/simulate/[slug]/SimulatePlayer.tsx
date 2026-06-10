@@ -101,15 +101,6 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
     startedAt: Date.now(),
   }));
 
-  // Enforce username selection for league
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && !authLoading && isLoggedIn && !username) {
-      if (typeof window !== "undefined") {
-        window.location.href = `/pick-username?next=${encodeURIComponent(window.location.pathname + window.location.search)}`;
-      }
-    }
-  }, [authLoading, isLoggedIn, username]);
-
   // Restore mid-drill state from localStorage if a session exists.
   useEffect(() => {
     if (typeof window === "undefined") return;

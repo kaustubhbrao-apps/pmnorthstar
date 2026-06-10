@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { jwtVerify } from "jose";
 
 // Sliding window rate limit store (In-memory on the Edge)
 // Note: This is per-edge-region and per-instance. It's not a global sync 
@@ -34,16 +33,7 @@ function isRateLimited(ip: string): boolean {
 // into 404s. Observed in Vercel Analytics: /%C2%A0 (URL-encoded nbsp).
 const INVISIBLE_CHARS = /%C2%A0|%E2%80%8B|%EF%BB%BF/gi;
 
-// Paths that should be excluded from the username redirect
-const USERNAME_REDIRECT_EXCLUDE = new Set([
-  "/pick-username",
-  "/api/auth/username",
-  "/api/auth/logout",
-  "/api/auth/me",
-  "/api/auth/google/start",
-  "/api/auth/google/callback",
-  "/login",
-]);
+// Removed USERNAME_REDIRECT_EXCLUDE since username redirect was removed
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
@@ -76,40 +66,8 @@ export async function middleware(req: NextRequest) {
   }
 
   // ─── 3. Username Redirect (League) ───
-  // When the league is enabled, logged-in users without a username must
-  // pick one before they can access any page. We decode the JWT to check
-  // for the `username` field without hitting the DB on every request.
-  const leagueEnabled = process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
-  if (
-    leagueEnabled &&
-    !USERNAME_REDIRECT_EXCLUDE.has(pathname) &&
-    !pathname.startsWith("/api/") &&
-    !pathname.startsWith("/_next/") &&
-    !pathname.startsWith("/favicon") &&
-    !pathname.endsWith(".svg") &&
-    !pathname.endsWith(".png") &&
-    !pathname.endsWith(".ico")
-  ) {
-    const token = req.cookies.get("northstar_token")?.value;
-    if (token) {
-      try {
-        const secret = new TextEncoder().encode(
-          process.env.JWT_SECRET || "dev-secret-do-not-use-in-prod"
-        );
-        const { payload } = await jwtVerify(token, secret);
-        // If the JWT has a userId but no username, redirect
-        if (payload.userId && !payload.username) {
-          const url = req.nextUrl.clone();
-          url.pathname = "/pick-username";
-          url.searchParams.set("next", pathname);
-          return NextResponse.redirect(url);
-        }
-      } catch {
-        // Invalid/expired token — let them through, they'll hit the
-        // login flow naturally
-      }
-    }
-  }
+  // No longer needed — usernames are now auto-derived from email
+  // during Google OAuth sign-in. Kept as a comment for history.
 
   return NextResponse.next();
 }

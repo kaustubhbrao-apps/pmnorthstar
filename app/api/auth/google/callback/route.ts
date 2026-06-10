@@ -118,6 +118,43 @@ export async function GET(req: NextRequest) {
       return errorRedirect(req, "email_not_verified");
     }
 
+    // ── Auto-username derivation ──────────────────────────────────
+    // Derive a username from the email prefix: strip everything that
+    // isn't a lowercase letter, digit, or underscore, then truncate
+    // to 20 chars. If the result is too short (<3), pad with random
+    // digits. If taken, append _XX until we find an available one.
+    const deriveUsername = async (email: string): Promise<string> => {
+      const base = email
+        .split("@")[0]
+        .toLowerCase()
+        .replace(/[^a-z0-9_]/g, "")
+        .slice(0, 20);
+
+      const candidate = base.length >= 3 ? base : base.padEnd(3, String(Math.floor(Math.random() * 1000)).padStart(3, "0"));
+
+      // Check availability
+      const existing = await prisma.user.findUnique({
+        where: { username: candidate },
+        select: { id: true },
+      });
+
+      if (!existing) return candidate;
+
+      // Collision — try up to 20 suffixed variants
+      for (let i = 1; i <= 20; i++) {
+        const suffixed = `${candidate.slice(0, 17)}_${String(i).padStart(2, "0")}`;
+        const taken = await prisma.user.findUnique({
+          where: { username: suffixed },
+          select: { id: true },
+        });
+        if (!taken) return suffixed;
+      }
+
+      // Fallback: random suffix
+      const fallback = `${candidate.slice(0, 14)}_${Date.now().toString(36).slice(-5)}`;
+      return fallback;
+    }
+
     // Find-or-create the user, with email-based linking.
     const email = profile.email.toLowerCase().trim();
     let user = await prisma.user.findUnique({ where: { googleId: profile.sub } });
@@ -126,22 +163,24 @@ export async function GET(req: NextRequest) {
       // Try to link to an existing email/password account with the same email.
       const existingByEmail = await prisma.user.findUnique({ where: { email } });
       if (existingByEmail && !existingByEmail.googleId) {
+        // Auto-assign username if missing
+        const username = existingByEmail.username || await deriveUsername(email);
         user = await prisma.user.update({
           where: { id: existingByEmail.id },
           data: {
             googleId: profile.sub,
-            // Backfill name and image if missing.
             name: existingByEmail.name || profile.name,
             image: existingByEmail.image ?? profile.picture ?? null,
             lastLoginAt: new Date(),
+            ...(!existingByEmail.username ? { username, usernameChangedAt: new Date() } : {}),
           },
         });
       } else if (existingByEmail) {
         // Edge case: email already linked to a different Google ID.
-        // Block the login so we don't silently overwrite an account.
         return errorRedirect(req, "email_collision");
       } else {
-        // Brand new user.
+        // Brand new user — auto-assign username from email.
+        const username = await deriveUsername(email);
         user = await prisma.user.create({
           data: {
             email,
@@ -149,15 +188,25 @@ export async function GET(req: NextRequest) {
             googleId: profile.sub,
             image: profile.picture ?? null,
             lastLoginAt: new Date(),
+            username,
+            usernameChangedAt: new Date(),
           },
         });
       }
     } else {
-      // Returning Google user — bump lastLoginAt.
-      user = await prisma.user.update({
-        where: { id: user.id },
-        data: { lastLoginAt: new Date() },
-      });
+      // Returning Google user — backfill username if missing + bump lastLoginAt.
+      if (!user.username) {
+        const username = await deriveUsername(user.email);
+        user = await prisma.user.update({
+          where: { id: user.id },
+          data: { lastLoginAt: new Date(), username, usernameChangedAt: new Date() },
+        });
+      } else {
+        user = await prisma.user.update({
+          where: { id: user.id },
+          data: { lastLoginAt: new Date() },
+        });
+      }
     }
 
     // Issue our own session token (matches existing /api/auth/login).
