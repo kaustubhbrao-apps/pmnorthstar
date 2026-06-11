@@ -148,7 +148,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
   }, [drill.slug]);
 
   const begin = useCallback(() => {
-    if (process.env.NEXT_PUBLIC_ENABLE_LEAGUE !== "true") {
+    if (!isLeagueActive) {
       startDrillLogic();
       return;
     }
@@ -160,7 +160,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       return;
     }
     startDrillLogic();
-  }, [authLoading, isLoggedIn, startDrillLogic]);
+  }, [authLoading, isLoggedIn, startDrillLogic, isLeagueActive]);
 
   const selectOption = useCallback(
     (optionIndex: number) => {
@@ -355,7 +355,13 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       </div>
 
       {state.phase === "intro" && (
-        <IntroView drill={drill} onBegin={begin} isLoggedIn={isLoggedIn} authLoading={authLoading} />
+        <IntroView 
+          drill={drill} 
+          onBegin={begin} 
+          isLoggedIn={isLoggedIn} 
+          authLoading={authLoading} 
+          isLeagueActive={isLeagueActive} 
+        />
       )}
       {state.phase === "decision" && currentNode && (
         <DecisionView
@@ -394,15 +400,15 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
             setShowAuthModal(false);
             setPendingAction(null);
           }}
-          headline="Sign in for points"
-          subhead="Sign in with Google to get your score on the leaderboard. Or, you can play anonymously without earning points."
-          secondaryAction={{
+          headline={isLeagueActive ? "Log in for the League" : "Sign in for points"}
+          subhead={isLeagueActive ? "This is an active League Match. To prevent cheating, you must log in to play. You only get one shot." : "Sign in with Google to get your score on the leaderboard. Or, you can play anonymously without earning points."}
+          secondaryAction={!isLeagueActive ? {
             label: "Play without points",
             onClick: () => {
               setShowAuthModal(false);
               startDrillLogic();
             }
-          }}
+          } : undefined}
           onSuccess={() => {
             setShowAuthModal(false);
             if (pendingAction) {
@@ -427,11 +433,13 @@ function IntroView({
   onBegin,
   isLoggedIn,
   authLoading,
+  isLeagueActive,
 }: {
   drill: Drill;
   onBegin: () => void;
-  isLoggedIn?: boolean;
-  authLoading?: boolean;
+  isLoggedIn: boolean;
+  authLoading: boolean;
+  isLeagueActive: boolean;
 }) {
   // Per-drill play count for social proof at the point of attempt —
   // the SimulateIt analog to CheckIt's "X sites scored" hero line.
@@ -499,15 +507,15 @@ function IntroView({
 
       <button
         onClick={onBegin}
-        disabled={process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && authLoading}
-        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+        disabled={isLeagueActive && authLoading}
+        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${isLeagueActive && authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
         style={{
           background: "var(--brand-primary)",
           color: "#ffffff",
         }}
       >
         <Sparkles size={16} strokeWidth={2} />
-        {process.env.NEXT_PUBLIC_ENABLE_LEAGUE !== "true"
+        {!isLeagueActive
           ? "Begin the drill"
           : authLoading
           ? "Loading..."
