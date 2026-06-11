@@ -45,7 +45,7 @@ export default function DrillPage({ params }: PageProps) {
   const isDev = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
   if (!isDev && new Date(drill.publishedAt) > new Date()) notFound();
 
-  const isLeagueActive = drill.isLeagueMatch && process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
+  const isLeagueActive = drill.isLeagueMatch;
 
   return (
     <SidebarShell
