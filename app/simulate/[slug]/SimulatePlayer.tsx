@@ -291,19 +291,21 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
     (state.phase === "decision" || state.phase === "reveal") &&
     runningTotals.max > 0;
 
+  const isLeagueActive = drill.isLeagueMatch && process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
+
   return (
     <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-4xl mx-auto">
       {/* Top breadcrumb */}
       <div className="flex items-center gap-2 mb-6 flex-wrap">
         <Link
-          href="/simulate"
+          href={isLeagueActive ? "/league" : "/simulate"}
           className="text-sm font-mono uppercase hover:opacity-70"
           style={{
             color: "var(--text-faint)",
             letterSpacing: "0.14em",
           }}
         >
-          ← simulateit
+          ← {isLeagueActive ? "league" : "simulateit"}
         </Link>
         <span
           className="text-sm font-mono"
@@ -847,6 +849,8 @@ function OutcomeView({
     return result;
   }, [history, drill.nodes]);
 
+  const isLeagueActive = drill.isLeagueMatch && process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
+
   const totalScore = history.reduce((sum, h) => sum + h.points, 0);
   const totalMax = dims.reduce((sum, d) => sum + scoreByDim[d].max, 0);
 
@@ -1259,7 +1263,7 @@ function OutcomeView({
           Try a different path
         </button>
         <Link
-          href="/simulate"
+          href={isLeagueActive ? "/league" : "/simulate"}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors"
           style={{
             background: "var(--card-bg)",
@@ -1267,7 +1271,7 @@ function OutcomeView({
             border: "1.5px solid var(--card-border)",
           }}
         >
-          More drills
+          {isLeagueActive ? "Back to League" : "More drills"}
           <ArrowUpRight size={14} strokeWidth={2} />
         </Link>
       </div>

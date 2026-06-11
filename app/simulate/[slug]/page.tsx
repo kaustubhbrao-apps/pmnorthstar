@@ -45,11 +45,13 @@ export default function DrillPage({ params }: PageProps) {
   const isDev = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
   if (!isDev && new Date(drill.publishedAt) > new Date()) notFound();
 
+  const isLeagueActive = drill.isLeagueMatch && process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
+
   return (
     <SidebarShell
-      activeNav="simulate"
-      backHref="/"
-      backLabelDesktop="Back to the library"
+      activeNav={isLeagueActive ? "league" : "simulate"}
+      backHref={isLeagueActive ? "/league" : "/"}
+      backLabelDesktop={isLeagueActive ? "Back to League" : "Back to the library"}
       backLabelMobile="Back"
       shareTitle={`SimulateIt Drill: ${drillTitle(drill)}`}
       shareText={drill.principle}
