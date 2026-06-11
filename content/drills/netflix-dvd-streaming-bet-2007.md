@@ -36,7 +36,7 @@ nodes:
       The DVD business is at peak profitability. Streaming is coming
       but the unit economics are terrible today. Pick.
     options:
-      - text: "Stay focused on DVDs. Streaming will get viable in 3-4 years. Maximize the profit window."
+      - text: Stay focused on DVDs. Streaming will get viable in 3-4 years. Maximize the profit window.
         points: 1
         pattern: defend-the-profit-pool
         rationale: |
@@ -54,7 +54,7 @@ nodes:
           starts to shrink. By year 7, you're acquired at a fraction of
           peak valuation.
         leadsTo: end-A
-      - text: "Launch streaming as a free add-on to the DVD subscription. Same price, both included."
+      - text: Launch streaming as a free add-on to the DVD subscription. Same price, both included.
         points: 5
         pattern: cannibalize-yourself-first
         rationale: |
@@ -75,7 +75,7 @@ nodes:
           stock recovers as streaming engagement metrics dominate
           earnings calls.
         leadsTo: B-bundle-followup
-      - text: "Split the company. Two CEOs, two brands, two stock tickers. Let each compete on its own terms."
+      - text: Split the company. Two CEOs, two brands, two stock tickers. Let each compete on its own terms.
         points: 2
         pattern: spin-off-too-early
         rationale: |
@@ -92,7 +92,7 @@ nodes:
           at lower terms because it's smaller. Eight years later you
           re-merge after a costly detour.
         leadsTo: end-C
-      - text: "Charge separately for streaming. New tier, $2/month add-on."
+      - text: Charge separately for streaming. New tier, $2/month add-on.
         points: 2
         pattern: monetize-the-transition
         rationale: |
@@ -117,7 +117,7 @@ nodes:
       charging $100M+ per major series for streaming rights. You need
       to decide content strategy.
     options:
-      - text: "Pour profits into original content. Become a studio. Reduce dependence on licensed content."
+      - text: Pour profits into original content. Become a studio. Reduce dependence on licensed content.
         points: 5
         pattern: vertical-integration-as-survival
         rationale: |
@@ -134,7 +134,7 @@ nodes:
           original content and have 200M+ subscribers. The DVD
           business is wound down without anyone caring.
         leadsTo: end-B-great
-      - text: "Stay licensing-only. Keep capital efficient. Compete on user experience and recommendations."
+      - text: Stay licensing-only. Keep capital efficient. Compete on user experience and recommendations.
         points: 2
         pattern: feature-not-content
         rationale: |
@@ -150,40 +150,39 @@ nodes:
         leadsTo: end-B-mediocre
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       Protecting the DVD profit pool was the textbook Innovator's
       Dilemma failure. The streaming-native competitor captured the
       category. The DVD business shrank to irrelevance by the early
       2010s. You were eventually acquired at a fraction of peak.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The free-bundle plus original-content strategy made you the
       defining company of the streaming era. ~250M subscribers
       globally within a decade. Market cap crossed $250B at peak. The
       DVD business was a footnote by year 10.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       The bundle saved the company short-term but the licensing-only
       strategy capped your ceiling. Competitors with original content
       compounded faster. You stayed a major player but not the
       defining one.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       The premature spinoff was operationally costly. Both entities
       underperformed against integrated competitors. Eight years
       later, you re-merged, but the moment was past.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The $2 streaming add-on captured some subscribers but created
       enough friction that streaming-native free-trial competitors
       captured the bigger growth wave. You eventually bundled
       streaming free but too late to lead the category.
 ---
-
 ## What actually happened
 
 This drill is based on **Netflix's 2007-2010 streaming pivot**. Reed

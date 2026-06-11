@@ -34,7 +34,7 @@ nodes:
     prompt: |
       $15M is two weeks from close. Pick the move.
     options:
-      - text: "Close on the SDR thesis. Pivot to CS once the money's in the bank."
+      - text: Close on the SDR thesis. Pivot to CS once the money's in the bank.
         points: 0
         pattern: deceive-the-investor
         rationale: |
@@ -51,7 +51,7 @@ nodes:
           their network and references. The Series B becomes
           essentially impossible.
         leadsTo: end-A
-      - text: "Tell the lead investor now. Be honest. Offer to re-paper the round on the CS thesis at the same terms, or release them."
+      - text: Tell the lead investor now. Be honest. Offer to re-paper the round on the CS thesis at the same terms, or release them.
         points: 5
         pattern: honest-recalibration
         rationale: |
@@ -69,7 +69,7 @@ nodes:
           new thesis, and close on revised terms. The other investor
           also signs. Round closes 3 weeks late on stronger terms.
         leadsTo: B-honest-followup
-      - text: "Delay the close — tell the lead 'we need 6 weeks more time' without explaining why."
+      - text: Delay the close — tell the lead 'we need 6 weeks more time' without explaining why.
         points: 2
         pattern: stall-without-honesty
         rationale: |
@@ -83,7 +83,7 @@ nodes:
           urgency." The other investor follows. You restart
           fundraising 3 months later on weaker terms.
         leadsTo: end-C
-      - text: "Withdraw the round entirely. Bootstrap on revenue until the CS thesis is unambiguous."
+      - text: Withdraw the round entirely. Bootstrap on revenue until the CS thesis is unambiguous.
         points: 3
         pattern: walk-away-from-money
         rationale: |
@@ -105,7 +105,7 @@ nodes:
       board and asks for a clear 90-day plan to validate the CS
       market. You have two design partners. Pick the plan.
     options:
-      - text: "Sign 5 more design partners in CS. Free, with monthly QBRs and product co-design rights."
+      - text: Sign 5 more design partners in CS. Free, with monthly QBRs and product co-design rights.
         points: 5
         pattern: validation-velocity
         rationale: |
@@ -120,7 +120,7 @@ nodes:
           paid contracts at month 4. The 90-day plan exceeds
           target. Board confidence is reinforced.
         leadsTo: end-B-great
-      - text: "Charge enterprise prices from day one — $50K/year. Filter for serious customers."
+      - text: Charge enterprise prices from day one — $50K/year. Filter for serious customers.
         points: 3
         pattern: premium-pricing-pre-validation
         rationale: |
@@ -134,7 +134,7 @@ nodes:
           is slow because there's only one data point. The 90-day
           validation plan is partially met.
         leadsTo: end-B-mixed
-      - text: "Run a public beta. Let any CS team sign up free. Maximize sample size."
+      - text: Run a public beta. Let any CS team sign up free. Maximize sample size.
         points: 2
         pattern: spray-and-pray
         rationale: |
@@ -149,14 +149,14 @@ nodes:
         leadsTo: end-B-mediocre
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The deception broke the relationship with the lead investor
       and broadcast in the VC network. The Series B was impossible
       on those terms. The company eventually raised on weaker terms
       from a different syndicate, after a leadership transition.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The honest recalibration plus tight validation plan worked.
       The CS pivot validated within 90 days, the Series B closed
       18 months later at 5x the Series A valuation. The board
@@ -164,30 +164,29 @@ nodes:
       company.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The pivot worked but the premium pricing slowed validation.
       Series B happened but on weaker terms than a tighter
       validation plan would have produced.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       The public beta produced noise. The 90-day plan missed
       target. Board confidence wavered. The company recovered
       with a sharper plan in month 4 but lost momentum.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       The delay broke trust without resolving the underlying issue.
       The lead pulled out, the round restarted 3 months later on
       weaker terms with a different syndicate.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       Walking away cost you 9-12 months of growth capital. The
       eventual smaller round closed but the team lost two senior
       hires you couldn't afford during the bootstrap window.
 ---
-
 ## What's at stake here
 
 Mid-fundraise pivots happen more often than founders publicly

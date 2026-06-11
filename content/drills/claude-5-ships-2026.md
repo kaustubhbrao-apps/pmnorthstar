@@ -33,7 +33,7 @@ nodes:
       The team is asking what to do. Engineering can do roughly one
       "big thing" before the Series A close. Pick the move.
     options:
-      - text: "Migrate the production stack to Claude 5 in the next sprint"
+      - text: Migrate the production stack to Claude 5 in the next sprint
         points: 0
         pattern: hype-driven-migration
         rationale: |
@@ -50,7 +50,7 @@ nodes:
           deadline by 2 weeks. Lead investor moves to "let's revisit
           after you stabilize."
         leadsTo: A-migrate-followup
-      - text: "Quietly ship a model-agnostic abstraction layer. Test Claude 5 in 5% of traffic. Don't announce."
+      - text: Quietly ship a model-agnostic abstraction layer. Test Claude 5 in 5% of traffic. Don't announce.
         points: 5
         pattern: optionality-not-commitment
         rationale: |
@@ -67,7 +67,7 @@ nodes:
           stay on GPT-4 in production, keep the option open, ship the
           fundraise on time.
         leadsTo: B-abstraction-followup
-      - text: "Tell the team to ignore it. Stay heads-down on the fundraise roadmap. Revisit in Q3."
+      - text: Tell the team to ignore it. Stay heads-down on the fundraise roadmap. Revisit in Q3.
         points: 3
         pattern: focus-over-novelty
         rationale: |
@@ -84,7 +84,6 @@ nodes:
           You spend Q3 explaining to enterprise prospects why you
           haven't migrated.
         leadsTo: C-ignore-followup
-
   A-migrate-followup:
     dimension: business
     prompt: |
@@ -93,7 +92,7 @@ nodes:
       their compliance team needs to re-audit because the model
       changed. Series A lead wants an update. What now?
     options:
-      - text: "Push through. Tell the enterprise customer it's a one-time disruption."
+      - text: Push through. Tell the enterprise customer it's a one-time disruption.
         points: 1
         pattern: doubling-down-on-bad-call
         rationale: |
@@ -108,7 +107,7 @@ nodes:
           recommends switching to your competitor. Fundraise close
           slides further.
         leadsTo: end-A-bad
-      - text: "Roll back. Document what you learned. Take the eval data into the next sprint."
+      - text: Roll back. Document what you learned. Take the eval data into the next sprint.
         points: 4
         pattern: clean-rollback
         rationale: |
@@ -123,19 +122,18 @@ nodes:
         leadsTo: end-A-recovery
   end-A-bad:
     isOutcome: true
-    summary: |
+    prompt: |
       The hype-driven migration cost you the enterprise customer, the
       fundraise terms, and the team's trust in your ability to call
       shots under pressure. The product still runs, but the company is
       meaningfully weaker than it was on Monday morning.
   end-A-recovery:
     isOutcome: true
-    summary: |
+    prompt: |
       You recovered. The clean rollback bought you credibility you can
       spend later. The Series A closes a week late. You bake the
       model-abstraction layer into Q3 roadmap — the right move, just
       arrived at the wrong way.
-
   B-abstraction-followup:
     dimension: product
     prompt: |
@@ -145,7 +143,7 @@ nodes:
       sentiment). Enterprise customers have asked if you'll switch.
       What do you communicate publicly?
     options:
-      - text: "Publish a blog post: 'We tested Claude 5 — here's what we learned.' Share the eval data."
+      - text: 'Publish a blog post: ''We tested Claude 5 — here''s what we learned.'' Share the eval data.'
         points: 5
         pattern: transparency-as-moat
         rationale: |
@@ -160,7 +158,7 @@ nodes:
           prospects email asking for demos. One says: "This is exactly
           why we wanted to work with you."
         leadsTo: end-B-great
-      - text: "Stay quiet. Continue evals. Announce a migration only when the data is unambiguous."
+      - text: Stay quiet. Continue evals. Announce a migration only when the data is unambiguous.
         points: 4
         pattern: signal-over-noise
         rationale: |
@@ -174,7 +172,7 @@ nodes:
           later and gets the press attention you could have had. Your
           eval is still better, but nobody knows.
         leadsTo: end-B-good
-      - text: "Migrate to Claude 5 immediately. The cost savings will fund another engineer."
+      - text: Migrate to Claude 5 immediately. The cost savings will fund another engineer.
         points: 2
         pattern: cost-over-quality
         rationale: |
@@ -189,24 +187,23 @@ nodes:
         leadsTo: end-B-mediocre
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The transparency post became one of the best marketing investments
       of the quarter. You stayed on GPT-4 in production but built a
       reputation as the AI startup that ships with evals, not hype.
       Series A closes on time, ahead of plan on terms.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       You shipped the disciplined move quietly. Fundraise closes on
       time. You missed the narrative moment, but the company is
       stronger and the option remains open for Q3.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       The cost optimization came at the wrong price. NPS dropped,
       renewals slipped, and you spent Q3 rebuilding what GPT-4 was
       already doing right. Net-net you're behind where you started.
-
   C-ignore-followup:
     dimension: business
     prompt: |
@@ -216,7 +213,7 @@ nodes:
       Your inbound is down 30% MoM. Two enterprise prospects you were
       mid-cycle on went silent. What now?
     options:
-      - text: "Build an abstraction now. Migrate carefully. Publish your own eval to reclaim narrative."
+      - text: Build an abstraction now. Migrate carefully. Publish your own eval to reclaim narrative.
         points: 4
         pattern: late-but-correct
         rationale: |
@@ -227,7 +224,7 @@ nodes:
           You recover the prospects over Q3. Inbound stabilizes. The
           competitor's lead shrinks but doesn't disappear.
         leadsTo: end-C-recover
-      - text: "Counter-position: 'we don't chase model fashion.' Lean into stability messaging."
+      - text: 'Counter-position: ''we don''t chase model fashion.'' Lean into stability messaging.'
         points: 2
         pattern: defensive-positioning
         rationale: |
@@ -241,18 +238,17 @@ nodes:
         leadsTo: end-C-defensive
   end-C-recover:
     isOutcome: true
-    summary: |
+    prompt: |
       You arrived at the right answer eventually. The two-month delay
       cost you narrative and some inbound, but the company is intact
       and the migration was clean.
   end-C-defensive:
     isOutcome: true
-    summary: |
+    prompt: |
       The "we don't chase fashion" framing protected your existing book
       but stopped your growth. The next 12 months become a defensive
       operation rather than an expansion.
 ---
-
 ## What's at stake here
 
 This drill is based on a pattern playing out across every AI startup

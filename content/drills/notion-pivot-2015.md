@@ -37,7 +37,7 @@ nodes:
       The CTO wants to rebuild. The product works for a few hundred
       users. Six months of runway. Pick.
     options:
-      - text: "Rebuild from scratch. Communicate to the team and to investors. Buy 4 more months runway by cutting headcount."
+      - text: Rebuild from scratch. Communicate to the team and to investors. Buy 4 more months runway by cutting headcount.
         points: 5
         pattern: nuke-and-rebuild
         rationale: |
@@ -56,7 +56,7 @@ nodes:
           rebuilding around the "blocks" primitive. The new product
           ships and converts the existing power users in 48 hours.
         leadsTo: B-rebuild-followup
-      - text: "Refactor incrementally. Keep shipping features. Don't break the existing users."
+      - text: Refactor incrementally. Keep shipping features. Don't break the existing users.
         points: 2
         pattern: incremental-when-radical-needed
         rationale: |
@@ -72,7 +72,7 @@ nodes:
           shipped 8 new features. DAU is still flat. Runway runs
           out.
         leadsTo: end-A
-      - text: "Cut features aggressively. Don't rebuild. Just remove everything below 10% usage."
+      - text: Cut features aggressively. Don't rebuild. Just remove everything below 10% usage.
         points: 3
         pattern: prune-without-rebuild
         rationale: |
@@ -86,7 +86,7 @@ nodes:
           either way. The architecture problem remains. DAU still
           flat at month 6.
         leadsTo: end-C
-      - text: "Sell the company. You have a working product and 200 paying users — find a strategic buyer."
+      - text: Sell the company. You have a working product and 200 paying users — find a strategic buyer.
         points: 1
         pattern: surrender-prematurely
         rationale: |
@@ -114,7 +114,7 @@ nodes:
       stealth to a tight invite list before the public launch.
       Pick the launch strategy.
     options:
-      - text: "Invite-only beta. Personal outreach to 100 power users from the old product. Iterate quickly."
+      - text: Invite-only beta. Personal outreach to 100 power users from the old product. Iterate quickly.
         points: 5
         pattern: deliberate-base-rebuild
         rationale: |
@@ -130,7 +130,7 @@ nodes:
           surpass the old product's peak within 6 weeks. You ship
           public launch with a built-in evangelist base.
         leadsTo: end-B-great
-      - text: "Public launch on Product Hunt. Maximum surface area, fast feedback."
+      - text: Public launch on Product Hunt. Maximum surface area, fast feedback.
         points: 3
         pattern: launch-before-loop
         rationale: |
@@ -145,7 +145,7 @@ nodes:
           churn at day-7 because the product is still buggy and
           your support team can't keep up.
         leadsTo: end-B-mixed
-      - text: "Skip the launch. Quietly migrate the old users. Don't talk about the rebuild until v2."
+      - text: Skip the launch. Quietly migrate the old users. Don't talk about the rebuild until v2.
         points: 2
         pattern: hide-the-bet
         rationale: |
@@ -160,14 +160,14 @@ nodes:
         leadsTo: end-B-quiet
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The incremental refactor never compounded. Twelve months later
       you'd shipped neither a meaningfully new product nor a
       cleaner codebase. The team ran out of runway and the company
       shut down quietly.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The deliberate base-rebuild compounded perfectly. Within 18
       months you were the fastest-growing productivity tool in
       history. By 5 years out, $30B+ valuation and a tool every
@@ -175,33 +175,32 @@ nodes:
       most-told founder narrative of the decade.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The public launch came too fast. The new product was right
       but the support pipeline wasn't ready. The growth recovered
       eventually but the first 90 days were chaos.
   end-B-quiet:
     isOutcome: true
-    summary: |
+    prompt: |
       The migration worked technically. Brand-wise, you missed the
       moment. The product grew on word-of-mouth alone for the next
       two years until a competitor copied the blocks primitive and
       launched it louder.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       You cleaned up the features but didn't fix the architecture.
       Six months later the DAU graph was identical. The runway ran
       out and the team scattered.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The acqui-hire was the worst-timed exit possible. You returned
       the cap-table at par; your team got jobs at the acquirer; the
       blocks-based workspace got defined by a different startup 18
       months later, valued in the tens of billions. You watched it
       happen on Twitter.
 ---
-
 ## What actually happened
 
 This drill is based on the **Notion 2015 rebuild**. Notion shipped

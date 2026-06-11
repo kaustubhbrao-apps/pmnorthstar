@@ -29,7 +29,7 @@ nodes:
     prompt: |
       Pipeline is down 45%. Pick the move.
     options:
-      - text: "Rebuild for AI search: structured data, citation-ready content, llms.txt, FAQ schema across the 400 pages."
+      - text: 'Rebuild for AI search: structured data, citation-ready content, llms.txt, FAQ schema across the 400 pages.'
         points: 4
         pattern: rebuild-for-the-new-channel
         rationale: |
@@ -44,7 +44,7 @@ nodes:
           to 24% of pipeline by Q4. Organic search keeps shrinking but
           AI citation grows enough to flatten the net.
         leadsTo: A-rebuild-followup
-      - text: "Convert the audience into a newsletter. Email is a channel you own, search is one you rent."
+      - text: Convert the audience into a newsletter. Email is a channel you own, search is one you rent.
         points: 5
         pattern: own-the-distribution
         rationale: |
@@ -60,7 +60,7 @@ nodes:
           ~$200K ARR from sponsorships within the first year, fully
           replacing the lost search revenue.
         leadsTo: B-newsletter-followup
-      - text: "Double down on paid: aggressive Google Ads + LinkedIn to compensate for lost organic."
+      - text: 'Double down on paid: aggressive Google Ads + LinkedIn to compensate for lost organic.'
         points: 1
         pattern: pay-for-shrinking-channel
         rationale: |
@@ -73,7 +73,7 @@ nodes:
           Paid CAC jumps another 30%. Pipeline stabilizes but margin
           collapses. The board notices the burn rate. Layoffs come in Q4.
         leadsTo: end-C
-      - text: "Build a product. Pivot from content business to software business. Use the audience to seed product launch."
+      - text: Build a product. Pivot from content business to software business. Use the audience to seed product launch.
         points: 3
         pattern: pivot-content-to-product
         rationale: |
@@ -98,7 +98,7 @@ nodes:
       annual industry benchmark / dataset to become the definitive
       citation source for your category?
     options:
-      - text: "Yes. Publish the benchmark, make it free + downloadable, structure for citation."
+      - text: Yes. Publish the benchmark, make it free + downloadable, structure for citation.
         points: 5
         pattern: citation-magnet
         rationale: |
@@ -113,7 +113,7 @@ nodes:
           your category. AI-driven pipeline doubles. The benchmark
           becomes the company's most-quoted asset.
         leadsTo: end-A-great
-      - text: "Stick to the page rebuild. Don't over-invest in any single asset."
+      - text: Stick to the page rebuild. Don't over-invest in any single asset.
         points: 3
         pattern: incremental-only
         rationale: |
@@ -131,7 +131,7 @@ nodes:
       28K subscribers, 6 months in. Open rates ~38%, click rates ~9%.
       You can monetize three ways. Pick the path.
     options:
-      - text: "Free newsletter + paid 'pro' tier with deep analysis ($15/mo). Build a Substack-style subscription business."
+      - text: Free newsletter + paid 'pro' tier with deep analysis ($15/mo). Build a Substack-style subscription business.
         points: 5
         pattern: free-plus-paid-tiers
         rationale: |
@@ -146,7 +146,7 @@ nodes:
           social proof of the paid tier ("the newsletter that has 1,000
           paying readers").
         leadsTo: end-B-great
-      - text: "Free newsletter funded entirely by sponsorships ($5-15K per drop)."
+      - text: Free newsletter funded entirely by sponsorships ($5-15K per drop).
         points: 4
         pattern: ad-funded-only
         rationale: |
@@ -160,7 +160,7 @@ nodes:
           sponsor-friendly content. Subscriber growth flattens because
           the perceived value cap is visible.
         leadsTo: end-B-good
-      - text: "Free newsletter, eventually upsell to a paid SaaS product."
+      - text: Free newsletter, eventually upsell to a paid SaaS product.
         points: 3
         pattern: newsletter-as-funnel
         rationale: |
@@ -176,48 +176,47 @@ nodes:
         leadsTo: end-B-mediocre
   end-A-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The rebuild + benchmark combination repositioned you for the
       AI-search era. Pipeline recovered and grew. The company stayed in
       the content business but on a new distribution channel.
   end-A-good:
     isOutcome: true
-    summary: |
+    prompt: |
       Solid recovery without breakout. The rebuild worked but you
       forfeited the citation-magnet differentiator to a competitor.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The newsletter pivot defined a new business. By year 2 you had
       ~50K subscribers, ~3K paying at $15/mo, and the company became
       a category-defining publication that didn't depend on Google at
       all.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       The ad-funded newsletter worked sustainably but capped sooner
       than the paid-tier scenario would have. Steady, not breakout.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       The newsletter without monetization stalled. Audience growth
       slowed because the "what's the business" question was unanswered.
       You eventually shipped a paid tier in year 2.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Paying for a shrinking channel accelerated the burn. The
       eventual pivot came 12 months late, with weaker terms because
       the cash position had deteriorated.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The content-to-product pivot is high-variance. Some companies
       execute it brilliantly; many split focus and lose both
       businesses. Without specific product-team chops, the bet
       didn't compound.
 ---
-
 ## What's at stake here
 
 This drill is playing out across thousands of content businesses in

@@ -36,7 +36,7 @@ nodes:
       Launch broadly to all credit-card holders, or gate by credit
       score?
     options:
-      - text: "Launch invitation-only. Gate to credit scores 750+. Aspirational positioning."
+      - text: Launch invitation-only. Gate to credit scores 750+. Aspirational positioning.
         points: 5
         pattern: exclusion-as-positioning
         rationale: |
@@ -55,7 +55,7 @@ nodes:
           CRED" interface across Instagram and LinkedIn. Brand becomes
           aspirational overnight.
         leadsTo: B-exclusion-followup
-      - text: "Launch broadly. Reach every credit-card holder in India. Compete on rewards."
+      - text: Launch broadly. Reach every credit-card holder in India. Compete on rewards.
         points: 1
         pattern: tam-first-thinking
         rationale: |
@@ -71,7 +71,7 @@ nodes:
           You burn most of the round on rewards subsidies. Brand
           looks like another payments app.
         leadsTo: end-A
-      - text: "Launch broadly but use beautiful design + premium UI to differentiate."
+      - text: Launch broadly but use beautiful design + premium UI to differentiate.
         points: 3
         pattern: design-without-exclusion
         rationale: |
@@ -86,7 +86,7 @@ nodes:
           is "well-designed payments app" not "aspirational
           financial product."
         leadsTo: end-C
-      - text: "Launch with the 750+ gate but no invitation system — anyone with the credit score can sign up."
+      - text: Launch with the 750+ gate but no invitation system — anyone with the credit score can sign up.
         points: 3
         pattern: gate-without-velvet-rope
         rationale: |
@@ -108,7 +108,7 @@ nodes:
       mythology is real. Now the question: what's the second
       product? Pick.
     options:
-      - text: "Launch a rent-payment-via-credit-card product. Massive monthly volume, sticky habit."
+      - text: Launch a rent-payment-via-credit-card product. Massive monthly volume, sticky habit.
         points: 5
         pattern: high-frequency-second-product
         rationale: |
@@ -123,7 +123,7 @@ nodes:
           months. The product becomes habit-forming. ARPU triples.
           A new revenue line opens (rent fees).
         leadsTo: end-B-great
-      - text: "Launch a loan/credit product. Higher revenue per user."
+      - text: Launch a loan/credit product. Higher revenue per user.
         points: 3
         pattern: revenue-first-second-product
         rationale: |
@@ -136,7 +136,7 @@ nodes:
           of users perceive the app as "trying to push debt." NPS
           softens. Brand sentiment dilutes.
         leadsTo: end-B-mixed
-      - text: "Launch a luxury concierge / travel product. Pure status play."
+      - text: Launch a luxury concierge / travel product. Pure status play.
         points: 4
         pattern: brand-extension
         rationale: |
@@ -153,43 +153,42 @@ nodes:
         leadsTo: end-B-good
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       Broad launch + commodity competition was a money pit. The
       brand never escaped "another payments app" framing. Series B
       came at a flat valuation on the substantial burn.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The exclusivity-plus-rent-product combination became the
       textbook on aspirational financial brands. Valuation hit
       $6B+, the brand became cultural shorthand for premium
       financial behavior in urban India.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The loan product diluted the brand without compounding the
       revenue meaningfully. The company recovered eventually but
       the brand pristine-ness took a hit.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       The concierge play worked brand-wise but slowly. Operations
       caught up over 18 months. The brand stayed aspirational; the
       revenue grew steadily but slower.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Beautiful but not aspirational. The product won design awards
       but never became a status object. Growth was decent but
       flat compared to the exclusion scenario.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The right users joined but without the wait-list mythology,
       the brand never compounded. The credit-score gate became
       a friction, not a feature.
 ---
-
 ## What actually happened
 
 This drill is based on **CRED's launch in 2018**. Kunal Shah launched

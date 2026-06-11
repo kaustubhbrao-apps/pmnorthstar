@@ -34,7 +34,7 @@ nodes:
     prompt: |
       OpenAI just announced hardware that does what your app does. Pick.
     options:
-      - text: "Build a companion app for the device. Position as 'the productivity app for ChatGPT Companion.'"
+      - text: Build a companion app for the device. Position as 'the productivity app for ChatGPT Companion.'
         points: 4
         pattern: become-the-platform-tenant
         rationale: |
@@ -52,7 +52,7 @@ nodes:
           OpenAI updates their first-party app to absorb 40% of your
           features 18 months later. You're playing defense ever since.
         leadsTo: A-tenant-followup
-      - text: "Pivot vertical: re-position the app for a specific profession (lawyers, doctors, sales reps) and ignore the hardware entirely."
+      - text: 'Pivot vertical: re-position the app for a specific profession (lawyers, doctors, sales reps) and ignore the hardware entirely.'
         points: 5
         pattern: vertical-where-device-cant-fit
         rationale: |
@@ -70,7 +70,7 @@ nodes:
           at much better unit economics. The ChatGPT Companion eats
           consumer share; you own legal productivity.
         leadsTo: B-vertical-followup
-      - text: "Pivot to be a multi-model app. Position as 'works with ChatGPT, Claude, Gemini, and Apple Intelligence.' Hardware-agnostic."
+      - text: Pivot to be a multi-model app. Position as 'works with ChatGPT, Claude, Gemini, and Apple Intelligence.' Hardware-agnostic.
         points: 3
         pattern: model-agnostic-bridge
         rationale: |
@@ -86,7 +86,7 @@ nodes:
           works briefly. Within 12 months, most users have one default
           model and the model-picker becomes irrelevant.
         leadsTo: end-C
-      - text: "Sell the company to OpenAI before the device ships and your ARR drops."
+      - text: Sell the company to OpenAI before the device ships and your ARR drops.
         points: 3
         pattern: exit-before-the-shift
         rationale: |
@@ -111,7 +111,7 @@ nodes:
       already restricted always-on background processing and limited
       file system access. You can see the platform tightening. Pick.
     options:
-      - text: "Stay platform-aligned. Adapt to every guideline change. Don't fight."
+      - text: Stay platform-aligned. Adapt to every guideline change. Don't fight.
         points: 3
         pattern: comply-and-keep-running
         rationale: |
@@ -125,7 +125,7 @@ nodes:
           OpenAI's first-party app over 24 months. Revenue plateaus.
           You're employed but not building a real business.
         leadsTo: end-A-stable
-      - text: "Build a parallel product that doesn't depend on the device. Use Companion as one of several distribution channels."
+      - text: Build a parallel product that doesn't depend on the device. Use Companion as one of several distribution channels.
         points: 5
         pattern: distribute-don't-depend
         rationale: |
@@ -150,7 +150,7 @@ nodes:
       (b) go deeper in legal — case management integration,
       e-discovery, billing workflows.
     options:
-      - text: "Go deeper in legal. Become the productivity layer that integrates with case-management software."
+      - text: Go deeper in legal. Become the productivity layer that integrates with case-management software.
         points: 5
         pattern: depth-before-breadth
         rationale: |
@@ -166,7 +166,7 @@ nodes:
           customer count. The company becomes "AI for legal practice"
           not just "AI productivity."
         leadsTo: end-B-great
-      - text: "Add medical + financial advisors. Three verticals, three sales motions, three compliance regimes."
+      - text: Add medical + financial advisors. Three verticals, three sales motions, three compliance regimes.
         points: 3
         pattern: spread-too-thin
         rationale: |
@@ -182,19 +182,19 @@ nodes:
         leadsTo: end-B-mixed
   end-A-stable:
     isOutcome: true
-    summary: |
+    prompt: |
       The platform-tenant path produced bounded but stable revenue.
       You're a working business but not a defensible one. Every
       OpenAI guideline change hurts.
   end-A-good:
     isOutcome: true
-    summary: |
+    prompt: |
       The multi-surface pivot recovered diversification. The Companion
       channel was one of several. When OpenAI tightened further, you
       absorbed the hit. The company is healthy and sovereign.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The legal-vertical plus integration-depth combination became the
       textbook on surviving platform shifts. You owned legal
       productivity, integrated with the practice-management stack,
@@ -202,25 +202,24 @@ nodes:
       depending on the device.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       Three verticals at sub-scale produced a working business but
       not a category-defining one. The team eventually focused on
       legal as the strongest, deprecating the others.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Model-agnostic positioning worked briefly. As foundation models
       differentiated, the picker became friction. You eventually
       committed to one model anyway.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The acquisition closed at a reasonable price. Your team's
       productivity layer became Anthropic's third-party offering.
       Your category got absorbed by both major platforms within 24
       months.
 ---
-
 ## What's at stake here
 
 The pattern: every major platform shift (mobile, voice assistants,

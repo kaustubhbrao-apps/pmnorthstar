@@ -31,7 +31,7 @@ nodes:
     prompt: |
       Launch Thursday on Product Hunt, or fix the basics first?
     options:
-      - text: "Launch Thursday. Ride the build momentum. Fix the basics in response to feedback."
+      - text: Launch Thursday. Ride the build momentum. Fix the basics in response to feedback.
         points: 1
         pattern: speed-over-trust
         rationale: |
@@ -48,7 +48,7 @@ nodes:
           favicon and the "Welcome to Create Next App" tab title.
           The launch becomes a meme about vibe-coded apps.
         leadsTo: end-A
-      - text: "Spend 3 days fixing the basics — favicon, meta tags, privacy policy, 404, error monitoring. Launch the following Thursday."
+      - text: Spend 3 days fixing the basics — favicon, meta tags, privacy policy, 404, error monitoring. Launch the following Thursday.
         points: 5
         pattern: minimum-viable-trust
         rationale: |
@@ -64,7 +64,7 @@ nodes:
           convert to paid at 3x the rate the original launch would
           have achieved.
         leadsTo: B-fix-basics-followup
-      - text: "Skip Product Hunt. Soft-launch to your existing friends + early-adopter network. Get to 100 paying users before any public launch."
+      - text: Skip Product Hunt. Soft-launch to your existing friends + early-adopter network. Get to 100 paying users before any public launch.
         points: 4
         pattern: dark-launch-then-public
         rationale: |
@@ -81,7 +81,7 @@ nodes:
           proof and converts well, but at lower volume than a
           first-launch would have produced.
         leadsTo: end-C
-      - text: "Add 10 more features first. The product is too thin for Product Hunt."
+      - text: Add 10 more features first. The product is too thin for Product Hunt.
         points: 1
         pattern: feature-creep-before-launch
         rationale: |
@@ -104,7 +104,7 @@ nodes:
       from day one? And should you build a custom landing page or
       keep the in-app marketing copy?
     options:
-      - text: "Free tier with a 14-day trial for paid features. Custom landing page."
+      - text: Free tier with a 14-day trial for paid features. Custom landing page.
         points: 5
         pattern: standard-onboarding
         rationale: |
@@ -118,7 +118,7 @@ nodes:
           trial, ~3% convert to paid. ARR hits $4K MRR in week
           one — small but real.
         leadsTo: end-B-great
-      - text: "Paid only. $15/month. No free tier. Charge from sign-up."
+      - text: Paid only. $15/month. No free tier. Charge from sign-up.
         points: 3
         pattern: monetize-immediately
         rationale: |
@@ -132,7 +132,7 @@ nodes:
           revenue but slower growth. Series A pitch will need to
           show stronger product-market signal.
         leadsTo: end-B-mixed
-      - text: "Free forever. Monetize via API access later."
+      - text: Free forever. Monetize via API access later.
         points: 2
         pattern: defer-monetization
         rationale: |
@@ -149,43 +149,42 @@ nodes:
         leadsTo: end-B-mediocre
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The premature launch became the case study other founders
       quoted on what not to do. You spent the next 4 weeks fixing
       the basics and re-launching, but the brand was already
       compromised in the early-adopter community.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The "fix the basics + standard playbook" combination
       compounded perfectly. ARR hit $50K MRR by month 6, Series
       seed closed cleanly, and the product became a category
       reference for AI scheduling.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       Paid-only filtered well but slowed compounding. The product
       grew steadily; the fundraise was harder than necessary
       because growth metrics were thinner.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       Free-forever drove signups but the revenue conversation was
       a problem at every fundraise. The eventual paid tier broke
       some trust with early users.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       The dark-launch worked. Slower compounding, lower volume,
       higher quality. The eventual PH launch lands cleanly.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       Eight weeks of feature work didn't move the launch outcome.
       The product was always more feature-rich than necessary
       and always lacked the trust signals that converted users.
 ---
-
 ## What's at stake here
 
 The pattern: AI-assisted coding made the *building* fast. Vibe-coded

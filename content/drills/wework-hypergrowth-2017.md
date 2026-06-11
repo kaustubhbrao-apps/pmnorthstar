@@ -7,87 +7,210 @@ estimatedMinutes: 15
 publishedAt: '2026-11-22T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-11-25T15:00:00+00:00'
-principle: Disguising a capital-intensive real estate business as a high-margin tech company will eventually collapse under public scrutiny.
+principle: |
+  Disguising a capital-intensive real estate business as a high-margin software technology company 
+  will eventually collapse under public market scrutiny. The reality distortion field that works on 
+  venture capitalists shatters when exposed to institutional public market fundamentals.
 intro: |
-  It's 2017. You are a senior executive at WeWork, working closely with charismatic founder Adam Neumann. SoftBank has just poured billions into the company, valuing it at $20 billion. The mandate from Neumann and Masa Son is simple: blitzscale. Grow at all costs, open locations globally, and dominate the market.
+  It's 2017. You are the Chief Financial Officer at WeWork, working closely with the charismatic and 
+  mercurial founder, Adam Neumann. SoftBank, led by Masayoshi Son, has just poured billions into the 
+  company, valuing it at an astronomical $20 billion. The mandate from Neumann and Son is simple: 
+  blitzscale. Grow at all costs, open locations globally, and dominate the market before anyone else can.
   
-  Internally, the numbers are terrifying. The company signs 15-year commercial leases, renovates the spaces heavily, and then rents them out on month-to-month terms. The mismatch in liabilities is massive. The "Community Adjusted EBITDA" metric you use to show profitability strips out basic operating expenses like rent and marketing.
+  Internally, the financial reality is terrifying. The company's core business model involves signing 
+  15-year commercial leases at market peaks, renovating the spaces heavily with capital expenditure, and 
+  then renting them out on month-to-month terms to freelancers and startups. The mismatch in duration 
+  liability is massive. To hide the bleeding, the company uses a fabricated metric called "Community 
+  Adjusted EBITDA" which strips out basic operating expenses like rent, marketing, and administration.
   
-  You are aggressively expanding, acquiring unrelated companies (like a wave pool startup), and positioning WeWork not as a real estate company, but as a "physical social network" and a tech company. The IPO is looming on the horizon.
+  You are aggressively expanding, acquiring completely unrelated companies (like a wave pool startup and 
+  a superfood company), and positioning WeWork not as a real estate company, but as a "physical social 
+  network," a "state of consciousness," and a tech company. 
   
-  This is a Tier 1 League Match. The decisions are binary and the consequences are terminal.
+  The IPO is looming on the horizon. This is a Tier 1 League Match. The decisions are binary and the 
+  consequences are terminal.
 nodes:
   start:
     dimension: strategy
     prompt: |
-      The push for expansion is relentless. Adam wants to double the global square footage in the next 12 months. This requires signing hundreds of new, highly expensive long-term leases at market peak. The internal finance team is warning that a slight dip in occupancy will cause a severe cash crisis. What is your recommendation to the board?
+      The push for expansion is relentless. Adam wants to double the global square footage in the next 12 
+      months. This requires signing hundreds of new, highly expensive long-term leases immediately. Your 
+      internal finance team models show that a slight dip in macroeconomic occupancy will cause a severe, 
+      unrecoverable cash crisis. What is your recommendation to the board and Adam?
     options:
-      - text: "Advise pulling back. Focus on achieving profitability in existing mature locations before signing any new leases."
-        leadsTo: "pull_back"
-        points: 50
-        rationale: "Fundamentals matter. A real estate business cannot scale infinitely without sound unit economics."
-      - text: "Support the hypergrowth. SoftBank is demanding it, and capturing the market now will give you pricing power later."
-        leadsTo: "support_growth"
+      - text: Advise pulling back immediately. Focus on achieving profitability in existing mature locations before signing any new leases.
+        points: 5
+        pattern: financial-fiduciary
+        rationale: |
+          Fundamentals matter. A real estate business cannot scale infinitely without sound unit economics. 
+          Ignoring a massive liability mismatch in a cyclical industry like commercial real estate is fiduciary 
+          negligence.
+        consequence: |
+          You present the models. The finance team supports you. The room goes dead silent. Adam Neumann glares 
+          at you.
+        leadsTo: pull_back
+      - text: Support the hypergrowth. SoftBank is demanding it, and capturing the global market now will give you pricing power later.
         points: 0
-        rationale: "This accelerates the massive liability mismatch. You are building a house of cards."
+        pattern: enabling-delusion
+        rationale: |
+          This accelerates the massive liability mismatch. You are building a house of cards. Real estate 
+          does not have the zero-marginal-cost network effects of software; you do not gain monopolistic 
+          pricing power just by being the biggest tenant in a city.
+        consequence: |
+          You sign off on the leases. The burn rate skyrockets to $100 million a week. The valuation hits $47B.
+        leadsTo: support_growth
 
   pull_back:
     dimension: founder
     prompt: |
-      Adam Neumann is furious. He views your caution as a lack of vision. He threatens to push you out of the leadership team if you don't align with the "spiritual energy" of the company's growth. What do you do?
+      Adam Neumann is furious. He views your caution as a lack of vision and a betrayal of the company's 
+      "spiritual energy." Masayoshi Son agrees with Adam, famously telling him he isn't being "crazy enough." 
+      Adam threatens to push you out of the leadership team entirely if you don't align with the hypergrowth 
+      mandate. What do you do?
     options:
-      - text: "Stand your ground. Present the hard financial data to the major investors, even if it means risking your job."
-        leadsTo: "stand_ground"
-        points: 50
-        rationale: "Fiduciary duty requires confronting a founder who is disconnected from financial reality."
-      - text: "Back down. You can't fight the founder and SoftBank. Try to manage the margins incrementally from within."
-        leadsTo: "back_down"
+      - text: Stand your ground. Present the hard financial data directly to the major institutional investors, risking your job.
+        points: 5
+        pattern: professional-integrity
+        rationale: |
+          Fiduciary duty requires confronting a founder who is completely disconnected from financial reality, 
+          even if it costs you your position. You cannot sign off on fraudulent metrics.
+        consequence: |
+          You are fired within the week. You are stripped of unvested equity and escorted from the building.
+        leadsTo: stand_ground_outcome
+      - text: Back down. You can't fight the founder and the lead investor. Try to manage the margins incrementally from within.
         points: 0
-        rationale: "Incremental margin management cannot fix a fundamentally broken business model."
+        pattern: cowardly-compliance
+        rationale: |
+          Incremental margin management cannot fix a fundamentally broken business model. By staying, you become 
+          complicit in the impending disaster.
+        consequence: |
+          You stay. You sign off on the aggressive leases, knowing they are toxic.
+        leadsTo: support_growth
 
   support_growth:
     dimension: business
     prompt: |
-      The hypergrowth continues. The valuation hits $47 billion. You are preparing the S-1 document for the IPO. Adam insists on retaining absolute voting control, charging the company $5.9M for the "We" trademark, and including the "Community Adjusted EBITDA" metric. The bankers are getting nervous. What is your stance on the S-1?
+      The hypergrowth continues unabated. The private valuation hits $47 billion. You are preparing the S-1 
+      document for the highly anticipated IPO. 
+      
+      Adam insists on including several toxic elements in the filing: retaining absolute voting control (20 
+      votes per share), disclosing that he charged the company $5.9M for the "We" trademark, detailing massive 
+      loans the company gave him personally, and heavily featuring the nonsensical "Community Adjusted EBITDA" 
+      metric. 
+      
+      The investment bankers are getting extremely nervous, but Adam is adamant. What is your stance on the S-1?
     options:
-      - text: "Force a rewrite. Remove the absurd metrics, limit Adam's control, and present WeWork honestly as a real estate company."
-        leadsTo: "force_rewrite"
-        points: 50
-        rationale: "Public markets will not accept the reality distortion field that worked on private investors."
-      - text: "Publish it as Adam wants. The tech-like narrative is the only way to justify the $47B valuation to the public markets."
-        leadsTo: "publish_s1"
+      - text: Force a rewrite. Remove the absurd metrics, limit Adam's control, and present WeWork honestly as a real estate company.
+        points: 4
+        pattern: reality-check
+        rationale: |
+          Public markets will not accept the reality distortion field that worked on private venture capitalists. 
+          Institutional investors read S-1s looking for governance risks and cash flow reality.
+        consequence: |
+          Adam refuses the rewrite. It becomes a massive boardroom battle, but you force some concessions.
+        leadsTo: force_rewrite_outcome
+      - text: Publish the S-1 exactly as Adam wants. The tech-like narrative is the only way to justify the $47B valuation.
         points: 0
-        rationale: "This is the historical reality. The S-1 became a laughingstock and triggered the company's collapse."
+        pattern: public-market-hubris
+        rationale: |
+          This is the historical reality. Believing that Wall Street will buy a real estate company at software 
+          multiples just because the founder uses the word "community" is the height of corporate hubris.
+        consequence: |
+          The S-1 drops on the SEC website. The financial press and Twitter tear it to absolute shreds within hours.
+        leadsTo: post_s1_crisis
 
-  stand_ground:
+  post_s1_crisis:
+    dimension: strategy
+    prompt: |
+      The S-1 is a disaster. It is universally mocked. The media exposes the self-dealing, the bizarre corporate 
+      structure, and the horrific unit economics. Institutional investors are balking. The underwriters (JPMorgan 
+      and Goldman Sachs) warn that the IPO might only price at a $15 billion valuation, down from $47B. 
+      Cash is running out. What is your emergency move?
+    options:
+      - text: Delay the IPO indefinitely. Oust Adam Neumann to appease investors, and beg SoftBank for a bailout.
+        points: 5
+        pattern: emergency-amputation
+        rationale: |
+          The founder has become the primary liability. The public markets will not invest a dollar while he 
+          remains in control. You must amputate the leadership to save the underlying assets.
+        consequence: |
+          The board moves against Adam. He is ousted as CEO (with a massive golden parachute). SoftBank agrees 
+          to a highly dilutive bailout to prevent immediate bankruptcy.
+        leadsTo: historical_collapse
+      - text: Push forward with the roadshow immediately. Rely on Adam's charisma to win over retail investors.
+        points: 0
+        pattern: terminal-delusion
+        rationale: |
+          Institutional investors control the IPO process, not retail. Charisma does not survive detailed 
+          questions about massive negative cash flows and self-dealing from cynical mutual fund managers.
+        consequence: |
+          The roadshow is a catastrophe. Investors walk out of meetings. The underwriters officially pull the IPO.
+        leadsTo: terminal_bankruptcy
+
+  stand_ground_outcome:
     isOutcome: true
     prompt: |
-      You are fired, but you leave with your integrity intact. Months later, the S-1 is published, the public markets reject it, and the company nearly goes bankrupt. You are vindicated.
+      You were fired, but you left with your integrity intact. Months later, the S-1 is published, the public 
+      markets reject it violently, and the company nearly goes bankrupt. You watch from the sidelines, entirely 
+      vindicated, and are soon hired as CFO for a much more stable company.
       
       Score: 100/100
-      You correctly identified a toxic and unsustainable business model.
+      You correctly identified a toxic and unsustainable business model and refused to compromise your fiduciary duty.
 
-  back_down:
+  force_rewrite_outcome:
     isOutcome: true
     prompt: |
-      You go along for the ride. The S-1 drops, the valuation collapses from $47B to $8B in weeks, the IPO is pulled, and you are swept out in the massive layoffs that follow.
+      The more honest S-1 reveals massive losses and a traditional real estate model. The valuation is slashed 
+      to $15B before the roadshow even begins. It's a painful down-round IPO, but the company goes public, 
+      raises the necessary capital, and avoids total collapse. Adam's wings are clipped early.
       
-      Score: 50/100
-      You saw the disaster coming but lacked the courage to stop it.
+      Score: 60/100
+      You forced a painful reality check, but the damage of the hypergrowth phase was already largely done.
 
-  force_rewrite:
+  historical_collapse:
     isOutcome: true
     prompt: |
-      The honest S-1 reveals massive losses and a traditional real estate model. The valuation is slashed to $15B before the roadshow even begins. It's painful, but the company goes public and avoids total collapse.
+      This is the historical reality. The IPO was pulled. Adam Neumann was ousted in a boardroom coup. The 
+      valuation plummeted from $47 billion to under $8 billion in a matter of weeks. The company underwent 
+      massive layoffs and barely survived via a multi-billion dollar bailout from SoftBank, becoming the poster 
+      child for unicorn hubris.
       
-      Score: 50/100
-      You forced a painful reality check, but the damage of the hypergrowth phase was already done.
+      Score: 20/100
+      You participated in one of the greatest corporate delusions in modern history, but managed to hit the 
+      eject button right before the plane hit the mountain.
 
-  publish_s1:
+  terminal_bankruptcy:
     isOutcome: true
     prompt: |
-      This is the historical reality. The WeWork S-1 is considered one of the most disastrous in corporate history. Public scrutiny exposed the self-dealing, the fake tech metrics, and the horrific unit economics. The IPO was cancelled, Adam Neumann was ousted, and the valuation plummeted by $40 billion in weeks.
+      By pushing forward with the roadshow, the underwriters abandon you. The company runs out of cash three 
+      weeks later and files for Chapter 11 bankruptcy. Billions of dollars are wiped out overnight.
       
       Score: 0/100
-      You participated in one of the greatest corporate delusions in modern history.
+      You drove the company straight off the cliff.
+
 ---
+## What actually happened — the reveal
+
+This drill is based on the spectacular 2019 collapse of **WeWork's** initial public offering.
+
+Under the leadership of Adam Neumann and fueled by billions from SoftBank's Vision Fund, WeWork attempted 
+to scale a traditional, capital-intensive commercial real estate business as if it were a high-margin software 
+company. They signed massive, long-term liabilities while booking short-term, volatile revenues.
+
+The delusion held in the private markets, where Neumann's charisma and SoftBank's seemingly infinite capital 
+pushed the private valuation to an absurd **$47 billion**. 
+
+However, public markets demand rigorous financial disclosures. When WeWork filed its S-1 document in August 2019, 
+the "reality distortion field" vanished. Financial analysts and the media tore the document apart. They mocked 
+the fabricated "Community Adjusted EBITDA" metric, which attempted to pretend that basic expenses didn't exist. 
+More devastatingly, the S-1 revealed egregious corporate governance issues and self-dealing, including Neumann 
+trademarking the word "We" and selling it back to his own company for $5.9 million.
+
+The institutional investor pushback was so severe that the estimated valuation plummeted to below $15 billion 
+within weeks. Seeing the impending disaster, the underwriters balked, and the IPO was officially withdrawn.
+
+Facing immediate insolvency, the board ousted Adam Neumann (though he left with a controversial $1.7 billion 
+exit package). SoftBank was forced to orchestrate a massive bailout to save the company from bankruptcy. 
+
+WeWork's failed IPO remains one of the most defining cautionary tales in business history, marking the end of 
+an era of "growth at all costs" venture capital and a return to evaluating unit economics and corporate governance.

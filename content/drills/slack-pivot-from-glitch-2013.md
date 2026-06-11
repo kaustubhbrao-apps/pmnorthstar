@@ -34,7 +34,7 @@ nodes:
     prompt: |
       The game isn't working. The chat tool is. What do you do?
     options:
-      - text: "Pour another year into the game. The genre takes time to develop. Cut costs to extend runway."
+      - text: Pour another year into the game. The genre takes time to develop. Cut costs to extend runway.
         points: 1
         pattern: sunk-cost-doubling-down
         rationale: |
@@ -49,7 +49,7 @@ nodes:
           The next year is brutal. Player numbers don't move. Runway
           runs out. The chat tool dies on the company's servers.
         leadsTo: end-A
-      - text: "Spin the chat tool out as its own product. Pivot the whole company to it. Tell investors."
+      - text: Spin the chat tool out as its own product. Pivot the whole company to it. Tell investors.
         points: 5
         pattern: pivot-from-strength
         rationale: |
@@ -65,7 +65,7 @@ nodes:
           pivot the company in 8 weeks. Three months later you have
           your first 8 paying enterprise customers.
         leadsTo: B-pivot-followup
-      - text: "Open the chat tool as a side product but keep the game alive. Diversify the bet."
+      - text: Open the chat tool as a side product but keep the game alive. Diversify the bet.
         points: 2
         pattern: zombie-portfolio
         rationale: |
@@ -89,7 +89,7 @@ nodes:
       products exist (one venture-backed, two open-source). You need to
       decide the wedge. Pick the angle for your public launch.
     options:
-      - text: "Position as 'email killer for teams' — go after the broad knowledge-worker market"
+      - text: Position as 'email killer for teams' — go after the broad knowledge-worker market
         points: 3
         pattern: market-too-broad
         rationale: |
@@ -105,7 +105,7 @@ nodes:
           you to ten alternatives. You spend Q2 figuring out
           positioning the hard way.
         leadsTo: end-B-soft
-      - text: "Position as 'where work happens for software teams' — pick the niche, dominate it first"
+      - text: Position as 'where work happens for software teams' — pick the niche, dominate it first
         points: 5
         pattern: niche-then-expand
         rationale: |
@@ -120,7 +120,7 @@ nodes:
           By month 6 you have 1,000 paying teams. Sales cycles are 2
           weeks because the niche knows what to do with you.
         leadsTo: end-B-strong
-      - text: "Stay closed beta. Wait until you have enterprise-ready security and SSO before any launch."
+      - text: Stay closed beta. Wait until you have enterprise-ready security and SSO before any launch.
         points: 2
         pattern: perfection-over-presence
         rationale: |
@@ -136,39 +136,38 @@ nodes:
         leadsTo: end-B-late
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The game never recovered. The chat tool died on the company's
       servers. By the time the layoffs happened, the team chat
       category had been captured by a different company that had read
       the signal you ignored.
   end-B-strong:
     isOutcome: true
-    summary: |
+    prompt: |
       The pivot defined a category. Within 2 years you were the
       fastest-growing enterprise software company in history. The chat
       tool went on to be acquired for $27.7B. The MMO is a footnote.
   end-B-soft:
     isOutcome: true
-    summary: |
+    prompt: |
       The pivot worked but the launch fumbled the positioning. You
       eventually found the niche the hard way and grew, but lost 12-18
       months to competitors who got there first.
   end-B-late:
     isOutcome: true
-    summary: |
+    prompt: |
       The polish came at the wrong price. Enterprise-readiness arrived
       ahead of brand awareness, and by then the category was someone
       else's to own. You built a good product into a market that no
       longer noticed you.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       The hedge failed. Neither product had full team weight behind it,
       neither got the focus that breakthrough products need. The
       strongest engineers left. The company eventually shut both
       products down.
 ---
-
 ## What actually happened
 
 This drill is based on the **Stewart Butterfield / Tiny Speck → Slack

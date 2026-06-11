@@ -31,7 +31,7 @@ nodes:
       Search traffic is down 35% on key terms. AI search is real but
       small. Pick the strategy.
     options:
-      - text: "Double down on SEO. Hire more SEO content writers, target more keywords."
+      - text: Double down on SEO. Hire more SEO content writers, target more keywords.
         points: 1
         pattern: defending-the-shrinking-channel
         rationale: |
@@ -45,7 +45,7 @@ nodes:
           Q3 SEO investment doubles. Traffic on AI-Overview-affected
           keywords keeps declining. Net pipeline drops 25% by Q4.
         leadsTo: end-A
-      - text: "Rebuild content for AI search (GEO/AEO). Structured data, citation-ready formatting, llms.txt, definitive-answer pages."
+      - text: Rebuild content for AI search (GEO/AEO). Structured data, citation-ready formatting, llms.txt, definitive-answer pages.
         points: 5
         pattern: rebuild-for-new-channel
         rationale: |
@@ -63,7 +63,7 @@ nodes:
           and Claude cite your content for ~12 high-intent queries.
           AI-driven demo inbound grows from 8% to 22% of pipeline.
         leadsTo: B-rebuild-followup
-      - text: "Pivot to LinkedIn + community channels. Reduce dependency on search entirely."
+      - text: Pivot to LinkedIn + community channels. Reduce dependency on search entirely.
         points: 3
         pattern: pivot-to-different-channel
         rationale: |
@@ -79,7 +79,7 @@ nodes:
           channel with another but missed the channel that
           would have compounded.
         leadsTo: end-C
-      - text: "Run paid ads to compensate for lost organic. Pay for the traffic the AI Overviews stole."
+      - text: Run paid ads to compensate for lost organic. Pay for the traffic the AI Overviews stole.
         points: 2
         pattern: pay-for-shrinking-channel
         rationale: |
@@ -100,7 +100,7 @@ nodes:
       should you publish a public dataset/benchmark/study that
       becomes a citation magnet?
     options:
-      - text: "Yes — publish an annual industry benchmark. Free, well-formatted, with downloadable data."
+      - text: Yes — publish an annual industry benchmark. Free, well-formatted, with downloadable data.
         points: 5
         pattern: citation-magnet
         rationale: |
@@ -116,7 +116,7 @@ nodes:
           queries in your category. AI-driven demo inbound jumps
           to 40% of pipeline by EOY.
         leadsTo: end-B-great
-      - text: "Stick to the page rebuild. Don't over-invest in a single piece."
+      - text: Stick to the page rebuild. Don't over-invest in a single piece.
         points: 3
         pattern: incremental-content
         rationale: |
@@ -130,14 +130,14 @@ nodes:
         leadsTo: end-B-good
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       Doubling down on SEO defended a shrinking channel. Pipeline
       kept dropping. By Q1 next year, you eventually pivoted to
       GEO/AEO — 12 months later than competitors who saw the
       shift sooner.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The benchmark became the citation moat. Your category's AI
       search results lead with your data. Pipeline grew 80%
       year-over-year through AI-driven inbound. The marketing
@@ -145,24 +145,23 @@ nodes:
       company.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       Steady gains on AI search but no compounding moment. The
       strategy worked but slower than the benchmark scenario.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       LinkedIn replaced search but didn't compound. The AI search
       window passed; competitors who rebuilt for it captured
       sustained citation revenue you missed.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The paid-ads detour delivered short-term metrics on a
       worse CAC structure. Board pressure mounted; you eventually
       pivoted to GEO/AEO at year-end after burning a quarter on
       paid.
 ---
-
 ## What's at stake here
 
 The discovery channel shifted in 2024-2026 from search-engine-

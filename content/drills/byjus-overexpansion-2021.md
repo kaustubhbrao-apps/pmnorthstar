@@ -41,7 +41,7 @@ nodes:
       $2B in the bank, $22B valuation, three big acquisitions plus
       organic expansion on the table. Pick.
     options:
-      - text: "Do all three acquisitions plus international expansion plus salesforce growth. Deploy capital while it's available."
+      - text: Do all three acquisitions plus international expansion plus salesforce growth. Deploy capital while it's available.
         points: 0
         pattern: deploy-capital-to-match-supply
         rationale: |
@@ -60,7 +60,7 @@ nodes:
           don't show product-market-fit. Cash position drops from $2B
           to $400M within 18 months as the funding cycle turns.
         leadsTo: end-A
-      - text: "Do one acquisition (the US tutoring service). Defer international. Pause salesforce expansion."
+      - text: Do one acquisition (the US tutoring service). Defer international. Pause salesforce expansion.
         points: 5
         pattern: capital-discipline-during-boom
         rationale: |
@@ -79,7 +79,7 @@ nodes:
           $1B+ runway and operational discipline. Valuation
           re-rates but the company survives intact.
         leadsTo: B-discipline-followup
-      - text: "Decline all three acquisitions. Return half the cash to investors. Stay focused on India."
+      - text: Decline all three acquisitions. Return half the cash to investors. Stay focused on India.
         points: 4
         pattern: capital-return-when-overcapitalized
         rationale: |
@@ -96,7 +96,7 @@ nodes:
           structurally insulated. The company eventually IPOs at a
           stronger multiple than peers who deployed and crashed.
         leadsTo: end-C
-      - text: "Two acquisitions plus selective international. Skip the offline chain (too operationally heavy)."
+      - text: Two acquisitions plus selective international. Skip the offline chain (too operationally heavy).
         points: 2
         pattern: half-the-mistake
         rationale: |
@@ -120,7 +120,7 @@ nodes:
       round closed at $22B but bridge offers are coming in at $12B.
       You have $1B in cash. What do you do?
     options:
-      - text: "Take the $12B bridge. Accept the down round to lock in 2 more years of runway."
+      - text: Take the $12B bridge. Accept the down round to lock in 2 more years of runway.
         points: 4
         pattern: take-the-down-round
         rationale: |
@@ -136,7 +136,7 @@ nodes:
           business is profitable and the company eventually re-IPOs at
           a recovery valuation.
         leadsTo: end-B-good
-      - text: "Decline the bridge. Cut costs aggressively to extend the existing runway."
+      - text: Decline the bridge. Cut costs aggressively to extend the existing runway.
         points: 5
         pattern: cut-cost-not-valuation
         rationale: |
@@ -152,7 +152,7 @@ nodes:
           recovers; you raise at $18B in 2025 without having taken the
           down round.
         leadsTo: end-B-great
-      - text: "Bet on a recovery. Don't raise. Don't cut. Stay the course."
+      - text: Bet on a recovery. Don't raise. Don't cut. Stay the course.
         points: 1
         pattern: hope-as-strategy
         rationale: |
@@ -168,7 +168,7 @@ nodes:
         leadsTo: end-B-mediocre
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The all-three-acquisitions plus expansion path was a textbook
       capital cycle failure. Integration costs compounded. Burn
       outran revenue. When the funding cycle turned, the company
@@ -177,14 +177,14 @@ nodes:
       $22B to under $1B within 3 years.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       The disciplined-integration plus down-round path was painful
       but survived. The company recovered to a sustainable position
       with a smaller but real business. Eventually IPO-ed at a
       meaningful (if not peak) valuation.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The disciplined-integration plus cost-cutting path was the
       cleanest outcome. The company avoided dilution, survived the
       cycle, and emerged stronger. Discipline-during-boom plus
@@ -192,26 +192,25 @@ nodes:
       investors.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       Hoping for a cycle recovery cost you valuation, cap-table
       health, and founder equity. The eventual raise came on
       brutal terms.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Returning capital was the radical right answer. The smaller,
       focused business survived the cycle and grew through it. The
       relationship with investors took years to repair but the
       company became the textbook on capital discipline.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The half-bet failed in the predictable way. Two acquisitions
       were too many to integrate while running the core business.
       Cash burned faster than projected. The company ended up needing
       a rescue round.
 ---
-
 ## What actually happened
 
 This drill is based on **Byju's collapse from $22B to near-zero

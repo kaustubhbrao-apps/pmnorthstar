@@ -47,7 +47,7 @@ nodes:
       The accelerator interview is in 14 days. Listings are flat, revenue
       is zero, credit cards are maxed. Pick your move.
     options:
-      - text: "Pivot to a price-comparison aggregator on top of existing public hotel inventory"
+      - text: Pivot to a price-comparison aggregator on top of existing public hotel inventory
         points: 0
         pattern: defensive-cashflow
         rationale: |
@@ -67,7 +67,7 @@ nodes:
           dominated by public companies. Burn outpaces affiliate revenue
           5:1. Investors stop returning calls.
         leadsTo: A-hotels-2
-      - text: "Cut everything to your highest-density city. Personally fly out and photograph every host's listing."
+      - text: Cut everything to your highest-density city. Personally fly out and photograph every host's listing.
         points: 5
         pattern: do-things-that-dont-scale
         rationale: |
@@ -86,7 +86,7 @@ nodes:
           chosen city is up roughly 30%. You have a story the accelerator
           partner can listen to.
         leadsTo: B-photos-2
-      - text: "Manufacture a limited-edition novelty product tied to a major upcoming public event. Sell to enthusiasts and press for cash + attention."
+      - text: Manufacture a limited-edition novelty product tied to a major upcoming public event. Sell to enthusiasts and press for cash + attention.
         points: 5
         pattern: survival-as-press
         rationale: |
@@ -108,7 +108,7 @@ nodes:
           you can convince them to do anything." The interview suddenly
           matters again.
         leadsTo: C-cereal-2
-      - text: "Treat the accelerator interview as the last try. Shut down honestly if it fails."
+      - text: Treat the accelerator interview as the last try. Shut down honestly if it fails.
         points: 2
         pattern: defensive-shutdown
         rationale: |
@@ -129,7 +129,6 @@ nodes:
           more product experience. The company quietly winds down by
           November.
         leadsTo: D-yc-2
-
   B-photos-2:
     dimension: product
     prompt: |
@@ -142,7 +141,7 @@ nodes:
 
       What's your answer?
     options:
-      - text: "We're filling a gap hotels can't — short-term, unique inventory in places hotels don't exist"
+      - text: We're filling a gap hotels can't — short-term, unique inventory in places hotels don't exist
         points: 5
         pattern: positioning-by-negative-space
         rationale: |
@@ -160,7 +159,7 @@ nodes:
           The partner nods slowly. "OK. Come Tuesday." You're in the
           accelerator.
         leadsTo: B-photos-3
-      - text: "Hosts love it. We just need money to scale the photography across cities."
+      - text: Hosts love it. We just need money to scale the photography across cities.
         points: 3
         pattern: ops-as-strategy
         rationale: |
@@ -179,7 +178,7 @@ nodes:
           your users might not come back, not just how to get more of
           them." You're in, but on probation.
         leadsTo: B-photos-3
-      - text: "We have one city working. We just need to copy it everywhere."
+      - text: We have one city working. We just need to copy it everywhere.
         points: 1
         pattern: scaling-without-pmf
         rationale: |
@@ -197,7 +196,6 @@ nodes:
           solution looking for a problem." You're not accepted. The team
           regroups.
         leadsTo: B-end-no-yc
-
   B-photos-3:
     dimension: product
     prompt: |
@@ -207,7 +205,7 @@ nodes:
       your three co-founders has a different theory about what to push
       next. You can only afford to back one.
     options:
-      - text: "Co-founder A (the visionary): international expansion. Three more cities across continents, photographers in each."
+      - text: 'Co-founder A (the visionary): international expansion. Three more cities across continents, photographers in each.'
         points: 1
         pattern: premature-internationalization
         rationale: |
@@ -227,7 +225,7 @@ nodes:
           Listings grow modestly. The visionary lives on flights. The
           founder team starts to fray.
         leadsTo: B-end
-      - text: "Co-founder B (the operator): domestic density first. Saturate city one, then two, then three, then four — methodically."
+      - text: 'Co-founder B (the operator): domestic density first. Saturate city one, then two, then three, then four — methodically.'
         points: 5
         pattern: density-before-breadth
         rationale: |
@@ -245,7 +243,7 @@ nodes:
           months. By Demo Day, you're at $200K monthly bookings and a
           tier-one fund is leading the seed.
         leadsTo: B-end
-      - text: "Co-founder C (the engineer): build a referral mechanic so existing users bring more"
+      - text: 'Co-founder C (the engineer): build a referral mechanic so existing users bring more'
         points: 3
         pattern: referrals-before-love
         rationale: |
@@ -264,10 +262,9 @@ nodes:
           Data is too thin to be useful. You wasted three weeks of
           engineering time on a lever that wasn't yet ready.
         leadsTo: B-end
-
   B-end:
     isOutcome: true
-    summary: |
+    prompt: |
       The operator's density strategy, combined with the photography hack
       and the novelty-product play, became your actual path. You saturated
       one city, then the next, then the next before going international.
@@ -276,7 +273,6 @@ nodes:
       operational arm of the company. The novelty-product story becomes
       founder folklore — proof that founder-quality signals can carry a
       thesis when the metrics don't yet.
-
   A-hotels-2:
     dimension: business
     prompt: |
@@ -285,7 +281,7 @@ nodes:
       affiliate revenue. Burn is $25,000/month. A public comparison
       competitor just raised $200M. What do you do?
     options:
-      - text: "Stay the course. More marketing. Better SEO."
+      - text: Stay the course. More marketing. Better SEO.
         points: 1
         pattern: sunk-cost-doubling-down
         rationale: |
@@ -301,7 +297,7 @@ nodes:
           $200K of marketing burn over four months. Affiliate revenue grows
           to $8K/month. Burn outpaces revenue 5:1. Runway hits zero.
         leadsTo: A-end-bad
-      - text: "Layer marketplace features back on top — let users list short-term rentals through us"
+      - text: Layer marketplace features back on top — let users list short-term rentals through us
         points: 3
         pattern: hidden-pivot-back
         rationale: |
@@ -318,7 +314,7 @@ nodes:
           understand the rental listings; rental hosts don't trust a
           hotel brand. You're stuck.
         leadsTo: A-end-mediocre
-      - text: "Admit the pivot was wrong. Pivot back to the marketplace, rebrand."
+      - text: Admit the pivot was wrong. Pivot back to the marketplace, rebrand.
         points: 5
         pattern: pivot-back-with-clarity
         rationale: |
@@ -336,32 +332,28 @@ nodes:
           have put you in month 3 — but you've lost six months and $200K.
           Catch-up is possible but expensive.
         leadsTo: A-end-recovery
-
   A-end-bad:
     isOutcome: true
-    summary: |
+    prompt: |
       You burned the runway competing in a category you couldn't win.
       Without a marketplace moat, you had no story for investors. The
       company shuts down. The accelerator dinner never happens because
       there's nothing left to pitch.
-
   A-end-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       The hybrid product muddles along for 18 months. You raise a small
       friends-and-family round but no institutional money. By the time
       the marketplace category breaks out, a different team owns it.
       You sell to a competitor for a small acqui-hire price.
-
   A-end-recovery:
     isOutcome: true
-    summary: |
+    prompt: |
       You recover. The marketplace is rebuilt and growing by month 12,
       but you're 18 months behind where a clean execution would have put
       you. The tier-one fund check goes to a different team that didn't
       detour. The detour cost you a category-defining position; the
       company survives but smaller.
-
   C-cereal-2:
     dimension: founder
     prompt: |
@@ -371,7 +363,7 @@ nodes:
       generated. The dinner is in 5 days. The cash buys you another 3
       months of runway. What's your pitch angle?
     options:
-      - text: "The novelty product is the proof — we're founders who don't quit, and that's the bet"
+      - text: The novelty product is the proof — we're founders who don't quit, and that's the bet
         points: 5
         pattern: founder-thesis
         rationale: |
@@ -386,7 +378,7 @@ nodes:
         consequence: |
           The partner smiles. "Right answer. Welcome to the batch."
         leadsTo: C-cereal-3
-      - text: "Forget the novelty product — the real story is the marketplace traction we have"
+      - text: Forget the novelty product — the real story is the marketplace traction we have
         points: 2
         pattern: distance-from-the-story
         rationale: |
@@ -405,7 +397,7 @@ nodes:
           novelty angle. Why are you running from it?" You're in, but
           mentally downgraded.
         leadsTo: C-cereal-3
-      - text: "The novelty product funded the company — now we'll use accelerator money to ship features"
+      - text: The novelty product funded the company — now we'll use accelerator money to ship features
         points: 3
         pattern: feature-roadmap-pitch
         rationale: |
@@ -422,7 +414,6 @@ nodes:
           You're accepted but with measured enthusiasm. You're in, but
           you'll need to prove the thesis once you're inside.
         leadsTo: C-cereal-3
-
   C-cereal-3:
     dimension: business
     prompt: |
@@ -431,7 +422,7 @@ nodes:
       need to decide: charge hosts a fee, charge guests a fee, charge
       both, or stay free for now.
     options:
-      - text: "Charge guests a 9% service fee at checkout. Hosts stay free."
+      - text: Charge guests a 9% service fee at checkout. Hosts stay free.
         points: 5
         pattern: monetize-the-mobile-side
         rationale: |
@@ -448,7 +439,7 @@ nodes:
           happy because their take is unchanged. Demo Day investors love
           the unit-economics story.
         leadsTo: C-end
-      - text: "Charge hosts a 10% commission on bookings. Guests pay nothing extra."
+      - text: Charge hosts a 10% commission on bookings. Guests pay nothing extra.
         points: 2
         pattern: tax-the-supply-side
         rationale: |
@@ -465,7 +456,7 @@ nodes:
           forecast. Demo Day investors are unimpressed with the supply
           numbers.
         leadsTo: C-end
-      - text: "Stay free. Grow the marketplace. Monetize later when you have leverage."
+      - text: Stay free. Grow the marketplace. Monetize later when you have leverage.
         points: 1
         pattern: defer-revenue-trap
         rationale: |
@@ -483,16 +474,14 @@ nodes:
           don't have a clear answer. The seed round closes at half what
           it should have, on bad terms.
         leadsTo: C-end
-
   C-end:
     isOutcome: true
-    summary: |
+    prompt: |
       The novelty-product money + accelerator + guest-side service fee
       became your trajectory. The 9% take rate on the guest side became
       the textbook marketplace pricing model. The novelty-product story
       became startup folklore — proof that founder-quality signals can
       carry a thesis when the metrics don't yet.
-
   D-yc-2:
     dimension: founder
     prompt: |
@@ -501,7 +490,7 @@ nodes:
       designers wants to try one more thing. The other is leaning toward
       going back to consulting. The engineer is silent. What's the move?
     options:
-      - text: "Shut down honestly. File the paperwork, settle the credit cards over 5 years."
+      - text: Shut down honestly. File the paperwork, settle the credit cards over 5 years.
         points: 3
         pattern: clean-shutdown
         rationale: |
@@ -518,7 +507,7 @@ nodes:
           is eventually captured by a different team 3-4 years later.
           You watch them succeed and try not to think about it.
         leadsTo: D-end
-      - text: "One more month of grinding. If nothing changes, then shut down."
+      - text: One more month of grinding. If nothing changes, then shut down.
         points: 4
         pattern: defined-stop-loss
         rationale: |
@@ -536,7 +525,7 @@ nodes:
           story. You're accepted. The trajectory recovers, just a year
           later.
         leadsTo: D-end
-      - text: "Pivot the team — keep the company alive but as a design consultancy"
+      - text: Pivot the team — keep the company alive but as a design consultancy
         points: 2
         pattern: zombie-company
         rationale: |
@@ -553,26 +542,23 @@ nodes:
           dream is shelved. Years later, the opportunity is gone. The
           team eventually drifts apart.
         leadsTo: D-end
-
   D-end:
     isOutcome: true
-    summary: |
+    prompt: |
       The path you didn't take — but a real path many founders take. The
       company almost died here. The "one more month with specific
       experiments" mentality is what separates the company that survives
       from the company that doesn't. Most founders quit a month too
       early; a few quit a month too late. The skill is knowing which
       mode you're in.
-
   B-end-no-yc:
     isOutcome: true
-    summary: |
+    prompt: |
       You fumbled the partner's question and didn't get in. Without the
       seed and network, the marketplace couldn't get past the chicken-
       egg problem. The company quietly wound down. The opportunity got
       captured by a different team a few years later.
 ---
-
 ## What actually happened — the reveal
 
 This drill is based on the real 2008 decisions faced by **Brian Chesky,

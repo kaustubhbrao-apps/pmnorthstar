@@ -2,7 +2,7 @@
 slug: cursor-vs-windsurf-2026
 type: current
 category: strategic
-publishedAt: "2026-06-29T19:00:00+05:30"
+publishedAt: '2026-06-29T19:00:00+05:30'
 estimatedMinutes: 6
 principle: |
   In a category with two dominant players and an open frontier, the
@@ -31,7 +31,7 @@ nodes:
       Cursor has ~25M devs, Windsurf has the agentic story. You
       have $400K ARR. Where do you fight?
     options:
-      - text: "Compete head-on. Better UX, faster, free tier. Take share from Cursor."
+      - text: Compete head-on. Better UX, faster, free tier. Take share from Cursor.
         points: 1
         pattern: better-version-of-the-leader
         rationale: |
@@ -46,7 +46,7 @@ nodes:
           a bridge instead. 12 months later you're indistinguishable
           from Cursor at 1/50th the scale.
         leadsTo: end-A
-      - text: "Pick a vertical: IDE specifically for embedded/firmware engineers. Niche, deep, defensible."
+      - text: 'Pick a vertical: IDE specifically for embedded/firmware engineers. Niche, deep, defensible.'
         points: 5
         pattern: vertical-where-leaders-dont-fit
         rationale: |
@@ -64,7 +64,7 @@ nodes:
           $80K/year. Within 18 months you're the default IDE for
           embedded teams and Cursor never enters the segment.
         leadsTo: B-vertical-followup
-      - text: "Pivot to AI-native dev tooling that isn't an IDE — testing, refactoring, documentation."
+      - text: Pivot to AI-native dev tooling that isn't an IDE — testing, refactoring, documentation.
         points: 3
         pattern: adjacent-not-vertical
         rationale: |
@@ -79,7 +79,7 @@ nodes:
           ships your category as a feature inside the IDE. You're
           in a slow race against absorption.
         leadsTo: end-C
-      - text: "Sell the company. Acqui-hire to Cursor or one of the labs."
+      - text: Sell the company. Acqui-hire to Cursor or one of the labs.
         points: 2
         pattern: surrender-mid-stage
         rationale: |
@@ -102,7 +102,7 @@ nodes:
       version. Contract size: $1.5M ARR. But it would consume 70%
       of your engineering capacity for 18 months. Pick.
     options:
-      - text: "Take the contract. $1.5M ARR + 1.5x engineering bandwidth concentration on a single customer."
+      - text: Take the contract. $1.5M ARR + 1.5x engineering bandwidth concentration on a single customer.
         points: 2
         pattern: anchor-customer-trap
         rationale: |
@@ -118,7 +118,7 @@ nodes:
           great defense product and a stagnant commercial one. Two
           customers churn citing lack of progress.
         leadsTo: end-B-bad
-      - text: "Decline. Refer them to a defense-specific competitor. Stay focused on the commercial firmware market."
+      - text: Decline. Refer them to a defense-specific competitor. Stay focused on the commercial firmware market.
         points: 5
         pattern: focus-over-revenue
         rationale: |
@@ -133,7 +133,7 @@ nodes:
           year-end on velocity alone. Series A closes at a strong
           multiple on the focused story.
         leadsTo: end-B-great
-      - text: "Take the contract but charge $5M ARR for the air-gapped version, with a clause that limits engineering allocation to 30%."
+      - text: Take the contract but charge $5M ARR for the air-gapped version, with a clause that limits engineering allocation to 30%.
         points: 4
         pattern: priced-to-protect-focus
         rationale: |
@@ -149,44 +149,43 @@ nodes:
         leadsTo: end-B-mixed
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The head-on fight never compounded. By year 2, you were the
       "smaller, similar" alternative to Cursor with no clear
       differentiation. The Series B was hard and the team thinned.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The vertical bet plus focus discipline compounded perfectly.
       You became the default firmware IDE — a $20M ARR business
       in 24 months, with margins Cursor couldn't match because
       they never went deep enough on the segment.
   end-B-bad:
     isOutcome: true
-    summary: |
+    prompt: |
       The anchor customer trap consumed you. The defense business
       worked but the commercial business stalled. You're now
       effectively a defense contractor, which wasn't the company
       you set out to build.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The priced-to-protect approach mostly worked. Focus was
       partially preserved, the contract value was real. Net
       positive but messier than the decline scenario.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       The adjacent strategy worked for a while but the IDE-makers
       kept absorbing your category as features. You were always
       one product cycle from being commoditized.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The acqui-hire closed cleanly. Your team is at Cursor now.
       The firmware vertical got captured by a different startup 18
       months later — valued at $200M.
 ---
-
 ## What's at stake here
 
 The pattern: in a duopoly category (Cursor + Windsurf for AI IDEs,

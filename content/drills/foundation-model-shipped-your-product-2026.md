@@ -2,7 +2,7 @@
 slug: foundation-model-shipped-your-product-2026
 type: current
 category: strategic
-publishedAt: "2026-08-17T19:00:00+05:30"
+publishedAt: '2026-08-17T19:00:00+05:30'
 estimatedMinutes: 6
 principle: |
   When a foundation-model lab absorbs your category as a feature, the
@@ -30,7 +30,7 @@ nodes:
     prompt: |
       The category just got commoditized. Pick the move.
     options:
-      - text: "Pivot vertical: pick a regulated industry (legal sales, medical sales, financial services sales) and rebuild for it."
+      - text: 'Pivot vertical: pick a regulated industry (legal sales, medical sales, financial services sales) and rebuild for it.'
         points: 5
         pattern: vertical-where-platforms-cant-fit
         rationale: |
@@ -49,7 +49,7 @@ nodes:
           drops to $1.5M, then rebuilds to $6M within 18 months at
           much higher LTV per customer.
         leadsTo: A-vertical-followup
-      - text: "Sell now to an acquirer. The standalone window is closing."
+      - text: Sell now to an acquirer. The standalone window is closing.
         points: 3
         pattern: graceful-exit
         rationale: |
@@ -66,7 +66,7 @@ nodes:
           take it. Your team integrates, your investors get a 2-3x
           return, you move on to the next thing. Acceptable outcome.
         leadsTo: end-B
-      - text: "Become a ChatGPT plugin / integration. Position as 'the best ChatGPT integration for sales workflows.'"
+      - text: Become a ChatGPT plugin / integration. Position as 'the best ChatGPT integration for sales workflows.'
         points: 3
         pattern: ride-the-platform
         rationale: |
@@ -83,7 +83,7 @@ nodes:
           guidelines twice in 6 months, eroding your integration depth.
           You're never fully comfortable.
         leadsTo: end-C
-      - text: "Pivot to be the AI sales platform for non-English markets — Indian SMB, LATAM, SEA — where ChatGPT Agent quality is weaker."
+      - text: Pivot to be the AI sales platform for non-English markets — Indian SMB, LATAM, SEA — where ChatGPT Agent quality is weaker.
         points: 4
         pattern: geographic-vertical
         rationale: |
@@ -108,7 +108,7 @@ nodes:
       (financial services adjacent, compliance, audit), or (b) replicate
       the playbook in a second vertical (medical sales).
     options:
-      - text: "Go deeper in legal-adjacent verticals. Add audit, compliance, regulatory consulting."
+      - text: Go deeper in legal-adjacent verticals. Add audit, compliance, regulatory consulting.
         points: 5
         pattern: dominate-one-region-first
         rationale: |
@@ -125,7 +125,7 @@ nodes:
           company in legal/compliance AI. Acquisition offers come at
           strong multiples.
         leadsTo: end-A-great
-      - text: "Replicate to medical sales now. The playbook is portable; the new vertical doubles the TAM."
+      - text: Replicate to medical sales now. The playbook is portable; the new vertical doubles the TAM.
         points: 3
         pattern: parallel-vertical-too-early
         rationale: |
@@ -141,39 +141,38 @@ nodes:
         leadsTo: end-A-mixed
   end-A-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The vertical-then-adjacent-expansion strategy worked. You became
       the dominant AI for legal/compliance sales. Series B closed at
       strong multiples. Acquisition talks at $300M+ within 3 years.
   end-A-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The parallel-vertical bet thinned the team. Both verticals
       grew but slower than a focused competitor would have. The
       company is sustainable but not category-defining.
   end-B:
     isOutcome: true
-    summary: |
+    prompt: |
       The acquisition closed cleanly. Investors recovered capital,
       team integrated, you started the next company. The vertical-
       pivot opportunity got captured by a different startup that
       didn't capitulate.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Platform-tenant status produced steady but bounded revenue.
       Every OpenAI plugin policy change hurt you. By year 3 you'd
       effectively become a sales-tech integrator with no independent
       defensibility.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The geographic-vertical pivot worked. India + LATAM revenue
       compounded. By year 3 you were the default AI sales tool in
       non-English emerging markets, with quality and pricing tuned
       specifically for those geographies.
 ---
-
 ## What's at stake here
 
 The pattern: foundation-model labs (OpenAI, Anthropic, Google) ship

@@ -39,7 +39,7 @@ nodes:
       investor is asking why you're not building B2B payments
       infrastructure. Your runway is six months. Pick.
     options:
-      - text: "Stay the course on the consumer app. UPI is rumored to be coming and will fix the bank-transfer problem."
+      - text: Stay the course on the consumer app. UPI is rumored to be coming and will fix the bank-transfer problem.
         points: 1
         pattern: wait-for-the-platform
         rationale: |
@@ -54,7 +54,7 @@ nodes:
           The consumer app shuts down. When UPI eventually launches,
           PhonePe and Google Pay absorb the consumer category.
         leadsTo: end-A
-      - text: "Pivot to B2B payment APIs. Build for the businesses that can't accept online payments. Tell investors and team."
+      - text: Pivot to B2B payment APIs. Build for the businesses that can't accept online payments. Tell investors and team.
         points: 5
         pattern: pivot-to-the-real-problem
         rationale: |
@@ -71,7 +71,7 @@ nodes:
           one of beta. The infrastructure pain is so acute that
           they tolerate the rough v1.
         leadsTo: B-api-followup
-      - text: "Hybrid: keep the consumer app, ship the B2B API as a side product."
+      - text: 'Hybrid: keep the consumer app, ship the B2B API as a side product.'
         points: 2
         pattern: half-pivot
         rationale: |
@@ -84,7 +84,7 @@ nodes:
           Engineering moves slowly on both fronts. A focused
           competitor catches up within 12 months.
         leadsTo: end-C
-      - text: "Sell what you have to a fintech in the consumer-payments space. Use the proceeds to fund a new company."
+      - text: Sell what you have to a fintech in the consumer-payments space. Use the proceeds to fund a new company.
         points: 2
         pattern: graceful-exit-then-restart
         rationale: |
@@ -106,7 +106,7 @@ nodes:
       asking for custom rates. Smaller merchants are asking for a
       "no-code" version they can embed without engineering. Pick.
     options:
-      - text: "Build the no-code version. Long tail of small merchants is the bigger market and aligns with the self-serve motion."
+      - text: Build the no-code version. Long tail of small merchants is the bigger market and aligns with the self-serve motion.
         points: 5
         pattern: small-merchants-as-distribution
         rationale: |
@@ -121,7 +121,7 @@ nodes:
           90 days. Word of mouth in the small-business community
           becomes the dominant acquisition channel.
         leadsTo: end-B-great
-      - text: "Custom rates for big merchants first. Larger contracts, more revenue per merchant."
+      - text: Custom rates for big merchants first. Larger contracts, more revenue per merchant.
         points: 3
         pattern: enterprise-first-too-soon
         rationale: |
@@ -135,7 +135,7 @@ nodes:
           the long-tail growth slows because engineering is busy
           with custom integrations.
         leadsTo: end-B-mixed
-      - text: "Stay focused on the current 50 merchants. Stabilize the product before adding either segment."
+      - text: Stay focused on the current 50 merchants. Stabilize the product before adding either segment.
         points: 2
         pattern: stabilize-when-momentum-matters
         rationale: |
@@ -151,46 +151,45 @@ nodes:
         leadsTo: end-B-mediocre
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       You waited for the platform and ran out of money. UPI shipped
       18 months after you closed. The consumer category was taken
       by PhonePe and Google Pay; the B2B category was taken by a
       pivoted competitor who didn't wait.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The no-code embed compounded. Merchant count crossed 100K
       within 18 months. The company became the default payments
       infrastructure for Indian businesses. By 2022, valuation
       ~$7.5B and a category-defining brand.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The enterprise-first call delivered short-term revenue but
       slowed the long-tail compounding. You eventually shipped
       the no-code version 12 months later and recovered, but
       gave up a year of market velocity.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       The stabilization slowed growth and a competitor took the
       market. You eventually shipped the no-code version 18
       months later, but the category was someone else's by then.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       The half-pivot worked partially. The B2B side grew but
       slower than a focused competitor's, who eventually took the
       category leadership position.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The early exit closed at the wrong valuation. The market
       exploded without you. You restarted but lost two years and
       the technical foundation that would have made the new
       company faster.
 ---
-
 ## What actually happened
 
 This drill is based on the **Razorpay pivot in 2014**. Harshil Mathur

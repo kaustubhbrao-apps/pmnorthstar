@@ -31,7 +31,7 @@ nodes:
     prompt: |
       The next 24 hours matter. Pick the move.
     options:
-      - text: "Accelerate. Get our version shipped in 2 weeks instead of 8. Beat them to enterprise."
+      - text: Accelerate. Get our version shipped in 2 weeks instead of 8. Beat them to enterprise.
         points: 1
         pattern: speed-as-strategy
         rationale: |
@@ -48,7 +48,7 @@ nodes:
           ships." You spend Q3 firefighting the same bugs your
           competitor is fixing.
         leadsTo: end-A
-      - text: "Kill the feature. Pivot the team to a different problem on the roadmap."
+      - text: Kill the feature. Pivot the team to a different problem on the roadmap.
         points: 2
         pattern: capitulate-on-real-bet
         rationale: |
@@ -64,7 +64,7 @@ nodes:
           to context-switching. Your competitor's product gets
           better in Q3 and they take the category.
         leadsTo: end-B
-      - text: "Ship on time. Use the competitor's launch as research. Differentiate on what they got wrong."
+      - text: Ship on time. Use the competitor's launch as research. Differentiate on what they got wrong.
         points: 5
         pattern: opponent-as-research
         rationale: |
@@ -81,7 +81,7 @@ nodes:
           and adaptive flow. Three of their unhappy customers switch
           to you in the first month.
         leadsTo: C-differentiate-followup
-      - text: "Announce immediately that you're shipping. Get ahead of the narrative."
+      - text: Announce immediately that you're shipping. Get ahead of the narrative.
         points: 3
         pattern: announce-without-ship
         rationale: |
@@ -106,7 +106,7 @@ nodes:
       can see exactly what the AI scored them on and rebut anything.
       Pick the wedge.
     options:
-      - text: "Human-in-the-loop verification. Pitch to enterprise hiring teams: 'AI screener with a real check.'"
+      - text: 'Human-in-the-loop verification. Pitch to enterprise hiring teams: ''AI screener with a real check.'''
         points: 4
         pattern: enterprise-trust-wedge
         rationale: |
@@ -121,7 +121,7 @@ nodes:
           Mid-market customers who care about speed pick the
           competitor; you concede that segment.
         leadsTo: end-C-good
-      - text: "Candidate-side transparency. Pitch to candidates: 'finally, an AI interview that explains itself.'"
+      - text: 'Candidate-side transparency. Pitch to candidates: ''finally, an AI interview that explains itself.'''
         points: 5
         pattern: two-sided-marketplace-move
         rationale: |
@@ -139,7 +139,7 @@ nodes:
           the category narrative from "AI for hiring teams" to
           "AI for both sides of hiring."
         leadsTo: end-C-great
-      - text: "Both. Build verification and transparency in parallel."
+      - text: Both. Build verification and transparency in parallel.
         points: 2
         pattern: hedging-loses-focus
         rationale: |
@@ -155,42 +155,41 @@ nodes:
         leadsTo: end-C-mixed
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       Speed without substance. You shipped a similar product to a
       similar market and the press called it parity. The category
       eventually got captured by the competitor that learned faster,
       not the one that shipped faster.
   end-B:
     isOutcome: true
-    summary: |
+    prompt: |
       The team lost momentum and the competitor took the category.
       You spent the next quarter explaining to your board why six
       months of work was abandoned.
   end-C-good:
     isOutcome: true
-    summary: |
+    prompt: |
       The enterprise-trust wedge worked. You own the safety
       conversation, your competitor owns speed. Stable two-player
       market for the next 18 months.
   end-C-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The two-sided positioning rewrote the category. Candidate
       preference forced enterprise switching. You became the
       default in 24 months.
   end-C-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The hedge muddled the launch. Sharper messaging eventually
       arrived, but you gave up the wedge moment to focus split.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The pre-announcement amplified the competitor's launch. By
       ship date, you were the second product in a category they
       defined.
 ---
-
 ## What's at stake here
 
 The pattern: in any high-velocity software category, **the second

@@ -40,7 +40,7 @@ nodes:
     prompt: |
       Windows is the religion. The market has moved. Pick the move.
     options:
-      - text: "Stay focused on Windows. The desktop install base is still 1.5B users. Defend the home turf."
+      - text: Stay focused on Windows. The desktop install base is still 1.5B users. Defend the home turf.
         points: 1
         pattern: defend-the-shrinking-fortress
         rationale: |
@@ -57,7 +57,7 @@ nodes:
           same multiple it did when you started. The board eventually
           replaces you.
         leadsTo: end-A
-      - text: "Pivot to cloud-first. Office on every platform, including iOS and Android. Open-source the developer stack. Compete with AWS aggressively."
+      - text: Pivot to cloud-first. Office on every platform, including iOS and Android. Open-source the developer stack. Compete with AWS aggressively.
         points: 5
         pattern: cannibalize-the-religion
         rationale: |
@@ -79,7 +79,7 @@ nodes:
           returns. Stock starts compounding for the first time in a
           decade.
         leadsTo: B-pivot-followup
-      - text: "Pick one new bet (cloud OR mobile OR cross-platform Office). Don't try to fight on all three fronts."
+      - text: Pick one new bet (cloud OR mobile OR cross-platform Office). Don't try to fight on all three fronts.
         points: 3
         pattern: pivot-but-pick-one
         rationale: |
@@ -96,7 +96,7 @@ nodes:
           remains lost. Cross-platform productivity is captured by
           Google. The company is healthier but not transformed.
         leadsTo: end-C
-      - text: "Acquire a major competitor (a social network, a developer tool, an enterprise platform). Buy your way into a new identity."
+      - text: Acquire a major competitor (a social network, a developer tool, an enterprise platform). Buy your way into a new identity.
         points: 2
         pattern: acquire-instead-of-build
         rationale: |
@@ -123,7 +123,7 @@ nodes:
       offered to keep their team and IP independent — they'd be a
       partner, not a subsidiary.
     options:
-      - text: "Invest the $1B with strict integration: their tech becomes part of your cloud. Build a moat around the cloud + AI combination."
+      - text: 'Invest the $1B with strict integration: their tech becomes part of your cloud. Build a moat around the cloud + AI combination.'
         points: 5
         pattern: strategic-investment-over-acquisition
         rationale: |
@@ -141,7 +141,7 @@ nodes:
           18 months, cloud + AI becomes the fastest-growing enterprise
           category in tech. Your market cap crosses $2T.
         leadsTo: end-B-great
-      - text: "Acquire them fully. Bring the lab in-house. Control the IP completely."
+      - text: Acquire them fully. Bring the lab in-house. Control the IP completely.
         points: 3
         pattern: full-acquisition
         rationale: |
@@ -158,7 +158,7 @@ nodes:
           Cloud + AI grows but slower than the partnership scenario
           would have produced.
         leadsTo: end-B-mixed
-      - text: "Pass. Build AI internally instead. Don't depend on an external lab."
+      - text: Pass. Build AI internally instead. Don't depend on an external lab.
         points: 1
         pattern: not-invented-here
         rationale: |
@@ -176,14 +176,14 @@ nodes:
         leadsTo: end-B-mediocre
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       Defending Windows preserved the desktop business but missed
       every growth category of the era. The company stayed valuable
       but the multiple compressed. The transformation eventually
       happened under a different CEO five years late.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The pivot defined one of the most studied incumbent
       transformations in tech history. Market cap grew from $400B to
       $3T+ within a decade. Cloud + AI + cross-platform Office
@@ -191,32 +191,31 @@ nodes:
       Windows-as-religion era was replaced by software-runs-everywhere.
   end-B-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The full acquisition produced revenue but lost team velocity.
       The cloud + AI story compounded but slower than partnership
       would have. Still a strong outcome — just below ceiling.
   end-B-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       Building AI internally was the slow path. The category
       narrative was captured by competitors who partnered externally.
       You eventually caught up but never led.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Cloud-focused pivot worked divisionally but didn't transform
       the company's identity. Other categories stayed Windows-
       centric and were lost. The stock grew but not at the pace a
       full transformation would have produced.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The acquisition without cultural reform got absorbed by the
       existing identity. Two years later, the acquired company's
       growth had slowed. The transformation stalled and you were
       replaced.
 ---
-
 ## What actually happened
 
 This drill is based on **Satya Nadella taking over as Microsoft CEO

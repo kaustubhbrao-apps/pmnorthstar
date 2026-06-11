@@ -2,7 +2,7 @@
 slug: mcp-build-or-skip-2026
 type: current
 category: strategic
-publishedAt: "2026-07-13T19:00:00+05:30"
+publishedAt: '2026-07-13T19:00:00+05:30'
 estimatedMinutes: 6
 principle: |
   Standards become moats only when they're inevitable. Investing in
@@ -32,7 +32,7 @@ nodes:
     prompt: |
       Ship MCP server in Q3 or do the security features. Pick.
     options:
-      - text: "Ship MCP. Skip or defer the SSO/audit features. Bet on the standard."
+      - text: Ship MCP. Skip or defer the SSO/audit features. Bet on the standard.
         points: 4
         pattern: standard-bet-over-customer-ask
         rationale: |
@@ -50,7 +50,7 @@ nodes:
           agent." One of the SSO-asking customers churns; the
           other waits. Net new ARR up 30% by quarter end.
         leadsTo: A-mcp-followup
-      - text: "Ship security features. MCP can wait until the standard is more proven."
+      - text: Ship security features. MCP can wait until the standard is more proven.
         points: 3
         pattern: customer-ask-over-standard
         rationale: |
@@ -65,7 +65,7 @@ nodes:
           expands. AI-agent inbound goes to your competitor.
           Mixed outcome — short-term wins, long-term cost.
         leadsTo: end-B
-      - text: "Hire a contractor to ship MCP in parallel. Keep the security roadmap intact."
+      - text: Hire a contractor to ship MCP in parallel. Keep the security roadmap intact.
         points: 5
         pattern: contractor-for-the-bet
         rationale: |
@@ -82,7 +82,7 @@ nodes:
           while existing customers stay happy. Net new ARR up
           45% by quarter end.
         leadsTo: C-both-followup
-      - text: "Wait for Q4. Defer both. Q3 is for selling the existing pipeline."
+      - text: Wait for Q4. Defer both. Q3 is for selling the existing pipeline.
         points: 1
         pattern: defer-both
         rationale: |
@@ -103,7 +103,7 @@ nodes:
       renewal. They want SSO + audit log; you don't have it.
       What do you do?
     options:
-      - text: "Offer them a credit and a Q4 ETA on SSO. Stretch the relationship."
+      - text: Offer them a credit and a Q4 ETA on SSO. Stretch the relationship.
         points: 4
         pattern: relationship-bridge
         rationale: |
@@ -116,7 +116,7 @@ nodes:
           option to extend when SSO ships. You ship SSO in Q4.
           They sign the extension.
         leadsTo: end-A-good
-      - text: "Let them churn cleanly. Refer them to a competitor with SSO."
+      - text: Let them churn cleanly. Refer them to a competitor with SSO.
         points: 2
         pattern: prioritize-strategy-over-customer
         rationale: |
@@ -138,7 +138,7 @@ nodes:
       structured callbacks. Your competitor is reading the same
       pattern. Pick.
     options:
-      - text: "Ship the deepest MCP integration in the category. Become the reference CRM for AI agents."
+      - text: Ship the deepest MCP integration in the category. Become the reference CRM for AI agents.
         points: 5
         pattern: depth-over-breadth
         rationale: |
@@ -153,7 +153,7 @@ nodes:
           reference customer for Anthropic's MCP documentation,
           which drives compounding inbound for 18 months.
         leadsTo: end-C-great
-      - text: "Stay at MCP parity. Don't over-invest in a category that's still uncertain."
+      - text: Stay at MCP parity. Don't over-invest in a category that's still uncertain.
         points: 3
         pattern: parity-not-depth
         rationale: |
@@ -167,44 +167,43 @@ nodes:
         leadsTo: end-C-stable
   end-A-good:
     isOutcome: true
-    summary: |
+    prompt: |
       The MCP bet plus the customer-bridge worked. Renewals stayed
       strong, AI-agent inbound grew, and Q3 closed 30% above
       target. The bet on the standard compounded.
   end-A-bad:
     isOutcome: true
-    summary: |
+    prompt: |
       The customer churn signaled bad faith to the broader
       pipeline. AI-agent inbound was real but the brand took a
       hit. Net neutral quarter.
   end-B:
     isOutcome: true
-    summary: |
+    prompt: |
       Security features kept existing customers happy but you
       missed the standard-adoption window. A competitor took
       the AI-agent traffic layer. You shipped MCP in Q4 but as
       a follower, not a leader.
   end-C-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The deep MCP integration positioned you as the AI-first
       CRM. Inbound compounded for 18 months. Series C closed at
       4x the Series B valuation on the "agent-distribution layer"
       story.
   end-C-stable:
     isOutcome: true
-    summary: |
+    prompt: |
       Parity worked but didn't compound. You retained the AI-
       agent traffic you had but didn't grow it. Net stable
       quarter, stable narrative.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       Deferring both bets cost you on both axes. Q4 became a
       catch-up quarter, and the agent-traffic layer was someone
       else's by then.
 ---
-
 ## What's at stake here
 
 The MCP decision is a live case for every developer-tool and SaaS

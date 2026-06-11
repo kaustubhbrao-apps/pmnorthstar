@@ -36,7 +36,7 @@ nodes:
     prompt: |
       Pick the public pricing model.
     options:
-      - text: "Match the market: 2.9% + 30¢ per transaction, $0 setup, $0 monthly, but require a contract"
+      - text: 'Match the market: 2.9% + 30¢ per transaction, $0 setup, $0 monthly, but require a contract'
         points: 4
         pattern: market-match-with-clarity
         rationale: |
@@ -50,7 +50,7 @@ nodes:
           You add a 30-day pilot exception, then a 90-day exception,
           then eventually drop the contract entirely.
         leadsTo: A-match-followup
-      - text: "Beat the market: 2.5% + 25¢. Aggressive pricing to win share."
+      - text: 'Beat the market: 2.5% + 25¢. Aggressive pricing to win share.'
         points: 2
         pattern: race-to-the-bottom
         rationale: |
@@ -66,7 +66,7 @@ nodes:
           breaks trust with the customers who signed for the lower
           number.
         leadsTo: end-B
-      - text: "Match the headline rate (2.9% + 30¢) but no contract, no setup, no monthly, no hidden fees. Charge a higher rate for cards from outside the US."
+      - text: Match the headline rate (2.9% + 30¢) but no contract, no setup, no monthly, no hidden fees. Charge a higher rate for cards from outside the US.
         points: 5
         pattern: anchor-with-simplicity
         rationale: |
@@ -82,7 +82,7 @@ nodes:
           monthly. By the time competitors copy the model, you're
           the default.
         leadsTo: C-anchor-followup
-      - text: "Tiered pricing — discounts for high-volume customers. 2.9% under $100K/month, 2.5% above."
+      - text: Tiered pricing — discounts for high-volume customers. 2.9% under $100K/month, 2.5% above.
         points: 3
         pattern: usage-tiers-too-early
         rationale: |
@@ -104,7 +104,7 @@ nodes:
       30% of signups bounce at the contract step. Conversion is
       mediocre. You need to decide what to do.
     options:
-      - text: "Drop the contract. Anyone can sign up and start charging cards today."
+      - text: Drop the contract. Anyone can sign up and start charging cards today.
         points: 5
         pattern: friction-removal
         rationale: |
@@ -119,7 +119,7 @@ nodes:
           spike materially because your limits hold. You become
           the "no contract, no setup" payments company.
         leadsTo: end-A-good
-      - text: "Keep the contract but simplify it to a 1-page agreement."
+      - text: Keep the contract but simplify it to a 1-page agreement.
         points: 3
         pattern: half-friction-removal
         rationale: |
@@ -139,7 +139,7 @@ nodes:
       requests — high-volume merchants who want sub-2.9% rates.
       What do you do?
     options:
-      - text: "Add an enterprise tier. Custom pricing above $1M monthly volume. Keep public pricing identical."
+      - text: Add an enterprise tier. Custom pricing above $1M monthly volume. Keep public pricing identical.
         points: 5
         pattern: tier-without-confusing
         rationale: |
@@ -152,7 +152,7 @@ nodes:
           Enterprise deals close at scale without contaminating the
           self-serve brand. ARR compounds from both directions.
         leadsTo: end-C-great
-      - text: "Publish a volume-discount table on the pricing page."
+      - text: Publish a volume-discount table on the pricing page.
         points: 3
         pattern: pricing-page-bloat
         rationale: |
@@ -166,7 +166,7 @@ nodes:
           cycles for enterprise improve slightly; the self-serve
           conversion drops a hair. Net mixed.
         leadsTo: end-C-mixed
-      - text: "Refuse to negotiate. Same price for everyone."
+      - text: Refuse to negotiate. Same price for everyone.
         points: 2
         pattern: fairness-as-dogma
         rationale: |
@@ -182,47 +182,46 @@ nodes:
         leadsTo: end-C-mixed
   end-A-good:
     isOutcome: true
-    summary: |
+    prompt: |
       The contract drop unlocked the self-serve motion. Within a year
       you were the default payments provider for early-stage
       startups, and the brand was set: payments infrastructure that
       ships in an afternoon.
   end-A-mediocre:
     isOutcome: true
-    summary: |
+    prompt: |
       The simplified contract softened the friction but didn't
       eliminate it. You shipped a competent payments product but
       gave up the self-serve narrative to a competitor who removed
       the contract entirely.
   end-B:
     isOutcome: true
-    summary: |
+    prompt: |
       Aggressive pricing built volume but broke unit economics. The
       Series A round priced lower because reviewers saw the margin
       issue. The next 18 months were spent quietly raising prices
       and apologizing to early customers.
   end-C-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The simple-pricing-plus-enterprise-quiet-tier model became the
       textbook for infrastructure pricing. The pricing page
       ("2.9% + 30¢. No setup, no monthly, no hidden fees.") became
       a recruiting tool for both customers and engineers.
   end-C-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       The pricing page got cluttered (or stayed principled but lost
       revenue). The product still grew but you traded the cleanest
       brand asset you had for marginal optimization.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       Tiered pricing was the right model in year 3, not year 1. You
       eventually flattened the pricing to recover the self-serve
       motion, but the matrix had already cost you ~6 months of
       conversion gains.
 ---
-
 ## What actually happened
 
 This drill is based on **Stripe's pricing decisions from 2010-2011**.

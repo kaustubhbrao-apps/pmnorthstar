@@ -32,7 +32,7 @@ nodes:
     prompt: |
       Pick the move.
     options:
-      - text: "Roll out the AI assessment as the primary screening filter. Top 10% only get to humans."
+      - text: Roll out the AI assessment as the primary screening filter. Top 10% only get to humans.
         points: 1
         pattern: assessment-as-gate
         rationale: |
@@ -53,7 +53,7 @@ nodes:
           puzzles but struggle with the actual work. Attrition
           among new hires is up 40%.
         leadsTo: end-A
-      - text: "Use the assessment as one signal among many. Top 30% advance; humans review the borderline cases."
+      - text: Use the assessment as one signal among many. Top 30% advance; humans review the borderline cases.
         points: 5
         pattern: assessment-as-input-not-gate
         rationale: |
@@ -70,7 +70,7 @@ nodes:
           spend more time on the candidates worth deep
           evaluation.
         leadsTo: B-balanced-followup
-      - text: "Skip the AI assessment. Add more structured rubrics to the existing human interview loop instead."
+      - text: Skip the AI assessment. Add more structured rubrics to the existing human interview loop instead.
         points: 3
         pattern: improve-the-humans
         rationale: |
@@ -85,7 +85,7 @@ nodes:
           stays high. Senior engineers burn out at ~Q3 from the
           sustained interview hours.
         leadsTo: end-C
-      - text: "Use the assessment to identify *bottom* 30% to reject, but interview the rest. Invert the filter."
+      - text: Use the assessment to identify *bottom* 30% to reject, but interview the rest. Invert the filter.
         points: 4
         pattern: filter-out-not-in
         rationale: |
@@ -110,7 +110,7 @@ nodes:
       assessments tailored to your company's specific roles —
       another $50K. Pick.
     options:
-      - text: "Buy both. Compliance + custom assessments worth the investment."
+      - text: Buy both. Compliance + custom assessments worth the investment.
         points: 5
         pattern: invest-in-quality-of-tool
         rationale: |
@@ -124,7 +124,7 @@ nodes:
           signal quality. Hiring loop becomes one of the better
           parts of the company.
         leadsTo: end-B-great
-      - text: "Buy the bias-auditing tier only. Stick with off-the-shelf assessments."
+      - text: Buy the bias-auditing tier only. Stick with off-the-shelf assessments.
         points: 4
         pattern: compliance-without-customization
         rationale: |
@@ -136,7 +136,7 @@ nodes:
           Compliance solid. Signal quality is good but not
           optimal. Steady hiring performance.
         leadsTo: end-B-good
-      - text: "Skip both. The current setup is fine."
+      - text: Skip both. The current setup is fine.
         points: 2
         pattern: skip-the-compliance-layer
         rationale: |
@@ -153,44 +153,43 @@ nodes:
         leadsTo: end-B-bad
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       Aggressive filtering optimized for the wrong thing. Hiring
       quality declined; new-hire attrition spiked. You eventually
       rolled back to a balanced approach 18 months in, after
       losing a quarter of the new cohort.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       Balanced approach + compliance + custom assessments produced
       the best hiring outcomes in the company's history. The
       hiring loop became a competitive advantage; engineers
       bragged about it.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       Solid outcome. Hiring works, compliance is clean, but the
       signal quality isn't optimal. Steady not breakout.
   end-B-bad:
     isOutcome: true
-    summary: |
+    prompt: |
       The discrimination complaint resulted in a $1.2M settlement
       and required public remediation. The $30K compliance tier
       would have caught the issue early.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Better humans + worse tools. Hiring quality is excellent but
       senior engineers are burning out from interview load. By
       Q4, two senior engineers leave citing the interview burden.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The filter-out approach worked. Interview load reduced
       meaningfully, hiring quality preserved. Slightly less
       efficiency than the gate approach but dramatically lower
       risk of bad filtering.
 ---
-
 ## What's at stake here
 
 AI hiring assessments are reshaping how companies screen at scale.

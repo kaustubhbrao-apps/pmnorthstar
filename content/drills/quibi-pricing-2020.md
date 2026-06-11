@@ -33,7 +33,7 @@ nodes:
     prompt: |
       You have launch terms to set. Pick.
     options:
-      - text: "Launch as planned: $4.99 with ads, $7.99 ad-free, mobile-only, premium short-form."
+      - text: 'Launch as planned: $4.99 with ads, $7.99 ad-free, mobile-only, premium short-form.'
         points: 1
         pattern: ignore-market-shift
         rationale: |
@@ -49,7 +49,7 @@ nodes:
           when the product fits, and churn within 30 days.
           Six months in, the product shuts down.
         leadsTo: end-A
-      - text: "Postpone launch by 6 months. Reposition for a post-pandemic moment when commute returns."
+      - text: Postpone launch by 6 months. Reposition for a post-pandemic moment when commute returns.
         points: 4
         pattern: wait-for-the-thesis-to-return
         rationale: |
@@ -65,7 +65,7 @@ nodes:
           better. But the cultural buzz has dissipated; the
           launch is solid not breakout.
         leadsTo: end-B-postpone
-      - text: "Pivot positioning: drop the 'mobile-only commute' frame. Make it 'premium short-form for any device.'"
+      - text: 'Pivot positioning: drop the ''mobile-only commute'' frame. Make it ''premium short-form for any device.'''
         points: 5
         pattern: reposition-product
         rationale: |
@@ -81,7 +81,7 @@ nodes:
           break." Retention improves materially. The product
           finds a real audience even if smaller than projected.
         leadsTo: C-reposition-followup
-      - text: "Drop the price to $2.99 with ads. Compete with TikTok and YouTube for attention."
+      - text: Drop the price to $2.99 with ads. Compete with TikTok and YouTube for attention.
         points: 1
         pattern: race-to-the-bottom
         rationale: |
@@ -106,7 +106,7 @@ nodes:
       premium 10-minute originals, or pivot to user-generated /
       lower-cost content?
     options:
-      - text: "Stay premium. The differentiation is the production value."
+      - text: Stay premium. The differentiation is the production value.
         points: 4
         pattern: premium-or-nothing
         rationale: |
@@ -121,7 +121,7 @@ nodes:
           slow. ARPU is high. The product reaches sustainability
           in 18 months as a smaller-but-profitable niche.
         leadsTo: end-C-good
-      - text: "Add a creator-tier. Open the platform to creators making 10-minute premium content."
+      - text: Add a creator-tier. Open the platform to creators making 10-minute premium content.
         points: 5
         pattern: marketplace-as-flywheel
         rationale: |
@@ -138,27 +138,27 @@ nodes:
         leadsTo: end-C-great
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The original launch ignored the pandemic context entirely.
       Users couldn't find a moment for the product. Retention
       collapsed and the company shut down 6 months in, returning
       ~$350M to shareholders out of $1.75B raised.
   end-B-postpone:
     isOutcome: true
-    summary: |
+    prompt: |
       Postponement preserved capital but lost the cultural moment.
       The eventual launch worked technically but never reached
       breakout. The company existed but didn't compound.
   end-C-good:
     isOutcome: true
-    summary: |
+    prompt: |
       Repositioning + premium discipline produced a sustainable
       niche. Smaller than projected, profitable, brand-clean.
       The company existed for years as a profitable specialty
       service.
   end-C-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The marketplace flywheel changed the company's trajectory.
       The platform became the leading destination for premium
       short-form content. Series E closed at a strong valuation;
@@ -166,13 +166,12 @@ nodes:
       price.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       Racing to the bottom on price accelerated the shutdown.
       Subscribers grew but the unit economics never worked. The
       company closed 4 months earlier than the original-plan
       scenario.
 ---
-
 ## What actually happened
 
 This drill is based on **Quibi's launch in April 2020**. Jeffrey

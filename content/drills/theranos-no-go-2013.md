@@ -39,7 +39,7 @@ nodes:
       You're four years into a job you took because you believed in
       the mission. Pick the move.
     options:
-      - text: "Sign the NDA. Stay quiet. Keep collecting the paycheck while you figure out next steps."
+      - text: Sign the NDA. Stay quiet. Keep collecting the paycheck while you figure out next steps.
         points: 0
         pattern: complicity-by-inaction
         rationale: |
@@ -56,7 +56,7 @@ nodes:
           career in healthcare is over. Legal fees consume your
           savings.
         leadsTo: end-A
-      - text: "Refuse to sign. Document everything you've seen. Resign and contact regulators."
+      - text: Refuse to sign. Document everything you've seen. Resign and contact regulators.
         points: 5
         pattern: integrity-over-pattern-match
         rationale: |
@@ -76,7 +76,7 @@ nodes:
           whistleblower; your career in healthcare deepens because
           of the integrity, not despite it.
         leadsTo: B-resign-followup
-      - text: "Take the issue to the board. Trust the governance to investigate."
+      - text: Take the issue to the board. Trust the governance to investigate.
         points: 3
         pattern: trust-the-governance
         rationale: |
@@ -95,7 +95,7 @@ nodes:
           a different team. You eventually resign in 6 months,
           quietly.
         leadsTo: end-C
-      - text: "Stay but try to fix it from the inside. You're senior; you can push for better validation."
+      - text: Stay but try to fix it from the inside. You're senior; you can push for better validation.
         points: 1
         pattern: hero-inside-the-broken-system
         rationale: |
@@ -120,7 +120,7 @@ nodes:
       company's law firm. A journalist has reached out asking for
       on-record testimony.
     options:
-      - text: "Go on the record with the journalist. The public story is the only thing that protects you."
+      - text: Go on the record with the journalist. The public story is the only thing that protects you.
         points: 5
         pattern: transparency-as-defense
         rationale: |
@@ -139,7 +139,7 @@ nodes:
           you collapses. Your name is associated with integrity,
           not complicity.
         leadsTo: end-B-great
-      - text: "Stay quiet. Settle the NDA case privately. Rebuild your career outside the spotlight."
+      - text: Stay quiet. Settle the NDA case privately. Rebuild your career outside the spotlight.
         points: 3
         pattern: settle-and-retreat
         rationale: |
@@ -156,7 +156,7 @@ nodes:
         leadsTo: end-B-good
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The complicity compounded. Years later, the public
       reckoning named you among the senior staff who knew. Career
       in healthcare ended; legal exposure substantial; reputation
@@ -164,7 +164,7 @@ nodes:
       available; you took the paycheck path.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The whistleblower path defined the rest of your career.
       Patient safety was eventually protected; the federal case
       named you as a credible source; your name in healthcare
@@ -172,13 +172,13 @@ nodes:
       different lab and went on to do important work.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       You survived but stayed out of the public story. Other
       whistleblowers told it without you. Your career continued
       but the silence sat with you for decades.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       The board didn't act in time. You resigned 6 months later
       under the cloud of having raised concerns through "proper
       channels" that no one acted on. The eventual public story
@@ -186,13 +186,12 @@ nodes:
       not absolved.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The "fix from within" path produced no change. By the time
       the story broke, your name was on validation documents
       tied to the misuse. The legal exposure was significant; the
       reputational damage lasting.
 ---
-
 ## What actually happened
 
 This drill is based on the **Theranos scandal**, specifically the

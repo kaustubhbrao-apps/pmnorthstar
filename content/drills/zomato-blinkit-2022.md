@@ -32,7 +32,7 @@ nodes:
     prompt: |
       The 10-min delivery category is real. Pick the move.
     options:
-      - text: "Acquire Blinkit. ~$570M in stock. Move fast before your competitor matches the scale."
+      - text: Acquire Blinkit. ~$570M in stock. Move fast before your competitor matches the scale.
         points: 5
         pattern: acquire-the-leader
         rationale: |
@@ -51,7 +51,7 @@ nodes:
           is preserved. Two years later, Blinkit becomes
           contribution-positive and the bet looks prescient.
         leadsTo: A-acquire-followup
-      - text: "Build organically. Launch a parallel 10-minute service. Compete on operational excellence."
+      - text: Build organically. Launch a parallel 10-minute service. Compete on operational excellence.
         points: 2
         pattern: build-vs-buy
         rationale: |
@@ -67,7 +67,7 @@ nodes:
           (now owned by competitor) has 65%. Investors mark down
           the long-term grocery thesis for your stock.
         leadsTo: end-B
-      - text: "Stay focused on food delivery. Don't enter 10-min grocery. Let the competitor own it."
+      - text: Stay focused on food delivery. Don't enter 10-min grocery. Let the competitor own it.
         points: 1
         pattern: refuse-the-adjacent-bet
         rationale: |
@@ -84,7 +84,7 @@ nodes:
           effectively. Your food delivery share slowly erodes
           from cross-app gravity.
         leadsTo: end-C
-      - text: "Partner with Blinkit. Co-brand integration without acquisition. Cheaper, faster."
+      - text: Partner with Blinkit. Co-brand integration without acquisition. Cheaper, faster.
         points: 3
         pattern: partnership-instead-of-acquisition
         rationale: |
@@ -108,7 +108,7 @@ nodes:
       Blinkit stay a separate brand and app, or merge into the
       main food delivery app?
     options:
-      - text: "Keep separate. Blinkit has its own brand equity in grocery; don't dilute either brand."
+      - text: Keep separate. Blinkit has its own brand equity in grocery; don't dilute either brand.
         points: 5
         pattern: separate-brands-different-jobs
         rationale: |
@@ -125,7 +125,7 @@ nodes:
           Q2 of next year. Two-app structure becomes the
           textbook for category-distinct acquisitions.
         leadsTo: end-A-great
-      - text: "Merge into one app. 'Order food and groceries from one place.' Unified UX."
+      - text: Merge into one app. 'Order food and groceries from one place.' Unified UX.
         points: 3
         pattern: merge-for-cross-sell
         rationale: |
@@ -143,7 +143,7 @@ nodes:
         leadsTo: end-A-mixed
   end-A-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The Blinkit acquisition + separate-brand strategy became one
       of the most successful adjacent-category bets in Indian
       consumer tech. By 2024, Blinkit was contribution-positive,
@@ -151,34 +151,33 @@ nodes:
       company's stock recovered to all-time highs.
   end-A-mixed:
     isOutcome: true
-    summary: |
+    prompt: |
       Acquisition correct, merge-strategy wrong. The 12 months of
       merged-app friction cost growth in both categories. The
       eventual two-app restoration worked, just later than
       necessary.
   end-B:
     isOutcome: true
-    summary: |
+    prompt: |
       Build-organically came too late. Your competitor's
       acquisition of the same category leader gave them 3 years
       of compounding advantage you never closed. Stock
       underperformed.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Staying-focused on food delivery preserved short-term
       margins but lost long-term consumer share. The cross-
       category competitor compounded; your single-category
       growth slowed.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The partnership fell apart when the competitor acquired
       Blinkit outright. You restarted in 10-min grocery at a
       structural disadvantage. The acquisition that would have
       been ~$570M became impossible.
 ---
-
 ## What actually happened
 
 This drill is based on **Zomato's acquisition of Blinkit in 2022**.

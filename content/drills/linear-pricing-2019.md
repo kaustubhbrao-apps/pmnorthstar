@@ -31,7 +31,7 @@ nodes:
     prompt: |
       Pick the pricing model for public launch.
     options:
-      - text: "Match the incumbent: $8/user/month, with enterprise tier at $14. Compete on product quality."
+      - text: 'Match the incumbent: $8/user/month, with enterprise tier at $14. Compete on product quality.'
         points: 2
         pattern: incumbent-match
         rationale: |
@@ -47,7 +47,7 @@ nodes:
           incumbent has 100,000. The product is better but the
           motion is too slow to compound.
         leadsTo: end-A
-      - text: "Free for small teams (under 10 users). $8/user/month for larger teams."
+      - text: Free for small teams (under 10 users). $8/user/month for larger teams.
         points: 5
         pattern: free-for-the-trojan-horse
         rationale: |
@@ -63,7 +63,7 @@ nodes:
           year. ARR compounds at 2x the rate of the incumbent-
           match scenario.
         leadsTo: B-free-followup
-      - text: "Free forever, no limits. Monetize later via enterprise features (SSO, audit log, custom SLAs)."
+      - text: Free forever, no limits. Monetize later via enterprise features (SSO, audit log, custom SLAs).
         points: 3
         pattern: monetize-much-later
         rationale: |
@@ -78,7 +78,7 @@ nodes:
           than a revenue-bearing version of the same product would
           have commanded.
         leadsTo: end-C
-      - text: "Aggressive undercut: $4/user/month flat. Half the incumbent's price."
+      - text: 'Aggressive undercut: $4/user/month flat. Half the incumbent''s price.'
         points: 1
         pattern: undercut-with-no-moat
         rationale: |
@@ -103,7 +103,7 @@ nodes:
       workspaces ("Team A," "Team A overflow") to stay free. You
       need to decide what to do about it.
     options:
-      - text: "Enforce a strict 'one workspace per organization' rule. Block obvious multi-workspace abuse."
+      - text: Enforce a strict 'one workspace per organization' rule. Block obvious multi-workspace abuse.
         points: 2
         pattern: enforce-the-gate-hard
         rationale: |
@@ -117,7 +117,7 @@ nodes:
           competitor that's more permissive. Brand trust takes
           a hit on Twitter.
         leadsTo: end-B-bad
-      - text: "Make the upgrade feel like an upgrade — add valuable team features (cross-workspace search, admin tooling) only available paid."
+      - text: Make the upgrade feel like an upgrade — add valuable team features (cross-workspace search, admin tooling) only available paid.
         points: 5
         pattern: positive-upgrade-pull
         rationale: |
@@ -131,7 +131,7 @@ nodes:
           Upgrade rate among multi-workspace teams jumps from 5%
           to 28%. Brand stays clean. Conversion engine compounds.
         leadsTo: end-B-great
-      - text: "Tighten free tier limits — drop from 10 users to 5. Force the upgrade sooner."
+      - text: Tighten free tier limits — drop from 10 users to 5. Force the upgrade sooner.
         points: 1
         pattern: shrink-the-free-tier
         rationale: |
@@ -147,45 +147,44 @@ nodes:
         leadsTo: end-B-terrible
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       Matching the incumbent's price made the product invisible.
       You eventually flipped to a free-tier model in year 2, but
       the launch momentum had passed.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The positive-upgrade-pull model worked. Paid conversion
       compounded year-over-year, and the brand stayed clean. By
       year 5 you were the default project-management tool for
       software teams and a multi-hundred-million ARR business.
   end-B-bad:
     isOutcome: true
-    summary: |
+    prompt: |
       The enforcement worked technically but cost brand trust.
       Growth slowed. The product still works but the love is
       gone.
   end-B-terrible:
     isOutcome: true
-    summary: |
+    prompt: |
       The retroactive limit change made you the case study other
       founders quote when explaining "how to destroy your community."
       Recovery took 18 months and a public apology.
   end-C:
     isOutcome: true
-    summary: |
+    prompt: |
       Free-forever drove huge adoption but no revenue. The
       enterprise tier eventually monetized a slice, but the
       fundraise dynamics meant earlier dilution and a less
       favorable cap table.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The undercut became a race to the bottom you couldn't win.
       The incumbent matched and outlasted you. You raised prices
       back to $8/user, broke trust, and ended up with a worse
       brand than the match scenario.
 ---
-
 ## What actually happened
 
 This drill is loosely based on **Linear's pricing model from 2019
