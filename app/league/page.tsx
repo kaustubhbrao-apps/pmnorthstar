@@ -4,6 +4,10 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { CountdownTimer } from "@/components/CountdownTimer";
+import { getSession } from "@/lib/auth";
+import { isLeagueVisible } from "@/lib/admin";
+import { fetchLeaderboard } from "@/lib/leaderboard";
+import { Leaderboard } from "@/components/Leaderboard";
 
 export const revalidate = 60;
 
@@ -25,6 +29,12 @@ export default async function LeagueHypePage() {
   const activeMatch = leagueMatches.find(d => new Date(d.publishedAt) <= cutoff && d.leagueEndsAt && new Date(d.leagueEndsAt) > new Date());
   const completedMatchdays = leagueMatches.filter(d => new Date(d.publishedAt) <= cutoff).length;
   const totalMatchdays = 50;
+
+  const session = await getSession();
+  const showLeague = isLeagueVisible(session);
+  const { top10, myEntry, totalPlayers } = showLeague
+    ? await fetchLeaderboard(session?.id)
+    : { top10: [], myEntry: null, totalPlayers: 0 };
 
   return (
     <SidebarShell activeNav="league" backLabelDesktop="Back to the library" backHref="/">
@@ -98,7 +108,7 @@ export default async function LeagueHypePage() {
               )}
 
               {/* Substack Subscribe Box */}
-              <div className="w-full max-w-md relative">
+              <div className="w-full max-w-md relative mb-16">
                 <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--border-subtle)]">
                   <SubscribeForm
                     variant="card"
@@ -108,6 +118,13 @@ export default async function LeagueHypePage() {
                   />
                 </div>
               </div>
+
+              {/* Leaderboard */}
+              {showLeague && top10.length > 0 && (
+                <div className="w-full max-w-md relative">
+                  <Leaderboard top10={top10} myEntry={myEntry} totalPlayers={totalPlayers} currentUserId={session?.id} />
+                </div>
+              )}
 
             </div>
 

@@ -4,7 +4,7 @@
 // out by publishedDrills() at request time.
 
 import Link from "next/link";
-import { ArrowUpRight, Brain, Clock, Target, Trophy, Info } from "lucide-react";
+import { Sparkles, Brain, Clock, ChevronRight, ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { prisma } from "@/lib/prisma";
@@ -20,53 +20,6 @@ async function totalPlays(): Promise<number> {
     return await prisma.simulateAttempt.count();
   } catch {
     return 0;
-  }
-}
-
-type LeaderboardEntry = {
-  id: string;
-  name: string | null;
-  username: string | null;
-  leaguePoints: number;
-  rank: number;
-};
-
-async function fetchLeaderboard(userId?: string): Promise<{
-  top10: LeaderboardEntry[];
-  myEntry: LeaderboardEntry | null;
-  totalPlayers: number;
-}> {
-  try {
-    const top10Raw = await prisma.user.findMany({
-      where: { leaguePoints: { gt: 0 } },
-      orderBy: { leaguePoints: "desc" },
-      take: 10,
-      select: { id: true, name: true, username: true, leaguePoints: true },
-    });
-    const top10: LeaderboardEntry[] = top10Raw.map((u, i) => ({ ...u, rank: i + 1 }));
-    const totalPlayers = await prisma.user.count({ where: { leaguePoints: { gt: 0 } } });
-
-    let myEntry: LeaderboardEntry | null = null;
-    if (userId) {
-      const inTop = top10.find((e) => e.id === userId);
-      if (inTop) {
-        myEntry = inTop;
-      } else {
-        const me = await prisma.user.findUnique({
-          where: { id: userId },
-          select: { id: true, name: true, username: true, leaguePoints: true },
-        });
-        if (me && me.leaguePoints > 0) {
-          const above = await prisma.user.count({
-            where: { leaguePoints: { gt: me.leaguePoints } },
-          });
-          myEntry = { ...me, rank: above + 1 };
-        }
-      }
-    }
-    return { top10, myEntry, totalPlayers };
-  } catch {
-    return { top10: [], myEntry: null, totalPlayers: 0 };
   }
 }
 
@@ -99,9 +52,6 @@ export default async function SimulatePage() {
   const plays = await totalPlays();
   const session = await getSession();
   const showLeague = isLeagueVisible(session);
-  const { top10, myEntry, totalPlayers } = showLeague
-    ? await fetchLeaderboard(session?.id)
-    : { top10: [], myEntry: null, totalPlayers: 0 };
 
   // Season config (Mock for UI)
   const totalMatchdays = 50;
@@ -180,29 +130,16 @@ export default async function SimulatePage() {
             body="Scenarios are anonymized. You can't pattern-match — you have to reason."
           />
           <ExplainerTile
-            icon={Target}
+            icon={Sparkles}
             title="Three dimensions"
             body="Every drill scores you on product thinking, business judgement, and founder calls."
           />
-          {showLeague ? (
-            <ExplainerTile
-              icon={Trophy}
-              title="Simulation League"
-              body="Log in to play for points. Compete on the leaderboard and earn bonuses by challenging friends."
-            />
-          ) : (
-            <ExplainerTile
-              icon={Clock}
-              title="~10 minutes"
-              body="Branching scenarios with rationales for every choice. Free, no signup."
-            />
-          )}
+          <ExplainerTile
+            icon={Clock}
+            title="~10 minutes"
+            body="Branching scenarios with rationales for every choice. Free, no signup."
+          />
         </div>
-
-        {/* Leaderboard — only when league is visible */}
-        {showLeague && top10.length > 0 && (
-          <Leaderboard top10={top10} myEntry={myEntry} totalPlayers={totalPlayers} currentUserId={session?.id} />
-        )}
 
         {/* Archive — all published drills */}
         {all.length > 1 && (
@@ -477,176 +414,4 @@ function drillTitle(drill: Drill): string {
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
-}
-
-function Leaderboard({
-  top10,
-  myEntry,
-  totalPlayers,
-  currentUserId,
-}: {
-  top10: LeaderboardEntry[];
-  myEntry: LeaderboardEntry | null;
-  totalPlayers: number;
-  currentUserId?: string;
-}) {
-  const isMyEntryInTop10 = myEntry && top10.some((e) => e.id === myEntry.id);
-
-  return (
-    <section className="mt-10 mb-4">
-      <div className="flex items-center justify-between mb-5">
-        <div className="flex items-center gap-2.5">
-          <Trophy size={18} style={{ color: "var(--brand-primary)" }} />
-          <h2
-            className="font-display text-xl font-semibold"
-            style={{ color: "var(--text-primary)" }}
-          >
-            League Standings
-          </h2>
-        </div>
-        <span
-          className="text-xs font-mono uppercase"
-          style={{ color: "var(--text-faint)", letterSpacing: "0.1em" }}
-        >
-          {totalPlayers} {totalPlayers === 1 ? "player" : "players"}
-        </span>
-      </div>
-
-      <div
-        className="rounded-xl overflow-hidden"
-        style={{
-          background: "var(--card-bg)",
-          border: "1.5px solid var(--card-border)",
-        }}
-      >
-        {/* Header row */}
-        <div
-          className="grid px-4 py-3 text-xs font-mono uppercase"
-          style={{
-            gridTemplateColumns: "48px 1fr auto",
-            color: "var(--text-faint)",
-            letterSpacing: "0.1em",
-            borderBottom: "1px solid var(--card-border)",
-          }}
-        >
-          <span>Rank</span>
-          <span>Player</span>
-          <span>Pts</span>
-        </div>
-
-        {/* Top 10 rows */}
-        {top10.map((entry) => {
-          const isMe = currentUserId === entry.id;
-          return (
-            <div
-              key={entry.id}
-              className="grid px-4 py-3 text-sm transition-colors"
-              style={{
-                gridTemplateColumns: "48px 1fr auto",
-                borderBottom: "1px solid var(--card-border)",
-                background: isMe
-                  ? "color-mix(in srgb, var(--brand-primary) 8%, transparent)"
-                  : "transparent",
-                borderLeft: isMe
-                  ? "3px solid var(--brand-primary)"
-                  : "3px solid transparent",
-              }}
-            >
-              <span
-                className="font-mono font-bold"
-                style={{
-                  color:
-                    entry.rank === 1
-                      ? "#F5C842"
-                      : entry.rank === 2
-                      ? "#C0C0C0"
-                      : entry.rank === 3
-                      ? "#CD7F32"
-                      : "var(--text-faint)",
-                }}
-              >
-                #{entry.rank}
-              </span>
-              <span
-                className="font-medium truncate"
-                style={{ color: isMe ? "var(--brand-primary)" : "var(--text-primary)" }}
-              >
-                {entry.username ? `@${entry.username}` : entry.name ?? "Anonymous"}
-                {isMe && (
-                  <span
-                    className="text-xs font-mono ml-2 px-1.5 py-0.5 rounded"
-                    style={{
-                      background: "color-mix(in srgb, var(--brand-primary) 15%, transparent)",
-                      color: "var(--brand-primary)",
-                    }}
-                  >
-                    You
-                  </span>
-                )}
-              </span>
-              <span
-                className="font-mono font-bold tabular-nums"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {entry.leaguePoints}
-              </span>
-            </div>
-          );
-        })}
-
-        {/* Pinned row for current user if not in top 10 */}
-        {myEntry && !isMyEntryInTop10 && (
-          <>
-            <div
-              className="px-4 py-2 text-center text-xs font-mono"
-              style={{ color: "var(--text-faint)", borderBottom: "1px solid var(--card-border)" }}
-            >
-              ···
-            </div>
-            <div
-              className="grid px-4 py-3 text-sm"
-              style={{
-                gridTemplateColumns: "48px 1fr auto",
-                background: "color-mix(in srgb, var(--brand-primary) 8%, transparent)",
-                borderLeft: "3px solid var(--brand-primary)",
-              }}
-            >
-              <span className="font-mono font-bold" style={{ color: "var(--text-faint)" }}>
-                #{myEntry.rank}
-              </span>
-              <span className="font-medium truncate" style={{ color: "var(--brand-primary)" }}>
-                {myEntry.username ? `@${myEntry.username}` : myEntry.name ?? "Anonymous"}
-                <span
-                  className="text-xs font-mono ml-2 px-1.5 py-0.5 rounded"
-                  style={{
-                    background: "color-mix(in srgb, var(--brand-primary) 15%, transparent)",
-                    color: "var(--brand-primary)",
-                  }}
-                >
-                  You
-                </span>
-              </span>
-              <span className="font-mono font-bold tabular-nums" style={{ color: "var(--text-primary)" }}>
-                {myEntry.leaguePoints}
-              </span>
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* Link to league */}
-      <Link
-        href="/league"
-        className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold py-3 rounded-xl transition-colors hover:opacity-90"
-        style={{
-          color: "var(--brand-primary)",
-          background: "color-mix(in srgb, var(--brand-primary) 8%, transparent)",
-          border: "1.5px solid color-mix(in srgb, var(--brand-primary) 20%, transparent)",
-        }}
-      >
-        View full league
-        <ArrowUpRight size={14} />
-      </Link>
-    </section>
-  );
 }
