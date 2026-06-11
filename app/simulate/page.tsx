@@ -82,8 +82,18 @@ export default async function SimulatePage() {
   const isDev = process.env.NODE_ENV !== "production";
   const cutoff = isDev ? new Date("2099-12-31") : new Date();
   
-  // Filter out league matches. League matches belong on the League page.
-  const all = publishedDrills(cutoff).filter(d => !d.isLeagueMatch);
+  // Filter out active league matches. Expired league matches move to the regular library.
+  const allPublished = publishedDrills(cutoff);
+  
+  // Calculate matchday numbers for league matches based on publish order
+  const leagueMatches = allPublished.filter(d => d.isLeagueMatch).sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime());
+  const matchdayMap = new Map(leagueMatches.map((d, i) => [d.slug, i + 1]));
+
+  const all = allPublished.filter(d => {
+    if (!d.isLeagueMatch) return true;
+    // Include league matches if their time is over
+    return d.leagueEndsAt && new Date(d.leagueEndsAt) <= new Date();
+  });
   
   const featured = all[0];
   const plays = await totalPlays();
@@ -157,7 +167,7 @@ export default async function SimulatePage() {
 
         {/* Featured drill card */}
         {featured ? (
-          <FeaturedDrillCard drill={featured} />
+          <FeaturedDrillCard drill={featured} matchday={matchdayMap.get(featured.slug)} />
         ) : (
           <NoDrillYet />
         )}
@@ -205,7 +215,7 @@ export default async function SimulatePage() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {all.slice(1).map((d) => (
-                <ArchiveCard key={d.slug} drill={d} />
+                <ArchiveCard key={d.slug} drill={d} matchday={matchdayMap.get(d.slug)} />
               ))}
             </div>
           </section>
@@ -215,7 +225,7 @@ export default async function SimulatePage() {
   );
 }
 
-function FeaturedDrillCard({ drill }: { drill: Drill }) {
+function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: number }) {
   const badge = TYPE_BADGE[drill.type];
   
   // Calculate max points to detect "the big one"
@@ -288,8 +298,20 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
               >
                 {badge.label}
               </span>
+              {matchday && (
+                <span
+                  className="px-3 py-1 rounded text-[11px] font-bold uppercase tracking-widest border"
+                  style={{
+                    borderColor: "var(--brand-primary)",
+                    color: "var(--brand-primary)",
+                    background: "color-mix(in srgb, var(--brand-primary) 10%, transparent)",
+                  }}
+                >
+                  Matchday {matchday}
+                </span>
+              )}
               <span
-                className="text-sm font-mono"
+                className="text-sm font-mono font-medium"
                 style={{ color: "var(--text-faint)" }}
               >
                 ~{drill.estimatedMinutes} min
@@ -333,7 +355,7 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
   );
 }
 
-function ArchiveCard({ drill }: { drill: Drill }) {
+function ArchiveCard({ drill, matchday }: { drill: Drill; matchday?: number }) {
   const badge = TYPE_BADGE[drill.type];
   return (
     <Link
@@ -355,6 +377,18 @@ function ArchiveCard({ drill }: { drill: Drill }) {
         >
           {badge.label}
         </span>
+        {matchday && (
+          <span
+            className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest border"
+            style={{
+              borderColor: "var(--brand-primary)",
+              color: "var(--brand-primary)",
+              background: "color-mix(in srgb, var(--brand-primary) 10%, transparent)",
+            }}
+          >
+            Matchday {matchday}
+          </span>
+        )}
         <span
           className="text-sm font-mono"
           style={{ color: "var(--text-faint)" }}
