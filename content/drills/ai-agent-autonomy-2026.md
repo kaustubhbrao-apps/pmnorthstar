@@ -27,7 +27,7 @@ nodes:
           Week one of launch: a wrong-send goes viral on Twitter ("AI agent CC'd my entire board on my therapy bill"). You spend Q3 rebuilding the trust the product just destroyed. Churn spikes by 18%.
         leadsTo: A-fallout
       - text: Ship autonomous mode default-off. User has to opt in per action category (email send, meeting confirm, etc.).
-        points: 5
+        points: 10
         pattern: opt-in-per-category
         rationale: |
           The trust-staircase approach. Users earn confidence in each category separately, opt in when they're ready, and the agent's behavior matches their tolerance. Lower initial adoption but vastly higher long-term retention because every action that fires has been pre-approved at the category level. It respects user agency.
@@ -35,7 +35,7 @@ nodes:
           Adoption is slower than the CEO hoped, but the users who enable autonomy in any category report dramatically higher satisfaction. Net retention goes up 25%. You start seeing users evangelize the product as "safe and powerful."
         leadsTo: B-optin-followup
       - text: Hide autonomous mode behind an Advanced Settings menu. Don't market it. Let power users find it.
-        points: 2
+        points: 4
         pattern: hide-the-power
         rationale: |
           The risk-averse middle ground. Power users find it, casual users never trigger it. Reduces the blast radius of errors but also caps the upside — the feature you spent months building never gets adopted enough to compound. It's a failure of conviction. You're effectively shipping it without taking responsibility for it.
@@ -43,7 +43,7 @@ nodes:
           Only ~3% of users discover autonomous mode. Those users love it. Marketing-wise, the feature is invisible. The CEO is frustrated that you "buried" the launch. You missed the narrative momentum.
         leadsTo: C-hidden-followup
       - text: Ship autonomous mode but require a per-action confirmation toast that lets the user cancel within 10 seconds.
-        points: 4
+        points: 8
         pattern: confirmation-without-friction
         rationale: |
           Clever middle ground — autonomous in spirit, reversible in practice. The 10-second cancel window catches the 4% of errors before they become trust-destroying events. The tradeoff: it still feels like a confirmation step, which erodes the "autonomous" framing and forces the user to constantly monitor the agent.
@@ -56,7 +56,7 @@ nodes:
       The Twitter viral incident was devastating. You've disabled autonomous mode temporarily. The CEO wants to know how to respond to the crisis. Your Series B pitch is coming up in two months, and revenue churn is accelerating.
     options:
       - text: Issue a public apology, roll back to v2.0, and say you are taking a step back to "evaluate AI safety."
-        points: 3
+        points: 6
         pattern: full-retreat
         rationale: |
           A clean but damaging retreat. You admit fault, which stops the bleeding, but you surrender the narrative. Investors see you as having failed the autonomy test.
@@ -77,7 +77,7 @@ nodes:
       Three months post-launch. ~30% of users have opted into at least one autonomous category. Renewal rate is up 25%. The CEO now wants to push a "full autonomy" tier as a paid upgrade — $50/month on top of the base $20. Pick the model.
     options:
       - text: Yes — full autonomy is a paid tier. Justifies the price with the trust dividend.
-        points: 5
+        points: 10
         pattern: paid-trust-tier
         rationale: |
           Aligned incentives. Users who pay for full autonomy are self-selecting as ready for it, and the higher price funds the safety infrastructure (post-action audits, insurance, faster support). Pricing also signals that full autonomy is a premium responsibility, not a default.
@@ -85,7 +85,7 @@ nodes:
           ~8% of users upgrade to the $50 tier. ARR grows meaningfully. Customer support load doesn't spike because the upgraders are exactly the cohort ready for autonomy.
         leadsTo: B-enterprise-followup
       - text: No — make all autonomy categories free. Compete on the experience, not the gate.
-        points: 3
+        points: 6
         pattern: free-tier-trust
         rationale: |
           Defensible — autonomy isn't a feature, it's the product. Gating it might feel mercenary. The tradeoff: you give up a meaningful revenue lever and the signaling that paid users self-select better. You also don't get the margins to fund the extra safety infrastructure.
@@ -98,7 +98,7 @@ nodes:
       Six months later. Your ARR is soaring. A massive Fortune 500 company approaches you for a multi-million dollar enterprise deal, but they have one demand: they want a custom version of the agent that defaults to "fully autonomous" for all their employees to enforce productivity.
     options:
       - text: Refuse the demand. Stick to the opt-in principle. The risk to our core product's reputation is too high if their employees misuse it.
-        points: 5
+        points: 10
         pattern: principled-rejection
         rationale: |
           Saying no to bad revenue is the hardest thing for a founder to do, but it's the only way to protect the product's soul. If the enterprise employees hate the tool because it was forced on them and makes mistakes, the enterprise will churn anyway, and the PR damage will bleed into your core SMB market.
@@ -106,7 +106,7 @@ nodes:
           You lose the deal but keep your focus. Your reputation as a thoughtful, user-first AI company solidifies. You raise a massive Series B on your stellar retention numbers.
         leadsTo: end-B-great
       - text: Take the deal. Build the custom fork. It's a multi-million dollar contract.
-        points: 1
+        points: 2
         pattern: chase-the-enterprise-whale
         rationale: |
           You traded your principles for cash. Maintaining a custom fork for one massive client splits your engineering team's focus. The client's employees resent the forced autonomy, complain constantly, and require endless support.
@@ -119,7 +119,7 @@ nodes:
       Because you hid the feature, adoption is abysmal. A competitor launches a loud marketing campaign for their "Fully Autonomous AI Assistant." Your CEO is panicked and demands you retroactively make Autonomous Mode default-on for everyone.
     options:
       - text: Push back. Propose an in-app onboarding flow to introduce the feature safely to existing users.
-        points: 4
+        points: 8
         pattern: managed-rollout
         rationale: |
           You're correcting the mistake of hiding it, without making the fatal mistake of forcing it. An onboarding flow educates the user, sets expectations, and maintains the opt-in trust staircase.
@@ -140,7 +140,7 @@ nodes:
       The 10-second toast is live. Power users complain that it interrupts their workflow. They want a "skip toast, send immediately" setting.
     options:
       - text: Add the "skip toast" setting, but hide it deep in preferences with a big warning label.
-        points: 3
+        points: 6
         pattern: power-user-escape-hatch
         rationale: |
           A reasonable compromise. You give power users what they want while protecting casual users from themselves.
@@ -148,7 +148,7 @@ nodes:
           Power users are appeased. The product remains generally safe. It's not a paradigm shift, but it works.
         leadsTo: end-D-acceptable
       - text: Refuse. The toast is there to protect them.
-        points: 2
+        points: 4
         pattern: paternalistic-design
         rationale: |
           You are ignoring the needs of your most engaged users. If they are willing to take the risk, you should let them.

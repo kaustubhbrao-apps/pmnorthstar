@@ -37,7 +37,7 @@ nodes:
       Pick the public pricing model.
     options:
       - text: 'Match the market: 2.9% + 30¢ per transaction, $0 setup, $0 monthly, but require a contract'
-        points: 4
+        points: 12
         pattern: market-match-with-clarity
         rationale: |
           Defensible. You match the headline rate but eliminate the
@@ -51,7 +51,7 @@ nodes:
           then eventually drop the contract entirely.
         leadsTo: A-match-followup
       - text: 'Beat the market: 2.5% + 25¢. Aggressive pricing to win share.'
-        points: 2
+        points: 6
         pattern: race-to-the-bottom
         rationale: |
           Dangerous. You're a venture-funded startup with negative
@@ -67,7 +67,7 @@ nodes:
           number.
         leadsTo: end-B
       - text: Match the headline rate (2.9% + 30¢) but no contract, no setup, no monthly, no hidden fees. Charge a higher rate for cards from outside the US.
-        points: 5
+        points: 15
         pattern: anchor-with-simplicity
         rationale: |
           The right call. You stop fighting on price and start fighting
@@ -83,7 +83,7 @@ nodes:
           the default.
         leadsTo: C-anchor-followup
       - text: Tiered pricing — discounts for high-volume customers. 2.9% under $100K/month, 2.5% above.
-        points: 3
+        points: 9
         pattern: usage-tiers-too-early
         rationale: |
           Right model, wrong time. Tiered pricing makes sense once
@@ -105,7 +105,7 @@ nodes:
       mediocre. You need to decide what to do.
     options:
       - text: Drop the contract. Anyone can sign up and start charging cards today.
-        points: 5
+        points: 15
         pattern: friction-removal
         rationale: |
           The right move. Every minute of friction between signup
@@ -120,7 +120,7 @@ nodes:
           the "no contract, no setup" payments company.
         leadsTo: end-A-good
       - text: Keep the contract but simplify it to a 1-page agreement.
-        points: 3
+        points: 9
         pattern: half-friction-removal
         rationale: |
           Better than the original but still friction. A simpler
@@ -140,7 +140,7 @@ nodes:
       What do you do?
     options:
       - text: Add an enterprise tier. Custom pricing above $1M monthly volume. Keep public pricing identical.
-        points: 5
+        points: 15
         pattern: tier-without-confusing
         rationale: |
           Correct. The public pricing remains the anchor (2.9% +
@@ -153,7 +153,7 @@ nodes:
           self-serve brand. ARR compounds from both directions.
         leadsTo: end-C-great
       - text: Publish a volume-discount table on the pricing page.
-        points: 3
+        points: 9
         pattern: pricing-page-bloat
         rationale: |
           The transparency instinct, misapplied. Your strongest brand
@@ -167,7 +167,7 @@ nodes:
           conversion drops a hair. Net mixed.
         leadsTo: end-C-mixed
       - text: Refuse to negotiate. Same price for everyone.
-        points: 2
+        points: 6
         pattern: fairness-as-dogma
         rationale: |
           Principled but loses revenue. At enterprise volume the

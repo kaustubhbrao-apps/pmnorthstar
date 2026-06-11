@@ -51,7 +51,7 @@ nodes:
           after you stabilize."
         leadsTo: A-migrate-followup
       - text: Quietly ship a model-agnostic abstraction layer. Test Claude 5 in 5% of traffic. Don't announce.
-        points: 5
+        points: 15
         pattern: optionality-not-commitment
         rationale: |
           The right systems move. Builds the capability to switch without
@@ -68,7 +68,7 @@ nodes:
           fundraise on time.
         leadsTo: B-abstraction-followup
       - text: Tell the team to ignore it. Stay heads-down on the fundraise roadmap. Revisit in Q3.
-        points: 3
+        points: 9
         pattern: focus-over-novelty
         rationale: |
           Discipline. Not wrong but leaves you blind. You preserve
@@ -93,7 +93,7 @@ nodes:
       changed. Series A lead wants an update. What now?
     options:
       - text: Push through. Tell the enterprise customer it's a one-time disruption.
-        points: 1
+        points: 3
         pattern: doubling-down-on-bad-call
         rationale: |
           Sunk cost talking. You're already two weeks late and asking the
@@ -108,7 +108,7 @@ nodes:
           slides further.
         leadsTo: end-A-bad
       - text: Roll back. Document what you learned. Take the eval data into the next sprint.
-        points: 4
+        points: 12
         pattern: clean-rollback
         rationale: |
           Mature recovery. Admits the migration was premature, preserves
@@ -144,7 +144,7 @@ nodes:
       What do you communicate publicly?
     options:
       - text: 'Publish a blog post: ''We tested Claude 5 — here''s what we learned.'' Share the eval data.'
-        points: 5
+        points: 15
         pattern: transparency-as-moat
         rationale: |
           The asymmetric move. You turn an operational decision into
@@ -159,7 +159,7 @@ nodes:
           why we wanted to work with you."
         leadsTo: end-B-great
       - text: Stay quiet. Continue evals. Announce a migration only when the data is unambiguous.
-        points: 4
+        points: 12
         pattern: signal-over-noise
         rationale: |
           The disciplined move. Preserves optionality, avoids overcommitting
@@ -173,7 +173,7 @@ nodes:
           eval is still better, but nobody knows.
         leadsTo: end-B-good
       - text: Migrate to Claude 5 immediately. The cost savings will fund another engineer.
-        points: 2
+        points: 6
         pattern: cost-over-quality
         rationale: |
           Optimizing for the wrong axis. The 40% cost savings looks big
@@ -214,7 +214,7 @@ nodes:
       mid-cycle on went silent. What now?
     options:
       - text: Build an abstraction now. Migrate carefully. Publish your own eval to reclaim narrative.
-        points: 4
+        points: 12
         pattern: late-but-correct
         rationale: |
           The right move, just two months late. You're now behind on the
@@ -225,7 +225,7 @@ nodes:
           competitor's lead shrinks but doesn't disappear.
         leadsTo: end-C-recover
       - text: 'Counter-position: ''we don''t chase model fashion.'' Lean into stability messaging.'
-        points: 2
+        points: 6
         pattern: defensive-positioning
         rationale: |
           A narrative gamble. Works if your customer base values

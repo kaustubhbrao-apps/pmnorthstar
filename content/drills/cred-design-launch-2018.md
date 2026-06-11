@@ -37,7 +37,7 @@ nodes:
       score?
     options:
       - text: Launch invitation-only. Gate to credit scores 750+. Aspirational positioning.
-        points: 5
+        points: 15
         pattern: exclusion-as-positioning
         rationale: |
           The contrarian move that turns a commodity product into an
@@ -56,7 +56,7 @@ nodes:
           aspirational overnight.
         leadsTo: B-exclusion-followup
       - text: Launch broadly. Reach every credit-card holder in India. Compete on rewards.
-        points: 1
+        points: 3
         pattern: tam-first-thinking
         rationale: |
           The growth-instinct call. Maximum reach, maximum TAM,
@@ -72,7 +72,7 @@ nodes:
           looks like another payments app.
         leadsTo: end-A
       - text: Launch broadly but use beautiful design + premium UI to differentiate.
-        points: 3
+        points: 9
         pattern: design-without-exclusion
         rationale: |
           Right instinct on premium feel, wrong execution on access.
@@ -87,7 +87,7 @@ nodes:
           financial product."
         leadsTo: end-C
       - text: Launch with the 750+ gate but no invitation system — anyone with the credit score can sign up.
-        points: 3
+        points: 9
         pattern: gate-without-velvet-rope
         rationale: |
           Half the move. The credit-score gate creates the right
@@ -109,7 +109,7 @@ nodes:
       product? Pick.
     options:
       - text: Launch a rent-payment-via-credit-card product. Massive monthly volume, sticky habit.
-        points: 5
+        points: 15
         pattern: high-frequency-second-product
         rationale: |
           Strong adjacent product. Rent is the largest monthly
@@ -124,7 +124,7 @@ nodes:
           A new revenue line opens (rent fees).
         leadsTo: end-B-great
       - text: Launch a loan/credit product. Higher revenue per user.
-        points: 3
+        points: 9
         pattern: revenue-first-second-product
         rationale: |
           Bigger revenue per user but harder brand fit. Loans
@@ -137,7 +137,7 @@ nodes:
           softens. Brand sentiment dilutes.
         leadsTo: end-B-mixed
       - text: Launch a luxury concierge / travel product. Pure status play.
-        points: 4
+        points: 12
         pattern: brand-extension
         rationale: |
           Brand-aligned but operationally heavy. A luxury concierge

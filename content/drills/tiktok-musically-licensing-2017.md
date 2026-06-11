@@ -37,7 +37,7 @@ nodes:
       How do you negotiate?
     options:
       - text: Argue TikTok is a promotional tool, not a streaming app. Pay a flat, upfront blanket license fee.
-        points: 5
+        points: 15
         pattern: reframe-the-value-prop
         rationale: |
           Positioning TikTok as a powerful marketing engine for the labels is the only viable path. By proving 
@@ -59,7 +59,7 @@ nodes:
           annual revenue projection. You are bleeding cash.
         leadsTo: node_per_stream
       - text: Refuse the labels. Build a purely royalty-free library and ban major label music entirely.
-        points: 1
+        points: 3
         pattern: cultural-irrelevance
         rationale: |
           While financially prudent, this ignores the core product loop. The viral dances and trends are built 
@@ -87,7 +87,7 @@ nodes:
           Engagement plummets. Users abandon TikTok for Instagram, which is just launching Reels.
         leadsTo: end_preroll_death
       - text: Launch a premium tier where users pay $5/month to use popular music, leaving free users with generic tracks.
-        points: 1
+        points: 3
         pattern: gating-creation
         rationale: |
           Gating core creation tools stifles the UGC (User Generated Content) flywheel. The 99% of users who 
@@ -117,7 +117,7 @@ nodes:
           is crushed.
         leadsTo: end_content_id_death
       - text: Build an 'Original Audio' feature allowing sounds to be extracted, renamed, and reused as templates by others.
-        points: 5
+        points: 15
         pattern: productizing-memes
         rationale: |
           This is a masterstroke. By productizing the audio itself, you turn a single soundbite into a viral 
@@ -137,7 +137,7 @@ nodes:
       How do you defend the creator ecosystem?
     options:
       - text: Launch a massive $1 Billion 'Creator Fund' to pay users directly based on views.
-        points: 4
+        points: 12
         pattern: supply-side-subsidy
         rationale: |
           You must secure the supply side of your marketplace. The Creator Fund wasn't perfect, but it signaled 
@@ -148,7 +148,7 @@ nodes:
           secondary distribution channel.
         leadsTo: end_total_victory
       - text: Ignore the poaching. Our algorithm is superior. If top creators leave, the algorithm will instantly mint new ones.
-        points: 2
+        points: 6
         pattern: algorithm-hubris
         rationale: |
           While the TikTok algorithm is indeed powerful enough to mint new stars, losing the biggest names to 

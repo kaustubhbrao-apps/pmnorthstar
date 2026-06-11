@@ -118,17 +118,16 @@ export async function POST(req: NextRequest) {
     const isFirstAttempt = !previousAttempt;
 
     // 2. Is this an active League Match within its scoring window?
-    const activeDrill = publishedDrills()[0];
     let isActiveLeagueMatch = false;
-
-    if (activeDrill && activeDrill.slug === drillSlug && drill.isLeagueMatch) {
+    
+    if (drill.isLeagueMatch) {
       const now = new Date();
-      // If the drill has a strict end time (Saturday midnight), enforce it.
       if (drill.leagueEndsAt) {
         if (now <= new Date(drill.leagueEndsAt)) {
           isActiveLeagueMatch = true;
         }
       } else {
+        // If no end date is specified, it's always active
         isActiveLeagueMatch = true;
       }
     }

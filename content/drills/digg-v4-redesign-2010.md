@@ -48,7 +48,7 @@ nodes:
       move?
     options:
       - text: "Push back hard. Delay the launch. We must reinstate the 'bury' button and significantly tone down the publisher RSS feeds before going live."
-        points: 5
+        points: 15
         pattern: protect-the-core
         rationale: |
           Protecting your core user base is critical. In a community-driven product, the 1%
@@ -75,7 +75,7 @@ nodes:
           auto-submitted corporate spam. The power users go nuclear.
         leadsTo: proceed_launch
       - text: "Launch a 'parallel beta' to the public. Keep v3 as the default, but let users opt-in to v4 to test the publisher features gradually."
-        points: 3
+        points: 9
         pattern: gradual-rollout
         rationale: |
           A safer operational move. It prevents a shock-to-the-system and allows you to
@@ -98,7 +98,7 @@ nodes:
       community that just forced you to reinstate the 'bury' button?
     options:
       - text: "Create an opt-in 'Publisher Tier' that sits alongside user submissions, clearly marked as sponsored content, keeping the main feed purely democratic."
-        points: 5
+        points: 15
         pattern: transparent-monetization
         rationale: |
           Transparency and choice keep the community happy while satisfying business needs.
@@ -111,7 +111,7 @@ nodes:
           in, slower than the board wanted, but the ecosystem remains stable.
         leadsTo: opt_in_tier
       - text: "Auto-subscribe users to top publishers (CNN, Mashable), but allow them to easily opt-out and unfollow them in their settings."
-        points: 1
+        points: 3
         pattern: dark-pattern-growth
         rationale: |
           Using dark patterns (auto-subscribing) to artificially boost publisher metrics
@@ -134,7 +134,7 @@ nodes:
       Your CEO is in panic mode. What is your immediate crisis response?
     options:
       - text: "Acknowledge the failure immediately, roll the entire site back to v3, and issue a public, unfiltered apology from the CEO to the community."
-        points: 4
+        points: 12
         pattern: radical-rollback
         rationale: |
           A swift rollback is the only way to stop the bleeding and begin rebuilding trust.
@@ -164,7 +164,7 @@ nodes:
       are stalled in beta.
     options:
       - text: "Use the data to force the board to cancel the publisher RSS feeds entirely. Pivot back to purely community-driven features."
-        points: 5
+        points: 15
         pattern: data-driven-pivot
         rationale: |
           Using hard data to win executive battles is the PM's best weapon. You save the

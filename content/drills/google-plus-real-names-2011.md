@@ -58,7 +58,7 @@ nodes:
           and hostile to users." Growth stalls significantly.
         leadsTo: node_double_down
       - text: "Immediately pause all suspensions, issue a public apology, and start allowing pseudonyms and established online nicknames."
-        points: 5
+        points: 15
         pattern: trust-rebuilding
         rationale: |
           Acknowledging the diverse needs for pseudonymity (for activists, abuse survivors,
@@ -70,7 +70,7 @@ nodes:
           that executive leadership is demanding.
         leadsTo: node_pause_suspensions
       - text: "Implement an appeals process. Keep the policy, but let suspended users submit a government ID to prove their name is real."
-        points: 1
+        points: 3
         pattern: bureaucratic-friction
         rationale: |
           This is the worst of both worlds. It maintains the hostile policy while adding
@@ -103,7 +103,7 @@ nodes:
           social interaction.
         leadsTo: node_force_integration
       - text: "Pivot. Shift focus entirely to enterprise users, pitching Google+ as a secure corporate collaboration tool and abandoning the consumer fight."
-        points: 3
+        points: 9
         pattern: enterprise-retreat
         rationale: |
           A safer, pragmatic pivot. Real names make perfect sense in a corporate intranet
@@ -123,7 +123,7 @@ nodes:
       How do you balance the need for network quality with user demands for privacy?
     options:
       - text: "Implement a robust verification system (like Twitter's blue check) for public figures and brands, but allow everyone else to use pseudonyms."
-        points: 5
+        points: 15
         pattern: flexible-identity
         rationale: |
           Solves the impersonation problem for high-profile users while maintaining freedom
@@ -135,7 +135,7 @@ nodes:
           based on interests rather than forced identity.
         leadsTo: node_verification
       - text: "Require users to link a credit card or verified phone number to their account to use a pseudonym to prevent spam."
-        points: 1
+        points: 3
         pattern: friction-barrier
         rationale: |
           Adds way too much friction and privacy concern for the average user. People will

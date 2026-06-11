@@ -38,7 +38,7 @@ nodes:
           The labels are happy, but the users hate it. When Zune launches, tech reviewers mock the sharing feature as a gimmick. You lose the only unique hardware differentiator you had.
         leadsTo: capped_sharing
       - text: "Fight the labels for a subscription model: Anyone with a 'Zune Pass' subscription can share and keep songs infinitely. Pay the labels a flat fee per share."
-        points: 5
+        points: 15
         pattern: business-model-innovation
         rationale: |
           The bold, correct move. If you can't beat Apple on $0.99 track sales, you change the model to subscriptions (years before Spotify). 
@@ -47,7 +47,7 @@ nodes:
           The negotiations are brutal and cost Microsoft millions in guarantees, but you secure the deal. Zune launches with unlimited wireless sharing for subscribers.
         leadsTo: subscription_sharing
       - text: "Drop the sharing feature entirely. It's too legally risky. Focus solely on having better audio quality and a bigger screen."
-        points: 1
+        points: 3
         pattern: retreat-to-specs
         rationale: |
           You avoid the legal fight but surrender your only unique angle. You are now selling an iPod clone that doesn't work with iTunes. Specs do not break ecosystem lock-in.
@@ -71,7 +71,7 @@ nodes:
           The campaign confuses consumers. The flagship brown Zune becomes a pop-culture punchline. Sales flatline.
         leadsTo: node_lifestyle_brand
       - text: "Go head-to-head on specs: Highlight the larger screen, FM radio, and pre-loaded music in aggressive, direct comparison ads against the iPod."
-        points: 2
+        points: 6
         pattern: spec-comparison-trap
         rationale: |
           Better than abstract art, but spec wars rarely win against a deeply entrenched ecosystem and superior brand cachet. 
@@ -89,7 +89,7 @@ nodes:
       Do you try to integrate with Microsoft's existing Windows Media Player (WMP), or build a bespoke Zune desktop app?
     options:
       - text: "Build a brand new, beautifully designed Zune desktop software from scratch, dropping all legacy WMP baggage."
-        points: 5
+        points: 15
         pattern: clean-break-software
         rationale: |
           A fresh, fast, dedicated app is absolutely necessary to compete with the iTunes experience. 
@@ -116,7 +116,7 @@ nodes:
       What is your final move to try to salvage the hardware division?
     options:
       - text: "Pivot the Zune hardware into a dedicated high-end audiophile device. Charge a premium and target the niche market."
-        points: 3
+        points: 9
         pattern: niche-retreat
         rationale: |
           Since you lost the mass market to Apple, retreating to a profitable niche (audiophiles who hate iTunes compression) is a defensible survival strategy.

@@ -40,7 +40,7 @@ nodes:
       infrastructure. Your runway is six months. Pick.
     options:
       - text: Stay the course on the consumer app. UPI is rumored to be coming and will fix the bank-transfer problem.
-        points: 1
+        points: 3
         pattern: wait-for-the-platform
         rationale: |
           Betting on government infrastructure to fix your product —
@@ -55,7 +55,7 @@ nodes:
           PhonePe and Google Pay absorb the consumer category.
         leadsTo: end-A
       - text: Pivot to B2B payment APIs. Build for the businesses that can't accept online payments. Tell investors and team.
-        points: 5
+        points: 15
         pattern: pivot-to-the-real-problem
         rationale: |
           The right call. The signal is unambiguous: every
@@ -72,7 +72,7 @@ nodes:
           they tolerate the rough v1.
         leadsTo: B-api-followup
       - text: 'Hybrid: keep the consumer app, ship the B2B API as a side product.'
-        points: 2
+        points: 6
         pattern: half-pivot
         rationale: |
           Trying to honor sunk cost while chasing the new
@@ -85,7 +85,7 @@ nodes:
           competitor catches up within 12 months.
         leadsTo: end-C
       - text: Sell what you have to a fintech in the consumer-payments space. Use the proceeds to fund a new company.
-        points: 2
+        points: 6
         pattern: graceful-exit-then-restart
         rationale: |
           Defensible but premature. You haven't tested the B2B
@@ -107,7 +107,7 @@ nodes:
       "no-code" version they can embed without engineering. Pick.
     options:
       - text: Build the no-code version. Long tail of small merchants is the bigger market and aligns with the self-serve motion.
-        points: 5
+        points: 15
         pattern: small-merchants-as-distribution
         rationale: |
           Right call for early-stage. Small merchants compound
@@ -122,7 +122,7 @@ nodes:
           becomes the dominant acquisition channel.
         leadsTo: end-B-great
       - text: Custom rates for big merchants first. Larger contracts, more revenue per merchant.
-        points: 3
+        points: 9
         pattern: enterprise-first-too-soon
         rationale: |
           Bigger deals but slower compounding. Enterprise sales
@@ -136,7 +136,7 @@ nodes:
           with custom integrations.
         leadsTo: end-B-mixed
       - text: Stay focused on the current 50 merchants. Stabilize the product before adding either segment.
-        points: 2
+        points: 6
         pattern: stabilize-when-momentum-matters
         rationale: |
           Defensive when the moment calls for offense. At 50

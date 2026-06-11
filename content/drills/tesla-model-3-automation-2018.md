@@ -40,7 +40,7 @@ nodes:
       three weeks. What is your call?
     options:
       - text: Tear out the 'fluff bot' immediately and replace it with human workers.
-        points: 5
+        points: 15
         pattern: pragmatic-deautomation
         rationale: |
           Recognizing that humans excel at tactile, adaptive tasks while robots excel at precise, repeatable 
@@ -62,7 +62,7 @@ nodes:
           cash dwindles, and production remains stalled.
         leadsTo: node_double_down_automation
       - text: Demand that the supplier deliver the battery packs with the fiberglass mats pre-installed.
-        points: 2
+        points: 6
         pattern: supply-chain-deflection
         rationale: |
           Shifting the problem up the supply chain is a valid manufacturing tactic, but doing it in the 
@@ -92,7 +92,7 @@ nodes:
           grinds to an absolute zero.
         leadsTo: end_bankruptcy
       - text: Open up pre-orders for future vehicles (like the Roadster and Semi) to generate immediate cash deposits.
-        points: 4
+        points: 12
         pattern: creative-financing
         rationale: |
           A brilliant, if controversial, financing trick. By leveraging the immense brand loyalty and hype 
@@ -114,7 +114,7 @@ nodes:
       take 2 years. You need more capacity immediately to hit 5,000 cars/week.
     options:
       - text: Construct a massive, sprung-structure tent in the parking lot and build a simplified assembly line inside it.
-        points: 5
+        points: 15
         pattern: scrappy-lateral-thinking
         rationale: |
           A radically scrappy, out-of-the-box solution. It violates all conventional automotive manufacturing 
@@ -143,7 +143,7 @@ nodes:
       target.
     options:
       - text: Institute a mandatory 24/7 "surge" schedule. Executives must work the line alongside assembly workers.
-        points: 4
+        points: 12
         pattern: wartime-leadership
         rationale: |
           In an existential crisis, leadership must share the pain. Having executives on the line boosts 
@@ -153,7 +153,7 @@ nodes:
           across the 5,000/week line.
         leadsTo: end_survival_scarred
       - text: Bring in a traditional Detroit automotive executive to overhaul the culture and processes.
-        points: 1
+        points: 3
         pattern: culture-clash
         rationale: |
           Traditional auto executives optimize for steady-state efficiency and quality control over a 5-year 
@@ -173,7 +173,7 @@ nodes:
       from early buyers.
     options:
       - text: Ship the cars anyway. Focus on the volume target and fix the issues later via Service Centers and mobile repair.
-        points: 4
+        points: 12
         pattern: ship-and-iterate
         rationale: |
           Controversial, but correct for survival. If you don't ship, you die. The early adopters are forgiving 

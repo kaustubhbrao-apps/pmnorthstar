@@ -35,7 +35,7 @@ nodes:
       The game isn't working. The chat tool is. What do you do?
     options:
       - text: Pour another year into the game. The genre takes time to develop. Cut costs to extend runway.
-        points: 1
+        points: 3
         pattern: sunk-cost-doubling-down
         rationale: |
           The instinct to honor the original mission. You raised $17M
@@ -50,7 +50,7 @@ nodes:
           runs out. The chat tool dies on the company's servers.
         leadsTo: end-A
       - text: Spin the chat tool out as its own product. Pivot the whole company to it. Tell investors.
-        points: 5
+        points: 15
         pattern: pivot-from-strength
         rationale: |
           The hardest move emotionally, the right move strategically.
@@ -66,7 +66,7 @@ nodes:
           your first 8 paying enterprise customers.
         leadsTo: B-pivot-followup
       - text: Open the chat tool as a side product but keep the game alive. Diversify the bet.
-        points: 2
+        points: 6
         pattern: zombie-portfolio
         rationale: |
           The "keep all options open" trap. You're trying to hedge two
@@ -90,7 +90,7 @@ nodes:
       decide the wedge. Pick the angle for your public launch.
     options:
       - text: Position as 'email killer for teams' — go after the broad knowledge-worker market
-        points: 3
+        points: 9
         pattern: market-too-broad
         rationale: |
           The dream positioning. Massive TAM, big upside if it works.
@@ -106,7 +106,7 @@ nodes:
           positioning the hard way.
         leadsTo: end-B-soft
       - text: Position as 'where work happens for software teams' — pick the niche, dominate it first
-        points: 5
+        points: 15
         pattern: niche-then-expand
         rationale: |
           The correct call. Software teams are already using your
@@ -121,7 +121,7 @@ nodes:
           weeks because the niche knows what to do with you.
         leadsTo: end-B-strong
       - text: Stay closed beta. Wait until you have enterprise-ready security and SSO before any launch.
-        points: 2
+        points: 6
         pattern: perfection-over-presence
         rationale: |
           The enterprise-readiness trap. You can ship SSO and SOC 2 in

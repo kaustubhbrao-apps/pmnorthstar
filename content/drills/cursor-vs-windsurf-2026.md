@@ -32,7 +32,7 @@ nodes:
       have $400K ARR. Where do you fight?
     options:
       - text: Compete head-on. Better UX, faster, free tier. Take share from Cursor.
-        points: 1
+        points: 3
         pattern: better-version-of-the-leader
         rationale: |
           Doomed math. Cursor has ~100x your engineering resources
@@ -47,7 +47,7 @@ nodes:
           from Cursor at 1/50th the scale.
         leadsTo: end-A
       - text: 'Pick a vertical: IDE specifically for embedded/firmware engineers. Niche, deep, defensible.'
-        points: 5
+        points: 15
         pattern: vertical-where-leaders-dont-fit
         rationale: |
           The right contrarian bet. Cursor and Windsurf are
@@ -65,7 +65,7 @@ nodes:
           embedded teams and Cursor never enters the segment.
         leadsTo: B-vertical-followup
       - text: Pivot to AI-native dev tooling that isn't an IDE — testing, refactoring, documentation.
-        points: 3
+        points: 9
         pattern: adjacent-not-vertical
         rationale: |
           The "next to the war" strategy. You leave the IDE category
@@ -80,7 +80,7 @@ nodes:
           in a slow race against absorption.
         leadsTo: end-C
       - text: Sell the company. Acqui-hire to Cursor or one of the labs.
-        points: 2
+        points: 6
         pattern: surrender-mid-stage
         rationale: |
           Defensible but premature. You have $400K ARR, 18
@@ -103,7 +103,7 @@ nodes:
       of your engineering capacity for 18 months. Pick.
     options:
       - text: Take the contract. $1.5M ARR + 1.5x engineering bandwidth concentration on a single customer.
-        points: 2
+        points: 6
         pattern: anchor-customer-trap
         rationale: |
           Big revenue, big risk. 70% of capacity on one customer
@@ -119,7 +119,7 @@ nodes:
           customers churn citing lack of progress.
         leadsTo: end-B-bad
       - text: Decline. Refer them to a defense-specific competitor. Stay focused on the commercial firmware market.
-        points: 5
+        points: 15
         pattern: focus-over-revenue
         rationale: |
           The discipline move. Defense is a different business model
@@ -134,7 +134,7 @@ nodes:
           multiple on the focused story.
         leadsTo: end-B-great
       - text: Take the contract but charge $5M ARR for the air-gapped version, with a clause that limits engineering allocation to 30%.
-        points: 4
+        points: 12
         pattern: priced-to-protect-focus
         rationale: |
           Smart pricing. You're naming the cost of distraction

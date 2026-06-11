@@ -37,7 +37,7 @@ nodes:
       but the unit economics are terrible today. Pick.
     options:
       - text: Stay focused on DVDs. Streaming will get viable in 3-4 years. Maximize the profit window.
-        points: 1
+        points: 3
         pattern: defend-the-profit-pool
         rationale: |
           The instinct that kills incumbents. You'd be choosing to
@@ -55,7 +55,7 @@ nodes:
           peak valuation.
         leadsTo: end-A
       - text: Launch streaming as a free add-on to the DVD subscription. Same price, both included.
-        points: 5
+        points: 15
         pattern: cannibalize-yourself-first
         rationale: |
           The contrarian move. You're effectively saying: "the DVD
@@ -76,7 +76,7 @@ nodes:
           earnings calls.
         leadsTo: B-bundle-followup
       - text: Split the company. Two CEOs, two brands, two stock tickers. Let each compete on its own terms.
-        points: 2
+        points: 6
         pattern: spin-off-too-early
         rationale: |
           Theoretically clean — eliminates internal conflict between the
@@ -93,7 +93,7 @@ nodes:
           re-merge after a costly detour.
         leadsTo: end-C
       - text: Charge separately for streaming. New tier, $2/month add-on.
-        points: 2
+        points: 6
         pattern: monetize-the-transition
         rationale: |
           The "extract revenue from both" instinct. Wall Street loves
@@ -118,7 +118,7 @@ nodes:
       to decide content strategy.
     options:
       - text: Pour profits into original content. Become a studio. Reduce dependence on licensed content.
-        points: 5
+        points: 15
         pattern: vertical-integration-as-survival
         rationale: |
           The bet that defines the next decade. Licensed content is a
@@ -135,7 +135,7 @@ nodes:
           business is wound down without anyone caring.
         leadsTo: end-B-great
       - text: Stay licensing-only. Keep capital efficient. Compete on user experience and recommendations.
-        points: 2
+        points: 6
         pattern: feature-not-content
         rationale: |
           Capital-efficient but doomed. Licensed content costs will

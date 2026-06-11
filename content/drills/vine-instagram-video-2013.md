@@ -32,7 +32,7 @@ nodes:
       how Vine responds. What is your immediate product strategy?
     options:
       - text: Stay true to 6 seconds. It's our unique constraint and breeds creativity. Focus on making creation tools better.
-        points: 5
+        points: 15
         pattern: doubling-down-on-core
         rationale: |
           A defensible choice. Constraint breeds creativity. The 6-second loop is what makes a Vine a Vine. 
@@ -75,7 +75,7 @@ nodes:
           their millions of followers with them.
         leadsTo: end_exodus_death
       - text: Pay the $21.6M out of Twitter's marketing budget. Secure the talent immediately to stop the bleeding.
-        points: 2
+        points: 6
         pattern: band-aid-retention
         rationale: |
           A panic move, but better than letting them leave. It secures the talent temporarily, but paying upfront 
@@ -85,7 +85,7 @@ nodes:
           and they want $3 million each.
         leadsTo: node_build_system
       - text: Refuse the upfront cash, but immediately commit to building a systemic ad-revenue sharing model.
-        points: 5
+        points: 15
         pattern: systemic-monetization
         rationale: |
           Creators don't just want a payout; they want a business. Upfront cash is a bribe; rev-share is an 
@@ -104,7 +104,7 @@ nodes:
       want to merge the Vine engineering team into the core Twitter org to save costs.
     options:
       - text: Fight Twitter leadership. Demand Vine remain a completely independent app and team.
-        points: 4
+        points: 12
         pattern: fighting-for-autonomy
         rationale: |
           Merging teams usually kills the nimble startup culture. Vine needs product velocity to fight Instagram, 
@@ -132,7 +132,7 @@ nodes:
       What monetization model do you build?
     options:
       - text: Build a native creator marketplace, connecting brands directly with stars for sponsored Vines, taking a 20% cut.
-        points: 5
+        points: 15
         pattern: native-sponsorships
         rationale: |
           The smartest move. Since pre-roll ads don't work for micro-video, you must facilitate branded content. 

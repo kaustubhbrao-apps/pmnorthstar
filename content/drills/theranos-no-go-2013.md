@@ -57,7 +57,7 @@ nodes:
           savings.
         leadsTo: end-A
       - text: Refuse to sign. Document everything you've seen. Resign and contact regulators.
-        points: 5
+        points: 15
         pattern: integrity-over-pattern-match
         rationale: |
           The right call, however hard. Real patients are receiving
@@ -77,7 +77,7 @@ nodes:
           of the integrity, not despite it.
         leadsTo: B-resign-followup
       - text: Take the issue to the board. Trust the governance to investigate.
-        points: 3
+        points: 9
         pattern: trust-the-governance
         rationale: |
           Defensible procedurally, often unreliable in practice.
@@ -96,7 +96,7 @@ nodes:
           quietly.
         leadsTo: end-C
       - text: Stay but try to fix it from the inside. You're senior; you can push for better validation.
-        points: 1
+        points: 3
         pattern: hero-inside-the-broken-system
         rationale: |
           The "I'll fix it from within" rationalization. Three
@@ -121,7 +121,7 @@ nodes:
       on-record testimony.
     options:
       - text: Go on the record with the journalist. The public story is the only thing that protects you.
-        points: 5
+        points: 15
         pattern: transparency-as-defense
         rationale: |
           Defensive but correct. The intimidation campaign relies
@@ -140,7 +140,7 @@ nodes:
           not complicity.
         leadsTo: end-B-great
       - text: Stay quiet. Settle the NDA case privately. Rebuild your career outside the spotlight.
-        points: 3
+        points: 9
         pattern: settle-and-retreat
         rationale: |
           Survivable but ethically thinner. The settlement makes

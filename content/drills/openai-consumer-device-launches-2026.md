@@ -35,7 +35,7 @@ nodes:
       OpenAI just announced hardware that does what your app does. Pick.
     options:
       - text: Build a companion app for the device. Position as 'the productivity app for ChatGPT Companion.'
-        points: 4
+        points: 12
         pattern: become-the-platform-tenant
         rationale: |
           Defensible bridge play. If you can't beat them, plug into them.
@@ -53,7 +53,7 @@ nodes:
           features 18 months later. You're playing defense ever since.
         leadsTo: A-tenant-followup
       - text: 'Pivot vertical: re-position the app for a specific profession (lawyers, doctors, sales reps) and ignore the hardware entirely.'
-        points: 5
+        points: 15
         pattern: vertical-where-device-cant-fit
         rationale: |
           The right contrarian bet. The ChatGPT Companion is built for
@@ -71,7 +71,7 @@ nodes:
           consumer share; you own legal productivity.
         leadsTo: B-vertical-followup
       - text: Pivot to be a multi-model app. Position as 'works with ChatGPT, Claude, Gemini, and Apple Intelligence.' Hardware-agnostic.
-        points: 3
+        points: 9
         pattern: model-agnostic-bridge
         rationale: |
           Defensive moat. By being model-agnostic, you avoid lock-in to
@@ -87,7 +87,7 @@ nodes:
           model and the model-picker becomes irrelevant.
         leadsTo: end-C
       - text: Sell the company to OpenAI before the device ships and your ARR drops.
-        points: 3
+        points: 9
         pattern: exit-before-the-shift
         rationale: |
           Defensible. Acquisitions of category-overlap apps tend to
@@ -112,7 +112,7 @@ nodes:
       file system access. You can see the platform tightening. Pick.
     options:
       - text: Stay platform-aligned. Adapt to every guideline change. Don't fight.
-        points: 3
+        points: 9
         pattern: comply-and-keep-running
         rationale: |
           Survival mode. You stay in the platform but with shrinking
@@ -126,7 +126,7 @@ nodes:
           You're employed but not building a real business.
         leadsTo: end-A-stable
       - text: Build a parallel product that doesn't depend on the device. Use Companion as one of several distribution channels.
-        points: 5
+        points: 15
         pattern: distribute-don't-depend
         rationale: |
           The right long-term move. The Companion app is one
@@ -151,7 +151,7 @@ nodes:
       e-discovery, billing workflows.
     options:
       - text: Go deeper in legal. Become the productivity layer that integrates with case-management software.
-        points: 5
+        points: 15
         pattern: depth-before-breadth
         rationale: |
           The compounding bet. Lawyers who already pay you for AI
@@ -167,7 +167,7 @@ nodes:
           not just "AI productivity."
         leadsTo: end-B-great
       - text: Add medical + financial advisors. Three verticals, three sales motions, three compliance regimes.
-        points: 3
+        points: 9
         pattern: spread-too-thin
         rationale: |
           Premature breadth. Without dominating legal first, two more

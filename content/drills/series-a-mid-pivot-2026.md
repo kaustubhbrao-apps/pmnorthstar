@@ -52,7 +52,7 @@ nodes:
           essentially impossible.
         leadsTo: end-A
       - text: Tell the lead investor now. Be honest. Offer to re-paper the round on the CS thesis at the same terms, or release them.
-        points: 5
+        points: 15
         pattern: honest-recalibration
         rationale: |
           The mature move. Sophisticated investors respect founders
@@ -70,7 +70,7 @@ nodes:
           also signs. Round closes 3 weeks late on stronger terms.
         leadsTo: B-honest-followup
       - text: Delay the close — tell the lead 'we need 6 weeks more time' without explaining why.
-        points: 2
+        points: 6
         pattern: stall-without-honesty
         rationale: |
           Defers the problem without solving it. The lead will know
@@ -84,7 +84,7 @@ nodes:
           fundraising 3 months later on weaker terms.
         leadsTo: end-C
       - text: Withdraw the round entirely. Bootstrap on revenue until the CS thesis is unambiguous.
-        points: 3
+        points: 9
         pattern: walk-away-from-money
         rationale: |
           Honorable but expensive. Walking away from $15M to avoid a
@@ -106,7 +106,7 @@ nodes:
       market. You have two design partners. Pick the plan.
     options:
       - text: Sign 5 more design partners in CS. Free, with monthly QBRs and product co-design rights.
-        points: 5
+        points: 15
         pattern: validation-velocity
         rationale: |
           Right early-stage move. Five design partners across
@@ -121,7 +121,7 @@ nodes:
           target. Board confidence is reinforced.
         leadsTo: end-B-great
       - text: Charge enterprise prices from day one — $50K/year. Filter for serious customers.
-        points: 3
+        points: 9
         pattern: premium-pricing-pre-validation
         rationale: |
           Defensible to fund the team but premature to charge
@@ -135,7 +135,7 @@ nodes:
           validation plan is partially met.
         leadsTo: end-B-mixed
       - text: Run a public beta. Let any CS team sign up free. Maximize sample size.
-        points: 2
+        points: 6
         pattern: spray-and-pray
         rationale: |
           Volume without depth. Public beta with no qualification

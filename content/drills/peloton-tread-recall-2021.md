@@ -36,7 +36,7 @@ nodes:
           The media cycle goes nuclear. Politicians demand congressional hearings. The CPSC escalates aggressively. The stock plummets 15% in a single day as investors realize you are fighting a war you cannot win.
         leadsTo: node_fight
       - text: Cooperate immediately. Halt all sales, issue a voluntary recall in partnership with the CPSC, apologize unconditionally.
-        points: 5
+        points: 15
         pattern: absorbing-the-blow
         rationale: |
           Taking immediate ownership is agonizing and incredibly expensive. You will miss quarterly revenue targets and take a massive write-down. But it minimizes long-term brand damage. The story changes from "Peloton fights safety regulators" to "Peloton prioritizes safety over profits."
@@ -44,7 +44,7 @@ nodes:
           The stock takes a 8% hit, but analysts applaud the swift action. The media cycle moves from outrage to logistics within 48 hours. You now have to actually solve the hardware problem.
         leadsTo: node_recall
       - text: 'Middle path: Halt sales temporarily pending an "internal review" but do not issue a recall or an apology.'
-        points: 2
+        points: 6
         pattern: paralyzed-by-fear
         rationale: |
           You stop the bleeding of new machines entering homes, but you fail to address the danger of the machines already out there. It looks indecisive. The CPSC will not accept an "internal review" when they have already demanded a recall.
@@ -57,7 +57,7 @@ nodes:
       You issued the defensive statement. It was a disaster. The backlash was unprecedented. Senators are writing public letters demanding action. Two weeks later, the pressure is unbearable. Retail partners are threatening to drop your other products. You have to back down. How do you handle the humiliating pivot?
     options:
       - text: Total capitulation. The CEO must publicly apologize for the initial response, issue a full refund to anyone who wants it, and halt production.
-        points: 4
+        points: 12
         pattern: the-tourniquet
         rationale: |
           Only total transparency and eating the absolute maximum cost can stop the bleeding after a botched initial response. You have to over-correct to regain any semblance of trust. The CEO must personally wear the failure.
@@ -65,7 +65,7 @@ nodes:
           The apology is brutal but necessary. The bleeding stops, but the financial toll of full refunds is staggering. The company will survive, but the brand's halo is severely cracked.
         leadsTo: end_survive_damaged
       - text: Issue the recall, but maintain it's out of "an abundance of caution." Offer a free physical guard to be mailed to users.
-        points: 1
+        points: 3
         pattern: half-hearted-apology
         rationale: |
           A half-apology after a defensive stance looks incredibly weak, insincere, and lawyer-driven. "Abundance of caution" is an insult when there are documented injuries. Mailing a plastic guard implies the user has to fix your deadly product.
@@ -86,7 +86,7 @@ nodes:
       The situation has spiraled. The half-measures failed. The brand is toxic, growth across all product lines has stalled, and inventory of bikes is piling up in warehouses as the pandemic boom fades. The board of directors is stepping in.
     options:
       - text: Fire the CEO immediately. Bring in a seasoned turnaround executive from a legacy consumer brand.
-        points: 3
+        points: 9
         pattern: adult-supervision
         rationale: |
           The founder has lost the trust of the market and the regulators. A drastic signal is required. A legacy executive will bring operational discipline, though they may destroy the startup culture.
@@ -94,7 +94,7 @@ nodes:
           The stock bounces slightly on the news. The new CEO immediately slashes costs, halts new product development, and begins a painful multi-year restructuring.
         leadsTo: end_survive_damaged
       - text: Keep the CEO but strip him of the Chairman title. Force the hiring of a strong COO to manage operations and compliance.
-        points: 2
+        points: 6
         pattern: structural-demotion
         rationale: |
           A compromise that rarely works in a crisis. The founder is undermined but still present, leading to internal power struggles while the external crisis continues to burn.
@@ -109,7 +109,7 @@ nodes:
       What is your engineering fix?
     options:
       - text: Redesign the rear guard completely with breakaway mechanisms. It will take 12 months, millions in R&D, and delay all Tread+ revenue.
-        points: 5
+        points: 15
         pattern: root-cause-resolution
         rationale: |
           Safety cannot be compromised. A hardware fix is the only permanent solution to a hardware problem. It is agonizingly slow and expensive, but it ensures this never happens again and proves you take safety seriously.
@@ -117,7 +117,7 @@ nodes:
           The Tread+ is off the market for a year. You lose massive revenue. But when it returns, the CPSC praises the new design.
         leadsTo: end_rebound
       - text: Implement a software fix. Require a 4-digit pin code to unlock the tread before every run.
-        points: 1
+        points: 3
         pattern: software-bandaid
         rationale: |
           It's fast, cheap, and gets you back to market in weeks. But it fundamentally misdiagnoses the risk. A pin code prevents unauthorized use, but it doesn't stop a child or pet from getting pulled under an *active* treadmill while an adult is running on it.
@@ -125,7 +125,7 @@ nodes:
           The CPSC reviews the software update and declares it insufficient. Another incident occurs while a user is actively running. You are back to square one, but now with intentional negligence.
         leadsTo: end_lawsuits
       - text: Offer to send certified technicians to every home to install a metal barricade around the back of the machine.
-        points: 2
+        points: 6
         pattern: unscalable-operations
         rationale: |
           It addresses the physical problem, but the logistics of sending technicians to tens of thousands of homes during a pandemic are impossible. It's a logistical nightmare that will bleed cash and frustrate users.

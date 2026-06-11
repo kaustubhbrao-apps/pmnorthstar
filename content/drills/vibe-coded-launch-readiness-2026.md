@@ -32,7 +32,7 @@ nodes:
       Launch Thursday on Product Hunt, or fix the basics first?
     options:
       - text: Launch Thursday. Ride the build momentum. Fix the basics in response to feedback.
-        points: 1
+        points: 3
         pattern: speed-over-trust
         rationale: |
           The "ship fast, iterate later" instinct misapplied. Product
@@ -49,7 +49,7 @@ nodes:
           The launch becomes a meme about vibe-coded apps.
         leadsTo: end-A
       - text: Spend 3 days fixing the basics — favicon, meta tags, privacy policy, 404, error monitoring. Launch the following Thursday.
-        points: 5
+        points: 15
         pattern: minimum-viable-trust
         rationale: |
           The right balance. You're not adding features; you're
@@ -65,7 +65,7 @@ nodes:
           have achieved.
         leadsTo: B-fix-basics-followup
       - text: Skip Product Hunt. Soft-launch to your existing friends + early-adopter network. Get to 100 paying users before any public launch.
-        points: 4
+        points: 12
         pattern: dark-launch-then-public
         rationale: |
           Defensible patience. You're forfeiting the Product Hunt
@@ -82,7 +82,7 @@ nodes:
           first-launch would have produced.
         leadsTo: end-C
       - text: Add 10 more features first. The product is too thin for Product Hunt.
-        points: 1
+        points: 3
         pattern: feature-creep-before-launch
         rationale: |
           Wrong diagnosis. The product isn't thin; the *trust
@@ -105,7 +105,7 @@ nodes:
       keep the in-app marketing copy?
     options:
       - text: Free tier with a 14-day trial for paid features. Custom landing page.
-        points: 5
+        points: 15
         pattern: standard-onboarding
         rationale: |
           The compounding option. Free tier maximizes top-of-
@@ -119,7 +119,7 @@ nodes:
           one — small but real.
         leadsTo: end-B-great
       - text: Paid only. $15/month. No free tier. Charge from sign-up.
-        points: 3
+        points: 9
         pattern: monetize-immediately
         rationale: |
           Defensible discipline. Paid-only filters for serious
@@ -133,7 +133,7 @@ nodes:
           show stronger product-market signal.
         leadsTo: end-B-mixed
       - text: Free forever. Monetize via API access later.
-        points: 2
+        points: 6
         pattern: defer-monetization
         rationale: |
           Premature growth-first thinking. You're a solo founder

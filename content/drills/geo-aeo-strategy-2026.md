@@ -32,7 +32,7 @@ nodes:
       small. Pick the strategy.
     options:
       - text: Double down on SEO. Hire more SEO content writers, target more keywords.
-        points: 1
+        points: 3
         pattern: defending-the-shrinking-channel
         rationale: |
           Misreads the trend. Google AI Overviews aren't a temporary
@@ -46,7 +46,7 @@ nodes:
           keywords keeps declining. Net pipeline drops 25% by Q4.
         leadsTo: end-A
       - text: Rebuild content for AI search (GEO/AEO). Structured data, citation-ready formatting, llms.txt, definitive-answer pages.
-        points: 5
+        points: 15
         pattern: rebuild-for-new-channel
         rationale: |
           Right response to a channel shift. AI search systems
@@ -64,7 +64,7 @@ nodes:
           AI-driven demo inbound grows from 8% to 22% of pipeline.
         leadsTo: B-rebuild-followup
       - text: Pivot to LinkedIn + community channels. Reduce dependency on search entirely.
-        points: 3
+        points: 9
         pattern: pivot-to-different-channel
         rationale: |
           Defensible diversification, less precise than rebuilding
@@ -80,7 +80,7 @@ nodes:
           would have compounded.
         leadsTo: end-C
       - text: Run paid ads to compensate for lost organic. Pay for the traffic the AI Overviews stole.
-        points: 2
+        points: 6
         pattern: pay-for-shrinking-channel
         rationale: |
           The worst combination — paying for what used to be free
@@ -101,7 +101,7 @@ nodes:
       becomes a citation magnet?
     options:
       - text: Yes — publish an annual industry benchmark. Free, well-formatted, with downloadable data.
-        points: 5
+        points: 15
         pattern: citation-magnet
         rationale: |
           Asymmetric long-term play. A well-executed industry
@@ -117,7 +117,7 @@ nodes:
           to 40% of pipeline by EOY.
         leadsTo: end-B-great
       - text: Stick to the page rebuild. Don't over-invest in a single piece.
-        points: 3
+        points: 9
         pattern: incremental-content
         rationale: |
           Defensible discipline. Marginal new pages add value but

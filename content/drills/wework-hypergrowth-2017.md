@@ -39,7 +39,7 @@ nodes:
       unrecoverable cash crisis. What is your recommendation to the board and Adam?
     options:
       - text: Advise pulling back immediately. Focus on achieving profitability in existing mature locations before signing any new leases.
-        points: 5
+        points: 15
         pattern: financial-fiduciary
         rationale: |
           Fundamentals matter. A real estate business cannot scale infinitely without sound unit economics. 
@@ -69,7 +69,7 @@ nodes:
       mandate. What do you do?
     options:
       - text: Stand your ground. Present the hard financial data directly to the major institutional investors, risking your job.
-        points: 5
+        points: 15
         pattern: professional-integrity
         rationale: |
           Fiduciary duty requires confronting a founder who is completely disconnected from financial reality, 
@@ -101,7 +101,7 @@ nodes:
       The investment bankers are getting extremely nervous, but Adam is adamant. What is your stance on the S-1?
     options:
       - text: Force a rewrite. Remove the absurd metrics, limit Adam's control, and present WeWork honestly as a real estate company.
-        points: 4
+        points: 12
         pattern: reality-check
         rationale: |
           Public markets will not accept the reality distortion field that worked on private venture capitalists. 
@@ -128,7 +128,7 @@ nodes:
       Cash is running out. What is your emergency move?
     options:
       - text: Delay the IPO indefinitely. Oust Adam Neumann to appease investors, and beg SoftBank for a bailout.
-        points: 5
+        points: 15
         pattern: emergency-amputation
         rationale: |
           The founder has become the primary liability. The public markets will not invest a dollar while he 

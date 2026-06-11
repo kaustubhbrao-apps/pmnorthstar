@@ -34,7 +34,7 @@ nodes:
       You have launch terms to set. Pick.
     options:
       - text: 'Launch as planned: $4.99 with ads, $7.99 ad-free, mobile-only, premium short-form.'
-        points: 1
+        points: 3
         pattern: ignore-market-shift
         rationale: |
           Ignores the most important fact: commute time has just
@@ -50,7 +50,7 @@ nodes:
           Six months in, the product shuts down.
         leadsTo: end-A
       - text: Postpone launch by 6 months. Reposition for a post-pandemic moment when commute returns.
-        points: 4
+        points: 12
         pattern: wait-for-the-thesis-to-return
         rationale: |
           Defensible patience. Your thesis depends on commute
@@ -66,7 +66,7 @@ nodes:
           launch is solid not breakout.
         leadsTo: end-B-postpone
       - text: 'Pivot positioning: drop the ''mobile-only commute'' frame. Make it ''premium short-form for any device.'''
-        points: 5
+        points: 15
         pattern: reposition-product
         rationale: |
           Right adaptive call. The content asset (premium 10-minute
@@ -82,7 +82,7 @@ nodes:
           finds a real audience even if smaller than projected.
         leadsTo: C-reposition-followup
       - text: Drop the price to $2.99 with ads. Compete with TikTok and YouTube for attention.
-        points: 1
+        points: 3
         pattern: race-to-the-bottom
         rationale: |
           Wrong axis. Your content costs are $100K+/episode
@@ -107,7 +107,7 @@ nodes:
       lower-cost content?
     options:
       - text: Stay premium. The differentiation is the production value.
-        points: 4
+        points: 12
         pattern: premium-or-nothing
         rationale: |
           Right call. Going downstream on content quality erases
@@ -122,7 +122,7 @@ nodes:
           in 18 months as a smaller-but-profitable niche.
         leadsTo: end-C-good
       - text: Add a creator-tier. Open the platform to creators making 10-minute premium content.
-        points: 5
+        points: 15
         pattern: marketplace-as-flywheel
         rationale: |
           Best long-term move. Studio content alone scales linearly

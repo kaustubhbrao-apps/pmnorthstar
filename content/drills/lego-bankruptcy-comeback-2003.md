@@ -36,7 +36,7 @@ nodes:
       What is your first major directive?
     options:
       - text: 'The ''Brutal Trim'': Slash the number of unique elements by 50%. Force designers to use a ''Universal Palette'' of standard bricks.'
-        points: 5
+        points: 10
         pattern: focus-through-constraint
         rationale: |
           The absolute correct first step. Complexity was the primary driver of your manufacturing losses. 
@@ -54,7 +54,7 @@ nodes:
           The digital project is buggy, late, and over budget. Meanwhile, your physical inventory continues to rot in warehouses. You run out of cash by November.
         leadsTo: company_death
       - text: 'The Premium Play: Raise prices across the board by 15% to immediately improve margins.'
-        points: 1
+        points: 2
         pattern: math-without-market
         rationale: |
           A spreadsheet solution to a product problem. Your products already aren't selling because they are confusing and stray from the core brand. 
@@ -74,7 +74,7 @@ nodes:
       What do you do?
     options:
       - text: Sell a majority stake in LEGOLAND. Sell the video game and clothing businesses. Focus entirely on the brick.
-        points: 5
+        points: 10
         pattern: non-core-divestment
         rationale: |
           A painful but necessary tactical move. Theme parks are a completely different business model (hospitality/real estate) than toy manufacturing. 
@@ -83,7 +83,7 @@ nodes:
           The founding family weeps, but signs the papers. You raise $400M. It buys you two years of runway and immense organizational focus.
         leadsTo: rebuilding_the_brand
       - text: Keep the parks. They are essential to the brand. Instead, lay off 30% of the manufacturing staff and outsource production to China.
-        points: 2
+        points: 4
         pattern: destructive-outsourcing
         rationale: |
           You preserve the emotional asset (parks) but damage the core competency (precision manufacturing). 
@@ -92,7 +92,7 @@ nodes:
           Quality drops. Bricks stop fitting together perfectly. The brand takes a massive reputational hit, though you survive the year.
         leadsTo: quality_crisis
       - text: Try to franchise the parks to local operators to reduce capital expenditure, but maintain ownership.
-        points: 3
+        points: 6
         pattern: half-measure
         rationale: |
           A reasonable financial maneuver, but it doesn't solve the core issue of executive distraction, and it doesn't bring in the massive lump-sum cash injection you need immediately.
@@ -111,7 +111,7 @@ nodes:
       What is the product strategy for the future?
     options:
       - text: 'The ''Ninjago'' Strategy: Build your own deep, internal IP. Create a world with characters, a TV show, and sets designed simultaneously.'
-        points: 5
+        points: 10
         pattern: internal-ip-development
         rationale: |
           The brilliant, defining move. Owning your own Intellectual Property means high margins (no licensing fees). 
@@ -120,7 +120,7 @@ nodes:
           You launch 'Bionicle' and later 'Ninjago'. It is a massive hit. You've created a generation of kids who love the 'Story' of LEGO as much as the bricks. The company returns to profitability.
         leadsTo: category_dominance
       - text: 'Double Down on Licensing: Sign exclusive deals with Marvel, DC, and every major movie franchise. Ride their marketing budgets.'
-        points: 3
+        points: 6
         pattern: high-revenue-low-margin
         rationale: |
           A safe, revenue-generating strategy, but strategically vulnerable. 
@@ -129,7 +129,7 @@ nodes:
           Sales are huge, but profits are moderate. In years with bad movies, LEGO suffers. You become a successful, but dependent, toy manufacturer.
         leadsTo: dependent_success
       - text: 'Back to Basics: Reject the story trend. Focus purely on generic City, Space, and Castle sets. Let the kids make up the stories.'
-        points: 1
+        points: 2
         pattern: nostalgic-regression
         rationale: |
           You are fighting a secular trend in how children play. While 'free play' is the soul of LEGO, the modern market demands narrative hooks to get kids in the door. 
@@ -145,7 +145,7 @@ nodes:
       Your lead designers come to you with a new pitch: "Adults love LEGO too. But they don't want to play with Ninjas. We want to design incredibly complex, $300+ models of things like the Eiffel Tower and the Millennium Falcon, targeted strictly at adults."
     options:
       - text: 'Approve it. The ''Adult Fan of LEGO'' (AFOL) market is an untapped, high-margin goldmine.'
-        points: 5
+        points: 10
         pattern: niche-high-margin-expansion
         rationale: |
           Adults have disposable income and value the 'Display' aspect of LEGO. Because the supply chain is fixed, you can execute this efficiently. 
@@ -154,7 +154,7 @@ nodes:
           The 'Icons' and 'Creator Expert' lines become massive, consistent revenue drivers. You own the adult desk-toy market.
         leadsTo: end_renaissance
       - text: 'Reject it. We are a children''s toy company. Keep the focus entirely on the core youth demographic.'
-        points: 2
+        points: 4
         pattern: overly-rigid-focus
         rationale: |
           Focus was necessary during the crisis, but you are now missing a logical, highly profitable adjacency that utilizes your exact core competency (manufacturing precision bricks).
@@ -169,7 +169,7 @@ nodes:
       You saved some cash, but the brand is eroding. What is your emergency fix?
     options:
       - text: Bring manufacturing back in-house to Europe/Mexico immediately, whatever the cost.
-        points: 4
+        points: 8
         pattern: correct-the-mistake
         rationale: |
           You realize the error. The physical quality of the brick is the only thing that justifies the premium price.
@@ -192,7 +192,7 @@ nodes:
       The board gives you one last chance to present a survival plan before they sell the company to Mattel.
     options:
       - text: Pitch the 'Brutal Trim' and selling the theme parks. Admit the pricing strategy was wrong.
-        points: 3
+        points: 6
         pattern: desperate-pivot
         rationale: |
           Better late than never, but you have lost massive leverage.

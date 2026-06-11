@@ -30,7 +30,7 @@ nodes:
       Pipeline is down 45%. Pick the move.
     options:
       - text: 'Rebuild for AI search: structured data, citation-ready content, llms.txt, FAQ schema across the 400 pages.'
-        points: 4
+        points: 12
         pattern: rebuild-for-the-new-channel
         rationale: |
           The defensible adaptation. AI engines preferentially cite content
@@ -45,7 +45,7 @@ nodes:
           AI citation grows enough to flatten the net.
         leadsTo: A-rebuild-followup
       - text: Convert the audience into a newsletter. Email is a channel you own, search is one you rent.
-        points: 5
+        points: 15
         pattern: own-the-distribution
         rationale: |
           The structural fix. Search traffic is rented from Google; email
@@ -61,7 +61,7 @@ nodes:
           replacing the lost search revenue.
         leadsTo: B-newsletter-followup
       - text: 'Double down on paid: aggressive Google Ads + LinkedIn to compensate for lost organic.'
-        points: 1
+        points: 3
         pattern: pay-for-shrinking-channel
         rationale: |
           The worst combination — paying for what used to be free on a
@@ -74,7 +74,7 @@ nodes:
           collapses. The board notices the burn rate. Layoffs come in Q4.
         leadsTo: end-C
       - text: Build a product. Pivot from content business to software business. Use the audience to seed product launch.
-        points: 3
+        points: 9
         pattern: pivot-content-to-product
         rationale: |
           Bold but high-risk. Content businesses with strong audiences
@@ -99,7 +99,7 @@ nodes:
       citation source for your category?
     options:
       - text: Yes. Publish the benchmark, make it free + downloadable, structure for citation.
-        points: 5
+        points: 15
         pattern: citation-magnet
         rationale: |
           Asymmetric long-term play. A well-executed industry benchmark
@@ -114,7 +114,7 @@ nodes:
           becomes the company's most-quoted asset.
         leadsTo: end-A-great
       - text: Stick to the page rebuild. Don't over-invest in any single asset.
-        points: 3
+        points: 9
         pattern: incremental-only
         rationale: |
           Defensible discipline. Marginal pages add steady value but don't
@@ -132,7 +132,7 @@ nodes:
       You can monetize three ways. Pick the path.
     options:
       - text: Free newsletter + paid 'pro' tier with deep analysis ($15/mo). Build a Substack-style subscription business.
-        points: 5
+        points: 15
         pattern: free-plus-paid-tiers
         rationale: |
           The canonical content business model. Free tier maximizes
@@ -147,7 +147,7 @@ nodes:
           paying readers").
         leadsTo: end-B-great
       - text: Free newsletter funded entirely by sponsorships ($5-15K per drop).
-        points: 4
+        points: 12
         pattern: ad-funded-only
         rationale: |
           Cleaner business model — no paywall complexity, faster
@@ -161,7 +161,7 @@ nodes:
           the perceived value cap is visible.
         leadsTo: end-B-good
       - text: Free newsletter, eventually upsell to a paid SaaS product.
-        points: 3
+        points: 9
         pattern: newsletter-as-funnel
         rationale: |
           The Lenny's Rachitsky path — newsletter as top-of-funnel for

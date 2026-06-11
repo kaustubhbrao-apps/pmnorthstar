@@ -33,7 +33,7 @@ nodes:
       Pick the move.
     options:
       - text: Roll out the AI assessment as the primary screening filter. Top 10% only get to humans.
-        points: 1
+        points: 3
         pattern: assessment-as-gate
         rationale: |
           Optimizes for recruiter hours at the cost of hiring
@@ -54,7 +54,7 @@ nodes:
           among new hires is up 40%.
         leadsTo: end-A
       - text: Use the assessment as one signal among many. Top 30% advance; humans review the borderline cases.
-        points: 5
+        points: 15
         pattern: assessment-as-input-not-gate
         rationale: |
           Right balance. The assessment gives you efficiency on the
@@ -71,7 +71,7 @@ nodes:
           evaluation.
         leadsTo: B-balanced-followup
       - text: Skip the AI assessment. Add more structured rubrics to the existing human interview loop instead.
-        points: 3
+        points: 9
         pattern: improve-the-humans
         rationale: |
           Defensible. The real problem is interview loop quality,
@@ -86,7 +86,7 @@ nodes:
           sustained interview hours.
         leadsTo: end-C
       - text: Use the assessment to identify *bottom* 30% to reject, but interview the rest. Invert the filter.
-        points: 4
+        points: 12
         pattern: filter-out-not-in
         rationale: |
           Clever inversion. AI assessments are most reliable at
@@ -111,7 +111,7 @@ nodes:
       another $50K. Pick.
     options:
       - text: Buy both. Compliance + custom assessments worth the investment.
-        points: 5
+        points: 15
         pattern: invest-in-quality-of-tool
         rationale: |
           Right call for a growth-stage company hiring at scale.
@@ -125,7 +125,7 @@ nodes:
           parts of the company.
         leadsTo: end-B-great
       - text: Buy the bias-auditing tier only. Stick with off-the-shelf assessments.
-        points: 4
+        points: 12
         pattern: compliance-without-customization
         rationale: |
           Defensible mid-ground. Compliance is the higher-stakes
@@ -137,7 +137,7 @@ nodes:
           optimal. Steady hiring performance.
         leadsTo: end-B-good
       - text: Skip both. The current setup is fine.
-        points: 2
+        points: 6
         pattern: skip-the-compliance-layer
         rationale: |
           Risk-blind. Hiring tools without bias auditing have been

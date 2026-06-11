@@ -33,7 +33,7 @@ nodes:
       The 10-min delivery category is real. Pick the move.
     options:
       - text: Acquire Blinkit. ~$570M in stock. Move fast before your competitor matches the scale.
-        points: 5
+        points: 15
         pattern: acquire-the-leader
         rationale: |
           Defensible aggressive bet. Blinkit has the consumer habit,
@@ -52,7 +52,7 @@ nodes:
           contribution-positive and the bet looks prescient.
         leadsTo: A-acquire-followup
       - text: Build organically. Launch a parallel 10-minute service. Compete on operational excellence.
-        points: 2
+        points: 6
         pattern: build-vs-buy
         rationale: |
           The traditionalist call. You build with your existing
@@ -68,7 +68,7 @@ nodes:
           the long-term grocery thesis for your stock.
         leadsTo: end-B
       - text: Stay focused on food delivery. Don't enter 10-min grocery. Let the competitor own it.
-        points: 1
+        points: 3
         pattern: refuse-the-adjacent-bet
         rationale: |
           The "stick to the core" reflex. Defensible-sounding but
@@ -85,7 +85,7 @@ nodes:
           from cross-app gravity.
         leadsTo: end-C
       - text: Partner with Blinkit. Co-brand integration without acquisition. Cheaper, faster.
-        points: 3
+        points: 9
         pattern: partnership-instead-of-acquisition
         rationale: |
           Cheaper but structurally weaker. Partnerships in
@@ -109,7 +109,7 @@ nodes:
       main food delivery app?
     options:
       - text: Keep separate. Blinkit has its own brand equity in grocery; don't dilute either brand.
-        points: 5
+        points: 15
         pattern: separate-brands-different-jobs
         rationale: |
           Right answer for category-different jobs. Food delivery
@@ -126,7 +126,7 @@ nodes:
           textbook for category-distinct acquisitions.
         leadsTo: end-A-great
       - text: Merge into one app. 'Order food and groceries from one place.' Unified UX.
-        points: 3
+        points: 9
         pattern: merge-for-cross-sell
         rationale: |
           Theoretically efficient, practically messy. Consumer

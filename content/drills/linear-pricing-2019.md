@@ -32,7 +32,7 @@ nodes:
       Pick the pricing model for public launch.
     options:
       - text: 'Match the incumbent: $8/user/month, with enterprise tier at $14. Compete on product quality.'
-        points: 2
+        points: 6
         pattern: incumbent-match
         rationale: |
           The defensible approach. Same pricing as competitors lets
@@ -48,7 +48,7 @@ nodes:
           motion is too slow to compound.
         leadsTo: end-A
       - text: Free for small teams (under 10 users). $8/user/month for larger teams.
-        points: 5
+        points: 15
         pattern: free-for-the-trojan-horse
         rationale: |
           The right wedge. Small teams (under 10 users) self-serve
@@ -64,7 +64,7 @@ nodes:
           match scenario.
         leadsTo: B-free-followup
       - text: Free forever, no limits. Monetize later via enterprise features (SSO, audit log, custom SLAs).
-        points: 3
+        points: 9
         pattern: monetize-much-later
         rationale: |
           The growth-first bet. Audacious — works for some
@@ -79,7 +79,7 @@ nodes:
           have commanded.
         leadsTo: end-C
       - text: 'Aggressive undercut: $4/user/month flat. Half the incumbent''s price.'
-        points: 1
+        points: 3
         pattern: undercut-with-no-moat
         rationale: |
           Doomed at scale. The incumbent has 100x your capital and
@@ -104,7 +104,7 @@ nodes:
       need to decide what to do about it.
     options:
       - text: Enforce a strict 'one workspace per organization' rule. Block obvious multi-workspace abuse.
-        points: 2
+        points: 6
         pattern: enforce-the-gate-hard
         rationale: |
           Direct but adversarial. Users who were happily using your
@@ -118,7 +118,7 @@ nodes:
           a hit on Twitter.
         leadsTo: end-B-bad
       - text: Make the upgrade feel like an upgrade — add valuable team features (cross-workspace search, admin tooling) only available paid.
-        points: 5
+        points: 15
         pattern: positive-upgrade-pull
         rationale: |
           Pull, not push. You're not blocking the workaround;
@@ -132,7 +132,7 @@ nodes:
           to 28%. Brand stays clean. Conversion engine compounds.
         leadsTo: end-B-great
       - text: Tighten free tier limits — drop from 10 users to 5. Force the upgrade sooner.
-        points: 1
+        points: 3
         pattern: shrink-the-free-tier
         rationale: |
           The retroactive-narrowing trap. You're changing the deal

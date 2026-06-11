@@ -32,7 +32,7 @@ nodes:
       The next 24 hours matter. Pick the move.
     options:
       - text: Accelerate. Get our version shipped in 2 weeks instead of 8. Beat them to enterprise.
-        points: 1
+        points: 3
         pattern: speed-as-strategy
         rationale: |
           The instinct to outpace. Problem: shipping in 2 weeks means
@@ -49,7 +49,7 @@ nodes:
           competitor is fixing.
         leadsTo: end-A
       - text: Kill the feature. Pivot the team to a different problem on the roadmap.
-        points: 2
+        points: 6
         pattern: capitulate-on-real-bet
         rationale: |
           Overcorrects. You're abandoning six months of design work
@@ -65,7 +65,7 @@ nodes:
           better in Q3 and they take the category.
         leadsTo: end-B
       - text: Ship on time. Use the competitor's launch as research. Differentiate on what they got wrong.
-        points: 5
+        points: 15
         pattern: opponent-as-research
         rationale: |
           The right move. Their beta is your most expensive piece of
@@ -82,7 +82,7 @@ nodes:
           to you in the first month.
         leadsTo: C-differentiate-followup
       - text: Announce immediately that you're shipping. Get ahead of the narrative.
-        points: 3
+        points: 9
         pattern: announce-without-ship
         rationale: |
           Marketing-first thinking. You can claim the category by
@@ -107,7 +107,7 @@ nodes:
       Pick the wedge.
     options:
       - text: 'Human-in-the-loop verification. Pitch to enterprise hiring teams: ''AI screener with a real check.'''
-        points: 4
+        points: 12
         pattern: enterprise-trust-wedge
         rationale: |
           Strong B2B angle. Enterprise hiring teams are scared of
@@ -122,7 +122,7 @@ nodes:
           competitor; you concede that segment.
         leadsTo: end-C-good
       - text: 'Candidate-side transparency. Pitch to candidates: ''finally, an AI interview that explains itself.'''
-        points: 5
+        points: 15
         pattern: two-sided-marketplace-move
         rationale: |
           The asymmetric play. Your competitor is selling to hiring
@@ -140,7 +140,7 @@ nodes:
           "AI for both sides of hiring."
         leadsTo: end-C-great
       - text: Both. Build verification and transparency in parallel.
-        points: 2
+        points: 6
         pattern: hedging-loses-focus
         rationale: |
           The "do everything" trap. Building two distinct

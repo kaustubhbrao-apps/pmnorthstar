@@ -32,7 +32,7 @@ nodes:
       AMC Theaters, the largest chain, has publicly declared war on you, calling the model unsustainable and refusing to negotiate any discount on tickets. What is your immediate strategy to manage the burn?
     options:
       - text: "Implement friction immediately. Restrict repeat viewings of the same movie, require ticket stub photos to prevent fraud, and block major blockbusters on opening weekend."
-        points: 5
+        points: 15
         pattern: survive-the-burn
         rationale: |
           You must stem the bleeding immediately, even if it hurts the user experience and slows growth. 
@@ -50,7 +50,7 @@ nodes:
           You hit 3 million subscribers. Your burn rate hits $20 million a month. The stock price begins to wobble.
         leadsTo: double_down
       - text: "Try to monetize the data immediately. Sell user location and viewing habits to studios and advertisers."
-        points: 1
+        points: 3
         pattern: false-savior
         rationale: |
           A common Silicon Valley delusion: "Data is the new oil." 
@@ -66,7 +66,7 @@ nodes:
       You need a sustainable path forward that stops the bleeding permanently without destroying the entire user base. How do you restructure the product?
     options:
       - text: "Pivot to a tiered model: $9.95 for 3 movies a month. Higher tiers for unlimited or premium formats (IMAX/3D)."
-        points: 5
+        points: 15
         pattern: rational-pricing
         rationale: |
           The painful but correct move. A capped model (3 movies) provides predictable costs. If the average ticket is $10, you still lose money if they use all 3, but the breakage (users who go 0 or 1 time) makes the economics viable at scale. 
@@ -93,7 +93,7 @@ nodes:
       The stock price of your parent company crashes 99%. The SEC is asking questions. AMC is laughing. What is your final play?
     options:
       - text: "Halt the service immediately, declare bankruptcy, and try to sell the data assets to recoup some investor capital."
-        points: 5
+        points: 15
         pattern: accept-reality
         rationale: |
           Recognize when the game is over. Protect what little value remains. Operating while insolvent is legally dangerous and morally bankrupt.
@@ -110,7 +110,7 @@ nodes:
           The service comes back online, then crashes again on Monday. The stock is delisted.
         leadsTo: emergency_loan
       - text: "Force a massive reverse stock split (250-to-1) to keep the stock from being delisted and dilute current shareholders to raise cash."
-        points: 1
+        points: 3
         pattern: financial-engineering
         rationale: |
           Financial engineering does not fix unit economics. It just destroys retail investors who believed the hype.

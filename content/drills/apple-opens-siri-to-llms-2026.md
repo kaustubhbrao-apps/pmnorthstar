@@ -34,7 +34,7 @@ nodes:
       The market has just changed shape. Pick the move.
     options:
       - text: Build a Siri plugin. Position as 'the best LLM for voice on iOS.'
-        points: 3
+        points: 9
         pattern: ride-the-platform
         rationale: |
           The defensive-but-fast move. Plug into Apple's distribution,
@@ -49,7 +49,7 @@ nodes:
           flow. You spend Q4 redesigning around their rules.
         leadsTo: A-plugin-followup
       - text: Pivot to a vertical — pick legal voice, medical voice, or call-center voice and own it.
-        points: 5
+        points: 15
         pattern: own-a-vertical
         rationale: |
           The right strategic move. Horizontal voice-AI for consumers
@@ -65,7 +65,7 @@ nodes:
           name in that vertical.
         leadsTo: B-vertical-followup
       - text: Sell the company now while you can. Apple just commoditized your category.
-        points: 2
+        points: 6
         pattern: capitulate-too-early
         rationale: |
           Defensible logic, premature timing. The platform announcement
@@ -80,7 +80,7 @@ nodes:
           legal-vertical play you could have run yourself.
         leadsTo: end-C
       - text: Stay horizontal. Double down on Android + web where Apple's move doesn't reach.
-        points: 2
+        points: 6
         pattern: avoid-the-fight
         rationale: |
           The "go where they aren't" instinct. Android voice is
@@ -103,7 +103,7 @@ nodes:
       product is now free while their seats still cost $200. What now?
     options:
       - text: Make the consumer plugin free forever. Use it as a top-of-funnel for enterprise.
-        points: 4
+        points: 12
         pattern: free-tier-as-funnel
         rationale: |
           Smart funnel math. Consumer plugin becomes the awareness
@@ -118,7 +118,7 @@ nodes:
           cycles shorten by 30%.
         leadsTo: end-A-good
       - text: Try to monetize the consumer plugin via premium features. Charge $5/month.
-        points: 1
+        points: 3
         pattern: monetize-where-platform-owns
         rationale: |
           Doomed. The user already pays Apple for iCloud, and Apple's
@@ -137,7 +137,7 @@ nodes:
       decision: per-seat or per-firm?
     options:
       - text: Per-firm flat fee. $50K/year for unlimited seats.
-        points: 4
+        points: 12
         pattern: simple-pricing-for-trust
         rationale: |
           Clean, defensible, easy for legal procurement to approve.
@@ -150,7 +150,7 @@ nodes:
           pricing in v2.
         leadsTo: end-B-good
       - text: 'Per-seat: $200/month. Tiered by usage.'
-        points: 3
+        points: 9
         pattern: granular-pricing
         rationale: |
           More accurate to value, but creates friction in legal
@@ -162,7 +162,7 @@ nodes:
           deals are larger. Mixed outcome on net revenue.
         leadsTo: end-B-mixed
       - text: Free for solo lawyers. Pay only for firms over 10 attorneys.
-        points: 5
+        points: 15
         pattern: bottom-up-then-top-down
         rationale: |
           The PLG-into-enterprise move. Solos try you free, fall in

@@ -59,7 +59,7 @@ nodes:
           gone bad" and stop logging in. 
         leadsTo: quality_death
       - text: "The 'Slow Burn': Stay invite-only on iOS, but give 5 extra invites to anyone who hosts a room with 50+ listeners for at least 30 minutes."
-        points: 5
+        points: 15
         pattern: quality-incentivized-growth
         rationale: |
           This is a structural moat strategy. It recognizes that in user-generated content
@@ -75,7 +75,7 @@ nodes:
           your platform.
         leadsTo: the_spaces_threat
       - text: "The 'Creator Fund': Open the gates to everyone, but launch a massive $10M creator fund to pay 'Verified' creators to host exclusive daily content."
-        points: 2
+        points: 6
         pattern: content-subsidization
         rationale: |
           This attempts to manufacture quality through capital. It acknowledges the need for
@@ -100,7 +100,7 @@ nodes:
       and the waning novelty?
     options:
       - text: "The 'Town Hall' Pivot: Focus heavily on 'Clubs' (Communities). Give users tools to build long-term followers, asynchronous chat, and membership gating."
-        points: 5
+        points: 15
         pattern: community-moat
         rationale: |
           Twitter is fundamentally a broadcast medium; Clubhouse needs to be a community
@@ -114,7 +114,7 @@ nodes:
           live sessions. You've moved from a "Hype app" to a "Daily Habit."
         leadsTo: sustainable_unicorn
       - text: "The 'Feature War': Rapidly build direct messaging, text posts, and a persistent news feed to compete directly with Twitter's core features."
-        points: 1
+        points: 3
         pattern: feature-parity-trap
         rationale: |
           The instinct to achieve feature parity with a dominant incumbent is almost always
@@ -128,7 +128,7 @@ nodes:
           Twitter for text and DMs.
         leadsTo: feature_bloat_death
       - text: "The 'Monetization' Play: Introduce ticketing, tipping, and subscriptions immediately so creators can make money directly from their audience."
-        points: 3
+        points: 9
         pattern: premature-monetization
         rationale: |
           A strong defensive move against Twitter's reach is offering better economics. If

@@ -54,7 +54,7 @@ nodes:
           the forced migration.
         leadsTo: node_split
       - text: "No, keep them together. The social check-in gamification is the engine that generates the reviews and data for local search. Redesign the UI, but keep the core loop intact."
-        points: 5
+        points: 15
         pattern: protect-the-flywheel
         rationale: |
           The utility of the search depends entirely on the social habit of checking in.
@@ -67,7 +67,7 @@ nodes:
           core action of "checking in" remains central to both experiences.
         leadsTo: node_keep
       - text: "Phased separation. Keep check-ins in Foursquare, but launch Swarm as a lightweight, experimental companion app for power users only."
-        points: 3
+        points: 9
         pattern: optional-unbundling
         rationale: |
           A safer, albeit confusing, middle ground. You test the appetite for a standalone
@@ -89,7 +89,7 @@ nodes:
       App Store ratings for both apps are tanking. What do you do?
     options:
       - text: "Reverse course immediately. Merge the check-in button back into the main Foursquare app and apologize."
-        points: 4
+        points: 12
         pattern: rapid-reversal
         rationale: |
           Admitting a massive strategic mistake quickly can save a dying network, even if
@@ -121,7 +121,7 @@ nodes:
       consumer search war. How do you pivot the business to survive?
     options:
       - text: "Pivot to a B2B Enterprise Data play. Stop fighting Yelp for consumers. Sell our incredible location intelligence API to other tech companies."
-        points: 5
+        points: 15
         pattern: enterprise-pivot
         rationale: |
           The consumer local search war is lost to Google and Yelp's massive distribution
@@ -133,7 +133,7 @@ nodes:
           remains a fun game that feeds the data engine, while B2B sales explode.
         leadsTo: end_b2b_pivot
       - text: "Double down on consumer gamification. Add more badges, leaderboards, and crypto-tokens to drive even more reviews to beat Yelp."
-        points: 1
+        points: 3
         pattern: doubling-down-on-novelty
         rationale: |
           Gamification is a novelty that fades as users age out of the "checking in" habit.

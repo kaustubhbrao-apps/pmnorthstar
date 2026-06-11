@@ -68,7 +68,7 @@ nodes:
           5:1. Investors stop returning calls.
         leadsTo: A-hotels-2
       - text: Cut everything to your highest-density city. Personally fly out and photograph every host's listing.
-        points: 5
+        points: 10
         pattern: do-things-that-dont-scale
         rationale: |
           The move that doesn't look like a strategy in any deck. Listings
@@ -87,7 +87,7 @@ nodes:
           partner can listen to.
         leadsTo: B-photos-2
       - text: Manufacture a limited-edition novelty product tied to a major upcoming public event. Sell to enthusiasts and press for cash + attention.
-        points: 5
+        points: 10
         pattern: survival-as-press
         rationale: |
           The cockroach move. There's a major public event with intense
@@ -109,7 +109,7 @@ nodes:
           matters again.
         leadsTo: C-cereal-2
       - text: Treat the accelerator interview as the last try. Shut down honestly if it fails.
-        points: 2
+        points: 4
         pattern: defensive-shutdown
         rationale: |
           The honest assessment after a year of grinding. The data says
@@ -142,7 +142,7 @@ nodes:
       What's your answer?
     options:
       - text: We're filling a gap hotels can't — short-term, unique inventory in places hotels don't exist
-        points: 5
+        points: 10
         pattern: positioning-by-negative-space
         rationale: |
           The correct framing. You are not competing with hotels; you are
@@ -160,7 +160,7 @@ nodes:
           accelerator.
         leadsTo: B-photos-3
       - text: Hosts love it. We just need money to scale the photography across cities.
-        points: 3
+        points: 6
         pattern: ops-as-strategy
         rationale: |
           This is real and true but it's the wrong answer to the question
@@ -179,7 +179,7 @@ nodes:
           them." You're in, but on probation.
         leadsTo: B-photos-3
       - text: We have one city working. We just need to copy it everywhere.
-        points: 1
+        points: 2
         pattern: scaling-without-pmf
         rationale: |
           The most dangerous answer. You haven't yet proven that one city
@@ -206,7 +206,7 @@ nodes:
       next. You can only afford to back one.
     options:
       - text: 'Co-founder A (the visionary): international expansion. Three more cities across continents, photographers in each.'
-        points: 1
+        points: 2
         pattern: premature-internationalization
         rationale: |
           The visionary's instinct is "if one city worked, more cities =
@@ -226,7 +226,7 @@ nodes:
           founder team starts to fray.
         leadsTo: B-end
       - text: 'Co-founder B (the operator): domestic density first. Saturate city one, then two, then three, then four — methodically.'
-        points: 5
+        points: 10
         pattern: density-before-breadth
         rationale: |
           The correct call. Marketplaces are local — supply and demand
@@ -244,7 +244,7 @@ nodes:
           tier-one fund is leading the seed.
         leadsTo: B-end
       - text: 'Co-founder C (the engineer): build a referral mechanic so existing users bring more'
-        points: 3
+        points: 6
         pattern: referrals-before-love
         rationale: |
           Right direction, wrong moment. Referral mechanics work when
@@ -282,7 +282,7 @@ nodes:
       competitor just raised $200M. What do you do?
     options:
       - text: Stay the course. More marketing. Better SEO.
-        points: 1
+        points: 2
         pattern: sunk-cost-doubling-down
         rationale: |
           The instinct is to push harder on a strategy you've committed to
@@ -298,7 +298,7 @@ nodes:
           to $8K/month. Burn outpaces revenue 5:1. Runway hits zero.
         leadsTo: A-end-bad
       - text: Layer marketplace features back on top — let users list short-term rentals through us
-        points: 3
+        points: 6
         pattern: hidden-pivot-back
         rationale: |
           A graceful way to admit the pivot was wrong without saying so —
@@ -315,7 +315,7 @@ nodes:
           hotel brand. You're stuck.
         leadsTo: A-end-mediocre
       - text: Admit the pivot was wrong. Pivot back to the marketplace, rebrand.
-        points: 5
+        points: 10
         pattern: pivot-back-with-clarity
         rationale: |
           The hardest move emotionally, the right move strategically. You
@@ -364,7 +364,7 @@ nodes:
       months of runway. What's your pitch angle?
     options:
       - text: The novelty product is the proof — we're founders who don't quit, and that's the bet
-        points: 5
+        points: 10
         pattern: founder-thesis
         rationale: |
           The right angle. The partner explicitly told you why the novelty
@@ -379,7 +379,7 @@ nodes:
           The partner smiles. "Right answer. Welcome to the batch."
         leadsTo: C-cereal-3
       - text: Forget the novelty product — the real story is the marketplace traction we have
-        points: 2
+        points: 4
         pattern: distance-from-the-story
         rationale: |
           The instinct to be taken seriously. You don't want to be the
@@ -398,7 +398,7 @@ nodes:
           mentally downgraded.
         leadsTo: C-cereal-3
       - text: The novelty product funded the company — now we'll use accelerator money to ship features
-        points: 3
+        points: 6
         pattern: feature-roadmap-pitch
         rationale: |
           A reasonable but unimaginative answer. You acknowledge the
@@ -423,7 +423,7 @@ nodes:
       both, or stay free for now.
     options:
       - text: Charge guests a 9% service fee at checkout. Hosts stay free.
-        points: 5
+        points: 10
         pattern: monetize-the-mobile-side
         rationale: |
           The correct call. The guest is making a binary decision (book
@@ -440,7 +440,7 @@ nodes:
           the unit-economics story.
         leadsTo: C-end
       - text: Charge hosts a 10% commission on bookings. Guests pay nothing extra.
-        points: 2
+        points: 4
         pattern: tax-the-supply-side
         rationale: |
           The intuitive but wrong call. Hosts seem like the easier party
@@ -457,7 +457,7 @@ nodes:
           numbers.
         leadsTo: C-end
       - text: Stay free. Grow the marketplace. Monetize later when you have leverage.
-        points: 1
+        points: 2
         pattern: defer-revenue-trap
         rationale: |
           The Silicon Valley orthodoxy — "grow first, monetize later" —
@@ -491,7 +491,7 @@ nodes:
       going back to consulting. The engineer is silent. What's the move?
     options:
       - text: Shut down honestly. File the paperwork, settle the credit cards over 5 years.
-        points: 3
+        points: 6
         pattern: clean-shutdown
         rationale: |
           The mature move. You tried, it didn't work, and dragging the
@@ -508,7 +508,7 @@ nodes:
           You watch them succeed and try not to think about it.
         leadsTo: D-end
       - text: One more month of grinding. If nothing changes, then shut down.
-        points: 4
+        points: 8
         pattern: defined-stop-loss
         rationale: |
           The defensible middle path. You give yourselves a defined
@@ -526,7 +526,7 @@ nodes:
           later.
         leadsTo: D-end
       - text: Pivot the team — keep the company alive but as a design consultancy
-        points: 2
+        points: 4
         pattern: zombie-company
         rationale: |
           The worst of both worlds. You keep the company nominally alive

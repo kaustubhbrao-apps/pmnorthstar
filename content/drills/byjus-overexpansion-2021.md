@@ -61,7 +61,7 @@ nodes:
           to $400M within 18 months as the funding cycle turns.
         leadsTo: end-A
       - text: Do one acquisition (the US tutoring service). Defer international. Pause salesforce expansion.
-        points: 5
+        points: 15
         pattern: capital-discipline-during-boom
         rationale: |
           The discipline move. You'd be saying: "the capital is real
@@ -80,7 +80,7 @@ nodes:
           re-rates but the company survives intact.
         leadsTo: B-discipline-followup
       - text: Decline all three acquisitions. Return half the cash to investors. Stay focused on India.
-        points: 4
+        points: 12
         pattern: capital-return-when-overcapitalized
         rationale: |
           The principled extreme. Returning capital is rarely chosen
@@ -97,7 +97,7 @@ nodes:
           stronger multiple than peers who deployed and crashed.
         leadsTo: end-C
       - text: Two acquisitions plus selective international. Skip the offline chain (too operationally heavy).
-        points: 2
+        points: 6
         pattern: half-the-mistake
         rationale: |
           Defensible-looking compromise. You're picking which fires to
@@ -121,7 +121,7 @@ nodes:
       You have $1B in cash. What do you do?
     options:
       - text: Take the $12B bridge. Accept the down round to lock in 2 more years of runway.
-        points: 4
+        points: 12
         pattern: take-the-down-round
         rationale: |
           Often the right move. Down rounds hurt morale and dilute
@@ -137,7 +137,7 @@ nodes:
           a recovery valuation.
         leadsTo: end-B-good
       - text: Decline the bridge. Cut costs aggressively to extend the existing runway.
-        points: 5
+        points: 15
         pattern: cut-cost-not-valuation
         rationale: |
           Strong call when the business can sustain. With $1B in cash
@@ -153,7 +153,7 @@ nodes:
           down round.
         leadsTo: end-B-great
       - text: Bet on a recovery. Don't raise. Don't cut. Stay the course.
-        points: 1
+        points: 3
         pattern: hope-as-strategy
         rationale: |
           The fatal optimism. Cycles don't recover on your timeline;

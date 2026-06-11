@@ -38,7 +38,7 @@ nodes:
       users. Six months of runway. Pick.
     options:
       - text: Rebuild from scratch. Communicate to the team and to investors. Buy 4 more months runway by cutting headcount.
-        points: 5
+        points: 15
         pattern: nuke-and-rebuild
         rationale: |
           The courageous move when the diagnosis is correct. You're
@@ -57,7 +57,7 @@ nodes:
           ships and converts the existing power users in 48 hours.
         leadsTo: B-rebuild-followup
       - text: Refactor incrementally. Keep shipping features. Don't break the existing users.
-        points: 2
+        points: 6
         pattern: incremental-when-radical-needed
         rationale: |
           The defensible-looking instinct. Problem: you're acknowledging
@@ -73,7 +73,7 @@ nodes:
           out.
         leadsTo: end-A
       - text: Cut features aggressively. Don't rebuild. Just remove everything below 10% usage.
-        points: 3
+        points: 9
         pattern: prune-without-rebuild
         rationale: |
           Right instinct on bloat, wrong call on architecture. Cutting
@@ -87,7 +87,7 @@ nodes:
           flat at month 6.
         leadsTo: end-C
       - text: Sell the company. You have a working product and 200 paying users — find a strategic buyer.
-        points: 1
+        points: 3
         pattern: surrender-prematurely
         rationale: |
           Premature capitulation. You haven't earned the right to
@@ -115,7 +115,7 @@ nodes:
       Pick the launch strategy.
     options:
       - text: Invite-only beta. Personal outreach to 100 power users from the old product. Iterate quickly.
-        points: 5
+        points: 15
         pattern: deliberate-base-rebuild
         rationale: |
           The right call for a rebuilt product. Your old power users
@@ -131,7 +131,7 @@ nodes:
           public launch with a built-in evangelist base.
         leadsTo: end-B-great
       - text: Public launch on Product Hunt. Maximum surface area, fast feedback.
-        points: 3
+        points: 9
         pattern: launch-before-loop
         rationale: |
           Faster, riskier. Product Hunt traffic is broad and noisy —
@@ -146,7 +146,7 @@ nodes:
           your support team can't keep up.
         leadsTo: end-B-mixed
       - text: Skip the launch. Quietly migrate the old users. Don't talk about the rebuild until v2.
-        points: 2
+        points: 6
         pattern: hide-the-bet
         rationale: |
           Conservative to a fault. The rebuild IS the story; not

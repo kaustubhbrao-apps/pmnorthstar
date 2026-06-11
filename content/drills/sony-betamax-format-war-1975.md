@@ -49,7 +49,7 @@ nodes:
           bitterly that they can't record a full American football game or a Hollywood movie.
         leadsTo: stick_1_hour
       - text: Delay the launch to re-engineer the tape and player for at least a 2-hour capacity, sacrificing some quality.
-        points: 5
+        points: 10
         pattern: user-centric-compromise
         rationale: |
           Aligning the product with actual consumer needs (recording a 2-hour movie unattended) is more important 
@@ -69,7 +69,7 @@ nodes:
       What is your licensing strategy?
     options:
       - text: Open up licensing immediately to all manufacturers, subsidizing the tech to guarantee a unified standard.
-        points: 3
+        points: 6
         pattern: reactive-openness
         rationale: |
           In a format war, market share and ecosystem size are everything. You must commoditize the hardware 
@@ -99,7 +99,7 @@ nodes:
       How do you respond to their ecosystem play?
     options:
       - text: Aggressively license Betamax to all manufacturers, undercutting JVC's licensing fees to win the standard.
-        points: 5
+        points: 10
         pattern: aggressive-commoditization
         rationale: |
           Combining a product that meets consumer needs (2 hours) with an open ecosystem strategy ensures victory. 
@@ -109,7 +109,7 @@ nodes:
           alliance splinters before it can gain momentum.
         leadsTo: aggressive_license_content
       - text: Rely on Sony's massive brand power and marketing budget to out-sell the combined forces of the VHS alliance.
-        points: 1
+        points: 2
         pattern: brand-hubris
         rationale: |
           Brand power alone cannot overcome a massive, multi-company network effect. The combined manufacturing, 
@@ -127,7 +127,7 @@ nodes:
       How do you court the nascent video rental industry?
     options:
       - text: Subsidize the cost of Betamax cassettes for Hollywood studios to ensure all new movies release on Beta first.
-        points: 4
+        points: 8
         pattern: supply-side-subsidy
         rationale: |
           If you can't win hardware volume, you must monopolize the killer app: content. Subsidizing the media 
@@ -154,7 +154,7 @@ nodes:
       counters with a half-speed mode of their own, reaching 4 hours. The war is dragging on.
     options:
       - text: Cut hardware prices to the bone, selling players at a loss to buy market share and force a stalemate.
-        points: 3
+        points: 6
         pattern: war-of-attrition
         rationale: |
           A brutal but necessary tactic when behind in a network-effect market. You must buy your way back 
@@ -163,7 +163,7 @@ nodes:
           Sony bleeds cash, but the bleeding stops the VHS momentum. The market splits roughly 50/50.
         leadsTo: end_messy_stalemate
       - text: Pivot to the high-end prosumer market. Concede the cheap consumer market to VHS.
-        points: 2
+        points: 4
         pattern: retreat-to-premium
         rationale: |
           A classic defensive maneuver. When you lose the volume game, you retreat to the high-margin, 
@@ -180,7 +180,7 @@ nodes:
       culture is extremely conservative. What is your stance?
     options:
       - text: Turn a blind eye. Let the adult industry use the format. Sales are sales.
-        points: 5
+        points: 10
         pattern: pragmatic-neutrality
         rationale: |
           The adult industry is historically a massive driver of early technology adoption (internet, streaming, video). 
@@ -189,7 +189,7 @@ nodes:
           The adult industry drives massive tape sales, cementing Betamax's dominance irreparably.
         leadsTo: end_total_victory
       - text: Actively block adult studios from licensing Betamax duplication equipment to protect the Sony brand.
-        points: 1
+        points: 2
         pattern: moral-over-market
         rationale: |
           Protecting the brand is understandable, but in a format war, blocking a massive use-case provides 
@@ -214,7 +214,7 @@ nodes:
           The campaign backfires, making Sony look desperate. VHS sales continue to climb.
         leadsTo: end_total_defeat
       - text: Introduce a radically new, even smaller format (Video8) for camcorders to flank them in a new category.
-        points: 4
+        points: 8
         pattern: category-flanking
         rationale: |
           If you are losing the main front, opening a new front where you have a structural advantage (miniaturization) 

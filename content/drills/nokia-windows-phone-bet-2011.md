@@ -32,7 +32,7 @@ nodes:
           The market reacts with confusion. Your stock drops on the announcement. You've essentially outsourced your software strategy to a company that has already failed multiple times in mobile.
         leadsTo: node_windows
       - text: Adopt Android. It's an open standard with massive momentum. Differentiate on hardware and a custom UI layer.
-        points: 5
+        points: 15
         pattern: riding-the-wave
         rationale: |
           Android has the momentum and, crucially, the developers. You can leverage Google's ecosystem while using your superior hardware (cameras, build quality) to stand out, precisely as Samsung is starting to do. You surrender the OS layer but survive as a premium hardware vendor.
@@ -40,7 +40,7 @@ nodes:
           The transition is painful but clear. You immediately gain access to hundreds of thousands of apps. The challenge now shifts to differentiating your phones from HTC, Motorola, and Samsung.
         leadsTo: node_android
       - text: Double down on MeeGo. Fire the sluggish middle management and accelerate internal development. Stay independent.
-        points: 2
+        points: 6
         pattern: the-pride-trap
         rationale: |
           The honorable but fatal choice. You are overestimating your ability to build a developer ecosystem from scratch in 2011. Apple and Google are moving too fast. Even if MeeGo is technically superior, the "app gap" will kill you before you reach scale. 
@@ -53,7 +53,7 @@ nodes:
       You choose Windows Phone. The Lumia line launches to critical acclaim for its striking industrial design and incredible cameras. However, sales are dismal. Consumers walk into stores, see that Instagram, YouTube, Snapchat, and their local banking apps are missing, and walk out with an iPhone or Android. The carrier salespeople are actively steering customers away from Windows Phone to avoid returns. What do you do about the "app gap"?
     options:
       - text: Subsidize the ecosystem. Pay developers millions out of pocket to port their apps to Windows Phone.
-        points: 1
+        points: 3
         pattern: buying-the-network
         rationale: |
           You cannot buy a two-sided network effect sustainably. Developers will take the money, outsource a terrible port of their app to check a box, and never update it. The apps will exist, but the user experience will be universally worse than on iOS or Android. 
@@ -61,7 +61,7 @@ nodes:
           You spend hundreds of millions. The Windows Store fills up with buggy, outdated, or fake apps. Consumers notice the poor quality. The churn rate is catastrophic.
         leadsTo: end_acquisition
       - text: Pivot the strategy. Keep Windows Phone for high-end flagship devices, but fork Android for cheap, entry-level phones (Project Normandy) to maintain volume in emerging markets.
-        points: 3
+        points: 9
         pattern: half-measures
         rationale: |
           It shows a delayed understanding that Windows Phone cannot serve the volume market (which Nokia historically dominated). However, forking Android without Google Play Services (no Maps, no Gmail, no Play Store) creates a crippled experience. It also enrages Microsoft, your primary partner.
@@ -69,7 +69,7 @@ nodes:
           The 'Nokia X' launches to utter confusion. It runs Android apps but looks like Windows Phone. It fails to gain traction and burns crucial engineering resources.
         leadsTo: end_confused
       - text: Break the exclusivity clause. Build a flagship Android phone immediately while keeping Windows Phone. Let the market decide.
-        points: 4
+        points: 12
         pattern: breaking-the-contract
         rationale: |
           The boldest recovery move. You admit the exclusive bet was wrong. You will face a massive breach of contract lawsuit from Microsoft, and you'll lose their funding, but you might save the company's hardware division. 
@@ -82,7 +82,7 @@ nodes:
       You adopt Android. Nokia's hardware combined with the Android OS is a massive hit. You launch the "Nokia Droid" series. However, the Android market is rapidly commoditizing. Samsung is heavily outspending you in marketing, and Google is dictating more and more of the OS experience, threatening to turn you into a dumb pipe. How do you maintain margins and market share?
     options:
       - text: Double down on imaging. Build the best camera phones in the world (e.g., a 41-megapixel sensor) and charge a massive premium.
-        points: 5
+        points: 15
         pattern: hardware-moat
         rationale: |
           Hardware differentiation is incredibly hard on Android, but imaging was Nokia's historical moat and commands a real premium. By owning the absolute high-end of mobile photography, you carve out a defensible, high-margin niche that Samsung and Apple struggle to match immediately.
@@ -90,7 +90,7 @@ nodes:
           The Nokia 'PureView' Android phone launches. It becomes the default choice for creators and photography enthusiasts. Margins are strong, even if overall volume is second to Samsung.
         leadsTo: end_samsung_rival
       - text: Try to build our own app store and services layer on top of Android to capture recurring revenue, like Amazon did with Kindle.
-        points: 1
+        points: 3
         pattern: fighting-the-platform
         rationale: |
           Google will punish you. You are trying to steal the very revenue stream Google built Android to protect. Furthermore, consumers don't want a fragmented app experience or Nokia's clunky services on a premium device; they want Google Maps and the Play Store.
@@ -98,7 +98,7 @@ nodes:
           Google threatens to revoke your license for Google Play Services. You back down, but the custom software you built slows down the phones. Reviewers pan the sluggish UI.
         leadsTo: end_marginalized
       - text: Race to the bottom. Flood the emerging markets with ultra-cheap Android phones to win on sheer volume, leveraging Nokia's historical distribution network.
-        points: 2
+        points: 6
         pattern: volume-trap
         rationale: |
           Nokia's historical strength was volume, but Chinese OEMs (like Huawei and Xiaomi) are emerging with structural cost advantages you cannot match. You are fighting a price war you are mathematically destined to lose.
@@ -111,7 +111,7 @@ nodes:
       You double down on MeeGo. The Nokia N9 launches. It is gorgeous. The swipe-based UI is years ahead of its time. Tech reviewers call it a masterpiece. But three months in, the reality of the ecosystem hits: WhatsApp isn't fully supported, there is no Netflix, and game developers are ignoring it. Carriers are threatening to drop the phone. What's the play?
     options:
       - text: Build an Android emulator into MeeGo. Let users run Android apps on the N9 natively.
-        points: 3
+        points: 9
         pattern: the-emulator-bridge
         rationale: |
           A clever technical hack (used by BlackBerry later). It temporarily solves the app gap. However, emulated apps run poorly, drain the battery, and break integration with native OS features. It's a band-aid, not a cure.
@@ -119,7 +119,7 @@ nodes:
           Tech enthusiasts love it, but mainstream consumers return the phones because "Instagram crashes and kills my battery." 
         leadsTo: end_niche_survival
       - text: Pivot to Android immediately. Abandon MeeGo. The market has spoken.
-        points: 4
+        points: 12
         pattern: painful-capitulation
         rationale: |
           You wasted a year and billions of dollars, but admitting defeat early is better than dying slowly. You still have the hardware capability to make a great Android phone.
@@ -132,7 +132,7 @@ nodes:
       You broke the Microsoft contract to build an Android phone. Microsoft is suing for billions. The board is terrified. You have one quarter before cash reserves become dangerously low due to legal fees and the aborted Windows Phone supply chain. 
     options:
       - text: Sell the entire mobile division to Google. They need a hardware arm to compete with Apple.
-        points: 4
+        points: 12
         pattern: the-white-knight
         rationale: |
           Google actually bought Motorola Mobility around this time. Buying Nokia would give them unparalleled patents and hardware capability. It's a desperate exit, but it maximizes shareholder value in a crisis.
@@ -140,7 +140,7 @@ nodes:
           Google acquires Nokia's device business. You are ousted, but Nokia hardware lives on as the foundation of the Pixel line.
         leadsTo: end_google_acquisition
       - text: Fight Microsoft in court, launch the Android phone, and bet the entire company on its Q4 sales.
-        points: 1
+        points: 3
         pattern: bet-the-company
         rationale: |
           A reckless gamble. Even if the phone is a hit, the supply chain disruption and legal overhang will starve you of the capital needed to scale.

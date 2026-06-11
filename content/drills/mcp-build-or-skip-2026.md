@@ -33,7 +33,7 @@ nodes:
       Ship MCP server in Q3 or do the security features. Pick.
     options:
       - text: Ship MCP. Skip or defer the SSO/audit features. Bet on the standard.
-        points: 4
+        points: 12
         pattern: standard-bet-over-customer-ask
         rationale: |
           Bold but defensible. MCP momentum is real — adoption is
@@ -51,7 +51,7 @@ nodes:
           other waits. Net new ARR up 30% by quarter end.
         leadsTo: A-mcp-followup
       - text: Ship security features. MCP can wait until the standard is more proven.
-        points: 3
+        points: 9
         pattern: customer-ask-over-standard
         rationale: |
           The defensible "ship what they're asking for" call.
@@ -66,7 +66,7 @@ nodes:
           Mixed outcome — short-term wins, long-term cost.
         leadsTo: end-B
       - text: Hire a contractor to ship MCP in parallel. Keep the security roadmap intact.
-        points: 5
+        points: 15
         pattern: contractor-for-the-bet
         rationale: |
           The right answer. MCP is a defined surface that a
@@ -83,7 +83,7 @@ nodes:
           45% by quarter end.
         leadsTo: C-both-followup
       - text: Wait for Q4. Defer both. Q3 is for selling the existing pipeline.
-        points: 1
+        points: 3
         pattern: defer-both
         rationale: |
           The "let's plan more" instinct. Both bets are real and
@@ -104,7 +104,7 @@ nodes:
       What do you do?
     options:
       - text: Offer them a credit and a Q4 ETA on SSO. Stretch the relationship.
-        points: 4
+        points: 12
         pattern: relationship-bridge
         rationale: |
           Right balance. You're not promising what you can't
@@ -117,7 +117,7 @@ nodes:
           They sign the extension.
         leadsTo: end-A-good
       - text: Let them churn cleanly. Refer them to a competitor with SSO.
-        points: 2
+        points: 6
         pattern: prioritize-strategy-over-customer
         rationale: |
           Discipline taken too far. Losing a paying enterprise
@@ -139,7 +139,7 @@ nodes:
       pattern. Pick.
     options:
       - text: Ship the deepest MCP integration in the category. Become the reference CRM for AI agents.
-        points: 5
+        points: 15
         pattern: depth-over-breadth
         rationale: |
           The right move. The AI-agent integration depth is
@@ -154,7 +154,7 @@ nodes:
           which drives compounding inbound for 18 months.
         leadsTo: end-C-great
       - text: Stay at MCP parity. Don't over-invest in a category that's still uncertain.
-        points: 3
+        points: 9
         pattern: parity-not-depth
         rationale: |
           Defensible hedge. Parity protects against a standard

@@ -36,7 +36,7 @@ nodes:
           You place the massive order. China spins up the assembly lines. But you have committed hundreds of millions of dollars with zero data on actual product retention.
         leadsTo: massive_order
       - text: "Keep supply tightly constrained. Slowly expand the Snapbots. Do not place massive bulk orders; scale manufacturing linearly based only on active user retention metrics."
-        points: 5
+        points: 15
         pattern: disciplined-scaling
         rationale: |
           Hype is a customer acquisition strategy, not a business model. Hardware requires careful inventory management. By tying manufacturing to retention (do people keep using them after week 2?), you protect the balance sheet while keeping the brand premium.
@@ -44,7 +44,7 @@ nodes:
           You face intense pressure from the board for "leaving money on the table," but you keep inventory lean. When the hype cools down, you aren't caught holding the bag.
         leadsTo: constrained_supply
       - text: "Pivot to traditional retail. Stop the Snapbots, sign an exclusive deal with Best Buy and Target to put them on shelves nationwide for the holidays."
-        points: 1
+        points: 3
         pattern: killing-the-magic
         rationale: |
           You kill the exact thing that made the product desirable: the exclusivity and the experience. Putting Spectacles next to generic phone cases in Best Buy instantly commoditizes the product before it has established a durable brand identity.
@@ -61,7 +61,7 @@ nodes:
       How do you iterate on the product strategy for V2?
     options:
       - text: "Halt V2 hardware development. Deeply research why users abandon the hardware. Shift resources to AR software lenses until you find a killer daily use case."
-        points: 5
+        points: 15
         pattern: reality-check
         rationale: |
           A cool toy isn't a sustained business. You have hard data that the core utility isn't sticky. Building V2 with better specs (waterproofing, higher res) won't fix a lack of fundamental product-market fit. Pivoting to software preserves cash and aligns with Snap's core strengths.
@@ -69,7 +69,7 @@ nodes:
           Spectacles remain a niche experiment. The company saves hundreds of millions. The AR team pivots to mobile phone lenses, which become a massive revenue driver.
         leadsTo: halt_research
       - text: "Focus V2 entirely on software integration. Build better editing tools, allow export to Instagram and YouTube, and add filters."
-        points: 1
+        points: 3
         pattern: treating-the-symptom
         rationale: |
           If the core action (putting the glasses on and recording a moment) isn't a daily habit, making the export process slightly better won't save the product. You are polishing a flow that users aren't entering.
@@ -94,7 +94,7 @@ nodes:
       The warehouses in California are stacked to the ceiling with unsold Spectacles. The CFO is panicking. You are facing a catastrophic inventory write-down right after your IPO. What is your next move?
     options:
       - text: "Take the medicine. Slash prices by 50%, push them into discount retailers, and announce a massive write-down immediately."
-        points: 3
+        points: 9
         pattern: clearing-the-deck
         rationale: |
           Accept the loss and clear the inventory. It hurts the brand deeply and will cause the stock to tank, but it stops the bleeding of warehousing costs and rips the band-aid off so the company can reset.
@@ -110,7 +110,7 @@ nodes:
           The ad campaign costs $20M and barely moves the needle. You still have the inventory, but now you've burned even more cash. The CEO is furious.
         leadsTo: hold_price
       - text: "Give them away for free to every new Snapchat user in target demographics as a loss-leader to drive app engagement."
-        points: 1
+        points: 3
         pattern: desperate-giveaway
         rationale: |
           You are treating a $130 piece of hardware like a digital sticker. It devalues the brand entirely and conditions the market to never pay for Snap hardware again. Plus, shipping 800,000 free items carries massive logistical costs.

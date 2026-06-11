@@ -31,7 +31,7 @@ nodes:
       The category just got commoditized. Pick the move.
     options:
       - text: 'Pivot vertical: pick a regulated industry (legal sales, medical sales, financial services sales) and rebuild for it.'
-        points: 5
+        points: 15
         pattern: vertical-where-platforms-cant-fit
         rationale: |
           The right move when horizontal got commoditized. ChatGPT Agent
@@ -50,7 +50,7 @@ nodes:
           much higher LTV per customer.
         leadsTo: A-vertical-followup
       - text: Sell now to an acquirer. The standalone window is closing.
-        points: 3
+        points: 9
         pattern: graceful-exit
         rationale: |
           Defensible. AI startups whose moats just evaporated can still
@@ -67,7 +67,7 @@ nodes:
           return, you move on to the next thing. Acceptable outcome.
         leadsTo: end-B
       - text: Become a ChatGPT plugin / integration. Position as 'the best ChatGPT integration for sales workflows.'
-        points: 3
+        points: 9
         pattern: ride-the-platform
         rationale: |
           Defensive integration play. You stop competing with ChatGPT
@@ -84,7 +84,7 @@ nodes:
           You're never fully comfortable.
         leadsTo: end-C
       - text: Pivot to be the AI sales platform for non-English markets — Indian SMB, LATAM, SEA — where ChatGPT Agent quality is weaker.
-        points: 4
+        points: 12
         pattern: geographic-vertical
         rationale: |
           Underrated angle. Foundation models still have meaningful
@@ -109,7 +109,7 @@ nodes:
       the playbook in a second vertical (medical sales).
     options:
       - text: Go deeper in legal-adjacent verticals. Add audit, compliance, regulatory consulting.
-        points: 5
+        points: 15
         pattern: dominate-one-region-first
         rationale: |
           The right call until you're #1 in your first vertical. Legal
@@ -126,7 +126,7 @@ nodes:
           strong multiples.
         leadsTo: end-A-great
       - text: Replicate to medical sales now. The playbook is portable; the new vertical doubles the TAM.
-        points: 3
+        points: 9
         pattern: parallel-vertical-too-early
         rationale: |
           Defensible but premature. Two verticals at your stage means

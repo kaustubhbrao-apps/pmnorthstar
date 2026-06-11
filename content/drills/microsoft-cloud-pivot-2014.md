@@ -41,7 +41,7 @@ nodes:
       Windows is the religion. The market has moved. Pick the move.
     options:
       - text: Stay focused on Windows. The desktop install base is still 1.5B users. Defend the home turf.
-        points: 1
+        points: 3
         pattern: defend-the-shrinking-fortress
         rationale: |
           The predecessor's strategy, dressed up as discipline. The
@@ -58,7 +58,7 @@ nodes:
           replaces you.
         leadsTo: end-A
       - text: Pivot to cloud-first. Office on every platform, including iOS and Android. Open-source the developer stack. Compete with AWS aggressively.
-        points: 5
+        points: 15
         pattern: cannibalize-the-religion
         rationale: |
           The bet that defines the next decade. You're saying: the
@@ -80,7 +80,7 @@ nodes:
           decade.
         leadsTo: B-pivot-followup
       - text: Pick one new bet (cloud OR mobile OR cross-platform Office). Don't try to fight on all three fronts.
-        points: 3
+        points: 9
         pattern: pivot-but-pick-one
         rationale: |
           Defensible discipline. You can argue that fighting on three
@@ -97,7 +97,7 @@ nodes:
           Google. The company is healthier but not transformed.
         leadsTo: end-C
       - text: Acquire a major competitor (a social network, a developer tool, an enterprise platform). Buy your way into a new identity.
-        points: 2
+        points: 6
         pattern: acquire-instead-of-build
         rationale: |
           Tempting but rarely sufficient. Major acquisitions can
@@ -124,7 +124,7 @@ nodes:
       partner, not a subsidiary.
     options:
       - text: 'Invest the $1B with strict integration: their tech becomes part of your cloud. Build a moat around the cloud + AI combination.'
-        points: 5
+        points: 15
         pattern: strategic-investment-over-acquisition
         rationale: |
           The right structure for an emerging-capability bet. Full
@@ -142,7 +142,7 @@ nodes:
           category in tech. Your market cap crosses $2T.
         leadsTo: end-B-great
       - text: Acquire them fully. Bring the lab in-house. Control the IP completely.
-        points: 3
+        points: 9
         pattern: full-acquisition
         rationale: |
           Cleaner ownership, riskier execution. Full acquisition gives
@@ -159,7 +159,7 @@ nodes:
           would have produced.
         leadsTo: end-B-mixed
       - text: Pass. Build AI internally instead. Don't depend on an external lab.
-        points: 1
+        points: 3
         pattern: not-invented-here
         rationale: |
           The mistake your predecessor would have made. Building AI

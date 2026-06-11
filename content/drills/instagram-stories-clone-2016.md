@@ -37,7 +37,7 @@ nodes:
       What is your call?
     options:
       - text: Clone Snapchat's format exactly. Call it Stories. Users already know how it works.
-        points: 5
+        points: 10
         pattern: adopt-proven-format
         rationale: |
           The correct call. A new format would require re-educating half a billion users.
@@ -57,7 +57,7 @@ nodes:
           The design team is thrilled. You spend 5 months perfecting the 'Moments' UI. Meanwhile, Snapchat's daily active users grow by another 30%.
         leadsTo: invent_format_launch
       - text: Acquire a smaller ephemeral messaging app and integrate their team to build a hybrid solution.
-        points: 2
+        points: 4
         pattern: outsourced-innovation
         rationale: |
           A hedge that fails to solve the immediate problem. M&A takes time—months to negotiate, months to integrate. 
@@ -77,7 +77,7 @@ nodes:
       You have an all-hands meeting in 10 minutes. How do you frame this internally to rally the company?
     options:
       - text: 'Tell the team: "Snapchat didn''t invent ephemeral video, they just popularized it. Just like Facebook didn''t invent the feed. We are adopting a format, not stealing a feature."'
-        points: 5
+        points: 10
         pattern: format-vs-feature-framing
         rationale: |
           The masterstroke of internal communications. Framing it as a 'format' rather than a 'feature' changes the entire narrative. 
@@ -86,7 +86,7 @@ nodes:
           The tension in the room dissipates. The framing makes sense to the engineers and mollifies the designers. The team aligns behind the launch.
         leadsTo: placement_decision
       - text: 'Tell the team: "We are at war. If we don''t do this, Snapchat kills us. Suck it up and build. Survival is more important than originality."'
-        points: 2
+        points: 4
         pattern: wartime-ceo-brute-force
         rationale: |
           While factually true, wartime CEO mode on a highly creative, aesthetic-driven team can cause massive attrition. 
@@ -95,7 +95,7 @@ nodes:
           The team executes, but morale stays in the gutter. Two lead designers quit the next week.
         leadsTo: placement_decision_low_morale
       - text: 'Ignore the press. Tell the team to focus on the data: "Let the users decide if they like it. The numbers will prove us right."'
-        points: 1
+        points: 2
         pattern: abdicate-narrative
         rationale: |
           You fail to address the emotional core of the team's concern. Engineers and designers at Instagram care about their craft and reputation. 
@@ -113,7 +113,7 @@ nodes:
       Your board (and Mark Zuckerberg) is furious. You are burning time. What do you do?
     options:
       - text: Swallow your pride, kill Moments publicly, and immediately pivot to cloning Stories exactly.
-        points: 4
+        points: 8
         pattern: painful-course-correction
         rationale: |
           The hardest thing for a founder to do: admit a massive, public mistake and reverse course. 
@@ -138,7 +138,7 @@ nodes:
       Snapchat is now firmly entrenched. Zuckerberg calls you into his office. "This isn't working. We need a real answer to Snapchat, or Facebook is going to build it into the blue app instead."
     options:
       - text: Tell Zuck to give you 8 weeks to build an exact clone of Snapchat Stories.
-        points: 3
+        points: 6
         pattern: forced-capitulation
         rationale: |
           You finally arrive at the right answer, but only after being backed into a corner. 
@@ -164,7 +164,7 @@ nodes:
       The design team wants to put Stories in a separate tab to keep the main feed "pure." The growth team wants them at the very top of the main feed, above the first post. The engineering team warns that putting them at the top of the feed will slow down app load times by 400ms.
     options:
       - text: Put them at the very top of the main feed. Front and center. Take the 400ms performance hit.
-        points: 5
+        points: 10
         pattern: leverage-core-distribution
         rationale: |
           The defining product decision of the decade. If you hide a new behavior in a tab, it will die. 
@@ -182,7 +182,7 @@ nodes:
           Users open the app, scroll the feed, and leave. Only 5% of users ever tap over to the Stories tab.
         leadsTo: end_slow_death
       - text: Inject them halfway down the feed, interspersed with regular posts.
-        points: 1
+        points: 2
         pattern: compromise-placement
         rationale: |
           A muddy compromise. It interrupts the scrolling flow of the grid and fails to establish Stories as a distinct, primary consumption mode. 
@@ -198,7 +198,7 @@ nodes:
       Now, placement. Where does it go? The design team is begging you to at least keep it off the main feed so they don't have to look at the "ugly circles" every day.
     options:
       - text: Put them at the very top of the main feed.
-        points: 4
+        points: 8
         pattern: ruthless-distribution
         rationale: |
           Correct placement, even if the team is unhappy. The product strategy must survive the organizational friction.
@@ -221,7 +221,7 @@ nodes:
       Snapchat has massive momentum. You need to launch this perfectly. Where do you place it?
     options:
       - text: Top of the main feed.
-        points: 3
+        points: 6
         pattern: late-but-loud
         rationale: |
           You are late, so you must be loud. You have to use your absolute best distribution channel to catch up.
