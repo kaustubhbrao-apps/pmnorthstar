@@ -9,12 +9,18 @@ interface AuthModalProps {
   // full-page redirect (start → consent → callback), so the modal never
   // invokes this directly — the page re-reads /api/auth/me on return.
   onSuccess?: (user: { id: string; name: string; email: string }) => void;
+  headline?: string;
+  subhead?: string;
+  secondaryAction?: {
+    label: string;
+    onClick: () => void;
+  };
 }
 
 // SSO-only. Email/password auth was removed: the knowledge-based reset
 // (email + name) could plant a password on any account — including
 // Google-only ones — and take it over. Google is now the single path.
-export function AuthModal({ onClose }: AuthModalProps) {
+export function AuthModal({ onClose, headline = "Sign in to northstar", subhead = "Sign in with Google to save and like content. Optional — the whole library is free either way.", secondaryAction }: AuthModalProps) {
   // Capture the parent URL's ?next= after mount so we return the user
   // where they were. Read in an effect (not during render) to avoid a
   // hydration mismatch — undefined on the server, filled in on the client.
@@ -83,11 +89,10 @@ export function AuthModal({ onClose }: AuthModalProps) {
             className="text-2xl font-bold mb-1"
             style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
           >
-            Sign in to northstar
+            {headline}
           </h2>
-          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-            Sign in with Google to save and like content. Optional — the
-            whole library is free either way.
+          <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
+            {subhead}
           </p>
         </div>
 
@@ -123,6 +128,21 @@ export function AuthModal({ onClose }: AuthModalProps) {
           </svg>
           Continue with Google
         </a>
+
+        {secondaryAction && (
+          <button
+            onClick={() => {
+              secondaryAction.onClick();
+              onClose();
+            }}
+            className="w-full mt-3 py-2.5 rounded-xl text-sm font-semibold transition-all hover:bg-[var(--hover-bg)]"
+            style={{
+              color: "var(--text-muted)",
+            }}
+          >
+            {secondaryAction.label}
+          </button>
+        )}
 
         <p
           className="text-xs text-center mt-5"

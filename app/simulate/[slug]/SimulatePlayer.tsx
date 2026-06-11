@@ -387,10 +387,19 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       )}
 
       {showAuthModal && (
-        <AuthModal
+        <AuthModal 
           onClose={() => {
             setShowAuthModal(false);
             setPendingAction(null);
+          }}
+          headline="Sign in for points"
+          subhead="Sign in with Google to get your score on the leaderboard. Or, you can play anonymously without earning points."
+          secondaryAction={{
+            label: "Play without points",
+            onClick: () => {
+              setShowAuthModal(false);
+              startDrillLogic();
+            }
           }}
           onSuccess={() => {
             setShowAuthModal(false);
