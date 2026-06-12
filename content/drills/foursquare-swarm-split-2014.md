@@ -99,7 +99,7 @@ nodes:
           You merge them back. The user base is alienated by the flip-flop, but you stop
           the bleeding. Check-ins slowly recover, but you've lost 6 months of momentum to
           Yelp.
-        leadsTo: end_reversal
+        leadsTo: node_split_3
       - text: "Hold the line. Use aggressive push notifications and cross-app promos to force users to adopt the two-app paradigm."
         points: 0
         pattern: forcing-user-behavior
@@ -109,6 +109,40 @@ nodes:
         consequence: |
           Users turn off push notifications and delete the apps. Foursquare search dies
           without fresh data. 
+        leadsTo: node_split_3_alt
+  node_split_3:
+    dimension: product
+    prompt: |
+      You reversed the split. Users are back, but they are wary. Yelp has launched a massive gamification update to steal your core users.
+    options:
+      - text: "Double down on what made Foursquare magical: local discovery and deep, weird badges."
+        points: 10
+        pattern: return-to-roots
+        rationale: Remind them why they loved you in the first place.
+        consequence: The core community stabilizes, though mainstream growth remains sluggish.
+        leadsTo: end_reversal
+      - text: "Pivot to focus entirely on deals and coupons to win users back."
+        points: 0
+        pattern: race-to-bottom
+        rationale: Deals attract mercenaries, not loyalists.
+        consequence: You bleed cash on subsidies while failing to rebuild the social graph.
+        leadsTo: end_reversal
+  node_split_3_alt:
+    dimension: founder
+    prompt: |
+      You held the line, and the apps are dead. The board wants you to resign.
+    options:
+      - text: "Resign and let the board bring in a turnaround CEO."
+        points: 5
+        pattern: honorable-exit
+        rationale: Sometimes stepping aside is the best move for the company's survival.
+        consequence: A new CEO comes in and immediately merges the apps, but it's too late.
+        leadsTo: end_irrelevance
+      - text: "Fight the board, arguing that unbundling is a 5-year play."
+        points: 0
+        pattern: delusion
+        rationale: Defending a failed strategy against all data destroys what little value is left.
+        consequence: You are fired publicly, and the company goes into a death spiral.
         leadsTo: end_irrelevance
   node_keep:
     dimension: product
@@ -131,7 +165,7 @@ nodes:
         consequence: |
           You quietly shift engineering resources to the enterprise API. The consumer app
           remains a fun game that feeds the data engine, while B2B sales explode.
-        leadsTo: end_b2b_pivot
+        leadsTo: node_keep_3
       - text: "Double down on consumer gamification. Add more badges, leaderboards, and crypto-tokens to drive even more reviews to beat Yelp."
         points: 3
         pattern: doubling-down-on-novelty
@@ -142,6 +176,40 @@ nodes:
         consequence: |
           Engagement spikes briefly for a new badge launch, but the long-term trend is
           downward. Consumers prefer Google Maps for pure utility. The app slowly bleeds out.
+        leadsTo: node_keep_3_alt
+  node_keep_3:
+    dimension: business
+    prompt: |
+      The B2B API is generating massive revenue. Now you have an acquisition offer from a major ad-tech firm.
+    options:
+      - text: "Accept the acquisition and become the location backbone of the internet."
+        points: 10
+        pattern: secure-the-win
+        rationale: A fantastic exit that realizes the value of the pivot.
+        consequence: You achieve a multi-billion dollar exit.
+        leadsTo: end_b2b_pivot
+      - text: "Reject the offer and try to build an ad-tech network yourself."
+        points: 5
+        pattern: overreach
+        rationale: Moving from API provider to ad network is a massive leap in complexity.
+        consequence: Growth slows as you struggle to build the sales infrastructure, though you survive.
+        leadsTo: end_b2b_pivot
+  node_keep_3_alt:
+    dimension: founder
+    prompt: |
+      Gamification failed to stop Yelp. Your DAU is dropping 5% month-over-month.
+    options:
+      - text: "Pivot desperately to a crypto check-in token model to pay users for data."
+        points: 0
+        pattern: desperate-incentives
+        rationale: Paying users for data rarely creates sustainable utility.
+        consequence: A brief spike from airdrop hunters, then the app dies.
+        leadsTo: end_slow_bleed
+      - text: "Admit defeat in consumer and do a late pivot to B2B."
+        points: 10
+        pattern: late-pivot
+        rationale: Better late than never, though you lost valuable time.
+        consequence: You pivot to B2B, but face stiffer competition. You survive as a smaller player.
         leadsTo: end_slow_bleed
   end_reversal:
     isOutcome: true

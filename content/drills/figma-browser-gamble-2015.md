@@ -41,7 +41,7 @@ nodes:
         pattern: Ecosystem First
         rationale: Sketch won by having great plugins. You hope developers will build the features you don't have yet. But without a core user base, no developer will build for you.
         consequence: The API is empty. Designers find Figma 'feature-poor' compared to Sketch. You've outsourced your product roadmap to a community that doesn't exist yet.
-        leadsTo: commodity_death
+        leadsTo: plugin_pivot
   scaling_the_graph:
     dimension: business
     prompt: |
@@ -54,12 +54,46 @@ nodes:
         pattern: Reducing Switching Costs
         rationale: Lowering the barrier to entry is critical. If a designer can move their entire career's work into Figma in one click, they have no reason to stay with Sketch.
         consequence: It's the tipping point. Whole agencies migrate to Figma overnight. Sketch's growth flatlines. Figma becomes the 'Default' tool for the new generation of designers.
-        leadsTo: category_dominance
+        leadsTo: scaling_the_graph_3
       - text: 'The ''Adobe War'': Launch a massive marketing campaign targeting Photoshop users with a ''Photoshop for the Web'' message.'
         points: 5
         pattern: Misaligned Competition
         rationale: Photoshop is for photo editing; Figma is for UI design. By targeting the wrong audience, you confuse your brand identity and waste your marketing budget.
         consequence: Zero conversion. Adobe users don't care about browsers. You've invited a counter-attack from a giant before you are ready.
+        leadsTo: scaling_the_graph_3_alt
+  scaling_the_graph_3:
+    dimension: product
+    prompt: |
+      You are the default tool. Now the community wants advanced prototyping, but building it will slow down core performance.
+    options:
+      - text: 'Build a lightweight, fast prototyping tool integrated seamlessly into the canvas.'
+        points: 10
+        pattern: speed-over-power
+        rationale: Keeps the core fast and handles 80% of use cases.
+        consequence: Users love the flow. InVision's market share collapses.
+        leadsTo: category_dominance
+      - text: 'Acquire a heavy, complex prototyping startup and integrate it.'
+        points: 0
+        pattern: bloatware
+        rationale: Frankenstein integration ruins performance.
+        consequence: The browser struggles with the memory load. Users complain about lag.
+        leadsTo: category_dominance
+  scaling_the_graph_3_alt:
+    dimension: founder
+    prompt: |
+      Adobe responds to your marketing war by bundling Adobe XD for free with Creative Cloud.
+    options:
+      - text: 'Lean into community: sponsor hackathons, give Figma away free to students.'
+        points: 10
+        pattern: grassroots-defense
+        rationale: Adobe has distribution, you need bottom-up love.
+        consequence: You survive the assault through sheer user preference.
+        leadsTo: market_loss
+      - text: 'Try to fight a top-down enterprise sales war against Adobe.'
+        points: 0
+        pattern: suicide-mission
+        rationale: They have a 20-year head start on enterprise sales.
+        consequence: You get crushed in procurement.
         leadsTo: market_loss
   market_stagnation:
     dimension: business
@@ -73,12 +107,97 @@ nodes:
         pattern: Land and Expand
         rationale: If you can't win on features, win on distribution. Capture the students and freelancers today, and they will bring Figma into their companies tomorrow.
         consequence: It works. A generation of students learns design on Figma. As they enter the workforce, they refuse to use anything else. You've built a 'Bottom-Up' sales machine.
-        leadsTo: category_dominance
+        leadsTo: market_stagnation_3
       - text: 'Enterprise Pivot: Build ''Design Systems'' features specifically for companies with 1,000+ designers.'
         points: 15
         pattern: Top-Down Sales
         rationale: Chases the big checks. But the product isn't stable enough for enterprise scale yet. You over-promise and under-deliver.
         consequence: High churn. Enterprise leads find the tool 'too early.' You've lost your agility trying to please corporate IT departments.
+        leadsTo: market_stagnation_3_alt
+  market_stagnation_3:
+    dimension: product
+    prompt: |
+      The bottom-up strategy is working. Students love it. But power users say your vector networks are still too basic compared to Illustrator.
+    options:
+      - text: 'Rewrite the vector engine to support complex, non-destructive boolean operations.'
+        points: 15
+        pattern: continuous-technical-investment
+        rationale: You must eventually achieve parity on the hard stuff.
+        consequence: It takes a year, but power users finally migrate.
+        leadsTo: category_dominance
+      - text: 'Ignore them. Focus on adding more marketing templates for casual users.'
+        points: 0
+        pattern: moving-downmarket
+        rationale: You abandon the "Pro" in Pro tool. Canva beats you here.
+        consequence: You get sandwiched between Sketch (Pro) and Canva (Casual).
+        leadsTo: niche_survivor
+  market_stagnation_3_alt:
+    dimension: founder
+    prompt: |
+      Enterprise churn is high. You're burning through your Series B.
+    options:
+      - text: 'Admit defeat in Enterprise for now. Return to focusing on the core editor experience.'
+        points: 10
+        pattern: humble-reset
+        rationale: Fix the product before selling the dream.
+        consequence: You stabilize the company and begin slow, organic growth again.
+        leadsTo: niche_survivor
+      - text: 'Double down on enterprise sales. Hire a massive sales team.'
+        points: 0
+        pattern: premature-scaling
+        rationale: Pouring gas on a leaky bucket.
+        consequence: You run out of money and are forced into a fire sale.
+        leadsTo: commodity_death
+  plugin_pivot:
+    dimension: product
+    prompt: |
+      The Plugin API launched to crickets. No one is building for a platform with no users.
+    options:
+      - text: 'Pay developers to build the top 10 most requested Sketch plugins on Figma.'
+        points: 10
+        pattern: seeding-the-ecosystem
+        rationale: You have to prime the pump manually.
+        consequence: You get some plugins, but it's expensive and artificial.
+        leadsTo: plugin_pivot_3
+      - text: 'Abandon the API and finally build Multiplayer.'
+        points: 5
+        pattern: late-pivot
+        rationale: Better late than never.
+        consequence: You are two years behind schedule.
+        leadsTo: plugin_pivot_3_alt
+  plugin_pivot_3:
+    dimension: business
+    prompt: |
+      You have some subsidized plugins, but growth is anemic. Adobe XD just launched.
+    options:
+      - text: 'Pivot to become a developer-handoff tool (like Zeplin).'
+        points: 5
+        pattern: shrinking-the-vision
+        rationale: You abandon the design market and settle for a smaller adjacent market.
+        consequence: You survive but never become a unicorn.
+        leadsTo: niche_survivor
+      - text: 'Stay the course as a primary design tool.'
+        points: 0
+        pattern: stubborn-failure
+        rationale: You have no wedge.
+        consequence: The market ignores you.
+        leadsTo: commodity_death
+  plugin_pivot_3_alt:
+    dimension: founder
+    prompt: |
+      You are building Multiplayer, but your lead engineer burns out because the C++ engine is a mess.
+    options:
+      - text: 'Rewrite the engine in WebAssembly.'
+        points: 10
+        pattern: tech-reset
+        rationale: The right technical foundation is required.
+        consequence: It takes 18 months, but the engine is finally stable.
+        leadsTo: niche_survivor
+      - text: 'Patch it up and launch anyway.'
+        points: 0
+        pattern: technical-debt-collapse
+        rationale: It will crash under load.
+        consequence: The launch is a disaster.
         leadsTo: commodity_death
   category_dominance:
     isOutcome: true

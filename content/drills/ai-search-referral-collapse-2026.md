@@ -33,189 +33,401 @@ nodes:
         points: 12
         pattern: rebuild-for-the-new-channel
         rationale: |
-          The defensible adaptation. AI engines preferentially cite content
-          with clean structure, declared author E-E-A-T, and citation-
-          ready formatting. Rebuilding the 400 pages over 8-12 weeks
-          repositions you to be the source AI cites. Cost: real engineering
-          and content work. Upside: AI-citation traffic compounds as more
-          users move to AI search.
+          The defensible adaptation.
         consequence: |
-          You ship the rebuild in 10 weeks. AI-driven mentions go from 8%
-          to 24% of pipeline by Q4. Organic search keeps shrinking but
-          AI citation grows enough to flatten the net.
+          You ship the rebuild in 10 weeks.
         leadsTo: A-rebuild-followup
       - text: Convert the audience into a newsletter. Email is a channel you own, search is one you rent.
         points: 15
         pattern: own-the-distribution
         rationale: |
-          The structural fix. Search traffic is rented from Google; email
-          subscribers are owned. Convert the highest-intent ~5% of
-          current visitors into newsletter readers, and the channel
-          shift becomes a redistribution problem, not a survival problem.
-          Email also enables monetization beyond inbound (sponsorships,
-          paid tiers, courses) that search-driven sites can't access.
+          The structural fix.
         consequence: |
-          You ship a newsletter capture flow within 2 weeks. Subscribers
-          grow from 4K to 28K in 6 months. The newsletter generates
-          ~$200K ARR from sponsorships within the first year, fully
-          replacing the lost search revenue.
+          You ship a newsletter capture flow within 2 weeks.
         leadsTo: B-newsletter-followup
       - text: 'Double down on paid: aggressive Google Ads + LinkedIn to compensate for lost organic.'
         points: 3
         pattern: pay-for-shrinking-channel
         rationale: |
-          The worst combination — paying for what used to be free on a
-          channel that's being restructured. Paid CACs on AI-Overview-
-          affected keywords are 40-60% higher than 18 months ago because
-          fewer impressions go to ads. You're paying premium prices for
-          declining attention with worse unit economics.
+          The worst combination.
         consequence: |
-          Paid CAC jumps another 30%. Pipeline stabilizes but margin
-          collapses. The board notices the burn rate. Layoffs come in Q4.
-        leadsTo: end-C
+          Paid CAC jumps another 30%.
+        leadsTo: C-paid-2
       - text: Build a product. Pivot from content business to software business. Use the audience to seed product launch.
         points: 9
         pattern: pivot-content-to-product
         rationale: |
-          Bold but high-risk. Content businesses with strong audiences
-          have built successful product businesses (Stratechery, Lenny's,
-          MKBHD's Studio). But the execution is operationally different:
-          you're now competing in software not in editorial. Without a
-          product-side co-founder or strong PM hire, the pivot tends to
-          fail. Right move if you have the team; wrong if you're
-          improvising.
+          Bold but high-risk.
         consequence: |
-          You spend 9 months building the product. It ships to mixed
-          reception. The content business decays in parallel because
-          attention split. Outcome depends entirely on product quality
-          you can't yet judge.
-        leadsTo: end-D
+          You spend 9 months building the product.
+        leadsTo: D-product-2
+
   A-rebuild-followup:
     dimension: product
     prompt: |
-      The rebuild is mid-flight. ~150 pages restructured. AI citations
-      are starting to show up. A new question: should you publish an
-      annual industry benchmark / dataset to become the definitive
-      citation source for your category?
+      The rebuild is mid-flight. ~150 pages restructured. AI citations are starting to show up. Should you publish an annual industry benchmark?
     options:
       - text: Yes. Publish the benchmark, make it free + downloadable, structure for citation.
         points: 15
         pattern: citation-magnet
         rationale: |
-          Asymmetric long-term play. A well-executed industry benchmark
-          becomes the citation source for every AI search query in your
-          category for years. One-time research + publication cost,
-          compounding citations across every AI model. Cheaper per
-          impression than 400 SEO pages.
+          Asymmetric long-term play.
         consequence: |
-          The benchmark publishes in November. Within 90 days it's cited
-          by Perplexity, ChatGPT, and Claude for the top 8 queries in
-          your category. AI-driven pipeline doubles. The benchmark
-          becomes the company's most-quoted asset.
-        leadsTo: end-A-great
+          The benchmark publishes in November.
+        leadsTo: A-benchmark-3
       - text: Stick to the page rebuild. Don't over-invest in any single asset.
         points: 9
         pattern: incremental-only
         rationale: |
-          Defensible discipline. Marginal pages add steady value but don't
-          compound the way a definitive benchmark does. You'd get steady
-          gains without the breakout asset.
+          Defensible discipline.
         consequence: |
-          Steady gains on AI search but no breakout moment. The
-          competitor who published a benchmark captures the
-          category citation share you could have had.
-        leadsTo: end-A-good
+          Steady gains on AI search but no breakout moment.
+        leadsTo: A-rebuild-3
+
+  A-benchmark-3:
+    dimension: business
+    prompt: |
+      The benchmark is a huge hit and cited everywhere. Competitors are copying it.
+    options:
+      - text: Lock next year's benchmark behind an email wall.
+        points: 6
+        pattern: gating-growth
+        rationale: |
+          You lose the AI citations if it's gated.
+        consequence: |
+          AI engines drop the citation.
+        leadsTo: end-A-ben-gated
+      - text: Keep it free, monetize via high-ticket sponsorships inside the PDF.
+        points: 15
+        pattern: monetize-attention
+        rationale: |
+          Preserves the citation magnet while generating revenue.
+        consequence: |
+          You make $150K on the next report.
+        leadsTo: end-A-ben-spon
+
+  A-rebuild-3:
+    dimension: product
+    prompt: |
+      You finished all 400 pages. Traffic is stable but not growing.
+    options:
+      - text: Start churning out AI-generated glossary pages to game the engine.
+        points: 3
+        pattern: low-quality-spam
+        rationale: |
+          AI engines penalize this heavily now.
+        consequence: |
+          You get deranked across the board.
+        leadsTo: end-A-reb-spam
+      - text: Move on to deep, original interviews that AI can't synthesize easily.
+        points: 12
+        pattern: un-synthesizable-content
+        rationale: |
+          A strong moat against AI summaries.
+        consequence: |
+          Traffic begins to grow again slowly.
+        leadsTo: end-A-reb-interviews
+
   B-newsletter-followup:
     dimension: business
     prompt: |
-      28K subscribers, 6 months in. Open rates ~38%, click rates ~9%.
-      You can monetize three ways. Pick the path.
+      28K subscribers, 6 months in. Open rates ~38%, click rates ~9%. You can monetize three ways. Pick the path.
     options:
-      - text: Free newsletter + paid 'pro' tier with deep analysis ($15/mo). Build a Substack-style subscription business.
+      - text: Free newsletter + paid 'pro' tier with deep analysis ($15/mo).
         points: 15
         pattern: free-plus-paid-tiers
         rationale: |
-          The canonical content business model. Free tier maximizes
-          subscriber growth and ad/sponsorship revenue; paid tier
-          captures willingness-to-pay from the highest-engagement
-          subscribers. Both tiers reinforce each other — free promotes
-          paid, paid funds the writing that powers free.
+          The canonical content business model.
         consequence: |
-          Pro tier launches with 4% conversion. ~1,100 paying subscribers
-          at $15 = $200K ARR. Free tier keeps growing through the
-          social proof of the paid tier ("the newsletter that has 1,000
-          paying readers").
-        leadsTo: end-B-great
+          Pro tier launches with 4% conversion.
+        leadsTo: B-paid-3
       - text: Free newsletter funded entirely by sponsorships ($5-15K per drop).
         points: 12
         pattern: ad-funded-only
         rationale: |
-          Cleaner business model — no paywall complexity, faster
-          revenue ramp because sponsorships start immediately. The
-          tradeoff: you cap revenue at sponsorship saturation
-          (~$500K-$1M ARR for a niche B2B newsletter), and the editorial
-          starts to be shaped by what sponsors will pay for.
+          Cleaner business model.
         consequence: |
-          ARR hits $400K within 18 months. Editorial leans toward
-          sponsor-friendly content. Subscriber growth flattens because
-          the perceived value cap is visible.
-        leadsTo: end-B-good
+          ARR hits $400K within 18 months.
+        leadsTo: B-sponsorship-3
       - text: Free newsletter, eventually upsell to a paid SaaS product.
         points: 9
         pattern: newsletter-as-funnel
         rationale: |
-          The Lenny's Rachitsky path — newsletter as top-of-funnel for
-          a paid course or community or job board. Works if the audience
-          is high-intent and you ship the product before the audience
-          churns. Failure mode: the product never ships and the
-          newsletter is unmonetized.
+          The Lenny's Rachitsky path.
         consequence: |
           Newsletter grows but you don't ship the product in year one.
-          Audience starts to wonder when monetization is coming. Some
-          churn.
-        leadsTo: end-B-mediocre
-  end-A-great:
+        leadsTo: B-funnel-3
+
+  B-paid-3:
+    dimension: founder
+    prompt: |
+      The paid tier hits $200K ARR. Readers are demanding more community features.
+    options:
+      - text: Launch a private Slack/Discord.
+        points: 12
+        pattern: community-retention
+        rationale: |
+          High retention but massive moderation overhead.
+        consequence: |
+          Churn drops, but you are now a community manager.
+        leadsTo: end-B-paid-discord
+      - text: Ignore community requests, focus purely on better writing.
+        points: 9
+        pattern: pure-editorial
+        rationale: |
+          Keeps the team lean.
+        consequence: |
+          Growth is steady, margins stay high.
+        leadsTo: end-B-paid-write
+
+  B-sponsorship-3:
+    dimension: business
+    prompt: |
+      Sponsors are asking for dedicated "partner emails" to your list.
+    options:
+      - text: Allow them, charge 3x the normal rate.
+        points: 6
+        pattern: burn-the-list
+        rationale: |
+          Short term cash, long term list fatigue.
+        consequence: |
+          Unsubscribes spike.
+        leadsTo: end-B-spon-burn
+      - text: Refuse, stick to native inserts only.
+        points: 15
+        pattern: protect-the-reader
+        rationale: |
+          Trust is the only asset.
+        consequence: |
+          Sponsors respect it, readers stay.
+        leadsTo: end-B-spon-protect
+
+  B-funnel-3:
+    dimension: product
+    prompt: |
+      You finally ship the SaaS product in Year 2.
+    options:
+      - text: Hard-sell it to the list for 4 straight weeks.
+        points: 6
+        pattern: aggressive-upsell
+        rationale: |
+          You alienate the free readers.
+        consequence: |
+          A few sales, huge churn.
+        leadsTo: end-B-fun-hard
+      - text: Weave it naturally into case studies over 6 months.
+        points: 15
+        pattern: native-integration
+        rationale: |
+          Show, don't tell.
+        consequence: |
+          Steady conversions and high trust.
+        leadsTo: end-B-fun-soft
+
+  C-paid-2:
+    dimension: business
+    prompt: |
+      Paid CAC jumps another 30%. Pipeline stabilizes but margin collapses. The board notices the burn rate.
+    options:
+      - text: Try to raise another round to fund the CAC.
+        points: 3
+        pattern: delay-the-inevitable
+        rationale: |
+          Investors won't fund a leaky bucket.
+        consequence: |
+          You fail to raise and face a cash crisis.
+        leadsTo: C-raise-3
+      - text: Slash the paid budget and cut staff to reach default alive.
+        points: 12
+        pattern: cut-burn
+        rationale: |
+          Painful but necessary.
+        consequence: |
+          You do layoffs but survive.
+        leadsTo: C-cut-3
+
+  C-raise-3:
+    dimension: founder
+    prompt: |
+      The cash crisis is here. You have 3 months of runway.
+    options:
+      - text: Take a toxic down-round with heavy liquidation preferences.
+        points: 6
+        pattern: toxic-term-sheet
+        rationale: |
+          You survive but the cap table is ruined.
+        consequence: |
+          You lose control of the company.
+        leadsTo: end-C-raise-toxic
+      - text: Shut down the company cleanly.
+        points: 9
+        pattern: graceful-exit
+        rationale: |
+          Sometimes it's over.
+        consequence: |
+          You close up shop and return what's left.
+        leadsTo: end-C-raise-shut
+
+  C-cut-3:
+    dimension: product
+    prompt: |
+      You are default alive but growth is zero.
+    options:
+      - text: Attempt a slow, bootstrapped pivot to a new channel.
+        points: 12
+        pattern: slow-rebuild
+        rationale: |
+          Hardest path but possible.
+        consequence: |
+          It takes 2 years, but you recover.
+        leadsTo: end-C-cut-rebuild
+      - text: Sell the asset for parts to a private equity firm.
+        points: 9
+        pattern: asset-sale
+        rationale: |
+          Gets you out of the stagnation.
+        consequence: |
+          You sell for 1x ARR.
+        leadsTo: end-C-cut-sell
+
+  D-product-2:
+    dimension: product
+    prompt: |
+      You spend 9 months building the product. It ships to mixed reception. The content business decays in parallel.
+    options:
+      - text: Double down on the product, abandon the content site entirely.
+        points: 6
+        pattern: burn-the-boats
+        rationale: |
+          You kill your only distribution advantage.
+        consequence: |
+          The product has no top-of-funnel and stalls.
+        leadsTo: D-abandon-3
+      - text: Try to revive the content site while iterating the product slowly.
+        points: 9
+        pattern: split-focus
+        rationale: |
+          You are now doing two things poorly.
+        consequence: |
+          Team burnout accelerates.
+        leadsTo: D-revive-3
+
+  D-abandon-3:
+    dimension: business
+    prompt: |
+      The product stalls without the content funnel.
+    options:
+      - text: Hire a massive outbound sales team.
+        points: 3
+        pattern: brute-force
+        rationale: |
+          You have no product-market fit.
+        consequence: |
+          Sales team fails to hit quota, company folds.
+        leadsTo: end-D-aband-sales
+      - text: Try to sell the product IP.
+        points: 6
+        pattern: salvage-value
+        rationale: |
+          Better than zero.
+        consequence: |
+          You get a tiny acquihire.
+        leadsTo: end-D-aband-ip
+
+  D-revive-3:
+    dimension: founder
+    prompt: |
+      The team is burning out trying to maintain the content site and the software product.
+    options:
+      - text: Split the company into two separate entities.
+        points: 3
+        pattern: complexity-trap
+        rationale: |
+          Legal and operational nightmare.
+        consequence: |
+          Both entities die in a mess of paperwork.
+        leadsTo: end-D-rev-split
+      - text: Sell the content site to fund the software product.
+        points: 12
+        pattern: focus-via-divestment
+        rationale: |
+          Smart move to force focus.
+        consequence: |
+          You get $1M to focus purely on software.
+        leadsTo: end-D-rev-sell
+
+  end-A-ben-gated:
     isOutcome: true
     prompt: |
-      The rebuild + benchmark combination repositioned you for the
-      AI-search era. Pipeline recovered and grew. The company stayed in
-      the content business but on a new distribution channel.
-  end-A-good:
+      Gating the benchmark killed its citation value. You gained 2,000 emails but lost 200,000 impressions.
+  end-A-ben-spon:
     isOutcome: true
     prompt: |
-      Solid recovery without breakout. The rebuild worked but you
-      forfeited the citation-magnet differentiator to a competitor.
-  end-B-great:
+      The free benchmark became a revenue engine and your strongest SEO/AEO moat. Brilliant.
+  end-A-reb-spam:
     isOutcome: true
     prompt: |
-      The newsletter pivot defined a new business. By year 2 you had
-      ~50K subscribers, ~3K paying at $15/mo, and the company became
-      a category-defining publication that didn't depend on Google at
-      all.
-  end-B-good:
+      The AI-generated spam got you manually penalized by Google. The business folded.
+  end-A-reb-interviews:
     isOutcome: true
     prompt: |
-      The ad-funded newsletter worked sustainably but capped sooner
-      than the paid-tier scenario would have. Steady, not breakout.
-  end-B-mediocre:
+      Original interviews became a defensible wedge. You grew a slow, high-quality media brand.
+  end-B-paid-discord:
     isOutcome: true
     prompt: |
-      The newsletter without monetization stalled. Audience growth
-      slowed because the "what's the business" question was unanswered.
-      You eventually shipped a paid tier in year 2.
-  end-C:
+      You built a great community, but the moderation overhead forced you to hire two full-time staff.
+  end-B-paid-write:
     isOutcome: true
     prompt: |
-      Paying for a shrinking channel accelerated the burn. The
-      eventual pivot came 12 months late, with weaker terms because
-      the cash position had deteriorated.
-  end-D:
+      You kept the margins at 90% and ran a phenomenal, lean paid publication.
+  end-B-spon-burn:
     isOutcome: true
     prompt: |
-      The content-to-product pivot is high-variance. Some companies
-      execute it brilliantly; many split focus and lose both
-      businesses. Without specific product-team chops, the bet
-      didn't compound.
+      The dedicated partner emails annoyed readers. Open rates dropped from 38% to 15%.
+  end-B-spon-protect:
+    isOutcome: true
+    prompt: |
+      Protecting the reader paid off. Sponsors renewed annually because the trust was real.
+  end-B-fun-hard:
+    isOutcome: true
+    prompt: |
+      You burned the newsletter list to get 100 software customers. A Pyrrhic victory.
+  end-B-fun-soft:
+    isOutcome: true
+    prompt: |
+      The native integration worked. The newsletter fed the software product perfectly.
+  end-C-raise-toxic:
+    isOutcome: true
+    prompt: |
+      You survived, but the VC structured terms meant you made zero dollars when the company eventually sold.
+  end-C-raise-shut:
+    isOutcome: true
+    prompt: |
+      A clean shutdown. Hard, but the right call when unit economics invert permanently.
+  end-C-cut-rebuild:
+    isOutcome: true
+    prompt: |
+      The 2-year bootstrapped rebuild worked. You emerged stronger and leaner.
+  end-C-cut-sell:
+    isOutcome: true
+    prompt: |
+      The PE firm bought it and immediately laid everyone off. You walked away.
+  end-D-aband-sales:
+    isOutcome: true
+    prompt: |
+      The outbound sales team burned the last $2M in the bank. You went to zero.
+  end-D-aband-ip:
+    isOutcome: true
+    prompt: |
+      The IP sold for pennies on the dollar. A rough end to a good content site.
+  end-D-rev-split:
+    isOutcome: true
+    prompt: |
+      The split created legal nightmares. Investors sued, and both halves died.
+  end-D-rev-sell:
+    isOutcome: true
+    prompt: |
+      Divesting the content site saved the company. The software product finally got the focus it needed.
 ---
 ## What's at stake here
 

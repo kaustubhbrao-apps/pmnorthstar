@@ -41,6 +41,57 @@ nodes:
         pattern: Middle Ground
         rationale: A compromise that attempts to get native performance without the security risks of a local server. However, PWA support is inconsistent across enterprise Windows machines.
         consequence: You avoid security risks, but the 'Magic' is inconsistent. It's fast on some machines and slow on others. You've failed to deliver the 'Uniform Excellence' Eric demands.
+        leadsTo: pwa_struggle
+  pwa_struggle:
+    dimension: product
+    prompt: |
+      The PWA approach is yielding inconsistent results. Windows users are complaining about the experience, and the "Magic" isn't there. You need to adjust your technical strategy to fix this.
+    options:
+      - text: 'Double down on PWA and wait for better browser support.'
+        points: 10
+        pattern: Waiting for the Market
+        rationale: You believe the web platform will catch up. But in the meantime, your users suffer.
+        consequence: Growth stalls while you wait for Chrome and Edge to improve their PWA support.
+        leadsTo: browser_waiting_game
+      - text: 'Pivot to a native wrapper (Electron) for consistency.'
+        points: 25
+        pattern: Wrapper Approach
+        rationale: Electron guarantees consistency across platforms but at the cost of high memory usage and a large download size.
+        consequence: Consistency improves, but performance takes a hit. 
+        leadsTo: electron_pivot
+  browser_waiting_game:
+    dimension: business
+    prompt: |
+      You've decided to wait for browser support. It's been 6 months, and competitors are moving fast. 
+    options:
+      - text: 'Stay the course.'
+        points: 0
+        pattern: Stubbornness
+        rationale: Waiting longer won't magically fix the current user churn.
+        consequence: Users abandon the product.
+        leadsTo: inconsistent_market
+      - text: 'Pivot fully to WebRTC and abandon the PWA dream.'
+        points: 15
+        pattern: Pragmatic Retreat
+        rationale: Cut your losses and go with what works now, even if it's less magical.
+        consequence: You stabilize but lose your edge.
+        leadsTo: commodity_death
+  electron_pivot:
+    dimension: product
+    prompt: |
+      The Electron app is live. It's consistent but bloated. Users with older laptops complain about fan noise.
+    options:
+      - text: 'Invest heavily in C++ optimization to rewrite critical paths.'
+        points: 30
+        pattern: Deep Optimization
+        rationale: This gives you native performance inside the wrapper.
+        consequence: It takes a year, but the app becomes fast and reliable.
+        leadsTo: niche_success
+      - text: 'Ignore the complaints; focus on adding more features.'
+        points: 0
+        pattern: Feature Bloat
+        rationale: Ignoring performance in a video app is fatal.
+        consequence: Users leave for lighter alternatives.
         leadsTo: inconsistent_market
   growth_surge:
     dimension: business
@@ -56,13 +107,47 @@ nodes:
         pattern: Defensive Compliance
         rationale: Protects the company from a PR disaster and potential legal liability. It shows you take security seriously.
         consequence: The 'Magic' is dead. Overnight, Zoom becomes 'just another video tool.' Users start complaining about the 'new clunky Zoom.' Growth flatlines as you lose your only experience advantage.
-        leadsTo: commodity_death
+        leadsTo: recall_fallout
       - text: 'The ''Apple Pivot'': Force an update that adds a one-time ''Trust this App'' prompt, then preserves the one-click flow.'
         points: 40
         pattern: Radical Transparency
         rationale: Admit the mistake, patch the vulnerability, but fight to keep the experience. You work with Apple to ensure your patch meets their kernel standards while keeping the join flow fast.
         consequence: You survive the storm. By being transparent and moving fast, you actually gain trust from IT admins. The 'one-click' moat remains intact. You are ready for the 2020 explosion.
+        leadsTo: pandemic_scaling
+  recall_fallout:
+    dimension: strategy
+    prompt: |
+      You survived the PR disaster, but growth has flatlined. The product feels clunky again.
+    options:
+      - text: 'Attempt to rebuild trust with a massive marketing campaign.'
+        points: 10
+        pattern: Marketing over Product
+        rationale: Marketing can't fix a degraded product experience.
+        consequence: You burn cash but don't regain your magical reputation.
+        leadsTo: commodity_death
+      - text: 'Pivot to highly secure government and healthcare contracts.'
+        points: 25
+        pattern: Niche Pivot
+        rationale: If your product is clunky but secure, sell it to people who value security over friction.
+        consequence: You build a profitable but smaller business.
+        leadsTo: niche_success
+  pandemic_scaling:
+    dimension: strategy
+    prompt: |
+      It's 2020. The pandemic hits, and you are scaling exponentially. 'Zoombombing' becomes a massive issue as meetings are left open.
+    options:
+      - text: 'Lock down security: passwords and waiting rooms on by default.'
+        points: 40
+        pattern: Mature Scaling
+        rationale: The 'frictionless' era has to evolve. Adding necessary friction for safety is the right move at scale.
+        consequence: Users complain briefly, but the platform stabilizes and becomes the global standard.
         leadsTo: category_king
+      - text: 'Keep it fully frictionless. Users should learn to manage their own meeting settings.'
+        points: 0
+        pattern: Dogmatic Frictionless
+        rationale: Blaming the user for security failures in a consumer-scale product leads to institutional bans.
+        consequence: Schools and enterprises ban you permanently.
+        leadsTo: zoombombing_crisis
   enterprise_parity:
     dimension: business
     prompt: |
@@ -75,13 +160,47 @@ nodes:
         pattern: Feature Bloat
         rationale: Tries to win via a checklist. But Microsoft has 10,000 more engineers than you. You can't win a war of attrition.
         consequence: The product becomes cluttered and confusing. You've lost your focus on 'Ease of Use.' You are acquired by a legacy player for pennies on the dollar.
-        leadsTo: commodity_death
+        leadsTo: acquisition_offer
       - text: 'The ''Shadow IT'' Play: Market directly to end-users (not IT) and force them to demand Zoom for its UI simplicity.'
         points: 25
         pattern: Product-Led Growth
         rationale: If the product is significantly easier to use than Teams, employees will use it anyway, eventually forcing IT to buy it. This requires doubling down on UI polish.
         consequence: It's a slow climb, but it works. You find a niche in creative and tech teams. You don't own the whole market, but you remain a high-value independent player.
+        leadsTo: shadow_it_scaling
+  acquisition_offer:
+    dimension: strategy
+    prompt: |
+      You are losing the feature war. A legacy telecommunications company offers to acquire you for a fraction of your previous valuation.
+    options:
+      - text: 'Accept the offer and integrate into their suite.'
+        points: 10
+        pattern: Surrender
+        rationale: It's a safe exit, but the vision dies.
+        consequence: The product is slowly sunset over three years.
+        leadsTo: commodity_death
+      - text: 'Reject the offer, raise more venture debt, and try a final pivot.'
+        points: 5
+        pattern: Desperation
+        rationale: Raising debt without product-market fit is a death sentence.
+        consequence: You run out of cash 8 months later.
+        leadsTo: commodity_death
+  shadow_it_scaling:
+    dimension: strategy
+    prompt: |
+      The Shadow IT play is working. Small teams love you. Now, enterprise IT is starting to block Zoom because they already pay for Teams.
+    options:
+      - text: 'Double down on a generous Freemium tier to make yourselves unblockable.'
+        points: 25
+        pattern: Bottom-up dominance
+        rationale: If enough users rely on it for external calls, IT will be forced to allow it.
+        consequence: IT caves. You become the external standard, even if Teams is the internal standard.
         leadsTo: niche_success
+      - text: 'Pivot to top-down enterprise sales to fight Microsoft head-on.'
+        points: 5
+        pattern: Fighting the Gorilla
+        rationale: You don't have the sales army or the bundle to win this fight.
+        consequence: Sales cycles drag on for 18 months. You burn through your runway.
+        leadsTo: enterprise_grind
   inconsistent_market:
     isOutcome: true
     prompt: |
@@ -118,6 +237,20 @@ nodes:
       Whether by playing it too safe or bloating the product with features, you ended up with a tool that gave users no reason to switch. In SaaS, if you aren't the best at something (Price, Speed, or Experience), you are invisible.
 
       **League Score Impact:** -50 Points (Failure to differentiate).
+  zoombombing_crisis:
+    isOutcome: true
+    prompt: |
+      ### Outcome: The Security Disaster
+      By dogmatically refusing to add friction when scaling to millions of consumer users, you allowed a catastrophic security culture to form. Schools and governments banned you globally. 
+
+      **League Score Impact:** -60 Points (Failure to Adapt at Scale).
+  enterprise_grind:
+    isOutcome: true
+    prompt: |
+      ### Outcome: Crushed by the Bundle
+      You tried to fight Microsoft on their own turf with top-down sales. Without the bundle advantage, your sales metrics cratered and the company slowly withered.
+
+      **League Score Impact:** -40 Points (Strategic Misalignment).
 ---
 The Zoom case study is the ultimate proof that **Experience is a Product Decision.** Eric Yuan didn't win because of better video compression (which competitors eventually matched); he won because he was willing to fight for the **Psychology of the One-Click.**
 

@@ -40,210 +40,231 @@ nodes:
     prompt: |
       Windows is the religion. The market has moved. Pick the move.
     options:
-      - text: Stay focused on Windows. The desktop install base is still 1.5B users. Defend the home turf.
+      - text: Stay focused on Windows. Defend the home turf.
         points: 3
         pattern: defend-the-shrinking-fortress
         rationale: |
-          The predecessor's strategy, dressed up as discipline. The
-          desktop install base is real but the unit economics of OS
-          sales are flat or declining. Defending the fortress means
-          you don't compete in the categories that are growing (cloud,
-          mobile, productivity-on-any-device). Each quarter that
-          passes, the moat around Windows shrinks while competitors
-          build new moats elsewhere.
+          Defending the fortress means you don't compete in growing categories.
         consequence: |
-          Five years in, Windows revenue is flat. Cloud competitors
-          have 5x'd. Mobile is irrecoverable. The stock trades at the
-          same multiple it did when you started. The board eventually
-          replaces you.
-        leadsTo: end-A
-      - text: Pivot to cloud-first. Office on every platform, including iOS and Android. Open-source the developer stack. Compete with AWS aggressively.
+          Five years in, Windows revenue is flat. Cloud competitors have 5x'd.
+        leadsTo: A_defend_followup
+      - text: Pivot to cloud-first. Office on every platform. Compete with AWS.
         points: 15
         pattern: cannibalize-the-religion
         rationale: |
-          The bet that defines the next decade. You're saying: the
-          thing that built us is now the thing holding us back. Office
-          on iOS means selling productivity software to users on
-          competitor platforms — heretical to the existing culture but
-          obvious if you look at where users actually are. Open-
-          sourcing the dev stack means competing with the open-source
-          competitors who've been eating your enterprise lunch.
-          Aggressive cloud means picking a fight with AWS while
-          you're behind. Each move is internally controversial; the
-          combination is transformative.
+          You're saying: the thing that built us is now holding us back.
         consequence: |
-          You announce Office on iOS in your first 90 days. The
-          Windows division revolts internally. Then it ships, and
-          ~50M iPhone users become Office customers in 6 months.
-          Cloud growth accelerates to 90%+ YoY. Developer goodwill
-          returns. Stock starts compounding for the first time in a
-          decade.
-        leadsTo: B-pivot-followup
-      - text: Pick one new bet (cloud OR mobile OR cross-platform Office). Don't try to fight on all three fronts.
+          You announce Office on iOS. Internal revolt, then massive success.
+        leadsTo: B_invest_followup
+      - text: Pick one new bet (cloud OR mobile OR cross-platform Office). Don't fight on all fronts.
         points: 9
         pattern: pivot-but-pick-one
         rationale: |
-          Defensible discipline. You can argue that fighting on three
-          fronts means winning on none. The case for picking cloud
-          alone is strong (largest growth market, you have an
-          existing foothold). Risk: by not making cross-platform
-          Office and dev-stack moves in parallel, you don't actually
-          shift the company's identity. Cloud alone is a divisional
-          win, not a transformation.
+          Cloud alone is a divisional win, not a transformation.
         consequence: |
-          Cloud revenue grows strongly under focused investment. But
-          the rest of the company stays Windows-centric. Mobile
-          remains lost. Cross-platform productivity is captured by
-          Google. The company is healthier but not transformed.
-        leadsTo: end-C
-      - text: Acquire a major competitor (a social network, a developer tool, an enterprise platform). Buy your way into a new identity.
+          Cloud revenue grows, but the rest of the company stays Windows-centric.
+        leadsTo: C_focus_followup
+      - text: Acquire a major competitor to buy your way into a new identity.
         points: 6
         pattern: acquire-instead-of-build
         rationale: |
-          Tempting but rarely sufficient. Major acquisitions can
-          accelerate a transformation but they can't replace the
-          internal cultural shift. If the company still believes
-          Windows is the hill, the acquired company gets absorbed and
-          neutered (the LinkedIn or GitHub of an unreformed Microsoft
-          would have been a different story). Acquisitions amplify
-          the strategy you already have; they don't change it.
+          Acquisitions amplify the strategy you already have; they don't change it.
         consequence: |
-          You acquire a major enterprise platform for $20B. Culture
-          clash absorbs the acquisition. Two years later, the
-          acquired company's growth has slowed. The transformation
-          stalls.
-        leadsTo: end-D
-  B-pivot-followup:
+          Culture clash absorbs the acquisition. Transformation stalls.
+        leadsTo: D_acquire_followup
+  A_defend_followup:
+    dimension: product
+    prompt: |
+      You defended Windows. The PC market is shrinking. How do you expand?
+    options:
+      - text: Try to launch another Windows Phone by acquiring Nokia for $7B.
+        points: 3
+        pattern: double-down-mobile
+        rationale: |
+          The app ecosystem is already lost to iOS/Android.
+        consequence: |
+          Market share remains below 5%. The acquisition is a massive failure.
+        leadsTo: A_defend_crisis
+      - text: Build a 'Windows App Store' taking an 80% cut from developers.
+        points: 0
+        pattern: greedy-platform
+        rationale: |
+          Alienating developers on a shrinking platform accelerates the decline.
+        consequence: |
+          Developers ignore the store entirely.
+        leadsTo: A_defend_crisis
+  A_defend_crisis:
     dimension: business
     prompt: |
-      Three years into the pivot. Cloud revenue is now $30B+/year and
-      growing 40%+ YoY. Office subscriptions cross 200M paying users.
-      Stock has doubled. The next decision: AI. A small lab building
-      large language models needs $1B to keep going. They've also
-      offered to keep their team and IP independent — they'd be a
-      partner, not a subsidiary.
+      Your hardware and store plays failed. What's the final attempt to salvage value?
     options:
-      - text: 'Invest the $1B with strict integration: their tech becomes part of your cloud. Build a moat around the cloud + AI combination.'
+      - text: Write off the failures and aggressively cut costs/layoffs.
+        points: 5
+        pattern: structural-decline
+        rationale: |
+          Managing the decline of a cash cow.
+        consequence: |
+          Stock stabilizes but multiple compresses. Company is a utility.
+        leadsTo: end-A
+      - text: Try to run Android on your failed Windows Phone hardware.
+        points: 0
+        pattern: too-little-too-late
+        rationale: |
+          Completely confusing to consumers.
+        consequence: |
+          Massive write-downs. You are fired by the board.
+        leadsTo: end-A
+  B_invest_followup:
+    dimension: business
+    prompt: |
+      Cloud revenue is growing. You invest $1B in a small AI lab (OpenAI). They deliver a breakthrough model (GPT-4). What do you do?
+    options:
+      - text: Integrate it immediately into Bing to attack Google Search.
+        points: 10
+        pattern: attack-the-incumbent
+        rationale: |
+          A bold move, but consumer search is incredibly hard to displace.
+        consequence: |
+          You capture headlines and force Google to dance, but search share barely moves.
+        leadsTo: B_ai_deployment
+      - text: Put it directly into Office and Enterprise tools as 'Copilot' for $30/user.
         points: 15
-        pattern: strategic-investment-over-acquisition
+        pattern: monetize-the-base
         rationale: |
-          The right structure for an emerging-capability bet. Full
-          acquisition would absorb the lab's culture and slow their
-          velocity. A strategic investment with cloud-exclusivity
-          gives you the AI moat without killing the lab. The lab gets
-          capital and infrastructure; you get cloud + AI as a combined
-          enterprise sale. Both sides benefit asymmetrically vs. a
-          standard acquisition.
+          Leveraging your massive enterprise distribution is the highest ROI play.
         consequence: |
-          You invest $1B for cloud-exclusive infrastructure rights and
-          a substantial equity stake. The lab keeps autonomy and
-          ships breakthrough products that run on your cloud. Within
-          18 months, cloud + AI becomes the fastest-growing enterprise
-          category in tech. Your market cap crosses $2T.
+          Instant multi-billion dollar ARR run-rate. Market cap skyrockets.
+        leadsTo: B_ai_deployment
+  B_ai_deployment:
+    dimension: product
+    prompt: |
+      The AI integration is a massive hit. The partner lab wants more compute.
+    options:
+      - text: Give them exclusive access to your massive new supercomputers in exchange for perpetual IP rights.
+        points: 15
+        pattern: infrastructural-lock
+        rationale: |
+          You become the absolute necessary layer for the world's best AI.
+        consequence: |
+          You become the most valuable company in the world.
         leadsTo: end-B-great
-      - text: Acquire them fully. Bring the lab in-house. Control the IP completely.
-        points: 9
-        pattern: full-acquisition
+      - text: Try to acquire the lab fully now that they are successful.
+        points: 5
+        pattern: kill-the-golden-goose
         rationale: |
-          Cleaner ownership, riskier execution. Full acquisition gives
-          you complete IP control but typically slows the acquired
-          team's velocity (compensation friction, culture friction,
-          decision-rights friction). The lab's most talented people
-          tend to leave 18-36 months post-acquisition. You'd own the
-          IP but might lose the team.
+          The founders will resist and leave, destroying the value.
         consequence: |
-          Acquisition closes at $5B. Two years in, ~40% of the
-          founding research team has left for competing labs. The
-          remaining product still ships but the velocity has slowed.
-          Cloud + AI grows but slower than the partnership scenario
-          would have produced.
+          Massive boardroom drama. The partnership is deeply strained.
         leadsTo: end-B-mixed
-      - text: Pass. Build AI internally instead. Don't depend on an external lab.
-        points: 3
-        pattern: not-invented-here
+  C_focus_followup:
+    dimension: product
+    prompt: |
+      You focused only on Cloud. Azure grows, but Office is losing ground to Google Workspace. Response?
+    options:
+      - text: Finally make Office cross-platform (iOS/Android).
+        points: 10
+        pattern: late-pivot
         rationale: |
-          The mistake your predecessor would have made. Building AI
-          internally from scratch when world-class labs already exist
-          means losing 2-3 years to talent acquisition and research
-          ramp-up. By the time your internal lab catches up,
-          competitors who partnered with external labs have shipped
-          two product generations.
+          Better late than never, but Google has a foothold.
         consequence: |
-          You build internally. Two years later your AI is generation
-          behind external labs. A competitor's external partnership
-          has captured the cloud + AI enterprise narrative. You catch
-          up eventually but with less category leadership.
-        leadsTo: end-B-mediocre
+          You stem the bleeding, but growth is slow.
+        leadsTo: C_focus_crisis
+      - text: Bundle Office aggressively with Windows enterprise agreements.
+        points: 2
+        pattern: antitrust-bundling
+        rationale: |
+          Using monopoly power to force usage instead of building a better product.
+        consequence: |
+          Regulators investigate.
+        leadsTo: C_focus_crisis
+  C_focus_crisis:
+    dimension: business
+    prompt: |
+      Google is still winning startups. How do you fight back?
+    options:
+      - text: Acquire Slack to combat Teams' weakness and win startups.
+        points: 8
+        pattern: buy-the-cool-factor
+        rationale: |
+          Expensive but effective way to buy relevance.
+        consequence: |
+          You maintain enterprise dominance but the transformation is incomplete.
+        leadsTo: end-C
+      - text: Make a 'free tier' of Office web apps.
+        points: 5
+        pattern: freemium-defense
+        rationale: |
+          A defensive move that protects the flank.
+        consequence: |
+          You hold market share but don't grow it.
+        leadsTo: end-C
+  D_acquire_followup:
+    dimension: founder
+    prompt: |
+      You bought a major enterprise platform, but it's stalling due to culture clash.
+    options:
+      - text: Leave them alone and ring-fence them.
+        points: 8
+        pattern: independence
+        rationale: |
+          Preserves their culture but limits integration value.
+        consequence: |
+          They survive, but synergy is zero.
+        leadsTo: D_acquire_crisis
+      - text: Fire the acquired founders and put Microsoft lifers in charge.
+        points: 0
+        pattern: crush-culture
+        rationale: |
+          Destroys the value of the acquisition immediately.
+        consequence: |
+          Product stagnates. Key talent leaves.
+        leadsTo: D_acquire_crisis
+  D_acquire_crisis:
+    dimension: business
+    prompt: |
+      Wall Street is asking why you spent $20B on an acquisition with no synergy.
+    options:
+      - text: Force a deep data integration with Azure.
+        points: 5
+        pattern: late-synergy
+        rationale: |
+          Causes engineering delays but eventually produces value.
+        consequence: |
+          You show some ROI, but you missed the broader cloud transformation.
+        leadsTo: end-D
+      - text: Spin them back out at a loss.
+        points: 0
+        pattern: admit-defeat
+        rationale: |
+          A massive public failure.
+        consequence: |
+          You are replaced as CEO.
+        leadsTo: end-D
   end-A:
     isOutcome: true
     prompt: |
-      Defending Windows preserved the desktop business but missed
-      every growth category of the era. The company stayed valuable
-      but the multiple compressed. The transformation eventually
-      happened under a different CEO five years late.
+      Defending Windows preserved the desktop business but missed every growth category of the era. The transformation eventually happened under a different CEO five years late.
   end-B-great:
     isOutcome: true
     prompt: |
-      The pivot defined one of the most studied incumbent
-      transformations in tech history. Market cap grew from $400B to
-      $3T+ within a decade. Cloud + AI + cross-platform Office
-      became the three pillars of the company's identity. The
-      Windows-as-religion era was replaced by software-runs-everywhere.
+      The pivot defined one of the most studied incumbent transformations in tech history. Market cap grew from $400B to $3T+. Cloud + AI + cross-platform Office became the three pillars of the company.
   end-B-mixed:
     isOutcome: true
     prompt: |
-      The full acquisition produced revenue but lost team velocity.
-      The cloud + AI story compounded but slower than partnership
-      would have. Still a strong outcome — just below ceiling.
-  end-B-mediocre:
-    isOutcome: true
-    prompt: |
-      Building AI internally was the slow path. The category
-      narrative was captured by competitors who partnered externally.
-      You eventually caught up but never led.
+      Trying to fully acquire the AI lab caused massive friction. The story compounded but slower than true partnership would have. Still a strong outcome — just below ceiling.
   end-C:
     isOutcome: true
     prompt: |
-      Cloud-focused pivot worked divisionally but didn't transform
-      the company's identity. Other categories stayed Windows-
-      centric and were lost. The stock grew but not at the pace a
-      full transformation would have produced.
+      Cloud-focused pivot worked divisionally but didn't transform the company's identity. The stock grew but not at the pace a full transformation would have produced.
   end-D:
     isOutcome: true
     prompt: |
-      The acquisition without cultural reform got absorbed by the
-      existing identity. Two years later, the acquired company's
-      growth had slowed. The transformation stalled and you were
-      replaced.
+      The acquisition without cultural reform got absorbed by the existing identity. The transformation stalled and you were replaced.
 ---
 ## What actually happened
 
-This drill is based on **Satya Nadella taking over as Microsoft CEO
-in February 2014**. Microsoft was a $300B company that had spent a
-decade losing every new platform — mobile, search, social — while
-defending Windows as the company's defining identity.
+This drill is based on **Satya Nadella taking over as Microsoft CEO in 2014**. Microsoft had spent a decade losing every new platform while defending Windows.
 
-Nadella's first major move was **Office on iOS**, announced in
-March 2014, less than 60 days into his tenure. Internal Microsoft
-veterans called it heresy. The product shipped, became the highest-
-rated productivity app on iOS within 6 months, and signaled that
-the company's identity had changed.
+Nadella's first major move was **Office on iOS**. He completely shifted the company to "Cloud First, Mobile First". Subsequent moves included open-sourcing .NET, acquiring GitHub, and the brilliant **$1B+ OpenAI partnership** structure (strategic investment + Azure exclusivity rather than full acquisition).
 
-Subsequent moves: **Microsoft Loves Linux** (2015), open-sourcing
-.NET (2014), the **$26B LinkedIn acquisition** (2016), the **$7.5B
-GitHub acquisition** (2018), and the **$1B+ OpenAI partnership**
-starting in 2019 with the unique structure of strategic investment
-+ Azure-exclusivity rather than full acquisition.
-
-Microsoft's market cap grew from **~$300B in early 2014 to over
-$3.5T by 2024** — one of the most consequential incumbent
-transformations in business history. The Nadella era replaced
-"Windows everywhere" with "our software runs everywhere," and the
-shift unlocked categories Microsoft had spent a decade missing.
-
-The principle Nadella later articulated: *"Our industry doesn't
-respect tradition — it only respects innovation. The hardest part
-of leading a successful company is killing the religion that made
-it successful."*
-
-**Related reading:** [Microsoft's cloud turnaround](/case-study/microsoft-cloud-turnaround)
+Microsoft's market cap grew from **~$300B in 2014 to over $3.5T by 2024**.

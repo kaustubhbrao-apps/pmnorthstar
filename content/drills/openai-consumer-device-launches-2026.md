@@ -39,186 +39,242 @@ nodes:
         pattern: become-the-platform-tenant
         rationale: |
           Defensible bridge play. If you can't beat them, plug into them.
-          OpenAI will need third-party apps that extend the device's
-          base capabilities; being one of the first plug-in apps gives
-          you early discoverability on the platform. The tradeoff:
-          you're now a tenant, OpenAI controls your distribution and
-          can absorb your value any time. Works as bridge strategy
-          while you figure out the next move.
         consequence: |
-          You ship a Companion app in 5 months, ahead of the device
-          launch. You're featured in OpenAI's launch keynote. App
-          installs hit 200K in the first 60 days post-launch. Then
-          OpenAI updates their first-party app to absorb 40% of your
-          features 18 months later. You're playing defense ever since.
+          You ship a Companion app in 5 months.
         leadsTo: A-tenant-followup
-      - text: 'Pivot vertical: re-position the app for a specific profession (lawyers, doctors, sales reps) and ignore the hardware entirely.'
+      - text: 'Pivot vertical: re-position the app for a specific profession and ignore the hardware entirely.'
         points: 15
         pattern: vertical-where-device-cant-fit
         rationale: |
-          The right contrarian bet. The ChatGPT Companion is built for
-          general consumers. Vertical professionals have compliance
-          (HIPAA for medical, attorney-client privilege for legal),
-          integration (Clio, Epic, Salesforce), and workflow needs the
-          device structurally can't serve. By picking one profession
-          and going deep, you stop competing with the device and
-          start serving customers the device can't.
+          The right contrarian bet.
         consequence: |
-          You pick lawyers. Pivot takes 6 months. Of your 80K paying
-          users, 12K fit the new ICP at higher ARPU ($30/mo). ARR
-          temporarily drops to $4M then climbs to $9M within 18 months
-          at much better unit economics. The ChatGPT Companion eats
-          consumer share; you own legal productivity.
+          You pick lawyers. Pivot takes 6 months.
         leadsTo: B-vertical-followup
-      - text: Pivot to be a multi-model app. Position as 'works with ChatGPT, Claude, Gemini, and Apple Intelligence.' Hardware-agnostic.
+      - text: Pivot to be a multi-model app. Position as 'works with ChatGPT, Claude, Gemini, and Apple Intelligence.'
         points: 9
         pattern: model-agnostic-bridge
         rationale: |
-          Defensive moat. By being model-agnostic, you avoid lock-in to
-          any one ecosystem. Users can pick their preferred AI; you
-          provide the unified workflow on top. The challenge: this is
-          a feature, not a product strategy. As foundation models
-          differentiate more, "works with all of them" gets harder to
-          maintain and less meaningful.
+          Defensive moat.
         consequence: |
-          You ship multi-model support in 3 months. Marketing message
-          is "your AI productivity, your model choice." Differentiation
-          works briefly. Within 12 months, most users have one default
-          model and the model-picker becomes irrelevant.
-        leadsTo: end-C
+          You ship multi-model support in 3 months.
+        leadsTo: C-agnostic-followup
       - text: Sell the company to OpenAI before the device ships and your ARR drops.
         points: 9
         pattern: exit-before-the-shift
         rationale: |
-          Defensible. Acquisitions of category-overlap apps tend to
-          happen pre-launch when the platform wants to expand its
-          first-party feature set. The window closes once the device
-          ships and your numbers start dropping. Selling now means
-          selling at peak ARR. Risk: OpenAI may not want to acquire
-          (they may prefer to build), and approaching them signals
-          weakness.
+          Defensible.
         consequence: |
-          You make discreet inquiries. OpenAI passes — they're building
-          internally. Anthropic offers $30M; you take it. The
-          acquisition closes 90 days later. Team integrated, you move
-          to Anthropic. Your category gets absorbed both directions.
-        leadsTo: end-D
+          You make discreet inquiries.
+        leadsTo: D-acquisition-talks
+
   A-tenant-followup:
     dimension: product
     prompt: |
-      Your Companion app shipped. 200K installs post-device-launch.
-      OpenAI is reviewing third-party app guidelines monthly — they've
-      already restricted always-on background processing and limited
-      file system access. You can see the platform tightening. Pick.
+      Your Companion app shipped. OpenAI is tightening platform guidelines. Pick.
     options:
       - text: Stay platform-aligned. Adapt to every guideline change. Don't fight.
         points: 9
         pattern: comply-and-keep-running
         rationale: |
-          Survival mode. You stay in the platform but with shrinking
-          differentiation as each guideline change reduces what you
-          can do. Useful as a known revenue floor while you build a
-          second strategy. Failure mode: the platform absorbs every
-          differentiating feature you ship.
+          Survival mode.
         consequence: |
-          You stay in the app store but become indistinguishable from
-          OpenAI's first-party app over 24 months. Revenue plateaus.
-          You're employed but not building a real business.
-        leadsTo: end-A-stable
+          You stay in the app store but become indistinguishable from OpenAI's first-party app.
+        leadsTo: A-platform-shift
       - text: Build a parallel product that doesn't depend on the device. Use Companion as one of several distribution channels.
         points: 15
         pattern: distribute-don't-depend
         rationale: |
-          The right long-term move. The Companion app is one
-          distribution channel; iOS, Android, web, and other AI
-          devices are others. Building distribution across multiple
-          surfaces means no single platform shift can kill you. The
-          Companion app continues to drive top-of-funnel; the core
-          product diversifies risk.
+          The right long-term move.
         consequence: |
-          You spend 6 months rebuilding the core product as
-          multi-surface. ARR diversifies — 40% Companion, 35% iOS/
-          Android, 25% web. When OpenAI tightens guidelines further,
-          you absorb the hit but don't crater.
+          You spend 6 months rebuilding the core product as multi-surface.
+        leadsTo: A-platform-shift
+
+  A-platform-shift:
+    dimension: business
+    prompt: |
+      OpenAI just announced they are fully integrating your core features into the OS.
+    options:
+      - text: Pivot the app entirely to enterprise team collaboration (multi-player).
+        points: 12
+        pattern: go-multiplayer
+        rationale: |
+          The OS usually only solves single-player mode.
+        consequence: |
+          You survive by moving upmarket.
         leadsTo: end-A-good
+      - text: Just accept the death of the app.
+        points: 3
+        pattern: surrender
+        rationale: |
+          You let the platform win.
+        consequence: |
+          Company shuts down.
+        leadsTo: end-A-stable
+
   B-vertical-followup:
     dimension: business
     prompt: |
-      Eighteen months into the legal-productivity pivot. ARR is $9M,
-      12,000 paying lawyers at $30/mo. You can scale two ways:
-      (a) add more verticals (medical, financial advisors), or
-      (b) go deeper in legal — case management integration,
-      e-discovery, billing workflows.
+      ARR is $9M, 12,000 paying lawyers. You can scale two ways.
     options:
       - text: Go deeper in legal. Become the productivity layer that integrates with case-management software.
         points: 15
         pattern: depth-before-breadth
         rationale: |
-          The compounding bet. Lawyers who already pay you for AI
-          productivity will pay more for AI productivity tightly
-          integrated into Clio, MyCase, PracticePanther — because the
-          workflow lift is multiplicative. Adjacent integrations don't
-          require new buyers or new sales motions; they extend your
-          ARPU with the customers you have.
+          The compounding bet.
         consequence: |
-          Three Clio integrations ship in 9 months. ARPU rises from
-          $30 to $75/mo. Churn drops. ARR hits $20M with the same
-          customer count. The company becomes "AI for legal practice"
-          not just "AI productivity."
-        leadsTo: end-B-great
-      - text: Add medical + financial advisors. Three verticals, three sales motions, three compliance regimes.
+          Three Clio integrations ship. ARPU rises.
+        leadsTo: B-vertical-expansion
+      - text: Add medical + financial advisors. Three verticals.
         points: 9
         pattern: spread-too-thin
         rationale: |
-          Premature breadth. Without dominating legal first, two more
-          verticals split engineering and sales attention. Each
-          vertical needs its own compliance certifications, integration
-          partnerships, and ICP-specific positioning. You'd be
-          sub-scale in all three.
+          Premature breadth.
         consequence: |
-          ARR grows to $14M across three verticals. None are
-          category-leading. Sales cycle elongates as the team
-          context-switches. The next round comes at flatter terms.
-        leadsTo: end-B-mixed
-  end-A-stable:
-    isOutcome: true
+          ARR grows to $14M but you are sub-scale in all.
+        leadsTo: B-vertical-expansion
+
+  B-vertical-expansion:
+    dimension: product
     prompt: |
-      The platform-tenant path produced bounded but stable revenue.
-      You're a working business but not a defensible one. Every
-      OpenAI guideline change hurts.
+      You have expanded. The market is getting crowded with AI wrappers.
+    options:
+      - text: Build custom, fine-tuned models specifically for legal reasoning.
+        points: 15
+        pattern: deep-tech-moat
+        rationale: |
+          Moving from wrapper to deep tech creates a true moat.
+        consequence: |
+          You build an unassailable advantage in legal tech.
+        leadsTo: end-B-great
+      - text: Stick to prompt engineering on top of OpenAI APIs.
+        points: 6
+        pattern: lazy-moat
+        rationale: |
+          A thin wrapper is always vulnerable.
+        consequence: |
+          Competitors catch up quickly.
+        leadsTo: end-B-mixed
+
+  C-agnostic-followup:
+    dimension: product
+    prompt: |
+      You are multi-model. Users are getting confused about which model to use.
+    options:
+      - text: Abstract the models away. Route the prompt to the best model automatically under the hood.
+        points: 12
+        pattern: smart-routing
+        rationale: |
+          Provides actual value instead of just a dropdown menu.
+        consequence: |
+          Users love the simplicity.
+        leadsTo: C-model-wars
+      - text: Keep the dropdowns. Let power users choose.
+        points: 6
+        pattern: power-user-trap
+        rationale: |
+          Catering only to AI nerds limits your TAM.
+        consequence: |
+          Mainstream users churn.
+        leadsTo: C-model-wars
+
+  C-model-wars:
+    dimension: business
+    prompt: |
+      The foundation models are now indistinguishable in quality.
+    options:
+      - text: Pivot the UI into a workflow automation tool rather than just a chat interface.
+        points: 15
+        pattern: workflow-over-chat
+        rationale: |
+          Chat is a commodity; workflow is a business.
+        consequence: |
+          You build a sticky product.
+        leadsTo: end-C-good
+      - text: Continue competing on having "more models" integrated.
+        points: 3
+        pattern: irrelevant-feature
+        rationale: |
+          Users no longer care.
+        consequence: |
+          Growth flatlines.
+        leadsTo: end-C-fail
+
+  D-acquisition-talks:
+    dimension: founder
+    prompt: |
+      OpenAI passed. Anthropic offers $30M.
+    options:
+      - text: Accept the $30M from Anthropic.
+        points: 12
+        pattern: take-the-win
+        rationale: |
+          A solid exit before the market shifts.
+        consequence: |
+          Acquisition closes.
+        leadsTo: D-integration
+      - text: Hold out for $50M from Apple.
+        points: 3
+        pattern: greed
+        rationale: |
+          Overplaying a weak hand.
+        consequence: |
+          Apple passes. Anthropic walks away.
+        leadsTo: D-integration
+
+  D-integration:
+    dimension: business
+    prompt: |
+      The M&A outcome is decided.
+    options:
+      - text: Ensure your team gets good retention packages.
+        points: 9
+        pattern: care-for-team
+        rationale: |
+          Good leadership.
+        consequence: |
+          Team is happy.
+        leadsTo: end-D-anthropic
+      - text: Just take your payout and leave immediately.
+        points: 3
+        pattern: check-out
+        rationale: |
+          Burns bridges.
+        consequence: |
+          Reputation damage.
+        leadsTo: end-D-burn
+
   end-A-good:
     isOutcome: true
     prompt: |
-      The multi-surface pivot recovered diversification. The Companion
-      channel was one of several. When OpenAI tightened further, you
-      absorbed the hit. The company is healthy and sovereign.
+      By going multi-player, you built a defensible enterprise business that survived the OS platform shift.
+  end-A-stable:
+    isOutcome: true
+    prompt: |
+      You were absorbed by the OS. The company died a quiet death.
   end-B-great:
     isOutcome: true
     prompt: |
-      The legal-vertical plus integration-depth combination became the
-      textbook on surviving platform shifts. You owned legal
-      productivity, integrated with the practice-management stack,
-      and grew through the OpenAI Companion era without ever
-      depending on the device.
+      You owned legal productivity by building deep integrations and fine-tuned models. A massive success.
   end-B-mixed:
     isOutcome: true
     prompt: |
-      Three verticals at sub-scale produced a working business but
-      not a category-defining one. The team eventually focused on
-      legal as the strongest, deprecating the others.
-  end-C:
+      You survived, but as a thin wrapper you are constantly fighting off cheaper competitors.
+  end-C-good:
     isOutcome: true
     prompt: |
-      Model-agnostic positioning worked briefly. As foundation models
-      differentiated, the picker became friction. You eventually
-      committed to one model anyway.
-  end-D:
+      You successfully pivoted from a multi-model chat app to a sticky workflow automation tool.
+  end-C-fail:
     isOutcome: true
     prompt: |
-      The acquisition closed at a reasonable price. Your team's
-      productivity layer became Anthropic's third-party offering.
-      Your category got absorbed by both major platforms within 24
-      months.
+      Model agnostic positioning became irrelevant. You eventually shut down.
+  end-D-anthropic:
+    isOutcome: true
+    prompt: |
+      You successfully sold the company and protected your team. A good, if early, exit.
+  end-D-burn:
+    isOutcome: true
+    prompt: |
+      You got greedy or burned bridges. The acquisition fell through or ruined your reputation.
 ---
 ## What's at stake here
 

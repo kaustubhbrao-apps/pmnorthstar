@@ -42,146 +42,360 @@ nodes:
         rationale: |
           The instinct that kills incumbents. You'd be choosing to
           maximize quarterly earnings while a structural shift moves
-          under you. The hidden math: by the time streaming economics
-          improve, multiple new entrants will have captured streaming
-          subscribers. You'd be defending a shrinking market with no
-          presence in the growing one. Wall Street rewards this
-          quarterly; history punishes it permanently.
+          under you.
         consequence: |
           The next 3 years of DVD profits are excellent. By year 4, a
-          venture-backed streaming-native competitor has 20M subscribers
-          and is signing exclusive content deals. Your DVD business
-          starts to shrink. By year 7, you're acquired at a fraction of
-          peak valuation.
-        leadsTo: end-A
+          competitor has 20M subscribers. Your DVD business starts to shrink.
+        leadsTo: A-dvd-doubledown
       - text: Launch streaming as a free add-on to the DVD subscription. Same price, both included.
         points: 15
         pattern: cannibalize-yourself-first
         rationale: |
           The contrarian move. You're effectively saying: "the DVD
           business will be cannibalized — better that we do it on our
-          own terms than someone else's." Bundling streaming free
-          eliminates customer-decision friction (no upsell question),
-          gives you instant streaming subscribers from your existing
-          base, and starts the data-flywheel (watch behavior, catalog
-          preferences) you'll need to compete with future streaming-
-          natives. Risks: short-term margin pressure, Wall Street
-          confusion. Payoff: you own both businesses while they
-          coexist, with proprietary intelligence about the transition.
+          own terms than someone else's."
         consequence: |
           You announce the free streaming add-on. DVD subs barely
-          notice; ~30% try streaming in the first month. Wall Street
-          drops the stock 15% on margin concerns. Six months later the
-          stock recovers as streaming engagement metrics dominate
-          earnings calls.
+          notice; ~30% try streaming in the first month.
         leadsTo: B-bundle-followup
       - text: Split the company. Two CEOs, two brands, two stock tickers. Let each compete on its own terms.
         points: 6
         pattern: spin-off-too-early
         rationale: |
-          Theoretically clean — eliminates internal conflict between the
-          two business models. Practically expensive and premature.
-          You'd be incurring spinoff costs (separate ops, separate
-          marketing, separate finance) at exactly the moment when the
-          two businesses still benefit from being a single brand. The
-          time for the split is when streaming is fully scaled, not
-          when it's a sub-1% revenue line.
+          Theoretically clean — eliminates internal conflict.
+          Practically expensive and premature.
         consequence: |
           The split happens. Customers are confused about which brand
-          is which. The streaming entity raises capital separately but
-          at lower terms because it's smaller. Eight years later you
-          re-merge after a costly detour.
-        leadsTo: end-C
+          is which. The streaming entity struggles to raise capital.
+        leadsTo: C-spinoff-survival
       - text: Charge separately for streaming. New tier, $2/month add-on.
         points: 6
         pattern: monetize-the-transition
         rationale: |
           The "extract revenue from both" instinct. Wall Street loves
-          this because it shows growing ARPU. The problem: you create
-          customer-decision friction at the moment when you most need
-          streaming adoption velocity. Customers who don't opt in
-          remain DVD-only and miss the streaming habit that would
-          have kept them sticky.
+          this but you create customer-decision friction.
         consequence: |
           Streaming attach rate hits ~12% in year one. Stock looks fine
-          quarterly. By year 3, streaming-native competitors have free-
-          tier offerings that destroy your $2 add-on. You eventually
-          bundle it free in year 4, two years late.
-        leadsTo: end-D
+          quarterly, but long-term adoption is slow.
+        leadsTo: D-paid-streaming
+  A-dvd-doubledown:
+    dimension: business
+    prompt: |
+      It's 3 years later. Your DVD business has generated massive cash flow, but subscriber growth flatlined. Streaming competitors are huge. The board is anxious. What is your strategy?
+    options:
+      - text: Use the DVD cash flow to aggressively acquire a mid-sized streaming competitor.
+        points: 5
+        pattern: buy-your-way-in
+        rationale: |
+          A classic late-incumbent move. You try to use capital to buy back time.
+        consequence: |
+          You buy a streaming competitor for a premium. Wall street likes it temporarily.
+        leadsTo: A-acquire-integrate
+      - text: Launch an internal skunkworks project to build a next-gen streaming platform.
+        points: 2
+        pattern: internal-catchup
+        rationale: |
+          Building from scratch when competitors are scaling means you are 2 years behind.
+        consequence: |
+          The skunkworks project takes 24 months. Market is saturated.
+        leadsTo: A-skunkworks-launch
+  A-acquire-integrate:
+    dimension: product
+    prompt: |
+      You acquired the competitor. How do you integrate them?
+    options:
+      - text: Keep them as a separate brand to avoid culture clash.
+        points: 6
+        pattern: portfolio-approach
+        rationale: |
+          Prevents culture clash but fails to leverage your existing DVD subscriber base.
+        consequence: |
+          The streaming brand grows decently, but Netflix as a core brand becomes irrelevant.
+        leadsTo: end-A-separate
+      - text: Force a tight integration and rebrand them immediately.
+        points: 0
+        pattern: crush-the-acquisition
+        rationale: |
+          Forcing a modern tech stack onto legacy billing systems causes massive outages.
+        consequence: |
+          Key engineers leave. You write down the acquisition.
+        leadsTo: end-A-failed-acquisition
+  A-skunkworks-launch:
+    dimension: business
+    prompt: |
+      Your internal platform is ready but has no users and little content. Go to market strategy?
+    options:
+      - text: Offer it to existing DVD subscribers for a steep discount.
+        points: 4
+        pattern: discount-conversion
+        rationale: |
+          Better late than never, but competitors have locked up the best content.
+        consequence: |
+          You get a small fraction to convert. The economics barely work.
+        leadsTo: end-A-late-niche
+      - text: Market it as a premium 'criterion collection' for cinephiles.
+        points: 8
+        pattern: niche-retreat
+        rationale: |
+          Retreating to a profitable niche is a defensible survival tactic.
+        consequence: |
+          You become a respected niche player, but lose the mass market.
+        leadsTo: end-A-niche
   B-bundle-followup:
     dimension: business
     prompt: |
       Three years into the streaming bundle. ~40M total subscribers,
-      ~70% now stream regularly. The DVD business is shrinking but
-      still profitable. Content costs are exploding — studios are
-      charging $100M+ per major series for streaming rights. You need
+      ~70% now stream regularly. Content costs are exploding. You need
       to decide content strategy.
     options:
-      - text: Pour profits into original content. Become a studio. Reduce dependence on licensed content.
+      - text: Pour profits into original content. Become a studio.
         points: 15
         pattern: vertical-integration-as-survival
         rationale: |
-          The bet that defines the next decade. Licensed content is a
-          rising cost with no end; original content amortizes across
-          your entire subscriber base and creates a moat licensed
-          content never can. The first big original series will likely
-          flop. The third one might define your brand. The investment
-          is multi-year and existential.
+          The bet that defines the next decade. Original content creates a moat.
         consequence: |
-          Year 1 of originals: ~$2B spent, mixed results. Year 3:
-          a flagship series defines the category and quadruples
-          subscriber growth. Year 5: you're spending $15B/year on
-          original content and have 200M+ subscribers. The DVD
-          business is wound down without anyone caring.
-        leadsTo: end-B-great
-      - text: Stay licensing-only. Keep capital efficient. Compete on user experience and recommendations.
+          Year 1: ~$2B spent. Year 3: a flagship series defines the category.
+        leadsTo: B-original-strategy
+      - text: Stay licensing-only. Keep capital efficient.
         points: 6
         pattern: feature-not-content
         rationale: |
-          Capital-efficient but doomed. Licensed content costs will
-          keep rising, and the studios you license from will eventually
-          become competitors (Disney+, HBO Max, Paramount). Without
-          original content, you're a UX layer over a commodity catalog,
-          and the catalog can be ripped away.
+          Capital-efficient but doomed. The studios you license from will become competitors.
         consequence: |
-          By year 5, three major studios have launched competing
-          streamers and pulled their catalogs. Your subscriber growth
-          flattens. The stock multiple compresses.
-        leadsTo: end-B-mediocre
-  end-A:
+          By year 5, major studios pull their catalogs.
+        leadsTo: B-licensing-crisis
+  B-original-strategy:
+    dimension: product
+    prompt: |
+      You are committing to original content. A renowned director pitches a political drama, wanting $100M for two seasons upfront without a pilot.
+    options:
+      - text: Use proprietary user viewing data to validate the bet, then write the check.
+        points: 15
+        pattern: data-driven-conviction
+        rationale: |
+          Using data to derisk massive creative bets is the ultimate tech-first advantage.
+        consequence: |
+          The show is a massive hit.
+        leadsTo: end-B-great
+      - text: Reject the upfront demand. Insist on a traditional pilot episode.
+        points: 5
+        pattern: traditional-hollywood-model
+        rationale: |
+          Acting like a traditional network loses you the speed to poach top talent.
+        consequence: |
+          The director takes the show to HBO.
+        leadsTo: end-B-mediocre-originals
+  B-licensing-crisis:
+    dimension: business
+    prompt: |
+      Studios are pulling content. Your catalog is shrinking. Emergency play?
+    options:
+      - text: Pivot late into original content, focusing on cheap reality TV.
+        points: 4
+        pattern: cheap-padding
+        rationale: |
+          Fills the catalog but damages brand prestige.
+        consequence: |
+          Churn increases as prestige shows disappear.
+        leadsTo: end-B-reality-tv
+      - text: Double down on licensing from independent/international studios.
+        points: 10
+        pattern: international-arbitrage
+        rationale: |
+          Finding undervalued global content builds a highly engaged niche audience.
+        consequence: |
+          You survive as a platform globally.
+        leadsTo: end-B-international-niche
+  C-spinoff-survival:
+    dimension: founder
+    prompt: |
+      The split caused massive confusion. Users hate managing two queues. Do you stay the course?
+    options:
+      - text: Apologize publicly and instantly reverse the split.
+        points: 10
+        pattern: swallow-pride
+        rationale: |
+          Reversing a terrible decision quickly is a sign of strong leadership.
+        consequence: |
+          You take a PR hit but stabilize the core business.
+        leadsTo: C-reverse-split
+      - text: Stay the course. The market will eventually understand.
+        points: 0
+        pattern: stubborn-vision
+        rationale: |
+          Ignoring customer churn because you believe your vision is 'cleaner' is how companies die.
+        consequence: |
+          You lose 1M subscribers in a quarter.
+        leadsTo: C-stubborn-split
+  C-reverse-split:
+    dimension: product
+    prompt: |
+      You reversed the split. How do you win back consumer trust?
+    options:
+      - text: Implement a massive price cut for the bundle.
+        points: 3
+        pattern: price-bandaid
+        rationale: |
+          Price cuts damage unit economics. Product must be the draw.
+        consequence: |
+          You win users back but destroy margins.
+        leadsTo: end-C-low-margin
+      - text: Fast-track a highly anticipated exclusive original series.
+        points: 12
+        pattern: content-as-savior
+        rationale: |
+          Great content makes people forget PR blunders.
+        consequence: |
+          The conversation shifts to your new hit show.
+        leadsTo: end-C-content-save
+  C-stubborn-split:
+    dimension: business
+    prompt: |
+      Churn is devastating. What now?
+    options:
+      - text: Sell the DVD business to private equity to inject cash into streaming.
+        points: 8
+        pattern: sell-the-past
+        rationale: |
+          A pragmatic move. Get rid of distraction and get cash.
+        consequence: |
+          Streaming gets a lifeline but is permanently weakened.
+        leadsTo: end-C-sold-dvd
+      - text: Seek an emergency buyout of the entire company by a tech giant.
+        points: 4
+        pattern: capitulation
+        rationale: |
+          You've lost the ability to lead the market.
+        consequence: |
+          You are acquired at a massive discount.
+        leadsTo: end-C-acquired
+  D-paid-streaming:
+    dimension: product
+    prompt: |
+      The $2 add-on has a slow attach rate. Streaming natives are growing faster.
+    options:
+      - text: Make the streaming tier the default, and make DVDs the $2 add-on.
+        points: 12
+        pattern: flip-the-default
+        rationale: |
+          Correctly aligns product with the future.
+        consequence: |
+          Streaming adoption spikes. DVD usage declines.
+        leadsTo: D-streaming-default
+      - text: Keep pricing, but invest heavily in exclusive streaming content.
+        points: 6
+        pattern: content-justification
+        rationale: |
+          Trying to fix a pricing problem with a content solution is expensive.
+        consequence: |
+          Attach rates improve slightly, but capital efficiency is terrible.
+        leadsTo: D-expensive-add-on
+  D-streaming-default:
+    dimension: business
+    prompt: |
+      You face intense competition from Hulu. How do you differentiate?
+    options:
+      - text: Focus entirely on ad-free, binge-watching experiences.
+        points: 15
+        pattern: UX-differentiator
+        rationale: |
+          Binge-watching fundamentally changes consumer expectations.
+        consequence: |
+          You invent the modern streaming experience.
+        leadsTo: end-D-binge-model
+      - text: Adopt a weekly release schedule with ads to match network models.
+        points: 5
+        pattern: copy-the-networks
+        rationale: |
+          You lose the unique value proposition of internet TV.
+        consequence: |
+          You become just another cable channel.
+        leadsTo: end-D-mediocre
+  D-expensive-add-on:
+    dimension: business
+    prompt: |
+      Content costs are rising, and the $2 add-on isn't covering it.
+    options:
+      - text: Capitulate and make streaming free for all DVD subscribers.
+        points: 8
+        pattern: late-bundle
+        rationale: |
+          Right move, years late.
+        consequence: |
+          You get a bump in usage but are a secondary player.
+        leadsTo: end-D-late-bundle
+      - text: Raise the add-on price to $5.
+        points: 0
+        pattern: death-spiral-pricing
+        rationale: |
+          Raising prices on a struggling product causes mass cancellations.
+        consequence: |
+          Attach rate plummets to near zero.
+        leadsTo: end-D-death-spiral
+  end-A-separate:
     isOutcome: true
     prompt: |
-      Protecting the DVD profit pool was the textbook Innovator's
-      Dilemma failure. The streaming-native competitor captured the
-      category. The DVD business shrank to irrelevance by the early
-      2010s. You were eventually acquired at a fraction of peak.
+      By keeping the acquired streaming company separate, Netflix became a relic associated only with DVDs. The core company faded into obscurity.
+  end-A-failed-acquisition:
+    isOutcome: true
+    prompt: |
+      The forced integration destroyed the acquisition. You spent billions to buy a company only to break it.
+  end-A-late-niche:
+    isOutcome: true
+    prompt: |
+      The internal streaming platform launched too late. You missed the boat entirely.
+  end-A-niche:
+    isOutcome: true
+    prompt: |
+      Retreating to a cinephile niche was the only survival option left. You run a profitable, small business.
   end-B-great:
     isOutcome: true
     prompt: |
-      The free-bundle plus original-content strategy made you the
-      defining company of the streaming era. ~250M subscribers
-      globally within a decade. Market cap crossed $250B at peak. The
-      DVD business was a footnote by year 10.
-  end-B-mediocre:
+      The free-bundle plus data-driven original-content strategy made you the defining company of the streaming era. ~250M subscribers globally within a decade.
+  end-B-mediocre-originals:
     isOutcome: true
     prompt: |
-      The bundle saved the company short-term but the licensing-only
-      strategy capped your ceiling. Competitors with original content
-      compounded faster. You stayed a major player but not the
-      defining one.
-  end-C:
+      By acting like a traditional Hollywood studio, you lost the agility of a tech company. Your originals were mediocre.
+  end-B-reality-tv:
     isOutcome: true
     prompt: |
-      The premature spinoff was operationally costly. Both entities
-      underperformed against integrated competitors. Eight years
-      later, you re-merged, but the moment was past.
-  end-D:
+      You survived by pivoting to cheap reality TV, but the brand prestige was destroyed.
+  end-B-international-niche:
     isOutcome: true
     prompt: |
-      The $2 streaming add-on captured some subscribers but created
-      enough friction that streaming-native free-trial competitors
-      captured the bigger growth wave. You eventually bundled
-      streaming free but too late to lead the category.
+      Pivoting to international content was a smart survival tactic. You built a robust, defensible global business.
+  end-C-low-margin:
+    isOutcome: true
+    prompt: |
+      The price cuts won back the users but destroyed your margins. You spent years trying to dig out of the financial hole.
+  end-C-content-save:
+    isOutcome: true
+    prompt: |
+      A hit original show saved the company from the PR disaster of the split. You survived and thrived.
+  end-C-sold-dvd:
+    isOutcome: true
+    prompt: |
+      Selling the DVD business provided the lifeline needed for streaming to survive. It was a painful amputation, but it saved the patient.
+  end-C-acquired:
+    isOutcome: true
+    prompt: |
+      The split was a fatal error. With churn out of control, selling the company to a tech giant was the only way to avoid bankruptcy.
+  end-D-binge-model:
+    isOutcome: true
+    prompt: |
+      Flipping the default to streaming and inventing the ad-free, binge-watching model was brilliant. You defined the category.
+  end-D-mediocre:
+    isOutcome: true
+    prompt: |
+      By copying the networks with weekly releases, you remained a minor player in a crowded market.
+  end-D-late-bundle:
+    isOutcome: true
+    prompt: |
+      You eventually bundled streaming, but it was too late. You survived, but never led the category.
+  end-D-death-spiral:
+    isOutcome: true
+    prompt: |
+      Raising prices to cover costs on a failing product triggered a death spiral. A complete failure.
 ---
 ## What actually happened
 

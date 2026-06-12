@@ -65,7 +65,7 @@ nodes:
           transaction. By month 9 you need to raise the rate, which
           breaks trust with the customers who signed for the lower
           number.
-        leadsTo: end-B
+        leadsTo: B-beat-followup
       - text: Match the headline rate (2.9% + 30¢) but no contract, no setup, no monthly, no hidden fees. Charge a higher rate for cards from outside the US.
         points: 15
         pattern: anchor-with-simplicity
@@ -96,7 +96,7 @@ nodes:
           Pricing page conversion drops because the matrix scares
           off small developers. You eventually flatten the pricing
           to remove the cognitive load.
-        leadsTo: end-D
+        leadsTo: D-tier-followup
   A-match-followup:
     dimension: product
     prompt: |
@@ -118,7 +118,7 @@ nodes:
           Signups jump 4x in the next quarter. Fraud doesn't
           spike materially because your limits hold. You become
           the "no contract, no setup" payments company.
-        leadsTo: end-A-good
+        leadsTo: A-drop-followup
       - text: Keep the contract but simplify it to a 1-page agreement.
         points: 9
         pattern: half-friction-removal
@@ -130,7 +130,92 @@ nodes:
         consequence: |
           Bounce rate at the contract step drops from 30% to 20%.
           Better, but not where it needs to be.
+        leadsTo: A-simplify-followup
+  A-drop-followup:
+    dimension: business
+    prompt: |
+      You dropped the contract. Signups explode, but fraud begins to spike.
+    options:
+      - text: Build world-class ML fraud detection.
+        points: 15
+        pattern: scalable-solution
+        rationale: Software solves scaling problems better than humans.
+        consequence: You create an entirely new product line (Radar).
+        leadsTo: end-A-good
+      - text: Add a manual review step for every new account.
+        points: 5
+        pattern: unscalable-defense
+        rationale: You just re-introduced the friction you removed.
+        consequence: Growth slows back down.
+        leadsTo: end-A-ok
+  A-simplify-followup:
+    dimension: business
+    prompt: |
+      The 1-page contract is still causing bounce. A competitor launches with NO contract.
+    options:
+      - text: Finally drop the contract entirely.
+        points: 10
+        pattern: late-adoption
+        rationale: You are now reacting instead of leading.
+        consequence: You catch up, but lost the innovator brand.
+        leadsTo: end-A-good
+      - text: Keep it and sell the 'security' of a contract.
+        points: 0
+        pattern: false-positioning
+        rationale: Developers don't care. They want speed.
+        consequence: You lose the developer market.
         leadsTo: end-A-mediocre
+  B-beat-followup:
+    dimension: business
+    prompt: |
+      You are losing money on every transaction. The Series A investors demand you raise prices.
+    options:
+      - text: Grandfather early users, raise price for new ones.
+        points: 10
+        pattern: honor-the-past
+        rationale: Protects early evangelists, fixes unit economics moving forward.
+        consequence: Growth slows slightly, but you survive.
+        leadsTo: B-grandfather
+      - text: Raise the price for everyone immediately.
+        points: 0
+        pattern: break-trust
+        rationale: You bait-and-switched your earliest supporters.
+        consequence: Massive churn and terrible PR.
+        leadsTo: B-raise-all
+  B-grandfather:
+    dimension: business
+    prompt: |
+      The early users are grandfathered. New users complain about the higher rate.
+    options:
+      - text: Hold firm on the new rate.
+        points: 15
+        pattern: discipline
+        rationale: You must have positive unit economics.
+        consequence: The business stabilizes.
+        leadsTo: end-B-ok
+      - text: Give selective discounts to loud complainers.
+        points: 0
+        pattern: weak-knees
+        rationale: You are breaking your own pricing model again.
+        consequence: Chaos in billing.
+        leadsTo: end-B
+  B-raise-all:
+    dimension: business
+    prompt: |
+      You raised prices on everyone. A mob is forming on Hacker News.
+    options:
+      - text: Apologize publicly and explain the unit economics.
+        points: 10
+        pattern: transparency
+        rationale: Developers respect honesty, even if it hurts.
+        consequence: Some users stay.
+        leadsTo: end-B
+      - text: Ignore the noise.
+        points: 0
+        pattern: arrogance
+        rationale: You lose the community entirely.
+        consequence: Competitors eat your lunch.
+        leadsTo: end-B
   C-anchor-followup:
     dimension: product
     prompt: |
@@ -151,7 +236,7 @@ nodes:
         consequence: |
           Enterprise deals close at scale without contaminating the
           self-serve brand. ARR compounds from both directions.
-        leadsTo: end-C-great
+        leadsTo: C-enterprise-followup
       - text: Publish a volume-discount table on the pricing page.
         points: 9
         pattern: pricing-page-bloat
@@ -165,7 +250,7 @@ nodes:
           The pricing page becomes a comparison exercise. Sales
           cycles for enterprise improve slightly; the self-serve
           conversion drops a hair. Net mixed.
-        leadsTo: end-C-mixed
+        leadsTo: C-table-followup
       - text: Refuse to negotiate. Same price for everyone.
         points: 6
         pattern: fairness-as-dogma
@@ -179,7 +264,109 @@ nodes:
           You lose three large prospects to a competitor over the
           next two quarters. The brand stays clean but ARR plateaus
           at the upper end.
+        leadsTo: C-refuse-followup
+  C-enterprise-followup:
+    dimension: strategy
+    prompt: |
+      The enterprise tier is working. A legacy competitor starts undercutting your enterprise deals by 5 basis points.
+    options:
+      - text: Match their price to win the deal.
+        points: 5
+        pattern: margin-erosion
+        rationale: You enter a race to the bottom in enterprise.
+        consequence: You win deals but margins compress.
+        leadsTo: end-C-great
+      - text: Hold your price, sell on better API uptime and higher conversion rates.
+        points: 15
+        pattern: value-selling
+        rationale: Compete on product, not price.
+        consequence: You lose some deals, but win the best ones at good margins.
+        leadsTo: end-C-great
+  C-table-followup:
+    dimension: strategy
+    prompt: |
+      The table is confusing small users. Conversion is down 10%.
+    options:
+      - text: Revert to the single number and hide the enterprise tier.
+        points: 15
+        pattern: admit-mistake
+        rationale: You fix the error quickly.
+        consequence: Conversion recovers.
+        leadsTo: end-C-great
+      - text: Keep the table, they will get used to it.
+        points: 0
+        pattern: stubbornness
+        rationale: Don't fight the data.
+        consequence: You permanently lower your growth rate.
         leadsTo: end-C-mixed
+  C-refuse-followup:
+    dimension: strategy
+    prompt: |
+      You are losing massive enterprise deals. Growth is plateauing.
+    options:
+      - text: Finally introduce an enterprise tier.
+        points: 10
+        pattern: late-pivot
+        rationale: You swallow your pride to reignite growth.
+        consequence: Enterprise growth begins, but you are behind.
+        leadsTo: end-C-great
+      - text: Stay stubborn. 2.9% for everyone forever.
+        points: 0
+        pattern: ideological-death
+        rationale: Ideology doesn't pay the bills.
+        consequence: You cap your market cap at $1B instead of $100B.
+        leadsTo: end-C-mixed
+  D-tier-followup:
+    dimension: product
+    prompt: |
+      Users are confused by the tiers. Conversion is low.
+    options:
+      - text: Flatten the pricing to a single number immediately.
+        points: 15
+        pattern: radical-simplification
+        rationale: You realize simplicity is your wedge.
+        consequence: Conversion spikes.
+        leadsTo: D-flatten
+      - text: Add a complex 'Pricing Calculator' slider to the site.
+        points: 0
+        pattern: over-engineering
+        rationale: You added more cognitive load to solve cognitive load.
+        consequence: Users use the calculator, get confused, and leave.
+        leadsTo: D-calc
+  D-flatten:
+    dimension: business
+    prompt: |
+      You flattened the pricing. Early users on the cheaper tier are angry.
+    options:
+      - text: Grandfather them.
+        points: 15
+        pattern: honor-deals
+        rationale: It's the only fair way.
+        consequence: You move forward clean.
+        leadsTo: end-D
+      - text: Force them to the new flat rate.
+        points: 0
+        pattern: churn-generator
+        rationale: You alienate your core base.
+        consequence: High churn.
+        leadsTo: end-D
+  D-calc:
+    dimension: marketing
+    prompt: |
+      The calculator isn't working.
+    options:
+      - text: Flatten pricing.
+        points: 10
+        pattern: final-capitulation
+        rationale: Finally.
+        consequence: You recover somewhat.
+        leadsTo: end-D-bad
+      - text: Hire sales reps to explain the pricing.
+        points: 0
+        pattern: unscalable
+        rationale: Terrible unit economics.
+        consequence: Company fails.
+        leadsTo: end-D-bad
   end-A-good:
     isOutcome: true
     prompt: |
@@ -187,6 +374,10 @@ nodes:
       you were the default payments provider for early-stage
       startups, and the brand was set: payments infrastructure that
       ships in an afternoon.
+  end-A-ok:
+    isOutcome: true
+    prompt: |
+      You survived the fraud spike, but the manual reviews slowed you down. You grew, but steadily, not exponentially.
   end-A-mediocre:
     isOutcome: true
     prompt: |
@@ -201,6 +392,10 @@ nodes:
       Series A round priced lower because reviewers saw the margin
       issue. The next 18 months were spent quietly raising prices
       and apologizing to early customers.
+  end-B-ok:
+    isOutcome: true
+    prompt: |
+      You navigated the price hike decently by grandfathering, but it was a close call that stunted early momentum.
   end-C-great:
     isOutcome: true
     prompt: |
@@ -221,6 +416,10 @@ nodes:
       eventually flattened the pricing to recover the self-serve
       motion, but the matrix had already cost you ~6 months of
       conversion gains.
+  end-D-bad:
+    isOutcome: true
+    prompt: |
+      You overcomplicated your pricing so much that competitors ate your lunch simply by having a cleaner landing page.
 ---
 ## What actually happened
 

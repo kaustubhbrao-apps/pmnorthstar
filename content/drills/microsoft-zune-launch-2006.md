@@ -23,156 +23,257 @@ nodes:
     dimension: product
     prompt: |
       Your team proposes a unique feature: "Squirt." Utilizing the built-in Wi-Fi, it allows Zune users to wirelessly share songs with other Zune users nearby. 
-      
-      It's a brilliant social mechanic that the iPod lacks. However, the major music labels are terrified of piracy. They threaten to withhold their catalogs if you allow unrestricted sharing.
-      
+      However, the major music labels are terrified of piracy. They threaten to withhold their catalogs if you allow unrestricted sharing.
       How do you implement and negotiate this social sharing feature?
     options:
-      - text: "Cap the sharing: Shared songs can only be played 3 times over 3 days, and add heavy DRM to appease the labels."
+      - text: "Cap the sharing: Shared songs can only be played 3 times over 3 days, and add heavy DRM."
         points: 0
         pattern: appeasing-incumbents
         rationale: |
-          A classic corporate compromise. By appeasing the paranoid music labels, you destroy the user experience. 
-          Heavy DRM and strict rules (3 plays/3 days) make the feature frustrating, confusing, and virtually useless for consumers. You built a technical marvel only to artificially cripple it.
+          By appeasing the paranoid music labels, you destroy the user experience.
         consequence: |
-          The labels are happy, but the users hate it. When Zune launches, tech reviewers mock the sharing feature as a gimmick. You lose the only unique hardware differentiator you had.
+          The labels are happy, but the users hate it. Tech reviewers mock the sharing feature.
         leadsTo: capped_sharing
-      - text: "Fight the labels for a subscription model: Anyone with a 'Zune Pass' subscription can share and keep songs infinitely. Pay the labels a flat fee per share."
+      - text: "Fight the labels for a subscription model: Anyone with a 'Zune Pass' subscription can share and keep songs infinitely."
         points: 15
         pattern: business-model-innovation
         rationale: |
-          The bold, correct move. If you can't beat Apple on $0.99 track sales, you change the model to subscriptions (years before Spotify). 
-          Leveraging the subscription model to remove friction from sharing turns the Zune from a standalone player into a social network. Microsoft has the cash to subsidize the label payouts while the network grows.
+          The bold, correct move. If you can't beat Apple on track sales, you change the model to subscriptions.
         consequence: |
-          The negotiations are brutal and cost Microsoft millions in guarantees, but you secure the deal. Zune launches with unlimited wireless sharing for subscribers.
+          The negotiations cost Microsoft millions, but you secure the deal.
         leadsTo: subscription_sharing
-      - text: "Drop the sharing feature entirely. It's too legally risky. Focus solely on having better audio quality and a bigger screen."
+      - text: "Drop the sharing feature entirely. Focus solely on having better audio quality and a bigger screen."
         points: 3
         pattern: retreat-to-specs
         rationale: |
-          You avoid the legal fight but surrender your only unique angle. You are now selling an iPod clone that doesn't work with iTunes. Specs do not break ecosystem lock-in.
+          You avoid the legal fight but surrender your only unique angle.
         consequence: |
-          Zune launches as a generic media player. It gets decent reviews for audio quality but fails to generate any cultural buzz.
+          Zune launches as a generic media player.
         leadsTo: spec_war_marketing
   capped_sharing:
     dimension: business
     prompt: |
-      The "Squirt" feature is launched with the 3-play/3-day limits. Reviewers mock it. Sales are incredibly sluggish compared to the iPod. Consumers walk into Best Buy, see the Zune, realize it won't play their iTunes music, and buy an iPod Nano instead.
-      
-      You need a massive marketing push for the holiday season to save the launch. You have a $100M budget. Where do you focus your messaging?
+      Sales are incredibly sluggish compared to the iPod. Consumers buy an iPod Nano instead. You have a $100M marketing budget for the holidays. Where do you focus?
     options:
-      - text: "Run an abstract lifestyle brand campaign ('Welcome to the Social') focusing on the Zune brand, art, and indie music, not features."
+      - text: "Run an abstract lifestyle brand campaign ('Welcome to the Social') focusing on art and indie music."
         points: 0
         pattern: abstract-marketing-failure
         rationale: |
-          Abstract marketing only works when the consumer already understands the product's value proposition (like Apple's silhouette ads). 
-          For a new entrant, failing to explain *why* someone should buy a Zune over an iPod is fatal. The ads look cool, but they don't move units.
+          Abstract marketing only works when the consumer already understands the product's value.
         consequence: |
-          The campaign confuses consumers. The flagship brown Zune becomes a pop-culture punchline. Sales flatline.
-        leadsTo: node_lifestyle_brand
-      - text: "Go head-to-head on specs: Highlight the larger screen, FM radio, and pre-loaded music in aggressive, direct comparison ads against the iPod."
+          The campaign confuses consumers. Sales flatline.
+        leadsTo: lifestyle_reaction
+      - text: "Go head-to-head on specs: Highlight the larger screen, FM radio, and pre-loaded music in direct comparison ads."
         points: 6
         pattern: spec-comparison-trap
         rationale: |
-          Better than abstract art, but spec wars rarely win against a deeply entrenched ecosystem and superior brand cachet. 
-          Consumers don't care about a 0.5-inch larger screen if it means they lose their music library.
+          Spec wars rarely win against a deeply entrenched ecosystem.
         consequence: |
-          You win some spec-obsessed techies and anti-Apple contrarians, but the general public stays with Apple.
+          You win some techies, but the general public stays with Apple.
+        leadsTo: spec_reaction
+  lifestyle_reaction:
+    dimension: business
+    prompt: |
+      The 'Welcome to the Social' ads failed completely. What is your final attempt to fix the marketing?
+    options:
+      - text: "Fire the agency and pivot to product-focused ads."
+        points: 5
+        pattern: pivot-to-product
+        rationale: |
+          Better late than never to explain what the product actually does.
+        consequence: |
+          Slight recovery, but the initial launch momentum is gone forever.
+        leadsTo: node_lifestyle_brand
+      - text: "Double down on the 'social' aspect by sponsoring massive indie music festivals."
+        points: 0
+        pattern: doubling-down-on-failure
+        rationale: |
+          Spending millions on festivals doesn't fix the underlying lack of product-market fit.
+        consequence: |
+          You burn cash and the Zune remains a cultural joke.
+        leadsTo: node_lifestyle_brand
+  spec_reaction:
+    dimension: product
+    prompt: |
+      Techies bought it, but mainstream ignored it. How do you broaden the appeal?
+    options:
+      - text: "Open the Zune platform to independent developers for apps and games."
+        points: 10
+        pattern: app-platform-attempt
+        rationale: |
+          Slightly ahead of its time, pre-iOS App Store, a smart directional bet.
+        consequence: |
+          You build a small but passionate indie dev community, though it doesn't break Apple's dominance.
+        leadsTo: node_spec_comparison
+      - text: "Try to publicly shame Apple into opening iTunes to Zune."
+        points: 0
+        pattern: pointless-pr-war
+        rationale: |
+          Apple ignores you, and you look desperate.
+        consequence: |
+          A humiliating PR defeat.
         leadsTo: node_spec_comparison
   subscription_sharing:
     dimension: product
     prompt: |
-      You pushed through the Zune Pass integration. Unlimited sharing is a massive hit with early adopters. 
-      
-      Now, you have to handle the software ecosystem. iTunes is ubiquitous, fast, and familiar. To manage a Zune, users need desktop software.
-      
-      Do you try to integrate with Microsoft's existing Windows Media Player (WMP), or build a bespoke Zune desktop app?
+      Unlimited sharing is a massive hit with early adopters. Now, you have to handle the software ecosystem. Do you try to integrate with Microsoft's existing Windows Media Player (WMP), or build a bespoke Zune desktop app?
     options:
-      - text: "Build a brand new, beautifully designed Zune desktop software from scratch, dropping all legacy WMP baggage."
+      - text: "Build a brand new, beautifully designed Zune desktop software from scratch."
         points: 15
         pattern: clean-break-software
         rationale: |
-          A fresh, fast, dedicated app is absolutely necessary to compete with the iTunes experience. 
-          Windows Media Player is bloated, confusing, and associated with work, not play. Breaking internal Microsoft politics to build a bespoke app is the hallmark of great product leadership.
+          A fresh, fast app is necessary to compete with iTunes.
         consequence: |
-          The Zune desktop software is stunning. Its typography-heavy "Metro" design language is praised universally and becomes the foundation for Windows Phone 7.
-        leadsTo: node_new_software
-      - text: "Skin the existing Windows Media Player. It ensures deep Windows integration, backward compatibility, and lowers development costs."
+          The Zune desktop software is stunning and its 'Metro' design language is praised.
+        leadsTo: software_evolution
+      - text: "Skin the existing Windows Media Player."
         points: 0
         pattern: legacy-bloatware
         rationale: |
-          You succumb to internal Microsoft politics. WMP is a bloated mess. 
-          By forcing users to sync their sleek new hardware with clunky, legacy enterprise software, you destroy the premium feel of the product. The syncing experience is the most common point of friction; if it fails, the hardware is dead.
+          WMP is a bloated mess. Syncing fails.
         consequence: |
-          The software is slow and crashes frequently. Users return their Zunes out of pure frustration with the syncing process.
+          Users return their Zunes out of pure frustration.
+        leadsTo: wmp_reaction
+  software_evolution:
+    dimension: business
+    prompt: |
+      Zune Pass and the Metro software are hits. Spotify is just launching in Europe. What's next?
+    options:
+      - text: "Bring Zune Pass to iOS and Android as a cross-platform streaming app."
+        points: 15
+        pattern: software-first
+        rationale: |
+          Decoupling the service from the hardware lets you compete with Spotify globally.
+        consequence: |
+          Zune Pass becomes the dominant streaming service globally before Spotify gains a foothold.
+        leadsTo: node_new_software
+      - text: "Keep Zune Pass exclusive to Windows and Zune hardware to drive device sales."
+        points: 0
+        pattern: hardware-lockin
+        rationale: |
+          Restricting a digital service to failing hardware dooms the service.
+        consequence: |
+          Spotify eats the market. Zune Pass dies with the hardware.
+        leadsTo: node_new_software_fail
+  wmp_reaction:
+    dimension: product
+    prompt: |
+      WMP sync is killing you. Mass returns. How do you respond?
+    options:
+      - text: "Urgently rewrite the software from scratch."
+        points: 5
+        pattern: late-rewrite
+        rationale: |
+          Right move, but 18 months too late.
+        consequence: |
+          By the time the new software launches, the iPod Touch is out.
+        leadsTo: node_skin_wmp
+      - text: "Just patch WMP and hope users tolerate it."
+        points: 0
+        pattern: patch-bloat
+        rationale: |
+          Refusing to fix the core architecture flaw.
+        consequence: |
+          The product dies quickly.
         leadsTo: node_skin_wmp
   spec_war_marketing:
     dimension: business
     prompt: |
-      You dropped the sharing feature. The Zune is now just a good media player. 
-      
-      Sales are terrible. The board is demanding a pivot. Microsoft's entertainment division is bleeding cash. 
-      
-      What is your final move to try to salvage the hardware division?
+      You dropped the sharing feature. The Zune is now just a good media player. Sales are terrible. What is your final move?
     options:
-      - text: "Pivot the Zune hardware into a dedicated high-end audiophile device. Charge a premium and target the niche market."
+      - text: "Pivot the Zune hardware into a dedicated high-end audiophile device."
         points: 9
         pattern: niche-retreat
         rationale: |
-          Since you lost the mass market to Apple, retreating to a profitable niche (audiophiles who hate iTunes compression) is a defensible survival strategy.
+          Retreating to a profitable niche is a defensible survival strategy.
         consequence: |
-          You sell a fraction of the units, but at a high margin. Zune becomes a respected niche brand, though it fails its original strategic objective.
-        leadsTo: node_niche_survival
-      - text: "Cut the price by 50% to undercut the iPod Nano and try to buy market share."
+          You sell a fraction of the units, but at a high margin.
+        leadsTo: niche_evolution
+      - text: "Cut the price by 50% to undercut the iPod Nano."
         points: 0
         pattern: race-to-the-bottom
         rationale: |
-          Apple's margins and supply chain dominance mean they will always win a price war. Furthermore, price cuts signal desperation and devalue the brand. Consumers will buy a cheap iPod Shuffle before a discounted Zune.
+          Apple's margins mean they will always win a price war.
         consequence: |
-          You lose hundreds of millions of dollars. The board cancels the project entirely.
+          You lose hundreds of millions of dollars.
+        leadsTo: price_reaction
+  niche_evolution:
+    dimension: product
+    prompt: |
+      Audiophiles love the new Zune HD. How do you iterate?
+    options:
+      - text: "Release a super-premium $500 version with a high-end built-in DAC."
+        points: 10
+        pattern: premium-niche
+        rationale: |
+          Leaning fully into the niche is highly profitable.
+        consequence: |
+          It becomes a legendary device among audiophiles.
+        leadsTo: node_niche_survival
+      - text: "Try to take the HD features downmarket to a cheaper device to fight Apple again."
+        points: 0
+        pattern: confused-strategy
+        rationale: |
+          Abandoning your profitable niche to fight a war you already lost.
+        consequence: |
+          The cheaper device is crushed by the iPod Touch.
+        leadsTo: node_niche_survival_fail
+  price_reaction:
+    dimension: business
+    prompt: |
+      Price cut failed, you are losing money on every unit. Final move?
+    options:
+      - text: "Aggressively push into international markets where Apple is weaker."
+        points: 5
+        pattern: geographic-pivot
+        rationale: |
+          Finding markets with less incumbent dominance.
+        consequence: |
+          Slight success in LATAM, but ultimately the product line is shut down.
+        leadsTo: node_lifestyle_brand
+      - text: "Liquidate inventory to discount retailers to recoup cash."
+        points: 0
+        pattern: brand-destruction
+        rationale: |
+          Pure capitulation.
+        consequence: |
+          Brand is destroyed. Zune is discontinued immediately.
         leadsTo: node_lifestyle_brand
   node_lifestyle_brand:
     isOutcome: true
     prompt: |
       ### Outcome: The Punchline
-      
-      The 'Welcome to the Social' campaign confuses consumers. The crippled sharing feature is mocked. The brown Zune becomes a late-night television punchline. 
-      
-      Microsoft chases Apple for years, releasing several iterations of the Zune, but never breaks single-digit market share. The product line is ultimately discontinued, losing Microsoft over a billion dollars. You failed to break the ecosystem lock-in.
+      The campaign confused consumers. The crippled features were mocked. Microsoft chased Apple for years but never broke single-digit market share. You failed to break the ecosystem lock-in.
   node_spec_comparison:
     isOutcome: true
     prompt: |
       ### Outcome: A Tiny Niche
-      
-      The aggressive spec ads win you a small, dedicated following of tech enthusiasts who genuinely appreciate the larger screen and FM radio. 
-      
-      However, the general public stays with Apple due to the immense friction of leaving the iTunes ecosystem. Zune carves out a tiny, unprofitable niche but fails its primary objective of reclaiming the digital living room for Microsoft.
+      Aggressive spec ads won a small following of tech enthusiasts, but the general public stayed with Apple. Zune carved out a tiny, unprofitable niche.
   node_new_software:
     isOutcome: true
     prompt: |
       ### Outcome: The Pioneer of Streaming
-      
-      The brilliant, typography-led Zune desktop software combined with unlimited wireless sharing via the Zune Pass creates a passionate cult following. 
-      
-      While it doesn't entirely kill the iPod—Apple's momentum is too great—it forces Apple to adapt. More importantly, your subscription-first model proves that consumers will pay for access rather than ownership, laying the groundwork for the modern streaming era (Spotify, Apple Music). The Zune hardware eventually dies, but its software design language (Metro) and business model live on to define the next decade.
-      
-      **League Score Impact:** +90 Points.
+      The brilliant Zune desktop software combined with cross-platform Zune Pass created a massive hit. You forced Apple to adapt and proved that consumers will pay for access rather than ownership, laying the groundwork for the modern streaming era.
+  node_new_software_fail:
+    isOutcome: true
+    prompt: |
+      ### Outcome: Tied to a Sinking Ship
+      You built a great service but shackled it to failing hardware. Spotify ate the world while Zune Pass died a quiet death.
   node_skin_wmp:
     isOutcome: true
     prompt: |
       ### Outcome: Death by Sync
-      
-      The clunky, bloated Windows Media Player software completely ruins the decent hardware. 
-      
-      Users return their Zunes in droves out of frustration with syncing errors, duplicate tracks, and slow load times. The product dies quickly, proving that hardware is irrelevant if the software ecosystem is broken.
+      The clunky Windows Media Player software completely ruined the decent hardware. Users returned Zunes in droves. 
   node_niche_survival:
     isOutcome: true
     prompt: |
       ### Outcome: The Audiophile's Secret
-      
-      You retreated to a high-end niche. The Zune HD becomes beloved by audiophiles for its DAC and screen quality. 
-      
-      Microsoft stops mass consumer marketing and treats it as a premium hobbyist device. You didn't beat Apple, but you built a profitable, respected piece of hardware.
+      You retreated to a high-end niche. You didn't beat Apple, but you built a profitable, respected piece of hardware beloved by purists.
+  node_niche_survival_fail:
+    isOutcome: true
+    prompt: |
+      ### Outcome: Niche Abandoned
+      By trying to go mass-market again, you alienated the audiophiles and still lost to Apple. A complete strategic failure.
 ---
 ## What actually happened — the reveal
 
@@ -181,10 +282,10 @@ This drill is based on the real 2006 launch of the **Microsoft Zune**, led by **
 Microsoft was desperately trying to break Apple's absolute dominance of the portable media player market. 
 
 **Historically, Microsoft made all the wrong choices:**
-1. They implemented the brilliant wireless "Squirt" sharing feature, but bowed to pressure from music labels, capping it at **3 plays over 3 days** and wrapping it in heavy DRM. It made the feature confusing and virtually useless.
-2. For marketing, they ran the abstract, confusing **"Welcome to the Social"** campaign, which failed to explain to average consumers why they should abandon their iPods.
-3. They launched with a software ecosystem that, while eventually improved in later versions, was initially buggy and lacked the seamless integration of iTunes. 
+1. They implemented the brilliant wireless "Squirt" sharing feature, but bowed to pressure from music labels, capping it at **3 plays over 3 days** and wrapping it in heavy DRM. 
+2. For marketing, they ran the abstract, confusing **"Welcome to the Social"** campaign.
+3. They initially launched with a clunky software ecosystem.
 
-The Zune, particularly the launch model available in a widely mocked brown color, became a cultural punchline. Despite later releasing the genuinely excellent Zune HD and the innovative Zune Pass subscription service, Microsoft never broke past single-digit market share. The Zune hardware was discontinued in 2011.
+The Zune became a cultural punchline. Despite later releasing the genuinely excellent Zune HD and the innovative Zune Pass subscription service, Microsoft never broke past single-digit market share. 
 
-However, the Zune was not a complete failure internally. The Zune Pass pioneered the streaming subscription model years before Spotify dominated the US, and its beautiful, typography-heavy desktop software pioneered the "Metro" design language that would later be used in Windows Phone and Windows 8.
+However, the Zune Pass pioneered the streaming subscription model years before Spotify dominated the US, and its beautiful desktop software pioneered the "Metro" design language.

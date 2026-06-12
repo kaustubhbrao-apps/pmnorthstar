@@ -34,172 +34,249 @@ nodes:
   start:
     dimension: founder
     prompt: |
-      The CTO wants to rebuild. The product works for a few hundred
-      users. Six months of runway. Pick.
+      The CTO wants to rebuild. The product works for a few hundred users. Six months of runway. Pick.
     options:
       - text: Rebuild from scratch. Communicate to the team and to investors. Buy 4 more months runway by cutting headcount.
         points: 15
         pattern: nuke-and-rebuild
         rationale: |
-          The courageous move when the diagnosis is correct. You're
-          saying: the architecture is the constraint, the feature
-          bloat is the symptom, and another year of patching gets
-          you another year of flat numbers. Rebuilding lets you
-          collapse the 47 features into the core 5 that the power
-          users actually love, on a renderer that the team can ship
-          fast on. The risk: you might rebuild the wrong thing.
-          Mitigation: do it from first principles, not from the
-          current product's feature list.
+          The courageous move when the diagnosis is correct.
         consequence: |
-          You communicate the pivot to the team and investors. You
-          let two engineers go. You spend 4 months in stealth
-          rebuilding around the "blocks" primitive. The new product
-          ships and converts the existing power users in 48 hours.
+          You communicate the pivot to the team and investors.
         leadsTo: B-rebuild-followup
       - text: Refactor incrementally. Keep shipping features. Don't break the existing users.
         points: 6
         pattern: incremental-when-radical-needed
         rationale: |
-          The defensible-looking instinct. Problem: you're acknowledging
-          the architecture is wrong but committing to fix it
-          piecewise. Each incremental refactor takes longer than
-          planned, breaks something else, and never compounds. You
-          spend the next year half-rebuilding and half-shipping new
-          features, and end up with both a worse product and a
-          worse architecture.
+          The defensible-looking instinct.
         consequence: |
-          12 months later you've half-rebuilt the renderer and
-          shipped 8 new features. DAU is still flat. Runway runs
-          out.
-        leadsTo: end-A
+          12 months later you've half-rebuilt the renderer and shipped 8 new features. DAU is still flat.
+        leadsTo: A-refactor-crisis
       - text: Cut features aggressively. Don't rebuild. Just remove everything below 10% usage.
         points: 9
         pattern: prune-without-rebuild
         rationale: |
-          Right instinct on bloat, wrong call on architecture. Cutting
-          to the core 5 features is the right exercise — but it
-          doesn't fix the rendering bug that's blocking the power
-          users you have. You'd be shipping a cleaner-but-still-
-          broken product, which doesn't move the DAU number.
+          Right instinct on bloat, wrong call on architecture.
         consequence: |
-          Feature count drops to 12. Existing users don't notice
-          either way. The architecture problem remains. DAU still
-          flat at month 6.
-        leadsTo: end-C
+          Feature count drops to 12.
+        leadsTo: C-feature-cut-followup
       - text: Sell the company. You have a working product and 200 paying users — find a strategic buyer.
         points: 3
         pattern: surrender-prematurely
         rationale: |
-          Premature capitulation. You haven't earned the right to
-          sell yet — your numbers aren't strong enough to command a
-          good price, but they're strong enough to justify a real
-          pivot. Selling at this stage means selling at desperation
-          valuation. The real question is: do you believe the
-          original thesis? If yes, keep going; if no, return the
-          money and don't take the acqui-hire.
+          Premature capitulation.
         consequence: |
-          The acqui-hire offer arrives at $4M. Investors take it.
-          Your team is folded into a larger company. The blocks-
-          based workspace category gets defined by someone else 18
-          months later.
-        leadsTo: end-D
+          The acqui-hire offer arrives at $4M.
+        leadsTo: D-sale-process
+
   B-rebuild-followup:
     dimension: product
     prompt: |
-      Three months into the rebuild. The team has shipped a working
-      "blocks" prototype — every UI element (text, image, list,
-      table, database) is the same primitive that can nest into
-      anything. The early demos are getting strong reactions from
-      friends in the dev community. The CTO wants to ship in
-      stealth to a tight invite list before the public launch.
-      Pick the launch strategy.
+      Three months into the rebuild. The team has shipped a working prototype. Pick the launch strategy.
     options:
-      - text: Invite-only beta. Personal outreach to 100 power users from the old product. Iterate quickly.
+      - text: Invite-only beta. Personal outreach to 100 power users.
         points: 15
         pattern: deliberate-base-rebuild
         rationale: |
-          The right call for a rebuilt product. Your old power users
-          are the highest-signal audience — they'll tell you what
-          translated and what didn't. Invite-only also lets you
-          tighten the loop on bug reports without overloading
-          support. The public launch can come once the early
-          feedback loop confirms the blocks primitive works at
-          scale.
+          The right call for a rebuilt product.
         consequence: |
-          Of the 100 invited, 87 sign up. Daily active users
-          surpass the old product's peak within 6 weeks. You ship
-          public launch with a built-in evangelist base.
-        leadsTo: end-B-great
+          Of the 100 invited, 87 sign up.
+        leadsTo: B-public-launch
       - text: Public launch on Product Hunt. Maximum surface area, fast feedback.
         points: 9
         pattern: launch-before-loop
         rationale: |
-          Faster, riskier. Product Hunt traffic is broad and noisy —
-          you'll get sign-ups but also bug reports from users who
-          aren't your ICP. The feedback loop is messier and the
-          team gets pulled into edge cases rather than the core
-          product loop. Works if your product is bug-free; risky
-          when you've just rebuilt the renderer.
+          Faster, riskier.
         consequence: |
-          Launch lands on PH top 10. 2,000 signups in week one. 40%
-          churn at day-7 because the product is still buggy and
-          your support team can't keep up.
-        leadsTo: end-B-mixed
-      - text: Skip the launch. Quietly migrate the old users. Don't talk about the rebuild until v2.
+          Launch lands on PH top 10. 2,000 signups but 40% churn.
+        leadsTo: B-public-launch
+      - text: Skip the launch. Quietly migrate the old users.
         points: 6
         pattern: hide-the-bet
         rationale: |
-          Conservative to a fault. The rebuild IS the story; not
-          telling it forfeits the narrative moment. A rebuilt
-          product can use the rebuild itself as marketing
-          ("we threw it all away and started over"); shipping
-          it quietly leaves that asset on the table.
+          Conservative to a fault.
         consequence: |
-          The migration works but nobody outside the user base
-          notices. By the time v2 comes, the moment has passed.
-        leadsTo: end-B-quiet
-  end-A:
-    isOutcome: true
+          The migration works but nobody outside the user base notices.
+        leadsTo: B-public-launch
+
+  B-public-launch:
+    dimension: business
     prompt: |
-      The incremental refactor never compounded. Twelve months later
-      you'd shipped neither a meaningfully new product nor a
-      cleaner codebase. The team ran out of runway and the company
-      shut down quietly.
+      You are now live in the market with the new "blocks" architecture.
+    options:
+      - text: Focus heavily on community building, templates, and ambassadors.
+        points: 15
+        pattern: community-led-growth
+        rationale: |
+          A flexible tool needs people to show others how to use it.
+        consequence: |
+          Growth goes parabolic.
+        leadsTo: end-B-great
+      - text: Focus purely on paid ads targeting enterprise companies.
+        points: 3
+        pattern: wrong-gtm
+        rationale: |
+          The product is too horizontal for direct enterprise sales right now.
+        consequence: |
+          High CAC, slow growth.
+        leadsTo: end-B-mixed
+
+  A-refactor-crisis:
+    dimension: founder
+    prompt: |
+      The incremental refactor is failing. Code is a mess. 2 months runway.
+    options:
+      - text: Stop feature development entirely and just try to fix the bugs.
+        points: 6
+        pattern: panic-fix
+        rationale: |
+          Too late to fix structural rot.
+        consequence: |
+          You fix some bugs but users still churn.
+        leadsTo: A-final-call
+      - text: Accept defeat and start looking for acqui-hires.
+        points: 3
+        pattern: give-up
+        rationale: |
+          You squandered your runway.
+        consequence: |
+          You scramble for buyers.
+        leadsTo: A-final-call
+
+  A-final-call:
+    dimension: business
+    prompt: |
+      It's the final month.
+    options:
+      - text: Shut it down cleanly.
+        points: 9
+        pattern: clean-end
+        rationale: |
+          Graceful exit.
+        consequence: |
+          Company dies.
+        leadsTo: end-A-fail
+      - text: Try to raise money on a pivot story, but without having built anything new.
+        points: 0
+        pattern: delusion
+        rationale: |
+          Investors won't fund a broken product team.
+        consequence: |
+          You fail to raise.
+        leadsTo: end-A-fail
+
+  C-feature-cut-followup:
+    dimension: product
+    prompt: |
+      You cut features but didn't fix the core architecture. DAU is still flat.
+    options:
+      - text: Finally agree to the CTO's rebuild plan.
+        points: 9
+        pattern: late-rebuild
+        rationale: |
+          You lost time, but you finally make the right call.
+        consequence: |
+          You have to lay off 80% of the team to get enough runway.
+        leadsTo: C-runway-end
+      - text: Try to market the "new, simpler" product.
+        points: 0
+        pattern: lipstick-on-pig
+        rationale: |
+          Marketing doesn't fix a broken core experience.
+        consequence: |
+          Marketing spend fails.
+        leadsTo: C-runway-end
+
+  C-runway-end:
+    dimension: founder
+    prompt: |
+      Runway is almost zero.
+    options:
+      - text: Execute the extreme layoff and rebuild in a garage.
+        points: 12
+        pattern: true-grit
+        rationale: |
+          The founder's journey.
+        consequence: |
+          You survive by the skin of your teeth and rebuild.
+        leadsTo: end-C-survive
+      - text: Give up and shut it down.
+        points: 3
+        pattern: surrender
+        rationale: |
+          You lack the conviction to do the hard thing.
+        consequence: |
+          Company dies.
+        leadsTo: end-C-fail
+
+  D-sale-process:
+    dimension: business
+    prompt: |
+      You are negotiating the $4M acqui-hire.
+    options:
+      - text: Push for $10M, threatening to walk away.
+        points: 0
+        pattern: overplay-hand
+        rationale: |
+          You have no leverage with 6 months runway.
+        consequence: |
+          Buyer walks. You have nothing.
+        leadsTo: D-post-sale
+      - text: Take the $4M and ensure the team gets good jobs.
+        points: 9
+        pattern: pragmatic-exit
+        rationale: |
+          Accepting the reality of your choice.
+        consequence: |
+          Deal closes.
+        leadsTo: D-post-sale
+
+  D-post-sale:
+    dimension: founder
+    prompt: |
+      The aftermath.
+    options:
+      - text: Stay at the acquiring company for 4 years, vesting peacefully.
+        points: 6
+        pattern: golden-handcuffs
+        rationale: |
+          You chose safety.
+        consequence: |
+          You watch someone else build the multi-billion dollar workspace company.
+        leadsTo: end-D-sold
+      - text: Leave after 1 year to start a new company.
+        points: 9
+        pattern: serial-founder
+        rationale: |
+          You still have the itch.
+        consequence: |
+          You try again in a new space.
+        leadsTo: end-D-sold
+
   end-B-great:
     isOutcome: true
     prompt: |
-      The deliberate base-rebuild compounded perfectly. Within 18
-      months you were the fastest-growing productivity tool in
-      history. By 5 years out, $30B+ valuation and a tool every
-      knowledge worker had heard of. The rebuild story became the
-      most-told founder narrative of the decade.
+      The community-led growth on the new blocks primitive made you a $10B+ juggernaut. A legendary pivot.
   end-B-mixed:
     isOutcome: true
     prompt: |
-      The public launch came too fast. The new product was right
-      but the support pipeline wasn't ready. The growth recovered
-      eventually but the first 90 days were chaos.
-  end-B-quiet:
+      The wrong GTM strategy slowed you down, but the product was so good it eventually survived.
+  end-A-fail:
     isOutcome: true
     prompt: |
-      The migration worked technically. Brand-wise, you missed the
-      moment. The product grew on word-of-mouth alone for the next
-      two years until a competitor copied the blocks primitive and
-      launched it louder.
-  end-C:
+      The incremental refactor failed. The company died quietly.
+  end-C-survive:
     isOutcome: true
     prompt: |
-      You cleaned up the features but didn't fix the architecture.
-      Six months later the DAU graph was identical. The runway ran
-      out and the team scattered.
-  end-D:
+      The late garage rebuild worked. It was insanely painful, but you built the right product eventually.
+  end-C-fail:
     isOutcome: true
     prompt: |
-      The acqui-hire was the worst-timed exit possible. You returned
-      the cap-table at par; your team got jobs at the acquirer; the
-      blocks-based workspace got defined by a different startup 18
-      months later, valued in the tens of billions. You watched it
-      happen on Twitter.
+      You cut features but didn't fix the core. The company ran out of money and died.
+  end-D-sold:
+    isOutcome: true
+    prompt: |
+      You sold the company for parts. You made some money, but left billions on the table.
 ---
 ## What actually happened
 

@@ -12,207 +12,241 @@ principle: |
   data aggregation goals. Forcing strict real-name policies on vulnerable early adopters
   destroys network trust right when a platform needs evangelists the most.
 intro: |
-  It's July 2011. Google has just launched Google+, its most ambitious attempt yet to
-  challenge Facebook's absolute dominance in social networking. The stakes are existential;
-  Google fears that if Facebook owns the social graph, they will eventually own search.
+  It's July 2011. Google has just launched Google+, attempting to challenge Facebook.
+  Early traction is phenomenal. Millions of users are signing up.
   
-  Early traction is phenomenal. Millions of users are signing up in the first few weeks,
-  drawn by the innovative "Circles" feature that mimics real-world privacy boundaries, and
-  a cleaner, ad-free interface. The tech community and early adopters are enthusiastic.
+  However, a major crisis is brewing. The platform enforces a draconian "Real Names" policy.
+  The executive goal is clear: Google wants to unify user identity to build a unified data profile that can beat Facebook's ad targeting.
   
-  However, a major crisis is brewing. You are a product leader on the Google+ identity team.
-  The platform enforces a draconian "Real Names" policy, requiring users to use their common,
-  real-world names. The executive goal is clear: Google wants to unify user identity across
-  all its services (Search, Gmail, YouTube) to build a unified data profile that can beat
-  Facebook's ad targeting.
-  
-  But the backlash is fierce. Pseudonymous users, activists, marginalized groups, and early
-  tech adopters who have used online handles for decades are being abruptly mass-suspended
-  without warning. The tech press is dubbing it the "Nymwars." The community is outraged,
-  and your strict identity enforcement is actively alienating the very power users who are
-  supposed to be your early evangelists.
-  
-  This is a Tier 1 League Match. The decisions are binary and the consequences are terminal.
+  The backlash is fierce. Pseudonymous users are being abruptly mass-suspended without warning. The tech press is dubbing it the "Nymwars."
 nodes:
   start:
     dimension: product
     prompt: |
-      The volume of suspended accounts is spiking, and high-profile tech influencers are
-      publicly deleting their profiles in protest. The policy team argues that relaxing the
-      rule will turn Google+ into a spam-filled, toxic wasteland like YouTube comments.
-      
-      What is your immediate response to the backlash?
+      The volume of suspended accounts is spiking. High-profile tech influencers are deleting their profiles in protest. What is your immediate response?
     options:
-      - text: "Double down on real names. The long-term value of a unified, verified identity across Google outweighs short-term PR pain from a vocal minority."
+      - text: "Double down on real names. The long-term value of unified identity outweighs short-term PR pain."
         points: 0
         pattern: policy-over-users
         rationale: |
-          This prioritizes internal corporate strategy (unified data) over user needs
-          (privacy and expression). Forcing real names alienates vulnerable users and early
-          adopters, eroding trust right when the network needed rapid growth. You cannot
-          force users to comply with a policy that makes them feel unsafe or unwelcome
-          when competitors are a click away.
+          Prioritizes internal corporate strategy over user needs.
         consequence: |
-          You stick to the policy. Suspensions continue. The press narrative shifts overnight
-          from "Google+ is a Facebook killer" to "Google+ is out of touch, authoritarian,
-          and hostile to users." Growth stalls significantly.
+          Suspensions continue. Narrative shifts to "Google+ is authoritarian." Growth stalls.
         leadsTo: node_double_down
-      - text: "Immediately pause all suspensions, issue a public apology, and start allowing pseudonyms and established online nicknames."
+      - text: "Immediately pause all suspensions, issue an apology, and allow pseudonyms."
         points: 15
         pattern: trust-rebuilding
         rationale: |
-          Acknowledging the diverse needs for pseudonymity (for activists, abuse survivors,
-          or simply internet culture) builds user trust and prevents a mass exodus of early
-          influencers. You save the platform's reputation before the narrative hardens.
+          Acknowledging diverse needs builds user trust and prevents a mass exodus.
         consequence: |
-          The tech community praises the reversal. Influencers return, and the "Nymwars"
-          end. However, you still have to solve the spam and identity verification problem
-          that executive leadership is demanding.
+          Tech community praises the reversal. "Nymwars" end.
         leadsTo: node_pause_suspensions
-      - text: "Implement an appeals process. Keep the policy, but let suspended users submit a government ID to prove their name is real."
+      - text: "Implement an appeals process requiring a government ID."
         points: 3
         pattern: bureaucratic-friction
         rationale: |
-          This is the worst of both worlds. It maintains the hostile policy while adding
-          massive bureaucratic friction. Asking users to submit government ID to use a
-          social network feels dystopian and drives away everyone except the most desperate.
+          Maintains hostile policy with massive friction.
         consequence: |
-          The appeals queue backs up for weeks. Users are insulted by the ID requirement
-          and flock to Twitter instead. The network becomes a ghost town.
-        leadsTo: node_ghost_town
+          Appeals queue backs up for weeks. Users are insulted.
+        leadsTo: node_appeals_followup
   node_double_down:
     dimension: business
     prompt: |
-      You stuck to the real names policy. The early adopter goodwill is completely gone.
-      Growth has stalled, and engagement is dropping. The network is becoming a sterile
-      place populated only by people using it for professional networking.
-      
-      Executive leadership is panicking about the metrics. How do you attempt to restart
-      momentum and force adoption?
+      Goodwill is gone. Growth stalled. Executive leadership is panicking. How do you force adoption?
     options:
-      - text: "Force Google+ integration into all other Google products. Require a G+ profile to comment on YouTube, write reviews, or use Gmail."
+      - text: "Force Google+ integration into all other Google products (e.g. YouTube comments)."
         points: 0
         pattern: forced-adoption
         rationale: |
-          The ultimate dark pattern. If users won't choose your product, forcing it down
-          their throats via monopoly power breeds massive resentment. It inflates signup
-          metrics but creates zero genuine social engagement.
+          The ultimate dark pattern. Breeds massive resentment.
         consequence: |
-          You tie YouTube comments to Google+ real names. The backlash is legendary. Users
-          revolt. The network becomes a bloated shell of forced accounts with no actual
-          social interaction.
-        leadsTo: node_force_integration
-      - text: "Pivot. Shift focus entirely to enterprise users, pitching Google+ as a secure corporate collaboration tool and abandoning the consumer fight."
+          Backlash is legendary. Zero genuine social engagement.
+        leadsTo: force_integration
+      - text: "Pivot entirely to enterprise users as a corporate collaboration tool."
         points: 9
         pattern: enterprise-retreat
         rationale: |
-          A safer, pragmatic pivot. Real names make perfect sense in a corporate intranet
-          environment. It completely abandons the original mission to kill Facebook, but it
-          salvages the technology and engineering investment.
+          Real names make sense in corporate intranets. Abandons consumer fight.
         consequence: |
-          Google+ becomes an enterprise tool. It survives within Google Workspace, generating
-          quiet value, but the consumer social dream is dead.
+          Google+ survives within Google Workspace.
+        leadsTo: enterprise_retreat
+  force_integration:
+    dimension: product
+    prompt: |
+      Backlash on YouTube is legendary. Users are posting ASCII tanks.
+    options:
+      - text: "Roll it back and admit defeat."
+        points: 5
+        pattern: late-surrender
+        rationale: |
+          Stops the bleeding but the brand is toxic.
+        consequence: |
+          Google+ becomes a ghost town.
+        leadsTo: node_force_ghost
+      - text: "Double down and disable comments entirely for non-G+ users."
+        points: 0
+        pattern: scorched-earth
+        rationale: |
+          Actively damages YouTube's engagement to prop up a failing social network.
+        consequence: |
+          Creators threaten to leave YouTube. Google fires the G+ leadership.
+        leadsTo: node_force_ghost
+  enterprise_retreat:
+    dimension: business
+    prompt: |
+      You pivoted to enterprise. How do you build the product?
+    options:
+      - text: "Integrate deeply with Google Docs."
+        points: 12
+        pattern: leverage-strengths
+        rationale: |
+          Plays to Google's actual enterprise strengths.
+        consequence: |
+          Becomes a useful internal tool.
+        leadsTo: node_enterprise
+      - text: "Try to build a Slack-like chat interface."
+        points: 5
+        pattern: chase-the-next-thing
+        rationale: |
+          Late to another market.
+        consequence: |
+          Fails to gain traction against Slack.
         leadsTo: node_enterprise
   node_pause_suspensions:
     dimension: product
     prompt: |
-      You've stopped the suspensions and saved the community's goodwill. Now you need a
-      long-term identity solution to satisfy the board, who still want a clean, spam-free
-      network that can rival Facebook's ad targeting.
-      
-      How do you balance the need for network quality with user demands for privacy?
+      You stopped suspensions. You need a long-term identity solution for network quality.
     options:
-      - text: "Implement a robust verification system (like Twitter's blue check) for public figures and brands, but allow everyone else to use pseudonyms."
+      - text: "Implement robust verification (blue check) for public figures, allow pseudonyms for masses."
         points: 15
         pattern: flexible-identity
         rationale: |
-          Solves the impersonation problem for high-profile users while maintaining freedom
-          of expression for the masses. It embraces the reality of how internet culture
-          actually works rather than fighting it.
+          Solves impersonation while maintaining freedom of expression.
         consequence: |
-          The platform stabilizes. You maintain early adopter goodwill. The community thrives
-          in niche interest groups, and you build a sustainable, differentiated social network
-          based on interests rather than forced identity.
-        leadsTo: node_verification
-      - text: "Require users to link a credit card or verified phone number to their account to use a pseudonym to prevent spam."
+          Community thrives in niche interest groups.
+        leadsTo: verification
+      - text: "Require users to link a credit card to use a pseudonym."
         points: 3
         pattern: friction-barrier
         rationale: |
-          Adds way too much friction and privacy concern for the average user. People will
-          not hand over credit card data just to post a meme under a nickname.
+          Too much friction. People won't hand over CC data to post memes.
         consequence: |
-          The high friction prevents broad adoption. Users flock to platforms with lower
-          barriers to entry. Google+ remains a niche product for paranoid techies.
+          High friction prevents broad adoption.
+        leadsTo: friction_barrier
+  verification:
+    dimension: business
+    prompt: |
+      Community thrives in niches. Facebook launches identical 'Circles' feature. How do you respond?
+    options:
+      - text: "Focus on integrating exclusive Google tech like Hangouts video calls."
+        points: 15
+        pattern: tech-differentiator
+        rationale: |
+          Hangouts was genuinely better than anything Facebook had at the time.
+        consequence: |
+          You build a massive, highly engaged network based on interests and video hangouts.
+        leadsTo: node_verification
+      - text: "Launch a massive multi-million dollar TV ad campaign."
+        points: 0
+        pattern: waste-cash
+        rationale: |
+          Ads don't beat network effects.
+        consequence: |
+          Money wasted, Facebook maintains dominance.
+        leadsTo: node_verification
+  friction_barrier:
+    dimension: product
+    prompt: |
+      Platform is clean but empty. How do you fix growth?
+    options:
+      - text: "Remove the CC requirement and use ML to flag spam."
+        points: 10
+        pattern: fix-the-friction
+        rationale: |
+          Right move, but momentum is already lost.
+        consequence: |
+          Slow recovery.
         leadsTo: node_verification_friction
-  node_force_integration:
+      - text: "Pay influencers to join and post exclusively."
+        points: 0
+        pattern: artificial-seeding
+        rationale: |
+          When the money stops, the influencers leave.
+        consequence: |
+          Platform remains empty.
+        leadsTo: node_verification_friction
+  node_appeals_followup:
+    dimension: business
+    prompt: |
+      Appeals queue is backed up for weeks. Users are flocking to Twitter.
+    options:
+      - text: "Hire 10,000 contractors to clear the queue."
+        points: 2
+        pattern: brute-force
+        rationale: |
+          Expensive and doesn't fix the underlying hostile policy.
+        consequence: |
+          Contractors approve fake IDs anyway.
+        leadsTo: hire_contractors
+      - text: "Abandon the ID requirement entirely."
+        points: 8
+        pattern: late-reversal
+        rationale: |
+          Finally doing the right thing.
+        consequence: |
+          You save some face, but growth is crippled.
+        leadsTo: node_ghost_town
+  hire_contractors:
+    dimension: product
+    prompt: |
+      Contractors are approving fake IDs. The policy is a joke.
+    options:
+      - text: "Accept the fake names and quietly stop enforcing the policy."
+        points: 5
+        pattern: silent-surrender
+        rationale: |
+          At least it removes the friction.
+        consequence: |
+          Network becomes generic.
+        leadsTo: node_ghost_town
+      - text: "Fire contractors and use strict AI text-matching."
+        points: 0
+        pattern: algorithmic-tyranny
+        rationale: |
+          AI bans legitimate users with unusual names.
+        consequence: |
+          Massive PR disaster.
+        leadsTo: node_ghost_town
+  node_force_ghost:
     isOutcome: true
     prompt: |
       ### Outcome: The Forced Ghost Town
-      You tied YouTube comments to Google+ real names. The backlash was legendary (users
-      spamming the platform with ASCII art tanks in protest). 
-      
-      The network became a massive ghost town of forced accounts. You had hundreds of
-      millions of "registered" users, but zero cultural relevance. Google+ eventually shut
-      down in 2019 after a massive data leak was the final nail in the coffin.
-      
-      **League Score:** 0/100
+      You tied YouTube comments to Google+. The backlash was legendary. The network became a massive ghost town of forced accounts. Google+ eventually shut down in 2019.
   node_enterprise:
     isOutcome: true
     prompt: |
       ### Outcome: The Corporate Pivot
-      Google+ pivots to enterprise. It survives as a workplace tool but utterly fails its
-      primary mission to unseat Facebook. You essentially built an early version of Google
-      Currents / Google Workspace. It's a modest business success, but a massive strategic
-      defeat.
-      
-      **League Score:** 40/100
+      Google+ pivots to enterprise. It survives as a workplace tool but fails its primary mission to unseat Facebook. 
   node_verification:
     isOutcome: true
     prompt: |
       ### Outcome: The Interest Graph
-      By embracing pseudonyms but verifying public figures, Google+ maintains its early
-      adopter goodwill. The community thrives around specific interests and hobbies rather
-      than real-world relationships.
-      
-      You don't kill Facebook, but you build a massive, highly engaged network that
-      effectively replaces forums and competes fiercely with Reddit and Twitter.
-      
-      **League Score:** 100/100
+      By embracing pseudonyms and Hangouts, you build a massive, highly engaged network that competes fiercely with Reddit and Twitter.
   node_ghost_town:
     isOutcome: true
     prompt: |
       ### Outcome: The Bureaucratic Death
-      By demanding government ID, you proved to the internet that Google was acting like a
-      surveillance state rather than a social network. The early adopters fled instantly,
-      taking the cultural momentum with them. The product died in its crib.
-      
-      **League Score:** 10/100
+      By demanding government ID, you proved to the internet that Google was acting like a surveillance state. The early adopters fled. The product died in its crib.
   node_verification_friction:
     isOutcome: true
     prompt: |
       ### Outcome: The High Barrier
-      The friction was too high. While you prevented spam, you also prevented growth.
-      Google+ became a clean, well-lit, but ultimately empty room.
-      
-      **League Score:** 30/100
+      The friction was too high. While you prevented spam, you also prevented growth. Google+ became a clean, well-lit, but ultimately empty room.
 ---
 ## What actually happened — the reveal
 
-This drill is based on the infamous "Nymwars" that plagued Google+ shortly after its launch
-in July 2011. In an attempt to force a clean, unified identity layer across all Google
-services to compete with Facebook, Google strictly enforced a "common name" policy.
+This drill is based on the infamous "Nymwars" that plagued Google+ shortly after its launch in July 2011.
 
-They began mass-suspending accounts of people using pseudonyms, including prominent tech
-influencers, activists who needed anonymity for safety, and people who had built entire
-careers under online handles. The backlash was immediate and severe, severely damaging the
-early goodwill Google+ had built with the tech community.
+Instead of reversing course quickly, Google doubled down. They aggressively forced Google+ integration into other products, most infamously forcing YouTube users to use a Google+ account to comment. 
 
-Instead of reversing course quickly, Google doubled down. Over the next few years, desperate
-for engagement, Google aggressively forced Google+ integration into other products, most
-infamously forcing YouTube users to use a Google+ account to comment. This generated massive
-resentment (including the famous "Bob" ASCII tank protests).
-
-Google+ never recovered its cultural momentum. While it boasted massive user numbers due to
-forced signups, actual engagement was a fraction of Facebook's. In 2014, Google finally
-relented and allowed pseudonyms, but it was years too late. Following low usage and a major
-data API leak, Google+ for consumers was officially shut down in April 2019.
+Google+ never recovered its cultural momentum. In 2014, Google finally relented and allowed pseudonyms, but it was years too late. Google+ for consumers was officially shut down in April 2019.

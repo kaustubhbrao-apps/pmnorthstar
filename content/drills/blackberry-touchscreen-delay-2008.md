@@ -26,173 +26,287 @@ nodes:
     prompt: |
       The hardware design phase is kicking off for the BlackBerry Storm. How do you design the touchscreen experience to compete with Apple while satisfying your internal stakeholders?
     options:
-      - text: Invent 'SurePress' - a clicky, mechanical touchscreen where the entire screen acts as a giant physical button that depresses when pushed, simulating a real keyboard.
+      - text: Invent 'SurePress' - a clicky, mechanical touchscreen where the entire screen acts as a giant physical button.
         leadsTo: node_surepress
         points: 0
         pattern: complex-half-measure
         rationale: |
-          Wrong. A mechanical touchscreen is incredibly complex, prone to hardware failure, and gives the worst of both worlds: it lacks the fluid typing of a capacitive screen and the tactile certainty of individual physical keys. You are trying to bridge a paradigm shift with a mechanical hack.
+          Wrong. A mechanical touchscreen is incredibly complex, prone to hardware failure, and gives the worst of both worlds.
         consequence: |
-          The engineering team spends millions developing SurePress. It's thick, heavy, and the mechanism gets jammed easily. Verizon is skeptical but desperate, so they agree to launch it.
-      - text: Go full capacitive touchscreen like the iPhone. Abandon the physical click. It will take time to get the predictive software right, but it's the future.
+          The engineering team spends millions developing SurePress. It's thick, heavy, and buggy.
+      - text: Go full capacitive touchscreen like the iPhone. Abandon the physical click.
         leadsTo: node_capacitive
         points: 50
         pattern: paradigm-acceptance
         rationale: |
-          Correct. Skating to where the puck is going. The physical keyboard paradigm is dying for mainstream consumers. You must rip the band-aid off and compete on the new vector (software, apps, touch interface) rather than defending the old one.
+          Correct. Skating to where the puck is going. The physical keyboard paradigm is dying for mainstream consumers.
         consequence: |
-          The hardware is a sleek slate. The executives hate it, but you push it through. However, the legacy Java-based BlackBerry OS was never designed for touch.
-      - text: Refuse Verizon. Build a better physical keyboard phone (the Bold). Tell Verizon that touchscreens are a consumer fad and enterprise will never adopt them.
+          The hardware is a sleek slate. The executives hate it, but you push it through.
+      - text: Refuse Verizon. Build a better physical keyboard phone (the Bold).
         leadsTo: node_refuse_verizon
         points: 0
         pattern: denial-of-reality
         rationale: |
-          Wrong. While the Bold is a great phone for your existing base, refusing Verizon means you lose your primary distribution channel for any new consumer product. You are choosing to shrink your total addressable market to zero growth.
+          Wrong. Refusing Verizon means you lose your primary distribution channel.
         consequence: |
-          Verizon signs an exclusive deal with Google for the upcoming "Droid" franchise. You lose the carrier battle entirely.
+          Verizon signs an exclusive deal with Google for the upcoming "Droid" franchise.
+
   node_surepress:
     dimension: business
     prompt: |
-      You launch the Storm with SurePress. It's a buggy nightmare. The screen clicks get stuck, the legacy OS is incredibly slow when handling touch inputs, and the browser crashes constantly. 
-
-      Return rates at Verizon approach a staggering 100%. Verizon's CEO is furious and demanding answers. What is your immediate triage?
+      You launch the Storm with SurePress. It's a buggy nightmare. Return rates at Verizon approach 100%. 
+      Verizon's CEO is furious. What is your immediate triage?
     options:
-      - text: Recall the device immediately. Take the financial hit, apologize to Verizon, and start from scratch.
-        leadsTo: end_recall
+      - text: Recall the device immediately. Take the financial hit and apologize to Verizon.
+        leadsTo: surepress_recall_crisis
         points: 50
         pattern: extreme-ownership
         rationale: |
-          Trust with your biggest distribution partner is more valuable than short-term revenue. A total recall stops the brand bleeding and shows Verizon you are a reliable partner, even in failure.
+          Trust with your biggest distribution partner is more valuable than short-term revenue.
         consequence: |
-          The recall costs hundreds of millions. The press has a field day. But Verizon appreciates your honesty and agrees to wait for your next attempt.
-      - text: Push software updates to try and fix the lag. Keep selling the hardware to meet quarterly targets and avoid a write-down.
-        leadsTo: end_brand_death
+          The recall costs hundreds of millions, but Verizon agrees to wait for your next attempt.
+      - text: Push software updates to try and fix the lag. Keep selling the hardware.
+        leadsTo: surepress_patch_crisis
         points: 0
         pattern: protecting-the-quarter
         rationale: |
-          You can't fix a fundamental hardware design flaw with software patches. By keeping a broken device in the market, you guarantee that every new customer has a terrible experience. The brand damage becomes permanent.
+          You can't fix a fundamental hardware design flaw with software patches.
         consequence: |
-          Verizon store reps actively tell customers *not* to buy the Storm because they don't want to deal with the returns. The BlackBerry brand becomes synonymous with "broken."
-      - text: Blame the users. Release a statement saying people are "typing on it wrong" and just need to get used to SurePress.
+          Verizon store reps actively tell customers not to buy the Storm.
+
+  surepress_recall_crisis:
+    dimension: strategy
+    prompt: |
+      The recall is complete. Verizon is giving you one last chance for next year.
+      What do you build?
+    options:
+      - text: "Abandon SurePress. License Android immediately to get an OS that works with touch."
+        leadsTo: end_android
+        points: 5
+        pattern: pragmatic-survival
+        rationale: |
+          You don't have time to build a touch OS from scratch. Android is the life raft.
+        consequence: |
+          You survive as a hardware manufacturer, but lose the platform war.
+      - text: "Try SurePress 2.0. Fix the mechanical issues. The core idea is still good."
+        leadsTo: end_brand_death
+        points: 0
+        pattern: doubling-down-on-stupid
+        rationale: |
+          The idea was never good. It was a compromise that no one wanted.
+        consequence: |
+          SurePress 2.0 fails just as badly. Verizon drops you completely.
+
+  surepress_patch_crisis:
+    dimension: marketing
+    prompt: |
+      The patches fail. The hardware is fundamentally broken. The press is calling it 
+      the "FailBerry." Sales are zero.
+    options:
+      - text: "Blame the users. Say people are 'typing on it wrong'."
         leadsTo: end_arrogance
         points: 0
         pattern: blaming-the-customer
         rationale: |
-          Arrogance in the face of product failure is fatal. If the user can't use the product, the product is wrong.
+          Arrogance in the face of product failure is fatal.
         consequence: |
-          The tech press mocks you endlessly. Apple runs ads making fun of the SurePress click. Sales drop to zero.
+          The tech press mocks you endlessly.
+      - text: "Quietly discontinue it and pretend it never happened. Pivot back to keyboards."
+        leadsTo: end_slow_death
+        points: 5
+        pattern: strategic-retreat
+        rationale: |
+          A quiet death is better than an arrogant one, but you still cede the consumer market.
+        consequence: |
+          You retreat to enterprise and slowly bleed out over 5 years.
+
   node_capacitive:
     dimension: product
     prompt: |
-      You build a capacitive touchscreen. But your legacy BlackBerry OS is built for trackballs and physical keys, not touch. The UI is clunky, scrolling stutters, and the browser is archaic. You need a modern OS to power this modern hardware. How do you fix the software experience?
+      You build a capacitive touchscreen. But your legacy OS is built for trackballs. 
+      You need a modern OS to power this modern hardware.
     options:
-      - text: Acquire a company (like QNX) and rewrite the entire OS from scratch for touch, even if it delays the launch by 18 months.
-        leadsTo: end_qnx
-        points: 100
+      - text: Acquire a company (like QNX) and rewrite the entire OS from scratch.
+        leadsTo: capacitive_qnx_crisis
+        points: 90
         pattern: structural-rebuild
         rationale: |
-          A legacy OS bolted onto modern hardware is a dead end. You need a modern UNIX-like foundation to support a real browser and modern apps. Taking the pain of an 18-month delay is the only way to survive the decade.
+          A legacy OS bolted onto modern hardware is a dead end.
         consequence: |
-          You delay the Storm. Verizon is angry but accepts it. You spend the next year and a half rewriting the company's core technology.
-      - text: Slap a touch-friendly UI skin on top of the legacy Java-based OS to get to market faster and hit the holiday quarter.
-        leadsTo: end_slow_death
+          You delay the Storm. Verizon is angry but accepts it.
+      - text: Slap a touch-friendly UI skin on top of the legacy Java-based OS.
+        leadsTo: capacitive_skin_crisis
         points: 0
         pattern: technical-debt-shortcut
         rationale: |
-          Technical debt will drown you. The performance will never match iOS. A skin doesn't fix the underlying architecture's inability to handle modern web browsing or fluid animations.
+          Technical debt will drown you. Performance will never match iOS.
         consequence: |
-          The device ships on time but feels laggy and cheap compared to the iPhone. App developers refuse to build for the outdated Java platform.
-      - text: Adopt Android. Put BlackBerry services (BBM, secure email) on top of Google's new open-source OS.
-        leadsTo: end_android
-        points: 20
-        pattern: platform-surrender
+          The device ships on time but feels laggy and cheap.
+
+  capacitive_qnx_crisis:
+    dimension: ecosystem
+    prompt: |
+      The QNX rewrite (BlackBerry 10) takes 18 months. When it launches, it's beautiful. 
+      But iOS and Android have already locked up all the major app developers.
+    options:
+      - text: "Pay developers millions to port their apps. Fund the ecosystem yourself."
+        leadsTo: end_qnx
+        points: 10
+        pattern: subsidizing-ecosystem
         rationale: |
-          A valid survival strategy, but you surrender the platform moat. You become just another hardware manufacturer in a low-margin race to the bottom, though you survive.
+          It's incredibly expensive, but you have to jump-start the flywheel somehow.
         consequence: |
-          You launch a secure Android phone. It sells moderately well to enterprise users who want modern apps, but your hardware margins collapse.
+          You get the top 100 apps. You survive as a solid #3 player.
+      - text: "Build an Android-emulator layer so Android apps run natively on BB10."
+        leadsTo: end_android_emulator
+        points: 5
+        pattern: parasitic-ecosystem
+        rationale: |
+          It solves the app problem, but the apps look terrible and perform poorly.
+        consequence: |
+          Users just buy Android phones instead of dealing with the emulator.
+
+  capacitive_skin_crisis:
+    dimension: business
+    prompt: |
+      The skinned Java OS is a disaster. It freezes constantly. The iPhone 3G launches 
+      and makes you look like a dinosaur.
+    options:
+      - text: "Drop the price of the phone by 50% to compete on value."
+        leadsTo: end_slow_death
+        points: 0
+        pattern: race-to-bottom
+        rationale: |
+          A cheap, broken phone is still a broken phone.
+        consequence: |
+          You destroy your premium brand positioning and still don't sell units.
+      - text: "Give up on touch entirely. Tell the board the experiment failed."
+        leadsTo: end_retreat
+        points: 5
+        pattern: capitulation
+        rationale: |
+          You confirm the board's worst biases. They never try touch again.
+        consequence: |
+          You retreat to keyboards and die a slow death.
+
   node_refuse_verizon:
     dimension: business
     prompt: |
-      Verizon is gone. They are pushing Motorola Droids heavily. Your enterprise sales are still strong, but consumer growth has flatlined. The board wants a consumer strategy.
+      Verizon is gone. They are pushing Motorola Droids. Consumer growth has flatlined. 
+      The board wants a consumer strategy.
     options:
-      - text: Double down on enterprise. Ignore the consumer market. Build hyper-secure phones for governments and banks.
-        leadsTo: end_enterprise_niche
+      - text: Double down on enterprise. Ignore the consumer market. Build hyper-secure phones.
+        leadsTo: refuse_enterprise_crisis
         points: 30
         pattern: retreat-to-niche
         rationale: |
-          If you can't win the mainstream, dominating a highly profitable niche is a valid strategy.
+          Dominating a highly profitable niche is a valid survival strategy.
         consequence: |
-          RIM shrinks drastically but remains highly profitable for several years as the default phone for Wall Street and the Pentagon.
+          RIM shrinks but remains profitable for several years.
       - text: Launch a tablet (the PlayBook) to show we can innovate in new consumer form factors.
-        leadsTo: end_playbook
+        leadsTo: refuse_playbook_crisis
         points: 0
         pattern: unforced-expansion
         rationale: |
-          You can't even build a touch phone, and you want to build a touch tablet? It's a distraction that burns capital.
+          You can't build a touch phone, and you want to build a touch tablet?
         consequence: |
-          The PlayBook launches without a native email app. It is a catastrophic failure that drains the company's cash reserves.
-  end_recall:
-    isOutcome: true
-    dimension: business
-    prompt: |
-      **The Lost Years.**
-      
-      You recall the Storm. It's a massive financial write-down, but Verizon appreciates your honesty. However, the failure paralyzes your hardware team. 
-      
-      You lose two critical years trying to figure out what to do next, allowing Apple and Android to run away with the market. You eventually launch BlackBerry 10, but the app ecosystem has already been won by iOS and Android. RIM fades away.
-  end_brand_death:
-    isOutcome: true
+          The PlayBook launches without a native email app. It flops.
+
+  refuse_enterprise_crisis:
     dimension: product
     prompt: |
-      **The Death of a Brand.**
-      
-      The Storm becomes known as the worst device RIM ever made. Verizon forces RIM to pay hundreds of millions to replace defective units. The BlackBerry brand loses its premium reputation entirely. Enterprise users start demanding iPhones because they no longer want to be seen with a BlackBerry. The collapse is rapid and total.
-  end_arrogance:
-    isOutcome: true
-    dimension: founder
+      The enterprise niche is profitable, but 'Bring Your Own Device' (BYOD) is starting 
+      to penetrate the enterprise. Employees are demanding to use their iPhones for work.
+    options:
+      - text: "Build MDM (Mobile Device Management) software to manage iPhones and Androids securely."
+        leadsTo: end_enterprise_niche
+        points: 20
+        pattern: software-pivot
+        rationale: |
+          If you can't beat their hardware, secure their hardware.
+        consequence: |
+          You pivot successfully into a software security company.
+      - text: "Force companies to ban iPhones. Lean on your government and banking relationships."
+        leadsTo: end_retreat
+        points: 0
+        pattern: fighting-gravity
+        rationale: |
+          You cannot fight consumer gravity, even in the enterprise.
+        consequence: |
+          Companies just fire RIM and switch to MobileIron or Good Technology.
+
+  refuse_playbook_crisis:
+    dimension: finance
     prompt: |
-      **The Hubris Collapse.**
-      
-      Blaming the user is the final nail in the coffin. The market interprets RIM as an arrogant dinosaur. Sales plummet, the co-CEOs are forced out, and the company is sold for parts.
-  end_qnx:
-    isOutcome: true
-    dimension: product
-    prompt: |
-      **The Painful Salvation.**
-      
-      You delay the launch to build on QNX. The wait is agonizing, and you lose market share in the short term. But when BlackBerry 10 finally launches, it's a modern, fluid OS that supports Android apps. 
-      
-      You don't beat Apple, but you secure your position as a solid #3 player in the market, deeply entrenched in enterprise and government, saving the company from total irrelevance.
-  end_slow_death:
-    isOutcome: true
-    dimension: product
-    prompt: |
-      **Death by a Thousand Cuts.**
-      
-      The skinned OS is slow, buggy, and frustrating. Consumers mock it. Developers refuse to build apps for a dying, fragmented platform. 
-      
-      BlackBerry's consumer market share plummets from 50% to zero over the next four years as people flock to iOS and Android for apps.
+      The PlayBook tablet is a massive failure. You have $1 billion in unsold inventory.
+    options:
+      - text: "Write it off entirely. Fire the CEO. Attempt to sell the company."
+        leadsTo: end_acquisition
+        points: 10
+        pattern: orderly-liquidation
+        rationale: |
+          The game is over. Maximize whatever shareholder value is left.
+        consequence: |
+          The company is sold for patents.
+      - text: "Drop the price to $99 and try to clear the inventory at a massive loss."
+        leadsTo: end_playbook
+        points: 0
+        pattern: desperate-fire-sale
+        rationale: |
+          You destroy the premium brand and still take the massive loss.
+        consequence: |
+          The company goes bankrupt shortly after.
+
   end_android:
     isOutcome: true
-    dimension: business
     prompt: |
       **The Hardware Commodity.**
-      
-      You survive by adopting Android early. You become a niche hardware player making secure Android phones with physical keyboards. You exist, but you are no longer a platform kingmaker.
+      You survived by licensing Android. You became a niche hardware player making secure Android phones with physical keyboards. You exist, but you are no longer a platform kingmaker.
+  end_brand_death:
+    isOutcome: true
+    prompt: |
+      **The Death of a Brand.**
+      SurePress 2.0 was the final nail. The brand became synonymous with broken hardware. The collapse was rapid and total.
+  end_arrogance:
+    isOutcome: true
+    prompt: |
+      **The Hubris Collapse.**
+      Blaming the user cemented you as an arrogant dinosaur. Sales plummeted, the co-CEOs were ousted, and the company was sold for parts.
+  end_slow_death:
+    isOutcome: true
+    prompt: |
+      **Death by a Thousand Cuts.**
+      The skinned OS and subsequent retreat to keyboards condemned you to irrelevance. Market share plummeted from 50% to zero over 4 years.
+  end_qnx:
+    isOutcome: true
+    prompt: |
+      **The Painful Salvation.**
+      BB10 launched late, but it was modern. By paying for apps, you secured your position as a solid #3 player, deeply entrenched in enterprise, saving the company from total death.
+  end_android_emulator:
+    isOutcome: true
+    prompt: |
+      **The Parasitic Failure.**
+      The Android emulator ran terribly. Users realized they should just buy real Android phones instead of dealing with your janky middle-layer.
+  end_retreat:
+    isOutcome: true
+    prompt: |
+      **The Slow Extinction.**
+      By fighting BYOD and retreating from touch, you guaranteed the company's extinction. It just took five long, agonizing years.
   end_enterprise_niche:
     isOutcome: true
-    dimension: business
     prompt: |
-      **The Secure Niche.**
-      
-      You retreat to enterprise. The company is much smaller, but highly profitable. You avoid the consumer bloodbath entirely and focus on software services and secure communications.
+      **The Software Pivot.**
+      You pivoted away from hardware entirely and became a successful Mobile Device Management (MDM) software company. You lost the cultural war but won on Wall Street.
+  end_acquisition:
+    isOutcome: true
+    prompt: |
+      **The Patent Sale.**
+      You admitted defeat. The company was carved up and sold to patent trolls and a consortium of buyers. The BlackBerry name lived on only in licensing deals.
   end_playbook:
     isOutcome: true
-    dimension: product
     prompt: |
       **The Final Distraction.**
-      
-      The PlayBook failure drains billions from the company. It distracts engineering from fixing the phones. The company goes bankrupt shortly after.
+      The PlayBook fire sale drained billions. It distracted engineering from fixing the phones. The company went bankrupt shortly after.
 ---
 ## What actually happened — the reveal
 

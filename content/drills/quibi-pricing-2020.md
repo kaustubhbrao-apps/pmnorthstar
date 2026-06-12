@@ -37,140 +37,243 @@ nodes:
         points: 3
         pattern: ignore-market-shift
         rationale: |
-          Ignores the most important fact: commute time has just
-          collapsed. The entire product thesis ("watch on your
-          phone during your commute") just lost its primary use
-          case. Pushing through with the original plan optimizes
-          for a launch you'd planned for a world that no longer
-          exists.
+          Ignores the most important fact: commute time has just collapsed.
         consequence: |
           Launch lands with strong press but lukewarm retention.
-          Users sign up out of curiosity, find no time-of-day
-          when the product fits, and churn within 30 days.
-          Six months in, the product shuts down.
-        leadsTo: end-A
+        leadsTo: A-launch-followup
       - text: Postpone launch by 6 months. Reposition for a post-pandemic moment when commute returns.
         points: 12
         pattern: wait-for-the-thesis-to-return
         rationale: |
-          Defensible patience. Your thesis depends on commute
-          existing; commute will return. Postponing buys you
-          time to also expand to web/TV without rushing the
-          launch. Risk: 6 months of paying the team and content
-          producers without revenue, and the cultural moment
-          might pass.
+          Defensible patience.
         consequence: |
-          You postpone. Six months later, commute returns
-          partially. Launch is more measured, retention slightly
-          better. But the cultural buzz has dissipated; the
-          launch is solid not breakout.
-        leadsTo: end-B-postpone
-      - text: 'Pivot positioning: drop the ''mobile-only commute'' frame. Make it ''premium short-form for any device.'''
+          You postpone.
+        leadsTo: B-postpone-followup
+      - text: 'Pivot positioning: drop the commute frame. Make it premium short-form for any device.'
         points: 15
         pattern: reposition-product
         rationale: |
-          Right adaptive call. The content asset (premium 10-minute
-          shows) is real and valuable; the distribution constraint
-          (mobile-vertical, commute moments) is a marketing
-          decision that turned out to be wrong for this moment.
-          Repositioning preserves the content investment while
-          adapting to the world that exists.
+          Right adaptive call.
         consequence: |
-          You ship web, TV apps, and mobile in parallel. The
-          marketing pivots to "10-minute premium shows for any
-          break." Retention improves materially. The product
-          finds a real audience even if smaller than projected.
+          You ship web, TV apps, and mobile in parallel.
         leadsTo: C-reposition-followup
       - text: Drop the price to $2.99 with ads. Compete with TikTok and YouTube for attention.
         points: 3
         pattern: race-to-the-bottom
         rationale: |
-          Wrong axis. Your content costs are $100K+/episode
-          (premium production); free/ad-supported platforms have
-          near-zero content costs. You can't win on price against
-          TikTok, and the lower price signals to premium viewers
-          that the product is downscale. You burn capital subsidizing
-          a price war you can't win.
+          Wrong axis.
         consequence: |
-          Subscriber count grows but ARPU collapses. Burn rate
-          accelerates. Content quality slips as budgets get
-          cut. Shutdown comes faster than the original plan
-          would have produced.
-        leadsTo: end-D
+          Subscriber count grows but ARPU collapses.
+        leadsTo: D-price-war
+
+  A-launch-followup:
+    dimension: product
+    prompt: |
+      You launched as planned. Retention is plummeting because users are stuck at home.
+    options:
+      - text: Rush out a screen-casting feature so users can cast from phone to TV.
+        points: 6
+        pattern: band-aid-fix
+        rationale: |
+          A necessary feature, but doesn't fix the core content formatting issues.
+        consequence: |
+          It helps slightly, but churn remains high.
+        leadsTo: A-panic-mode
+      - text: Double down on mobile-only marketing. Try to invent new "at-home" mobile use cases.
+        points: 0
+        pattern: denial
+        rationale: |
+          Forcing user behavior never works.
+        consequence: |
+          Marketing spend is entirely wasted.
+        leadsTo: A-panic-mode
+
+  A-panic-mode:
+    dimension: business
+    prompt: |
+      Six months in. You are burning cash rapidly. Shutdown is imminent.
+    options:
+      - text: Sell the content library to Roku or Apple immediately.
+        points: 9
+        pattern: salvage-value
+        rationale: |
+          Recoup what you can for investors.
+        consequence: |
+          You sell the library for a fraction of its cost.
+        leadsTo: end-A-salvage
+      - text: Keep trying to raise more money to pivot.
+        points: 0
+        pattern: throwing-good-money-after-bad
+        rationale: |
+          No investor will touch this.
+        consequence: |
+          You burn down to $0 and shut down abruptly.
+        leadsTo: end-A-zero
+
+  B-postpone-followup:
+    dimension: business
+    prompt: |
+      You postponed 6 months. Commutes are partially back.
+    options:
+      - text: Launch exactly the original mobile-only product.
+        points: 3
+        pattern: failure-to-adapt
+        rationale: |
+          You waited, but didn't improve the offering.
+        consequence: |
+          Launch is mediocre.
+        leadsTo: B-new-launch
+      - text: Spend the 6 months building TV apps to launch as multi-platform.
+        points: 12
+        pattern: productive-delay
+        rationale: |
+          Using the delay to expand the addressable market.
+        consequence: |
+          Launch is much stronger across devices.
+        leadsTo: B-new-launch
+
+  B-new-launch:
+    dimension: product
+    prompt: |
+      You are launching now.
+    options:
+      - text: Maintain the $7.99 premium pricing.
+        points: 9
+        pattern: defend-premium
+        rationale: |
+          You need ARPU to cover content costs.
+        consequence: |
+          Growth is slow but economics are better.
+        leadsTo: end-B-premium
+      - text: Drop to $4.99 ad-free to simulate growth.
+        points: 3
+        pattern: panic-pricing
+        rationale: |
+          Destroys your unit economics.
+        consequence: |
+          You get users but bleed cash.
+        leadsTo: end-B-cheap
+
   C-reposition-followup:
     dimension: product
     prompt: |
-      Repositioned to "premium short-form for any device." Web + TV
-      apps shipped. Six months in, ARR is real but smaller than
-      projected. A new content question: continue investing in
-      premium 10-minute originals, or pivot to user-generated /
-      lower-cost content?
+      Repositioned to "premium short-form for any device." Web + TV apps shipped.
     options:
       - text: Stay premium. The differentiation is the production value.
         points: 12
         pattern: premium-or-nothing
         rationale: |
-          Right call. Going downstream on content quality erases
-          the only differentiation from free alternatives. The
-          smaller audience that values premium short-form is
-          willing to pay; that's the business. Trying to be
-          "Netflix for short-form" by competing on volume
-          dilutes the value proposition.
+          Right call. Going downstream erases differentiation.
         consequence: |
-          You stay premium. Subscriber growth is steady but
-          slow. ARPU is high. The product reaches sustainability
-          in 18 months as a smaller-but-profitable niche.
-        leadsTo: end-C-good
+          Subscriber growth is steady but slow.
+        leadsTo: C-content-strategy
       - text: Add a creator-tier. Open the platform to creators making 10-minute premium content.
         points: 15
         pattern: marketplace-as-flywheel
         rationale: |
-          Best long-term move. Studio content alone scales linearly
-          with budget; a creator marketplace compounds. Curated
-          creators producing 10-minute premium content (much
-          lower cost than studio production) extend the catalog
-          dramatically. The brand stays premium because of
-          curation gates.
+          Best long-term move.
         consequence: |
-          Creator-tier launches in 6 months. Catalog grows 10x in
-          a year. The platform becomes the home for premium
-          short-form creators. Subscriber growth accelerates.
-        leadsTo: end-C-great
-  end-A:
+          Creator-tier launches in 6 months. Catalog grows 10x.
+        leadsTo: C-content-strategy
+
+  C-content-strategy:
+    dimension: business
+    prompt: |
+      You have your platform. What is the long-term play?
+    options:
+      - text: Focus on deep engagement and high retention in your niche.
+        points: 12
+        pattern: build-a-moat
+        rationale: |
+          A strong, loyal niche is better than a weak broad audience.
+        consequence: |
+          You build a highly profitable specialty service.
+        leadsTo: end-C-good
+      - text: Try to acquire massive cultural scale by buying sports rights.
+        points: 3
+        pattern: overreach
+        rationale: |
+          You cannot outbid Amazon and Apple for sports.
+        consequence: |
+          You burn billions and fail to win the bids.
+        leadsTo: end-C-overreach
+
+  D-price-war:
+    dimension: business
+    prompt: |
+      You dropped the price. Sub count is up, but ARPU is terrible.
+    options:
+      - text: Start stuffing the app with aggressive, unskippable ads.
+        points: 0
+        pattern: hostile-monetization
+        rationale: |
+          Users will immediately churn to TikTok.
+        consequence: |
+          Subscribers flee.
+        leadsTo: D-cash-crunch
+      - text: Try to slowly raise the price back to $4.99.
+        points: 6
+        pattern: boil-the-frog
+        rationale: |
+          Difficult to pull off without adding immense new value.
+        consequence: |
+          High churn upon price increase.
+        leadsTo: D-cash-crunch
+
+  D-cash-crunch:
+    dimension: founder
+    prompt: |
+      You are running out of cash fast.
+    options:
+      - text: File for bankruptcy immediately.
+        points: 3
+        pattern: give-up
+        rationale: |
+          The end of the line.
+        consequence: |
+          Company closes.
+        leadsTo: end-D-bankrupt
+      - text: Do a massive layoff and try to pivot to a B2B video platform.
+        points: 6
+        pattern: desperate-pivot
+        rationale: |
+          Extremely hard to pivot a B2C content company to B2B SaaS.
+        consequence: |
+          You fail, but you tried.
+        leadsTo: end-D-fail
+
+  end-A-salvage:
     isOutcome: true
     prompt: |
-      The original launch ignored the pandemic context entirely.
-      Users couldn't find a moment for the product. Retention
-      collapsed and the company shut down 6 months in, returning
-      ~$350M to shareholders out of $1.75B raised.
-  end-B-postpone:
+      You shut down 6 months in, returning ~$350M to shareholders. Roku bought the library.
+  end-A-zero:
     isOutcome: true
     prompt: |
-      Postponement preserved capital but lost the cultural moment.
-      The eventual launch worked technically but never reached
-      breakout. The company existed but didn't compound.
+      You burned it all. A massive failure.
+  end-B-premium:
+    isOutcome: true
+    prompt: |
+      Postponing worked okay. You exist as a niche player.
+  end-B-cheap:
+    isOutcome: true
+    prompt: |
+      You ran out of money due to poor unit economics.
   end-C-good:
     isOutcome: true
     prompt: |
-      Repositioning + premium discipline produced a sustainable
-      niche. Smaller than projected, profitable, brand-clean.
-      The company existed for years as a profitable specialty
-      service.
-  end-C-great:
+      Repositioning produced a sustainable, profitable niche business.
+  end-C-overreach:
     isOutcome: true
     prompt: |
-      The marketplace flywheel changed the company's trajectory.
-      The platform became the leading destination for premium
-      short-form content. Series E closed at a strong valuation;
-      the brand was eventually acquired at a multibillion-dollar
-      price.
-  end-D:
+      You overreached and destroyed your profitable niche by burning cash on sports rights.
+  end-D-bankrupt:
     isOutcome: true
     prompt: |
-      Racing to the bottom on price accelerated the shutdown.
-      Subscribers grew but the unit economics never worked. The
-      company closed 4 months earlier than the original-plan
-      scenario.
+      Racing to the bottom on price killed the company quickly.
+  end-D-fail:
+    isOutcome: true
+    prompt: |
+      The desperate B2B pivot failed. The company is dead.
 ---
 ## What actually happened
 

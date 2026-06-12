@@ -44,7 +44,7 @@ nodes:
         consequence: |
           Q3 SEO investment doubles. Traffic on AI-Overview-affected
           keywords keeps declining. Net pipeline drops 25% by Q4.
-        leadsTo: end-A
+        leadsTo: A-seo-followup
       - text: Rebuild content for AI search (GEO/AEO). Structured data, citation-ready formatting, llms.txt, definitive-answer pages.
         points: 15
         pattern: rebuild-for-new-channel
@@ -78,7 +78,7 @@ nodes:
           keeps shrinking. Net pipeline flat — you replaced one
           channel with another but missed the channel that
           would have compounded.
-        leadsTo: end-C
+        leadsTo: C-social-followup
       - text: Run paid ads to compensate for lost organic. Pay for the traffic the AI Overviews stole.
         points: 6
         pattern: pay-for-shrinking-channel
@@ -92,7 +92,58 @@ nodes:
         consequence: |
           Paid CAC jumps 60%. Pipeline stabilizes but at a much
           worse unit economics profile. The board notices.
-        leadsTo: end-D
+        leadsTo: D-ads-followup
+  A-seo-followup:
+    dimension: business
+    prompt: |
+      Traffic continues to drop. Your SEO agency insists they just need more time and budget to "outrank the AI."
+    options:
+      - text: Fire the agency and pivot to AEO immediately.
+        points: 10
+        pattern: rapid-course-correction
+        rationale: Cut your losses.
+        consequence: You start the pivot, but 6 months late.
+        leadsTo: A-seo-followup-3
+      - text: Give them one more quarter, but demand a performance guarantee.
+        points: 0
+        pattern: sunk-cost
+        rationale: They can't guarantee anything against Google's core updates.
+        consequence: You burn another quarter of budget.
+        leadsTo: A-seo-followup-3-alt
+  A-seo-followup-3:
+    dimension: product
+    prompt: |
+      You are pivoting to AEO. Do you rewrite everything yourself or use an AI tool to bulk-format your existing content?
+    options:
+      - text: Rewrite the top 20 pages manually for maximum quality.
+        points: 10
+        pattern: do-things-that-dont-scale
+        rationale: AI search engines spot and penalize low-effort AI re-formatting. Quality wins.
+        consequence: It takes time but works.
+        leadsTo: end-A
+      - text: Use an AI tool to bulk-update 500 pages with FAQ schema.
+        points: 0
+        pattern: lazy-automation
+        rationale: Creates thin content.
+        consequence: Google penalizes you further for spam.
+        leadsTo: end-A
+  A-seo-followup-3-alt:
+    dimension: founder
+    prompt: |
+      The quarter ends. Traffic is down 50%. The board is furious.
+    options:
+      - text: Take responsibility, fire the VP Marketing, and present an AEO turnaround plan.
+        points: 5
+        pattern: fall-on-sword
+        rationale: Necessary to save your job.
+        consequence: You survive but your political capital is zero.
+        leadsTo: end-A
+      - text: Blame Google's monopoly power and wait it out.
+        points: 0
+        pattern: victim-mindset
+        rationale: The board doesn't care whose fault it is, only that you fix it.
+        consequence: You are replaced as CEO.
+        leadsTo: end-A
   B-rebuild-followup:
     dimension: product
     prompt: |
@@ -115,7 +166,7 @@ nodes:
           cited by Perplexity, ChatGPT, and Claude for the top 8
           queries in your category. AI-driven demo inbound jumps
           to 40% of pipeline by EOY.
-        leadsTo: end-B-great
+        leadsTo: B-rebuild-followup-3
       - text: Stick to the page rebuild. Don't over-invest in a single piece.
         points: 9
         pattern: incremental-content
@@ -127,7 +178,143 @@ nodes:
         consequence: |
           AI-driven inbound stays at ~22%. Steady growth, no
           breakout moment.
+        leadsTo: B-rebuild-followup-3-alt
+  B-rebuild-followup-3:
+    dimension: business
+    prompt: |
+      The benchmark is a massive success. Competitors are scrambling to copy it. How do you defend it?
+    options:
+      - text: Gate next year's data behind an email capture to drive MQLs.
+        points: 5
+        pattern: gating-the-moat
+        rationale: AI search bots can't read gated content. You will lose the citations.
+        consequence: Next year, citations drop significantly as bots move to an ungated competitor.
         leadsTo: end-B-good
+      - text: Keep it completely ungated, but heavily brand the charts and embed product CTAs in the text.
+        points: 15
+        pattern: frictionless-distribution
+        rationale: Keep the bots happy, monetize the human traffic.
+        consequence: Citations compound even further. You own the category.
+        leadsTo: end-B-great
+  B-rebuild-followup-3-alt:
+    dimension: business
+    prompt: |
+      Growth is steady but competitors are catching up to your AEO formatting.
+    options:
+      - text: Launch a proprietary tool/calculator that bots can reference.
+        points: 10
+        pattern: functional-content
+        rationale: Interactive tools are great citation targets.
+        consequence: You regain a slight edge in citations.
+        leadsTo: end-B-good
+      - text: Start buying links like the old SEO days.
+        points: 0
+        pattern: obsolete-tactics
+        rationale: AI engines value E-E-A-T and semantic relevance more than raw backlink counts.
+        consequence: No impact on AI citations; money wasted.
+        leadsTo: end-B-good
+  C-social-followup:
+    dimension: marketing
+    prompt: |
+      LinkedIn pipeline is growing, but it relies entirely on your personal brand as the founder.
+    options:
+      - text: Build an employee advocacy program to scale LinkedIn reach.
+        points: 10
+        pattern: scaling-founder-magic
+        rationale: Good way to diversify the social dependency.
+        consequence: It takes effort, but pipeline grows more predictably.
+        leadsTo: C-social-followup-3
+      - text: Keep relying solely on the founder's account.
+        points: 5
+        pattern: single-point-of-failure
+        rationale: Efficient but risky.
+        consequence: The founder gets burned out creating content.
+        leadsTo: C-social-followup-3-alt
+  C-social-followup-3:
+    dimension: business
+    prompt: |
+      Employees are posting, but engagement is getting gamified and low-quality ("broetry").
+    options:
+      - text: Implement strict quality guidelines and focus on deep insights.
+        points: 10
+        pattern: quality-over-quantity
+        rationale: Protects the brand.
+        consequence: Engagement dips slightly but lead quality goes up.
+        leadsTo: end-C
+      - text: Let them post whatever goes viral.
+        points: 0
+        pattern: engagement-bait
+        rationale: Destroys your B2B authority.
+        consequence: Lots of likes, zero pipeline.
+        leadsTo: end-C
+  C-social-followup-3-alt:
+    dimension: founder
+    prompt: |
+      The founder is burned out. The algorithm changes and reach drops by 50%.
+    options:
+      - text: Hire a ghostwriter to maintain the cadence.
+        points: 5
+        pattern: outsourcing-authenticity
+        rationale: Works temporarily.
+        consequence: Audience eventually notices the voice shift.
+        leadsTo: end-C
+      - text: Pivot back to SEO/AEO now.
+        points: 10
+        pattern: late-realization
+        rationale: You have to build a scalable channel eventually.
+        consequence: You start from behind, but at least you start.
+        leadsTo: end-C
+  D-ads-followup:
+    dimension: business
+    prompt: |
+      CAC is up 60%. The board demands a path to profitability.
+    options:
+      - text: Keep ads running but heavily optimize the landing pages for higher conversion.
+        points: 10
+        pattern: marginal-gains
+        rationale: You can squeeze some efficiency out, but the fundamental channel cost is still high.
+        consequence: CAC drops by 15%, still worse than historical averages.
+        leadsTo: D-ads-followup-3
+      - text: Cut the ad budget immediately and accept the pipeline hit to save cash.
+        points: 5
+        pattern: severe-austerity
+        rationale: Protects the balance sheet but kills growth.
+        consequence: Pipeline plummets, but runway is extended.
+        leadsTo: D-ads-followup-3-alt
+  D-ads-followup-3:
+    dimension: marketing
+    prompt: |
+      Landing pages are optimized, but Google raises CPCs again.
+    options:
+      - text: Finally bite the bullet and invest heavily in AEO/organic.
+        points: 10
+        pattern: inevitable-pivot
+        rationale: You can't outspend Google.
+        consequence: You survive, but you lost a year of compounding.
+        leadsTo: end-D
+      - text: Shift ad budget from Google to LinkedIn Ads.
+        points: 5
+        pattern: channel-hopping
+        rationale: LinkedIn ads are even more expensive.
+        consequence: Volume drops further.
+        leadsTo: end-D
+  D-ads-followup-3-alt:
+    dimension: founder
+    prompt: |
+      Pipeline is dead. Sales reps are quitting because they have no leads.
+    options:
+      - text: Pivot to an entirely outbound sales motion.
+        points: 5
+        pattern: hard-pivot
+        rationale: Outbound is a different muscle but necessary now.
+        consequence: Takes 6 months to ramp, company barely survives.
+        leadsTo: end-D
+      - text: Sell the company to a private equity firm.
+        points: 0
+        pattern: capitulation
+        rationale: A fire sale.
+        consequence: Founder leaves with nothing.
+        leadsTo: end-D
   end-A:
     isOutcome: true
     prompt: |

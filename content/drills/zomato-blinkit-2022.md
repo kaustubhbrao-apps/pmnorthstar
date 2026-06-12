@@ -66,7 +66,7 @@ nodes:
           18, it has ~12% market share in covered cities. Blinkit
           (now owned by competitor) has 65%. Investors mark down
           the long-term grocery thesis for your stock.
-        leadsTo: end-B
+        leadsTo: B-build-followup
       - text: Stay focused on food delivery. Don't enter 10-min grocery. Let the competitor own it.
         points: 3
         pattern: refuse-the-adjacent-bet
@@ -83,7 +83,7 @@ nodes:
           scale grocery + food delivery) cross-sells more
           effectively. Your food delivery share slowly erodes
           from cross-app gravity.
-        leadsTo: end-C
+        leadsTo: C-stay-focused-followup
       - text: Partner with Blinkit. Co-brand integration without acquisition. Cheaper, faster.
         points: 9
         pattern: partnership-instead-of-acquisition
@@ -100,7 +100,7 @@ nodes:
           apps. Six months in, your competitor acquires Blinkit.
           The partnership ends. You're back at zero in 10-min
           grocery with less time.
-        leadsTo: end-D
+        leadsTo: D-partner-followup
   A-acquire-followup:
     dimension: product
     prompt: |
@@ -124,7 +124,7 @@ nodes:
           efficiencies. Blinkit reaches contribution-positive in
           Q2 of next year. Two-app structure becomes the
           textbook for category-distinct acquisitions.
-        leadsTo: end-A-great
+        leadsTo: A-brand-separate
       - text: Merge into one app. 'Order food and groceries from one place.' Unified UX.
         points: 9
         pattern: merge-for-cross-sell
@@ -140,7 +140,196 @@ nodes:
           flows. Grocery users find the food-delivery flow
           confusing; food users find the grocery flow heavy.
           The two-app structure is restored 12 months later.
+        leadsTo: A-brand-merge
+  A-brand-separate:
+    dimension: product
+    prompt: |
+      The brands are separate. Now for the logistics fleet: do you merge the delivery fleets or keep them separate?
+    options:
+      - text: Merge fleets to increase utilization and density.
+        points: 15
+        pattern: operational-efficiency
+        rationale: |
+          Shared logistics on the backend is where the real margin is.
+        consequence: Fleet utilization goes up, making the unit economics work.
+        leadsTo: end-A-great
+      - text: Keep fleets entirely separate.
+        points: 5
+        pattern: over-isolation
+        rationale: |
+          Separation of brand is good, separation of backend is wasteful.
+        consequence: Economics remain tough.
         leadsTo: end-A-mixed
+  A-brand-merge:
+    dimension: product
+    prompt: |
+      The merged app is live but users are confused. Orders are dropping.
+    options:
+      - text: Revert back to two separate apps quickly.
+        points: 15
+        pattern: swallow-pride
+        rationale: Fix the mistake quickly before long term damage.
+        consequence: You lose 6 months but recover.
+        leadsTo: end-A-mixed
+      - text: Force users to adapt. It's the future.
+        points: 0
+        pattern: arrogance
+        rationale: Don't fight consumer habits.
+        consequence: Market share plummets.
+        leadsTo: end-A-bad
+  B-build-followup:
+    dimension: business
+    prompt: |
+      You launched your organic 10-min service. 9 months in, market share is low. Blinkit is pulling away.
+    options:
+      - text: Burn heavy cash on marketing and discounts to catch up.
+        points: 5
+        pattern: buying-share
+        rationale: Expensive and temporary.
+        consequence: You bleed cash, but growth is a sugar high.
+        leadsTo: B-marketing
+      - text: Focus on extreme density in top 3 cities only.
+        points: 15
+        pattern: niche-domination
+        rationale: If you can't win everywhere, win somewhere.
+        consequence: You build a profitable but smaller niche.
+        leadsTo: B-niche
+  B-marketing:
+    dimension: business
+    prompt: |
+      You are burning cash fast. The board is getting anxious.
+    options:
+      - text: Keep burning. We must win.
+        points: 0
+        pattern: sunk-cost
+        rationale: You are throwing good money after bad.
+        consequence: The unit economics collapse.
+        leadsTo: end-B
+      - text: Stop the discounts, focus on retention.
+        points: 10
+        pattern: course-correct
+        rationale: Smart, but it's too late to win the category.
+        consequence: You settle for second place.
+        leadsTo: end-B
+  B-niche:
+    dimension: strategy
+    prompt: |
+      You own the top 3 cities, but the competitor owns the rest of the country.
+    options:
+      - text: Expand slowly, city by city.
+        points: 15
+        pattern: methodical-growth
+        rationale: Safe and sustainable.
+        consequence: You remain a strong secondary player.
+        leadsTo: end-B-niche
+      - text: Launch nationwide simultaneously now.
+        points: 0
+        pattern: premature-scaling
+        rationale: You lack the operational infrastructure.
+        consequence: Quality drops, you lose the top 3 cities too.
+        leadsTo: end-B
+  C-stay-focused-followup:
+    dimension: product
+    prompt: |
+      You stayed focused on food delivery. Your cross-category competitor is stealing your users via their grocery app.
+    options:
+      - text: Launch an aggressive loyalty program.
+        points: 10
+        pattern: defensive-loyalty
+        rationale: Good defense, but doesn't solve the core missing category.
+        consequence: It slows the bleed.
+        leadsTo: C-loyalty
+      - text: Cut food delivery fees to zero to regain volume.
+        points: 0
+        pattern: race-to-bottom
+        rationale: Destroys your core margins.
+        consequence: You start losing money on your only business.
+        leadsTo: C-fees
+  C-loyalty:
+    dimension: product
+    prompt: |
+      The loyalty program is expensive.
+    options:
+      - text: Subsidize it with ad revenue from restaurants.
+        points: 15
+        pattern: smart-monetization
+        rationale: Offset costs creatively.
+        consequence: Margins stabilize.
+        leadsTo: end-C
+      - text: Pass costs to restaurants.
+        points: 0
+        pattern: squeeze-supply
+        rationale: Restaurants revolt.
+        consequence: You lose supply side.
+        leadsTo: end-C
+  C-fees:
+    dimension: business
+    prompt: |
+      Zero fees are killing your P&L.
+    options:
+      - text: Raise fees back up slowly.
+        points: 10
+        pattern: slow-recovery
+        rationale: Better late than never.
+        consequence: You lose users again, but stop bleeding.
+        leadsTo: end-C-margin
+      - text: Keep them at zero, pray for volume.
+        points: 0
+        pattern: hopium
+        rationale: Volume won't fix negative unit economics.
+        consequence: Bankruptcy looming.
+        leadsTo: end-C-margin
+  D-partner-followup:
+    dimension: strategy
+    prompt: |
+      The partnership ships. Six months in, your competitor makes an outright acquisition bid for Blinkit.
+    options:
+      - text: Make an aggressive counter-bid to acquire them now.
+        points: 10
+        pattern: late-reaction
+        rationale: You now have to pay a massive premium over what it would have cost 6 months ago.
+        consequence: You win the bid, but overpay severely.
+        leadsTo: D-counter
+      - text: Let the competitor acquire them.
+        points: 0
+        pattern: surrender
+        rationale: You lose the category.
+        consequence: You are back at zero.
+        leadsTo: D-letgo
+  D-counter:
+    dimension: strategy
+    prompt: |
+      You won the bid, but investors are furious about the price.
+    options:
+      - text: Keep Blinkit independent to protect its growth.
+        points: 15
+        pattern: protect-the-asset
+        rationale: Don't mess with what you just overpaid for.
+        consequence: It works out eventually.
+        leadsTo: end-D-expensive
+      - text: Merge it immediately to show 'synergies'.
+        points: 0
+        pattern: forced-synergy
+        rationale: Destroys the value.
+        consequence: Complete disaster.
+        leadsTo: end-D
+  D-letgo:
+    dimension: strategy
+    prompt: |
+      Competitor owns Blinkit. You need a grocery play.
+    options:
+      - text: Build organically from scratch now.
+        points: 5
+        pattern: way-too-late
+        rationale: You are years behind.
+        consequence: Waste of money.
+        leadsTo: end-D
+      - text: Acquire the 3rd place player.
+        points: 10
+        pattern: sloppy-seconds
+        rationale: Best bad option left.
+        consequence: You remain a distant second.
+        leadsTo: end-D
   end-A-great:
     isOutcome: true
     prompt: |
@@ -152,10 +341,13 @@ nodes:
   end-A-mixed:
     isOutcome: true
     prompt: |
-      Acquisition correct, merge-strategy wrong. The 12 months of
-      merged-app friction cost growth in both categories. The
+      Acquisition correct, execution rocky. The friction cost growth in both categories. The
       eventual two-app restoration worked, just later than
       necessary.
+  end-A-bad:
+    isOutcome: true
+    prompt: |
+      Acquisition right, execution fatal. Merging the apps destroyed Blinkit's magic.
   end-B:
     isOutcome: true
     prompt: |
@@ -163,6 +355,10 @@ nodes:
       acquisition of the same category leader gave them 3 years
       of compounding advantage you never closed. Stock
       underperformed.
+  end-B-niche:
+    isOutcome: true
+    prompt: |
+      You built a profitable but small grocery business in a few cities.
   end-C:
     isOutcome: true
     prompt: |
@@ -170,13 +366,20 @@ nodes:
       margins but lost long-term consumer share. The cross-
       category competitor compounded; your single-category
       growth slowed.
+  end-C-margin:
+    isOutcome: true
+    prompt: |
+      You destroyed your margins trying to defend your core without expanding.
   end-D:
     isOutcome: true
     prompt: |
       The partnership fell apart when the competitor acquired
       Blinkit outright. You restarted in 10-min grocery at a
-      structural disadvantage. The acquisition that would have
-      been ~$570M became impossible.
+      structural disadvantage. 
+  end-D-expensive:
+    isOutcome: true
+    prompt: |
+      You got the asset, but overpaid wildly because you waited too long.
 ---
 ## What actually happened
 

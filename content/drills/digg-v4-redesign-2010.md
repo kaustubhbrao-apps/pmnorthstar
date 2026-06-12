@@ -109,7 +109,7 @@ nodes:
           The modified v4 launches. It's not a massive mainstream breakout, but it doesn't
           destroy the company. The community accepts the compromise. Publisher revenue trickles
           in, slower than the board wanted, but the ecosystem remains stable.
-        leadsTo: opt_in_tier
+        leadsTo: delay_launch_3
       - text: "Auto-subscribe users to top publishers (CNN, Mashable), but allow them to easily opt-out and unfollow them in their settings."
         points: 3
         pattern: dark-pattern-growth
@@ -122,6 +122,40 @@ nodes:
           Users despise the auto-subscriptions. It feels like spam. A significant portion
           opts out, but many just close the tab and type "reddit.com" into their browser.
           The exodus begins, though slightly slower than a forced mandate.
+        leadsTo: delay_launch_3_alt
+  delay_launch_3:
+    dimension: business
+    prompt: |
+      The ecosystem is stable but revenue is too slow for the board. They demand a new monetization product.
+    options:
+      - text: "Build a self-serve ad platform for small businesses and creators."
+        points: 15
+        pattern: democratized-monetization
+        rationale: Fits the community ethos better than massive corporate takeovers.
+        consequence: You build a sustainable, diversified revenue stream.
+        leadsTo: opt_in_tier
+      - text: "Sell massive homepage takeovers to legacy media."
+        points: 0
+        pattern: corporate-sellout
+        rationale: Completely overrides the 'Publisher Tier' compromise.
+        consequence: The community finally revolts.
+        leadsTo: opt_in_tier
+  delay_launch_3_alt:
+    dimension: founder
+    prompt: |
+      The exodus has begun. Reddit is gaining 100k users a day. 
+    options:
+      - text: "Remove the auto-subscriptions entirely and beg the community to stay."
+        points: 5
+        pattern: desperate-reversal
+        rationale: A little too late, but stops some bleeding.
+        consequence: You stabilize a smaller core, but lose the momentum.
+        leadsTo: auto_subscribe
+      - text: "Ignore the exodus and push more publisher tools."
+        points: 0
+        pattern: doubling-down-on-failure
+        rationale: Accelerates the death spiral.
+        consequence: You lose the entire community.
         leadsTo: auto_subscribe
   proceed_launch:
     dimension: business
@@ -144,7 +178,7 @@ nodes:
           The rollback happens after 48 hours. The bleeding stops, but the damage is done.
           Users who tried Reddit during the outage realize they like it better. Digg survives
           but its momentum is permanently broken.
-        leadsTo: roll_back
+        leadsTo: proceed_launch_3
       - text: "Stay the course. Release rapid patches to fix the bugs, but issue a statement telling the community that this is the future of Digg and they need to give it time."
         points: 0
         pattern: stubborn-escalation
@@ -155,6 +189,40 @@ nodes:
         consequence: |
           The community realizes you aren't listening. The revolt turns into a permanent
           migration. Traffic drops by 26% in a matter of weeks and never recovers.
+        leadsTo: proceed_launch_3_alt
+  proceed_launch_3:
+    dimension: product
+    prompt: |
+      You're back on v3. The tech stack is aging, and Reddit is accelerating. 
+    options:
+      - text: "Slowly rebuild the backend while keeping the v3 frontend exactly the same."
+        points: 10
+        pattern: invisible-infrastructure
+        rationale: Don't spook the users again. Fix the plumbing quietly.
+        consequence: You avoid further revolt, but development is painfully slow.
+        leadsTo: roll_back
+      - text: "Try to launch a 'v3.5' with minor UI updates."
+        points: 5
+        pattern: tone-deaf
+        rationale: They literally just rioted over UI changes.
+        consequence: They riot again.
+        leadsTo: roll_back
+  proceed_launch_3_alt:
+    dimension: founder
+    prompt: |
+      The traffic drop is permanent. The board fires the CEO.
+    options:
+      - text: "Step up as interim CEO and initiate a fire sale."
+        points: 10
+        pattern: realistic-assessment
+        rationale: The asset is depreciating daily. Sell what's left.
+        consequence: You sell the brand for a fraction of its former glory.
+        leadsTo: stay_course
+      - text: "Step up as interim CEO and promise a turnaround."
+        points: 0
+        pattern: delusion
+        rationale: There is no community left to turn around.
+        consequence: You burn the last bit of cash to $0.
         leadsTo: stay_course
   parallel_beta_debate:
     dimension: business
@@ -173,7 +241,7 @@ nodes:
           The board capitulates. You scrap the worst parts of v4. Digg stays true to its
           roots, fighting off Reddit for a few more years, though monetization remains a
           struggle.
-        leadsTo: opt_in_tier
+        leadsTo: parallel_beta_debate_3
       - text: "Cave to the board. Roll out v4 to 100% of users, ignoring the beta data."
         points: 0
         pattern: executive-capitulation
@@ -182,6 +250,40 @@ nodes:
           leadership. You know it will fail, but you do it anyway.
         consequence: |
           The site crashes, the users revolt, and the exact scenario you feared plays out.
+        leadsTo: parallel_beta_debate_3_alt
+  parallel_beta_debate_3:
+    dimension: founder
+    prompt: |
+      You saved the product, but the board fires you for missing revenue targets.
+    options:
+      - text: "Leave quietly and join a hyper-growth startup."
+        points: 10
+        pattern: professional-exit
+        rationale: You did your job, they didn't like it. Time to move on.
+        consequence: You build a stellar career elsewhere.
+        leadsTo: opt_in_tier
+      - text: "Leak the board's demands to the press on your way out."
+        points: 0
+        pattern: burning-bridges
+        rationale: Unprofessional and ruins your reputation in the Valley.
+        consequence: You become unhireable for a few years.
+        leadsTo: opt_in_tier
+  parallel_beta_debate_3_alt:
+    dimension: business
+    prompt: |
+      You caved, the site crashed, and the users left. Now the board blames you for the bad launch.
+    options:
+      - text: "Accept the blame. It was your product launch."
+        points: 5
+        pattern: accountability
+        rationale: Taking the hit is part of leadership, even if you were forced.
+        consequence: You are fired, but respected for taking the hit.
+        leadsTo: stay_course
+      - text: "Blame the engineering team for the crashes."
+        points: 0
+        pattern: throwing-under-bus
+        rationale: Toxic leadership.
+        consequence: The engineering team mass-resigns immediately.
         leadsTo: stay_course
   opt_in_tier:
     isOutcome: true

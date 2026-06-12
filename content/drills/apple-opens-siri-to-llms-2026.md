@@ -37,194 +37,408 @@ nodes:
         points: 9
         pattern: ride-the-platform
         rationale: |
-          The defensive-but-fast move. Plug into Apple's distribution,
-          let them handle the hardest part (system-level voice access),
-          and become the LLM users pick. Risk: you're now Apple's
-          tenant. They control the discovery surface, the privacy
-          rules, and the cut. Reward: you reach 100x more users than
-          your standalone app ever could.
+          The defensive-but-fast move.
         consequence: |
-          Plugin ships in 6 weeks. Downloads spike. Apple changes the
-          plugin guidelines in Q3 in a way that hurts your specific
-          flow. You spend Q4 redesigning around their rules.
+          Plugin ships in 6 weeks. Downloads spike.
         leadsTo: A-plugin-followup
       - text: Pivot to a vertical — pick legal voice, medical voice, or call-center voice and own it.
         points: 15
         pattern: own-a-vertical
         rationale: |
-          The right strategic move. Horizontal voice-AI for consumers
-          just got commoditized by Apple. Vertical voice-AI for
-          enterprises did not — your compliance posture, domain
-          fine-tuning, and integration depth are things Apple won't
-          ever ship. By picking one vertical and going deep, you turn
-          a soon-commodity layer into a fundable enterprise business.
+          The right strategic move.
         consequence: |
-          You spend 4 weeks picking the vertical, then commit. Two of
-          your enterprise customers become design partners for the
-          new positioning. Twelve months later you're the dominant
-          name in that vertical.
+          You spend 4 weeks picking the vertical, then commit.
         leadsTo: B-vertical-followup
       - text: Sell the company now while you can. Apple just commoditized your category.
         points: 6
         pattern: capitulate-too-early
         rationale: |
-          Defensible logic, premature timing. The platform announcement
-          doesn't kill verticals — it kills the consumer wedge. You
-          still have a real enterprise business with paying customers
-          and domain depth. Selling at the bottom of the news cycle
-          means selling at the worst possible valuation.
+          Defensible logic, premature timing.
         consequence: |
-          Acquisition talks begin. Best offer is 1x ARR — half what
-          you were worth six months ago. You take it. Eighteen months
-          later, the team that bought you spins your tech into the
-          legal-vertical play you could have run yourself.
-        leadsTo: end-C
+          Acquisition talks begin.
+        leadsTo: C-sell-2
       - text: Stay horizontal. Double down on Android + web where Apple's move doesn't reach.
         points: 6
         pattern: avoid-the-fight
         rationale: |
-          The "go where they aren't" instinct. Android voice is
-          fragmented and Google's Assistant has been weak. The problem:
-          Google will follow Apple's move within 12 months — they
-          always do — and your enterprise customers don't care about
-          Android-only. You're buying ~12 months of margin at the
-          cost of giving up the iOS market entirely.
+          The "go where they aren't" instinct.
         consequence: |
-          You ship Android features through Q3. Google announces a
-          similar plugin model at I/O in May. You're now exiled from
-          both major platforms with a thinner product.
-        leadsTo: end-D
+          You ship Android features through Q3.
+        leadsTo: D-android-2
+
   A-plugin-followup:
     dimension: product
     prompt: |
-      The plugin is live. Downloads are strong but ARPU collapsed — you
-      can't charge consumers $5/month when Siri is the default
-      surface. Enterprise customers are asking why your consumer
-      product is now free while their seats still cost $200. What now?
+      The plugin is live. Downloads are strong but ARPU collapsed. What now?
     options:
       - text: Make the consumer plugin free forever. Use it as a top-of-funnel for enterprise.
         points: 12
         pattern: free-tier-as-funnel
         rationale: |
-          Smart funnel math. Consumer plugin becomes the awareness
-          driver, enterprise stays the revenue engine. The thing to
-          watch: the funnel only works if there's a clear product
-          differentiation between the free Siri plugin and the
-          enterprise product. Otherwise enterprise asks why they're
-          paying for what their employees use for free.
+          Smart funnel math.
         consequence: |
-          Free plugin drives 200K downloads in 90 days. ~3% of users
-          discover the enterprise version through your team. Sales
-          cycles shorten by 30%.
-        leadsTo: end-A-good
+          Free plugin drives 200K downloads.
+        leadsTo: A-free-3
       - text: Try to monetize the consumer plugin via premium features. Charge $5/month.
         points: 3
         pattern: monetize-where-platform-owns
         rationale: |
-          Doomed. The user already pays Apple for iCloud, and Apple's
-          plugin guidelines specifically discourage app-level payments
-          for system-level features. You're charging $5 for a thing
-          users perceive as part of iOS.
+          Doomed. The user already pays Apple for iCloud.
         consequence: |
-          Premium conversion is <0.4%. Reviews call you "another
-          subscription tax." You quietly remove the paywall in Q4.
-        leadsTo: end-A-bad
+          Premium conversion is <0.4%.
+        leadsTo: A-premium-3
+
+  A-free-3:
+    dimension: business
+    prompt: |
+      The free plugin is driving massive volume but the API costs are staggering.
+    options:
+      - text: Cap free usage aggressively to save cash.
+        points: 6
+        pattern: throttling-funnel
+        rationale: |
+          Kills the funnel momentum.
+        consequence: |
+          Users abandon the plugin, enterprise leads dry up.
+        leadsTo: end-A-free-cap
+      - text: Switch to a much cheaper open-source model for the free tier.
+        points: 15
+        pattern: architectural-efficiency
+        rationale: |
+          Solves the margin issue while preserving the funnel.
+        consequence: |
+          Margins stabilize, funnel continues to pump.
+        leadsTo: end-A-free-model
+
+  A-premium-3:
+    dimension: founder
+    prompt: |
+      Premium conversion failed. You burned 6 months. Investors are angry.
+    options:
+      - text: Apologize, drop the paywall, and pivot back to enterprise.
+        points: 12
+        pattern: eat-crow
+        rationale: |
+          Takes humility but saves the business.
+        consequence: |
+          You recover the enterprise focus just in time.
+        leadsTo: end-A-prem-pivot
+      - text: Keep tweaking the premium features hoping to find product-market fit.
+        points: 3
+        pattern: stubborn-failure
+        rationale: |
+          Fighting the platform owner never works.
+        consequence: |
+          You run out of money and fold.
+        leadsTo: end-A-prem-die
+
   B-vertical-followup:
     dimension: business
     prompt: |
-      You picked Legal Voice (intake, deposition assistance, citation
-      lookup). Three enterprise design partners signed. Pricing
-      decision: per-seat or per-firm?
+      You picked Legal Voice. Pricing decision: per-seat or per-firm?
     options:
       - text: Per-firm flat fee. $50K/year for unlimited seats.
         points: 12
         pattern: simple-pricing-for-trust
         rationale: |
-          Clean, defensible, easy for legal procurement to approve.
-          You leave money on the table at large firms but you close
-          deals faster and get reference customers. At early stage,
-          velocity beats per-unit margin.
+          Clean, defensible, easy for legal procurement.
         consequence: |
-          You sign 12 firms in 6 months. ARR jumps to $5M. Some big
-          firms quietly absorb hundreds of seats — you'll fix the
-          pricing in v2.
-        leadsTo: end-B-good
+          You sign 12 firms in 6 months.
+        leadsTo: B-firm-3
       - text: 'Per-seat: $200/month. Tiered by usage.'
         points: 9
         pattern: granular-pricing
         rationale: |
-          More accurate to value, but creates friction in legal
-          procurement (every seat needs ROI justification). You
-          maximize per-unit revenue but slow the sales motion at the
-          stage where you most need pace.
+          Creates friction in legal procurement.
         consequence: |
-          Sales cycles stretch to 5-6 months. You sign 4 firms but
-          deals are larger. Mixed outcome on net revenue.
-        leadsTo: end-B-mixed
+          Sales cycles stretch to 5-6 months.
+        leadsTo: B-seat-3
       - text: Free for solo lawyers. Pay only for firms over 10 attorneys.
         points: 15
         pattern: bottom-up-then-top-down
         rationale: |
-          The PLG-into-enterprise move. Solos try you free, fall in
-          love, get hired at firms, bring you with them. The firms
-          pay because their lawyers already use you. This is the
-          Notion / Figma playbook applied to legal voice.
+          The PLG-into-enterprise move.
         consequence: |
-          Solo signups hit 8K in 6 months. 47 of them join larger
-          firms in that period and bring you in the door. ARR hits
-          $7M with low CAC.
-        leadsTo: end-B-great
-  end-A-good:
+          Solo signups hit 8K in 6 months.
+        leadsTo: B-solo-3
+
+  B-firm-3:
+    dimension: product
+    prompt: |
+      You signed 12 firms. Some big firms are quietly absorbing hundreds of seats and ruining your compute margins.
+    options:
+      - text: Force a contract renegotiation immediately.
+        points: 6
+        pattern: breach-of-trust
+        rationale: |
+          Lawyers don't like renegotiating mid-contract.
+        consequence: |
+          You lose 4 of your best reference customers.
+        leadsTo: end-B-firm-reneg
+      - text: Eat the cost for Year 1, fix it in renewals.
+        points: 15
+        pattern: honor-the-deal
+        rationale: |
+          You bought market share and reference logos. Keep them happy.
+        consequence: |
+          You fix pricing in Year 2 and retain 100%.
+        leadsTo: end-B-firm-eat
+
+  B-seat-3:
+    dimension: business
+    prompt: |
+      Sales cycles are 6 months long. Cash is getting tight.
+    options:
+      - text: Discount heavily to close deals faster.
+        points: 6
+        pattern: desperation-pricing
+        rationale: |
+          Devalues the product in a prestige market.
+        consequence: |
+          You close deals but destroy long-term ARPU.
+        leadsTo: end-B-seat-disc
+      - text: Hold the price, raise a bridge round.
+        points: 12
+        pattern: hold-the-line
+        rationale: |
+          Enterprise sales take time. Capitalize the business correctly.
+        consequence: |
+          You raise the bridge and close the massive deals.
+        leadsTo: end-B-seat-bridge
+
+  B-solo-3:
+    dimension: product
+    prompt: |
+      8K solo lawyers are using it free. 47 join large firms.
+    options:
+      - text: Build advanced admin tools to help firms manage these bottom-up seats.
+        points: 15
+        pattern: enable-the-champion
+        rationale: |
+          You give IT a reason to say yes to the bottoms-up adoption.
+        consequence: |
+          Enterprise conversion skyrockets.
+        leadsTo: end-B-solo-admin
+      - text: Just cold-email the firm IT departments and demand payment.
+        points: 3
+        pattern: shadow-it-shakedown
+        rationale: |
+          Hostile tactic that alienates the buyer.
+        consequence: |
+          IT bans your app network-wide.
+        leadsTo: end-B-solo-ban
+
+  C-sell-2:
+    dimension: founder
+    prompt: |
+      Best offer is 1x ARR. You take it. The team is demoralized.
+    options:
+      - text: Try to renegotiate at the last minute based on a new feature launch.
+        points: 3
+        pattern: bad-faith-deal
+        rationale: |
+          Destroys trust with the acquirer.
+        consequence: |
+          The acquirer walks away. You have nothing.
+        leadsTo: C-reneg-3
+      - text: Accept the deal gracefully and take care of the team.
+        points: 9
+        pattern: professional-exit
+        rationale: |
+          You lost, but you don't have to burn bridges.
+        consequence: |
+          The team lands softly.
+        leadsTo: C-accept-3
+
+  C-reneg-3:
+    dimension: business
+    prompt: |
+      The acquirer walked. You are alone and out of money.
+    options:
+      - text: Fire sale to a competitor for literally anything.
+        points: 6
+        pattern: scrap-value
+        rationale: |
+          Getting pennies.
+        consequence: |
+          You sell the IP for $100K.
+        leadsTo: end-C-ren-fire
+      - text: Shut down and open source.
+        points: 12
+        pattern: community-salvage
+        rationale: |
+          Better karma than a $100K fire sale.
+        consequence: |
+          You shut down with dignity.
+        leadsTo: end-C-ren-os
+
+  C-accept-3:
+    dimension: product
+    prompt: |
+      You are now inside a massive tech corp. They want to kill your product.
+    options:
+      - text: Fight internally to keep it alive.
+        points: 6
+        pattern: corporate-politics
+        rationale: |
+          You have no leverage.
+        consequence: |
+          You waste 2 years of your life in meetings.
+        leadsTo: end-C-acc-fight
+      - text: Vest and rest.
+        points: 9
+        pattern: check-out
+        rationale: |
+          Rational response to a dead product.
+        consequence: |
+          You collect your check and leave.
+        leadsTo: end-C-acc-vest
+
+  D-android-2:
+    dimension: business
+    prompt: |
+      You shipped Android features. Google announces a similar plugin model at I/O.
+    options:
+      - text: Panic pivot to B2B enterprise voice.
+        points: 9
+        pattern: late-to-the-party
+        rationale: |
+          You are 12 months behind the people who pivoted at WWDC.
+        consequence: |
+          You struggle to catch up.
+        leadsTo: D-b2b-3
+      - text: Try to build your own hardware device (like Rabbit R1) to escape OS monopolies.
+        points: 3
+        pattern: hardware-delusion
+        rationale: |
+          Hardware is a completely different business with brutal capital requirements.
+        consequence: |
+          You burn your remaining $2M in supply chain costs.
+        leadsTo: D-hardware-3
+
+  D-b2b-3:
+    dimension: founder
+    prompt: |
+      You are behind in B2B. Competitors have the best logos.
+    options:
+      - text: Go down-market to SMBs.
+        points: 12
+        pattern: find-open-water
+        rationale: |
+          SMBs are unserved by the enterprise players.
+        consequence: |
+          You build a decent mid-market business.
+        leadsTo: end-D-b2b-smb
+      - text: Try to out-engineer the leaders on enterprise features.
+        points: 6
+        pattern: fighting-from-behind
+        rationale: |
+          They have more funding and reference customers.
+        consequence: |
+          You fail to win deals.
+        leadsTo: end-D-b2b-ent
+
+  D-hardware-3:
+    dimension: product
+    prompt: |
+      The hardware prototypes are buggy.
+    options:
+      - text: Ship it anyway to get revenue.
+        points: 3
+        pattern: ship-broken-hardware
+        rationale: |
+          Hardware doesn't iterate like software.
+        consequence: |
+          Massive returns, terrible reviews.
+        leadsTo: end-D-hw-ship
+      - text: Cancel the project and return remaining capital to investors.
+        points: 15
+        pattern: honest-failure
+        rationale: |
+          The most honorable move when the thesis breaks.
+        consequence: |
+          Investors respect you for not burning it all.
+        leadsTo: end-D-hw-cancel
+
+  end-A-free-cap:
     isOutcome: true
     prompt: |
-      The plugin became a credible top-of-funnel for the enterprise
-      product. You stayed in the platform game but didn't bet the
-      company on it.
-  end-A-bad:
+      Capping the free tier killed your funnel. You eventually sold the company for parts.
+  end-A-free-model:
     isOutcome: true
     prompt: |
-      The consumer monetization failed and the brand took a small hit
-      with the subscription-tax reviews. The enterprise business is
-      intact but you wasted 6 months trying to charge for something
-      the platform gave away.
-  end-B-good:
+      The open-source switch worked. You built a strong enterprise business powered by a massive free Siri presence.
+  end-A-prem-pivot:
     isOutcome: true
     prompt: |
-      Legal voice became your category. ARR grew from $2M to $5M in
-      six months. The Apple platform shift, in retrospect, was the
-      moment that forced you to find your real business.
-  end-B-mixed:
+      You wasted time, but surviving is surviving. You rebuilt the enterprise business.
+  end-A-prem-die:
     isOutcome: true
     prompt: |
-      The vertical bet worked but the pricing model slowed you down.
-      You'll fix it in v2; in the meantime you're growing slower than
-      a cleaner pricing model would have allowed.
-  end-B-great:
+      You fought the platform and the platform won. The company went bankrupt.
+  end-B-firm-reneg:
     isOutcome: true
     prompt: |
-      The bottom-up motion compounded. By Q4 you were the default
-      voice tool in legal, with 8K solo lawyers and 60+ firms paying.
-      The platform shift turned out to be the best thing that ever
-      happened to your company.
-  end-C:
+      Renegotiating mid-contract ruined your reputation in the legal vertical. Growth stalled.
+  end-B-firm-eat:
     isOutcome: true
     prompt: |
-      You sold at the worst possible moment. The vertical you could
-      have owned became someone else's $100M ARR business 24 months
-      later. You're consulting now and won't talk about it.
-  end-D:
+      Eating the cost built massive trust. By Year 2, you fixed pricing and became highly profitable.
+  end-B-seat-disc:
     isOutcome: true
     prompt: |
-      The Android bet bought you ~12 months. Google's I/O announcement
-      ended it. You're now sub-scale on both platforms with no
-      enterprise wedge. The next fundraise gets ugly.
+      You became the "cheap" option in legal tech. A competitor took the premium market.
+  end-B-seat-bridge:
+    isOutcome: true
+    prompt: |
+      The bridge round gave you time to close. You became a $20M ARR juggernaut.
+  end-B-solo-admin:
+    isOutcome: true
+    prompt: |
+      Admin tools unlocked the enterprise. You executed the PLG playbook perfectly.
+  end-B-solo-ban:
+    isOutcome: true
+    prompt: |
+      Hostile IT tactics got you banned. Your bottoms-up growth engine died overnight.
+  end-C-ren-fire:
+    isOutcome: true
+    prompt: |
+      A $100K fire sale. A depressing end to a once-promising company.
+  end-C-ren-os:
+    isOutcome: true
+    prompt: |
+      Open-sourcing won you massive developer goodwill. Your next startup was easily funded.
+  end-C-acc-fight:
+    isOutcome: true
+    prompt: |
+      You wasted years fighting corporate bureaucracy. The product died anyway.
+  end-C-acc-vest:
+    isOutcome: true
+    prompt: |
+      You vested, rested, and moved on. The product was quietly sunsetted.
+  end-D-b2b-smb:
+    isOutcome: true
+    prompt: |
+      SMB voice became a great niche. You didn't win the category, but you built a real business.
+  end-D-b2b-ent:
+    isOutcome: true
+    prompt: |
+      You couldn't catch up in enterprise. The company folded.
+  end-D-hw-ship:
+    isOutcome: true
+    prompt: |
+      The hardware reviews were brutal. You had to process thousands of refunds and went bankrupt.
+  end-D-hw-cancel:
+    isOutcome: true
+    prompt: |
+      Returning the capital was the right move. The investors funded your next company immediately.
 ---
 ## What's at stake here
 
 The pattern: when a platform owner (Apple, Google, Microsoft, Meta)
 absorbs a horizontal capability into their OS, the founders who
-**panic and pivot to compete with the platform** lose. The founders
-who **panic and pivot to a vertical the platform won't ever serve
+**panic and pivot to compete with the platform** lose. The founders who
+**panic and pivot to a vertical the platform won't ever serve
 deeply** consistently win.
 
 Examples from history: Mailchimp survived Google ads moving in by
