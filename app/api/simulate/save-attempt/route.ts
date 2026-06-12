@@ -12,6 +12,7 @@ import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { getDrillBySlug, publishedDrills } from "@/data/drills";
 import type { DrillDimension } from "@/data/drills";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -28,6 +29,11 @@ export async function POST(req: NextRequest) {
         { error: "Not authenticated" },
         { status: 401 }
       );
+    }
+
+    const { ok } = checkRateLimit(`save-attempt-${session.id}`, 10, 60_000);
+    if (!ok) {
+      return NextResponse.json({ error: "Too many attempts. Please slow down." }, { status: 429 });
     }
 
     const body = await req.json();
@@ -59,6 +65,7 @@ export async function POST(req: NextRequest) {
       product: { score: 0, max: 0 },
       business: { score: 0, max: 0 },
       founder: { score: 0, max: 0 },
+      strategy: { score: 0, max: 0 },
     };
     let cursor = "start";
     for (const step of pathTaken) {
@@ -91,7 +98,7 @@ export async function POST(req: NextRequest) {
         dims[node.dimension].score += opt.points;
         dims[node.dimension].max += nodeMax;
       }
-      cursor = opt.leadsTo;
+      cursor = opt.leadsTo ?? "";
     }
 
     const finalNode = drill.nodes[cursor];
@@ -111,17 +118,16 @@ export async function POST(req: NextRequest) {
     const isFirstAttempt = !previousAttempt;
 
     // 2. Is this an active League Match within its scoring window?
-    const activeDrill = publishedDrills()[0];
     let isActiveLeagueMatch = false;
-
-    if (activeDrill && activeDrill.slug === drillSlug && drill.isLeagueMatch) {
+    
+    if (drill.isLeagueMatch) {
       const now = new Date();
-      // If the drill has a strict end time (Saturday midnight), enforce it.
       if (drill.leagueEndsAt) {
         if (now <= new Date(drill.leagueEndsAt)) {
           isActiveLeagueMatch = true;
         }
       } else {
+        // If no end date is specified, it's always active
         isActiveLeagueMatch = true;
       }
     }
@@ -147,6 +153,8 @@ export async function POST(req: NextRequest) {
           businessMax: dims.business.max,
           founderScore: dims.founder.score,
           founderMax: dims.founder.max,
+          strategyScore: dims.strategy.score,
+          strategyMax: dims.strategy.max,
           pathTaken: pathTaken as unknown as object,
           isFirstAttempt,
           leaguePointsEarned,
@@ -170,25 +178,48 @@ export async function POST(req: NextRequest) {
       }
 
       // Process referral bonus
-      if (ref && ref !== session.id && isActiveLeagueMatch) {
-        // Attempt to insert a referral record (Unique constraint prevents abuse: one bonus per referrer per drill)
-        try {
-          await tx.leagueReferral.create({
-            data: {
-              referrerId: ref,
-              referredId: session.id,
-              drillSlug,
-              points: 3,
-            },
+      if (ref && isActiveLeagueMatch) {
+        // Resolve ref: it could be a UUID (legacy) or a username
+        let referrerIdToUse = ref;
+        if (!ref.includes("-")) {
+          const referrerUser = await tx.user.findUnique({
+            where: { username: ref },
+            select: { id: true }
           });
-          // Reward the referrer
-          await tx.user.update({
-            where: { id: ref },
-            data: { leaguePoints: { increment: 3 } },
-          });
-        } catch (e) {
-          // Unique constraint violation: referrer already got points for this drill.
-          // Or invalid referrerId (foreign key constraint). Safe to ignore.
+          if (referrerUser) referrerIdToUse = referrerUser.id;
+        }
+
+        if (referrerIdToUse !== session.id) {
+          // Attempt to insert a referral record (Unique constraint prevents abuse: one bonus per referrer per drill)
+          try {
+            await tx.leagueReferral.create({
+              data: {
+                referrerId: referrerIdToUse,
+                referredId: session.id,
+                drillSlug,
+                points: 3,
+              },
+            });
+            // Reward the referrer
+            const referrerUser = await tx.user.update({
+              where: { id: referrerIdToUse },
+              data: { leaguePoints: { increment: 3 } },
+              select: { username: true }
+            });
+
+            // Create an in-app notification
+            const buddyName = session.username ? `@${session.username}` : session.name;
+            const drillTitleStr = drill.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+            await tx.inAppNotification.create({
+              data: {
+                userId: referrerIdToUse,
+                type: "referral_bonus",
+                message: `${buddyName} played "${drillTitleStr}" using your link. You earned +3 League Points! 🏆`,
+              }
+            });
+          } catch (e) {
+            // Unique constraint violation or invalid referrerId. Safe to ignore.
+          }
         }
       }
 

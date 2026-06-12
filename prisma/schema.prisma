@@ -18,6 +18,10 @@ model User {
   lastLoginAt         DateTime?            @map("last_login_at")
   googleId            String?              @unique @map("google_id")
   image               String?
+  username            String?              @unique
+  usernameChangedAt   DateTime?            @map("username_changed_at")
+  isAdmin             Boolean              @default(false) @map("is_admin")
+  emailOptOut         Boolean              @default(false) @map("email_opt_out")
   leaguePoints        Int                  @default(0) @map("league_points")
   likedResources      LikedResource[]
   passwordResetTokens PasswordResetToken[]
@@ -26,8 +30,21 @@ model User {
   drillAttempts       DrillAttempt[]
   leagueReferrals     LeagueReferral[]     @relation("Referrer")
   leagueReferred      LeagueReferral[]     @relation("Referred")
+  inAppNotifications  InAppNotification[]
 
   @@map("users")
+}
+
+model InAppNotification {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  type      String   // e.g., "referral_bonus"
+  message   String
+  isRead    Boolean  @default(false) @map("is_read")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@map("in_app_notifications")
 }
 
 model Session {
@@ -114,6 +131,8 @@ model DrillAttempt {
   businessMax        Int      @default(0) @map("business_max")
   founderScore       Int      @default(0) @map("founder_score")
   founderMax         Int      @default(0) @map("founder_max")
+  strategyScore      Int      @default(0) @map("strategy_score")
+  strategyMax        Int      @default(0) @map("strategy_max")
   pathTaken          Json     @map("path_taken")
   attemptedAt        DateTime @default(now()) @map("attempted_at")
   isFirstAttempt     Boolean  @default(false) @map("is_first_attempt")

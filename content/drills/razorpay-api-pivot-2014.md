@@ -3,7 +3,9 @@ slug: razorpay-api-pivot-2014
 caseStudySlug: razorpay-pivot-fintech
 type: historical
 category: pivots
-publishedAt: "2026-07-03T19:00:00+05:30"
+publishedAt: '2026-10-11T15:00:00+00:00'
+isLeagueMatch: true
+leagueEndsAt: '2026-10-14T15:00:00+00:00'
 year: 2014
 estimatedMinutes: 7
 principle: |
@@ -33,162 +35,258 @@ nodes:
   start:
     dimension: founder
     prompt: |
-      The consumer app has 2K users and is growing slowly. Every
-      investor is asking why you're not building B2B payments
-      infrastructure. Your runway is six months. Pick.
+      The consumer app has 2K users and is growing slowly. Every investor is asking why you're not building B2B payments. Runway is 6 months.
     options:
-      - text: "Stay the course on the consumer app. UPI is rumored to be coming and will fix the bank-transfer problem."
-        points: 1
+      - text: Stay the course on the consumer app. UPI is coming.
+        points: 3
         pattern: wait-for-the-platform
         rationale: |
-          Betting on government infrastructure to fix your product —
-          dangerous because the timing is unknowable. UPI did
-          eventually arrive (April 2016) but until then, every
-          consumer payments app was bottlenecked by the same
-          settlement friction. Waiting for the platform means
-          burning runway on a product the platform will commoditize.
+          Betting on government infrastructure to fix your product is dangerous.
         consequence: |
-          Six months pass. UPI hasn't shipped. Runway hits zero.
-          The consumer app shuts down. When UPI eventually launches,
-          PhonePe and Google Pay absorb the consumer category.
-        leadsTo: end-A
-      - text: "Pivot to B2B payment APIs. Build for the businesses that can't accept online payments. Tell investors and team."
-        points: 5
+          Six months pass. UPI hasn't shipped.
+        leadsTo: A-consumer-followup
+      - text: Pivot to B2B payment APIs. Build for the businesses that can't accept online payments.
+        points: 15
         pattern: pivot-to-the-real-problem
         rationale: |
-          The right call. The signal is unambiguous: every
-          experienced person is pointing at the same gap. The
-          consumer app was a hypothesis; the B2B opportunity is
-          a validated demand (every Indian business owner asks
-          their bank for online payments and gets a 3-page form).
-          Pivoting now uses the technical work you've done as
-          a foundation, not as wasted effort.
+          The right call. The B2B opportunity is a validated demand.
         consequence: |
-          You spend three months building the API and the merchant
-          onboarding flow. First 10 businesses sign up in week
-          one of beta. The infrastructure pain is so acute that
-          they tolerate the rough v1.
+          You spend three months building the API.
         leadsTo: B-api-followup
-      - text: "Hybrid: keep the consumer app, ship the B2B API as a side product."
-        points: 2
+      - text: 'Hybrid: keep the consumer app, ship the B2B API as a side product.'
+        points: 6
         pattern: half-pivot
         rationale: |
-          Trying to honor sunk cost while chasing the new
-          opportunity. Two products, one tiny team, neither gets
-          full focus. Both will move slower than a competitor who
-          commits.
+          Trying to honor sunk cost while chasing the new opportunity.
         consequence: |
-          The B2B side gets traction but the team is split.
-          Engineering moves slowly on both fronts. A focused
-          competitor catches up within 12 months.
-        leadsTo: end-C
-      - text: "Sell what you have to a fintech in the consumer-payments space. Use the proceeds to fund a new company."
-        points: 2
+          The team is split.
+        leadsTo: C-hybrid-followup
+      - text: Sell what you have to a fintech in the consumer-payments space.
+        points: 6
         pattern: graceful-exit-then-restart
         rationale: |
-          Defensible but premature. You haven't tested the B2B
-          hypothesis yet; selling now means assuming the consumer
-          play is the ceiling of your value. Acqui-hire valuations
-          at this stage are low and the new company means starting
-          from zero — without the technical foundation you've built.
+          Premature.
         consequence: |
-          Acqui-hire closes at ₹2 crore (~$300K). You take six
-          months off. The B2B payments market in India explodes
-          over the next 24 months without you in it.
-        leadsTo: end-D
+          Acqui-hire closes at ₹2 crore (~$300K).
+        leadsTo: D-sell-followup
+
+  A-consumer-followup:
+    dimension: founder
+    prompt: |
+      You stayed the course. You have 1 month of runway left. UPI is still not here.
+    options:
+      - text: Max out personal credit cards to keep the servers running another 3 months.
+        points: 0
+        pattern: personal-ruin
+        rationale: |
+          Never put personal ruin on the line for a business with no PMF.
+        consequence: |
+          You go into deep personal debt.
+        leadsTo: A-desperation
+      - text: Shut down the company and look for jobs.
+        points: 6
+        pattern: accept-defeat
+        rationale: |
+          The logical conclusion of running out of money without PMF.
+        consequence: |
+          The company dies quietly.
+        leadsTo: A-desperation
+
+  A-desperation:
+    dimension: founder
+    prompt: |
+      It's over. What is your final action?
+    options:
+      - text: Open source the consumer app code before leaving.
+        points: 9
+        pattern: community-good
+        rationale: |
+          Good karma, though the code is tied to old banking infrastructure.
+        consequence: |
+          A few developers star it on GitHub.
+        leadsTo: end-A-oss
+      - text: Just close the laptops and walk away.
+        points: 3
+        pattern: burnout
+        rationale: |
+          Understandable exhaustion.
+        consequence: |
+          You take a long vacation.
+        leadsTo: end-A-fail
+
   B-api-followup:
     dimension: business
     prompt: |
-      Six months into the pivot. ~50 merchants live. Take rate is
-      2.5% (fixed). Bigger merchants (₹50L+ monthly volume) are
-      asking for custom rates. Smaller merchants are asking for a
-      "no-code" version they can embed without engineering. Pick.
+      Six months into the pivot. ~50 merchants live. What is your product focus?
     options:
-      - text: "Build the no-code version. Long tail of small merchants is the bigger market and aligns with the self-serve motion."
-        points: 5
+      - text: Build the no-code version for small merchants.
+        points: 15
         pattern: small-merchants-as-distribution
         rationale: |
-          Right call for early-stage. Small merchants compound
-          fastest (referral loops, low CAC, fast onboarding), and
-          a no-code embed becomes the wedge that drives word-of-
-          mouth. Custom rates for big merchants are a Q2 question;
-          today's question is "how do we get to 5,000 merchants?"
+          Right call for early-stage compounding.
         consequence: |
-          No-code embed ships in 8 weeks. Onboarding flow drops
-          from days to minutes. Merchant count crosses 1,000 in
-          90 days. Word of mouth in the small-business community
-          becomes the dominant acquisition channel.
-        leadsTo: end-B-great
-      - text: "Custom rates for big merchants first. Larger contracts, more revenue per merchant."
-        points: 3
+          No-code embed ships in 8 weeks. Merchant count crosses 1,000.
+        leadsTo: B-scale-strategy
+      - text: Custom rates and features for big merchants first.
+        points: 9
         pattern: enterprise-first-too-soon
         rationale: |
-          Bigger deals but slower compounding. Enterprise sales
-          cycles in Indian fintech are 4-9 months. You'd be
-          shifting the team from a self-serve motion to an
-          enterprise motion before the self-serve motion has
-          fully validated.
+          Slower compounding.
         consequence: |
-          Two big merchants sign at 1.8% take rate. ARR jumps but
-          the long-tail growth slows because engineering is busy
-          with custom integrations.
-        leadsTo: end-B-mixed
-      - text: "Stay focused on the current 50 merchants. Stabilize the product before adding either segment."
-        points: 2
+          Two big merchants sign. Long-tail growth slows.
+        leadsTo: B-scale-strategy
+      - text: Stay focused on the current 50 merchants. Stabilize the product.
+        points: 6
         pattern: stabilize-when-momentum-matters
         rationale: |
-          Defensive when the moment calls for offense. At 50
-          merchants with strong product-market signal, the
-          constraint is acquisition velocity, not product polish.
-          Slowing down now means letting competitors catch the
-          merchants who would have been yours.
+          Defensive when the moment calls for offense.
         consequence: |
-          Stable product, stable growth at 30 merchants/month.
-          A competitor ships a no-code version and captures the
-          long-tail market you would have owned.
-        leadsTo: end-B-mediocre
-  end-A:
+          Stable product, slow growth.
+        leadsTo: B-scale-strategy
+
+  B-scale-strategy:
+    dimension: product
+    prompt: |
+      You are at the next inflection point. A competitor is copying your API docs. How do you defend your moat?
+    options:
+      - text: Expand the product suite into payroll and corporate cards (Neo-banking).
+        points: 15
+        pattern: expand-the-surface
+        rationale: |
+          Once you have the payments flow, you can own all money movement for the business.
+        consequence: |
+          You become an indispensable financial OS.
+        leadsTo: end-B-great
+      - text: Focus purely on having the lowest transaction fees in the market.
+        points: 6
+        pattern: commodity-race
+        rationale: |
+          Payments is a scale game, but racing to zero fee kills your margin.
+        consequence: |
+          You win merchants but struggle to hit profitability.
+        leadsTo: end-B-mixed
+
+  C-hybrid-followup:
+    dimension: product
+    prompt: |
+      The hybrid approach is failing. Both products are buggy. Team is burning out.
+    options:
+      - text: Finally kill the consumer app. Shift 100% to B2B.
+        points: 9
+        pattern: delayed-commitment
+        rationale: |
+          Better late than never.
+        consequence: |
+          You regain focus, but a competitor has a 6-month head start.
+        leadsTo: C-forced-choice
+      - text: Continue trying to raise a Series A on the combined "ecosystem" story.
+        points: 0
+        pattern: delusion
+        rationale: |
+          Investors see through the lack of focus.
+        consequence: |
+          Every VC passes.
+        leadsTo: C-forced-choice
+
+  C-forced-choice:
+    dimension: founder
+    prompt: |
+      You have one last chance to salvage the company.
+    options:
+      - text: Acqui-hire the team to a larger bank.
+        points: 3
+        pattern: surrender
+        rationale: |
+          Admitting defeat.
+        consequence: |
+          You join a bank's innovation lab.
+        leadsTo: end-C-bank
+      - text: Do a massive layoff and rebuild the B2B side with a skeleton crew.
+        points: 9
+        pattern: hard-reset
+        rationale: |
+          Painful but gives you a real chance at the true market.
+        consequence: |
+          You survive, but the journey is brutal.
+        leadsTo: end-C-survive
+
+  D-sell-followup:
+    dimension: founder
+    prompt: |
+      You sold the company for $300K. You have some cash. What next?
+    options:
+      - text: Take 6 months off to rest.
+        points: 6
+        pattern: rest-and-vest
+        rationale: |
+          Reasonable, but you miss the B2B window.
+        consequence: |
+          The market explodes without you.
+        leadsTo: D-new-start
+      - text: Immediately start a new B2B payments company.
+        points: 9
+        pattern: serial-founder
+        rationale: |
+          You realize your mistake and try to re-enter.
+        consequence: |
+          You have to rebuild all the tech from scratch.
+        leadsTo: D-new-start
+
+  D-new-start:
+    dimension: business
+    prompt: |
+      You are starting over.
+    options:
+      - text: Go through Y Combinator again with the new B2B idea.
+        points: 12
+        pattern: leverage-network
+        rationale: |
+          YC loves pivot stories and serial founders.
+        consequence: |
+          You get funded and build a strong competitor.
+        leadsTo: end-D-rebound
+      - text: Bootstrap the new company.
+        points: 6
+        pattern: slow-build
+        rationale: |
+          B2B payments is too capital intensive to bootstrap in India in 2015.
+        consequence: |
+          You are out-competed by well-funded rivals.
+        leadsTo: end-D-slow
+
+  end-A-fail:
     isOutcome: true
-    summary: |
-      You waited for the platform and ran out of money. UPI shipped
-      18 months after you closed. The consumer category was taken
-      by PhonePe and Google Pay; the B2B category was taken by a
-      pivoted competitor who didn't wait.
+    prompt: |
+      You waited for the platform and ran out of money. The company died.
+  end-A-oss:
+    isOutcome: true
+    prompt: |
+      You open sourced the code, but it became obsolete quickly. You moved on.
   end-B-great:
     isOutcome: true
-    summary: |
-      The no-code embed compounded. Merchant count crossed 100K
-      within 18 months. The company became the default payments
-      infrastructure for Indian businesses. By 2022, valuation
-      ~$7.5B and a category-defining brand.
+    prompt: |
+      The no-code embed compounded, and the expansion into neo-banking made you a $7.5B juggernaut.
   end-B-mixed:
     isOutcome: true
-    summary: |
-      The enterprise-first call delivered short-term revenue but
-      slowed the long-tail compounding. You eventually shipped
-      the no-code version 12 months later and recovered, but
-      gave up a year of market velocity.
-  end-B-mediocre:
+    prompt: |
+      The race to the bottom on fees won market share but destroyed margins. The company is huge but unprofitable.
+  end-C-bank:
     isOutcome: true
-    summary: |
-      The stabilization slowed growth and a competitor took the
-      market. You eventually shipped the no-code version 18
-      months later, but the category was someone else's by then.
-  end-C:
+    prompt: |
+      The hybrid failure led to a quiet acqui-hire. The true market was won by others.
+  end-C-survive:
     isOutcome: true
-    summary: |
-      The half-pivot worked partially. The B2B side grew but
-      slower than a focused competitor's, who eventually took the
-      category leadership position.
-  end-D:
+    prompt: |
+      You survived the hard reset. It took 5 years, but you built a solid B2B business.
+  end-D-rebound:
     isOutcome: true
-    summary: |
-      The early exit closed at the wrong valuation. The market
-      exploded without you. You restarted but lost two years and
-      the technical foundation that would have made the new
-      company faster.
+    prompt: |
+      You rebounded with a new YC company. You lost a year, but still became a major player.
+  end-D-slow:
+    isOutcome: true
+    prompt: |
+      Bootstrapping was too slow. You built a lifestyle business while others built unicorns.
 ---
-
 ## What actually happened
 
 This drill is based on the **Razorpay pivot in 2014**. Harshil Mathur

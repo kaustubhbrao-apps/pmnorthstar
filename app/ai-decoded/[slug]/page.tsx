@@ -43,8 +43,8 @@ export default function AIDecodedArticlePage({
 
   return (
     <SidebarShell
-      backHref="/ai-decoded"
-      backLabelDesktop="All AI Decoded"
+      backHref="/"
+      backLabelDesktop="Back to the library"
       shareTitle={fm.title}
       shareText={`${fm.title} (northstar's take)`}
     >

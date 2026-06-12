@@ -33,7 +33,9 @@ function isRateLimited(ip: string): boolean {
 // into 404s. Observed in Vercel Analytics: /%C2%A0 (URL-encoded nbsp).
 const INVISIBLE_CHARS = /%C2%A0|%E2%80%8B|%EF%BB%BF/gi;
 
-export function middleware(req: NextRequest) {
+// Removed USERNAME_REDIRECT_EXCLUDE since username redirect was removed
+
+export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const ip = req.ip || "127.0.0.1";
 
@@ -63,6 +65,10 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  // ─── 3. Username Redirect (League) ───
+  // No longer needed — usernames are now auto-derived from email
+  // during Google OAuth sign-in. Kept as a comment for history.
+
   return NextResponse.next();
 }
 
@@ -72,3 +78,4 @@ export const config = {
     "/((?!_next/static|_next/image|favicon.ico|logo-icon.svg|logo-cover.svg).*)",
   ],
 };
+

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { aiDecodedManifest } from "@/data/aiDecodedManifest";
@@ -38,6 +39,36 @@ function formatDate(iso: string): string {
 }
 
 export function HeroBanner({ onNavChange }: HeroBannerProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const updateActiveSlide = useCallback(() => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, clientWidth } = scrollRef.current;
+    setActiveSlide(Math.round(scrollLeft / clientWidth));
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateActiveSlide, { passive: true });
+    return () => el.removeEventListener("scroll", updateActiveSlide);
+  }, [updateActiveSlide]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft >= scrollWidth - clientWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: clientWidth, behavior: "smooth" });
+        }
+      }
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className="mx-4 sm:mx-6 mt-4 sm:mt-6 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-5 lg:gap-8"
@@ -50,7 +81,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
           border: "1.5px solid var(--card-border)",
         }}
       >
-        <div className="flex items-center gap-2.5 mb-5">
+        <div className="flex items-center gap-2.5 mb-7">
           <span
             className="w-5 h-px"
             style={{ background: "var(--brand-primary)" }}
@@ -109,156 +140,183 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
         </div>
       </div>
 
-      {/* ── Right: two stacked sidebar banners. Solid blue (CheckIt)
-          and green (AI Decoded) at the user's request. White type on
-          color so the cards anchor the page without competing with
-          the brand red of the rest of the site. ─────────────────── */}
-      <div className="flex flex-col gap-4 sm:gap-5">
-        {/* CheckIt — solid blue, white type, score-ring visual hook */}
+      {/* ── Right: Tool Carousel ── */}
+      <div 
+        ref={scrollRef}
+        className="flex overflow-x-auto snap-x snap-mandatory pb-2 scroll-container"
+      >
+        {/* Simulation League Banner */}
         <Link
-          href="/checkit"
-          className="group rounded-2xl px-5 py-5 sm:py-6 transition-all flex items-center gap-4 hover:opacity-95"
+          href={`/league`}
+          className="flex-shrink-0 w-full snap-center group rounded-2xl p-6 transition-all hover:opacity-95 flex flex-col relative overflow-hidden"
           style={{
-            background: "#2563EB",
-            border: "1.5px solid rgba(255, 255, 255, 0.12)",
+            background: "var(--card-bg)",
+            border: "1.5px solid #991b1b",
           }}
         >
-          <MiniRing score={92} onColor />
+          {/* Subtle SVG Noise Texture */}
+          <div 
+            className="absolute inset-0 pointer-events-none opacity-[0.04] z-10 mix-blend-overlay"
+            style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}
+          />
 
-          <div className="flex-1 min-w-0">
-            <p
-              className="text-sm font-mono uppercase mb-1"
-              style={{
-                color: "rgba(255, 255, 255, 0.75)",
-                letterSpacing: "0.14em",
-              }}
+          {/* Ambient Brand Glow */}
+          <div 
+            className="absolute top-[-10%] left-[-10%] w-[250px] h-[250px] rounded-full blur-[70px] pointer-events-none opacity-10 transition-opacity group-hover:opacity-20" 
+            style={{ background: "radial-gradient(circle, var(--brand-primary) 0%, transparent 70%)" }} 
+          />
+
+          <div className="relative z-20 flex-1 flex flex-col">
+            <div 
+              className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 border rounded self-start"
+              style={{ borderColor: "var(--border-subtle)", background: "var(--page-bg)" }}
             >
-              Tool
+              <div className="w-1.5 h-1.5 bg-[var(--brand-primary)] animate-pulse rounded-full" />
+              <span className="font-mono font-bold tracking-widest uppercase text-[10px]" style={{ color: "var(--text-muted)" }}>
+                Matchday Live
+              </span>
+            </div>
+
+            <h3 className="font-display text-4xl sm:text-[2.5rem] font-black tracking-tighter mb-4 uppercase leading-[0.9]" style={{ color: "var(--text-primary)" }}>
+              SIMULATION<br />
+              <span style={{ color: "var(--brand-primary)" }}>LEAGUE</span>
+            </h3>
+
+            <p className="text-sm leading-relaxed mb-auto" style={{ color: "var(--text-muted)" }}>
+              The ultimate proving ground for Builders and PMs. Can you stay at the top across 50 intense Matchdays?
             </p>
-            <h2
-              className="font-display text-lg font-bold leading-tight mb-1"
-              style={{
-                color: "#ffffff",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              How ready is your site?
-            </h2>
-            <p
-              className="text-xs leading-snug mb-2.5"
-              style={{ color: "rgba(255, 255, 255, 0.8)" }}
-            >
-              {CHECKIT_TOTAL} checks. 30 seconds. Free.
-            </p>
-            <span
-              className="inline-flex items-center gap-1 text-xs font-semibold transition-transform group-hover:translate-x-0.5"
-              style={{ color: "#ffffff" }}
-            >
-              Run a check
-              <ArrowUpRight size={12} strokeWidth={2} />
-            </span>
+
+            <div className="w-full mt-8">
+              <div className="p-4 rounded bg-[var(--page-bg)] border border-[var(--border-subtle)]">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>50 Matchdays</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "var(--text-muted)" }}>Season 1</span>
+                </div>
+                
+                <div className="btn-primary w-full flex justify-center items-center gap-2 text-sm py-2.5">
+                  Enter the League
+                  <ArrowUpRight size={14} />
+                </div>
+              </div>
+            </div>
           </div>
         </Link>
 
-        {/* SimulateIt — solid purple, white type, decision grid visual.
-            Sibling to CheckIt but for product judgement rather than site
-            hygiene. Grid telegraphs the share mechanic. */}
-        <Link
-          href="/simulate"
-          className="group rounded-2xl px-5 py-5 sm:py-6 transition-all flex items-center gap-4 hover:opacity-95"
-          style={{
-            background: "#DB2777",
-            border: "1.5px solid rgba(255, 255, 255, 0.12)",
-          }}
-        >
-          <DecisionGrid />
-
-          <div className="flex-1 min-w-0">
-            <p
-              className="text-sm font-mono uppercase mb-1"
-              style={{
-                color: "rgba(255, 255, 255, 0.75)",
-                letterSpacing: "0.14em",
-              }}
-            >
-              Tool
-            </p>
-            <h2
-              className="font-display text-lg font-bold leading-tight mb-1"
-              style={{
-                color: "#ffffff",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Train your product instincts.
-            </h2>
-            <p
-              className="text-xs leading-snug mb-2.5"
-              style={{ color: "rgba(255, 255, 255, 0.8)" }}
-            >
-              {DRILL_COUNT} drills. Two per week. Free.
-            </p>
-            <span
-              className="inline-flex items-center gap-1 text-xs font-semibold transition-transform group-hover:translate-x-0.5"
-              style={{ color: "#ffffff" }}
-            >
-              Play this week&apos;s drill
-              <ArrowUpRight size={12} strokeWidth={2} />
-            </span>
-          </div>
-        </Link>
-
-        {/* AI Decoded — solid green, white type, real date + title */}
-        <Link
-          href={latestAI ? `/ai-decoded/${latestAI.slug}` : "/ai-decoded"}
-          className="group rounded-2xl px-5 py-5 transition-all hover:opacity-95"
-          style={{
-            background: "#0F9D58",
-            border: "1.5px solid rgba(255, 255, 255, 0.12)",
-          }}
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <p
-              className="text-sm font-mono uppercase"
-              style={{
-                color: "rgba(255, 255, 255, 0.85)",
-                letterSpacing: "0.14em",
-              }}
-            >
-              AI Decoded
-            </p>
-            {latestAI && (
-              <>
-                <span
-                  className="w-1 h-1 rounded-full"
-                  style={{ background: "rgba(255, 255, 255, 0.6)" }}
-                />
-                <p
-                  className="text-sm font-mono"
-                  style={{ color: "rgba(255, 255, 255, 0.7)" }}
-                >
-                  {formatDate(latestAI.publishedAt)}
-                </p>
-              </>
-            )}
-          </div>
-          <h3
-            className="font-display text-base leading-snug font-semibold mb-2 line-clamp-2"
+        {/* ── Slide 2: The Three Tools Stack ── */}
+        <div className="flex-shrink-0 w-full snap-center flex flex-col gap-4 sm:gap-5">
+          {/* CheckIt */}
+          <Link
+            href="/checkit"
+            className="w-full group rounded-2xl px-5 py-5 transition-all flex flex-col hover:opacity-95"
             style={{
-              color: "#ffffff",
-              letterSpacing: "-0.015em",
+              background: "#2563EB",
+              border: "1.5px solid rgba(255, 255, 255, 0.12)",
             }}
           >
-            {latestAI?.title ?? "Editorial commentary on AI for PMs"}
-          </h3>
-          <span
-            className="inline-flex items-center gap-1 text-xs font-semibold transition-transform group-hover:translate-x-0.5"
-            style={{ color: "#ffffff" }}
-          >
-            Read this week&apos;s take
-            <ArrowUpRight size={12} strokeWidth={2} />
+          <div className="flex items-center gap-4 mb-4">
+            <MiniRing score={92} onColor />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-mono uppercase mb-1" style={{ color: "rgba(255, 255, 255, 0.75)", letterSpacing: "0.14em" }}>
+                Tool
+              </p>
+              <h2 className="font-display text-lg font-bold leading-tight" style={{ color: "#ffffff", letterSpacing: "-0.02em" }}>
+                How ready is your site?
+              </h2>
+            </div>
+          </div>
+          <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "rgba(255, 255, 255, 0.8)" }}>
+            {CHECKIT_TOTAL} checks. 30 seconds. Free.
+          </p>
+          <span className="inline-flex items-center gap-1 text-sm font-semibold transition-transform group-hover:translate-x-0.5" style={{ color: "#ffffff" }}>
+            Run a check
+            <ArrowUpRight size={14} strokeWidth={2} />
           </span>
         </Link>
+
+          {/* SimulateIt */}
+          <Link
+            href="/simulate"
+            className="w-full group rounded-2xl px-5 py-5 transition-all flex flex-col hover:opacity-95"
+            style={{
+              background: "#DB2777",
+              border: "1.5px solid rgba(255, 255, 255, 0.12)",
+            }}
+          >
+          <div className="flex items-center gap-4 mb-4">
+            <DecisionGrid />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-mono uppercase mb-1" style={{ color: "rgba(255, 255, 255, 0.75)", letterSpacing: "0.14em" }}>
+                Tool
+              </p>
+              <h2 className="font-display text-lg font-bold leading-tight" style={{ color: "#ffffff", letterSpacing: "-0.02em" }}>
+                Train your product instincts.
+              </h2>
+            </div>
+          </div>
+          <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "rgba(255, 255, 255, 0.8)" }}>
+            {DRILL_COUNT} drills. Two per week. Free.
+          </p>
+          <span className="inline-flex items-center gap-1 text-sm font-semibold transition-transform group-hover:translate-x-0.5" style={{ color: "#ffffff" }}>
+            Play this week&apos;s drill
+            <ArrowUpRight size={14} strokeWidth={2} />
+          </span>
+        </Link>
+
+          {/* AI Decoded */}
+          <Link
+            href={latestAI ? `/ai-decoded/${latestAI.slug}` : "/ai-decoded"}
+            className="w-full group rounded-2xl px-5 py-5 transition-all flex flex-col justify-between hover:opacity-95"
+            style={{
+              background: "#0F9D58",
+              border: "1.5px solid rgba(255, 255, 255, 0.12)",
+            }}
+          >
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <p className="text-sm font-mono uppercase" style={{ color: "rgba(255, 255, 255, 0.85)", letterSpacing: "0.14em" }}>
+                AI Decoded
+              </p>
+              {latestAI && (
+                <>
+                  <span className="w-1 h-1 rounded-full" style={{ background: "rgba(255, 255, 255, 0.6)" }} />
+                  <p className="text-sm font-mono" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+                    {formatDate(latestAI.publishedAt)}
+                  </p>
+                </>
+              )}
+            </div>
+            <h3 className="font-display text-xl font-bold leading-tight mb-4" style={{ color: "#ffffff", letterSpacing: "-0.015em" }}>
+              {latestAI?.title ?? "Editorial commentary on AI for PMs"}
+            </h3>
+          </div>
+            <span className="inline-flex items-center gap-1 text-sm font-semibold transition-transform group-hover:translate-x-0.5" style={{ color: "#ffffff" }}>
+              Read this week&apos;s take
+              <ArrowUpRight size={14} strokeWidth={2} />
+            </span>
+          </Link>
+        </div>
+
+        {/* Carousel Indicators */}
+        <div className="flex justify-center gap-2 mt-3">
+          {[0, 1].map((i) => (
+            <button
+              key={i}
+              onClick={() => {
+                scrollRef.current?.scrollTo({
+                  left: i * (scrollRef.current?.clientWidth ?? 0),
+                  behavior: "smooth",
+                });
+              }}
+              className="rounded-full transition-all"
+              style={{
+                width: activeSlide === i ? 20 : 6,
+                height: 6,
+                background: activeSlide === i ? "var(--brand-primary)" : "var(--card-border)",
+              }}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -155,7 +155,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
             <Link href="/" className="inline-flex items-center gap-2 text-sm font-medium"
               style={{ color: "var(--text-muted)" }}>
               <ArrowLeft size={14} strokeWidth={1.6} />
-              <span className="hidden sm:inline">All case studies</span>
+              <span className="hidden sm:inline">Back to the library</span>
               <span className="sm:hidden">Back</span>
             </Link>
           </div>

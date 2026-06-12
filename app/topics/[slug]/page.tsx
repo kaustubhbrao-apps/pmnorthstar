@@ -47,7 +47,7 @@ export default function TopicPage({ params }: PageProps) {
     <SidebarShell
       activeNav="explore"
       backHref="/"
-      backLabelDesktop="Home"
+      backLabelDesktop="Back to the library"
       backLabelMobile="Home"
       shareTitle={`${topic.title} on northstar`}
       shareText={`${topic.title}: ${topic.intro}`}

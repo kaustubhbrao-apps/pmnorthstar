@@ -630,24 +630,27 @@ function syncDrills() {
     .join(",\n");
 
   const out = `${HEADER}
-export type DrillDimension = "product" | "business" | "founder";
+export type DrillDimension = "product" | "business" | "founder" | "strategy";
 export type DrillType = "historical" | "current" | "hypothetical";
 
 export interface DrillOption {
   text: string;
   points: number;
-  pattern: string;
-  rationale: string;
-  consequence: string;
-  leadsTo: string;
+  pattern?: string;
+  rationale?: string;
+  consequence?: string;
+  leadsTo?: string;
+  [key: string]: any;
 }
 
 export interface DrillNode {
   dimension?: DrillDimension;
+  title?: string;
   prompt?: string;
   options?: DrillOption[];
   isOutcome?: boolean;
   summary?: string;
+  [key: string]: any;
 }
 
 export interface Drill {

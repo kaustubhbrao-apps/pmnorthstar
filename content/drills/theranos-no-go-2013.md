@@ -3,7 +3,9 @@ slug: theranos-no-go-2013
 caseStudySlug: theranos-fraud
 type: historical
 category: crisis
-publishedAt: "2026-07-24T19:00:00+05:30"
+publishedAt: '2026-11-04T15:00:00+00:00'
+isLeagueMatch: true
+leagueEndsAt: '2026-11-08T15:00:00+00:00'
 year: 2013
 estimatedMinutes: 6
 principle: |
@@ -37,7 +39,7 @@ nodes:
       You're four years into a job you took because you believed in
       the mission. Pick the move.
     options:
-      - text: "Sign the NDA. Stay quiet. Keep collecting the paycheck while you figure out next steps."
+      - text: Sign the NDA. Stay quiet. Keep collecting the paycheck while you figure out next steps.
         points: 0
         pattern: complicity-by-inaction
         rationale: |
@@ -49,13 +51,10 @@ nodes:
           and ruinous in retrospect — your career and reputation
           will be defined by what happens when the truth comes out.
         consequence: |
-          You sign. Two years later, the regulatory investigation
-          breaks publicly. You're named in the SEC complaint. Your
-          career in healthcare is over. Legal fees consume your
-          savings.
-        leadsTo: end-A
-      - text: "Refuse to sign. Document everything you've seen. Resign and contact regulators."
-        points: 5
+          You sign. The immediate crisis is averted, but you are now bound.
+        leadsTo: A-nda-followup
+      - text: Refuse to sign. Document everything you've seen. Resign and contact regulators.
+        points: 15
         pattern: integrity-over-pattern-match
         rationale: |
           The right call, however hard. Real patients are receiving
@@ -68,14 +67,10 @@ nodes:
           integrity, protects patients, and ends your association
           before the public reckoning.
         consequence: |
-          You resign. Three months later you give voluntary
-          testimony to FDA inspectors. The next year, the
-          regulatory action breaks publicly. You're named as a
-          whistleblower; your career in healthcare deepens because
-          of the integrity, not despite it.
+          You resign. You are now a target of the company's aggressive legal team.
         leadsTo: B-resign-followup
-      - text: "Take the issue to the board. Trust the governance to investigate."
-        points: 3
+      - text: Take the issue to the board. Trust the governance to investigate.
+        points: 9
         pattern: trust-the-governance
         rationale: |
           Defensible procedurally, often unreliable in practice.
@@ -88,13 +83,10 @@ nodes:
           would.
         consequence: |
           Your concerns are noted in a confidential memo. The
-          board commissions an "external review" that takes 8
-          months and reaches no conclusion. You're reassigned to
-          a different team. You eventually resign in 6 months,
-          quietly.
-        leadsTo: end-C
-      - text: "Stay but try to fix it from the inside. You're senior; you can push for better validation."
-        points: 1
+          board commissions an "external review".
+        leadsTo: C-board-followup
+      - text: Stay but try to fix it from the inside. You're senior; you can push for better validation.
+        points: 3
         pattern: hero-inside-the-broken-system
         rationale: |
           The "I'll fix it from within" rationalization. Three
@@ -105,10 +97,59 @@ nodes:
           You can't fix that from inside without the leadership
           changing, and the leadership hasn't.
         consequence: |
-          You spend 18 months trying. Nothing changes. You leave
-          in late 2014. The story breaks in 2015. Your name is on
-          patents and validation documents tied to the misuse.
-        leadsTo: end-D
+          You stay and try to reform the testing protocols.
+        leadsTo: D-inside-followup
+  A-nda-followup:
+    dimension: founder
+    prompt: |
+      You signed the NDA. Six months later, you are asked to sign off on validation reports for a new suite of tests. You know the data has been cherry-picked to remove outliers and the device is still failing.
+    options:
+      - text: Sign the reports. You are already in this deep.
+        points: 0
+        pattern: doubling-down-on-fraud
+        rationale: Signing fraudulent validation reports crosses the line from bystander to active participant in fraud.
+        consequence: Your signature is now on the core documents of the deception.
+        leadsTo: A-sign-fake
+      - text: Refuse to sign and quit immediately.
+        points: 10
+        pattern: belated-integrity
+        rationale: You finally hit your breaking point. Better late than never, but you still wasted 6 months.
+        consequence: You are fired and threatened with the NDA you signed.
+        leadsTo: A-quit-late
+  A-sign-fake:
+    dimension: founder
+    prompt: |
+      You signed the reports. The regulators are now conducting a surprise inspection.
+    options:
+      - text: Lie to the regulators to protect the company.
+        points: 0
+        pattern: criminal-complicity
+        rationale: Perjury and obstructing a federal investigation.
+        consequence: You face federal charges.
+        leadsTo: end-A
+      - text: Confess everything to the regulators immediately.
+        points: 5
+        pattern: panic-confession
+        rationale: You try to save yourself, but your signature is already on the documents.
+        consequence: You get immunity but your career is destroyed.
+        leadsTo: end-A
+  A-quit-late:
+    dimension: founder
+    prompt: |
+      You quit, but you are terrified. A federal investigation has begun, but you are not yet named.
+    options:
+      - text: Volunteer as a witness.
+        points: 10
+        pattern: redemption
+        rationale: You try to make it right.
+        consequence: You become a key witness.
+        leadsTo: end-A-late
+      - text: Hide and hope they don't find you.
+        points: 0
+        pattern: cowardice
+        rationale: They always find the senior scientists.
+        consequence: You are subpoenaed anyway.
+        leadsTo: end-A-late
   B-resign-followup:
     dimension: founder
     prompt: |
@@ -118,8 +159,8 @@ nodes:
       company's law firm. A journalist has reached out asking for
       on-record testimony.
     options:
-      - text: "Go on the record with the journalist. The public story is the only thing that protects you."
-        points: 5
+      - text: Go on the record with the journalist. The public story is the only thing that protects you.
+        points: 15
         pattern: transparency-as-defense
         rationale: |
           Defensive but correct. The intimidation campaign relies
@@ -133,12 +174,9 @@ nodes:
         consequence: |
           The journalist's story breaks. Other former employees
           come forward. The federal investigation accelerates.
-          You become a key witness; the company's case against
-          you collapses. Your name is associated with integrity,
-          not complicity.
-        leadsTo: end-B-great
-      - text: "Stay quiet. Settle the NDA case privately. Rebuild your career outside the spotlight."
-        points: 3
+        leadsTo: B-journal-followup
+      - text: Stay quiet. Settle the NDA case privately. Rebuild your career outside the spotlight.
+        points: 9
         pattern: settle-and-retreat
         rationale: |
           Survivable but ethically thinner. The settlement makes
@@ -148,21 +186,159 @@ nodes:
           a non-disparagement clause.
         consequence: |
           The settlement closes. You move to a different state
-          and take a quieter role. The story breaks anyway 12
-          months later, with other whistleblowers as the main
-          voices.
+          and take a quieter role.
+        leadsTo: B-quiet-followup
+  B-journal-followup:
+    dimension: founder
+    prompt: |
+      The story is public. The company is now suing you for defamation and trade secret theft.
+    options:
+      - text: Fight it in court. Let discovery expose them.
+        points: 15
+        pattern: standing-firm
+        rationale: They are bluffing. They can't survive discovery.
+        consequence: The lawsuit is dropped shortly after regulators raid their offices.
+        leadsTo: end-B-great
+      - text: Cave to the pressure and retract your statements.
+        points: 0
+        pattern: buckling
+        rationale: You destroy your own credibility and hand them a victory.
+        consequence: You are disgraced publicly.
         leadsTo: end-B-good
+  B-quiet-followup:
+    dimension: founder
+    prompt: |
+      You stayed quiet. A year later, Congress is holding hearings and you receive a federal subpoena.
+    options:
+      - text: Testify fully and truthfully.
+        points: 15
+        pattern: compelled-truth
+        rationale: You have no choice now.
+        consequence: You tell the truth, but your delay cost patients.
+        leadsTo: end-B-good
+      - text: Plead the Fifth to avoid any liability.
+        points: 5
+        pattern: self-preservation
+        rationale: Legally safe, morally vacant.
+        consequence: You survive legally but are a pariah in the industry.
+        leadsTo: end-B-bad
+  C-board-followup:
+    dimension: founder
+    prompt: |
+      The board's "external review" found nothing wrong. You are reassigned to a meaningless project.
+    options:
+      - text: Quit now. It's clear they are all in on it.
+        points: 10
+        pattern: seeing-the-light
+        rationale: The governance failed. Time to go.
+        consequence: You leave quietly.
+        leadsTo: C-quit-now
+      - text: Stay quiet and ride it out.
+        points: 0
+        pattern: willful-ignorance
+        rationale: You are actively choosing to ignore the ongoing fraud.
+        consequence: You become part of the problem.
+        leadsTo: C-stay
+  C-quit-now:
+    dimension: founder
+    prompt: |
+      You quit. Do you blow the whistle now?
+    options:
+      - text: Yes, go to the regulators.
+        points: 15
+        pattern: belated-whistleblower
+        rationale: Better late than never.
+        consequence: You help bring them down.
+        leadsTo: end-C
+      - text: No, just move on.
+        points: 5
+        pattern: wash-hands
+        rationale: You escape, but don't help stop it.
+        consequence: You watch from the sidelines.
+        leadsTo: end-C
+  C-stay:
+    dimension: founder
+    prompt: |
+      You stayed. The federal raid happens.
+    options:
+      - text: Cooperate.
+        points: 10
+        pattern: forced-cooperation
+        rationale: You only do the right thing when forced.
+        consequence: You avoid jail but your career is over.
+        leadsTo: end-A
+      - text: Continue lying.
+        points: 0
+        pattern: loyalty-to-fraud
+        rationale: Inexcusable.
+        consequence: Prison.
+        leadsTo: end-A
+  D-inside-followup:
+    dimension: founder
+    prompt: |
+      You spent 18 months trying to reform the QA processes. The CEO completely ignores your reports.
+    options:
+      - text: Leak the QA reports to the press anonymously.
+        points: 10
+        pattern: shadow-whistleblower
+        rationale: You finally take action, but hide your identity.
+        consequence: The press gets the story, you keep your job temporarily.
+        leadsTo: D-leak
+      - text: Give up and leave quietly.
+        points: 5
+        pattern: quiet-exit
+        rationale: You tried, it failed, you leave.
+        consequence: You escape the worst of it.
+        leadsTo: D-leave
+  D-leak:
+    dimension: founder
+    prompt: |
+      The press publishes your leaked reports. The company begins a witch hunt to find the leaker.
+    options:
+      - text: Come forward internally and resign.
+        points: 15
+        pattern: owning-it
+        rationale: You own your actions.
+        consequence: You are fired and sued, but sleep well.
+        leadsTo: end-B-good
+      - text: Deny everything and let a colleague take the fall.
+        points: 0
+        pattern: moral-bankruptcy
+        rationale: Cowardice.
+        consequence: You survive but destroy an innocent person's life.
+        leadsTo: end-B-bad
+  D-leave:
+    dimension: founder
+    prompt: |
+      You left. Your name is still on the patents.
+    options:
+      - text: Demand your name be removed.
+        points: 10
+        pattern: clearing-name
+        rationale: You try to distance yourself.
+        consequence: They refuse, but you have a paper trail.
+        leadsTo: end-D
+      - text: Do nothing.
+        points: 0
+        pattern: apathy
+        rationale: You leave yourself exposed.
+        consequence: You are named in the lawsuits later.
+        leadsTo: end-D
   end-A:
     isOutcome: true
-    summary: |
+    prompt: |
       The complicity compounded. Years later, the public
       reckoning named you among the senior staff who knew. Career
       in healthcare ended; legal exposure substantial; reputation
       permanently damaged. The integrity choice was always
       available; you took the paycheck path.
+  end-A-late:
+    isOutcome: true
+    prompt: |
+      You got out late. Your career took a massive hit, and you spent years dealing with subpoenas, but you avoided criminal charges.
   end-B-great:
     isOutcome: true
-    summary: |
+    prompt: |
       The whistleblower path defined the rest of your career.
       Patient safety was eventually protected; the federal case
       named you as a credible source; your name in healthcare
@@ -170,27 +346,29 @@ nodes:
       different lab and went on to do important work.
   end-B-good:
     isOutcome: true
-    summary: |
+    prompt: |
       You survived but stayed out of the public story. Other
       whistleblowers told it without you. Your career continued
       but the silence sat with you for decades.
+  end-B-bad:
+    isOutcome: true
+    prompt: |
+      You protected yourself entirely at the cost of your soul and others' wellbeing. You survived, but you carry the shame forever.
   end-C:
     isOutcome: true
-    summary: |
-      The board didn't act in time. You resigned 6 months later
-      under the cloud of having raised concerns through "proper
+    prompt: |
+      The board didn't act in time. You resigned under the cloud of having raised concerns through "proper
       channels" that no one acted on. The eventual public story
       named the board as enablers; your role was peripheral but
       not absolved.
   end-D:
     isOutcome: true
-    summary: |
+    prompt: |
       The "fix from within" path produced no change. By the time
       the story broke, your name was on validation documents
       tied to the misuse. The legal exposure was significant; the
       reputational damage lasting.
 ---
-
 ## What actually happened
 
 This drill is based on the **Theranos scandal**, specifically the

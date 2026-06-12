@@ -8,8 +8,10 @@ const SECRET = new TextEncoder().encode(
 );
 
 // ── Token helpers ──────────────────────────────────────────────────────────
-export async function signToken(userId: string): Promise<string> {
-  return new SignJWT({ userId })
+export async function signToken(userId: string, username?: string | null): Promise<string> {
+  const payload: Record<string, unknown> = { userId };
+  if (username) payload.username = username;
+  return new SignJWT(payload)
     .setProtectedHeader({ alg: "HS256" })
     .setExpirationTime("7d")
     .sign(SECRET);
@@ -42,6 +44,8 @@ export async function getSession() {
         id: true,
         email: true,
         name: true,
+        username: true,
+        isAdmin: true,
         createdAt: true,
       },
     });

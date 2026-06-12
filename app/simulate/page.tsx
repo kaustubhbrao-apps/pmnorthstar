@@ -4,10 +4,12 @@
 // out by publishedDrills() at request time.
 
 import Link from "next/link";
-import { ArrowUpRight, Brain, Clock, Target, Trophy } from "lucide-react";
+import { Sparkles, Brain, Clock, ChevronRight, ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { prisma } from "@/lib/prisma";
+import { getSession } from "@/lib/auth";
+import { isLeagueVisible } from "@/lib/admin";
 
 export const revalidate = 60; // ISR: Revalidate the leaderboard and play count every 60 seconds
 
@@ -18,27 +20,6 @@ async function totalPlays(): Promise<number> {
     return await prisma.simulateAttempt.count();
   } catch {
     return 0;
-  }
-}
-
-async function getLeaderboard() {
-  try {
-    return await prisma.user.findMany({
-      where: { leaguePoints: { gt: 0 } },
-      orderBy: { leaguePoints: 'desc' },
-      take: 10,
-      select: { 
-        id: true, 
-        name: true, 
-        leaguePoints: true,
-        image: true,
-        _count: {
-          select: { drillAttempts: { where: { leaguePointsEarned: { gt: 0 } } } }
-        }
-      }
-    });
-  } catch {
-    return [];
   }
 }
 
@@ -53,14 +34,28 @@ export default async function SimulatePage() {
   // doesn't require date-juggling. Production respects the schedule.
   const isDev = process.env.NODE_ENV !== "production";
   const cutoff = isDev ? new Date("2099-12-31") : new Date();
-  const all = publishedDrills(cutoff);
+  
+  // Filter out active league matches. Expired league matches move to the regular library.
+  const allPublished = publishedDrills(cutoff);
+  
+  // Calculate matchday numbers for league matches based on publish order
+  const leagueMatches = allPublished.filter(d => d.isLeagueMatch).sort((a, b) => new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime());
+  const matchdayMap = new Map(leagueMatches.map((d, i) => [d.slug, i + 1]));
+
+  const all = allPublished.filter(d => {
+    if (!d.isLeagueMatch) return true;
+    // Include league matches if their time is over
+    return d.leagueEndsAt && new Date(d.leagueEndsAt) <= new Date();
+  });
+  
   const featured = all[0];
   const plays = await totalPlays();
-  const leaderboard = await getLeaderboard();
+  const session = await getSession();
+  const showLeague = isLeagueVisible(session);
 
   // Season config (Mock for UI)
   const totalMatchdays = 50;
-  const completedMatchdays = all.filter(d => d.isLeagueMatch && new Date(d.publishedAt) <= new Date()).length;
+  const completedMatchdays = publishedDrills(cutoff).filter(d => d.isLeagueMatch && new Date(d.publishedAt) <= new Date()).length;
 
   return (
     <SidebarShell activeNav="simulate">
@@ -122,7 +117,7 @@ export default async function SimulatePage() {
 
         {/* Featured drill card */}
         {featured ? (
-          <FeaturedDrillCard drill={featured} />
+          <FeaturedDrillCard drill={featured} matchday={matchdayMap.get(featured.slug)} />
         ) : (
           <NoDrillYet />
         )}
@@ -135,121 +130,16 @@ export default async function SimulatePage() {
             body="Scenarios are anonymized. You can't pattern-match — you have to reason."
           />
           <ExplainerTile
-            icon={Target}
+            icon={Sparkles}
             title="Three dimensions"
             body="Every drill scores you on product thinking, business judgement, and founder calls."
           />
-          {process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" ? (
-            <ExplainerTile
-              icon={Trophy}
-              title="Simulation League"
-              body="Log in to play for points. Compete on the leaderboard and earn bonuses by challenging friends."
-            />
-          ) : (
-            <ExplainerTile
-              icon={Clock}
-              title="~10 minutes"
-              body="Branching scenarios with rationales for every choice. Free, no signup."
-            />
-          )}
+          <ExplainerTile
+            icon={Clock}
+            title="~10 minutes"
+            body="Branching scenarios with rationales for every choice. Free, no signup."
+          />
         </div>
-
-        {/* The League Leaderboard */}
-        {process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && leaderboard.length > 0 && (
-          <section className="mb-12">
-            <div className="flex items-center justify-between gap-3 mb-5">
-              <div className="flex items-center gap-3">
-                <Trophy size={20} strokeWidth={2} style={{ color: "var(--brand-primary)" }} />
-                <h2
-                  className="font-display text-2xl font-bold"
-                  style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-                >
-                  Season 1 Standings
-                </h2>
-              </div>
-              <div className="hidden sm:flex items-center gap-2 text-xs font-mono" style={{ color: "var(--text-faint)" }}>
-                <span>Matchday {completedMatchdays} of {totalMatchdays}</span>
-                <div className="w-24 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                  <div 
-                    className="h-full bg-brand-primary" 
-                    style={{ 
-                      width: `${(completedMatchdays / totalMatchdays) * 100}%`,
-                      background: "var(--brand-primary)"
-                    }} 
-                  />
-                </div>
-              </div>
-            </div>
-            
-            <div 
-              className="rounded-2xl overflow-hidden"
-              style={{
-                background: "var(--card-bg)",
-                border: "1.5px solid var(--card-border)",
-              }}
-            >
-              <div className="grid grid-cols-[3rem_1fr_8rem_6rem] items-center px-5 py-3 border-b text-xs font-mono uppercase tracking-wider" style={{ borderColor: "var(--card-border)", background: "rgba(255,255,255,0.02)" }}>
-                <span style={{ color: "var(--text-faint)" }}>Pos</span>
-                <span style={{ color: "var(--text-faint)" }}>Player</span>
-                <span className="text-right" style={{ color: "var(--text-faint)" }}>Played</span>
-                <span className="text-right" style={{ color: "var(--text-faint)" }}>Points</span>
-              </div>
-              
-              <div className="flex flex-col">
-                {leaderboard.map((user, idx) => (
-                  <div 
-                    key={user.id} 
-                    className="grid grid-cols-[3rem_1fr_8rem_6rem] items-center px-5 py-4 transition-colors hover:bg-white/[0.02]"
-                    style={{ 
-                      borderTop: idx > 0 ? "1px solid var(--card-border)" : "none",
-                    }}
-                  >
-                    {/* Position */}
-                    <div className="flex items-center">
-                      <div 
-                        className="flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold font-mono"
-                        style={{
-                          background: idx === 0 ? "rgba(250, 204, 21, 0.15)" : idx === 1 ? "rgba(156, 163, 175, 0.15)" : idx === 2 ? "rgba(180, 83, 9, 0.15)" : "rgba(255,255,255,0.05)",
-                          color: idx === 0 ? "#FACC15" : idx === 1 ? "#9CA3AF" : idx === 2 ? "#B45309" : "var(--text-faint)",
-                          border: idx <= 2 ? `1px solid ${idx === 0 ? "#FACC1544" : idx === 1 ? "#9CA3AF44" : "#B4530944"}` : "none"
-                        }}
-                      >
-                        {idx + 1}
-                      </div>
-                    </div>
-
-                    {/* Name/Avatar */}
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
-                        {user.image ? (
-                          <img src={user.image} alt="" className="w-full h-full object-cover" />
-                        ) : (
-                          <span className="text-[10px] font-bold uppercase opacity-50">{user.name.slice(0, 1)}</span>
-                        )}
-                      </div>
-                      <span className="text-sm font-semibold truncate" style={{ color: "var(--text-primary)" }}>{user.name}</span>
-                    </div>
-
-                    {/* Played */}
-                    <div className="text-right text-sm font-mono" style={{ color: "var(--text-muted)" }}>
-                      {user._count.drillAttempts}
-                    </div>
-
-                    {/* Points */}
-                    <div className="text-right">
-                      <span className="text-sm font-mono font-bold" style={{ color: "var(--brand-primary)" }}>
-                        {user.leaguePoints.toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="mt-4 text-[11px] font-mono leading-relaxed" style={{ color: "var(--text-faint)" }}>
-              * Only your first attempt at the active Matchday counts. +3 bonus points awarded for successful friend challenges. Season 1 ends after 50 matches.
-            </p>
-          </section>
-        )}
 
         {/* Archive — all published drills */}
         {all.length > 1 && (
@@ -262,7 +152,7 @@ export default async function SimulatePage() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {all.slice(1).map((d) => (
-                <ArchiveCard key={d.slug} drill={d} />
+                <ArchiveCard key={d.slug} drill={d} matchday={matchdayMap.get(d.slug)} />
               ))}
             </div>
           </section>
@@ -272,7 +162,7 @@ export default async function SimulatePage() {
   );
 }
 
-function FeaturedDrillCard({ drill }: { drill: Drill }) {
+function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: number }) {
   const badge = TYPE_BADGE[drill.type];
   
   // Calculate max points to detect "the big one"
@@ -345,8 +235,20 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
               >
                 {badge.label}
               </span>
+              {matchday && (
+                <span
+                  className="px-3 py-1 rounded text-[11px] font-bold uppercase tracking-widest border"
+                  style={{
+                    borderColor: "var(--brand-primary)",
+                    color: "var(--brand-primary)",
+                    background: "color-mix(in srgb, var(--brand-primary) 10%, transparent)",
+                  }}
+                >
+                  Matchday {matchday}
+                </span>
+              )}
               <span
-                className="text-sm font-mono"
+                className="text-sm font-mono font-medium"
                 style={{ color: "var(--text-faint)" }}
               >
                 ~{drill.estimatedMinutes} min
@@ -390,7 +292,7 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
   );
 }
 
-function ArchiveCard({ drill }: { drill: Drill }) {
+function ArchiveCard({ drill, matchday }: { drill: Drill; matchday?: number }) {
   const badge = TYPE_BADGE[drill.type];
   return (
     <Link
@@ -412,6 +314,18 @@ function ArchiveCard({ drill }: { drill: Drill }) {
         >
           {badge.label}
         </span>
+        {matchday && (
+          <span
+            className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest border"
+            style={{
+              borderColor: "var(--brand-primary)",
+              color: "var(--brand-primary)",
+              background: "color-mix(in srgb, var(--brand-primary) 10%, transparent)",
+            }}
+          >
+            Matchday {matchday}
+          </span>
+        )}
         <span
           className="text-sm font-mono"
           style={{ color: "var(--text-faint)" }}

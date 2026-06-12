@@ -7,6 +7,7 @@ interface UserState {
   isLoggedIn: boolean;
   hasEngaged: boolean; // true if logged in AND saved/liked anything
   userName?: string;
+  username?: string; // the @handle
 }
 
 // Lightweight hook that fetches user + engagement state for the
@@ -52,6 +53,7 @@ export function useUserState(): UserState {
             isLoggedIn: true,
             hasEngaged: engaged,
             userName: user.name,
+            username: user.username ?? undefined,
           });
         }
       } catch {

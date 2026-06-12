@@ -2,7 +2,7 @@
 slug: mcp-build-or-skip-2026
 type: current
 category: strategic
-publishedAt: "2026-07-13T19:00:00+05:30"
+publishedAt: '2026-07-13T19:00:00+05:30'
 estimatedMinutes: 6
 principle: |
   Standards become moats only when they're inevitable. Investing in
@@ -32,179 +32,364 @@ nodes:
     prompt: |
       Ship MCP server in Q3 or do the security features. Pick.
     options:
-      - text: "Ship MCP. Skip or defer the SSO/audit features. Bet on the standard."
-        points: 4
+      - text: Ship MCP. Skip or defer the SSO/audit features. Bet on the standard.
+        points: 12
         pattern: standard-bet-over-customer-ask
         rationale: |
-          Bold but defensible. MCP momentum is real — adoption is
-          compounding monthly, foundation model providers are
-          standardizing on it, and the AI-agent distribution
-          channel will be 10x larger in 12 months. Shipping early
-          puts you in the discoverability layer that every agent
-          will query. The cost: two paying customers feel
-          deprioritized, and security features tend to be table
-          stakes for enterprise.
+          Bold but defensible. MCP momentum is real — adoption is compounding.
         consequence: |
-          MCP ships in 4 weeks. Within a month, ~12% of new
-          inbound mentions "we want a CRM that works with our AI
-          agent." One of the SSO-asking customers churns; the
-          other waits. Net new ARR up 30% by quarter end.
+          MCP ships in 4 weeks. Inbound mentions "we want a CRM that works with our AI agent."
         leadsTo: A-mcp-followup
-      - text: "Ship security features. MCP can wait until the standard is more proven."
-        points: 3
+      - text: Ship security features. MCP can wait until the standard is more proven.
+        points: 9
         pattern: customer-ask-over-standard
         rationale: |
           The defensible "ship what they're asking for" call.
-          Security features close known deals; MCP closes
-          hypothetical deals. The problem: by the time the
-          standard is unambiguously dominant, you'll be 6-9
-          months behind competitors who shipped early and
-          captured the agent-traffic layer.
         consequence: |
-          Security features ship. Both customers stay and one
-          expands. AI-agent inbound goes to your competitor.
-          Mixed outcome — short-term wins, long-term cost.
-        leadsTo: end-B
-      - text: "Hire a contractor to ship MCP in parallel. Keep the security roadmap intact."
-        points: 5
+          Security features ship. Both customers stay. AI-agent inbound goes to competitor.
+        leadsTo: B-security-followup
+      - text: Hire a contractor to ship MCP in parallel. Keep the security roadmap intact.
+        points: 15
         pattern: contractor-for-the-bet
         rationale: |
-          The right answer. MCP is a defined surface that a
-          competent contractor can ship in 3-4 weeks; security
-          features are intertwined with your codebase and need
-          full-time eng. Splitting the work across employment
-          types lets you capture both the standard-adoption
-          window and the customer-ask. Cost: ~$25K for the
-          contractor. Worth it.
+          The right answer. MCP is a defined surface that a contractor can ship.
         consequence: |
-          Both features ship in Q3. MCP integration in week 4,
-          SSO/audit in week 10. Inbound agent-traffic compounds
-          while existing customers stay happy. Net new ARR up
-          45% by quarter end.
+          Both features ship in Q3. Inbound agent-traffic compounds.
         leadsTo: C-both-followup
-      - text: "Wait for Q4. Defer both. Q3 is for selling the existing pipeline."
-        points: 1
+      - text: Wait for Q4. Defer both. Q3 is for selling the existing pipeline.
+        points: 3
         pattern: defer-both
         rationale: |
-          The "let's plan more" instinct. Both bets are real and
-          deferring isn't free — competitors ship MCP in Q3,
-          enterprise customers churn over missing SSO. The
-          right move is to make a call now, not to push the
-          decision into the next quarter.
+          The "let's plan more" instinct. Deferring isn't free.
         consequence: |
           One enterprise customer churns. A competitor ships MCP.
-          You enter Q4 behind on both axes.
-        leadsTo: end-D
+        leadsTo: D-defer-followup
+
   A-mcp-followup:
     dimension: business
     prompt: |
       The MCP server is live. ~12% of new inbound mentions AI agent
       compatibility. The remaining SSO-asking customer is at
       renewal. They want SSO + audit log; you don't have it.
-      What do you do?
     options:
-      - text: "Offer them a credit and a Q4 ETA on SSO. Stretch the relationship."
-        points: 4
+      - text: Offer them a credit and a Q4 ETA on SSO. Stretch the relationship.
+        points: 12
         pattern: relationship-bridge
         rationale: |
-          Right balance. You're not promising what you can't
-          deliver; you're acknowledging the gap and giving the
-          customer a clear timeline + financial gesture.
-          Enterprise customers respect honesty about roadmap.
+          Right balance. You acknowledge the gap and give a clear timeline.
         consequence: |
-          They renew on a 6-month term instead of 12, with the
-          option to extend when SSO ships. You ship SSO in Q4.
-          They sign the extension.
-        leadsTo: end-A-good
-      - text: "Let them churn cleanly. Refer them to a competitor with SSO."
-        points: 2
+          They renew on a 6-month term instead of 12.
+        leadsTo: A-bridge-crisis
+      - text: Let them churn cleanly. Refer them to a competitor with SSO.
+        points: 6
         pattern: prioritize-strategy-over-customer
         rationale: |
-          Discipline taken too far. Losing a paying enterprise
-          customer to a competitor — and personally helping —
-          signals to other customers that you don't fight for
-          renewals. The MCP bet doesn't require you to actively
-          churn the customers who built the company.
+          Losing a paying enterprise customer actively signals bad faith.
         consequence: |
-          The customer churns. Two other enterprise prospects
-          hear about it and pause their pipelines.
+          The customer churns. Two other enterprise prospects pause pipelines.
+        leadsTo: A-churn-crisis
+
+  A-bridge-crisis:
+    dimension: product
+    prompt: |
+      The customer accepted the 6-month extension. Now it's Q4, and the SSO 
+      build is delayed because the MCP server requires constant maintenance updates.
+    options:
+      - text: "Pull engineers off MCP to finish SSO immediately."
+        points: 10
+        pattern: honor-the-debt
+        rationale: |
+          You made a promise. You must keep it, even if it hurts your new shiny toy.
+        consequence: |
+          SSO ships just in time. MCP server degrades slightly but recovers.
+        leadsTo: end-A-good
+      - text: "Tell the customer SSO is delayed again."
+        points: 0
+        pattern: broken-promises
+        rationale: |
+          You can only stretch a customer's patience once.
+        consequence: |
+          The customer churns furiously and writes a negative G2 review.
         leadsTo: end-A-bad
+
+  A-churn-crisis:
+    dimension: business
+    prompt: |
+      Word got out that you pushed a legacy customer away. The market thinks 
+      your product isn't "enterprise-ready."
+    options:
+      - text: "Double down on the 'AI-native' marketing, targeting only startups."
+        points: 8
+        pattern: shifting-icp
+        rationale: |
+          If enterprise doesn't want you, own the startup niche.
+        consequence: |
+          You survive, but your Average Contract Value (ACV) drops by 50%.
+        leadsTo: end-A-startup
+      - text: "Launch an aggressive enterprise PR campaign to fix the narrative."
+        points: 2
+        pattern: hollow-marketing
+        rationale: |
+          PR can't fix a product gap (missing SSO).
+        consequence: |
+          Enterprise buyers see through it. Growth stalls.
+        leadsTo: end-A-stall
+
+  B-security-followup:
+    dimension: product
+    prompt: |
+      You shipped security, but your competitor shipped MCP. They are now 
+      the default CRM for the top 3 AI agent frameworks.
+    options:
+      - text: "Build an MCP server now, rushing it in Q4."
+        points: 10
+        pattern: fast-follow
+        rationale: |
+          Better late than never, but you are playing catch-up.
+        consequence: |
+          You get basic parity, but the competitor has already captured mindshare.
+        leadsTo: B-catchup-crisis
+      - text: "Skip MCP entirely. Build native AI features directly into your own UI."
+        points: 8
+        pattern: walled-garden
+        rationale: |
+          A valid strategy, but you are betting against the open ecosystem.
+        consequence: |
+          You become a walled garden. Solid, but isolated.
+        leadsTo: B-walled-crisis
+
+  B-catchup-crisis:
+    dimension: strategy
+    prompt: |
+      You rushed the MCP server, but the competitor has already integrated 
+      deep write-actions, while yours is read-only.
+    options:
+      - text: "Commit the next two quarters to achieving full parity."
+        points: 10
+        pattern: grinding-parity
+        rationale: |
+          It's painful, but necessary to stay relevant.
+        consequence: |
+          You eventually catch up, but sacrificed all other feature development.
+        leadsTo: end-B
+      - text: "Accept being read-only and pivot marketing to 'data safety'."
+        points: 5
+        pattern: marketing-spin
+        rationale: |
+          Spinning a technical deficit as a feature rarely works on developers.
+        consequence: |
+          Agent developers ignore your platform entirely.
+        leadsTo: end-B-alt
+
+  B-walled-crisis:
+    dimension: business
+    prompt: |
+      Your native AI features are good, but enterprise buyers want to use 
+      their own custom AI agents, not yours.
+    options:
+      - text: "Hold firm. We own the experience end-to-end."
+        points: 5
+        pattern: apple-strategy
+        rationale: |
+          Hard to pull off unless your native AI is 10x better than standard models.
+        consequence: |
+          You lose deals to the competitor who embraces external agents.
+        leadsTo: end-B-walled
+      - text: "Capitulate and build the MCP server anyway, 12 months late."
+        points: 8
+        pattern: late-capitulation
+        rationale: |
+          You wasted a year fighting the tide.
+        consequence: |
+          You finally build it, but you are permanently the #2 player.
+        leadsTo: end-B
+
   C-both-followup:
     dimension: product
     prompt: |
-      Both features shipped. AI-agent inbound is now 18% of new
-      pipeline. You're getting questions about deeper MCP
-      integrations — write actions, multi-step workflows,
-      structured callbacks. Your competitor is reading the same
-      pattern. Pick.
+      Both features shipped. AI-agent inbound is now 18% of new pipeline.
+      Your competitor is reading the same pattern. They announce a V2. Pick.
     options:
-      - text: "Ship the deepest MCP integration in the category. Become the reference CRM for AI agents."
-        points: 5
+      - text: Ship the deepest MCP integration in the category. Write actions, multi-step workflows.
+        points: 15
         pattern: depth-over-breadth
         rationale: |
-          The right move. The AI-agent integration depth is
-          actually defensible — write actions, multi-step
-          workflows, callback hooks require domain understanding
-          of CRM data models. Generic CRMs won't match it. By
-          going deep, you become "the CRM for AI-first sales
-          teams" rather than just "a CRM that works with AI."
+          The right move. Depth is defensible.
         consequence: |
-          Deep integration ships over Q4. You become the
-          reference customer for Anthropic's MCP documentation,
-          which drives compounding inbound for 18 months.
-        leadsTo: end-C-great
-      - text: "Stay at MCP parity. Don't over-invest in a category that's still uncertain."
-        points: 3
+          You become the reference customer for Anthropic's MCP documentation.
+        leadsTo: C-deep-crisis
+      - text: Stay at MCP parity. Don't over-invest in a category that's still uncertain.
+        points: 9
         pattern: parity-not-depth
         rationale: |
-          Defensible hedge. Parity protects against a standard
-          shift, but it also forfeits the differentiation moment.
-          If MCP becomes dominant, you'll be one of many; if it
-          doesn't, you'll still have a working integration.
+          Defensible hedge, but forfeits the differentiation.
         consequence: |
-          You stay current with the standard but don't lead it.
-          AI-agent inbound plateaus at ~18% of pipeline.
+          You stay current but don't lead it.
+        leadsTo: C-parity-crisis
+
+  C-deep-crisis:
+    dimension: product
+    prompt: |
+      Your deep integration is a massive hit, but an AI agent goes rogue 
+      and deletes a customer's CRM data because of a bug in your write-action handler.
+    options:
+      - text: "Implement strict rollback and audit layers for all agent actions."
+        points: 15
+        pattern: robust-engineering
+        rationale: |
+          You must build trust layers when allowing AI to write data.
+        consequence: |
+          You pioneer safe AI-agent interactions and strengthen the moat.
+        leadsTo: end-C-great
+      - text: "Disable all write actions globally until you figure it out."
+        points: 5
+        pattern: panic-shutdown
+        rationale: |
+          You break the workflows of thousands of users who relied on it.
+        consequence: |
+          Trust is broken, and users revert to the competitor's simpler tool.
         leadsTo: end-C-stable
+
+  C-parity-crisis:
+    dimension: business
+    prompt: |
+      Staying at parity kept costs low, but the competitor just raised a massive 
+      Series C based on their dominant "Agent-First CRM" narrative.
+    options:
+      - text: "Pivot your narrative to emphasize human-centric sales workflows."
+        points: 12
+        pattern: counter-positioning
+        rationale: |
+          If they own AI, you must own the humans.
+        consequence: |
+          You carve out a strong niche among traditional sales teams.
+        leadsTo: end-C-stable
+      - text: "Try to copy their narrative without the deep tech to back it up."
+        points: 2
+        pattern: fake-it
+        rationale: |
+          The market sees through hollow marketing.
+        consequence: |
+          You look like a cheap imitation.
+        leadsTo: end-C-poor
+
+  D-defer-followup:
+    dimension: business
+    prompt: |
+      You deferred. Q4 arrives. The enterprise customer churned anyway, 
+      and the competitor launched MCP. You are behind on both fronts.
+    options:
+      - text: "Fire the VP of Engineering for the delay."
+        points: 0
+        pattern: blame-shifting
+        rationale: |
+          It was your strategic call, not their execution failure.
+        consequence: |
+          The engineering team mutinies.
+        leadsTo: D-blame-crisis
+      - text: "Take ownership. Do a massive sprint to build MCP and SSO simultaneously."
+        points: 5
+        pattern: hero-complex
+        rationale: |
+          Burning out the team to fix a strategic error rarely works.
+        consequence: |
+          Both features ship with critical bugs.
+        leadsTo: D-hero-crisis
+
+  D-blame-crisis:
+    dimension: founder
+    prompt: |
+      The engineering team is furious. Productivity drops to zero.
+    options:
+      - text: "Hire a new aggressive VP to whip them into shape."
+        points: 0
+        pattern: toxic-leadership
+        rationale: |
+          Adding toxicity to a mutiny destroys the company.
+        consequence: |
+          Mass exodus. The company folds.
+        leadsTo: end-D
+      - text: "Apologize, step down as CTO, and hire a replacement."
+        points: 10
+        pattern: ultimate-accountability
+        rationale: |
+          You failed. Stepping aside is the only way the company survives.
+        consequence: |
+          The company survives under new leadership, but your equity is slashed.
+        leadsTo: end-D-alt
+
+  D-hero-crisis:
+    dimension: product
+    prompt: |
+      The rushed features are buggy. A security flaw in the SSO implementation 
+      causes a minor data breach.
+    options:
+      - text: "Disclose immediately, patch it, and offer free credit monitoring."
+        points: 12
+        pattern: transparent-crisis-management
+        rationale: |
+          Honesty is the only policy in a breach.
+        consequence: |
+          You take a PR hit but survive the lawsuit.
+        leadsTo: end-D-alt
+      - text: "Try to quietly patch it without notifying users."
+        points: 0
+        pattern: criminal-negligence
+        rationale: |
+          This is illegal and company-ending.
+        consequence: |
+          You are sued into oblivion.
+        leadsTo: end-D
+
   end-A-good:
     isOutcome: true
-    summary: |
-      The MCP bet plus the customer-bridge worked. Renewals stayed
-      strong, AI-agent inbound grew, and Q3 closed 30% above
-      target. The bet on the standard compounded.
+    prompt: |
+      The MCP bet plus the customer-bridge worked. You honored the technical debt, shipped SSO, and the bet on the standard compounded.
   end-A-bad:
     isOutcome: true
-    summary: |
-      The customer churn signaled bad faith to the broader
-      pipeline. AI-agent inbound was real but the brand took a
-      hit. Net neutral quarter.
+    prompt: |
+      You stretched the customer too far. They churned, and your reputation as a reliable enterprise partner was ruined.
+  end-A-startup:
+    isOutcome: true
+    prompt: |
+      You survived by pivoting down-market to startups, but you lost the high-margin enterprise business permanently.
+  end-A-stall:
+    isOutcome: true
+    prompt: |
+      Hollow PR couldn't hide the lack of enterprise features. The business stalled.
   end-B:
     isOutcome: true
-    summary: |
-      Security features kept existing customers happy but you
-      missed the standard-adoption window. A competitor took
-      the AI-agent traffic layer. You shipped MCP in Q4 but as
-      a follower, not a leader.
+    prompt: |
+      Security features kept existing customers happy, but you spent a year playing catch-up on MCP. You are permanently the #2 player.
+  end-B-alt:
+    isOutcome: true
+    prompt: |
+      Marketing spin couldn't save a weak product. Agent developers ignored you.
+  end-B-walled:
+    isOutcome: true
+    prompt: |
+      Your walled garden approach alienated the broader ecosystem. You survived, but growth plateaued.
   end-C-great:
     isOutcome: true
-    summary: |
-      The deep MCP integration positioned you as the AI-first
-      CRM. Inbound compounded for 18 months. Series C closed at
-      4x the Series B valuation on the "agent-distribution layer"
-      story.
+    prompt: |
+      The deep MCP integration, combined with robust safety layers, positioned you as the undisputed AI-first CRM.
   end-C-stable:
     isOutcome: true
-    summary: |
-      Parity worked but didn't compound. You retained the AI-
-      agent traffic you had but didn't grow it. Net stable
-      quarter, stable narrative.
+    prompt: |
+      Parity worked, but didn't compound. You retained the agent traffic you had but didn't grow it. Net stable quarter.
+  end-C-poor:
+    isOutcome: true
+    prompt: |
+      Fake marketing destroyed your credibility. The competitor ran away with the market.
   end-D:
     isOutcome: true
-    summary: |
-      Deferring both bets cost you on both axes. Q4 became a
-      catch-up quarter, and the agent-traffic layer was someone
-      else's by then.
+    prompt: |
+      Deferring both bets, followed by terrible crisis management, destroyed the company entirely.
+  end-D-alt:
+    isOutcome: true
+    prompt: |
+      You survived the crisis by taking extreme accountability, but the company lost 18 months of momentum and market share.
 ---
-
 ## What's at stake here
 
 The MCP decision is a live case for every developer-tool and SaaS

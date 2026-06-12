@@ -27,6 +27,7 @@ import {
   Brain,
   TrendingUp,
   Users,
+  Compass,
 } from "lucide-react";
 import type {
   Drill,
@@ -38,6 +39,7 @@ import { track } from "@/lib/track";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { useUserState } from "@/lib/use-user-state";
 import { AuthModal } from "@/components/AuthModal";
+import { CountdownTimer } from "@/components/CountdownTimer";
 
 type Phase = "intro" | "decision" | "reveal" | "outcome";
 
@@ -59,6 +61,7 @@ const DIMENSION_LABEL: Record<DrillDimension, string> = {
   product: "Product thinking",
   business: "Business judgement",
   founder: "Founder thinking",
+  strategy: "Strategic thinking",
 };
 
 // Three dimensions, three distinct hues — kept readable on both
@@ -68,6 +71,7 @@ const DIMENSION_COLOR: Record<DrillDimension, string> = {
   product: "#2563EB",
   business: "#0F9D58",
   founder: "#D97706",
+  strategy: "#9333EA",
 };
 
 const DIMENSION_ICON: Record<
@@ -77,14 +81,23 @@ const DIMENSION_ICON: Record<
   product: Brain,
   business: TrendingUp,
   founder: Users,
+  strategy: Compass,
 };
 
 function storageKey(slug: string): string {
   return `simulateit:play:${slug}`;
 }
 
-export function SimulatePlayer({ drill }: { drill: Drill }) {
-  const { isLoggedIn, loading: authLoading } = useUserState();
+export function SimulatePlayer({
+  drill,
+  onComplete,
+}: {
+  drill: Drill;
+  onComplete?: () => void;
+}) {
+  const isLeagueActive = !!drill.isLeagueMatch;
+
+  const { isLoggedIn, loading: authLoading, username } = useUserState();
   const [showAuthModal, setShowAuthModal] = useState(false);
   const searchParams = useSearchParams();
   const referrerId = searchParams?.get("ref") || undefined;
@@ -143,7 +156,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
   }, [drill.slug]);
 
   const begin = useCallback(() => {
-    if (process.env.NEXT_PUBLIC_ENABLE_LEAGUE !== "true") {
+    if (!isLeagueActive) {
       startDrillLogic();
       return;
     }
@@ -155,7 +168,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       return;
     }
     startDrillLogic();
-  }, [authLoading, isLoggedIn, startDrillLogic]);
+  }, [authLoading, isLoggedIn, startDrillLogic, isLeagueActive]);
 
   const selectOption = useCallback(
     (optionIndex: number) => {
@@ -195,7 +208,7 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
     if (state.phase !== "reveal") return;
     const last = state.history[state.history.length - 1];
     if (!last) return;
-    const nextId = currentNode.options[last.optionIndex].leadsTo;
+    const nextId = currentNode.options[last.optionIndex].leadsTo ?? "";
     const nextNode = drill.nodes[nextId];
     if (!nextNode) return;
     if (nextNode.isOutcome) {
@@ -291,14 +304,14 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       {/* Top breadcrumb */}
       <div className="flex items-center gap-2 mb-6 flex-wrap">
         <Link
-          href="/simulate"
+          href={isLeagueActive ? "/league" : "/simulate"}
           className="text-sm font-mono uppercase hover:opacity-70"
           style={{
             color: "var(--text-faint)",
             letterSpacing: "0.14em",
           }}
         >
-          ← simulateit
+          ← {isLeagueActive ? "league" : "simulateit"}
         </Link>
         <span
           className="text-sm font-mono"
@@ -348,7 +361,13 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
       </div>
 
       {state.phase === "intro" && (
-        <IntroView drill={drill} onBegin={begin} isLoggedIn={isLoggedIn} authLoading={authLoading} />
+        <IntroView 
+          drill={drill} 
+          onBegin={begin} 
+          isLoggedIn={isLoggedIn} 
+          authLoading={authLoading} 
+          isLeagueActive={isLeagueActive} 
+        />
       )}
       {state.phase === "decision" && currentNode && (
         <DecisionView
@@ -377,15 +396,25 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
           finalNode={currentNode}
           history={state.history}
           onRestart={restart}
+          username={username}
         />
       )}
 
       {showAuthModal && (
-        <AuthModal
+        <AuthModal 
           onClose={() => {
             setShowAuthModal(false);
             setPendingAction(null);
           }}
+          headline={isLeagueActive ? "Log in for the League" : "Sign in for points"}
+          subhead={isLeagueActive ? "This is an active League Match. To prevent cheating, you must log in to play. You only get one shot." : "Sign in with Google to get your score on the leaderboard. Or, you can play anonymously without earning points."}
+          secondaryAction={!isLeagueActive ? {
+            label: "Play without points",
+            onClick: () => {
+              setShowAuthModal(false);
+              startDrillLogic();
+            }
+          } : undefined}
           onSuccess={() => {
             setShowAuthModal(false);
             if (pendingAction) {
@@ -410,11 +439,13 @@ function IntroView({
   onBegin,
   isLoggedIn,
   authLoading,
+  isLeagueActive,
 }: {
   drill: Drill;
   onBegin: () => void;
-  isLoggedIn?: boolean;
-  authLoading?: boolean;
+  isLoggedIn: boolean;
+  authLoading: boolean;
+  isLeagueActive: boolean;
 }) {
   // Per-drill play count for social proof at the point of attempt —
   // the SimulateIt analog to CheckIt's "X sites scored" hero line.
@@ -461,6 +492,13 @@ function IntroView({
             </span>
           </>
         )}
+        {drill.isLeagueMatch && drill.leagueEndsAt && (
+          <span className="flex items-center gap-2">
+            <span>•</span>
+            <span className="opacity-70">Points close in:</span>
+            <CountdownTimer targetDate={drill.leagueEndsAt} />
+          </span>
+        )}
       </div>
 
       {drill.intro.split("\n\n").map((para, i) => (
@@ -475,15 +513,15 @@ function IntroView({
 
       <button
         onClick={onBegin}
-        disabled={process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && authLoading}
-        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+        disabled={isLeagueActive && authLoading}
+        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${isLeagueActive && authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
         style={{
           background: "var(--brand-primary)",
           color: "#ffffff",
         }}
       >
         <Sparkles size={16} strokeWidth={2} />
-        {process.env.NEXT_PUBLIC_ENABLE_LEAGUE !== "true"
+        {!isLeagueActive
           ? "Begin the drill"
           : authLoading
           ? "Loading..."
@@ -780,11 +818,13 @@ function OutcomeView({
   finalNode,
   history,
   onRestart,
+  username,
 }: {
   drill: Drill;
   finalNode: DrillNode;
   history: HistoryEntry[];
   onRestart: () => void;
+  username?: string;
 }) {
   // ─── Challenge Logic ──────────────────────────────────────────────────
   const [challenger, setChallenger] = useState<{ score: number; max: number; blocks: string } | null>(null);
@@ -801,12 +841,13 @@ function OutcomeView({
   }, []);
 
   // Score math — per-dimension and total.
-  const dims: DrillDimension[] = ["product", "business", "founder"];
+  const dims: DrillDimension[] = ["product", "business", "founder", "strategy"];
   const scoreByDim = useMemo(() => {
     const result: Record<DrillDimension, { score: number; max: number }> = {
       product: { score: 0, max: 0 },
       business: { score: 0, max: 0 },
       founder: { score: 0, max: 0 },
+      strategy: { score: 0, max: 0 },
     };
     for (const entry of history) {
       if (!entry.dimension) continue;
@@ -824,6 +865,7 @@ function OutcomeView({
 
   const totalScore = history.reduce((sum, h) => sum + h.points, 0);
   const totalMax = dims.reduce((sum, d) => sum + scoreByDim[d].max, 0);
+  const isLeagueActive = !!drill.isLeagueMatch;
 
   const dominantDim = useMemo(() => {
     let best: DrillDimension = "product";
@@ -911,8 +953,11 @@ function OutcomeView({
   const handleChallenge = useCallback(() => {
     track({ name: "simulateit_challenge_created", drill_slug: drill.slug });
     const origin = typeof window !== "undefined" ? window.location.origin : "https://pmnorthstar.in";
-    // Challenge URL encodes the current user's performance
-    const challengeUrl = `${origin}/simulate/${drill.slug}?challenge=${totalScore}_${totalMax}_${letterBlocks}`;
+    // Challenge URL encodes the current user's performance and username as ref
+    let challengeUrl = `${origin}/simulate/${drill.slug}?challenge=${totalScore}_${totalMax}_${letterBlocks}`;
+    if (username) {
+      challengeUrl += `&ref=${username}`;
+    }
     const text = `I just scored ${totalScore}/${totalMax} on the "${drillTitle(drill)}" drill. Think you can beat my decisions? \n\nAccept the challenge: ${challengeUrl}`;
     
     if (typeof navigator !== "undefined" && navigator.share) {
@@ -1231,7 +1276,7 @@ function OutcomeView({
           Try a different path
         </button>
         <Link
-          href="/simulate"
+          href={isLeagueActive ? "/league" : "/simulate"}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors"
           style={{
             background: "var(--card-bg)",
@@ -1239,7 +1284,7 @@ function OutcomeView({
             border: "1.5px solid var(--card-border)",
           }}
         >
-          More drills
+          {isLeagueActive ? "Back to League" : "More drills"}
           <ArrowUpRight size={14} strokeWidth={2} />
         </Link>
       </div>
@@ -1248,8 +1293,8 @@ function OutcomeView({
         <SubscribeForm
           variant="card"
           surface="simulateit_result"
-          headline="Get a new drill every week."
-          subhead="Branching decision drills from real startup moments, straight to your inbox. Free. No paywall."
+          headline="We'll email you when the latest one drops."
+          subhead="Subscribe to get new branching simulations and product teardowns straight to your inbox."
         />
       </div>
     </div>

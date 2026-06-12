@@ -420,22 +420,42 @@ export async function robotsTxt(ctx: FetchCtx): Promise<CheckResult> {
 }
 
 export async function sitemapXml(ctx: FetchCtx): Promise<CheckResult> {
-  const candidates = ["/sitemap.xml", "/sitemap_index.xml", "/sitemap-index.xml"];
-  for (const path of candidates) {
+  const candidates = new Set(["/sitemap.xml", "/sitemap_index.xml", "/sitemap-index.xml"]);
+  
+  try {
+    const robotsUrl = new URL("/robots.txt", ctx.finalUrl).toString();
+    const robotsRes = await fetchWithTimeout(robotsUrl, {}, 5000);
+    if (robotsRes.ok) {
+      const robotsTxt = await robotsRes.text();
+      const sitemapMatch = robotsTxt.match(/^Sitemap:\s*(.+)$/igm);
+      if (sitemapMatch) {
+        for (const line of sitemapMatch) {
+          const match = line.match(/^Sitemap:\s*(.+)$/i);
+          if (match && match[1]) {
+            candidates.add(match[1].trim());
+          }
+        }
+      }
+    }
+  } catch {
+    /* ignore errors */
+  }
+
+  for (const path of Array.from(candidates)) {
     try {
       const url = new URL(path, ctx.finalUrl).toString();
       const res = await fetchWithTimeout(url, {}, 5000);
       if (!res.ok) continue;
       const body = await res.text();
-      const count = (body.match(/<loc>/g) || []).length;
+      const count = (body.match(/<loc>/gi) || []).length;
       return {
         id: "sitemap-xml",
         label: "sitemap.xml present",
         pass: count > 0,
         detail:
           count > 0
-            ? `Found ${path} with ${count} URLs.`
-            : `${path} loads but is empty.`,
+            ? `Found ${new URL(path, ctx.finalUrl).pathname} with ${count} URLs.`
+            : `${new URL(path, ctx.finalUrl).pathname} loads but is empty.`,
       };
     } catch {
       /* try next */

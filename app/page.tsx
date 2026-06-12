@@ -47,6 +47,7 @@ import {
   GraduationCap,
   ArrowUpRight,
   Sparkles,
+  ArrowLeft,
 } from "lucide-react";
 
 interface AuthUser {
@@ -404,10 +405,11 @@ export default function HomePage() {
               >
                 <Menu size={20} />
               </button>
-              <div>
-                <p className="eyebrow hidden sm:block">Library</p>
-                <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>Saved</h1>
-              </div>
+              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
+                <ArrowLeft size={14} strokeWidth={1.6} />
+                <span className="hidden sm:inline">Back to the library</span>
+                <span className="sm:hidden">Back</span>
+              </button>
             </div>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
           </header>
@@ -533,10 +535,11 @@ export default function HomePage() {
               >
                 <Menu size={20} />
               </button>
-              <div>
-                <p className="eyebrow hidden sm:block">Library</p>
-                <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>Favourites</h1>
-              </div>
+              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
+                <ArrowLeft size={14} strokeWidth={1.6} />
+                <span className="hidden sm:inline">Back to the library</span>
+                <span className="sm:hidden">Back</span>
+              </button>
             </div>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
           </header>
@@ -657,12 +660,11 @@ export default function HomePage() {
               <button onClick={() => setSidebarOpen(true)} className="p-1.5 rounded-lg lg:hidden" style={{ color: "var(--text-primary)" }}>
                 <Menu size={20} />
               </button>
-              <div>
-                <p className="eyebrow hidden sm:block">Case Studies</p>
-                <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
-                  Case Studies
-                </h1>
-              </div>
+              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
+                <ArrowLeft size={14} strokeWidth={1.6} />
+                <span className="hidden sm:inline">Back to the library</span>
+                <span className="sm:hidden">Back</span>
+              </button>
             </div>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
           </header>
@@ -791,12 +793,11 @@ export default function HomePage() {
               >
                 <Menu size={20} />
               </button>
-              <div>
-                <span className="eyebrow hidden sm:block">Learn</span>
-                <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
-                  Learn
-                </h1>
-              </div>
+              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
+                <ArrowLeft size={14} strokeWidth={1.6} />
+                <span className="hidden sm:inline">Back to the library</span>
+                <span className="sm:hidden">Back</span>
+              </button>
             </div>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
           </header>
@@ -928,12 +929,11 @@ export default function HomePage() {
               <button onClick={() => setSidebarOpen(true)} className="p-1.5 rounded-lg lg:hidden flex-shrink-0" style={{ color: "var(--text-primary)" }}>
                 <Menu size={20} />
               </button>
-              <div>
-                <p className="eyebrow hidden sm:block">Explore</p>
-                <h1 className="text-lg sm:text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
-                  Topics & Comparisons
-                </h1>
-              </div>
+              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
+                <ArrowLeft size={14} strokeWidth={1.6} />
+                <span className="hidden sm:inline">Back to the library</span>
+                <span className="sm:hidden">Back</span>
+              </button>
             </div>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
           </header>
