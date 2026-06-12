@@ -88,7 +88,15 @@ function storageKey(slug: string): string {
   return `simulateit:play:${slug}`;
 }
 
-export function SimulatePlayer({ drill }: { drill: Drill }) {
+export function SimulatePlayer({
+  drill,
+  onComplete,
+}: {
+  drill: Drill;
+  onComplete?: () => void;
+}) {
+  const isLeagueActive = !!drill.isLeagueMatch;
+
   const { isLoggedIn, loading: authLoading, username } = useUserState();
   const [showAuthModal, setShowAuthModal] = useState(false);
   const searchParams = useSearchParams();
@@ -290,8 +298,6 @@ export function SimulatePlayer({ drill }: { drill: Drill }) {
   const showRunningScore =
     (state.phase === "decision" || state.phase === "reveal") &&
     runningTotals.max > 0;
-
-  const isLeagueActive = drill.isLeagueMatch;
 
   return (
     <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-4xl mx-auto">
@@ -857,10 +863,9 @@ function OutcomeView({
     return result;
   }, [history, drill.nodes]);
 
-  const isLeagueActive = drill.isLeagueMatch;
-
   const totalScore = history.reduce((sum, h) => sum + h.points, 0);
   const totalMax = dims.reduce((sum, d) => sum + scoreByDim[d].max, 0);
+  const isLeagueActive = !!drill.isLeagueMatch;
 
   const dominantDim = useMemo(() => {
     let best: DrillDimension = "product";
