@@ -19,6 +19,20 @@ export function LeagueRulesCarousel() {
     return () => el.removeEventListener("scroll", updateActiveSlide);
   }, [updateActiveSlide]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft >= scrollWidth - clientWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: clientWidth, behavior: "smooth" });
+        }
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative w-full rounded-lg overflow-hidden group">
       <div 

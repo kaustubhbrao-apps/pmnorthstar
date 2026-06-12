@@ -81,6 +81,30 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
       {/* SimulateIt — newest tool, pinned at chip position 3 with the
           NEW badge so it gets the discovery moment. Pink #DB2777
           matches the home banner card + sidebar treatment. */}
+      {/* Simulation League — Hype page link in mobile nav */}
+      <Link
+        href="/league"
+        className="chip flex-shrink-0 inline-flex items-center gap-1.5"
+        style={{
+          borderColor: "rgba(243, 18, 60, 0.4)",
+          background: "rgba(243, 18, 60, 0.08)",
+        }}
+      >
+        <Trophy size={11} strokeWidth={1.6} style={{ color: "#F3123C" }} />
+        <span style={{ color: "var(--text-primary)" }}>League</span>
+        <span
+          className="text-[9px] font-semibold px-1 rounded"
+          style={{
+            background: "#F3123C",
+            color: "#fff",
+            letterSpacing: "0.04em",
+          }}
+        >
+          NEW
+        </span>
+      </Link>
+
+      {/* SimulateIt */}
       <Link
         href="/simulate"
         className="chip flex-shrink-0 inline-flex items-center gap-1.5"
@@ -91,30 +115,9 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
       >
         <Brain size={11} strokeWidth={1.6} style={{ color: "#DB2777" }} />
         <span style={{ color: "var(--text-primary)" }}>SimulateIt</span>
-        <span
-          className="text-[9px] font-semibold px-1 rounded"
-          style={{
-            background: "#DB2777",
-            color: "#fff",
-            letterSpacing: "0.04em",
-          }}
-        >
-          NEW
-        </span>
       </Link>
 
-      {/* Simulation League — Hype page link in mobile nav */}
-      <Link
-        href="/league"
-        className="chip flex-shrink-0 inline-flex items-center gap-1.5"
-        style={{
-          borderColor: "rgba(250, 204, 21, 0.4)",
-          background: "rgba(250, 204, 21, 0.08)",
-        }}
-      >
-        <Trophy size={11} strokeWidth={1.6} style={{ color: "#FACC15" }} />
-        <span style={{ color: "var(--text-primary)" }}>League</span>
-      </Link>
+
 
       {/* CheckIt — site readiness scorecard. */}
       <Link
