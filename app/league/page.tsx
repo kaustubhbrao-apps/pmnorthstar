@@ -1,22 +1,13 @@
 import Link from "next/link";
-import { ChevronRight, ArrowUpRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { getSession } from "@/lib/auth";
-import { isLeagueVisible } from "@/lib/admin";
-import { fetchLeaderboard } from "@/lib/leaderboard";
-import { Leaderboard } from "@/components/Leaderboard";
 
 export const revalidate = 60;
 
-function drillTitle(drill: Drill): string {
-  return drill.slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
 
 export default async function LeagueHypePage() {
 
@@ -26,15 +17,10 @@ export default async function LeagueHypePage() {
   
   // Find the active league match
   const leagueMatches = all.filter(d => d.isLeagueMatch);
-  const activeMatch = leagueMatches.find(d => new Date(d.publishedAt) <= cutoff && d.leagueEndsAt && new Date(d.leagueEndsAt) > new Date());
-  const completedMatchdays = leagueMatches.filter(d => new Date(d.publishedAt) <= cutoff).length;
+  const completedMatchdays = 0;
   const totalMatchdays = 50;
 
   const session = await getSession();
-  const showLeague = isLeagueVisible(session);
-  const { top10, myEntry, totalPlayers } = showLeague
-    ? await fetchLeaderboard(session?.id)
-    : { top10: [], myEntry: null, totalPlayers: 0 };
 
   return (
     <SidebarShell activeNav="league" backLabelDesktop="Back to the library" backHref="/">
@@ -85,27 +71,18 @@ export default async function LeagueHypePage() {
                 The ultimate proving and learning ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Score points. Climb the ranks. Can you stay at the top across 50 intense Matchdays?
               </p>
 
-              {activeMatch && activeMatch.leagueEndsAt && (
-                <div className="w-full max-w-md mb-16 relative">
-                  <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--border-subtle)]">
-                    <div className="p-5" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
-                      <div className="flex justify-between items-center mb-4">
-                        <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Points close in</span>
-                        <CountdownTimer targetDate={activeMatch.leagueEndsAt} />
-                      </div>
-                      <h3 className="font-display text-2xl font-bold mb-2" style={{ color: "var(--text-primary)" }}>{drillTitle(activeMatch)}</h3>
-                      <p className="text-sm line-clamp-2 mb-6" style={{ color: "var(--text-muted)" }}>{activeMatch.intro}</p>
-                      <Link 
-                        href={`/simulate/${activeMatch.slug}`}
-                        className="btn-primary w-full flex justify-center items-center gap-2"
-                      >
-                        Enter the Drill
-                        <ArrowUpRight size={16} />
-                      </Link>
+              <div className="w-full max-w-md mb-16 relative">
+                <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--brand-primary)]" style={{ boxShadow: "0 0 20px rgba(219, 39, 119, 0.2)" }}>
+                  <div className="p-5" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Matchday 1 Starts In</span>
+                      <CountdownTimer targetDate="2026-06-26T00:00:00Z" />
                     </div>
+                    <h3 className="font-display text-2xl font-bold mb-2 uppercase" style={{ color: "var(--text-primary)" }}>Coming Soon</h3>
+                    <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>Get ready for 50 intense Matchdays. The league officially begins on Friday, June 26th.</p>
                   </div>
                 </div>
-              )}
+              </div>
 
               {/* Substack Subscribe Box */}
               <div className="w-full max-w-md relative mb-16">
@@ -120,11 +97,34 @@ export default async function LeagueHypePage() {
               </div>
 
               {/* Leaderboard */}
-              {showLeague && top10.length > 0 && (
-                <div className="w-full max-w-md relative">
-                  <Leaderboard top10={top10} myEntry={myEntry} totalPlayers={totalPlayers} currentUserId={session?.id} />
+              <div className="w-full max-w-md relative">
+                <div className="flex flex-col border rounded p-4" style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}>
+                  <h3 className="font-mono text-sm uppercase tracking-widest mb-4 font-bold" style={{ color: "var(--text-primary)" }}>League Standings</h3>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center justify-between p-3 rounded bg-[rgba(255,255,255,0.05)] border border-[var(--brand-primary)]">
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--brand-primary)" }}>1</span>
+                        <span className="font-bold">King 👑</span>
+                      </div>
+                      <span className="font-mono text-sm font-bold" style={{ color: "var(--brand-primary)" }}>---</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>2</span>
+                        <span className="text-sm" style={{ color: "var(--text-muted)" }}>???</span>
+                      </div>
+                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
+                    </div>
+                    <div className="flex items-center justify-between p-3 rounded" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>3</span>
+                        <span className="text-sm" style={{ color: "var(--text-muted)" }}>???</span>
+                      </div>
+                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
+                    </div>
+                  </div>
                 </div>
-              )}
+              </div>
 
             </div>
 
