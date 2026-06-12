@@ -96,8 +96,29 @@ export default async function LeagueHypePage() {
                 </div>
               </div>
 
+            </div>
+
+            {/* Right Column: Mechanics */}
+            <div className="lg:col-span-5 lg:mt-12 flex flex-col gap-6">
+              <h2 className="font-mono text-sm uppercase tracking-[0.2em] mb-2 border-b pb-4" style={{ color: "var(--text-faint)", borderColor: "var(--border-subtle)" }}>
+                League Rules & Mechanics
+              </h2>
+              
+              <EditorialCard num="01" title="The Matchday" desc="A high-stakes drill drops every Wednesday and Sunday. You have until the next drop to lock in your score." />
+              <EditorialCard num="02" title="One Shot Only" desc="No do-overs in a crisis. You must log in. Only your absolute first attempt counts for leaderboard points." />
+              <EditorialCard num="03" title="The Standings" desc="It's all about scoring points. We track your cumulative total across 50 matchdays. Prove you're the absolute best." />
+
+              <Link 
+                href="/simulate/rules"
+                className="mt-6 flex items-center justify-between p-6 border transition-all group rounded"
+                style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}
+              >
+                <span className="font-bold uppercase tracking-wider text-sm transition-colors" style={{ color: "var(--text-primary)" }}>Read Official Rulebook</span>
+                <ChevronRight size={20} className="transition-colors" style={{ color: "var(--text-faint)" }} />
+              </Link>
+
               {/* Leaderboard */}
-              <div className="w-full max-w-md relative">
+              <div className="mt-6 relative">
                 <div className="flex flex-col border rounded p-4" style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}>
                   <h3 className="font-mono text-sm uppercase tracking-widest mb-4 font-bold" style={{ color: "var(--text-primary)" }}>League Standings</h3>
                   <div className="flex flex-col gap-2">
@@ -125,31 +146,10 @@ export default async function LeagueHypePage() {
                   </div>
                 </div>
               </div>
-
-            </div>
-
-            {/* Right Column: Mechanics */}
-            <div className="lg:col-span-5 lg:mt-12 flex flex-col gap-6">
-              <h2 className="font-mono text-sm uppercase tracking-[0.2em] mb-2 border-b pb-4" style={{ color: "var(--text-faint)", borderColor: "var(--border-subtle)" }}>
-                League Rules & Mechanics
-              </h2>
-              
-              <EditorialCard num="01" title="The Matchday" desc="A high-stakes drill drops every Wednesday and Sunday. You have until the next drop to lock in your score." />
-              <EditorialCard num="02" title="One Shot Only" desc="No do-overs in a crisis. You must log in. Only your absolute first attempt counts for leaderboard points." />
-              <EditorialCard num="03" title="The Standings" desc="It's all about scoring points. We track your cumulative total across 50 matchdays. Prove you're the absolute best." />
-
-              <Link 
-                href="/simulate/rules"
-                className="mt-6 flex items-center justify-between p-6 border transition-all group rounded"
-                style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}
-              >
-                <span className="font-bold uppercase tracking-wider text-sm transition-colors" style={{ color: "var(--text-primary)" }}>Read Official Rulebook</span>
-                <ChevronRight size={20} className="transition-colors" style={{ color: "var(--text-faint)" }} />
-              </Link>
-            </div>
           </div>
 
         </div>
+      </div>
       </div>
     </SidebarShell>
   );
