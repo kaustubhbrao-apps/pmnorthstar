@@ -170,7 +170,7 @@ nodes:
         leadsTo: B-migrate-crisis
 
   B-post-followup:
-    dimension: sales
+    dimension: business
     prompt: |
       The blog post goes viral. An enterprise giant (Fortune 500) reaches out, 
       demanding you build a custom instance of your app using Claude 5 exclusively for them.
@@ -193,7 +193,7 @@ nodes:
         leadsTo: end-B-great
 
   B-quiet-followup:
-    dimension: marketing
+    dimension: business
     prompt: |
       The competitor stole your thunder in the press. Your sales team is 
       complaining that prospects think you are "falling behind."
@@ -285,7 +285,7 @@ nodes:
         leadsTo: end-C-recover-alt
 
   C-defensive-followup:
-    dimension: sales
+    dimension: business
     prompt: |
       The "stability" messaging keeps old customers, but new startups won't touch you. 
       Growth has flatlined.

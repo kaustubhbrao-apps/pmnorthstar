@@ -75,7 +75,7 @@ nodes:
         leadsTo: D-half-followup
 
   A-all-followup:
-    dimension: execution
+    dimension: founder
     prompt: |
       The integration of the three companies is a disaster. The US coding school's 
       retention rate collapses, and the offline chain in India is burning cash on real estate.
@@ -98,7 +98,7 @@ nodes:
         leadsTo: A-all-crisis
 
   A-all-crisis:
-    dimension: finance
+    dimension: business
     prompt: |
       Cash is down to $200M. The market has turned. You need a massive loan 
       to survive the next 6 months.
@@ -147,7 +147,7 @@ nodes:
         leadsTo: B-cut-crisis
 
   B-bridge-crisis:
-    dimension: team
+    dimension: founder
     prompt: |
       You took the down round. Options are underwater. Key executives and top 
       engineers are threatening to leave for AI startups.
@@ -193,7 +193,7 @@ nodes:
         leadsTo: end-B-mediocre
 
   C-return-followup:
-    dimension: investor-relations
+    dimension: business
     prompt: |
       Returning $1B was unprecedented. Two major funds on your cap table are furious, 
       claiming you lack ambition, and are threatening to block future board actions.
@@ -216,7 +216,7 @@ nodes:
         leadsTo: end-C-bad
 
   C-buyout-crisis:
-    dimension: growth
+    dimension: business
     prompt: |
       With the toxic investors gone, you are lean and profitable. But growth is only 15% YoY. 
       The press calls you a "zombie unicorn."
@@ -239,7 +239,7 @@ nodes:
         leadsTo: end-C-alt
 
   D-half-followup:
-    dimension: execution
+    dimension: founder
     prompt: |
       The two acquisitions are stalling. The US coding school culturally rejects 
       your Indian management style.
@@ -262,7 +262,7 @@ nodes:
         leadsTo: D-half-crisis
 
   D-half-crisis:
-    dimension: finance
+    dimension: business
     prompt: |
       The US failure burned $400M. The market has turned. You have $300M left 
       and are burning $20M a month.

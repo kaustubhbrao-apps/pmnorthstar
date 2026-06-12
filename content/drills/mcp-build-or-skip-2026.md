@@ -90,7 +90,7 @@ nodes:
         leadsTo: A-churn-crisis
 
   A-bridge-crisis:
-    dimension: engineering
+    dimension: product
     prompt: |
       The customer accepted the 6-month extension. Now it's Q4, and the SSO 
       build is delayed because the MCP server requires constant maintenance updates.
@@ -113,7 +113,7 @@ nodes:
         leadsTo: end-A-bad
 
   A-churn-crisis:
-    dimension: marketing
+    dimension: business
     prompt: |
       Word got out that you pushed a legacy customer away. The market thinks 
       your product isn't "enterprise-ready."
@@ -182,7 +182,7 @@ nodes:
         leadsTo: end-B-alt
 
   B-walled-crisis:
-    dimension: sales
+    dimension: business
     prompt: |
       Your native AI features are good, but enterprise buyers want to use 
       their own custom AI agents, not yours.
@@ -228,7 +228,7 @@ nodes:
         leadsTo: C-parity-crisis
 
   C-deep-crisis:
-    dimension: engineering
+    dimension: product
     prompt: |
       Your deep integration is a massive hit, but an AI agent goes rogue 
       and deletes a customer's CRM data because of a bug in your write-action handler.
@@ -297,7 +297,7 @@ nodes:
         leadsTo: D-hero-crisis
 
   D-blame-crisis:
-    dimension: team
+    dimension: founder
     prompt: |
       The engineering team is furious. Productivity drops to zero.
     options:

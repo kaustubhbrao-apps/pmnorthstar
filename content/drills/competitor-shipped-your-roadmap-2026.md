@@ -123,7 +123,7 @@ nodes:
         leadsTo: end-A-alt
 
   B-kill-followup:
-    dimension: team
+    dimension: founder
     prompt: |
       The team pivoted, but morale is rock bottom. The competitor is dominating
       the news cycle. Your engineers are questioning the company's vision.
@@ -248,7 +248,7 @@ nodes:
         leadsTo: end-C-great
 
   C-mixed-recovery:
-    dimension: marketing
+    dimension: business
     prompt: |
       Your split messaging confused the market. The competitor is pulling ahead
       while you struggle to define what you are.
@@ -271,7 +271,7 @@ nodes:
         leadsTo: end-C-mixed-alt
 
   D-announce-followup:
-    dimension: marketing
+    dimension: business
     prompt: |
       You announced early. The press compared your vaporware to their live product.
       Now, you are 4 weeks away from shipping and the hype has died down.

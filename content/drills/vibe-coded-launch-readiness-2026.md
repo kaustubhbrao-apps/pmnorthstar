@@ -267,7 +267,7 @@ nodes:
         consequence: Growth plateaus.
         leadsTo: C-wait
   C-ph-now:
-    dimension: marketing
+    dimension: business
     prompt: |
       The Product Hunt launch is live.
     options:

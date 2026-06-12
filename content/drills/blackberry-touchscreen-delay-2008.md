@@ -98,7 +98,7 @@ nodes:
           SurePress 2.0 fails just as badly. Verizon drops you completely.
 
   surepress_patch_crisis:
-    dimension: marketing
+    dimension: business
     prompt: |
       The patches fail. The hardware is fundamentally broken. The press is calling it 
       the "FailBerry." Sales are zero.
@@ -144,7 +144,7 @@ nodes:
           The device ships on time but feels laggy and cheap.
 
   capacitive_qnx_crisis:
-    dimension: ecosystem
+    dimension: strategy
     prompt: |
       The QNX rewrite (BlackBerry 10) takes 18 months. When it launches, it's beautiful. 
       But iOS and Android have already locked up all the major app developers.
@@ -236,7 +236,7 @@ nodes:
           Companies just fire RIM and switch to MobileIron or Good Technology.
 
   refuse_playbook_crisis:
-    dimension: finance
+    dimension: business
     prompt: |
       The PlayBook tablet is a massive failure. You have $1 billion in unsold inventory.
     options:

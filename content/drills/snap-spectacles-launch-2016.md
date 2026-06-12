@@ -170,7 +170,7 @@ nodes:
         consequence: Morale destroyed.
         leadsTo: hold_price_fire
   massive_giveaway_followup:
-    dimension: logistics
+    dimension: business
     prompt: |
       The logistics of the giveaway are overwhelming your support team. Shipping costs are astronomical.
     options:

@@ -101,7 +101,7 @@ nodes:
           they would have built.
         leadsTo: D-gate-followup
   A-broad-followup:
-    dimension: marketing
+    dimension: business
     prompt: |
       You are burning cash on rewards. Paytm is outspending you 10-to-1.
     options:
@@ -203,7 +203,7 @@ nodes:
           been.
         leadsTo: B-exclusion-followup-3-third
   B-exclusion-followup-3:
-    dimension: marketing
+    dimension: business
     prompt: |
       Rent pay is a huge hit. Competitors are starting to copy it. How do you maintain dominance?
     options:
@@ -254,7 +254,7 @@ nodes:
         consequence: Margins collapse, investors get nervous.
         leadsTo: end-B-good
   C-design-followup:
-    dimension: marketing
+    dimension: business
     prompt: |
       The app is beautiful but growth is flat. Users don't feel special.
     options:
@@ -305,7 +305,7 @@ nodes:
         consequence: The board finds out and you are fired.
         leadsTo: end-C
   D-gate-followup:
-    dimension: marketing
+    dimension: business
     prompt: |
       Users are bouncing at the credit gate. You need to build desire.
     options:

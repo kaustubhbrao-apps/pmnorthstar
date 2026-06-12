@@ -96,7 +96,7 @@ nodes:
         leadsTo: blitz_crisis
 
   blitz_crisis:
-    dimension: brand
+    dimension: business
     prompt: |
       The servers are stable, but the magic is dead. Rooms are dominated by marketers 
       pitching crypto scams. The original influencers are leaving for Twitter Spaces.
@@ -119,7 +119,7 @@ nodes:
         leadsTo: quality_death_alt
 
   fund_followup:
-    dimension: content
+    dimension: product
     prompt: |
       The creator fund successfully brought in podcasters, but the spontaneous "drop-in" 
       culture is gone. Everyday users feel like they are just listening to a radio station.
@@ -220,7 +220,7 @@ nodes:
         leadsTo: sustainable_unicorn_alt
 
   feature_war_followup:
-    dimension: engineering
+    dimension: product
     prompt: |
       The feature bloat is real. The codebase is a mess, and the core audio experience 
       now suffers from latency issues because of the new text chat overhead.

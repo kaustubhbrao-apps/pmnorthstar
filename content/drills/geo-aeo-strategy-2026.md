@@ -214,7 +214,7 @@ nodes:
         consequence: No impact on AI citations; money wasted.
         leadsTo: end-B-good
   C-social-followup:
-    dimension: marketing
+    dimension: business
     prompt: |
       LinkedIn pipeline is growing, but it relies entirely on your personal brand as the founder.
     options:
@@ -282,7 +282,7 @@ nodes:
         consequence: Pipeline plummets, but runway is extended.
         leadsTo: D-ads-followup-3-alt
   D-ads-followup-3:
-    dimension: marketing
+    dimension: business
     prompt: |
       Landing pages are optimized, but Google raises CPCs again.
     options:

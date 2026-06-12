@@ -351,7 +351,7 @@ nodes:
         consequence: High churn.
         leadsTo: end-D
   D-calc:
-    dimension: marketing
+    dimension: business
     prompt: |
       The calculator isn't working.
     options:
