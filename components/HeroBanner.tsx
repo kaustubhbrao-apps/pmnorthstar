@@ -148,52 +148,62 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
         {/* Simulation League Banner */}
         <Link
           href={`/league`}
-          className="flex-shrink-0 w-full snap-center group rounded-2xl p-6 transition-all hover:opacity-95 flex flex-col relative overflow-hidden"
+          className="flex-shrink-0 w-full snap-center group rounded-2xl p-6 transition-all flex flex-col relative overflow-hidden"
           style={{
-            background: "var(--card-bg)",
-            border: "1.5px solid #991b1b",
+            background: "#000000",
+            border: "1.5px solid #F3123C",
           }}
         >
-          {/* Subtle SVG Noise Texture */}
+          {/* Background Video (Drop your file in public/simulation-league-promo.mp4) */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen transition-all duration-500 group-hover:opacity-100 group-hover:scale-105"
+            src="/simulation-league-promo.mp4"
+            style={{ zIndex: 0 }}
+          />
+
+          {/* Fallback Noise Texture if video isn't loaded */}
           <div 
             className="absolute inset-0 pointer-events-none opacity-[0.04] z-10 mix-blend-overlay"
             style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}
           />
 
-          {/* Ambient Brand Glow */}
+          {/* Ambient Brand Glow to make text pop over the video */}
           <div 
-            className="absolute top-[-10%] left-[-10%] w-[250px] h-[250px] rounded-full blur-[70px] pointer-events-none opacity-10 transition-opacity group-hover:opacity-20" 
-            style={{ background: "radial-gradient(circle, var(--brand-primary) 0%, transparent 70%)" }} 
+            className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/20 to-black/80" 
           />
 
           <div className="relative z-20 flex-1 flex flex-col">
             <div 
               className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 border rounded self-start"
-              style={{ borderColor: "var(--border-subtle)", background: "var(--page-bg)" }}
+              style={{ borderColor: "rgba(255,255,255,0.2)", background: "rgba(0,0,0,0.4)", backdropFilter: "blur(4px)" }}
             >
-              <div className="w-1.5 h-1.5 bg-[var(--brand-primary)] animate-pulse rounded-full" />
-              <span className="font-mono font-bold tracking-widest uppercase text-[10px]" style={{ color: "var(--text-muted)" }}>
-                Matchday Live
+              <div className="w-1.5 h-1.5 bg-[#F3123C] animate-pulse rounded-full" />
+              <span className="font-mono font-bold tracking-widest uppercase text-[10px]" style={{ color: "rgba(255,255,255,0.8)" }}>
+                Starts June 26
               </span>
             </div>
 
-            <h3 className="font-display text-4xl sm:text-[2.5rem] font-black tracking-tighter mb-4 uppercase leading-[0.9]" style={{ color: "var(--text-primary)" }}>
+            <h3 className="font-display text-4xl sm:text-[2.5rem] font-black tracking-tighter mb-4 uppercase leading-[0.9]" style={{ color: "#ffffff" }}>
               SIMULATION<br />
-              <span style={{ color: "var(--brand-primary)" }}>LEAGUE</span>
+              <span style={{ color: "#F3123C" }}>LEAGUE</span>
             </h3>
 
-            <p className="text-sm leading-relaxed mb-auto" style={{ color: "var(--text-muted)" }}>
+            <p className="text-sm leading-relaxed mb-auto" style={{ color: "rgba(255,255,255,0.8)" }}>
               The ultimate proving ground for Builders and PMs. Can you stay at the top across 50 intense Matchdays?
             </p>
 
             <div className="w-full mt-8">
-              <div className="p-4 rounded bg-[var(--page-bg)] border border-[var(--border-subtle)]">
+              <div className="p-4 rounded border" style={{ background: "rgba(0,0,0,0.6)", borderColor: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)" }}>
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>50 Matchdays</span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "var(--text-muted)" }}>Season 1</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "#F3123C" }}>50 Matchdays</span>
+                  <span className="font-mono text-[10px] uppercase tracking-widest font-bold" style={{ color: "rgba(255,255,255,0.6)" }}>Season 1</span>
                 </div>
                 
-                <div className="btn-primary w-full flex justify-center items-center gap-2 text-sm py-2.5">
+                <div className="btn-primary w-full flex justify-center items-center gap-2 text-sm py-2.5 shadow-[0_0_15px_rgba(243,18,60,0.4)] border-none">
                   Enter the League
                   <ArrowUpRight size={14} />
                 </div>
