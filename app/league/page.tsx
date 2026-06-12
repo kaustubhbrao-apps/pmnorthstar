@@ -118,30 +118,48 @@ export default async function LeagueHypePage() {
               </Link>
 
               {/* Leaderboard */}
-              <div className="mt-6 relative">
-                <div className="flex flex-col border rounded p-4" style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}>
-                  <h3 className="font-mono text-sm uppercase tracking-widest mb-4 font-bold" style={{ color: "var(--text-primary)" }}>League Standings</h3>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center justify-between p-3 rounded bg-[rgba(255,255,255,0.05)] border border-[var(--brand-primary)]">
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--brand-primary)" }}>1</span>
-                        <span className="font-bold">King 👑</span>
-                      </div>
-                      <span className="font-mono text-sm font-bold" style={{ color: "var(--brand-primary)" }}>---</span>
+              <div className="mt-8 relative group">
+                <div className="absolute inset-0 bg-[#F3123C] opacity-10 blur-xl rounded-xl transition-opacity duration-500 group-hover:opacity-20 pointer-events-none" />
+                <div className="relative flex flex-col rounded-xl p-6 overflow-hidden" style={{ background: "#050505", border: "1px solid rgba(243, 18, 60, 0.3)", boxShadow: "0 8px 32px -8px rgba(243, 18, 60, 0.25)" }}>
+                  
+                  {/* Subtle top glare */}
+                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#F3123C] to-transparent opacity-50" />
+
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-[#F3123C] shadow-[0_0_10px_#F3123C] animate-pulse" />
+                      <h3 className="font-mono text-xs uppercase tracking-[0.2em] font-bold text-white">Live Standings</h3>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>2</span>
-                        <span className="text-sm" style={{ color: "var(--text-muted)" }}>???</span>
+                    <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest">Top 3</span>
+                  </div>
+
+                  <div className="flex flex-col gap-2.5">
+                    {/* Rank 1 */}
+                    <div className="flex items-center justify-between p-3.5 rounded-lg border relative overflow-hidden" style={{ background: "linear-gradient(90deg, rgba(243,18,60,0.1) 0%, rgba(243,18,60,0.02) 100%)", borderColor: "rgba(243,18,60,0.4)" }}>
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#F3123C]" />
+                      <div className="flex items-center gap-4 pl-2">
+                        <span className="font-mono text-sm font-bold w-4 text-center text-[#F3123C]">1</span>
+                        <span className="font-bold text-white tracking-wide">King 👑</span>
                       </div>
-                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
+                      <span className="font-mono text-sm font-bold text-[#F3123C] drop-shadow-[0_0_8px_rgba(243,18,60,0.8)]">---</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>3</span>
-                        <span className="text-sm" style={{ color: "var(--text-muted)" }}>???</span>
+
+                    {/* Rank 2 */}
+                    <div className="flex items-center justify-between p-3.5 rounded-lg border border-white/5 bg-white/[0.02]">
+                      <div className="flex items-center gap-4 pl-3">
+                        <span className="font-mono text-xs font-bold w-4 text-center text-white/30">2</span>
+                        <span className="text-sm font-medium text-white/50">???</span>
                       </div>
-                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
+                      <span className="font-mono text-sm text-white/30">---</span>
+                    </div>
+
+                    {/* Rank 3 */}
+                    <div className="flex items-center justify-between p-3.5 rounded-lg border border-white/5 bg-white/[0.02]">
+                      <div className="flex items-center gap-4 pl-3">
+                        <span className="font-mono text-xs font-bold w-4 text-center text-white/30">3</span>
+                        <span className="text-sm font-medium text-white/50">???</span>
+                      </div>
+                      <span className="font-mono text-sm text-white/30">---</span>
                     </div>
                   </div>
                 </div>
