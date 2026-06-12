@@ -4,6 +4,7 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { CountdownTimer } from "@/components/CountdownTimer";
+import { LeagueRulesCarousel } from "@/components/LeagueRulesCarousel";
 import { getSession } from "@/lib/auth";
 
 export const revalidate = 60;
@@ -104,9 +105,7 @@ export default async function LeagueHypePage() {
                 League Rules & Mechanics
               </h2>
               
-              <EditorialCard num="01" title="The Matchday" desc="A high-stakes drill drops every Wednesday and Sunday. You have until the next drop to lock in your score." />
-              <EditorialCard num="02" title="One Shot Only" desc="No do-overs in a crisis. You must log in. Only your absolute first attempt counts for leaderboard points." />
-              <EditorialCard num="03" title="The Standings" desc="It's all about scoring points. We track your cumulative total across 50 matchdays. Prove you're the absolute best." />
+              <LeagueRulesCarousel />
 
               <Link 
                 href="/simulate/rules"
@@ -119,47 +118,47 @@ export default async function LeagueHypePage() {
 
               {/* Leaderboard */}
               <div className="mt-8 relative group">
-                <div className="absolute inset-0 bg-[#F3123C] opacity-10 blur-xl rounded-xl transition-opacity duration-500 group-hover:opacity-20 pointer-events-none" />
-                <div className="relative flex flex-col rounded-xl p-6 overflow-hidden" style={{ background: "#050505", border: "1px solid rgba(243, 18, 60, 0.3)", boxShadow: "0 8px 32px -8px rgba(243, 18, 60, 0.25)" }}>
+                <div className="absolute inset-0 bg-[var(--brand-primary)] opacity-[0.08] blur-xl rounded-xl transition-opacity duration-500 group-hover:opacity-15 pointer-events-none" />
+                <div className="relative flex flex-col rounded-xl p-6 overflow-hidden border" style={{ background: "var(--card-bg)", borderColor: "var(--border-subtle)", boxShadow: "0 8px 32px -8px rgba(243, 18, 60, 0.15)" }}>
                   
                   {/* Subtle top glare */}
-                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#F3123C] to-transparent opacity-50" />
+                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--brand-primary)] to-transparent opacity-30" />
 
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-[#F3123C] shadow-[0_0_10px_#F3123C] animate-pulse" />
-                      <h3 className="font-mono text-xs uppercase tracking-[0.2em] font-bold text-white">Live Standings</h3>
+                      <div className="w-2 h-2 rounded-full bg-[var(--brand-primary)] shadow-[0_0_10px_var(--brand-primary)] animate-pulse" />
+                      <h3 className="font-mono text-xs uppercase tracking-[0.2em] font-bold" style={{ color: "var(--text-primary)" }}>Live Standings</h3>
                     </div>
-                    <span className="font-mono text-[10px] text-white/40 uppercase tracking-widest">Top 3</span>
+                    <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--text-faint)" }}>Top 3</span>
                   </div>
 
                   <div className="flex flex-col gap-2.5">
                     {/* Rank 1 */}
-                    <div className="flex items-center justify-between p-3.5 rounded-lg border relative overflow-hidden" style={{ background: "linear-gradient(90deg, rgba(243,18,60,0.1) 0%, rgba(243,18,60,0.02) 100%)", borderColor: "rgba(243,18,60,0.4)" }}>
-                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#F3123C]" />
+                    <div className="flex items-center justify-between p-3.5 rounded-lg border relative overflow-hidden" style={{ background: "linear-gradient(90deg, rgba(243,18,60,0.08) 0%, transparent 100%)", borderColor: "rgba(243,18,60,0.3)" }}>
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--brand-primary)]" />
                       <div className="flex items-center gap-4 pl-2">
-                        <span className="font-mono text-sm font-bold w-4 text-center text-[#F3123C]">1</span>
-                        <span className="font-bold text-white tracking-wide">King 👑</span>
+                        <span className="font-mono text-sm font-bold w-4 text-center" style={{ color: "var(--brand-primary)" }}>1</span>
+                        <span className="font-bold tracking-wide" style={{ color: "var(--text-primary)" }}>King 👑</span>
                       </div>
-                      <span className="font-mono text-sm font-bold text-[#F3123C] drop-shadow-[0_0_8px_rgba(243,18,60,0.8)]">---</span>
+                      <span className="font-mono text-sm font-bold drop-shadow-[0_0_8px_rgba(243,18,60,0.5)]" style={{ color: "var(--brand-primary)" }}>---</span>
                     </div>
 
                     {/* Rank 2 */}
-                    <div className="flex items-center justify-between p-3.5 rounded-lg border border-white/5 bg-white/[0.02]">
+                    <div className="flex items-center justify-between p-3.5 rounded-lg border" style={{ borderColor: "var(--border-subtle)", background: "rgba(128,128,128,0.02)" }}>
                       <div className="flex items-center gap-4 pl-3">
-                        <span className="font-mono text-xs font-bold w-4 text-center text-white/30">2</span>
-                        <span className="text-sm font-medium text-white/50">???</span>
+                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>2</span>
+                        <span className="text-sm font-medium" style={{ color: "var(--text-muted)" }}>???</span>
                       </div>
-                      <span className="font-mono text-sm text-white/30">---</span>
+                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
                     </div>
 
                     {/* Rank 3 */}
-                    <div className="flex items-center justify-between p-3.5 rounded-lg border border-white/5 bg-white/[0.02]">
+                    <div className="flex items-center justify-between p-3.5 rounded-lg border" style={{ borderColor: "var(--border-subtle)", background: "rgba(128,128,128,0.02)" }}>
                       <div className="flex items-center gap-4 pl-3">
-                        <span className="font-mono text-xs font-bold w-4 text-center text-white/30">3</span>
-                        <span className="text-sm font-medium text-white/50">???</span>
+                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>3</span>
+                        <span className="text-sm font-medium" style={{ color: "var(--text-muted)" }}>???</span>
                       </div>
-                      <span className="font-mono text-sm text-white/30">---</span>
+                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
                     </div>
                   </div>
                 </div>
@@ -173,18 +172,3 @@ export default async function LeagueHypePage() {
   );
 }
 
-function EditorialCard({ num, title, desc }: { num: string, title: string, desc: string }) {
-  return (
-    <div 
-      className="p-6 border rounded transition-colors relative group"
-      style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)" }}
-    >
-      <div className="absolute top-0 left-0 w-1 h-0 bg-[var(--brand-primary)] group-hover:h-full transition-all duration-300 rounded-l" />
-      <div className="flex items-baseline gap-4 mb-3">
-        <span className="font-mono text-xs font-bold" style={{ color: "var(--brand-primary)" }}>{num}</span>
-        <h3 className="text-lg font-bold uppercase tracking-tight" style={{ color: "var(--text-primary)" }}>{title}</h3>
-      </div>
-      <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>{desc}</p>
-    </div>
-  );
-}
