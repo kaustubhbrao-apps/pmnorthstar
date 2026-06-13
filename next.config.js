@@ -32,6 +32,15 @@ const nextConfig = {
       },
     ];
   },
+
+  // Ensure content files are bundled for ISR Serverless functions
+  experimental: {
+    outputFileTracingIncludes: {
+      '/sitemap.xml': ['./content/ai-decoded/**/*'],
+      '/ai-decoded': ['./content/ai-decoded/**/*'],
+      '/ai-decoded/[slug]': ['./content/ai-decoded/**/*'],
+    },
+  },
 };
 
 module.exports = nextConfig;
