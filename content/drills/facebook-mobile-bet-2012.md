@@ -1,5 +1,6 @@
 ---
 slug: facebook-mobile-bet-2012
+caseStudySlug: facebook-mobile-bet-2012
 type: historical
 category: Strategy
 year: 2012

@@ -1,5 +1,6 @@
 ---
 slug: moviepass-unlimited-pricing-2017
+caseStudySlug: moviepass-unlimited-pricing-2017
 type: historical
 category: business
 year: 2017

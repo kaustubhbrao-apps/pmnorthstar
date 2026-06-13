@@ -1,5 +1,6 @@
 ---
 slug: blackberry-touchscreen-delay-2008
+caseStudySlug: blackberry-touchscreen-delay-2008
 type: historical
 category: Strategy
 year: 2008

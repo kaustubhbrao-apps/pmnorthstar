@@ -1,5 +1,6 @@
 ---
 slug: amazon-prime-shipping-gamble-2005
+caseStudySlug: amazon-prime-shipping-gamble-2005
 type: historical
 category: Growth
 year: 2005

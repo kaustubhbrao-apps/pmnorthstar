@@ -1,5 +1,6 @@
 ---
 slug: cursor-vs-windsurf-2026
+caseStudySlug: cursor-vs-windsurf-2026
 type: current
 category: strategic
 publishedAt: '2026-08-02T15:00:00+00:00'

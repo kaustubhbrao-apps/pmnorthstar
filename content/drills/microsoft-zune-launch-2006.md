@@ -1,5 +1,6 @@
 ---
 slug: microsoft-zune-launch-2006
+caseStudySlug: microsoft-zune-launch-2006
 type: historical
 category: strategy
 year: 2006

@@ -1,5 +1,6 @@
 ---
 slug: tesla-model-3-automation-2018
+caseStudySlug: tesla-model-3-automation-2018
 type: historical
 category: Strategy
 year: 2018

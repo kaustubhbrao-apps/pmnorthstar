@@ -1,5 +1,6 @@
 ---
 slug: claude-5-ships-2026
+caseStudySlug: claude-5-ships-2026
 type: current
 category: strategic
 publishedAt: '2026-06-01T19:00:00+05:30'

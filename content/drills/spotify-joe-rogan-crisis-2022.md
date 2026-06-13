@@ -1,5 +1,6 @@
 ---
 slug: spotify-joe-rogan-crisis-2022
+caseStudySlug: spotify-joe-rogan-crisis-2022
 type: historical
 category: strategic
 publishedAt: '2026-11-11T15:00:00+00:00'

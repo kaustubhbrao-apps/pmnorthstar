@@ -1,5 +1,6 @@
 ---
 slug: geo-aeo-strategy-2026
+caseStudySlug: geo-aeo-strategy-2026
 type: current
 category: growth
 publishedAt: '2026-08-26T15:00:00+00:00'

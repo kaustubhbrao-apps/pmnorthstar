@@ -1,5 +1,6 @@
 ---
 slug: foursquare-swarm-split-2014
+caseStudySlug: foursquare-swarm-split-2014
 type: historical
 category: Strategy
 year: 2014

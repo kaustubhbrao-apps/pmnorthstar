@@ -1,5 +1,6 @@
 ---
 slug: lego-bankruptcy-comeback-2003
+caseStudySlug: lego-bankruptcy-comeback-2003
 type: historical
 category: strategy
 year: 2003

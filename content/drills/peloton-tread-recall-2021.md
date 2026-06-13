@@ -1,5 +1,6 @@
 ---
 slug: peloton-tread-recall-2021
+caseStudySlug: peloton-tread-recall-2021
 type: historical
 category: Crisis
 year: 2021

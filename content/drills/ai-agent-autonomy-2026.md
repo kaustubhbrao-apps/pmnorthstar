@@ -1,5 +1,6 @@
 ---
 slug: ai-agent-autonomy-2026
+caseStudySlug: ai-agent-autonomy-2026
 type: current
 category: product
 publishedAt: '2026-06-26T15:00:00+00:00'

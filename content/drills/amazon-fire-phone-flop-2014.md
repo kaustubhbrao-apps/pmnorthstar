@@ -1,5 +1,6 @@
 ---
 slug: amazon-fire-phone-flop-2014
+caseStudySlug: amazon-fire-phone-flop-2014
 type: historical
 category: product
 publishedAt: '2026-07-05T15:00:00+00:00'

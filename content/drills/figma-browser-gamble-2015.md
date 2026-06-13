@@ -1,5 +1,6 @@
 ---
 slug: figma-browser-gamble-2015
+caseStudySlug: figma-browser-gamble-2015
 type: historical
 category: Strategy
 year: 2015

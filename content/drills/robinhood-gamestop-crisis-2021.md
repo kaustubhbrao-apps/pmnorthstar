@@ -1,5 +1,6 @@
 ---
 slug: robinhood-gamestop-crisis-2021
+caseStudySlug: robinhood-gamestop-crisis-2021
 type: historical
 category: strategic
 title: "The 3AM Margin Call: Clearinghouse Crisis"

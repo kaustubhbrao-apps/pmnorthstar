@@ -1,5 +1,6 @@
 ---
 slug: series-a-mid-pivot-2026
+caseStudySlug: series-a-mid-pivot-2026
 type: current
 category: founding-funding
 publishedAt: '2026-11-01T15:00:00+00:00'

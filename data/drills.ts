@@ -44,6 +44,7 @@ export interface Drill {
 export const drills: Drill[] = [
   {
     slug: "zoom-friction-obsession-2018",
+    caseStudySlug: "zoom-friction-obsession-2018",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-12-13T15:00:00+00:00",
@@ -73,6 +74,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "wework-hypergrowth-2017",
+    caseStudySlug: "wework-hypergrowth-2017",
     type: "historical",
     category: "Founder",
     publishedAt: "2026-12-06T15:00:00+00:00",
@@ -87,6 +89,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "vine-instagram-video-2013",
+    caseStudySlug: "vine-instagram-video-2013",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-12-02T15:00:00+00:00",
@@ -101,6 +104,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "vibe-coded-launch-readiness-2026",
+    caseStudySlug: "vibe-coded-launch-readiness-2026",
     type: "current",
     category: "scope",
     publishedAt: "2026-11-29T15:00:00+00:00",
@@ -114,6 +118,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "uber-cold-start-seattle-2011",
+    caseStudySlug: "uber-cold-start-seattle-2011",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-25T15:00:00+00:00",
@@ -128,6 +133,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "tiktok-musically-licensing-2017",
+    caseStudySlug: "tiktok-musically-licensing-2017",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-22T15:00:00+00:00",
@@ -157,6 +163,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "tesla-model-3-automation-2018",
+    caseStudySlug: "tesla-model-3-automation-2018",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-15T15:00:00+00:00",
@@ -171,6 +178,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "spotify-joe-rogan-crisis-2022",
+    caseStudySlug: "spotify-joe-rogan-crisis-2022",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-11-11T15:00:00+00:00",
@@ -183,6 +191,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "sony-betamax-format-war-1975",
+    caseStudySlug: "sony-betamax-format-war-1975",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-08T15:00:00+00:00",
@@ -197,6 +206,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "snap-spectacles-launch-2016",
+    caseStudySlug: "snap-spectacles-launch-2016",
     type: "historical",
     category: "Product",
     publishedAt: "2026-11-04T15:00:00+00:00",
@@ -211,6 +221,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "series-a-mid-pivot-2026",
+    caseStudySlug: "series-a-mid-pivot-2026",
     type: "current",
     category: "founding-funding",
     publishedAt: "2026-11-01T15:00:00+00:00",
@@ -224,6 +235,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "robinhood-gamestop-crisis-2021",
+    caseStudySlug: "robinhood-gamestop-crisis-2021",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-10-28T15:00:00+00:00",
@@ -266,6 +278,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "pinterest-waitlist-illusion-2010",
+    caseStudySlug: "pinterest-waitlist-illusion-2010",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-10-18T15:00:00+00:00",
@@ -280,6 +293,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "peloton-tread-recall-2021",
+    caseStudySlug: "peloton-tread-recall-2021",
     type: "historical",
     category: "Crisis",
     publishedAt: "2026-10-14T15:00:00+00:00",
@@ -294,6 +308,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "paypal-referral-empire-1999",
+    caseStudySlug: "paypal-referral-empire-1999",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-10-11T15:00:00+00:00",
@@ -308,6 +323,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "openai-consumer-device-launches-2026",
+    caseStudySlug: "openai-consumer-device-launches-2026",
     type: "current",
     category: "strategic",
     publishedAt: "2026-10-07T15:00:00+00:00",
@@ -321,6 +337,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "nokia-windows-phone-bet-2011",
+    caseStudySlug: "nokia-windows-phone-bet-2011",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-10-04T15:00:00+00:00",
@@ -350,6 +367,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "moviepass-unlimited-pricing-2017",
+    caseStudySlug: "moviepass-unlimited-pricing-2017",
     type: "historical",
     category: "business",
     publishedAt: "2026-09-27T15:00:00+00:00",
@@ -364,6 +382,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "microsoft-zune-launch-2006",
+    caseStudySlug: "microsoft-zune-launch-2006",
     type: "historical",
     category: "strategy",
     publishedAt: "2026-09-23T15:00:00+00:00",
@@ -393,6 +412,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "meta-vr-pivot-2021",
+    caseStudySlug: "meta-vr-pivot-2021",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-09-16T15:00:00+00:00",
@@ -405,6 +425,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "mcp-build-or-skip-2026",
+    caseStudySlug: "mcp-build-or-skip-2026",
     type: "current",
     category: "strategic",
     publishedAt: "2026-09-13T15:00:00+00:00",
@@ -417,6 +438,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "lego-bankruptcy-comeback-2003",
+    caseStudySlug: "lego-bankruptcy-comeback-2003",
     type: "historical",
     category: "strategy",
     publishedAt: "2026-09-09T15:00:00+00:00",
@@ -431,6 +453,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "instagram-stories-clone-2016",
+    caseStudySlug: "instagram-stories-clone-2016",
     type: "historical",
     category: "product",
     publishedAt: "2026-09-06T15:00:00+00:00",
@@ -445,6 +468,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "google-reader-sunset-2013",
+    caseStudySlug: "google-reader-sunset-2013",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-09-02T15:00:00+00:00",
@@ -457,6 +481,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "google-plus-real-names-2011",
+    caseStudySlug: "google-plus-real-names-2011",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-30T15:00:00+00:00",
@@ -471,6 +496,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "geo-aeo-strategy-2026",
+    caseStudySlug: "geo-aeo-strategy-2026",
     type: "current",
     category: "growth",
     publishedAt: "2026-08-26T15:00:00+00:00",
@@ -484,6 +510,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "foursquare-swarm-split-2014",
+    caseStudySlug: "foursquare-swarm-split-2014",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-23T15:00:00+00:00",
@@ -498,6 +525,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "foundation-model-shipped-your-product-2026",
+    caseStudySlug: "foundation-model-shipped-your-product-2026",
     type: "current",
     category: "strategic",
     publishedAt: "2026-08-19T15:00:00+00:00",
@@ -510,6 +538,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "figma-browser-gamble-2015",
+    caseStudySlug: "figma-browser-gamble-2015",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-16T15:00:00+00:00",
@@ -524,6 +553,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "facebook-mobile-bet-2012",
+    caseStudySlug: "facebook-mobile-bet-2012",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-12T15:00:00+00:00",
@@ -538,6 +568,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "dropbox-referral-engine-2008",
+    caseStudySlug: "dropbox-referral-engine-2008",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-08-09T15:00:00+00:00",
@@ -552,6 +583,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "digg-v4-redesign-2010",
+    caseStudySlug: "digg-v4-redesign-2010",
     type: "historical",
     category: "Product",
     publishedAt: "2026-08-05T15:00:00+00:00",
@@ -566,6 +598,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "cursor-vs-windsurf-2026",
+    caseStudySlug: "cursor-vs-windsurf-2026",
     type: "current",
     category: "strategic",
     publishedAt: "2026-08-02T15:00:00+00:00",
@@ -593,6 +626,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "clubhouse-fomo-scaling-2020",
+    caseStudySlug: "clubhouse-fomo-scaling-2020",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-07-26T15:00:00+00:00",
@@ -622,6 +656,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "blackberry-touchscreen-delay-2008",
+    caseStudySlug: "blackberry-touchscreen-delay-2008",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-07-19T15:00:00+00:00",
@@ -636,6 +671,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "apple-maps-launch-2012",
+    caseStudySlug: "apple-maps-launch-2012",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-07-15T15:00:00+00:00",
@@ -650,6 +686,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "apple-iphone-cannibalization-2005",
+    caseStudySlug: "apple-iphone-cannibalization-2005",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-07-12T15:00:00+00:00",
@@ -664,6 +701,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "amazon-prime-shipping-gamble-2005",
+    caseStudySlug: "amazon-prime-shipping-gamble-2005",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-07-08T15:00:00+00:00",
@@ -678,6 +716,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "amazon-fire-phone-flop-2014",
+    caseStudySlug: "amazon-fire-phone-flop-2014",
     type: "historical",
     category: "product",
     publishedAt: "2026-07-05T15:00:00+00:00",
@@ -691,6 +730,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "ai-search-referral-collapse-2026",
+    caseStudySlug: "ai-search-referral-collapse-2026",
     type: "current",
     category: "growth",
     publishedAt: "2026-07-01T15:00:00+00:00",
@@ -704,6 +744,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "ai-hiring-assessment-2026",
+    caseStudySlug: "ai-hiring-assessment-2026",
     type: "current",
     category: "hiring",
     publishedAt: "2026-06-28T15:00:00+00:00",
@@ -717,6 +758,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "ai-agent-autonomy-2026",
+    caseStudySlug: "ai-agent-autonomy-2026",
     type: "current",
     category: "product",
     publishedAt: "2026-06-26T15:00:00+00:00",
@@ -755,6 +797,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "competitor-shipped-your-roadmap-2026",
+    caseStudySlug: "competitor-shipped-your-roadmap-2026",
     type: "current",
     category: "strategic",
     publishedAt: "2026-06-15T19:00:00+05:30",
@@ -779,6 +822,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "apple-opens-siri-to-llms-2026",
+    caseStudySlug: "apple-opens-siri-to-llms-2026",
     type: "current",
     category: "strategic",
     publishedAt: "2026-06-08T19:00:00+05:30",
@@ -815,6 +859,7 @@ export const drills: Drill[] = [
   },
   {
     slug: "claude-5-ships-2026",
+    caseStudySlug: "claude-5-ships-2026",
     type: "current",
     category: "strategic",
     publishedAt: "2026-06-01T19:00:00+05:30",

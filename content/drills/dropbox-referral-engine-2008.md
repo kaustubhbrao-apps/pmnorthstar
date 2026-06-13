@@ -1,5 +1,6 @@
 ---
 slug: dropbox-referral-engine-2008
+caseStudySlug: dropbox-referral-engine-2008
 type: historical
 category: Growth
 year: 2008

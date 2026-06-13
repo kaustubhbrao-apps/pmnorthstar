@@ -1,5 +1,6 @@
 ---
 slug: snap-spectacles-launch-2016
+caseStudySlug: snap-spectacles-launch-2016
 type: historical
 category: Product
 year: 2016

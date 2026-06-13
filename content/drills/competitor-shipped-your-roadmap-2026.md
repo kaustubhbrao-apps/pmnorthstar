@@ -1,5 +1,6 @@
 ---
 slug: competitor-shipped-your-roadmap-2026
+caseStudySlug: competitor-shipped-your-roadmap-2026
 type: current
 category: strategic
 publishedAt: '2026-06-15T19:00:00+05:30'

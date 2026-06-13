@@ -1,5 +1,6 @@
 ---
 slug: uber-cold-start-seattle-2011
+caseStudySlug: uber-cold-start-seattle-2011
 type: historical
 category: Strategy
 year: 2011

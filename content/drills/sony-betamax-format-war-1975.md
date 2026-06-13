@@ -1,5 +1,6 @@
 ---
 slug: sony-betamax-format-war-1975
+caseStudySlug: sony-betamax-format-war-1975
 type: historical
 category: Strategy
 year: 1975

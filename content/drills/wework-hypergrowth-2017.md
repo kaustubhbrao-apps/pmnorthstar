@@ -1,5 +1,6 @@
 ---
 slug: wework-hypergrowth-2017
+caseStudySlug: wework-hypergrowth-2017
 type: historical
 category: Founder
 year: 2017

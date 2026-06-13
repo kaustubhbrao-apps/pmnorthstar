@@ -1,5 +1,6 @@
 ---
 slug: meta-vr-pivot-2021
+caseStudySlug: meta-vr-pivot-2021
 title: "The Reality Labs Pivot"
 type: historical
 category: strategic

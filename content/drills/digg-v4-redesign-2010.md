@@ -1,5 +1,6 @@
 ---
 slug: digg-v4-redesign-2010
+caseStudySlug: digg-v4-redesign-2010
 type: historical
 category: Product
 year: 2010

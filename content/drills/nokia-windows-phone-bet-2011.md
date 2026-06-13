@@ -1,5 +1,6 @@
 ---
 slug: nokia-windows-phone-bet-2011
+caseStudySlug: nokia-windows-phone-bet-2011
 type: historical
 category: Strategy
 year: 2011

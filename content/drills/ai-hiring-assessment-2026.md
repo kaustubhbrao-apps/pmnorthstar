@@ -1,5 +1,6 @@
 ---
 slug: ai-hiring-assessment-2026
+caseStudySlug: ai-hiring-assessment-2026
 type: current
 category: hiring
 publishedAt: '2026-06-28T15:00:00+00:00'

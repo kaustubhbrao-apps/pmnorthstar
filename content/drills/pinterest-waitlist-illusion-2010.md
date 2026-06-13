@@ -1,5 +1,6 @@
 ---
 slug: pinterest-waitlist-illusion-2010
+caseStudySlug: pinterest-waitlist-illusion-2010
 type: historical
 category: Growth
 year: 2010

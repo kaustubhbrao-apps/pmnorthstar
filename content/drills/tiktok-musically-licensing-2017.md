@@ -1,5 +1,6 @@
 ---
 slug: tiktok-musically-licensing-2017
+caseStudySlug: tiktok-musically-licensing-2017
 type: historical
 category: Strategy
 year: 2017

@@ -1,5 +1,6 @@
 ---
 slug: apple-iphone-cannibalization-2005
+caseStudySlug: apple-iphone-cannibalization-2005
 type: historical
 category: Strategy
 year: 2005

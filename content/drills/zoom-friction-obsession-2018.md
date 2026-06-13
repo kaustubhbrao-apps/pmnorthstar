@@ -1,5 +1,6 @@
 ---
 slug: zoom-friction-obsession-2018
+caseStudySlug: zoom-friction-obsession-2018
 type: historical
 category: Strategy
 year: 2018

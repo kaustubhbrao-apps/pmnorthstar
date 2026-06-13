@@ -1,5 +1,6 @@
 ---
 slug: ai-search-referral-collapse-2026
+caseStudySlug: ai-search-referral-collapse-2026
 type: current
 category: growth
 publishedAt: '2026-07-01T15:00:00+00:00'

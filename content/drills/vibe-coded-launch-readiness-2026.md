@@ -1,5 +1,6 @@
 ---
 slug: vibe-coded-launch-readiness-2026
+caseStudySlug: vibe-coded-launch-readiness-2026
 type: current
 category: scope
 publishedAt: '2026-11-29T15:00:00+00:00'

@@ -1,5 +1,6 @@
 ---
 slug: apple-opens-siri-to-llms-2026
+caseStudySlug: apple-opens-siri-to-llms-2026
 type: current
 category: strategic
 publishedAt: '2026-06-08T19:00:00+05:30'

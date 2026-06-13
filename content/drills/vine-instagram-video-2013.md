@@ -1,5 +1,6 @@
 ---
 slug: vine-instagram-video-2013
+caseStudySlug: vine-instagram-video-2013
 type: historical
 category: Strategy
 year: 2013

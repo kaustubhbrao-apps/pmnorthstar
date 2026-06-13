@@ -1,5 +1,6 @@
 ---
 slug: instagram-stories-clone-2016
+caseStudySlug: instagram-stories-clone-2016
 type: historical
 category: product
 year: 2016

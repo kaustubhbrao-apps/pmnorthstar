@@ -1,5 +1,6 @@
 ---
 slug: mcp-build-or-skip-2026
+caseStudySlug: mcp-build-or-skip-2026
 type: current
 category: strategic
 publishedAt: '2026-09-13T15:00:00+00:00'

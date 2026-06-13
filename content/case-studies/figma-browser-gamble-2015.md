@@ -1,0 +1,28 @@
+---
+id: cs-figma-web-15
+slug: figma-browser-gamble-2015
+company: Figma
+title: "Betting the Company on WebGL: Figma's Browser Gamble"
+category: Product
+description: When Sketch dominated UI design via native Mac apps, Figma bet everything that complex design tools could run in the browser. It took years to build but changed collaboration forever.
+outcome: Figma dominates the design market, survived the blocked Adobe acquisition, and is highly profitable in 2026 as the standard for spatial and agent-assisted design.
+year: 2015
+tags: ["Engineering", "Growth", "Design"]
+logo: "🚀"
+faqs:
+  - question: Why was Figma's browser bet so risky?
+    answer: In 2015, browsers were considered too slow to handle complex, memory-intensive vector graphics. Native apps like Sketch were the industry standard. Figma had to pioneer new applications of WebGL and WebAssembly to achieve native-like performance.
+  - question: How did multiplayer collaboration change design?
+    answer: By operating in the browser, Figma allowed multiple designers to work on the same file simultaneously, eliminating version control nightmares ("v_final_final.sketch") and turning design from a solitary task into a collaborative, communicative process.
+publishedAt: '2026-06-13'
+---
+
+In the design ecosystem of 2015, the prevailing wisdom was rigid and undisputed: professional design software required the raw, unadulterated power of native desktop applications. The market was dominated by Sketch, a beautifully crafted Mac-only application that had successfully dethroned Adobe Photoshop for UI/UX work. Sketch was fast, native, and deeply integrated into the Apple ecosystem. However, its architecture forced a fundamentally fractured workflow. Design was a solitary endeavor. Designers worked locally, saved massive files to their hard drives, and shared iterations via Dropbox or Slack, leading to the infamous and agonizing proliferation of files named "Dashboard_v2_Final_ActuallyFinal.sketch". Version control was a nightmare, and getting feedback from non-designers—like product managers or engineers—required exporting static PNGs or wrestling with clunky third-party prototyping tools. 
+
+Against this deeply entrenched paradigm, Figma's founders, Dylan Field and Evan Wallace, made a technical gamble that bordered on the absurd. They bet the entire future of their fledgling company on the belief that a professional-grade, highly performant vector design tool could be built entirely within the web browser. The technical hurdles were astronomical. Browsers of the era were notoriously inefficient at handling the memory-intensive, low-latency requirements of complex graphics manipulation. To achieve their vision, Figma's engineering team had to pioneer the usage of cutting-edge web technologies, relying heavily on WebGL for hardware-accelerated rendering and, eventually, WebAssembly to compile C++ code directly into the browser, achieving near-native performance. It was a brutal, multi-year engineering slog during which the company had virtually nothing to show the public, burning through capital while critics dismissed the endeavor as a fool's errand.
+
+When Figma finally launched to the public, the product initially lacked the deep feature set of its native competitors. However, the browser-based architecture unlocked a paradigm shift so profound that it rendered feature parity temporarily irrelevant: true, real-time multiplayer collaboration. By hosting the design file in the cloud and rendering it simultaneously on multiple browsers, Figma allowed designers, PMs, and developers to inhabit the exact same document at the exact same time. The chaotic dance of cursors flying across the screen fundamentally transformed UI design from a siloed, solitary deliverable into a dynamic, communal conversation. It lowered the barrier to entry, allowing stakeholders who had never previously opened a design tool to leave comments directly on the canvas, inspect CSS values, and participate in the creative process.
+
+The network effects of this web-first approach were devastating to incumbents. While Sketch required every collaborator to own a Mac and purchase a license, a Figma file could be shared with a single URL, accessible to anyone with a browser, on any operating system, instantly. Adoption spread virally within organizations. A single designer would start using Figma, share a link with an engineer for handoff, and within months, the entire product org would migrate. The collaborative moat proved impenetrable. Adobe's desperate, multi-billion dollar attempt to acquire Figma in the early 2020s—a deal eventually blocked by global regulators—was the ultimate validation that the browser bet had not just succeeded; it had completely reorganized the industry.
+
+Today, in 2026, Figma's dominance is absolute, serving as the foundational operating system for product creation. Having survived the regulatory collapse of the Adobe merger, Figma aggressively expanded its frontier. The architecture that once merely allowed human collaboration now seamlessly facilitates human-AI collaboration. With the integration of their "Make It" native AI capabilities and autonomous component generation, designers in 2026 collaborate with specialized AI agents directly on the canvas, instantly generating complex interaction states and spatial UI layouts for Apple Vision Pro environments. Dylan Field's crazy gamble proved that in software, whenever there is a conflict between local performance and frictionless collaboration, collaboration will eventually, inevitably win. The browser wasn't just a distribution channel; it was the feature that ate the design world.

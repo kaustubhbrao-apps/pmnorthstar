@@ -1,5 +1,6 @@
 ---
 slug: google-reader-sunset-2013
+caseStudySlug: google-reader-sunset-2013
 type: historical
 category: strategic
 isLeagueMatch: true

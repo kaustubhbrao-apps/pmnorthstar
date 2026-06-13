@@ -1,5 +1,6 @@
 ---
 slug: foundation-model-shipped-your-product-2026
+caseStudySlug: foundation-model-shipped-your-product-2026
 type: current
 category: strategic
 publishedAt: '2026-08-19T15:00:00+00:00'

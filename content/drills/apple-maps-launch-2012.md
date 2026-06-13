@@ -1,5 +1,6 @@
 ---
 slug: apple-maps-launch-2012
+caseStudySlug: apple-maps-launch-2012
 type: historical
 category: Strategy
 year: 2012

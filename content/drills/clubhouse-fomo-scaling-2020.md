@@ -1,5 +1,6 @@
 ---
 slug: clubhouse-fomo-scaling-2020
+caseStudySlug: clubhouse-fomo-scaling-2020
 type: historical
 category: Growth
 year: 2020
