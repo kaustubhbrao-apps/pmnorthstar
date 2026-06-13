@@ -3,7 +3,7 @@ slug: zomato-blinkit-2022
 caseStudySlug: zomato-blinkit-bet
 type: historical
 category: strategic
-publishedAt: '2026-12-02T15:00:00+00:00'
+publishedAt: '2026-12-09T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-12-02T15:00:00+00:00'
 year: 2022

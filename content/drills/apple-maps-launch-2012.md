@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2012
 estimatedMinutes: 20
-publishedAt: '2026-07-12T15:00:00+00:00'
+publishedAt: '2026-07-15T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-07-05T15:00:00+00:00'
 principle: Never ship a core, trust-based utility before it matches the incumbent's quality, even if the incumbent is your rival. Strategic independence is useless if it costs you user trust.
