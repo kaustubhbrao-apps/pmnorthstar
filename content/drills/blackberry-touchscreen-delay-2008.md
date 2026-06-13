@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2008
 estimatedMinutes: 20
-publishedAt: '2026-07-19T15:00:00+00:00'
+publishedAt: '2026-07-15T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-07-12T15:00:00+00:00'
 principle: Incremental half-measures fail when a paradigm shift demands a complete leap. Defending a legacy moat against a disruptive platform shift only guarantees you die with your moat intact.

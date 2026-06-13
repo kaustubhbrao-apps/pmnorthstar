@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2015
 estimatedMinutes: 18
-publishedAt: '2026-08-19T15:00:00+00:00'
+publishedAt: '2026-08-16T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-08-12T15:00:00+00:00'
 principle: Building on a technically impossible foundation is the ultimate competitive moat.

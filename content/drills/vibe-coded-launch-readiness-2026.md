@@ -2,7 +2,7 @@
 slug: vibe-coded-launch-readiness-2026
 type: current
 category: scope
-publishedAt: '2026-11-25T15:00:00+00:00'
+publishedAt: '2026-11-22T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-11-18T15:00:00+00:00'
 estimatedMinutes: 5

@@ -2,7 +2,7 @@
 slug: openai-consumer-device-launches-2026
 type: current
 category: strategic
-publishedAt: '2026-10-04T15:00:00+00:00'
+publishedAt: '2026-10-07T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-09-27T15:00:00+00:00'
 estimatedMinutes: 6

@@ -3,7 +3,7 @@ slug: byjus-overexpansion-2021
 caseStudySlug: byjus-downfall
 type: historical
 category: scaling
-publishedAt: '2026-07-22T15:00:00+00:00'
+publishedAt: '2026-07-19T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-07-15T15:00:00+00:00'
 year: 2021

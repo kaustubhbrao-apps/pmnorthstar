@@ -3,7 +3,7 @@ slug: razorpay-api-pivot-2014
 caseStudySlug: razorpay-pivot-fintech
 type: historical
 category: pivots
-publishedAt: '2026-10-21T15:00:00+00:00'
+publishedAt: '2026-10-25T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-10-14T15:00:00+00:00'
 year: 2014

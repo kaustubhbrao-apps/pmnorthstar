@@ -3,7 +3,7 @@ slug: cred-design-launch-2018
 caseStudySlug: cred-design-fintech
 type: historical
 category: positioning
-publishedAt: '2026-08-05T15:00:00+00:00'
+publishedAt: '2026-07-29T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-07-29T15:00:00+00:00'
 year: 2018

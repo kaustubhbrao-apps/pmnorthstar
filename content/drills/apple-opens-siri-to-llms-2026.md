@@ -2,9 +2,7 @@
 slug: apple-opens-siri-to-llms-2026
 type: current
 category: strategic
-publishedAt: '2026-07-15T15:00:00+00:00'
-isLeagueMatch: true
-leagueEndsAt: '2026-07-08T15:00:00+00:00'
+publishedAt: '2026-06-08T19:00:00+05:30'
 estimatedMinutes: 7
 principle: |
   Platform moves by hyperscalers don't kill verticals — they reshape

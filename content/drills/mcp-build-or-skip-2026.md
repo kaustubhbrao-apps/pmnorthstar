@@ -2,7 +2,8 @@
 slug: mcp-build-or-skip-2026
 type: current
 category: strategic
-publishedAt: '2026-06-11T15:00:00+00:00'
+publishedAt: '2026-09-13T15:00:00+00:00'
+isLeagueMatch: true
 estimatedMinutes: 6
 principle: |
   Standards become moats only when they're inevitable. Investing in

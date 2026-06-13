@@ -4,7 +4,7 @@ type: historical
 category: Crisis
 year: 2021
 estimatedMinutes: 15
-publishedAt: '2026-10-11T15:00:00+00:00'
+publishedAt: '2026-10-14T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-10-04T15:00:00+00:00'
 principle: |
