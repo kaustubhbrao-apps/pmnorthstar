@@ -10,7 +10,7 @@ export interface CaseStudy {
   id: string;
   company: string;
   title: string;
-  category: "Product" | "Growth" | "Strategy" | "Design" | "Failure";
+  category: string;
   description: string;
   outcome: string;
   year: number;
@@ -2290,7 +2290,7 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-export type CaseStudyCategory = "All" | "Product" | "Growth" | "Strategy" | "Design" | "Failure";
+export type CaseStudyCategory = string;
 
 export const caseStudyCategories: CaseStudyCategory[] = [
   "All", "Product", "Growth", "Strategy", "Design", "Failure",

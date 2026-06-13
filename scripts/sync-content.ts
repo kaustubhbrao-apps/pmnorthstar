@@ -391,7 +391,7 @@ export interface CaseStudy {
   id: string;
   company: string;
   title: string;
-  category: "Product" | "Growth" | "Strategy" | "Design" | "Failure";
+  category: string;
   description: string;
   outcome: string;
   year: number;
@@ -412,7 +412,7 @@ export const caseStudies: CaseStudy[] = [
 ${studyBody},
 ];
 
-export type CaseStudyCategory = "All" | "Product" | "Growth" | "Strategy" | "Design" | "Failure";
+export type CaseStudyCategory = string;
 
 export const caseStudyCategories: CaseStudyCategory[] = [
   "All", "Product", "Growth", "Strategy", "Design", "Failure",
@@ -621,8 +621,8 @@ function syncDrills() {
       if (d.isLeagueMatch !== undefined) fields.push(`    isLeagueMatch: ${d.isLeagueMatch}`);
       if (d.leagueEndsAt) fields.push(`    leagueEndsAt: ${ts(d.leagueEndsAt)}`);
       fields.push(`    estimatedMinutes: ${d.estimatedMinutes ?? 8}`);
-      fields.push(`    principle: ${ts(d.principle)}`);
-      fields.push(`    intro: ${ts(d.intro)}`);
+      fields.push(`    principle: ${ts(d.principle || "")}`);
+      fields.push(`    intro: ${ts(d.intro || "")}`);
       fields.push(`    nodes: ${ts(d.nodes)}`);
       fields.push(`    outroBody: ${ts(e.body)}`);
       return `  {\n${fields.join(",\n")},\n  }`;
