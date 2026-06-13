@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2018
 estimatedMinutes: 15
-publishedAt: '2026-12-16T15:00:00+00:00'
+publishedAt: '2026-12-13T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-12-06T15:00:00+00:00'
 principle: Experience is the only defensible moat in a saturated commodity market.

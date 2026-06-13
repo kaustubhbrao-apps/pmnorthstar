@@ -4,7 +4,7 @@ type: historical
 category: Product
 year: 2010
 estimatedMinutes: 15
-publishedAt: '2026-08-12T15:00:00+00:00'
+publishedAt: '2026-08-09T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-08-02T15:00:00+00:00'
 principle: |

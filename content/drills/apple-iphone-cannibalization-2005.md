@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2005
 estimatedMinutes: 20
-publishedAt: '2026-07-15T15:00:00+00:00'
+publishedAt: '2026-07-12T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-07-01T15:00:00+00:00'
 principle: If you don't cannibalize yourself, someone else will.
