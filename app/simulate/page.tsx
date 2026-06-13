@@ -176,54 +176,49 @@ function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: numbe
     }
   }
   
-  // If it's a 100+ point drill AND the league is active, it gets the crazy animation
-  const isBigOne = process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true" && maxPoints >= 100;
-
   return (
     <>
-      {isBigOne && (
-        <style dangerouslySetInnerHTML={{ __html: `
-          @keyframes border-shimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-          .featured-drill-shimmer {
-            position: relative;
-          }
-          .featured-drill-shimmer::before {
-            content: "";
-            position: absolute;
-            inset: -3px;
-            border-radius: 18px;
-            background: linear-gradient(90deg, #FF4B4B, #F5C842, #50C878, #2563EB, #9B8FFF, #FF4B4B);
-            background-size: 300% 300%;
-            animation: border-shimmer 4s ease infinite;
-            z-index: -1;
-          }
-        `}} />
-      )}
-      <div className={isBigOne ? "featured-drill-shimmer mb-6 z-0" : "mb-6"}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes border-shimmer {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .featured-drill-shimmer {
+          position: relative;
+        }
+        .featured-drill-shimmer::before {
+          content: "";
+          position: absolute;
+          inset: -3px;
+          border-radius: 18px;
+          background: linear-gradient(90deg, #FF4B4B, #F5C842, #50C878, #2563EB, #9B8FFF, #FF4B4B);
+          background-size: 300% 300%;
+          animation: border-shimmer 4s ease infinite;
+          z-index: -1;
+        }
+      `}} />
+      <div className="featured-drill-shimmer mb-6 z-0">
         <Link
           href={`/simulate/${drill.slug}`}
           className="block rounded-2xl overflow-hidden transition-all hover:opacity-95 group h-full"
           style={{
             background: "var(--card-bg)",
-            border: isBigOne ? "none" : "1.5px solid var(--card-border)",
-            borderLeft: isBigOne ? "none" : "4px solid var(--brand-primary)",
+            border: "none",
+            borderLeft: "none",
           }}
         >
-          <div className="px-6 py-8 sm:px-10 sm:py-12 relative z-10" style={{ background: "var(--card-bg)", borderRadius: isBigOne ? "15px" : "0" }}>
+          <div className="px-6 py-8 sm:px-10 sm:py-12 relative z-10" style={{ background: "var(--card-bg)", borderRadius: "15px" }}>
             <div className="flex items-center gap-2 mb-4 flex-wrap">
               <span
                 className="text-sm font-mono uppercase px-2 py-1 rounded"
                 style={{
-                  background: isBigOne ? "rgba(245, 200, 66, 0.15)" : "color-mix(in srgb, var(--brand-primary) 12%, transparent)",
-                  color: isBigOne ? "#F5C842" : "var(--brand-primary)",
+                  background: "rgba(245, 200, 66, 0.15)",
+                  color: "#F5C842",
                   letterSpacing: "0.14em",
                 }}
               >
-                {isBigOne ? "Major Matchday" : "Featured drill"}
+                {matchday ? "Major Matchday" : "Featured drill"}
               </span>
               <span
                 className="text-sm font-mono uppercase px-2 py-1 rounded"
@@ -253,7 +248,7 @@ function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: numbe
               >
                 ~{drill.estimatedMinutes} min
               </span>
-              {isBigOne && (
+              {maxPoints > 0 && (
                 <span
                   className="text-sm font-mono font-bold ml-auto animate-pulse"
                   style={{ color: "#F5C842" }}
@@ -277,7 +272,7 @@ function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: numbe
               {drill.intro.split("\n\n")[0]}
             </p>
 
-            <span className="btn-primary group" style={isBigOne ? { background: "#F5C842", color: "#000" } : {}}>
+            <span className="btn-primary group" style={{ background: "#F5C842", color: "#000" }}>
               Play this drill
               <ArrowUpRight
                 size={14}
