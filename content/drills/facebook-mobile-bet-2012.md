@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2012
 estimatedMinutes: 18
-publishedAt: '2026-08-16T15:00:00+00:00'
+publishedAt: '2026-08-05T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-08-09T15:00:00+00:00'
 principle: You cannot win a paradigm shift with a "wrapper" of the old world.

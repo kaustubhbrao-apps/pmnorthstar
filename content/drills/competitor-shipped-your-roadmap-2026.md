@@ -2,7 +2,7 @@
 slug: competitor-shipped-your-roadmap-2026
 type: current
 category: strategic
-publishedAt: '2026-08-02T15:00:00+00:00'
+publishedAt: '2026-07-22T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-07-26T15:00:00+00:00'
 estimatedMinutes: 8

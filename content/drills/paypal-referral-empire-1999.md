@@ -4,7 +4,7 @@ type: historical
 category: Growth
 year: 1999
 estimatedMinutes: 14
-publishedAt: '2026-10-07T15:00:00+00:00'
+publishedAt: '2026-09-27T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-09-30T15:00:00+00:00'
 principle: |

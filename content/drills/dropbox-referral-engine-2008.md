@@ -4,7 +4,7 @@ type: historical
 category: Growth
 year: 2008
 estimatedMinutes: 14
-publishedAt: '2026-08-12T15:00:00+00:00'
+publishedAt: '2026-08-02T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-08-05T15:00:00+00:00'
 principle: Virality is a product feature, not a marketing tactic.
