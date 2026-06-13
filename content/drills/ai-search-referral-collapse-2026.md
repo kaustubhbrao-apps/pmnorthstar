@@ -2,7 +2,7 @@
 slug: ai-search-referral-collapse-2026
 type: current
 category: growth
-publishedAt: '2026-06-17T15:00:00+00:00'
+publishedAt: '2026-06-28T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-06-21T15:00:00+00:00'
 estimatedMinutes: 6

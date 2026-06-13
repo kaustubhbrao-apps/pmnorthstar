@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2017
 estimatedMinutes: 15
-publishedAt: '2026-11-08T15:00:00+00:00'
+publishedAt: '2026-11-18T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-11-11T15:00:00+00:00'
 principle: |

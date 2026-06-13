@@ -2,7 +2,7 @@
 slug: foundation-model-shipped-your-product-2026
 type: current
 category: strategic
-publishedAt: '2026-08-17T19:00:00+05:30'
+publishedAt: '2026-06-06T15:00:00+00:00'
 estimatedMinutes: 6
 principle: |
   When a foundation-model lab absorbs your category as a feature, the

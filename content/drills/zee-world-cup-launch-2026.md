@@ -4,7 +4,7 @@ slug: zee-world-cup-launch-2026
 caseStudySlug: zee-fifa-world-cup-bet
 type: current
 category: product
-publishedAt: '2026-11-25T15:00:00+00:00'
+publishedAt: '2026-12-06T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-11-29T15:00:00+00:00'
 estimatedMinutes: 8
