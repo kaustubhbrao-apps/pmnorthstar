@@ -3,7 +3,7 @@ id: cs-tk17-8891
 slug: tiktok-musically-licensing-2017
 company: ByteDance (TikTok)
 title: "The $1 Billion Lip-Sync: How ByteDance Bought Musical.ly and Conquered the World"
-category: Product
+category: Strategy
 description: In 2017, ByteDance faced a critical decision to penetrate the US market or remain a Chinese tech giant. Their $1 billion acquisition of Musical.ly became the ultimate trojan horse for global dominance.
 outcome: By 2026, TikTok remains the dominant global social video platform with over 2 billion MAUs, successfully navigating complex US-China geopolitical decoupling through localized algorithmic governance.
 year: 2017
@@ -17,7 +17,7 @@ faqs:
     answer: ByteDance had a powerful recommendation algorithm (Douyin) but lacked a western user base. Musical.ly had 60 million US teens but a stagnant product. It was a perfect marriage of tech and distribution.
   - question: How did this impact the social media landscape?
     answer: It forced every major platform to pivot to short-form video (Reels, Shorts). By 2026, the 'TikTokification' of the internet is complete, fundamentally changing how content is discovered without relying on social graphs.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-22T15:00:00+00:00'
 ---
 
 In 2017, Zhang Yiming’s ByteDance was already a titan in China with its news aggregator Toutiao and short-video app Douyin. However, their global ambitions were stalled. Building a consumer social network from scratch in the United States—a market heavily guarded by the Facebook-Instagram-Snapchat oligopoly—seemed impossible. A direct assault would require billions in user acquisition with no guarantee of success. ByteDance needed a bridge into the western teenage consciousness, and they found it in an unexpected place: a Shanghai-based app called Musical.ly.

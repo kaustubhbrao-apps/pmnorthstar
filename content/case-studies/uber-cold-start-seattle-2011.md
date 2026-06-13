@@ -3,7 +3,7 @@ id: cs-uber-2011-843
 slug: uber-cold-start-seattle-2011
 company: Uber
 title: "Uber's Seattle Cold Start: Hacking the Driver Supply Curve in 2011"
-category: Product
+category: Strategy
 description: Expanding outside San Francisco for the first time, Uber faced the classic marketplace cold start problem in Seattle. Their aggressive tactics to guarantee driver liquidity set the playbook for their subsequent global hyper-expansion.
 outcome: The Seattle playbook enabled Uber to dominate global ride-hailing, surviving the turbulent 2010s to become a profitable dispatch network in 2026, now seamlessly managing fleets of autonomous Level 5 robotaxis alongside human drivers.
 year: 2011
@@ -17,7 +17,7 @@ faqs:
     answer: It's the chicken-and-egg dilemma where a platform needs supply (drivers) to attract demand (riders), but needs demand to attract supply. Without both sides present simultaneously, the marketplace fails to function.
   - question: How did Uber solve this in Seattle?
     answer: Uber aggressively subsidized the supply side. They paid drivers guaranteed hourly rates to simply keep the app open and drive around, ensuring that when early riders opened the app, a car was always less than 5 minutes away.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-25T15:00:00+00:00'
 ---
 
 In 2011, Uber (then known as UberCab) was a luxury black-car service operating exclusively in the comfortable, tech-forward bubble of San Francisco. The premise was revolutionary—push a button, get a ride—but the fundamental business model was unproven anywhere else. The decision to expand to Seattle marked the company's first real test of scalability. Here, they collided violently with the most treacherous hurdle in consumer tech: the marketplace cold start problem. To attract riders, Uber needed a robust network of available drivers ensuring low wait times. But to convince professional town car drivers to adopt their experimental iPhone application, they needed a guaranteed stream of paying riders. It was a classic chicken-and-egg dilemma, and failure in Seattle would have signaled to investors that Uber was merely a localized Bay Area novelty rather than a global infrastructure play.

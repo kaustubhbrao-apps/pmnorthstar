@@ -3,7 +3,7 @@ id: cs-ww-2017-901
 slug: wework-hypergrowth-2017
 company: WeWork
 title: "WeWork's 2017 Hypergrowth: The Illusion of Tech Multiples in Real Estate"
-category: Product
+category: Founder
 description: Armed with Vision Fund capital, WeWork aggressively expanded global footprint while positioning itself as a technology company rather than a real estate provider. The mismatch between unit economics and scaling ambitions set the stage for a spectacular reality check.
 outcome: Following a failed 2019 IPO and eventual bankruptcy restructuring, WeWork emerged in 2026 as a leaner, profitable AI-managed flexible workspace provider operating at a fraction of its peak valuation.
 year: 2017
@@ -17,7 +17,7 @@ faqs:
     answer: WeWork successfully convinced investors that its "Space as a Service" model, driven by community analytics and proprietary software for space utilization, warranted the high revenue multiples typically reserved for high-margin software companies.
   - question: What was the fundamental flaw in their 2017 growth model?
     answer: The company engaged in massive asset-liability mismatching—signing 15-year master leases for office space while renting it out on month-to-month contracts. In an economic downturn, revenues could evaporate instantly while liabilities remained fixed.
-publishedAt: '2026-06-13'
+publishedAt: '2026-12-06T15:00:00+00:00'
 ---
 
 In 2017, WeWork was not merely a company; it was a phenomenon that captured the zeitgeist of the late-2010s venture capital boom. Valued at a staggering $20 billion (which would soon balloon to $47 billion), WeWork was aggressively rewriting the rules of commercial real estate. Under the charismatic, albeit erratic, leadership of Adam Neumann, the company positioned itself not as a landlord, but as a "physical social network" and a technology platform. The core narrative was intoxicating: by applying data analytics, community-building algorithms, and tech-enabled design to office space, WeWork could fundamentally alter human productivity and consciousness. Armed with an unprecedented $4.4 billion investment from SoftBank's Vision Fund, WeWork embarked on a hypergrowth trajectory that prioritized top-line revenue and square footage acquisition above all other metrics, including profitability and basic unit economics.

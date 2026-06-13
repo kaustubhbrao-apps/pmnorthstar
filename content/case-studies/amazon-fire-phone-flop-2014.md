@@ -17,7 +17,7 @@ faqs:
     answer: "It solved Amazon's problem (getting customers to buy more things) rather than the customer's problem. Its gimmick features like 3D display drained battery, and it lacked essential Google apps."
   - question: "Did any good come from the failure?"
     answer: "Yes. The hardware team learned vital lessons about restraint and ecosystem building, which they immediately applied to the secret 'Project D'—which became the Amazon Echo."
-publishedAt: '2026-06-13'
+publishedAt: '2026-07-05T15:00:00+00:00'
 ---
 
 By 2014, Amazon was a relentless force in e-commerce, cloud computing, and digital reading via the Kindle. Yet, the company felt vulnerable. The shift to mobile was fully underway, and Amazon recognized that Apple and Google controlled the critical gateways—the smartphone operating systems. If those gatekeepers decided to tax or restrict Amazon's access to consumers, it could pose an existential threat. Driven by Jeff Bezos's desire to own the consumer endpoint, Amazon embarked on a highly secretive, massively funded initiative to build its own smartphone. The goal was not simply to create a good phone, but to create the ultimate portal to the Amazon ecosystem. The resulting device, the Amazon Fire Phone, remains one of the most spectacular and instructive hardware failures in modern technology history.

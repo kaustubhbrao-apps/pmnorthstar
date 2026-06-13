@@ -3,7 +3,7 @@ id: cs-3c4e5f6a
 slug: robinhood-gamestop-crisis-2021
 company: Robinhood
 title: The GameStop Short Squeeze and How Robinhood Survived a Liquidity Nightmare
-category: Product
+category: Strategic
 description: In January 2021, unprecedented retail trading in meme stocks forced Robinhood to halt buying, sparking mass outrage. The company scrambled to raise emergency capital to meet massive clearinghouse deposit requirements.
 outcome: Robinhood raised $3.4 billion in emergency funds, survived the crisis, IPO'd in 2021, and by 2026 had evolved into a comprehensive AI-powered financial hub.
 year: 2021
@@ -17,7 +17,7 @@ faqs:
     answer: The clearinghouse (DTCC) demanded a massive, sudden deposit due to the extreme volatility of meme stocks, which Robinhood did not have the immediate liquidity to cover.
   - question: Did the crisis permanently damage Robinhood's brand?
     answer: While it caused immense short-term brand damage and congressional scrutiny, Robinhood diversified its offerings by 2026 to include AI advisory and robust crypto trading, successfully rebuilding trust.
-publishedAt: '2026-06-13'
+publishedAt: '2026-10-28T15:00:00+00:00'
 ---
 
 The last week of January 2021 will be forever etched in the annals of financial history as the week the internet broke the stock market. At the center of this unprecedented storm was Robinhood, the commission-free trading app that had explicitly built its brand on "democratizing finance for all." Driven by a massive, decentralized retail trading frenzy coordinated on the Reddit forum r/WallStreetBets, millions of amateur investors aggressively bought shares of struggling companies like GameStop (GME), AMC Entertainment, and BlackBerry. This synchronized buying created a massive "short squeeze," devastating institutional hedge funds that had bet heavily against these companies. 

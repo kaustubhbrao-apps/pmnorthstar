@@ -3,7 +3,7 @@ id: cs-openai-dev-26
 slug: openai-consumer-device-launches-2026
 company: OpenAI
 title: The Omnipresent Assistant - How OpenAI's Halo Wearable Redefined Consumer Hardware
-category: Product
+category: Strategic
 description: In late 2025, OpenAI decided to bypass the traditional smartphone ecosystem, launching a dedicated, agent-first wearable device. The move aimed to free ChatGPT from the constraints of iOS and Android app stores.
 outcome: Sold 12 million units in its first two quarters, achieving a 15% market share in the new AI companion hardware category by mid-2026.
 year: 2026
@@ -17,7 +17,7 @@ faqs:
     answer: The limitations of app-based background execution and restrictive OS-level APIs meant their autonomous agents couldn't seamlessly interact with the user's daily life without native hardware integration.
   - question: Did the device replace smartphones?
     answer: Not entirely. While it handles 60% of daily interactions—voice commands, real-time translation, and agentic task delegation—users still rely on screens for heavy media consumption.
-publishedAt: '2026-06-13'
+publishedAt: '2026-10-07T15:00:00+00:00'
 ---
 
 By late 2025, the limitations of the mobile OS duopoly had become the primary bottleneck for the AI revolution. OpenAI's ChatGPT and its fleet of autonomous agents were capable of managing complex, multi-step workflows, from scheduling cross-timezone meetings to negotiating freelance contracts. However, on iOS and Android, these agents were confined within an app sandbox. They required manual invocation, struggled with persistent background execution, and were entirely blocked from intercepting notifications or system-level intents. The user experience was fragmented: you had a world-class AI, but you had to consciously pull your phone out, unlock it, and open an app to use it. The friction was antithetical to the promise of ubiquitous, ambient intelligence.

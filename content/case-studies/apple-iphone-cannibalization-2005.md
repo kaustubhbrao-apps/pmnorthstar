@@ -3,7 +3,7 @@ id: cs-apple-iphone-cannibal-2005
 slug: apple-iphone-cannibalization-2005
 company: Apple
 title: "Cannibalizing the iPod: The Audacious Bet That Birthed the iPhone"
-category: Product
+category: Strategy
 description: "At the peak of the iPod's dominance, Steve Jobs recognized that cell phones with built-in music players posed an existential threat. Apple preemptively cannibalized its own cash cow by developing a revolutionary touchscreen device."
 outcome: "The iPhone became the most profitable product in human history, driving Apple to a $3.5 trillion market cap by 2026."
 year: 2005
@@ -17,7 +17,7 @@ faqs:
     answer: "Mobile phones were beginning to include rudimentary MP3 playback capabilities. Jobs knew users wouldn't want to carry two devices if one was 'good enough' for music."
   - question: "What was the ROKR experiment?"
     answer: "Apple initially partnered with Motorola to build iTunes into the ROKR phone. It was a terrible product, which convinced Jobs that Apple had to build its own hardware."
-publishedAt: '2026-06-13'
+publishedAt: '2026-07-12T15:00:00+00:00'
 ---
 
 In 2005, Apple was riding an unprecedented wave of success, largely driven by a single, culturally defining product: the iPod. The iconic white earbuds and the click-wheel interface had not only resurrected Apple's brand relevance but had also transformed the company's financials, accounting for nearly half of its total revenue. The iPod held a commanding, monopolistic grip on the digital music player market, and the accompanying iTunes Store was generating massive, recurring revenue. In a conventional corporate environment, the strategy would have been entirely focused on protecting this cash cow at all costs—releasing iterative updates, expanding margins, and fighting off direct competitors in the MP3 space. But Steve Jobs was increasingly obsessed with a different, more existential threat: the mobile phone.

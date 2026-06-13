@@ -3,7 +3,7 @@ id: cs-tsla18-4423
 slug: tesla-model-3-automation-2018
 company: Tesla
 title: "Production Hell: When Tesla Tried to Automate the Un-automatable"
-category: Product
+category: Strategy
 description: During the Model 3 ramp-up, Elon Musk bet the company's future on an ultra-automated 'alien dreadnought' factory. The resulting chaos nearly bankrupted Tesla before they embraced human-machine collaboration.
 outcome: Tesla survived to become the world's most valuable automaker, and by 2026, has applied these hard-won lessons to successfully scale production of the CyberCab autonomous fleet.
 year: 2018
@@ -17,7 +17,7 @@ faqs:
     answer: It was Elon Musk's vision for a factory so automated it would look like an alien spaceship, with raw materials going in and finished cars coming out at blistering speeds with zero human intervention.
   - question: Why did the hyper-automation fail?
     answer: They tried to automate complex, unstructured tasks (like routing wire harnesses) that humans do easily but robots struggle with. The robots ended up slowing down the line and causing massive bottlenecks.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-15T15:00:00+00:00'
 ---
 
 In early 2018, Tesla was staring into the abyss. The company had bet its entire future on the Model 3, a mass-market electric vehicle intended to transition Tesla from a niche luxury brand to a dominant global automaker. To achieve the aggressive production targets of 5,000 cars per week, CEO Elon Musk envisioned an "alien dreadnought"—a manufacturing facility so hyper-automated that it would operate at speeds incomprehensible to traditional automakers. He ordered a factory floor practically devoid of humans, relying instead on a complex ballet of robotic arms, automated guided vehicles (AGVs), and intricate conveyor systems. 

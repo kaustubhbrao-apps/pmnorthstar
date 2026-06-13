@@ -3,7 +3,7 @@ id: cs-google-plus-names-2011
 slug: google-plus-real-names-2011
 company: Google
 title: "Google+'s Real Name Policy"
-category: Product
+category: Strategy
 description: In an attempt to build a unified identity layer to compete with Facebook, Google required users of its new social network, Google+, to use their legal names.
 outcome: The policy sparked massive backlash from marginalized communities, stifled early adoption, and contributed significantly to the eventual failure and shutdown of Google+.
 year: 2011
@@ -14,7 +14,7 @@ faqs:
     answer: Google wanted to create a highly monetizable, verified identity layer across all its services (YouTube, Gmail, Search) to match Facebook's targeted advertising capabilities.
   - question: Who was most harmed by this policy?
     answer: Dissidents, LGBTQ+ individuals, domestic abuse survivors, and creators who relied on pseudonymity for safety or branding were abruptly suspended or forced out of the ecosystem.
-publishedAt: '2026-06-13'
+publishedAt: '2026-08-30T15:00:00+00:00'
 ---
 
 ### The Identity Imperative

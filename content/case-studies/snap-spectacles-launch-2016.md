@@ -17,7 +17,7 @@ faqs:
     answer: Snap bypassed traditional retail and online stores, instead dropping bright yellow 'Snapbot' vending machines in random locations for limited times, creating massive scarcity and viral hype.
   - question: Why did the first generation fail commercially?
     answer: By the time Snap ramped up mass production to meet perceived demand, the initial hype had died, and users found the actual utility of the glasses (recording 10-second circular videos) wasn't sticky enough for daily wear.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-04T15:00:00+00:00'
 ---
 
 In the fall of 2016, Snap Inc. rebranded itself as a "camera company" and dropped a masterclass in guerrilla marketing. Rather than a standard Silicon Valley keynote, Snap introduced "Spectacles"—sunglasses with a built-in camera to record first-person video—via mysterious, smiling yellow vending machines called Snapbots. These bots would appear unannounced in random locations like Venice Beach or the Grand Canyon, sell a limited number of glasses, and disappear. The artificial scarcity generated a frenzy. Lines wrapped around blocks, and the $130 glasses began fetching upwards of $1,000 on eBay. For a brief moment, Snap had made wearable tech incredibly cool.

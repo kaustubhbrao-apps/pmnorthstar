@@ -3,7 +3,7 @@ id: cs-mcp-decision-2026
 slug: mcp-build-or-skip-2026
 company: Tech Industry
 title: "The MCP Decision: Build or Skip?"
-category: Product
+category: Strategic
 description: "The Model Context Protocol (MCP) emerged as the definitive standard for AI data ingestion. Companies faced a critical choice: build custom integrations or adopt the open standard."
 outcome: MCP adoption crossed 85% among top SaaS providers by early 2026, making it a competitive necessity rather than an optional feature.
 year: 2026
@@ -14,7 +14,7 @@ faqs:
     answer: An open standard introduced by Anthropic that standardizes how AI models access and interact with external data sources securely.
   - question: Why did companies hesitate to adopt it initially?
     answer: Early concerns revolved around security, giving up proprietary API lock-in, and the engineering resources required to maintain another integration.
-publishedAt: '2026-06-13'
+publishedAt: '2026-09-13T15:00:00+00:00'
 ---
 
 ### The Calm Before the Agentic Storm

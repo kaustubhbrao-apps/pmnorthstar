@@ -3,7 +3,7 @@ id: cs-fsq-swarm-14
 slug: foursquare-swarm-split-2014
 company: Foursquare
 title: "The Great Unbundling: Foursquare's Risky Swarm Split"
-category: Product
+category: Strategy
 description: In 2014, Foursquare faced a bloated app trying to serve two distinct use cases local discovery and social check-ins. They made the controversial decision to split the app into two.
 outcome: Foursquare lost consumer mindshare to Instagram and Google Maps but survived as an enterprise location data broker worth hundreds of millions in 2026.
 year: 2014
@@ -14,7 +14,7 @@ faqs:
     answer: Foursquare split its app because user behavior was bifurcated. Power users wanted fast social check-ins, while casual users wanted Yelp-like local discovery. Trying to serve both in one UI resulted in a bloated, confusing experience.
   - question: What was the consumer reaction?
     answer: The reaction was largely negative. Users hated losing the gamification (mayorships, badges) in the main app and resented being forced to download a second app (Swarm) just to check in.
-publishedAt: '2026-06-13'
+publishedAt: '2026-08-23T15:00:00+00:00'
 ---
 
 In the early 2010s, Foursquare was the undisputed darling of the mobile, location-based social web. Earning a "Mayorship" at your local coffee shop was a genuine status symbol, and the app's gamified check-in system created a fervent, highly engaged user base. However, by 2014, the company faced an escalating product crisis. The core application had grown increasingly bloated, attempting to serve two fundamentally distinct and frequently conflicting use cases within a single, cluttered interface. On one hand, a dedicated cohort of power users relied on the app for rapid-fire social broadcasting—letting their friends know exactly where they were and what they were doing. On the other hand, a broader, more casual demographic was increasingly using Foursquare as a utility for local discovery, treating it as a modern, personalized alternative to Yelp to find the best nearby pizza or craft cocktail. 

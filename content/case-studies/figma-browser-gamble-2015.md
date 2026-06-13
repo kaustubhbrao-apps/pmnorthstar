@@ -3,7 +3,7 @@ id: cs-figma-web-15
 slug: figma-browser-gamble-2015
 company: Figma
 title: "Betting the Company on WebGL: Figma's Browser Gamble"
-category: Product
+category: Strategy
 description: When Sketch dominated UI design via native Mac apps, Figma bet everything that complex design tools could run in the browser. It took years to build but changed collaboration forever.
 outcome: Figma dominates the design market, survived the blocked Adobe acquisition, and is highly profitable in 2026 as the standard for spatial and agent-assisted design.
 year: 2015
@@ -14,7 +14,7 @@ faqs:
     answer: In 2015, browsers were considered too slow to handle complex, memory-intensive vector graphics. Native apps like Sketch were the industry standard. Figma had to pioneer new applications of WebGL and WebAssembly to achieve native-like performance.
   - question: How did multiplayer collaboration change design?
     answer: By operating in the browser, Figma allowed multiple designers to work on the same file simultaneously, eliminating version control nightmares ("v_final_final.sketch") and turning design from a solitary task into a collaborative, communicative process.
-publishedAt: '2026-06-13'
+publishedAt: '2026-08-16T15:00:00+00:00'
 ---
 
 In the design ecosystem of 2015, the prevailing wisdom was rigid and undisputed: professional design software required the raw, unadulterated power of native desktop applications. The market was dominated by Sketch, a beautifully crafted Mac-only application that had successfully dethroned Adobe Photoshop for UI/UX work. Sketch was fast, native, and deeply integrated into the Apple ecosystem. However, its architecture forced a fundamentally fractured workflow. Design was a solitary endeavor. Designers worked locally, saved massive files to their hard drives, and shared iterations via Dropbox or Slack, leading to the infamous and agonizing proliferation of files named "Dashboard_v2_Final_ActuallyFinal.sketch". Version control was a nightmare, and getting feedback from non-designers—like product managers or engineers—required exporting static PNGs or wrestling with clunky third-party prototyping tools. 

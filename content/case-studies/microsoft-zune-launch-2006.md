@@ -3,7 +3,7 @@ id: cs-zune-06
 slug: microsoft-zune-launch-2006
 company: Microsoft
 title: Chasing the iPod - Why the Microsoft Zune Arrived Five Years Too Late
-category: Product
+category: Strategy
 description: Microsoft launched the Zune portable media player in 2006 to combat Apple's absolute dominance with the iPod. Despite decent hardware and innovative social features, it failed to break Apple's ecosystem lock-in.
 outcome: The Zune captured a mere single-digit market share and was discontinued in 2011, though its UI heavily influenced Windows Phone.
 year: 2006
@@ -17,7 +17,7 @@ faqs:
     answer: Actually, no. Tech reviewers praised the Zune's audio quality, FM radio, and the subscription-based Zune Music Pass. The failure was a matter of timing, not product quality.
   - question: What was "Zune to Zune" sharing?
     answer: It was a feature called "Squirt" that allowed users to wirelessly share a song with another Zune user, who could play it three times over three days. It was a precursor to modern social listening.
-publishedAt: '2026-06-13'
+publishedAt: '2026-09-23T15:00:00+00:00'
 ---
 
 By 2006, Apple's iPod was not just a product; it was a cultural phenomenon. It held a suffocating 75% market share in the portable media player market, tightly integrated with the iTunes Store in an ecosystem that locked users into Apple's walled garden. Microsoft, which had previously relied on hardware partners using its "PlaysForSure" DRM standard, realized that this fragmented approach was failing miserably against Apple's vertically integrated juggernaut. In a desperate bid to reclaim the living room and the pocket, Microsoft pivoted to build its own end-to-end hardware and software solution: the Zune.

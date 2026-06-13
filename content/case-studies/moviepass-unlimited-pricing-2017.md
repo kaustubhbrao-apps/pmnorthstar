@@ -3,7 +3,7 @@ id: cs-moviepass-17
 slug: moviepass-unlimited-pricing-2017
 company: MoviePass
 title: The $9.95 Mirage - How MoviePass Subsidized the Cinema Industry Into Bankruptcy
-category: Product
+category: Business
 description: In 2017, MoviePass dropped its subscription price to an unsustainable $9.95 per month for one movie ticket every day. The goal was to build a massive subscriber base and force theaters into revenue-sharing agreements.
 outcome: The company burned through hundreds of millions of dollars as heavy usage outpaced revenue, resulting in spectacular bankruptcy in 2019.
 year: 2017
@@ -17,7 +17,7 @@ faqs:
     answer: They believed they could amass such a massive user base that theaters (like AMC) would be forced to share ticket and concession revenue, and studios would pay them to promote films.
   - question: Why didn't the theaters cooperate?
     answer: Theaters recognized the model was unsustainable and didn't want a third-party intermediary controlling their customer relationships or devaluing the perception of a ticket's price.
-publishedAt: '2026-06-13'
+publishedAt: '2026-09-27T15:00:00+00:00'
 ---
 
 In August 2017, the struggling theater subscription service MoviePass made an announcement that seemed too good to be true, and fundamentally broke the economics of the cinema industry: for a flat fee of $9.95 per month, subscribers could watch one movie per day in theaters. At the time, a single ticket in major US cities cost upwards of $15. MoviePass was paying theaters the full retail price for every ticket its users bought. It was a business model where the cost of goods sold exponentially increased with customer engagement. The tech press was baffled, consumers were ecstatic, and the theater chains were horrified.

@@ -3,7 +3,7 @@ id: cs-club-fomo-9921
 slug: clubhouse-fomo-scaling-2020
 company: Clubhouse
 title: "Manufacturing FOMO: The Rise and Fall of the Audio Social Bubble"
-category: Product
+category: Growth
 description: "Capitalizing on pandemic lockdowns and an invite-only model, Clubhouse engineered unprecedented hype. However, their inability to democratize the product fast enough allowed incumbents to clone their core feature."
 outcome: "Valued at $4B at its peak, the app faded into obscurity as Twitter Spaces dominated, operating as a ghost town by 2026."
 year: 2020
@@ -17,7 +17,7 @@ faqs:
     answer: "Artificial scarcity via invite-only mechanics, high-profile early adopters like Elon Musk, and pandemic-induced isolation that created a massive appetite for live interaction."
   - question: "Why did the app decline so rapidly?"
     answer: "They failed to iterate quickly on content discovery and Android support, allowing established platforms like Twitter to clone the feature for a massive pre-existing audience."
-publishedAt: '2026-06-13'
+publishedAt: '2026-07-26T15:00:00+00:00'
 ---
 
 In the spring of 2020, as the world locked down in the early, disorienting days of the global pandemic, a sudden, massive void emerged in human connection. Into this vacuum stepped Clubhouse, an audio-only social networking app that promised the intimacy of a private dinner party mixed with the serendipitous networking of an exclusive tech conference. At its core, the product was brilliantly simple: live, ephemeral audio rooms where people could drop in, passively listen, and occasionally raise a digital hand to speak on stage. But the true brilliance of Clubhouse's early strategy was not embedded in its software infrastructure; it was in its masterful, highly calculated engineering of artificial scarcity and status-driven FOMO (Fear Of Missing Out).

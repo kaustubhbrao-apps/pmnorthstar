@@ -3,7 +3,7 @@ id: cs-vibe-2026-442
 slug: vibe-coded-launch-readiness-2026
 company: Acme AI
 title: "The 2026 Vibe-Coded Launch Crisis: When Autonomous Agents Met Broken APIs"
-category: Product
+category: Scope
 description: In the rush to capitalize on the agentic economy, a prominent B2B startup launched a "vibe-coded" platform that looked great to humans but completely failed machine-to-machine interactions. The resulting cascade of failed autonomous purchases forced a fundamental pivot in how readiness is measured.
 outcome: The company adopted the CheckIt standard for agent-readiness, eventually recovering to process $50M in autonomous agent transactions by late 2026, proving that "vibes" aren't enough for machine users.
 year: 2026
@@ -17,7 +17,7 @@ faqs:
     answer: A derogatory term for software that relies heavily on visual aesthetics and human-centric UX while neglecting robust API documentation, machine-readable schemas, and deterministic error handling—making it unusable for autonomous AI agents.
   - question: How do agents evaluate software differently than humans?
     answer: While human PMs look for intuitive interfaces and smooth onboarding, autonomous sub-agents scan for well-defined JSON-LD endpoints, structured API contracts, transparent pricing schemas, and frictionless webhook integrations. They abandon platforms instantly if the machine-contract is broken.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-29T15:00:00+00:00'
 ---
 
 In early 2026, the technology sector experienced a profound paradigm shift: the crossover point where autonomous AI agents surpassed human users in total B2B software evaluation and purchasing volume. The "Agentic Web" was no longer a theoretical whitepaper; it was the primary driver of enterprise revenue. Against this backdrop, Acme AI, a highly anticipated workflow automation startup, prepared for its much-hyped public launch. Backed by top-tier venture capital, Acme had spent millions refining a breathtakingly beautiful user interface. Their marketing copy was flawless, their branding was immaculate, and their human beta-testers were ecstatic. However, beneath the polished surface, the product was what the engineering community had begun to derisively call "vibe-coded"—built for the aesthetic consumption of humans, but deeply hostile to the systematic logic of machines.

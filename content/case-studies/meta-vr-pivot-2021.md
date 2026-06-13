@@ -3,7 +3,7 @@ id: cs-meta-vr-21
 slug: meta-vr-pivot-2021
 company: Meta
 title: The Metaverse Gamble - Mark Zuckerberg's $50 Billion Pivot to Reality Labs
-category: Product
+category: Strategic
 description: Facing a decline in core app engagement and existential threats from Apple's privacy changes, Facebook rebranded to Meta in 2021, committing tens of billions of dollars to build a VR/AR "Metaverse."
 outcome: By 2026, the strategy is viewed as a partial success. While the "Ready Player One" metaverse didn't materialize, the Quest line dominates enterprise training and immersive gaming, securing a vital hardware foothold.
 year: 2021
@@ -17,7 +17,7 @@ faqs:
     answer: He believed the mobile internet era was ending and wanted to own the next computing platform to escape the control of Apple and Google's app store policies.
   - question: Was the billions of dollars in R&D wasted?
     answer: No. While the Horizon Worlds software struggled, the hardware R&D resulted in the Quest 3 and Quest 4, which are now standard tools in 2026 for remote 3D collaboration and AI agent visualization.
-publishedAt: '2026-06-13'
+publishedAt: '2026-09-16T15:00:00+00:00'
 ---
 
 In late 2021, Facebook was a company under siege. Its core social apps, while printing billions in ad revenue, were losing the attention of Gen Z to TikTok. More existentially, Apple had just implemented its App Tracking Transparency (ATT) policy in iOS 14.5, effectively blinding Facebook's ad targeting algorithm and wiping out an estimated $10 billion in revenue in a single year. Mark Zuckerberg recognized a terrifying structural weakness: Facebook was entirely dependent on hardware and operating systems controlled by its rivals. The company was an aggressive tenant, but Apple and Google owned the land. 

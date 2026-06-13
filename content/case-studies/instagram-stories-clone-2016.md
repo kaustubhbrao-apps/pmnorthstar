@@ -14,7 +14,7 @@ faqs:
     answer: Kevin Systrom recognized that the "slideshow" format was a universal primitive, much like the feed, and that adopting it quickly was necessary for survival.
   - question: How did the public react to the cloning?
     answer: Initially, there was massive backlash and mockery from the tech press, but users quickly adopted the feature due to the convenience of their existing social graph.
-publishedAt: '2026-06-13'
+publishedAt: '2026-09-06T15:00:00+00:00'
 ---
 
 ### The Ghost Looms Large

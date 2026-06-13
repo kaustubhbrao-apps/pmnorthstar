@@ -3,7 +3,7 @@ id: cs-geo-aeo-2026
 slug: geo-aeo-strategy-2026
 company: Global Publishers & Tech Brands
 title: "The Great Pivot: How SEO Died and GEO/AEO Took Over"
-category: Product
+category: Growth
 description: With AI overviews cannibalizing click-through rates, publishers faced an existential crisis. This case study explores the transition from traditional SEO to Generative Engine Optimization (GEO).
 outcome: Publishers adapted to Answer Engine Optimization, recovering high-intent traffic through AI citations and real-time agent API integrations in 2026.
 year: 2026
@@ -14,7 +14,7 @@ faqs:
     answer: Generative Engine Optimization (GEO) focuses on optimizing content to be cited by AI models and conversational agents rather than ranking on traditional search engine results pages.
   - question: How did MCP (Model Context Protocol) change search?
     answer: MCP allowed websites to expose dynamic, authenticated APIs directly to AI agents, moving optimization from static page scraping to real-time data integration and transactional readiness.
-publishedAt: '2026-06-13'
+publishedAt: '2026-08-26T15:00:00+00:00'
 ---
 
 The collapse of traditional search paradigms began in earnest during the turbulent months of late 2024 and accelerated straight through 2025. For two decades, the digital economy had been fundamentally organized around a single, undisputed mechanism: the ten blue links. Brands and publishers poured billions of dollars into Search Engine Optimization (SEO), constructing massive content silos designed explicitly to satisfy the crawling bots of Google and Bing. But the widespread rollout of AI Overviews, alongside the explosive consumer adoption of conversational answer engines like Perplexity, fundamentally altered the internet's traffic patterns. Click-through rates for informational queries plummeted by a staggering 60% within a single quarter. Users no longer needed to visit a recipe blog, read a software comparison, or parse a travel itinerary; the foundation models synthesized the exact answer in milliseconds, leaving publishers starved of the pageviews that drove their advertising and affiliate revenues. It was an existential crisis that threatened to wipe out an entire generation of digital media companies.

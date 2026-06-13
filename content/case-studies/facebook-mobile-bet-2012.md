@@ -3,7 +3,7 @@ id: cs-fb-mobile-12
 slug: facebook-mobile-bet-2012
 company: Facebook (Meta)
 title: "HTML5 to Native: Facebook's Existential Mobile Pivot"
-category: Product
+category: Strategy
 description: Before going public, Facebook's mobile app was a sluggish HTML5 wrapper, and mobile revenue was zero. Zuckerberg ordered a complete rewrite to native code to save the company.
 outcome: Facebook successfully transitioned to a mobile-first behemoth, driving 98%+ of its revenue from mobile today, setting the stage for its modern AI and spatial computing dominance.
 year: 2012
@@ -14,7 +14,7 @@ faqs:
     answer: Facebook chose HTML5 to achieve "write once, run anywhere" efficiency. They wanted to maintain a single codebase that could deploy across iOS, Android, and the mobile web simultaneously, avoiding the overhead of separate native teams.
   - question: What triggered the pivot to native?
     answer: The HTML5 app was catastrophically slow, prone to crashing, and offered a terrible user experience just as users were rapidly abandoning desktop for mobile. With the IPO looming and zero mobile revenue, a fundamental shift was required to survive.
-publishedAt: '2026-06-13'
+publishedAt: '2026-08-12T15:00:00+00:00'
 ---
 
 In the months leading up to its highly anticipated Initial Public Offering in May 2012, Facebook was grappling with a terrifying internal reality that threatened to derail its future: a complete and total misalignment with the greatest platform shift of the decade. The company boasted a staggering 900 million users, but its business model was entirely bound to the desktop. Mobile usage was skyrocketing globally, yet Facebook’s mobile revenue was exactly zero. Worse still, the product experience on mobile was abysmal. Driven by a desire for engineering efficiency, Mark Zuckerberg had placed a massive strategic bet on HTML5. The Facebook mobile app was essentially a thin, sluggish web wrapper designed to "write once, run anywhere." In practice, it meant it ran terribly everywhere. The app took agonizing seconds to load a photo, scrolling was jagged, and crashes were a daily occurrence for millions of users. 

@@ -3,7 +3,7 @@ id: cs-lego-turnaround-2003
 slug: lego-bankruptcy-comeback-2003
 company: LEGO
 title: "The Brick that Saved LEGO"
-category: Product
+category: Strategy
 description: Facing near-bankruptcy in 2003, LEGO had to strip away years of disastrous over-diversification and return to its core identity.
 outcome: By focusing on profitable core lines, reducing unique parts, and embracing strategic IP licensing, LEGO became the largest and most profitable toy company globally.
 year: 2003
@@ -14,7 +14,7 @@ faqs:
     answer: The company had over-diversified into clothing, theme parks, and video games, while ignoring the rising costs of producing thousands of unique, single-use brick molds.
   - question: Who led the turnaround?
     answer: Jørgen Vig Knudstorp, a former McKinsey consultant appointed as CEO, who ruthlessly cut costs and refocused the company on the iconic LEGO brick.
-publishedAt: '2026-06-13'
+publishedAt: '2026-09-09T15:00:00+00:00'
 ---
 
 ### The Brink of Collapse

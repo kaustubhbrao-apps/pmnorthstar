@@ -17,7 +17,7 @@ faqs:
     answer: "To appease investors and monetize the platform better with publisher content, while breaking the control of a small group of elite power users."
   - question: "Where did the users go?"
     answer: "The vast majority migrated directly to Reddit, dramatically accelerating its path to becoming the dominant community platform of the internet."
-publishedAt: '2026-06-13'
+publishedAt: '2026-08-05T15:00:00+00:00'
 ---
 
 In the mid-2000s, Digg was the undisputed front page of the internet. It was a massive cultural force where a single highly upvoted link on its homepage could generate so much traffic it would routinely crash the target server—a phenomenon famously known as the "Digg Effect." But by 2010, the company was facing extreme internal panic. Despite enormous traffic numbers, they were struggling to monetize the platform effectively, and venture capitalists were aggressively demanding a return. Furthermore, the platform had been heavily gamed by a cabal of "power users"—a small, highly coordinated elite group whose upvotes dictated almost entirely what reached the front page, leaving casual users and mainstream publishers feeling completely voiceless. The leadership, desperate to appease advertisers and democratize the platform, decided a radical overhaul was necessary.

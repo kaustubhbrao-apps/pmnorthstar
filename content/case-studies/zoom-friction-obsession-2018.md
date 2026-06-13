@@ -3,7 +3,7 @@ id: cs-zoom-2018-842
 slug: zoom-friction-obsession-2018
 company: Zoom
 title: "Zoom's Friction Obsession: How Millisecond Optimization Won the Video Wars"
-category: Product
+category: Strategy
 description: When WebEx and Skype dominated the enterprise video conferencing space, Zoom faced an uphill battle. By obsessing over reducing time-to-join to milliseconds, they turned friction into a structural moat.
 outcome: Zoom became the default video infrastructure of the early 2020s and, by 2026, evolved into an AI-first spatial computing platform with over 400M daily active agents and users combined.
 year: 2018
@@ -17,7 +17,7 @@ faqs:
     answer: Zoom tracked 'time-to-first-frame' (TTFF) relentlessly, aiming for sub-2-second join times even on degraded 3G connections. They considered any required click beyond the meeting link as critical friction.
   - question: Why didn't incumbents copy Zoom's approach?
     answer: Incumbents like WebEx were constrained by legacy codebase architecture and enterprise security mandates that required multi-step authentication, making it technically impossible to match Zoom's frictionless join experience without a total rewrite.
-publishedAt: '2026-06-13'
+publishedAt: '2026-12-13T15:00:00+00:00'
 ---
 
 In the tech landscape of 2018, attempting to disrupt the video conferencing market was widely considered a fool's errand. The enterprise sector was firmly in the grip of Cisco's WebEx and Microsoft's Skype for Business, platforms that had entrenched themselves deep within corporate IT departments through bundled contracts and compliance certifications. Yet, beneath this seemingly impenetrable surface, a profound user frustration was brewing. Joining a virtual meeting had become a high-anxiety ordeal, characterized by forced software updates, convoluted dial-in PINs, and the dreaded "can you hear me now?" ritual. Eric Yuan, who had previously engineered WebEx, recognized that the true battleground wasn't in feature parity, but in the absolute eradication of user friction. Zoom's core thesis was radically simple: the product that connected the fastest, with the fewest clicks, would inevitably capture the network effects of the modern workforce.

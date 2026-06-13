@@ -3,7 +3,7 @@ id: cs-nokia-wp-11
 slug: nokia-windows-phone-bet-2011
 company: Nokia
 title: The Burning Platform - Why Nokia's Exclusive Windows Phone Bet Doomed a Giant
-category: Product
+category: Strategy
 description: Faced with plummeting market share in the smartphone era, Nokia CEO Stephen Elop drafted the infamous "Burning Platform" memo. Rather than adopting Android, Nokia made an exclusive, high-stakes alliance with Microsoft's Windows Phone OS.
 outcome: The strategy failed catastrophically. Nokia's phone division was sold to Microsoft for $7.2 billion in 2013 and later written off entirely, marking the end of Nokia's consumer hardware dominance.
 year: 2011
@@ -17,7 +17,7 @@ faqs:
     answer: Management feared Android would commoditize their hardware, making it impossible to differentiate against Samsung and HTC. They believed an exclusive Microsoft deal would make them the premier partner of a third major ecosystem.
   - question: Was the hardware the problem?
     answer: No, the Lumia hardware (like the Lumia 920) was widely praised for its design and camera innovation. The failure was entirely due to the "app gap" and the lack of developer support for Windows Phone.
-publishedAt: '2026-06-13'
+publishedAt: '2026-10-04T15:00:00+00:00'
 ---
 
 In early 2011, Nokia was a company in freefall. Despite inventing the smartphone category years earlier, its proprietary Symbian operating system was archaic, clunky, and entirely unequipped to compete with the fluid, touch-first experiences of Apple's iOS and Google's rapidly expanding Android ecosystem. Nokia's market share, once an invincible 50%, was plummeting. The company was bleeding talent and relevance. Enter Stephen Elop, the newly appointed CEO recruited from Microsoft, who penned the now-infamous "Burning Platform" memo. Elop accurately diagnosed that Nokia was standing on a burning oil rig and needed to jump into the icy waters of a new platform. 

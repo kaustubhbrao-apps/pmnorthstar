@@ -3,7 +3,7 @@ id: cs-5h6j7k8l
 slug: peloton-tread-recall-2021
 company: Peloton
 title: Running on Empty and the Peloton Tread+ Recall Crisis
-category: Product
+category: Crisis
 description: Following tragic accidents involving its Tread+ machines, Peloton initially resisted safety warnings before issuing a massive, costly recall. The crisis destroyed brand trust and accelerated the company's catastrophic post-pandemic decline.
 outcome: The recall cost hundreds of millions and crippled brand trust; by 2026, after multiple executive changes, Peloton pivoted entirely to an AI-coaching software platform, narrowly avoiding bankruptcy.
 year: 2021
@@ -17,7 +17,7 @@ faqs:
     answer: Peloton leadership argued that the machines were safe when used according to the provided instructions and safety keys, framing the issue as user error rather than a design flaw.
   - question: What forced them to change their mind and issue the recall?
     answer: Immense public pressure, plunging stock prices, and a stark, highly publicized warning from the U.S. Consumer Product Safety Commission (CPSC) forced CEO John Foley to reverse course and apologize.
-publishedAt: '2026-06-13'
+publishedAt: '2026-10-14T15:00:00+00:00'
 ---
 
 In the spring of 2021, Peloton was arguably the biggest winner of the pandemic economy. With gyms closed worldwide, the company's sleek, connected stationary bikes and treadmills became the ultimate status symbol for home fitness. Its stock was trading at all-time highs, its instructors were global celebrities, and it could barely manufacture machines fast enough to meet demand. However, beneath this polished veneer of hyper-growth, a catastrophic hardware crisis was brewing—one that would fundamentally shatter the company's brand trust and accelerate a dramatic corporate unraveling.

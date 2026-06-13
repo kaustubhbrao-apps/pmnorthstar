@@ -3,7 +3,7 @@ id: cs-fm-shipped-26
 slug: foundation-model-shipped-your-product-2026
 company: Jasper & Copy.ai
 title: "When the Foundation Model Becomes the Product"
-category: Product
+category: Strategic
 description: Generative AI wrappers faced an extinction event when OpenAI and Anthropic natively integrated their core features into the foundation models. How did the survivors adapt?
 outcome: Companies pivoted to deeply integrated workflow agents and proprietary enterprise data, abandoning generic text generation.
 year: 2026
@@ -14,7 +14,7 @@ faqs:
     answer: During 2022-2023, many startups built billion-dollar valuations simply by providing a user-friendly interface on top of OpenAI's GPT-3 APIs, focusing on copywriting and generic text generation.
   - question: How did the foundational models kill these wrappers?
     answer: As models like GPT-4o and Claude 3.5 introduced native chat interfaces, browser extensions, and built-in prompt templates, the value of a standalone "wrapper" UI dropped to zero, destroying their business models overnight.
-publishedAt: '2026-06-13'
+publishedAt: '2026-08-19T15:00:00+00:00'
 ---
 
 The explosion of Generative AI in late 2022 and 2023 created an unprecedented gold rush in the software industry. Startups like Jasper and Copy.ai reached unicorn status at breakneck speed, achieving massive valuations and staggering Annual Recurring Revenue (ARR) growth. Their product strategy was seemingly simple but highly effective: they acted as an accessibility layer. By wrapping OpenAI’s raw APIs in intuitive, user-friendly interfaces—complete with pre-configured prompt templates for marketing copy, blog posts, and cold emails—they democratized access to LLMs for non-technical users. These "thin wrappers" solved a real UX problem at the time, bridging the gap between a blank command line and a finished marketing asset. For a brief, euphoric window, it seemed as though generating text would be the foundation of the next great wave of SaaS decacorns. 

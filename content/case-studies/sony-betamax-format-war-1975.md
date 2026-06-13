@@ -3,7 +3,7 @@ id: cs-sony75-1122
 slug: sony-betamax-format-war-1975
 company: Sony
 title: "The Superiority Trap: Why Sony's Betamax Lost to JVC's VHS"
-category: Product
+category: Strategy
 description: Sony's Betamax was technologically superior to JVC's VHS format, but Sony's proprietary control and shorter recording times doomed it. This format war became the definitive lesson in ecosystem building over raw specs.
 outcome: Sony learned from this defeat to win the Blu-ray war decades later, and by 2026, continues to apply these open-ecosystem principles to its PlayStation VR and mixed reality spatial computing platforms.
 year: 1975
@@ -17,7 +17,7 @@ faqs:
     answer: Yes, Betamax offered better picture resolution, superior sound, and a more compact cassette design compared to the initial VHS releases.
   - question: Why did VHS win?
     answer: JVC licensed VHS openly to other manufacturers and optimized for longer recording times (up to 2 hours initially, allowing users to record a full movie), whereas Sony kept tight control and prioritized compact size over tape length.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-08T15:00:00+00:00'
 ---
 
 In 1975, Sony introduced the Betamax, an engineering marvel that promised to revolutionize home entertainment. It offered stunning picture quality, robust build design, and a compact tape size. Sony believed that by delivering the absolute best technological product, they would naturally dominate the emerging home video market. However, less than a year later, JVC released the Video Home System (VHS). While VHS was bulkier and offered slightly inferior image quality, JVC understood something profound about the market that Sony’s engineers had missed: consumer behavior trumps technical specs.

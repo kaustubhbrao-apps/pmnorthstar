@@ -3,7 +3,7 @@ id: cs-bb-touch-4821
 slug: blackberry-touchscreen-delay-2008
 company: BlackBerry (RIM)
 title: "The Innovator's Dilemma: BlackBerry's Fatal Keyboard Addiction"
-category: Product
+category: Strategy
 description: "Dismissing the iPhone as a battery-draining toy for consumers, RIM doubled down on physical keyboards and enterprise security. This miscalculation blinded them to the reality that consumers now dictated enterprise IT."
 outcome: "Lost 99% of smartphone market share. Pivoted to enterprise software and automotive security, surviving as a niche firm in 2026."
 year: 2008
@@ -17,7 +17,7 @@ faqs:
     answer: "RIM's first, heavily flawed attempt at a touchscreen device, rushed to market to compete with the iPhone and notorious for its buggy 'SurePress' clickable screen."
   - question: "How did BlackBerry survive?"
     answer: "They eventually abandoned consumer hardware entirely and successfully pivoted to enterprise security software and automotive IoT (QNX)."
-publishedAt: '2026-06-13'
+publishedAt: '2026-07-19T15:00:00+00:00'
 ---
 
 In 2008, Research In Motion (RIM), the Canadian creators of the BlackBerry, stood at the absolute pinnacle of the corporate communication world. Often dubbed "CrackBerry" due to its highly addictive nature, the device was a massive cultural icon and a non-negotiable standard for enterprise IT departments globally. Its value proposition was seemingly unassailable: industry-leading end-to-end security, hyper-efficient data compression that kept telecom carriers happy, and a tactile physical keyboard that allowed executives to type out long emails at breakneck speeds. When Apple launched the radically different original iPhone in 2007, RIM's executive leadership practically scoffed. To them, the iPhone was a fragile, battery-draining, consumer-grade toy with a clumsy virtual keyboard and absolutely zero of the enterprise-grade security that defined the serious business world.

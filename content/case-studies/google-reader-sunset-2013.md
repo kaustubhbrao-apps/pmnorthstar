@@ -3,7 +3,7 @@ id: cs-google-reader-sunset-2013
 slug: google-reader-sunset-2013
 company: Google
 title: "The Sunset of Google Reader"
-category: Product
+category: Strategic
 description: In 2013, Google decided to shut down Google Reader, its beloved RSS aggregator, citing declining usage and a need for corporate focus.
 outcome: The shutdown permanently damaged user trust in Google's ecosystem and catalyzed a shift away from decentralized RSS feeds toward closed, algorithmic social media platforms.
 year: 2013
@@ -14,7 +14,7 @@ faqs:
     answer: While Google cited declining usage, the real reason was an internal mandate to redirect all social and engineering resources toward Google+, the company's ill-fated social network.
   - question: What was the long-term impact of the shutdown?
     answer: It accelerated the decline of RSS as a mainstream technology, pushing publishers and users into the algorithmic walled gardens of Facebook and Twitter.
-publishedAt: '2026-06-13'
+publishedAt: '2026-09-02T15:00:00+00:00'
 ---
 
 ### The Execution of an Open Standard

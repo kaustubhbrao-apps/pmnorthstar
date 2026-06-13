@@ -3,7 +3,7 @@ id: cs-8f7a2b9d
 slug: series-a-mid-pivot-2026
 company: OmniAI
 title: Surviving the Series A Mid-Pivot in the Age of Agentic AI
-category: Product
+category: Founding-funding
 description: OmniAI realized their copilot product was obsolete just weeks before their Series A pitch. They aggressively pivoted to a fully autonomous AI agent platform to survive.
 outcome: OmniAI successfully raised a $30M Series A and became a market leader in agent-to-agent orchestration by mid-2026, boasting over $15M ARR.
 year: 2026
@@ -17,7 +17,7 @@ faqs:
     answer: The release of native multi-agent orchestration platforms like Claude 5 and specialized IDEs like Windsurf made their basic copilot wrapper obsolete overnight.
   - question: How did they manage investor relations during the pivot?
     answer: By being radically transparent, throwing out their previous metrics, and presenting a bold new vision centered on autonomous agent-to-agent negotiation, backed by a working prototype built in 72 hours.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-01T15:00:00+00:00'
 ---
 
 The landscape of artificial intelligence in early 2026 is littered with the corpses of companies that thought "copilots" were the endgame. Just a year prior, building an AI assistant that could read context and generate code, text, or spreadsheets was enough to raise a healthy Seed round. But the release of foundational agentic models—most notably Anthropic's Claude 5 with its native computer-use capabilities and the rise of autonomous agent swarms in tools like Cursor and Windsurf—changed the physics of the software market. OmniAI, a high-flying enterprise AI startup, found themselves in the crosshairs of this extinction event just three weeks before they were scheduled to kick off their Series A fundraising roadshow.

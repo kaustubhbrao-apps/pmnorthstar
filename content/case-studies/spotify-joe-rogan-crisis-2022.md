@@ -3,7 +3,7 @@ id: cs-spot22-9921
 slug: spotify-joe-rogan-crisis-2022
 company: Spotify
 title: "The Creator Conundrum: Navigating the Joe Rogan Boycott"
-category: Product
+category: Strategic
 description: Spotify's exclusive $200M deal with Joe Rogan faced an existential test when artists pulled their music in protest of podcast content. The platform had to choose between its creator investments and its music legacy.
 outcome: Spotify stood by Rogan, establishing itself as an audio-first platform rather than just a music app, paving the way for its 2026 dominance in AI-translated multi-lingual global podcasting.
 year: 2022
@@ -17,7 +17,7 @@ faqs:
     answer: Spotify's margins on music are severely capped by major record labels. Original and exclusive podcasts like Rogan's were their strategic pivot to own content and improve profitability.
   - question: How did Spotify resolve the boycott?
     answer: They introduced content advisory warnings and published their platform rules, but critically, they refused to deplatform Rogan, cementing their position as an open audio platform rather than a curated publisher.
-publishedAt: '2026-06-13'
+publishedAt: '2026-11-11T15:00:00+00:00'
 ---
 
 In early 2022, Spotify found itself at the center of a massive cultural and business storm. Two years prior, the company had executed a massive strategic pivot, attempting to evolve from a low-margin music streaming utility into a high-margin global audio network. The crown jewel of this strategy was a rumored $200 million exclusive licensing deal with The Joe Rogan Experience, the world’s most popular podcast. But when Rogan broadcasted controversial claims regarding COVID-19 vaccines, a coalition of medical professionals and high-profile musicians, led by Neil Young and Joni Mitchell, demanded Spotify remove Rogan or lose their music catalogs.
