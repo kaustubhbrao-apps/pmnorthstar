@@ -167,13 +167,26 @@ function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: numbe
   
   // Calculate max points to detect "the big one"
   let maxPoints = 0;
-  if (drill.nodes) {
-    for (const nodeId in drill.nodes) {
+  if (drill.nodes && drill.nodes.start) {
+    const calculateMaxPath = (nodeId: string, currentScore: number, visited: Set<string>) => {
+      if (visited.has(nodeId)) return;
       const node = drill.nodes[nodeId];
-      if (node.options && node.options.length > 0) {
-        maxPoints += Math.max(...node.options.map((o) => o.points));
+      if (!node || !node.options || node.options.length === 0) {
+        if (currentScore > maxPoints) maxPoints = currentScore;
+        return;
       }
-    }
+      
+      visited.add(nodeId);
+      for (const option of node.options) {
+        const nextScore = currentScore + (option.points || 0);
+        if (option.next) {
+          calculateMaxPath(option.next, nextScore, new Set(visited));
+        } else {
+          if (nextScore > maxPoints) maxPoints = nextScore;
+        }
+      }
+    };
+    calculateMaxPath('start', 0, new Set());
   }
   
   return (
