@@ -1,4 +1,7 @@
 ---
+slug: robinhood-gamestop-crisis-2021
+type: historical
+category: strategic
 title: "The 3AM Margin Call: Clearinghouse Crisis"
 summary: "Navigate a massive clearinghouse liquidity crisis driven by an unprecedented retail trading frenzy. A masterclass in crisis management, PR disasters, and the arcane plumbing of the financial system."
 duration: "15 min"
@@ -482,6 +485,9 @@ nodes:
     prompt: |
       You fought to the bitter end, convinced of your own righteousness. The board fires you, regulators ban you, and you are left isolated, remembered only as a cautionary tale of extreme founder syndrome and systemic risk.
 ---
+slug: robinhood-gamestop-crisis-2021
+type: historical
+category: strategic
 ## What's at stake here
 
 This drill is closely based on the unprecedented events of January 2021, when a massive retail trading frenzy centered around heavily shorted stocks like GameStop (GME) nearly broke the structural plumbing of the U.S. financial system.
