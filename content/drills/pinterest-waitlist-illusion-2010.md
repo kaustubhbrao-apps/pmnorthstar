@@ -4,7 +4,7 @@ type: historical
 category: Growth
 year: 2010
 estimatedMinutes: 14
-publishedAt: '2026-10-04T15:00:00+00:00'
+publishedAt: '2026-10-18T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-10-07T15:00:00+00:00'
 principle: Scarcity is the most powerful tool for engineering early-stage desire.

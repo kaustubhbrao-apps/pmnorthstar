@@ -4,7 +4,7 @@ type: historical
 category: Strategy
 year: 2013
 estimatedMinutes: 15
-publishedAt: '2026-11-18T15:00:00+00:00'
+publishedAt: '2026-12-02T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-11-22T15:00:00+00:00'
 principle: |

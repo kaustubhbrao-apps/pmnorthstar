@@ -4,7 +4,7 @@ type: historical
 category: strategy
 year: 2006
 estimatedMinutes: 15
-publishedAt: '2026-09-06T15:00:00+00:00'
+publishedAt: '2026-09-20T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-09-09T15:00:00+00:00'
 principle: |

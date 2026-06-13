@@ -2,7 +2,7 @@
 slug: ai-hiring-assessment-2026
 type: current
 category: hiring
-publishedAt: '2026-06-08T15:00:00+00:00'
+publishedAt: '2026-06-28T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-06-17T15:00:00+00:00'
 estimatedMinutes: 5

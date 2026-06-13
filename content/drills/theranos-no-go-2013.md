@@ -3,7 +3,7 @@ slug: theranos-no-go-2013
 caseStudySlug: theranos-fraud
 type: historical
 category: crisis
-publishedAt: '2026-11-04T15:00:00+00:00'
+publishedAt: '2026-11-18T15:00:00+00:00'
 isLeagueMatch: true
 leagueEndsAt: '2026-11-08T15:00:00+00:00'
 year: 2013
