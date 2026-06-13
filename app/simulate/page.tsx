@@ -401,7 +401,7 @@ function NoDrillYet() {
         className="text-sm"
         style={{ color: "var(--text-muted)" }}
       >
-        First drill drops Monday, June 1 at 8:30pm IST.
+        First drill drops Friday, June 26 at 12:00am IST.
       </p>
     </div>
   );
