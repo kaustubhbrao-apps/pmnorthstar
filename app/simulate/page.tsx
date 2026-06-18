@@ -15,10 +15,9 @@ export const revalidate = 60; // ISR: Revalidate the leaderboard and play count 
 // Best-effort — a DB hiccup returns 0 and the line simply doesn't render.
 async function totalPlays(): Promise<number> {
   try {
-    const count = await prisma.simulateAttempt.count();
-    return count > 0 ? count + 12450 : 12450;
+    return await prisma.simulateAttempt.count();
   } catch {
-    return 12450;
+    return 0;
   }
 }
 
