@@ -24,7 +24,8 @@ import {
   getBookBySlug,
   getAmazonAffiliateUrl,
 } from "@/data/books";
-import { caseStudies, getCaseStudySlug } from "@/data/caseStudies";
+import { caseStudiesLite as caseStudies } from "@/data/caseStudiesLite";
+import { getCaseStudySlug } from "@/data/caseStudies";
 import { ArrowLeft, ArrowUpRight, BookOpen, Menu, Star, ShoppingCart } from "lucide-react";
 
 interface AuthorPhotoState {

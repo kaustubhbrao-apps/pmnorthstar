@@ -132,6 +132,7 @@ export default function CaseStudyLayout({
               same content twice during hydration. */}
           {faqs.length > 0 && (
             <script
+              key="faq-schema"
               id="ld-faq"
               type="application/ld+json"
               dangerouslySetInnerHTML={{

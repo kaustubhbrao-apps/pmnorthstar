@@ -91,6 +91,7 @@ export default function BookLayout({
     <>
       {/* Book schema — Cagan / Inspired itself as an entity */}
       <script
+        key="book-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -117,6 +118,7 @@ export default function BookLayout({
           Google can connect 'Marty Cagan' to multiple books across the
           site and to his Wikipedia entry when one exists. */}
       <script
+        key="person-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -127,6 +129,7 @@ export default function BookLayout({
       />
       {/* Breadcrumb schema — matches the visible breadcrumbs on the page. */}
       <script
+        key="breadcrumb-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -145,6 +148,7 @@ export default function BookLayout({
           for the People-Also-Ask rich-snippet treatment on Google. */}
       {faqs.length > 0 && (
         <script
+          key="faq-schema"
           id="ld-faq"
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -5,7 +5,6 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { LeagueRulesCarousel } from "@/components/LeagueRulesCarousel";
-import { getSession } from "@/lib/auth";
 
 export const revalidate = 60;
 
@@ -20,8 +19,6 @@ export default async function LeagueHypePage() {
   const leagueMatches = all.filter(d => d.isLeagueMatch);
   const completedMatchdays = 0;
   const totalMatchdays = 50;
-
-  const session = await getSession();
 
   return (
     <SidebarShell activeNav="league" backLabelDesktop="Back to the library" backHref="/">

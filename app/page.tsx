@@ -7,10 +7,10 @@ import {
   getFeaturedBooks,
 } from "@/data/books";
 import {
-  publishedCaseStudies,
-  getCaseStudiesByCategory,
-  CaseStudyCategory,
-} from "@/data/caseStudies";
+  publishedCaseStudiesLite as publishedCaseStudies,
+  getCaseStudiesByCategoryLite as getCaseStudiesByCategory,
+} from "@/data/caseStudiesLite";
+import type { CaseStudyCategory } from "@/data/caseStudies";
 import {
   playlists,
   interleavedPlaylists,
@@ -249,8 +249,7 @@ export default function HomePage() {
         c.outcome.toLowerCase().includes(q) ||
         c.category.toLowerCase().includes(q) ||
         (c.region && c.region.toLowerCase().includes(q)) ||
-        c.tags.some((t) => t.toLowerCase().includes(q)) ||
-        c.content.toLowerCase().includes(q)
+        c.tags.some((t) => t.toLowerCase().includes(q))
       )
         return true;
       // FAQ Q&A matching — surfaces case studies whose FAQs cover

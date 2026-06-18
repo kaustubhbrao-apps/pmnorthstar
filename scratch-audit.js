@@ -1,0 +1,3 @@
+// Mock out imports that data/drills might need if we just import it...
+// Actually data/drills.ts just exports an array.
+// But it's a TS file. We can just use ts-node or npx tsx to run our script!

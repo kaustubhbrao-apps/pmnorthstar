@@ -1,0 +1,22 @@
+A 20-second fast-paced, motion-graphics style hype video for a platform called "Simulation League". 
+Visual Aesthetic: Minimalist, aggressive hacker/indie-tech style. NOT photorealistic. Do NOT generate realistic people, cameras, or real-world locations. Strictly vector-style 2D typography and UI elements.
+Color Palette: Pitch Black (#000000), Pure White (#FFFFFF), Hot Pink (#DB2777), and Brand Red (#F3123C).
+Timing: Synchronize to a heavy, punchy trap beat (around 140 BPM). No smooth easing. Hard, instant smash cuts on the snares and 808s.
+
+Scene 1 (0:00 - 0:02): 
+Pitch black screen. A single blinking cursor appears in a monospaced font: "> INITIALIZING...". Suddenly, a hard smash cut to a massive, full-screen pure white typography on black background saying "DON'T READ.".
+
+Scene 2 (0:02 - 0:04): 
+Instantly flips (color inversion). Black text on a blinding Hot Pink (#DB2777) background saying "PLAY IT.". The screen quickly splits into four flashing horizontal bands with the words: [ PRODUCT ] [ BUSINESS ] [ FOUNDER ] [ STRATEGY ] in a monospaced hacker font.
+
+Scene 3 (0:04 - 0:08): 
+A massive digital counter rapidly spins from 0 to 150, stopping violently at 150 with a camera shake effect. Rapid 4-cut-per-second montage flashes quick questions: "Build the Touchscreen?" "Buy QNX?" "Ignore the Trolls?". Background color violently flips between Black, Red, Pink, and White on every frame cut. 
+
+Scene 4 (0:08 - 0:12): 
+Three square UI blocks (one green, one yellow, one red) fall into place like a slot machine. A massive bold leaderboard slides up from the bottom with the username "simuser1" aggressively taking the #1 spot as their score ticks up rapidly.
+
+Scene 5 (0:12 - 0:15): 
+The words "SIMULATION" and "LEAGUE" slam into each other from opposite sides of the screen. Absolute silence for a split second, then a solid Red (#F3123C) button illuminates the pitch black screen with the text "[ ENTER THE LEAGUE ]" and the URL "pmnorthstar.in/league" below it in faint gray.
+
+Camera Movement: Static, aggressive kinetic typography.
+Text fonts: Space Grotesk (for massive bold text) and JetBrains Mono (for technical overlays).

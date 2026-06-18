@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>northstar — Business Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #E11D48;
+    --text-dark: #111111;
+    --text-muted: #555555;
+    --bg-slide: #FFFFFF;
+    --border: #E5E7EB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  @page {
+    size: 1280px 720px;
+    margin: 0;
+  }
+  
+  body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .slide { 
+    width: 1280px;
+    height: 720px;
+    position: relative; 
+    padding: 80px 100px; 
+    display: flex; 
+    flex-direction: column; 
+    background: white;
+    page-break-after: always;
+    overflow: hidden;
+  }
+
+  /* Persistent Slide Footer */
+  .slide-footer {
+    position: absolute; bottom: 30px; left: 100px; right: 100px;
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.15em;
+    border-top: 1px solid var(--border); padding-top: 16px;
+  }
+  .slide-footer .logo { font-weight: 700; color: var(--text-dark); }
+
+  /* Typography Polish */
+  h1 { font-family: 'Instrument Serif', serif; font-size: 110px; font-weight: 400; line-height: 1; margin-bottom: 24px; color: var(--primary); letter-spacing: -0.02em; }
+  h2 { font-family: 'Instrument Serif', serif; font-size: 56px; font-weight: 400; margin-bottom: 40px; color: var(--text-dark); line-height: 1; letter-spacing: -0.01em; }
+  h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: var(--text-dark); text-transform: uppercase; letter-spacing: 0.05em; }
+  p { font-size: 17px; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; }
+  
+  ul.clean-list { list-style: none; margin-left: 0; }
+  ul.clean-list li { position: relative; padding-left: 24px; font-size: 16px; line-height: 1.6; color: var(--text-muted); margin-bottom: 12px; }
+  ul.clean-list li::before { content: "—"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  strong { color: var(--text-dark); font-weight: 600; }
+
+  /* Classic Editorial Layouts */
+  .columns-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; height: 100%; }
+  .divider-vertical { border-left: 1px solid var(--border); padding-left: 80px; }
+  .header-line { border-bottom: 2px solid var(--text-dark); padding-bottom: 12px; margin-bottom: 24px; }
+  .header-line-red { border-bottom: 2px solid var(--primary); padding-bottom: 12px; margin-bottom: 24px; color: var(--primary); }
+
+  /* Value Prop Canvas Layout */
+  .vpc-box { border: 2px solid var(--text-dark); padding: 30px; position: relative; }
+  .vpc-box.red { border-color: var(--primary); }
+
+  /* 4Ps Layout */
+  .four-p { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+  .four-p-card { border-top: 4px solid var(--text-dark); padding-top: 20px; }
+  .four-p-card.red { border-top-color: var(--primary); }
+  .four-p-card h3 { font-size: 40px; font-family: 'Instrument Serif'; margin-bottom: 10px; color: var(--primary); text-transform: none; letter-spacing: 0; }
+
+  /* SIPOC Layout */
+  .sipoc { display: flex; gap: 10px; text-align: center; margin-top: 40px; }
+  .sipoc-box { flex: 1; border: 2px solid var(--text-dark); padding: 30px 15px; position: relative; background: #fff; }
+  .sipoc-header { font-size: 50px; font-family: 'Instrument Serif'; color: var(--primary); margin-bottom: 10px; line-height: 1; }
+  .sipoc-title { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 13px; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+  /* Tuckman Flow */
+  .tuckman { display: flex; align-items: flex-start; justify-content: space-between; margin-top: 60px; position: relative; }
+  .tuckman::before { content: ''; position: absolute; top: 30px; left: 0; right: 0; height: 2px; background: var(--border); z-index: 1; }
+  .tuckman-step { flex: 1; text-align: center; position: relative; z-index: 2; padding: 0 20px; }
+  .tuckman-circle { width: 60px; height: 60px; background: #fff; border: 4px solid var(--text-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif'; font-size: 30px; margin: 0 auto 20px auto; }
+  .tuckman-step:nth-child(2) .tuckman-circle { border-color: var(--primary); color: var(--primary); }
+  .tuckman-step:nth-child(4) .tuckman-circle { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+  /* CSS Bar Chart */
+  .chart-container { display: flex; align-items: flex-end; justify-content: space-around; height: 320px; border-bottom: 3px solid var(--text-dark); border-left: 3px solid var(--text-dark); padding: 0 40px; margin-top: 20px; }
+  .bar-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; position: relative; width: 80px; }
+  .bar { width: 100%; background: var(--primary); position: relative; }
+  .bar-label-top { position: absolute; top: -35px; left: 50%; transform: translateX(-50%); font-weight: 600; font-size: 20px; color: var(--text-dark); }
+  .bar-label-bottom { position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); font-weight: 700; font-size: 14px; color: var(--text-dark); text-transform: uppercase; white-space: nowrap; }
+
+</style>
+</head>
+<body>
+<!-- SLIDE 1: Title -->
+  <div class="slide slide-1" style="align-items: center; justify-content: center; text-align: center;">
+    <div style="font-size: 13px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 24px;">Team 62 &nbsp;&nbsp;&middot;&nbsp;&nbsp; Strategic Roadmap</div>
+    <h1>northstar</h1>
+    <p style="font-size: 26px; max-width: 700px; color: var(--text-dark); font-weight: 400; line-height: 1.4; margin: 0 auto;">A Strategic Business Plan to Disrupt Product Management Education.</p>
+    <p style="font-size: 16px; max-width: 650px; color: var(--text-muted); margin: 20px auto 0; line-height: 1.6;">Targeting high-intent operators in the Indian tech ecosystem, we leverage an active-execution pedagogy and organic distribution to eliminate acquisition costs and democratize access to elite product frameworks.</p>
+    
+    <div style="margin-top: 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 100%; max-width: 900px; border-top: 1px solid var(--border); padding-top: 40px; text-align: left;">
+      <div>
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-dark);">Vinaya Krishna [Ms]</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">H26118</div>
+      </div>
+      <div>
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-dark);">Subhradeep Ghosh</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">H26110</div>
+      </div>
+      <div>
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-dark);">K Sai Bharathi [Ms]</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">B26187</div>
+      </div>
+      <div>
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-dark);">Dhvani Manish Shah [Ms]</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">B26082</div>
+      </div>
+      <div>
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-dark);">Kaustubh Bhalerao</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">H26084</div>
+      </div>
+      <div>
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-dark);">Lokesh B</div>
+        <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">H26088</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Product Strategy (Value Proposition Canvas) -->
+  <div class="slide">
+    <h2 style="margin-bottom: 20px;">Product Strategy: Value Prop Canvas</h2>
+    <p style="margin-bottom: 30px;">Applying the <strong>Value Proposition Canvas</strong> to ensure perfect product-market fit. By deeply mapping the specific frustrations of aspiring Product Managers against our core features, we create a highly differentiated pedagogical moat that legacy ed-tech cannot replicate.</p>
+    
+    <div class="columns-2" style="gap: 40px;">
+      <div class="vpc-box" style="padding: 24px;">
+        <h3 class="header-line" style="margin-bottom: 16px;">Customer Profile</h3>
+        <p style="margin-bottom: 8px;"><strong>Customer Pains:</strong></p>
+        <ul class="clean-list" style="margin-bottom: 16px;">
+          <li style="margin-bottom: 8px;"><strong>Passive Learning:</strong> Most resources rely on static reading, failing to build execution skills.</li>
+          <li style="margin-bottom: 8px;"><strong>Paywalled:</strong> Entry-level Indian cohorts charge ₹15k-₹40k just for foundational theory.</li>
+        </ul>
+        <p style="margin-top: 16px; margin-bottom: 8px;"><strong>Customer Gains:</strong></p>
+        <ul class="clean-list" style="margin-bottom: 0;">
+          <li style="margin-bottom: 8px;">Pass PM job interviews with absolute confidence.</li>
+          <li style="margin-bottom: 0;">Learn by <em>doing</em> through actual product decisions.</li>
+        </ul>
+      </div>
+      <div class="vpc-box red" style="padding: 24px;">
+        <h3 class="header-line-red" style="margin-bottom: 16px;">Our Value Map</h3>
+        <p style="margin-bottom: 8px;"><strong>Pain Relievers:</strong></p>
+        <ul class="clean-list" style="margin-bottom: 16px;">
+          <li style="margin-bottom: 8px;"><strong>Active Execution:</strong> We force users to make strategic decisions via branching simulations.</li>
+          <li style="margin-bottom: 8px;"><strong>100% Free:</strong> Removing the upfront financial barrier for entry-level talent.</li>
+        </ul>
+        <p style="margin-top: 16px; margin-bottom: 8px;"><strong>Gain Creators:</strong></p>
+        <ul class="clean-list" style="margin-bottom: 0;">
+          <li style="margin-bottom: 8px;">Immediate, operator-level feedback on every decision.</li>
+          <li style="margin-bottom: 0;">Direct recruitment pipelines to enterprise tech companies.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer"><span class="logo">northstar</span><span>01 / Product</span></div>
+  </div>
+
+  <!-- SLIDE 3: Market Analysis (TAM SAM SOM & SWOT) -->
+  <div class="slide">
+    <h2 style="margin-bottom: 20px;">Market Analysis: Sizing & SWOT</h2>
+    <p style="margin-bottom: 30px;">Evaluating the macro-opportunity using the <strong>TAM SAM SOM Model</strong> to prove venture-scale potential within the Indian market. Simultaneously, we assess internal operational capabilities and external risks using a rigorous <strong>SWOT Framework</strong>.</p>
+    
+    <div class="columns-2">
+      <!-- TAM SAM SOM (Left) -->
+      <div>
+        <h3 class="header-line">Market Sizing (India)</h3>
+        <div style="position:relative; width: 340px; height: 340px; margin: 20px auto 0;">
+          <!-- TAM -->
+          <div style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:340px; height:340px; border:2px dashed var(--border); border-radius:50%; display:flex; align-items:flex-start; justify-content:center; padding-top: 30px;">
+            <div style="text-align:center;"><strong>TAM (5.4 Million)</strong><br><span style="font-size:13px; color:var(--text-muted);">Total IT Professionals in India</span></div>
+          </div>
+          <!-- SAM -->
+          <div style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:230px; height:230px; border:2px solid var(--primary); border-radius:50%; display:flex; align-items:flex-start; justify-content:center; padding-top: 25px;">
+            <div style="text-align:center;"><strong>SAM (300,000)</strong><br><span style="font-size:13px; color:var(--text-muted);">Aspiring PMs & Founders</span></div>
+          </div>
+          <!-- SOM -->
+          <div style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:120px; height:120px; background:var(--primary); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center;">
+            <div style="line-height:1.2;"><strong>SOM (50k)</strong><br><span style="font-size:12px; opacity:0.9;">Year 3 Target</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SWOT (Right) -->
+      <div class="divider-vertical">
+        <h3 class="header-line">SWOT Profile</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+          <div style="display: flex; gap: 20px; align-items: center;">
+            <div style="font-family: 'Instrument Serif'; font-size: 60px; color: var(--primary); line-height: 0.8; width: 40px;">S</div>
+            <div><strong style="font-size:15px; display:block; margin-bottom:4px;">Organic Flywheel</strong> <span style="font-size:14px; color:var(--text-muted);">High-quality free tools drop our CAC to zero.</span></div>
+          </div>
+          <div style="display: flex; gap: 20px; align-items: center;">
+            <div style="font-family: 'Instrument Serif'; font-size: 60px; color: var(--text-dark); line-height: 0.8; width: 40px;">W</div>
+            <div><strong style="font-size:15px; display:block; margin-bottom:4px;">Founder Dependency</strong> <span style="font-size:14px; color:var(--text-muted);">Year 1 execution relies entirely on uncompensated time.</span></div>
+          </div>
+          <div style="display: flex; gap: 20px; align-items: center;">
+            <div style="font-family: 'Instrument Serif'; font-size: 60px; color: var(--text-dark); line-height: 0.8; width: 40px;">O</div>
+            <div><strong style="font-size:15px; display:block; margin-bottom:4px;">B2B Recruitment</strong> <span style="font-size:14px; color:var(--text-muted);">Charging enterprises for access to top simulation scorers.</span></div>
+          </div>
+          <div style="display: flex; gap: 20px; align-items: center;">
+            <div style="font-family: 'Instrument Serif'; font-size: 60px; color: var(--text-dark); line-height: 0.8; width: 40px;">T</div>
+            <div><strong style="font-size:15px; display:block; margin-bottom:4px;">AI Disruption</strong> <span style="font-size:14px; color:var(--text-muted);">LLMs can easily summarize text, threatening our core moats.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer"><span class="logo">northstar</span><span>02 / Market</span></div>
+  </div>
+
+  <!-- SLIDE 4: Marketing (4Ps Model & Projections) -->
+  <div class="slide">
+    <h2 style="margin-bottom: 10px;">Marketing Strategy: 4Ps & Projections</h2>
+    <p style="margin-bottom: 24px;">Our <strong>Marketing Mix (4Ps)</strong> is fundamentally dynamic. As we execute against our 3-Year growth projections, our product offering, pricing leverage, and distribution channels evolve to capture a wider audience.</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;">
+      
+      <!-- 4Ps Grid (Spans 2 columns) -->
+      <div style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 30px;">
+        <div class="four-p-card" style="padding-top: 10px;">
+          <h3 style="font-size: 28px; margin-bottom: 8px;">Product</h3>
+          <p style="font-size: 14px;"><strong>Evolution:</strong> Starts as a niche PM library (Yr 1) and scales into a massive multi-vertical (Startups, Design, Finance) ecosystem.</p>
+        </div>
+        <div class="four-p-card red" style="padding-top: 10px;">
+          <h3 style="font-size: 28px; margin-bottom: 8px;">Price</h3>
+          <p style="font-size: 14px;"><strong>Evolution:</strong> Sustains $0 B2C access to build the user moat, eventually unlocking high-ticket B2B Enterprise SaaS as traffic scales.</p>
+        </div>
+        <div class="four-p-card" style="padding-top: 10px;">
+          <h3 style="font-size: 28px; margin-bottom: 8px;">Place</h3>
+          <p style="font-size: 14px;"><strong>Evolution:</strong> Launches hyper-localized for the Indian tech niche, then broadens into a universally accessible global operator platform.</p>
+        </div>
+        <div class="four-p-card" style="padding-top: 10px;">
+          <h3 style="font-size: 28px; margin-bottom: 8px;">Promotion</h3>
+          <p style="font-size: 14px;"><strong>Evolution:</strong> The foundational LinkedIn organic flywheel eventually expands to cross-pollinate traffic across multiple sub-newsletters.</p>
+        </div>
+      </div>
+
+      <!-- Projections (1 column) -->
+      <div style="border-left: 1px solid var(--border); padding-left: 30px;">
+        <h3 class="header-line">Growth Projections</h3>
+        
+        <div style="margin-bottom: 20px;">
+          <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">Year 1 (Nail PM)</div>
+          <div style="font-size: 24px; font-weight: 700; color: var(--text-dark);">50,000 <span style="font-size:14px; font-weight:400; color:var(--text-muted);">MAU</span></div>
+          <div style="font-size: 14px; color: var(--primary); font-weight: 600;">10,000 Subs</div>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">Year 2 (+Startups)</div>
+          <div style="font-size: 24px; font-weight: 700; color: var(--text-dark);">150,000 <span style="font-size:14px; font-weight:400; color:var(--text-muted);">MAU</span></div>
+          <div style="font-size: 14px; color: var(--primary); font-weight: 600;">35,000 Subs</div>
+        </div>
+
+        <div>
+          <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">Year 3 (Multi-Vertical)</div>
+          <div style="font-size: 24px; font-weight: 700; color: var(--text-dark);">300,000+ <span style="font-size:14px; font-weight:400; color:var(--text-muted);">MAU</span></div>
+          <div style="font-size: 14px; color: var(--primary); font-weight: 600;">80,000 Subs</div>
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="slide-footer"><span class="logo">northstar</span><span>03 / Marketing</span></div>
+  </div>
+
+  <!-- SLIDE 5: Finance (Unit Economics Model) -->
+  <div class="slide">
+    <h2>Financial Plan: Unit Economics Model</h2>
+    <div class="columns-2">
+      <div>
+        <p>Financial sustainability is modeled via <strong>Unit Economics (LTV:CAC)</strong>.</p>
+        <p>Our Customer Acquisition Cost (CAC) is held firmly at $0 through our organic SEO and LinkedIn content flywheel.</p>
+        <p>By utilizing serverless architecture, fixed infrastructure costs remain under $50/month. Therefore, the Lifetime Value (LTV) of even a single B2B enterprise client yields infinite operating leverage, allowing us to bootstrap profitability immediately.</p>
+        
+        <table style="margin-top: 40px; border-collapse: collapse; width: 100%;">
+          <tr>
+            <th style="border-bottom: 1px solid var(--border); padding: 12px 0; text-align: left; font-size: 13px; text-transform: uppercase;">Metric</th>
+            <th style="border-bottom: 1px solid var(--border); padding: 12px 0; text-align: right; font-size: 13px; text-transform: uppercase;">Target</th>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--text-muted);">Customer Acquisition Cost (CAC)</td>
+            <td style="padding: 12px 0; border-bottom: 1px solid var(--border); text-align: right; font-size: 16px; color: var(--text-dark);"><strong>$0.00</strong></td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--text-muted);">Gross Profit Margin</td>
+            <td style="padding: 12px 0; border-bottom: 1px solid var(--border); text-align: right; font-size: 16px; font-weight: 700; color: var(--primary);">85%</td>
+          </tr>
+        </table>
+      </div>
+      <div class="divider-vertical">
+        <h3 style="text-align: center; margin-bottom: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dark);">Revenue Projection Matrix</h3>
+        <div class="chart-container">
+          <div class="bar-wrapper">
+            <div class="bar" style="height: 5%;">
+              <div class="bar-label-top">$0</div>
+            </div>
+            <div class="bar-label-bottom">Year 1</div>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="height: 40%; background: var(--text-dark);">
+              <div class="bar-label-top">$180k</div>
+            </div>
+            <div class="bar-label-bottom">Year 2</div>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar" style="height: 95%;">
+              <div class="bar-label-top" style="color: var(--primary);">$1.2M</div>
+            </div>
+            <div class="bar-label-bottom">Year 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer"><span class="logo">northstar</span><span>04 / Finance</span></div>
+  </div>
+
+  <!-- SLIDE 6: Operations (SIPOC Model) -->
+  <div class="slide">
+    <h2>Operations: The SIPOC Model</h2>
+    <p style="margin-bottom: 30px;">To sustain a high volume of output (10+ assets per week) with a lean team, we structure our operational pipeline strictly using the <strong>SIPOC Model</strong> (Suppliers, Inputs, Process, Outputs, Customers). This standardized workflow ensures quality control and eliminates bottlenecks prior to scaling.</p>
+
+    <div class="sipoc">
+      <div class="sipoc-box">
+        <div class="sipoc-header">S</div>
+        <div class="sipoc-title">Suppliers</div>
+        <p style="font-size: 14px; color: var(--text-muted);">Public tech companies, startup blogs, and competitor platforms.</p>
+      </div>
+      <div class="sipoc-box">
+        <div class="sipoc-header">I</div>
+        <div class="sipoc-title">Inputs</div>
+        <p style="font-size: 14px; color: var(--text-muted);">Public earnings data, UX screenshots, and product launch notes.</p>
+      </div>
+      <div class="sipoc-box" style="border-color: var(--primary);">
+        <div class="sipoc-header">P</div>
+        <div class="sipoc-title">Process</div>
+        <p style="font-size: 14px; color: var(--text-muted);">Synthesis into bulleted markdown and automated publishing.</p>
+      </div>
+      <div class="sipoc-box">
+        <div class="sipoc-header">O</div>
+        <div class="sipoc-title">Outputs</div>
+        <p style="font-size: 14px; color: var(--text-muted);">Deep-dive case studies and interactive branching simulations.</p>
+      </div>
+      <div class="sipoc-box">
+        <div class="sipoc-header">C</div>
+        <div class="sipoc-title">Customers</div>
+        <p style="font-size: 14px; color: var(--text-muted);">Aspiring Product Managers and B2B Enterprise HR departments.</p>
+      </div>
+    </div>
+    <div class="slide-footer"><span class="logo">northstar</span><span>05 / Operations</span></div>
+  </div>
+
+  <!-- SLIDE 7: Scaling Strategy (Tuckman Model) -->
+  <div class="slide">
+    <h2>Scaling Strategy: Tuckman's Model</h2>
+    <p style="margin-bottom: 30px;">We map our 24-month multi-vertical expansion using <strong>Tuckman's Stages of Group Development</strong>. As we hit predetermined revenue and traffic milestones, we methodically shift from a flat founding team to a highly specialized hierarchy capable of supporting a $3M+ digital asset portfolio.</p>
+
+    <div class="tuckman">
+      <div class="tuckman-step">
+        <div class="tuckman-circle">1</div>
+        <h3 style="font-size: 18px; margin-bottom: 4px;">Forming</h3>
+        <p style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px;">Nail PM</p>
+        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: #eee; padding: 4px 8px; border-radius: 4px; color: var(--text-dark); display: inline-block; margin-bottom: 12px;">Headcount: 6</div>
+        <p style="font-size: 13px; color: var(--text-muted);">Founders execute all tasks to hit 50k MAU, establishing the interactive product moat at $0 cost.</p>
+      </div>
+      <div class="tuckman-step">
+        <div class="tuckman-circle">2</div>
+        <h3 style="font-size: 18px; margin-bottom: 4px; color: var(--primary);">Storming</h3>
+        <p style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px;">Expand to /startups</p>
+        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: #eee; padding: 4px 8px; border-radius: 4px; color: var(--text-dark); display: inline-block; margin-bottom: 12px;">Headcount: 10</div>
+        <p style="font-size: 13px; color: var(--text-muted);">We hire 4 content writers to safely test delegating tasks while launching our second vertical.</p>
+      </div>
+      <div class="tuckman-step">
+        <div class="tuckman-circle">3</div>
+        <h3 style="font-size: 18px; margin-bottom: 4px;">Norming</h3>
+        <p style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px;">Expand to /marketing</p>
+        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: #eee; padding: 4px 8px; border-radius: 4px; color: var(--text-dark); display: inline-block; margin-bottom: 12px;">Headcount: 15</div>
+        <p style="font-size: 13px; color: var(--text-muted);">5 engineers are hired to build premium tools, locking in standard operating procedures for massive scale.</p>
+      </div>
+      <div class="tuckman-step">
+        <div class="tuckman-circle">4</div>
+        <h3 style="font-size: 18px; margin-bottom: 4px; color: var(--primary);">Performing</h3>
+        <p style="font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px;">$1M-$3M Asset Target</p>
+        <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--primary); padding: 4px 8px; border-radius: 4px; color: white; display: inline-block; margin-bottom: 12px;">Headcount: 25</div>
+        <p style="font-size: 13px; color: var(--text-muted);">10 enterprise sales execs are hired to execute B2B contracts across all final verticals.</p>
+      </div>
+    </div>
+    <div class="slide-footer"><span class="logo">northstar</span><span>06 / Scaling Strategy</span></div>
+  </div>
+
+  <!-- SLIDE 8: Thank You -->
+  <div class="slide" style="align-items: center; justify-content: center; text-align: center;">
+    <h1 style="font-size: 140px; margin-bottom: 20px;">Thank You</h1>
+    <p style="font-size: 32px; color: var(--text-dark);">Questions?</p>
+  </div>
+
+
+</body>
+</html>

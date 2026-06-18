@@ -80,7 +80,8 @@ const HEADER = `// ⚠️  AUTO-GENERATED — DO NOT EDIT BY HAND.
 // ─── TOPICS ─────────────────────────────────────────────────────────────
 function syncTopics() {
   const entries = readAll(path.join(CONTENT, "topics"));
-  INVENTORY.topics = entries.length;
+  const now = new Date();
+  INVENTORY.topics = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
 
   const body = entries
     .map((e) => {
@@ -148,7 +149,8 @@ export const getTopicBySlug = (slug: string): Topic | undefined => {
 // ─── COMPARISONS ────────────────────────────────────────────────────────
 function syncComparisons() {
   const entries = readAll(path.join(CONTENT, "comparisons"));
-  INVENTORY.comparisons = entries.length;
+  const now = new Date();
+  INVENTORY.comparisons = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
 
   const body = entries
     .map((e) => {
@@ -347,7 +349,8 @@ export const getFeaturedBooks = () => books.filter((b) => b.featured);
 // ─── CASE STUDIES ───────────────────────────────────────────────────────
 function syncCaseStudies() {
   const entries = readAll(path.join(CONTENT, "case-studies"));
-  INVENTORY.caseStudies = entries.length;
+  const now = new Date();
+  INVENTORY.caseStudies = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
 
   // Preserve cs-N order — numeric, not alphabetical.
   entries.sort((a, b) => {
@@ -462,6 +465,56 @@ export const isLegacyId = (param: string): boolean =>
 `;
   fs.writeFileSync(path.join(DATA, "caseStudies.ts"), out, "utf8");
   console.log(`✓ data/caseStudies.ts (${entries.length} entries)`);
+
+  const liteStudyBody = entries
+    .map((e) => {
+      const d = e.data;
+      const fields: string[] = [];
+      fields.push(`    id: ${ts(d.id)}`);
+      fields.push(`    company: ${ts(d.company)}`);
+      fields.push(`    title: ${ts(d.title)}`);
+      fields.push(`    category: ${ts(d.category)}`);
+      fields.push(`    description: ${ts(d.description)}`);
+      fields.push(`    logo: ${ts(d.logo)}`);
+      fields.push(`    outcome: ${ts(d.outcome)}`);
+      fields.push(`    year: ${d.year}`);
+      fields.push(`    tags: ${tsArr(d.tags, 6)}`);
+      if (d.region) fields.push(`    region: ${ts(d.region)}`);
+      if (d.publishedAt) fields.push(`    publishedAt: ${ts(d.publishedAt)}`);
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const liteOut = `${HEADER}
+export interface CaseStudyLite {
+  id: string;
+  company: string;
+  title: string;
+  category: string;
+  description: string;
+  logo: string;
+  outcome: string;
+  year: number;
+  tags: string[];
+  region?: "India";
+  publishedAt?: string;
+}
+
+export const caseStudiesLite: CaseStudyLite[] = [
+${liteStudyBody},
+];
+
+export const isCaseStudyPublishedLite = (c: CaseStudyLite, now: Date = new Date()): boolean =>
+  !c.publishedAt || process.env.NODE_ENV !== "production" || new Date(c.publishedAt) <= now;
+
+export const publishedCaseStudiesLite = (now: Date = new Date()): CaseStudyLite[] =>
+  caseStudiesLite.filter((c) => isCaseStudyPublishedLite(c, now));
+
+export const getCaseStudiesByCategoryLite = (cat: string) =>
+  (cat === "All" ? publishedCaseStudiesLite() : publishedCaseStudiesLite().filter((c) => c.category === cat));
+`;
+  fs.writeFileSync(path.join(DATA, "caseStudiesLite.ts"), liteOut, "utf8");
+  console.log(`✓ data/caseStudiesLite.ts (${entries.length} entries)`);
 }
 
 // ─── CASE STUDY FAQs ────────────────────────────────────────────────────
@@ -537,7 +590,8 @@ function syncAIDecodedManifest() {
         new Date(a.data.publishedAt as string).getTime()
     );
 
-  INVENTORY.aiDecoded = entries.length;
+  const now = new Date();
+  INVENTORY.aiDecoded = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
 
   const items = entries
     .map((e) => {
@@ -599,7 +653,8 @@ function syncDrills() {
   }
 
   const entries = readAll(DIR);
-  INVENTORY.drills = entries.length;
+  const now = new Date();
+  INVENTORY.drills = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
 
   // Sort by publishedAt descending so generated array order ≈ display order.
   entries.sort(

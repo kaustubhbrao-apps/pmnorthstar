@@ -82,6 +82,7 @@ export default function CompareLayout({
       />
       {/* BreadcrumbList — matches visible breadcrumbs */}
       <script
+        key="breadcrumb-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -98,6 +99,7 @@ export default function CompareLayout({
       {/* FAQPage — eligible for People-Also-Ask rich snippets */}
       {cmp.faqs && cmp.faqs.length > 0 && (
         <script
+          key="faq-schema"
           id="ld-faq"
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -9,7 +9,7 @@ import { solidColorFor } from "@/lib/category-colors";
 import Link from "next/link";
 
 interface CaseStudyCardProps {
-  study: CaseStudy;
+  study: Omit<CaseStudy, "content">;
   index?: number;
   isLoggedIn?: boolean;
   initialSaved?: boolean;

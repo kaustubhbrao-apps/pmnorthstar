@@ -59,6 +59,7 @@ export default function TopicLayout({
   return (
     <>
       <script
+        key="collection-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -73,6 +74,7 @@ export default function TopicLayout({
       />
       {/* BreadcrumbList — matches the visible breadcrumbs on the page */}
       <script
+        key="breadcrumb-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -89,6 +91,7 @@ export default function TopicLayout({
       {/* FAQPage — eligible for People-Also-Ask rich snippets */}
       {topic.faqs && topic.faqs.length > 0 && (
         <script
+          key="faq-schema"
           id="ld-faq"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
