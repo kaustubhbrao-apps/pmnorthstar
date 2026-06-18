@@ -89,4 +89,16 @@ export function track(event: AnalyticsEvent) {
   // Vercel Analytics accepts (name, props). Strip the discriminator.
   const { name, ...props } = event as { name: string } & Record<string, unknown>;
   vercelTrack(name, props as Record<string, string | number | boolean | null>);
+
+  // Also log to our Supabase AnalyticsCount table
+  if (typeof window !== "undefined") {
+    // Fire and forget to Supabase API
+    fetch("/api/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(event),
+    }).catch(() => {
+      // Ignore network errors for tracking
+    });
+  }
 }

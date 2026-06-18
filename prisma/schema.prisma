@@ -179,3 +179,12 @@ model PageView {
 
   @@map("page_views")
 }
+
+model AnalyticsCount {
+  eventKey  String   @id @map("event_key")
+  name      String
+  count     Int      @default(0)
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("analytics_counts")
+}
