@@ -147,6 +147,20 @@ export function SimulatePlayer({
   const startDrillLogic = useCallback(() => {
     track({ name: "simulateit_drill_started", drill_slug: drill.slug });
     loggedCompletionRef.current = false;
+    
+    // Log the attempt right when they click the start CTA (counts as a play)
+    fetch("/api/simulate/log-attempt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        drillSlug: drill.slug,
+        score: 0,
+        maxPossible: 0,
+      }),
+      keepalive: true,
+    }).catch(() => {
+      /* swallow */
+    });
     setState({
       phase: "decision",
       currentNodeId: "start",
@@ -246,18 +260,7 @@ export function SimulatePlayer({
           });
         }
 
-        fetch("/api/simulate/log-attempt", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            drillSlug: drill.slug,
-            score: finalScore,
-            maxPossible: finalMax,
-          }),
-          keepalive: true,
-        }).catch(() => {
-          /* swallow */
-        });
+      // The attempt has already been anonymously logged at the start of the drill to track clicks.
       }
       setState((s) => (s.phase !== "reveal" ? s : { ...s, phase: "outcome", currentNodeId: nextId }));
     } else {
