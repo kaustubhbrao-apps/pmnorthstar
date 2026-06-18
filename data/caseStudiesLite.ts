@@ -887,16 +887,16 @@ export const caseStudiesLite: CaseStudyLite[] = [
   {
     id: "cs-36",
     company: "Kodak",
-    title: "Kodak Invented Digital Camera and Still Failed",
+    title: "Kodak Didn't Hide the Digital Camera — It Was Trapped by Its Business Model",
     category: "Failure",
-    description: "Kodak engineer Steve Sasson built the first digital camera in 1975. Management buried it to protect film revenue. By 2012, Kodak filed for bankruptcy — killed by their own invention.",
-    logo: "📷",
-    outcome: "Filed Chapter 11 in 2012. The ultimate innovator's dilemma cautionary tale.",
+    description: "The popular narrative says Kodak invented the digital camera in 1975 and buried it. The truth is they invested billions in digital R&D and led the market in the early 2000s—but couldn't escape the inertia of their highly profitable film business model.",
+    logo: "📸",
+    outcome: "Filed Chapter 11 in 2012. A lesson in business model inertia, not just technological disruption.",
     year: 2012,
     tags: [
       "disruption",
       "innovator's dilemma",
-      "film"
+      "business model"
     ],
     publishedAt: "2026-05-18",
   },
