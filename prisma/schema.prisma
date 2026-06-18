@@ -171,3 +171,11 @@ model SimulateAttempt {
   @@index([drillSlug])
   @@map("simulate_attempts")
 }
+
+model PageView {
+  path      String   @id
+  count     Int      @default(0)
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("page_views")
+}

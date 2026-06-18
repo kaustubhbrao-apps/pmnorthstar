@@ -8,6 +8,7 @@ import { Byline } from "@/components/Byline";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 import { solidColorFor } from "@/lib/category-colors";
+import { ViewCounter } from "@/components/ViewCounter";
 
 // ISR: re-render hourly so a scheduled (future-dated) article goes live on
 // its publishedAt date without a redeploy.
@@ -84,6 +85,8 @@ export default function AIDecodedArticlePage({
                 year: "numeric",
               })}
             </span>
+            <span className="w-px h-3 hidden sm:inline-block" style={{ background: "var(--card-border)" }} />
+            <ViewCounter path={`/ai-decoded/${params.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
           </div>
 
           <h1

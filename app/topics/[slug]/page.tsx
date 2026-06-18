@@ -9,6 +9,7 @@ import { getTopicBySlug, topics, publishedTopics } from "@/data/topics";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { Footer } from "@/components/Footer";
+import { ViewCounter } from "@/components/ViewCounter";
 import {
   CASE_STUDY_COUNT,
 } from "@/data/inventory-counts";
@@ -67,16 +68,19 @@ export default function TopicPage({ params }: PageProps) {
                 { label: topic.title },
               ]}
             />
-            <span
-              className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md mb-4 sm:mb-5"
-              style={{
-                background: topic.accentColor,
-                color: "#ffffff",
-                letterSpacing: "0.12em",
-              }}
-            >
-              {topic.eyebrow}
-            </span>
+            <div className="flex items-center gap-4 mb-4 sm:mb-5">
+              <span
+                className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
+                style={{
+                  background: topic.accentColor,
+                  color: "#ffffff",
+                  letterSpacing: "0.12em",
+                }}
+              >
+                {topic.eyebrow}
+              </span>
+              <ViewCounter path={`/topics/${topic.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
+            </div>
             <h1
               className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"
               style={{

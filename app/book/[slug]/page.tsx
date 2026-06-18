@@ -17,6 +17,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BookFaqs } from "@/components/BookFaqs";
 import { getBookFaqs } from "@/data/bookFaqs";
 import { Byline } from "@/components/Byline";
+import { ViewCounter } from "@/components/ViewCounter";
 import { SITE_LAST_REVIEWED } from "@/lib/site";
 import {
   books,
@@ -190,6 +191,8 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                 <span className="text-xs" style={{ color: "var(--text-faint)" }}>
                   {book.year} · {book.pages} pages
                 </span>
+                <span className="w-px h-3 hidden sm:inline-block" style={{ background: "var(--card-border)" }} />
+                <ViewCounter path={`/book/${params.slug}`} className="text-xs text-[var(--text-faint)]" />
               </div>
 <h1
   className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-4"

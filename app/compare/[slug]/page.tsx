@@ -11,6 +11,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import { ViewCounter } from "@/components/ViewCounter";
 
 export default function ComparePage({ params }: { params: { slug: string } }) {
   const cmp = getComparisonBySlug(params.slug);
@@ -52,16 +53,19 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                 { label: cmp.title },
               ]}
             />
-            <span
-              className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md mb-4 sm:mb-5"
-              style={{
-                background: cmp.accentColor,
-                color: "#ffffff",
-                letterSpacing: "0.12em",
-              }}
-            >
-              {cmp.eyebrow}
-            </span>
+            <div className="flex items-center gap-4 mb-4 sm:mb-5">
+              <span
+                className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
+                style={{
+                  background: cmp.accentColor,
+                  color: "#ffffff",
+                  letterSpacing: "0.12em",
+                }}
+              >
+                {cmp.eyebrow}
+              </span>
+              <ViewCounter path={`/compare/${cmp.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
+            </div>
             <h1
               className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"
               style={{

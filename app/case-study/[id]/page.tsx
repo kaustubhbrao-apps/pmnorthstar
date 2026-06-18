@@ -17,6 +17,7 @@ import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { ArrowLeft, ArrowUpRight, TrendingUp, TrendingDown, Clock, Menu } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { ViewCounter } from "@/components/ViewCounter";
 
 const categoryColors: Record<string, string> = {
   Product: "#9B8FFF",
@@ -199,6 +200,8 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                 </span>
                 <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
                 <span className="meta-mono text-sm">{study.company} · {study.year}</span>
+                <span className="w-px h-3 hidden sm:inline-block" style={{ background: "var(--card-border)" }} />
+                <ViewCounter path={`/case-study/${study.id}`} className="meta-mono text-sm text-[var(--text-faint)]" />
               </div>
 
               <div className="flex items-start gap-5 mb-6">
