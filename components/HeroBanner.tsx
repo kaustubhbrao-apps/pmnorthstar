@@ -4,6 +4,7 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { aiDecodedManifest } from "@/data/aiDecodedManifest";
+import { publishedDrills } from "@/data/drills";
 import {
   CASE_STUDY_COUNT,
   BOOK_COUNT,
@@ -16,7 +17,15 @@ interface HeroBannerProps {
 }
 
 const latestAI = aiDecodedManifest[0];
+const latestDrill = publishedDrills()[0];
 const CHECKIT_TOTAL = 35;
+
+function drillTitle(slug: string): string {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", {
@@ -60,55 +69,70 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
     <section
       className="mx-4 sm:mx-6 mt-4 sm:mt-6 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-5 lg:gap-8"
     >
-      {/* ── Left: Simulation League Video Banner (Main Takeover) ── */}
+      {/* ── Left: Latest Simulation Drill ── */}
       <Link
-        href={`/league`}
+        href={`/simulate/${latestDrill.slug}`}
         className="rounded-2xl px-6 sm:px-10 py-10 sm:py-14 transition-all group flex flex-col relative overflow-hidden"
         style={{
           background: "var(--card-bg)",
-          border: "1.5px solid var(--brand-primary)",
+          border: "1.5px solid var(--card-border)",
         }}
       >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-overlay transition-all duration-500 group-hover:opacity-30 group-hover:scale-105"
-          src="/simulation-league-promo.mp4"
-          style={{ zIndex: 0 }}
-        />
         <div 
-          className="absolute inset-0 pointer-events-none opacity-[0.04] z-10 mix-blend-overlay"
+          className="absolute inset-0 pointer-events-none opacity-[0.03] z-10 mix-blend-overlay"
           style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}
         />
-        <div className="relative z-20 flex-1 flex flex-col justify-center items-start">
-          <div 
-            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 border rounded self-start"
-            style={{ borderColor: "var(--border-subtle)", background: "var(--card-bg)", backdropFilter: "blur(4px)" }}
-          >
-            <div className="w-1.5 h-1.5 bg-[var(--brand-primary)] animate-pulse rounded-full" />
-            <span className="font-mono font-bold tracking-widest uppercase text-xs" style={{ color: "var(--text-primary)" }}>
-              Starts June 26
-            </span>
+        <div className="relative z-20 flex-1 flex flex-col justify-between items-start h-full">
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <span
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase px-2.5 py-1 rounded-md"
+                style={{
+                  background: "#DB2777",
+                  color: "#ffffff",
+                  letterSpacing: "0.12em",
+                }}
+              >
+                SimulateIt
+              </span>
+              <span
+                className="font-mono text-xs uppercase tracking-wider"
+                style={{ color: "var(--text-faint)" }}
+              >
+                Latest Scenario
+              </span>
+            </div>
+
+            <h1
+              className="text-4xl sm:text-5xl lg:text-[4rem] font-bold leading-[1.05] mb-6 tracking-tight"
+              style={{
+                color: "var(--text-primary)",
+                letterSpacing: "-0.03em",
+              }}
+            >
+              {drillTitle(latestDrill.slug)}
+            </h1>
+            <p
+              className="text-lg sm:text-xl leading-relaxed mb-10 max-w-xl"
+              style={{ color: "var(--text-muted)" }}
+            >
+              {latestDrill.intro.split("\n\n")[0]}
+            </p>
           </div>
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-[5.5rem] font-black tracking-tighter mb-6 uppercase leading-[0.85]" style={{ color: "var(--text-primary)" }}>
-            SIMULATION<br />
-            <span style={{ color: "var(--brand-primary)", textShadow: "0 0 20px rgba(243,18,60,0.3)" }}>LEAGUE</span>
-          </h1>
-          <p className="text-lg sm:text-xl leading-relaxed mb-10 max-w-lg" style={{ color: "var(--text-muted)" }}>
-            The ultimate proving ground for Builders and PMs. Can you stay at the top across 50 intense Matchdays?
-          </p>
-          <div className="w-full max-w-md mt-auto">
-            <div className="p-4 sm:p-5 rounded-xl border" style={{ background: "var(--card-bg)", borderColor: "var(--border-subtle)", backdropFilter: "blur(12px)" }}>
-              <div className="flex justify-between items-center mb-5">
-                <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>50 Matchdays</span>
-                <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--text-faint)" }}>Season 1</span>
-              </div>
-              <div className="btn-primary w-full flex justify-center items-center gap-2 text-base py-3.5 shadow-[0_0_20px_rgba(243,18,60,0.3)] border-none">
-                Enter the League
-                <ArrowUpRight size={18} strokeWidth={2.5} />
-              </div>
+
+          <div className="w-full mt-auto pt-6 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+            <div className="flex items-center justify-between gap-4">
+              <span className="font-semibold text-lg inline-flex items-center gap-2" style={{ color: "#DB2777" }}>
+                Play this scenario
+                <ArrowUpRight
+                  size={18}
+                  strokeWidth={2.5}
+                  className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </span>
+              <span className="font-mono text-sm uppercase font-semibold" style={{ color: "var(--text-faint)" }}>
+                {DRILL_COUNT} drills available
+              </span>
             </div>
           </div>
         </div>

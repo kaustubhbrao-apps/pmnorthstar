@@ -7,7 +7,7 @@
 export const CASE_STUDY_COUNT = 82;
 export const BOOK_COUNT = 30;
 export const PLAYLIST_COUNT = 18;
-export const TOPIC_COUNT = 5;
+export const TOPIC_COUNT = 6;
 export const COMPARISON_COUNT = 7;
 export const AI_DECODED_COUNT = 19;
-export const DRILL_COUNT = 7;
+export const DRILL_COUNT = 8;
