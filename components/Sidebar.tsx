@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, Trophy } from "lucide-react";
+import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, Trophy, ArrowUpRight } from "lucide-react";
 import {
   CASE_STUDY_COUNT,
   BOOK_COUNT,
@@ -215,9 +215,24 @@ export function Sidebar({
           </div>
         </nav>
 
-        {/* Footer mark */}
-        <div className="px-3 pt-4" style={{ borderTop: "1.5px solid var(--sidebar-border)" }}>
-          <p className="text-sm" style={{ color: "var(--text-faint)" }}>v3 public beta</p>
+        {/* Footer mark & Product Hunt Backlink */}
+        <div className="px-3 pt-4 pb-2" style={{ borderTop: "1.5px solid var(--sidebar-border)" }}>
+          <a
+            href="https://www.producthunt.com/products/northstar-3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 mb-3 px-2.5 py-2 rounded-lg transition-transform hover:-translate-y-0.5 shadow-sm"
+            style={{ background: "#DA552F", color: "#ffffff" }}
+          >
+            <div className="flex flex-col flex-1">
+              <span className="text-[9px] font-bold uppercase tracking-widest opacity-90 leading-none mb-1">Featured on</span>
+              <span className="text-[13px] font-bold leading-none tracking-tight">Product Hunt</span>
+            </div>
+            <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center flex-shrink-0" style={{ color: "#DA552F" }}>
+              <ArrowUpRight size={12} strokeWidth={3} />
+            </div>
+          </a>
+          <p className="text-xs" style={{ color: "var(--text-faint)" }}>v3 public beta</p>
         </div>
       </aside>
     </>
