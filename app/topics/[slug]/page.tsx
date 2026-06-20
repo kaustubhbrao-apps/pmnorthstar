@@ -10,6 +10,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { Footer } from "@/components/Footer";
 import { ViewCounter } from "@/components/ViewCounter";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 import {
   CASE_STUDY_COUNT,
 } from "@/data/inventory-counts";
@@ -79,7 +80,16 @@ export default function TopicPage({ params }: PageProps) {
               >
                 {topic.eyebrow}
               </span>
-              <ViewCounter path={`/topics/${topic.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
+              <div className="flex items-center gap-3">
+                <ViewCounter path={`/topics/${topic.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
+                <SmartSaveButton resource={{
+                  id: topic.slug,
+                  title: topic.title,
+                  author: "northstar collections",
+                  category: "Topic",
+                  link: `/topics/${topic.slug}`
+                }} />
+              </div>
             </div>
             <h1
               className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"

@@ -9,6 +9,7 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
 import { solidColorFor } from "@/lib/category-colors";
 import { ViewCounter } from "@/components/ViewCounter";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 
 // ISR: re-render hourly so a scheduled (future-dated) article goes live on
 // its publishedAt date without a redeploy.
@@ -106,7 +107,16 @@ export default function AIDecodedArticlePage({
             {fm.excerpt}
           </p>
 
-          <Byline label="Written" date={fm.updatedAt ?? fm.publishedAt} />
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <Byline label="Written" date={fm.updatedAt ?? fm.publishedAt} />
+            <SmartSaveButton resource={{
+              id: fm.slug,
+              title: fm.title,
+              author: "northstar editorial",
+              category: fm.category,
+              link: `/ai-decoded/${fm.slug}`
+            }} />
+          </div>
         </div>
       </section>
 

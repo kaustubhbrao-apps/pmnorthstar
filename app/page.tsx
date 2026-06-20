@@ -21,6 +21,7 @@ import {
 } from "@/data/learn";
 import { Sidebar } from "@/components/Sidebar";
 import { TopNav } from "@/components/TopNav";
+import { SaveButton } from "@/components/SaveButton";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionRow } from "@/components/SectionRow";
 import { getCategoryColor } from "@/lib/category-colors";
@@ -982,22 +983,34 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4">
                 {topics.map((t) => (
-                  <Link
-                    key={t.slug}
-                    href={`/topics/${t.slug}`}
-                    className="playlist-card surface p-4 sm:p-5 group"
-                    style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}
-                  >
-                    <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: t.accentColor, opacity: 0.85 }}>
-                      {t.eyebrow}
-                    </p>
-                    <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                      {t.title}
-                    </p>
-                    <p className="text-sm font-medium" style={{ color: t.accentColor }}>
-                      {t.caseStudyIds.length} case studies →
-                    </p>
-                  </Link>
+                  <div key={t.slug} className="playlist-card surface flex flex-col overflow-hidden" style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}>
+                    <Link
+                      href={`/topics/${t.slug}`}
+                      className="p-4 sm:p-5 group flex-1"
+                    >
+                      <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: t.accentColor, opacity: 0.85 }}>
+                        {t.eyebrow}
+                      </p>
+                      <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
+                        {t.title}
+                      </p>
+                      <p className="text-sm font-medium" style={{ color: t.accentColor }}>
+                        {t.caseStudyIds.length} case studies →
+                      </p>
+                    </Link>
+                    <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
+                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Explore topic</span>
+                      <SaveButton
+                        resource={{ id: t.slug, title: t.title, author: "northstar", category: "Topic", link: `/topics/${t.slug}` }}
+                        isLoggedIn={!!user}
+                        initialSaved={savedIds.has(t.slug)}
+                        initialLiked={likedIds.has(t.slug)}
+                        onAuthRequired={() => setShowAuthModal(true)}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                      />
+                    </div>
+                  </div>
                 ))}
               </div>
             </section>
@@ -1014,19 +1027,31 @@ export default function HomePage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
                 {comparisons.map((c) => (
-                  <Link
-                    key={c.slug}
-                    href={`/compare/${c.slug}`}
-                    className="playlist-card surface p-4 sm:p-5 group"
-                    style={{ ["--accent-color" as any]: c.accentColor } as React.CSSProperties}
-                  >
-                    <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: c.accentColor, opacity: 0.85 }}>
-                      {c.eyebrow}
-                    </p>
-                    <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                      {c.title}
-                    </p>
+                  <div key={c.slug} className="playlist-card surface flex flex-col overflow-hidden" style={{ ["--accent-color" as any]: c.accentColor } as React.CSSProperties}>
+                    <Link
+                      href={`/compare/${c.slug}`}
+                      className="p-4 sm:p-5 group flex-1"
+                    >
+                      <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: c.accentColor, opacity: 0.85 }}>
+                        {c.eyebrow}
+                      </p>
+                      <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
+                        {c.title}
+                      </p>
                     </Link>
+                    <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
+                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Read comparison</span>
+                      <SaveButton
+                        resource={{ id: c.slug, title: c.title, author: "northstar", category: "Comparison", link: `/compare/${c.slug}` }}
+                        isLoggedIn={!!user}
+                        initialSaved={savedIds.has(c.slug)}
+                        initialLiked={likedIds.has(c.slug)}
+                        onAuthRequired={() => setShowAuthModal(true)}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                      />
+                    </div>
+                  </div>
                 ))}
               </div>
             </section>
@@ -1214,10 +1239,10 @@ export default function HomePage() {
               {/* AI Decoded Preview */}
               <SectionRow title="AI Decoded" subtitle="Demystifying AI for product managers" accentColor="#DB2777">
                 {aiDecodedManifest.map((a) => (
-                  <div key={a.slug} className="flex-shrink-0 w-[280px] sm:w-[320px]">
+                  <div key={a.slug} className="playlist-card surface flex flex-col overflow-hidden flex-shrink-0 w-[280px] sm:w-[320px]">
                     <Link
                       href={`/ai-decoded/${a.slug}`}
-                      className="playlist-card surface p-4 sm:p-5 group h-full block flex flex-col"
+                      className="p-4 sm:p-5 group flex-1 flex flex-col"
                     >
                       <div className="flex-shrink-0">
                         <span
@@ -1241,6 +1266,18 @@ export default function HomePage() {
                         {a.excerpt}
                       </p>
                     </Link>
+                    <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
+                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Read article</span>
+                      <SaveButton
+                        resource={{ id: a.slug, title: a.title, author: "northstar editorial", category: a.category, link: `/ai-decoded/${a.slug}` }}
+                        isLoggedIn={!!user}
+                        initialSaved={savedIds.has(a.slug)}
+                        initialLiked={likedIds.has(a.slug)}
+                        onAuthRequired={() => setShowAuthModal(true)}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                      />
+                    </div>
                   </div>
                 ))}
               </SectionRow>
@@ -1250,11 +1287,10 @@ export default function HomePage() {
               {/* Explore preview — small teaser, full version on /explore tab */}
               <SectionRow title="Explore" subtitle="Curated themes & head-to-head comparisons" accentColor="#26A69A">
                 {topics.map((t) => (
-                  <div key={t.slug} className="flex-shrink-0 w-[280px] sm:w-[320px]">
+                  <div key={t.slug} className="playlist-card surface flex flex-col overflow-hidden flex-shrink-0 w-[280px] sm:w-[320px]" style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}>
                     <Link
                       href={`/topics/${t.slug}`}
-                      className="playlist-card surface p-4 sm:p-5 group h-full block flex flex-col justify-between"
-                      style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}
+                      className="p-4 sm:p-5 group flex-1 flex flex-col justify-between"
                     >
                       <div>
                         <span
@@ -1278,6 +1314,18 @@ export default function HomePage() {
                         {t.caseStudyIds.length} case studies
                       </p>
                     </Link>
+                    <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
+                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Explore topic</span>
+                      <SaveButton
+                        resource={{ id: t.slug, title: t.title, author: "northstar collections", category: "Topic", link: `/topics/${t.slug}` }}
+                        isLoggedIn={!!user}
+                        initialSaved={savedIds.has(t.slug)}
+                        initialLiked={likedIds.has(t.slug)}
+                        onAuthRequired={() => setShowAuthModal(true)}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                      />
+                    </div>
                   </div>
                 ))}
               </SectionRow>

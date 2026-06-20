@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ArrowUpRight, Play } from "lucide-react";
 import { Playlist, learnCategoryColors } from "@/data/learn";
-import { SaveButton } from "@/components/SaveButton";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 
 // Pull a YouTube thumbnail when the URL is a single video; for playlists
 // (youtube.com/playlist?list=...) there's no public thumbnail without an
@@ -204,7 +204,7 @@ export function PlaylistCard({
         >
           {hasUrl ? "Watch on YouTube" : "Coming soon"}
         </span>
-        <SaveButton
+        <SmartSaveButton
           resource={{
             id: playlist.id,
             title: playlist.title,
@@ -212,12 +212,6 @@ export function PlaylistCard({
             category: playlist.category,
             link: playlist.url || "#",
           }}
-          isLoggedIn={isLoggedIn}
-          initialSaved={initialSaved}
-          initialLiked={initialLiked}
-          onAuthRequired={onAuthRequired}
-          onSavedChange={onSavedChange}
-          onLikedChange={onLikedChange}
         />
       </div>
     </div>

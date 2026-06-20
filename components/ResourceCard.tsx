@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Star } from "lucide-react";
 import { Book, getBookSlug } from "@/data/books";
-import { SaveButton } from "@/components/SaveButton";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 import { getCategoryColor } from "@/lib/category-colors";
 
 // Pull a Wikipedia thumbnail for the author. CORS-friendly, fast, cached
@@ -276,14 +276,8 @@ export function ResourceCard({
         className="px-4 py-2.5 flex items-center justify-end"
         style={{ borderTop: "1.5px solid var(--card-border)" }}
       >
-        <SaveButton
+        <SmartSaveButton
           resource={book}
-          isLoggedIn={isLoggedIn}
-          initialSaved={initialSaved}
-          initialLiked={initialLiked}
-          onAuthRequired={onAuthRequired}
-          onSavedChange={onSavedChange}
-          onLikedChange={onLikedChange}
         />
       </div>
     </div>

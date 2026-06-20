@@ -19,6 +19,7 @@ import { ArrowLeft, ArrowUpRight, TrendingUp, TrendingDown, Clock, Menu } from "
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ViewCounter } from "@/components/ViewCounter";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 
 const categoryColors: Record<string, string> = {
   Product: "#9B8FFF",
@@ -251,12 +252,21 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
 
               <div className="flex items-center justify-between flex-wrap gap-4 mt-8">
                 <Byline label="Written" date={SITE_LAST_REVIEWED} />
-                <ShareButton
-                  title={`${study.title} — northstar case study`}
-                  text={`${study.title}: ${study.description} — via @pmnorthstar`}
-                  label="Share this case study"
-                  variant="prominent"
-                />
+                <div className="flex items-center gap-3">
+                  <SmartSaveButton resource={{
+                    id: study.id,
+                    title: study.title,
+                    author: study.company,
+                    category: study.category,
+                    link: `/case-study/${getCaseStudySlug(study.id)}`
+                  }} />
+                  <ShareButton
+                    title={`${study.title} — northstar case study`}
+                    text={`${study.title}: ${study.description} — via @pmnorthstar`}
+                    label="Share"
+                    variant="prominent"
+                  />
+                </div>
               </div>
             </div>
           </div>

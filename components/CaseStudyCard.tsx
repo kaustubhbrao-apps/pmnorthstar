@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowUpRight, TrendingUp, TrendingDown } from "lucide-react";
 import { CaseStudy, getCaseStudySlug } from "@/data/caseStudies";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
-import { SaveButton } from "@/components/SaveButton";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 import { solidColorFor } from "@/lib/category-colors";
 import Link from "next/link";
 
@@ -188,7 +188,7 @@ export function CaseStudyCard({
         <span className="text-xs" style={{ color: "var(--text-muted)" }}>
           Read case study
         </span>
-        <SaveButton
+        <SmartSaveButton
           resource={{
             id: study.id,
             title: study.title,
@@ -196,12 +196,6 @@ export function CaseStudyCard({
             category: study.category,
             link: `/case-study/${getCaseStudySlug(study.id)}`,
           }}
-          isLoggedIn={isLoggedIn}
-          initialSaved={initialSaved}
-          initialLiked={initialLiked}
-          onAuthRequired={onAuthRequired}
-          onSavedChange={onSavedChange}
-          onLikedChange={onLikedChange}
         />
       </div>
     </div>

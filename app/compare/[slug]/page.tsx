@@ -12,6 +12,7 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { ViewCounter } from "@/components/ViewCounter";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 
 export default function ComparePage({ params }: { params: { slug: string } }) {
   const cmp = getComparisonBySlug(params.slug);
@@ -64,7 +65,16 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
               >
                 {cmp.eyebrow}
               </span>
-              <ViewCounter path={`/compare/${cmp.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
+              <div className="flex items-center gap-3">
+                <ViewCounter path={`/compare/${cmp.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
+                <SmartSaveButton resource={{
+                  id: cmp.slug,
+                  title: cmp.title,
+                  author: "northstar comparisons",
+                  category: "Comparison",
+                  link: `/compare/${cmp.slug}`
+                }} />
+              </div>
             </div>
             <h1
               className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"
@@ -330,36 +340,32 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {otherComps.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/compare/${c.slug}`}
-                  className="playlist-card surface p-4 group"
-                  style={
-                    {
-                      ["--accent-color" as any]: c.accentColor,
-                    } as React.CSSProperties
-                  }
-                >
-                  <span
-                    className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
-                    style={{
-                      background: c.accentColor,
-                      color: "#ffffff",
-                      letterSpacing: "0.12em",
-                    }}
+                <div key={c.slug} className="playlist-card surface flex flex-col overflow-hidden" style={{ ["--accent-color" as any]: c.accentColor } as React.CSSProperties}>
+                  <Link
+                    href={`/compare/${c.slug}`}
+                    className="p-4 group flex-1"
                   >
-                    {c.eyebrow}
-                  </span>
-                  <p
-                    className="text-base font-semibold leading-snug mb-3 group-hover:underline"
-                    style={{
-                      color: "var(--text-primary)",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    {c.title.split(" — ")[0]}
-                  </p>
-                </Link>
+                    <span
+                      className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                      style={{ background: c.accentColor, color: "#ffffff", letterSpacing: "0.12em" }}
+                    >
+                      {c.eyebrow}
+                    </span>
+                    <p className="text-base font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
+                      {c.title.split(" — ")[0]}
+                    </p>
+                  </Link>
+                  <div className="px-4 py-3 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
+                    <span className="text-xs" style={{ color: "var(--text-muted)" }}>Read comparison</span>
+                    <SmartSaveButton resource={{
+                      id: c.slug,
+                      title: c.title,
+                      author: "northstar comparisons",
+                      category: "Comparison",
+                      link: `/compare/${c.slug}`
+                    }} />
+                  </div>
+                </div>
               ))}
             </div>
 

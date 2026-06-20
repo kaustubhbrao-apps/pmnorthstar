@@ -72,7 +72,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
       {/* ── Left: Latest Simulation Drill ── */}
       <Link
         href={`/simulate/${latestDrill.slug}`}
-        className="rounded-2xl px-6 sm:px-10 py-10 sm:py-14 transition-all group flex flex-col relative overflow-hidden"
+        className="rounded-2xl px-5 sm:px-10 py-6 sm:py-14 transition-all group flex flex-col relative overflow-hidden"
         style={{
           background: "var(--card-bg)",
           border: "1.5px solid var(--card-border)",
@@ -84,7 +84,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
         />
         <div className="relative z-20 flex-1 flex flex-col justify-between items-start h-full">
           <div>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <span
                 className="inline-flex items-center gap-1.5 text-xs font-bold uppercase px-2.5 py-1 rounded-md"
                 style={{
@@ -104,7 +104,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
             </div>
 
             <h1
-              className="text-4xl sm:text-5xl lg:text-[4rem] font-bold leading-[1.05] mb-6 tracking-tight"
+              className="text-3xl sm:text-5xl lg:text-[4rem] font-bold leading-[1.05] mb-4 sm:mb-6 tracking-tight"
               style={{
                 color: "var(--text-primary)",
                 letterSpacing: "-0.03em",
@@ -113,7 +113,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
               {drillTitle(latestDrill.slug)}
             </h1>
             <p
-              className="text-lg sm:text-xl leading-relaxed mb-10 max-w-xl"
+              className="text-lg sm:text-xl leading-relaxed mb-6 sm:mb-10 max-w-xl hidden sm:block"
               style={{ color: "var(--text-muted)" }}
             >
               {latestDrill.intro.split("\n\n")[0]}
@@ -141,7 +141,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
       {/* ── Right: Library Positioning & Carousel ─────────────────────────────────── */}
       <div className="flex flex-col gap-4 sm:gap-5 overflow-hidden">
         <div
-          className="rounded-2xl px-6 py-8 flex-1 flex flex-col justify-center"
+          className="rounded-2xl px-6 py-6 sm:py-8 flex-1 flex flex-col justify-center"
           style={{
             background: "var(--card-bg)",
             border: "1.5px solid var(--card-border)",
