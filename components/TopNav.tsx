@@ -187,7 +187,7 @@ export function TopNav({
               )}
             </div>
           ) : (
-            <button onClick={() => onAuthRequired?.()} className="btn-primary" style={{ padding: "8px 14px", fontSize: 12 }}>
+            <button onClick={() => onAuthRequired?.()} className="btn-ghost" style={{ padding: "8px 14px", fontSize: 12 }}>
               Log In
             </button>
           )}
