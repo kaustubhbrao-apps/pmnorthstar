@@ -2297,7 +2297,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
 ];
 
 export const isCaseStudyPublished = (c: CaseStudy, now: Date = new Date()): boolean =>
-  !c.publishedAt || process.env.NODE_ENV !== "production" || new Date(c.publishedAt) <= now;
+  !c.publishedAt || new Date(c.publishedAt) <= now;
 
 // Case studies whose publishedAt has passed (or have none). Use this for
 // every listing/browse surface so scheduled studies stay hidden until live.

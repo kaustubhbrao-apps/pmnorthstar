@@ -886,7 +886,7 @@ export const drills: Drill[] = [
 
 export const publishedDrills = (now: Date = new Date()): Drill[] =>
   drills
-    .filter((d) => process.env.NODE_ENV !== "production" || new Date(d.publishedAt) <= now)
+    .filter((d) => new Date(d.publishedAt) <= now)
     .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
 
 export const getDrillBySlug = (slug: string): Drill | undefined =>

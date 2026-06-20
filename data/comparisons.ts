@@ -1252,7 +1252,7 @@ export const comparisons: Comparison[] = [
 ];
 
 export const isComparisonPublished = (c: Comparison, now: Date = new Date()): boolean =>
-  !c.publishedAt || process.env.NODE_ENV !== "production" || new Date(c.publishedAt) <= now;
+  !c.publishedAt || new Date(c.publishedAt) <= now;
 
 export const publishedComparisons = (now: Date = new Date()): Comparison[] =>
   comparisons.filter((c) => isComparisonPublished(c, now));

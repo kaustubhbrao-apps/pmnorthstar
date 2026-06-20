@@ -2148,7 +2148,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
 ];
 
 export const isCaseStudyPublishedLite = (c: CaseStudyLite, now: Date = new Date()): boolean =>
-  !c.publishedAt || process.env.NODE_ENV !== "production" || new Date(c.publishedAt) <= now;
+  !c.publishedAt || new Date(c.publishedAt) <= now;
 
 export const publishedCaseStudiesLite = (now: Date = new Date()): CaseStudyLite[] =>
   caseStudiesLite.filter((c) => isCaseStudyPublishedLite(c, now));

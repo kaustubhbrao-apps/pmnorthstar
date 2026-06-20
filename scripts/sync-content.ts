@@ -132,7 +132,7 @@ ${body},
 ];
 
 export const isTopicPublished = (t: Topic, now: Date = new Date()): boolean =>
-  !t.publishedAt || process.env.NODE_ENV !== "production" || new Date(t.publishedAt) <= now;
+  !t.publishedAt || new Date(t.publishedAt) <= now;
 
 export const publishedTopics = (now: Date = new Date()): Topic[] =>
   topics.filter((t) => isTopicPublished(t, now));
@@ -204,7 +204,7 @@ ${body},
 ];
 
 export const isComparisonPublished = (c: Comparison, now: Date = new Date()): boolean =>
-  !c.publishedAt || process.env.NODE_ENV !== "production" || new Date(c.publishedAt) <= now;
+  !c.publishedAt || new Date(c.publishedAt) <= now;
 
 export const publishedComparisons = (now: Date = new Date()): Comparison[] =>
   comparisons.filter((c) => isComparisonPublished(c, now));
@@ -422,7 +422,7 @@ export const caseStudyCategories: CaseStudyCategory[] = [
 ];
 
 export const isCaseStudyPublished = (c: CaseStudy, now: Date = new Date()): boolean =>
-  !c.publishedAt || process.env.NODE_ENV !== "production" || new Date(c.publishedAt) <= now;
+  !c.publishedAt || new Date(c.publishedAt) <= now;
 
 // Case studies whose publishedAt has passed (or have none). Use this for
 // every listing/browse surface so scheduled studies stay hidden until live.
@@ -505,7 +505,7 @@ ${liteStudyBody},
 ];
 
 export const isCaseStudyPublishedLite = (c: CaseStudyLite, now: Date = new Date()): boolean =>
-  !c.publishedAt || process.env.NODE_ENV !== "production" || new Date(c.publishedAt) <= now;
+  !c.publishedAt || new Date(c.publishedAt) <= now;
 
 export const publishedCaseStudiesLite = (now: Date = new Date()): CaseStudyLite[] =>
   caseStudiesLite.filter((c) => isCaseStudyPublishedLite(c, now));
@@ -637,7 +637,7 @@ export const publishedAIDecoded = (
   now: Date = new Date()
 ): AIDecodedManifestEntry[] =>
   aiDecodedManifest.filter(
-    (a) => process.env.NODE_ENV !== "production" || new Date(a.publishedAt) <= now
+    (a) => new Date(a.publishedAt) <= now
   );
 `;
   fs.writeFileSync(path.join(DATA, "aiDecodedManifest.ts"), out, "utf8");
@@ -730,7 +730,7 @@ ${items},
 
 export const publishedDrills = (now: Date = new Date()): Drill[] =>
   drills
-    .filter((d) => process.env.NODE_ENV !== "production" || new Date(d.publishedAt) <= now)
+    .filter((d) => new Date(d.publishedAt) <= now)
     .sort((a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt));
 
 export const getDrillBySlug = (slug: string): Drill | undefined =>
