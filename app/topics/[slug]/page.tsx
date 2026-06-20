@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
-import { caseStudies } from "@/data/caseStudies";
+import { caseStudies, publishedCaseStudies } from "@/data/caseStudies";
 import { getTopicBySlug, topics, publishedTopics } from "@/data/topics";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
@@ -39,10 +39,10 @@ export default function TopicPage({ params }: PageProps) {
   if (!topic) notFound();
 
   const cases = topic.caseStudyIds
-    .map((id) => caseStudies.find((c) => c.id === id))
+    .map((id) => publishedCaseStudies().find((c) => c.id === id))
     .filter(Boolean) as typeof caseStudies;
 
-  const otherTopics = topics.filter((t) => t.slug !== topic.slug);
+  const otherTopics = publishedTopics().filter((t) => t.slug !== topic.slug);
 
   return (
     <SidebarShell

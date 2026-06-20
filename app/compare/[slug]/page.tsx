@@ -6,7 +6,7 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { Footer } from "@/components/Footer";
 import { getCaseStudyById, getCaseStudySlug } from "@/data/caseStudies";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
-import { getComparisonBySlug, comparisons } from "@/data/comparisons";
+import { getComparisonBySlug, publishedComparisons } from "@/data/comparisons";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { ArrowUpRight } from "lucide-react";
@@ -27,7 +27,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
   const aLogo = getCompanyLogoUrl(a.company);
   const bLogo = getCompanyLogoUrl(b.company);
 
-  const otherComps = comparisons.filter((c) => c.slug !== cmp.slug);
+  const otherComps = publishedComparisons().filter((c) => c.slug !== cmp.slug);
 
   return (
     <SidebarShell

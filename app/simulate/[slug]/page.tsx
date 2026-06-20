@@ -43,10 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default function DrillPage({ params }: PageProps) {
   const drill = getDrillBySlug(params.slug);
   if (!drill) notFound();
-  // In production, future-dated drills 404. In dev, every drill is
-  // reachable so we can author and test before publish.
-  const isDev = process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true";
-  if (!isDev && new Date(drill.publishedAt) > new Date()) notFound();
+  if (new Date(drill.publishedAt) > new Date()) notFound();
 
   const isLeagueActive = drill.isLeagueMatch;
 

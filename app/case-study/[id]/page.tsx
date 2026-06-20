@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getCaseStudyById, getCaseStudyBySlug, getCaseStudySlug, caseStudies } from "@/data/caseStudies";
+import { getCaseStudyById, getCaseStudyBySlug, getCaseStudySlug, publishedCaseStudies } from "@/data/caseStudies";
 import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
 import { CaseStudyFaqs } from "@/components/CaseStudyFaqs";
 import { Sidebar } from "@/components/Sidebar";
@@ -48,9 +48,10 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
 
   const handleNavChange = () => router.push("/");
 
-  const currentIndex = study ? caseStudies.findIndex((c) => c.id === study.id) : -1;
-  const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null;
-  const nextStudy = currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null;
+  const liveStudies = publishedCaseStudies();
+  const currentIndex = study ? liveStudies.findIndex((c) => c.id === study.id) : -1;
+  const prevStudy = currentIndex > 0 ? liveStudies[currentIndex - 1] : null;
+  const nextStudy = currentIndex < liveStudies.length - 1 ? liveStudies[currentIndex + 1] : null;
 
   if (!study) {
     return (
@@ -80,7 +81,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
   const [logoFailed, setLogoFailed] = useState(false);
 
   // Related = same category, not the current one. Pick up to 4 closest by tag overlap.
-  const related = caseStudies
+  const related = liveStudies
     .filter((c) => c.id !== study.id && c.category === study.category)
     .map((c) => ({
       study: c,
@@ -164,7 +165,7 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
 
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline text-xs" style={{ color: "var(--text-faint)" }}>
-              {currentIndex + 1} of {caseStudies.length}
+              {currentIndex + 1} of {liveStudies.length}
             </span>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} className="hidden sm:inline-flex" />
           </div>
