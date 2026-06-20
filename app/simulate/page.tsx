@@ -223,7 +223,8 @@ function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: numbe
                 className="text-sm font-mono uppercase px-2 py-1 rounded"
                 style={{
                   background: "rgba(245, 200, 66, 0.15)",
-                  color: "#F5C842",
+                  color: "var(--text-primary)",
+                  border: "1px solid #F5C842",
                   letterSpacing: "0.14em",
                 }}
               >
@@ -233,7 +234,8 @@ function FeaturedDrillCard({ drill, matchday }: { drill: Drill; matchday?: numbe
                 className="text-sm font-mono uppercase px-2 py-1 rounded"
                 style={{
                   background: `color-mix(in srgb, ${badge.color} 14%, transparent)`,
-                  color: badge.color,
+                  color: "var(--text-primary)",
+                  border: `1px solid ${badge.color}`,
                   letterSpacing: "0.14em",
                 }}
               >
@@ -312,7 +314,8 @@ function ArchiveCard({ drill, matchday }: { drill: Drill; matchday?: number }) {
           className="text-sm font-mono uppercase px-1.5 py-0.5 rounded"
           style={{
             background: `color-mix(in srgb, ${badge.color} 18%, transparent)`,
-            color: badge.color,
+            color: "var(--text-primary)",
+            border: `1px solid ${badge.color}`,
             letterSpacing: "0.12em",
           }}
         >

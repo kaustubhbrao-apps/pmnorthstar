@@ -1165,6 +1165,142 @@ export default function HomePage() {
                 ))}
               </div>
 
+              {/* Case Studies Preview — horizontal carousel, one from each category.
+                  Wrapped in fixed-width containers so SectionRow's
+                  horizontal-scroll can do its job. */}
+              <SectionRow title="Case Studies" subtitle="Featured deep dives across all categories" accentColor="#F3123C">
+                {homeFeaturedCaseStudies.map((study, idx) => (
+                  <div
+                    key={study.id}
+                    className="flex-shrink-0 w-[280px] sm:w-[320px]"
+                  >
+                    <CaseStudyCard
+                      study={study}
+                      index={idx}
+                      isLoggedIn={!!user}
+                      initialSaved={savedIds.has(study.id)}
+                      initialLiked={likedIds.has(study.id)}
+                      onAuthRequired={() => setShowAuthModal(true)}
+                      onSavedChange={handleSavedChange}
+                      onLikedChange={handleLikedChange}
+                      hideCategory={false}
+                    />
+                  </div>
+                ))}
+              </SectionRow>
+              
+              <div className="px-4 sm:px-6 mt-2 mb-8">
+                <button 
+                  onClick={() => setActiveNav("casestudies")} 
+                  className="btn-ghost inline-flex text-sm"
+                >
+                  See all {caseStudies.length} case studies
+                  <ArrowUpRight size={14} strokeWidth={1.8} className="ml-1" />
+                </button>
+              </div>
+
+              <div className="section-divider my-10" />
+
+              {/* AI Decoded Preview */}
+              <SectionRow title="AI Decoded" subtitle="Demystifying AI for product managers" accentColor="#DB2777">
+                {aiDecodedManifest.map((a) => (
+                  <div key={a.slug} className="flex-shrink-0 w-[280px] sm:w-[320px]">
+                    <Link
+                      href={`/ai-decoded/${a.slug}`}
+                      className="playlist-card surface p-4 sm:p-5 group h-full block flex flex-col"
+                    >
+                      <div className="flex-shrink-0">
+                        <span
+                          className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                          style={{
+                            background: "#DB2777",
+                            color: "#ffffff",
+                            letterSpacing: "0.12em",
+                          }}
+                        >
+                          {a.category}
+                        </span>
+                        <p
+                          className="text-base sm:text-lg font-semibold leading-snug group-hover:underline"
+                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+                        >
+                          {a.title}
+                        </p>
+                      </div>
+                      <p className="text-sm mt-2 line-clamp-2 mt-auto" style={{ color: "var(--text-muted)" }}>
+                        {a.excerpt}
+                      </p>
+                    </Link>
+                  </div>
+                ))}
+              </SectionRow>
+
+              <div className="section-divider my-10" />
+
+              {/* Explore preview — small teaser, full version on /explore tab */}
+              <SectionRow title="Explore" subtitle="Curated themes & head-to-head comparisons" accentColor="#26A69A">
+                {topics.map((t) => (
+                  <div key={t.slug} className="flex-shrink-0 w-[280px] sm:w-[320px]">
+                    <Link
+                      href={`/topics/${t.slug}`}
+                      className="playlist-card surface p-4 sm:p-5 group h-full block flex flex-col justify-between"
+                      style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}
+                    >
+                      <div>
+                        <span
+                          className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                          style={{
+                            background: t.accentColor,
+                            color: "#ffffff",
+                            letterSpacing: "0.12em",
+                          }}
+                        >
+                          {t.eyebrow}
+                        </span>
+                        <p
+                          className="text-base sm:text-lg font-semibold leading-snug group-hover:underline"
+                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+                        >
+                          {t.title}
+                        </p>
+                      </div>
+                      <p className="text-sm mt-3" style={{ color: "var(--text-muted)" }}>
+                        {t.caseStudyIds.length} case studies
+                      </p>
+                    </Link>
+                  </div>
+                ))}
+              </SectionRow>
+
+              <div className="section-divider my-10" />
+
+              {/* Learn Preview — horizontal carousel, 8 cards */}
+              <SectionRow
+                title="Learn"
+                subtitle={`Curated YouTube playlists across ${learnCategories.length} topics`}
+                accentColor="#9B8FFF"
+              >
+                {interleavedPlaylists.slice(0, 8).map((playlist, idx) => (
+                  <div
+                    key={playlist.id}
+                    className="flex-shrink-0 w-[280px] sm:w-[320px]"
+                  >
+                    <PlaylistCard
+                      playlist={playlist}
+                      index={idx}
+                      isLoggedIn={!!user}
+                      initialSaved={savedIds.has(playlist.id)}
+                      initialLiked={likedIds.has(playlist.id)}
+                      onAuthRequired={() => setShowAuthModal(true)}
+                      onSavedChange={handleSavedChange}
+                      onLikedChange={handleLikedChange}
+                    />
+                  </div>
+                ))}
+              </SectionRow>
+
+              <div className="section-divider my-10" id="books-section" />
+
               <div className="px-4 sm:px-6 mt-2 mb-8">
                 {/* Filter chips for books */}
                 <div className="flex items-center gap-2 mb-6 overflow-x-auto scroll-container -mx-4 sm:-mx-6 px-4 sm:px-6 pb-1">
@@ -1190,7 +1326,7 @@ export default function HomePage() {
               {activeBookFilter === "All" ? (
                 <>
                   {/* Featured Row */}
-                  <SectionRow title="Latest Picks" subtitle="Hand-curated for product learners" accentColor="#FF6B35">
+                  <SectionRow title="Latest Picks" subtitle="Hand-curated for product learners" accentColor="#EA580C">
                     {featured.slice(0, 6).map((book, index) => (
                       <ResourceCard
                         key={book.id}
@@ -1208,7 +1344,7 @@ export default function HomePage() {
                     ))}
                   </SectionRow>
 
-                  <div className="section-divider my-10" id="books-section" />
+                  <div className="section-divider my-10" />
 
                   {/* Per-Category Rows */}
                   {categories.map((cat) => {
@@ -1280,121 +1416,6 @@ export default function HomePage() {
                   </div>
                 </div>
               )}
-
-              {/* Case Studies Preview — horizontal carousel, one from each category.
-                  Wrapped in fixed-width containers so SectionRow's
-                  horizontal-scroll can do its job. */}
-              <SectionRow title="Case Studies" subtitle="Featured deep dives across all categories" accentColor="#F3123C">
-                {homeFeaturedCaseStudies.map((study, idx) => (
-                  <div
-                    key={study.id}
-                    className="flex-shrink-0 w-[280px] sm:w-[320px]"
-                  >
-                    <CaseStudyCard
-                      study={study}
-                      index={idx}
-                      isLoggedIn={!!user}
-                      initialSaved={savedIds.has(study.id)}
-                      initialLiked={likedIds.has(study.id)}
-                      onAuthRequired={() => setShowAuthModal(true)}
-                      onSavedChange={handleSavedChange}
-                      onLikedChange={handleLikedChange}
-                      hideCategory={false}
-                    />
-                  </div>
-                ))}
-              </SectionRow>
-              
-              <div className="px-4 sm:px-6 mt-2 mb-8">
-                <button 
-                  onClick={() => setActiveNav("casestudies")} 
-                  className="btn-ghost inline-flex text-sm"
-                >
-                  See all {caseStudies.length} case studies
-                  <ArrowUpRight size={14} strokeWidth={1.8} className="ml-1" />
-                </button>
-              </div>
-
-              <div className="section-divider my-10" />
-
-              {/* Explore preview — small teaser, full version on /explore tab */}
-              <div className="px-4 sm:px-6 mb-8">
-                <div className="flex items-end justify-between mb-5">
-                  <div>
-                    <p className="eyebrow mb-1.5" style={{ color: "#26A69A", opacity: 0.85 }}>Explore</p>
-                    <div className="flex items-baseline gap-3">
-                      <h2 className="text-base sm:text-lg font-semibold" style={{ color: "#26A69A", letterSpacing: "-0.02em" }}>
-                        Topics & comparisons
-                      </h2>
-                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>
-                        [{topics.length + comparisons.length}]
-                      </span>
-                    </div>
-                    <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>
-                      Curated themes & head-to-head comparisons
-                    </p>
-                  </div>
-                  <button onClick={() => setActiveNav("explore")} className="btn-accent" style={{ padding: "8px 14px", fontSize: 12 }}>
-                    View all
-                    <ArrowUpRight size={12} strokeWidth={1.6} />
-                  </button>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                  {topics.slice(0, 4).map((t) => (
-                    <Link
-                      key={t.slug}
-                      href={`/topics/${t.slug}`}
-                      className="playlist-card surface p-4 sm:p-5 group"
-                      style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}
-                    >
-                      <span
-                        className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
-                        style={{
-                          background: t.accentColor,
-                          color: "#ffffff",
-                          letterSpacing: "0.12em",
-                        }}
-                      >
-                        {t.eyebrow}
-                      </span>
-                      <p
-                        className="text-base sm:text-lg font-semibold leading-snug group-hover:underline"
-                        style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                      >
-                        {t.title}
-                      </p>
-                      <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                        {t.caseStudyIds.length} case studies
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Learn Preview — horizontal carousel, 8 cards */}
-              <SectionRow
-                title="Learn"
-                subtitle={`Curated YouTube playlists across ${learnCategories.length} topics`}
-                accentColor="#9B8FFF"
-              >
-                {interleavedPlaylists.slice(0, 8).map((playlist, idx) => (
-                  <div
-                    key={playlist.id}
-                    className="flex-shrink-0 w-[280px] sm:w-[320px]"
-                  >
-                    <PlaylistCard
-                      playlist={playlist}
-                      index={idx}
-                      isLoggedIn={!!user}
-                      initialSaved={savedIds.has(playlist.id)}
-                      initialLiked={likedIds.has(playlist.id)}
-                      onAuthRequired={() => setShowAuthModal(true)}
-                      onSavedChange={handleSavedChange}
-                      onLikedChange={handleLikedChange}
-                    />
-                  </div>
-                ))}
-              </SectionRow>
 
               {/* Newsletter signup — bottom of home view */}
               <div className="px-4 sm:px-6 mt-10 mb-12">

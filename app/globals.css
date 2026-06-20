@@ -1,110 +1,96 @@
-/* Fonts are now loaded via next/font in app/layout.tsx. That self-
-   hosts the woff2 files, removes the render-blocking @import roundtrip
-   to fonts.googleapis.com (was costing ~1.9s LCP per PSI), and exposes
-   --font-space-grotesk / --font-jetbrains-mono on <html> for the
-   variables below to consume. */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ── THEME TOKENS ──────────────────────────────────────────────────────────
-   :root defaults are LIGHT MODE. Dark applies in two cases:
-   (a) the OS prefers dark and the user hasn't explicitly chosen light
-   (b) the user has explicitly chosen dark via [data-theme="dark"]
-   The explicit [data-theme] selectors always win over the media query,
-   so the JS toggle continues to work. The key benefit: the very first
-   paint matches the user's system preference even before our inline
-   script runs. No more dark→light→dark filmstrip flash.                 */
+/* ── ANALOG / CLASSIC EDITORIAL (The "Anti-AI" Aesthetic) ───────────────── */
+/* Removes all modern startup tropes (soft curves, glows, glassmorphism). 
+   Focuses on the aesthetic of physical books, academic journals, and Stripe Press. */
 
 :root {
   color-scheme: light dark;
 
-  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
-  --font-body:    var(--font-space-grotesk), system-ui, sans-serif;
-  --font-mono:    var(--font-jetbrains-mono), ui-monospace, monospace;
+  /* Classic, established typography. Moving away from Space Grotesk. */
+  --font-display: "Georgia", "Cambria", "Times New Roman", Times, serif;
+  --font-body:    "Georgia", "Cambria", "Times New Roman", Times, serif; /* Force Serif globally */
+  --font-mono:    "Courier New", Courier, monospace;
 
-  /* Light defaults — applied when no data-theme is set and the OS
-     either prefers light or has no preference. */
-  --page-bg:        #FFFFFF;
-  --surface-bg:     #FFFFFF;
+  /* Paper and Ink Palette */
+  --page-bg:        #FDFCF8; /* Physical paper color */
+  --surface-bg:     #F7F6F0;
   --card-bg:        #FFFFFF;
-  --tag-bg:         #F4F4F4;
+  --tag-bg:         #EBEBE6;
 
-  --card-border:    #DCDCDC;
-  --divider:        #ECECEC;
+  --card-border:    #111111; /* Hard, physical borders */
+  --divider:        #111111;
 
   --brand-primary:  #D4102F;
-  --brand-hover:    #B00B25;
-  --brand-soft:     rgba(212, 16, 47, 0.06);
+  --brand-hover:    #9E0B22;
+  --brand-soft:     #FCE8EB;
+  
+  --text-primary:   #111111; /* Pure black ink */
+  --text-muted:     #111111; /* Brutalist: no grey */
+  --text-faint:     #111111; /* Brutalist: no grey */
 
-  --text-primary:   #0A0A0A;
-  --text-muted:     #3A3A3A;
-  --text-faint:     #7A7A7A;
+  --sidebar-bg:     #FDFCF8;
+  --sidebar-border: #111111;
+  --nav-bg:         #FDFCF8;
 
-  --success:        #15803D;
-  --warning:        #B45309;
-  --danger:         #D4102F;
-
-  --sidebar-bg:     #FFFFFF;
-  --sidebar-border: #DCDCDC;
-  --nav-bg:         #FFFFFF;
+  /* No glowing or floating shadows. Just hard physical depth. */
+  --shadow-solid:   4px 4px 0 rgba(17, 17, 17, 0.1);
+  --shadow-hover:   4px 4px 0 rgba(212, 16, 47, 1);
 }
 
-/* OS preference is dark + user hasn't picked light explicitly. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    /* Analog Dark Mode - Pure OLED Black */
     --page-bg:        #000000;
     --surface-bg:     #000000;
-    --card-bg:        #0A0A0A;
-    --tag-bg:         #141414;
+    --card-bg:        #000000;
+    --tag-bg:         #111111;
 
-    --card-border:    #2A2A2A;
-    --divider:        #1F1F1F;
+    --card-border:    #333333;
+    --divider:        #333333;
 
     --brand-primary:  #F3123C;
     --brand-hover:    #D4102F;
-    --brand-soft:     rgba(243, 18, 60, 0.08);
+    --brand-soft:     rgba(243, 18, 60, 0.15);
 
-    --text-primary:   #FFFFFF;
-    --text-muted:     #CFCFCF;
-    --text-faint:     #909090;
-
-    --success:        #22C55E;
-    --warning:        #F59E0B;
-    --danger:         #F3123C;
+    --text-primary:   #FFFFFF; /* Pure white */
+    --text-muted:     #FFFFFF; /* Brutalist: no grey */
+    --text-faint:     #FFFFFF; /* Brutalist: no grey */
 
     --sidebar-bg:     #000000;
-    --sidebar-border: #232323;
+    --sidebar-border: #333333;
     --nav-bg:         #000000;
+
+    --shadow-solid:   4px 4px 0 rgba(255, 255, 255, 0.15);
+    --shadow-hover:   4px 4px 0 rgba(243, 18, 60, 1);
   }
 }
 
-/* Explicit user choice always wins, regardless of OS preference. */
 [data-theme="dark"] {
   --page-bg:        #000000;
   --surface-bg:     #000000;
-  --card-bg:        #0A0A0A;
-  --tag-bg:         #141414;
+  --card-bg:        #000000;
+  --tag-bg:         #111111;
 
-  --card-border:    #2A2A2A;
-  --divider:        #1F1F1F;
+  --card-border:    #333333;
+  --divider:        #333333;
 
   --brand-primary:  #F3123C;
   --brand-hover:    #D4102F;
-  --brand-soft:     rgba(243, 18, 60, 0.08);
+  --brand-soft:     rgba(243, 18, 60, 0.15);
 
-  --text-primary:   #FFFFFF;
-  --text-muted:     #CFCFCF;
-  --text-faint:     #909090;
-
-  --success:        #22C55E;
-  --warning:        #F59E0B;
-  --danger:         #F3123C;
+  --text-primary:   #FFFFFF; /* Pure white */
+  --text-muted:     #FFFFFF; /* Brutalist: no grey */
+  --text-faint:     #FFFFFF; /* Brutalist: no grey */
 
   --sidebar-bg:     #000000;
-  --sidebar-border: #232323;
+  --sidebar-border: #333333;
   --nav-bg:         #000000;
+
+  --shadow-solid:   4px 4px 0 rgba(255, 255, 255, 0.15);
+  --shadow-hover:   4px 4px 0 rgba(243, 18, 60, 1);
 }
 
 /* ── RESET ─────────────────────────────────────────────────────────────── */
@@ -112,8 +98,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-shadow: none !important;
-  text-shadow: none !important;
+  /* Kills the AI startup "everything is a rounded rectangle" trope */
+  border-radius: 0 !important; 
 }
 
 html, body {
@@ -121,503 +107,334 @@ html, body {
   color: var(--text-primary);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
 }
 
-#__next, main {
-  height: 100%;
+/* Add a very subtle noise texture to simulate paper grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.04"/%3E%3C/svg%3E');
 }
+
+#__next, main { height: 100%; }
 
 /* ── SCROLLBAR ──────────────────────────────────────────────────────────── */
-::-webkit-scrollbar       { width: 3px; height: 3px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--brand-primary); }
+::-webkit-scrollbar       { width: 8px; border-left: 1px solid var(--divider); }
+::-webkit-scrollbar-track { background: var(--page-bg); }
+::-webkit-scrollbar-thumb { background: var(--text-primary); }
 
-.scroll-container {
-  scrollbar-width: thin;
-  scrollbar-color: var(--card-border) transparent;
+/* ── SURFACES & CARDS ───────────────────────────────────────────────────── */
+header, .mobile-nav {
+  background: var(--nav-bg) !important;
+  border-bottom: 1px solid var(--card-border) !important;
+}
+aside {
+  background: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--card-border) !important;
 }
 
-/* ── KILL ALL GRADIENTS & NOISE ─────────────────────────────────────────── */
-.noise::after    { display: none !important; }
-.hero-gradient   { background: none !important; }
-.glow-brand      { box-shadow: none !important; }
-.glow-accent     { box-shadow: none !important; }
-
-/* ── BOOK CARD ──────────────────────────────────────────────────────────── */
-.book-card {
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-.book-card:hover {
-  border-color: var(--brand-primary) !important;
-  transform: translateY(-2px);
-}
-
-/* ── SIDEBAR NAV ────────────────────────────────────────────────────────── */
-.nav-item {
+.surface, .book-card, .case-card, .playlist-card {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--shadow-solid) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+  overflow: hidden;
   position: relative;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.nav-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: transparent;
-  border-radius: 2px;
-  transition: background 0.15s ease;
-}
-.nav-item:hover {
-  color: var(--text-primary) !important;
-}
-.nav-item:hover::before {
-  background: var(--card-border);
-}
-.nav-item.active {
-  color: #ffffff !important;
-  background: var(--brand-primary);
-}
-.nav-item.active::before {
-  background: var(--brand-primary);
-}
-.nav-item.active:hover {
-  color: #ffffff !important;
-  background: var(--brand-hover);
 }
 
-/* ── FILTER CHIP ────────────────────────────────────────────────────────── */
-.filter-chip {
-  border: 1.5px solid var(--card-border);
-  color: var(--text-muted);
-  background: transparent;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
-}
-.filter-chip:hover {
-  border-color: var(--brand-primary);
-  color: var(--text-primary);
-}
-.filter-chip.active {
-  background: var(--brand-primary);
-  border-color: var(--brand-primary);
-  color: #ffffff;
+/* Hard, physical hover states */
+.book-card:hover, .case-card:hover, .playlist-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: var(--shadow-hover) !important;
 }
 
-/* ── SECTION ANIMATION ──────────────────────────────────────────────────── */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-.animate-section                  { animation: fadeInUp 0.3s ease forwards; }
-.animate-section:nth-child(2)     { animation-delay: 0.06s; }
-.animate-section:nth-child(3)     { animation-delay: 0.12s; }
-.animate-section:nth-child(4)     { animation-delay: 0.18s; }
-
-/* ── STAR ───────────────────────────────────────────────────────────────── */
-.star { color: var(--brand-primary); }
-
-/* ── CATEGORY BADGES ────────────────────────────────────────────────────── */
-.badge-pm, .badge-startups {
-  background: var(--brand-soft);
-  color: var(--brand-primary);
-  border: 1.5px solid rgba(243, 18, 60, 0.2);
-}
-.badge-management {
-  background: var(--tag-bg);
-  color: var(--text-muted);
-  border: 1.5px solid var(--card-border);
-}
-
-/* ── CASE STUDY CARD ────────────────────────────────────────────────────── */
-.case-card {
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-.case-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--brand-primary) !important;
-}
-
-/* ── THEME TRANSITION ───────────────────────────────────────────────────── */
-html {
-  transition: background-color 0.2s ease;
-}
-*, *::before, *::after {
-  transition: background-color 0.2s ease, border-color 0.15s ease, color 0.15s ease;
-}
-.book-card, .case-card {
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-
-/* ── SECTION DIVIDER ────────────────────────────────────────────────────── */
-.section-divider {
-  height: 1px;
-  background: var(--divider);
-  margin: 0 16px;
-}
-@media (min-width: 640px) {
-  .section-divider {
-    margin: 0 24px;
-  }
-}
-
-/* ── BUTTONS ────────────────────────────────────────────────────────────── */
-button { outline: none; cursor: pointer; }
-button:focus-visible {
-  outline: 2px solid var(--brand-primary);
-  outline-offset: 2px;
-}
-
-/* ── INPUT ──────────────────────────────────────────────────────────────── */
-input::placeholder { color: var(--text-faint); }
-input:focus        { outline: none; }
-
-/* ── WEB3 UTILITIES ─────────────────────────────────────────────────────── */
-.font-mono { font-family: var(--font-mono); }
-
-.eyebrow {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.hairline {
-  height: 1px;
-  background: var(--divider);
-}
-
-/* Subtle gradient border that appears on hover via ::before */
-.playlist-card {
-  position: relative;
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
-}
-/* Hover: subtle lift + slightly brighter border. Dropped the previous
-   ::before gradient overlay that was creating asymmetric red bleed
-   along the top + right edges — it looked like a render bug more than
-   a hover state. */
-.playlist-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--text-muted) !important;
-}
 .playlist-card:hover .card-arrow {
   transform: translate(2px, -2px);
   color: var(--brand-primary);
 }
+.card-arrow { transition: transform 0.15s ease; }
 
-.card-arrow {
-  transition: transform 0.2s ease;
+/* ── NAVIGATION (Sidebar) ───────────────────────────────────────────────── */
+.nav-item {
+  position: relative;
+  transition: all 0.1s ease;
+  padding: 8px 12px;
+  margin: 4px 0;
+  font-family: var(--font-display);
+  font-size: 1.05em;
+  color: var(--text-muted);
+  border-left: 2px solid transparent;
+}
+.nav-item::before { display: none; }
+.nav-item:hover {
+  background: var(--tag-bg);
+  color: var(--text-primary) !important;
+}
+.nav-item.active {
+  color: var(--text-primary) !important;
+  font-weight: bold;
+  border-left: 2px solid var(--brand-primary);
+  background: transparent;
 }
 
-/* Filter chip with mono count */
+/* ── BUTTONS ────────────────────────────────────────────────────────────── */
+button { outline: none; cursor: pointer; font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.05em; font-size: 13px !important; font-weight: bold; }
+button:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 2px; }
+
+.btn-primary, .btn-accent, .btn-ghost, .btn-accent-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  transition: all 0.15s ease;
+}
+
+.btn-primary { 
+  background: var(--text-primary) !important; 
+  color: var(--page-bg) !important; 
+  border: 1px solid var(--text-primary) !important;
+}
+
+@keyframes plethoraGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-accent { 
+  background: linear-gradient(270deg, #FF007F, #7F00FF, #00D2FF, #00FF7F, #FFAA00) !important;
+  background-size: 400% 400% !important;
+  color: #FFFFFF !important; 
+  border: none !important;
+  animation: plethoraGradient 8s ease infinite;
+}
+.btn-ghost { 
+  background: transparent !important; 
+  color: var(--text-primary) !important; 
+  border: 1px solid var(--card-border) !important;
+}
+.btn-accent-soft { 
+  background: transparent !important; 
+  color: #7F00FF !important; 
+  border: 2px solid #7F00FF !important;
+}
+
+.btn-primary:hover, .btn-accent:hover, .btn-ghost:hover, .btn-accent-soft:hover { 
+  transform: translate(-2px, -2px); 
+  box-shadow: 2px 2px 0 var(--text-primary);
+}
+
+/* ── FILTER CHIP ────────────────────────────────────────────────────────── */
 .chip {
   font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 500;
-  border: 1.5px solid var(--card-border);
-  background: transparent;
+  font-size: 14px;
+  border: 1px solid var(--card-border);
+  background: var(--page-bg);
   color: var(--text-muted);
-  padding: 6px 12px;
-  border-radius: 999px;
-  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  padding: 6px 14px;
+  transition: all 0.15s ease;
   white-space: nowrap;
   cursor: pointer;
 }
 .chip:hover {
   color: var(--text-primary);
-  border-color: var(--text-muted);
+  background: var(--tag-bg);
 }
 .chip.active {
-  color: #ffffff;
-  border-color: var(--brand-primary);
-  background: var(--brand-primary);
+  background: var(--text-primary);
+  color: var(--page-bg);
+  border-color: var(--text-primary);
 }
 .chip .chip-count {
   color: var(--text-faint);
   margin-left: 6px;
-}
-.chip.active .chip-count { color: rgba(255, 255, 255, 0.85); }
-
-/* Dotted grid backdrop — removed per design feedback. Class is kept
-   as a no-op so the dozen call sites don't need editing; restore the
-   pattern here if you ever want the texture back. */
-.dot-grid {}
-
-/* Multi-color gradient text — for hero phrases */
-.gradient-text {
-  background: linear-gradient(135deg, #F3123C 0%, #FF6B35 25%, #F5C842 50%, #50C878 75%, #9B8FFF 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-          color: transparent;
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50%      { background-position: 100% 50%; }
-}
-
-/* Static brand-tinted gradient — for subtler accent text */
-.gradient-brand {
-  background: linear-gradient(135deg, #F3123C, #9B8FFF);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-          color: transparent;
-}
-
-/* Cool gradient — for tech-leaning accents */
-.gradient-cool {
-  background: linear-gradient(135deg, #4FC3F7, #9B8FFF);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-          color: transparent;
-}
-
-/* Warm gradient — for energy/discovery accents */
-.gradient-warm {
-  background: linear-gradient(135deg, #FF6B35, #F5C842);
-  -webkit-background-clip: text;
-          background-clip: text;
-  -webkit-text-fill-color: transparent;
-          color: transparent;
-}
-
-/* Buttons */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: var(--text-primary);
-  color: var(--page-bg);
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  border: 1.5px solid var(--text-primary);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-.btn-primary:hover { opacity: 0.92; }
-
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 14px;
-  background: transparent;
-  color: var(--text-muted);
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  border: 1.5px solid var(--card-border);
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-.btn-ghost:hover {
-  color: var(--text-primary);
-  border-color: var(--text-muted);
-}
-
-.btn-accent {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: var(--brand-primary);
-  color: #fff;
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  border: 1.5px solid var(--brand-primary);
-  transition: background 0.15s ease;
-}
-.btn-accent:hover { background: var(--brand-hover); border-color: var(--brand-hover); }
-
-/* Brand-tinted secondary CTA. Sits between btn-ghost (invisible) and
-   btn-accent (loud solid red) — used when an action should clearly
-   belong to the brand color family but not compete with the primary CTA. */
-.btn-accent-soft {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  background: var(--brand-soft);
-  color: var(--brand-primary);
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  border: 1.5px solid rgba(243, 18, 60, 0.35);
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
-.btn-accent-soft:hover {
-  background: rgba(243, 18, 60, 0.16);
-  border-color: var(--brand-primary);
-}
-
-/* Reusable surface card */
-.surface {
-  background: var(--card-bg);
-  border: 1.5px solid var(--card-border);
-  border-radius: 12px;
-}
-
-/* Mono inline meta text */
-.meta-mono {
   font-size: 12px;
-  color: var(--text-muted);
+}
+.chip.active .chip-count { color: var(--page-bg); opacity: 0.6; }
+
+/* ── TEXT & TYPOGRAPHY ──────────────────────────────────────────────────── */
+.gradient-text, .gradient-brand, .gradient-cool, .gradient-warm {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: var(--text-primary);
+  -webkit-text-fill-color: unset;
 }
 
-/* Up-right arrow pill (matches playlist card) */
-.arrow-pill {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1.5px solid var(--card-border);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  flex-shrink: 0;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: normal !important; /* Classic serif doesn't need heavy weight */
+  color: var(--text-primary);
 }
-.group:hover .arrow-pill {
-  transform: translate(2px, -2px);
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--brand-primary);
-  border-color: var(--brand-primary);
 }
 
-/* ─── Article prose (AI Decoded body) ────────────────────────────────
-   Styles for HTML output by marked.js. Editorial typography that
-   matches the rest of the site. */
+/* ── ARTICLE FORMATTING (PRINT AESTHETIC) ───────────────────────────────── */
 .article-prose {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 1.65;
   color: var(--text-primary);
-  font-size: 17px;
-  line-height: 1.7;
+  max-width: 65ch;
+  margin: 0 auto;
 }
-.article-prose > * + * {
-  margin-top: 1.2em;
-}
-.article-prose h2 {
-  font-size: 1.7em;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+.article-prose h2, .article-prose h3 {
   color: var(--text-primary);
-  margin-top: 2em;
-  margin-bottom: 0.6em;
-  scroll-margin-top: 80px;
+  font-family: var(--font-display);
+  font-weight: normal;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
 }
-.article-prose h3 {
-  font-size: 1.3em;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
-  color: var(--text-primary);
-  margin-top: 1.6em;
-  margin-bottom: 0.4em;
-  scroll-margin-top: 80px;
-}
-.article-prose p {
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-.article-prose strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
+.article-prose h2 { font-size: 2em; border-bottom: 1px solid var(--divider); padding-bottom: 0.2em; }
+.article-prose h3 { font-size: 1.5em; }
+.article-prose p { margin-bottom: 1.5em; }
+
 .article-prose a {
   color: var(--brand-primary);
   text-decoration: underline;
-  text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 .article-prose a:hover {
-  opacity: 0.8;
-}
-.article-prose ul, .article-prose ol {
-  padding-left: 1.4em;
-  color: var(--text-muted);
-}
-.article-prose li {
-  margin: 0.4em 0;
-  line-height: 1.6;
-}
-.article-prose ul li {
-  list-style-type: disc;
-}
-.article-prose ol li {
-  list-style-type: decimal;
-}
-.article-prose blockquote {
-  border-left: 3px solid var(--brand-primary);
-  padding: 0.4em 0 0.4em 1.2em;
-  color: var(--text-primary);
-  font-style: italic;
-  margin-left: 0;
   background: var(--brand-soft);
-  border-radius: 0 8px 8px 0;
 }
-.article-prose code {
-  font-family: var(--font-mono);
-  font-size: 0.9em;
-  padding: 0.15em 0.4em;
-  background: var(--tag-bg);
-  border: 1.5px solid var(--card-border);
-  border-radius: 4px;
+
+.article-prose ul, .article-prose ol { margin: 1.5em 0; padding-left: 1.5em; }
+
+.article-prose blockquote {
+  border-left: 3px solid var(--text-primary);
+  padding: 1.5em 2em;
+  margin: 2em 0;
+  font-size: 1.25em;
+  font-family: var(--font-display);
+  font-style: italic;
   color: var(--text-primary);
-}
-.article-prose pre {
-  font-family: var(--font-mono);
-  font-size: 0.9em;
-  padding: 1em;
   background: var(--tag-bg);
-  border: 1.5px solid var(--card-border);
-  border-radius: 8px;
-  overflow-x: auto;
 }
-.article-prose pre code {
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
+
 .article-prose img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 1.4em 0;
+  border: 1px solid var(--card-border);
+  margin: 3em 0;
+  width: 100%;
 }
+
 .article-prose hr {
   border: none;
-  border-top: 1.5px solid var(--card-border);
-  margin: 2em 0;
-}
-.article-prose table {
+  border-top: 1px solid var(--text-primary);
+  margin: 3em auto;
   width: 100%;
-  border-collapse: collapse;
-  font-size: 0.95em;
-  margin: 1.4em 0;
 }
-.article-prose th, .article-prose td {
-  border: 1.5px solid var(--card-border);
-  padding: 0.6em 0.8em;
-  text-align: left;
+
+/* ── MISC ───────────────────────────────────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: var(--text-primary);
+  margin: 0;
 }
-.article-prose th {
-  background: var(--tag-bg);
-  font-weight: 600;
-  color: var(--text-primary);
+
+.star { color: var(--text-primary); }
+input:not(.no-border-override) {
+  border-radius: 0 !important;
+  border: 1px solid var(--card-border) !important;
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
 }
-.article-prose td {
-  color: var(--text-muted);
+input:not(.no-border-override):focus { 
+  border-color: var(--brand-primary) !important; 
+  outline: none;
+}
+input.no-border-override {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Remove all slow cinematic transitions */
+html { transition: none; }
+*, *::before, *::after {
+  transition: background-color 0.1s ease, border-color 0.1s ease, color 0.1s ease;
+}
+
+/* ── LAYOUT & SCROLLING FIXES ───────────────────────────────────────────── */
+
+/* 1. Better Horizontal Scrolling (Carousels & Filter Chips) */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  /* Add padding to the end of the scroll container so the last item doesn't stick to the screen edge */
+  padding-right: 1.5rem; 
+}
+.overflow-x-auto::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+/* Optional: Snap scrolling for horizontal card rows if they use flex */
+.overflow-x-auto > div {
+  scroll-snap-align: start;
+}
+.overflow-x-auto.scroll-container {
+  scroll-snap-type: x proximity;
+}
+
+/* 2. Better Section Spacing (Breathing Room) */
+/* We intercept the existing Tailwind margin classes to enforce larger, editorial spacing globally */
+.mb-8 { 
+  margin-bottom: 3.5rem !important; 
+}
+.my-10 { 
+  margin-top: 4.5rem !important; 
+  margin-bottom: 4.5rem !important; 
+}
+.py-10 { 
+  padding-top: 4rem !important; 
+  padding-bottom: 4rem !important; 
+}
+@media (min-width: 768px) {
+  .mb-8 { margin-bottom: 5rem !important; }
+  .my-10 { margin-top: 6rem !important; margin-bottom: 6rem !important; }
+  .py-10 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+}
+
+/* ── SYSTEM-WIDE ENFORCEMENT ────────────────────────────────────────────── */
+/* Ensure the Analog Editorial aesthetic is strictly applied site-wide, 
+   overriding Tailwind's default rounded and shadow classes. */
+
+/* 0. Total Font Consistency (Kill Space Grotesk) */
+*:not(.font-mono, .font-mono *) {
+  font-family: var(--font-display) !important;
+}
+/* Allow mono to stay mono for badges/code */
+.font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+/* 1. Brutalist Corners (Sharp Edges) - Ignoring rounded-full to preserve circles */
+.rounded, .rounded-sm, .rounded-md, .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl {
+  border-radius: 0 !important;
+}
+
+/* 2. Hard, Physical Drop Shadows */
+.shadow-sm, .shadow, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl {
+  box-shadow: var(--shadow-solid) !important;
+}
+
+/* 3. Hard Hover States */
+.hover\:shadow-md:hover, .hover\:shadow-lg:hover, .hover\:shadow-xl:hover {
+  box-shadow: var(--shadow-hover) !important;
 }

@@ -68,7 +68,7 @@ export function TopNav({
           onChange={(e) => onSearchChange(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className="flex-1 bg-transparent text-sm outline-none"
+          className="flex-1 bg-transparent text-sm outline-none no-border-override"
           style={{ color: "var(--text-primary)" }}
         />
         {searchQuery && (
@@ -107,7 +107,7 @@ export function TopNav({
           href="/simulate"
           className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
           style={{
-            background: "#DB2777",
+            background: "#10B981", /* Changed from Pink to Emerald Green to not clash with Login CTA */
             color: "#ffffff",
             letterSpacing: "-0.005em",
           }}

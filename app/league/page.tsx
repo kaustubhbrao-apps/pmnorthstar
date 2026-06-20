@@ -60,7 +60,7 @@ export default async function LeagueHypePage() {
                 </span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] xl:text-[8rem] font-black tracking-tighter mb-4 md:mb-6 xl:mb-8 uppercase leading-[0.9] lg:leading-[0.85]" style={{ color: "var(--text-primary)" }}>
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-black tracking-tighter mb-4 md:mb-6 xl:mb-8 uppercase leading-[0.9] lg:leading-[0.85] break-words hyphens-auto max-w-full" style={{ color: "var(--text-primary)" }}>
                 SIMULATION<br />
                 <span style={{ color: "var(--brand-primary)" }}>LEAGUE</span>
               </h1>
