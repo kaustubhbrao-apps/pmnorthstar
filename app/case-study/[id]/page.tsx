@@ -14,6 +14,7 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { SmartEngagementBlock } from "@/components/SmartEngagementBlock";
 import { Footer } from "@/components/Footer";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
+import { solidColorFor } from "@/lib/category-colors";
 import { ArrowLeft, ArrowUpRight, TrendingUp, TrendingDown, Clock, Menu } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -349,9 +350,8 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                     href={`/?q=${encodeURIComponent(tag)}`}
                     className="text-xs px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
                     style={{
-                      background: "var(--tag-bg)",
-                      color: "var(--text-primary)",
-                      border: "1px solid var(--card-border)",
+                      background: solidColorFor(tag),
+                      color: "#ffffff",
                     }}
                   >
                     #{tag}

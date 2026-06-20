@@ -504,5 +504,5 @@ export const publishedAIDecoded = (
   now: Date = new Date()
 ): AIDecodedManifestEntry[] =>
   aiDecodedManifest.filter(
-    (a) => new Date(a.publishedAt) <= now
+    (a) => process.env.NODE_ENV !== "production" || new Date(a.publishedAt) <= now
   );

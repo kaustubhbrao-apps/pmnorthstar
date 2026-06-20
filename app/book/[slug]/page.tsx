@@ -12,7 +12,7 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { SmartEngagementBlock } from "@/components/SmartEngagementBlock";
 import { ShareButton } from "@/components/ShareButton";
 import { Footer } from "@/components/Footer";
-import { getCategoryColor } from "@/lib/category-colors";
+import { getCategoryColor, solidColorFor } from "@/lib/category-colors";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BookFaqs } from "@/components/BookFaqs";
 import { getBookFaqs } from "@/data/bookFaqs";
@@ -348,9 +348,8 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                       href={`/?q=${encodeURIComponent(tag)}`}
                       className="text-xs px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
                       style={{
-                        background: "var(--tag-bg)",
-                        color: "var(--text-primary)",
-                        border: "1px solid var(--card-border)",
+                        background: solidColorFor(tag),
+                        color: "#ffffff",
                       }}
                     >
                       #{tag}
