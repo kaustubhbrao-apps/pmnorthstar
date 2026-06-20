@@ -114,6 +114,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: SITE_URL,
+  },
   // Favicon + apple-touch-icon are auto-routed from app/icon.tsx and
   // app/apple-icon.tsx as real PNGs. Don't set `icons` here — that
   // would override the auto-generated tags.

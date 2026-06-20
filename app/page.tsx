@@ -430,6 +430,7 @@ export default function HomePage() {
             ) : (
               <>
                 <div className="mb-8">
+                  <h1 className="text-3xl font-bold mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}>Saved Items</h1>
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Books</p>
                     <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(savedBooks.length)}</span>
@@ -557,6 +558,7 @@ export default function HomePage() {
             ) : (
               <>
                 <div className="mb-8">
+                  <h1 className="text-3xl font-bold mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}>Favourite Items</h1>
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Books</p>
                     <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(favouriteBooks.length)}</span>
@@ -680,10 +682,10 @@ export default function HomePage() {
                       <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
                       <span className="eyebrow">5 categories</span>
                     </div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
+                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
                       Real product wins,<br className="hidden sm:block" />
                       <span className="gradient-warm">and the failures behind them.</span>
-                    </h2>
+                    </h1>
                     <p className="text-base sm:text-lg lg:text-xl max-w-xl" style={{ color: "var(--text-muted)" }}>
                       {caseStudies.length} deep-dives — pivots, growth loops, design bets, hard lessons.
                     </p>
@@ -815,13 +817,13 @@ export default function HomePage() {
                     <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
                     <span className="eyebrow">{learnCategories.length} topics</span>
                   </div>
-                  <h2
+                  <h1
                     className="text-2xl sm:text-4xl font-bold mb-3"
                     style={{ color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1.1 }}
                   >
                     Curated YouTube playlists,<br className="hidden sm:block" />
                     <span className="gradient-cool">for builders who learn out loud.</span>
-                  </h2>
+                  </h1>
                   <p
                     className="text-sm max-w-xl"
                     style={{ color: "var(--text-muted)" }}
@@ -949,9 +951,9 @@ export default function HomePage() {
                 <p className="eyebrow mb-4" style={{ color: "#26A69A" }}>
                   Curated paths through the library
                 </p>
-                <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-5 sm:mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em" }}>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-5 sm:mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em" }}>
                   <span className="gradient-warm">Different ways</span> to navigate the case studies.
-                </h2>
+                </h1>
                 <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl" style={{ color: "var(--text-muted)" }}>
                   <strong style={{ color: "var(--text-primary)" }}>Topics</strong> group case studies by theme (Indian fintech, super-app failures). <strong style={{ color: "var(--text-primary)" }}>Comparisons</strong> put two companies head-to-head when they share a market.
                 </p>
@@ -1409,9 +1411,9 @@ export default function HomePage() {
                   <div className="mb-6">
                     <p className="eyebrow mb-1.5">Search results</p>
                     <div className="flex items-baseline gap-3 flex-wrap">
-                      <h2 className="text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+                      <h1 className="text-xl font-bold" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
                         “{searchQuery}”
-                      </h2>
+                      </h1>
                       <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
                         {String(filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedAIDecoded.length + searchedTopics.length + searchedComparisons.length)}
                       </span>

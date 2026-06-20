@@ -25,6 +25,8 @@ interface PageProps {
   params: { slug: string };
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const drill = getDrillBySlug(params.slug);
   if (!drill) return {};
@@ -34,6 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${drillTitle(drill)} — SimulateIt`,
     description: drill.intro.split("\n\n")[0].slice(0, 180),
+    alternates: { canonical: `${SITE_URL}/simulate/${drill.slug}` },
   };
 }
 
