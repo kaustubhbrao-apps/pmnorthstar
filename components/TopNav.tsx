@@ -42,7 +42,7 @@ export function TopNav({
 
   return (
     <header
-      className="flex-shrink-0 px-4 sm:px-6 py-3 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4"
+      className="flex-shrink-0 px-4 sm:px-6 py-3 flex flex-row items-center gap-3 sm:gap-4"
       style={{
         background: "var(--nav-bg)",
         backdropFilter: "blur(16px)",
@@ -82,7 +82,7 @@ export function TopNav({
         {/* League CTA — massive launch focus */}
         <Link
           href="/league"
-          className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
+          className="hidden sm:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
           style={{
             background: "#F3123C",
             color: "#ffffff",
@@ -105,7 +105,7 @@ export function TopNav({
         {/* SimulateIt CTA */}
         <Link
           href="/simulate"
-          className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
+          className="hidden sm:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
           style={{
             background: "#10B981", /* Changed from Pink to Emerald Green to not clash with Login CTA */
             color: "#ffffff",
@@ -120,7 +120,7 @@ export function TopNav({
             distinct from SimulateIt's pink. */}
         <Link
           href="/checkit"
-          className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
+          className="hidden sm:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-opacity hover:opacity-90 flex-shrink-0"
           style={{
             background: "#1D4ED8",
             color: "#ffffff",
