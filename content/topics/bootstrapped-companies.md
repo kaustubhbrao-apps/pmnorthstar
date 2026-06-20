@@ -4,7 +4,7 @@ title: "Bootstrapped to Billion"
 eyebrow: "Companies that refused VC money — and won"
 metaTitle: "Bootstrapped Billion-Dollar Companies — Case Studies"
 metaDescription: "How Zerodha, Atlassian, and other bootstrapped companies built billion-dollar businesses without raising VC. Long-form case studies, no paywall."
-accentColor: "#26A69A"
+accentColor: "#7C3AED"
 keywords:
   - "bootstrapped companies"
   - "Zerodha case study"

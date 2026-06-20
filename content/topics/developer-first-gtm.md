@@ -4,7 +4,7 @@ title: "Sell to the Developer First"
 eyebrow: "How bottom-up adoption beat the enterprise sales motion"
 metaTitle: "Developer-First GTM — Case Studies on Bottom-Up Growth"
 metaDescription: "Long-form case studies on companies that won by selling to developers first: Stripe, Atlassian, Vercel, Cloudflare, and the cautionary tale of MySpace."
-accentColor: "#34D399"
+accentColor: "#2563EB"
 keywords:
   - "developer-first GTM"
   - "Stripe developer strategy"

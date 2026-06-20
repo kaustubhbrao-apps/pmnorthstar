@@ -40,7 +40,7 @@ export const topics: Topic[] = [
       "no VC funding",
       "product-led growth"
     ],
-    accentColor: "#26A69A",
+    accentColor: "#7C3AED",
     caseStudyIds: [
       "cs-53",
       "cs-50",
@@ -161,7 +161,7 @@ export const topics: Topic[] = [
       "Vercel growth",
       "developer marketing"
     ],
-    accentColor: "#34D399",
+    accentColor: "#2563EB",
     caseStudyIds: [
       "cs-27",
       "cs-50",
@@ -464,7 +464,7 @@ export const topics: Topic[] = [
       "Headspace design",
       "Monzo branding"
     ],
-    accentColor: "#50C878",
+    accentColor: "#DB2777",
     caseStudyIds: [
       "cs-6",
       "cs-51",

@@ -23,7 +23,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { TopNav } from "@/components/TopNav";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionRow } from "@/components/SectionRow";
-import { solidColorFor } from "@/lib/category-colors";
+import { getCategoryColor } from "@/lib/category-colors";
 import { HeroBanner } from "@/components/HeroBanner";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PlaylistCard } from "@/components/PlaylistCard";
@@ -1223,7 +1223,7 @@ export default function HomePage() {
                         <span
                           className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
                           style={{
-                            background: solidColorFor(a.category),
+                            background: getCategoryColor(a.category).color,
                             color: "#ffffff",
                             letterSpacing: "0.12em",
                           }}

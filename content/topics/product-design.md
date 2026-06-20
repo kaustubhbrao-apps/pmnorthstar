@@ -4,7 +4,7 @@ title: "Design as a Moat"
 eyebrow: "When product design is the competitive advantage"
 metaTitle: "Product Design Case Studies — When Design Is the Strategy"
 metaDescription: "Long-form case studies on companies where design was the competitive moat: Figma, Cred, Headspace, Monzo, Superhuman. Free, in-depth analysis."
-accentColor: "#50C878"
+accentColor: "#DB2777"
 keywords:
   - "product design case studies"
   - "design as moat"
