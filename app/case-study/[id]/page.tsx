@@ -344,16 +344,18 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
               >
                 <span className="eyebrow mr-2">Tags</span>
                 {study.tags.map((tag) => (
-                  <span
+                  <Link
                     key={tag}
-                    className="text-xs px-2.5 py-1 rounded-full"
+                    href={`/?q=${encodeURIComponent(tag)}`}
+                    className="text-xs px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
                     style={{
                       background: "var(--tag-bg)",
-                      color: "var(--text-muted)",
+                      color: "var(--text-primary)",
+                      border: "1px solid var(--card-border)",
                     }}
                   >
-                    {tag}
-                  </span>
+                    #{tag}
+                  </Link>
                 ))}
               </div>
 

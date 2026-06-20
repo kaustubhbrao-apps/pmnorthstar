@@ -336,18 +336,25 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                 >
                   {book.author}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
+                {/* Tags */}
+                <div
+                  className="flex flex-wrap items-center gap-2 py-6 mt-4"
+                  style={{ borderTop: "1.5px solid var(--card-border)" }}
+                >
+                  <span className="eyebrow mr-2">Tags</span>
                   {book.tags.map((tag) => (
-                    <span
+                    <Link
                       key={tag}
-                      className="text-sm px-2 py-0.5 rounded-full"
+                      href={`/?q=${encodeURIComponent(tag)}`}
+                      className="text-xs px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
                       style={{
                         background: "var(--tag-bg)",
-                        color: "var(--text-muted)",
+                        color: "var(--text-primary)",
+                        border: "1px solid var(--card-border)",
                       }}
                     >
-                      {tag}
-                    </span>
+                      #{tag}
+                    </Link>
                   ))}
                 </div>
               </div>

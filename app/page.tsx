@@ -23,6 +23,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { TopNav } from "@/components/TopNav";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionRow } from "@/components/SectionRow";
+import { solidColorFor } from "@/lib/category-colors";
 import { HeroBanner } from "@/components/HeroBanner";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PlaylistCard } from "@/components/PlaylistCard";
@@ -161,6 +162,15 @@ export default function HomePage() {
   const [activeCsFilter, setActiveCsFilter] = useState<CaseStudyCategory>("All");
   const [activeLearnFilter, setActiveLearnFilter] = useState<LearnFilter>("All");
   const [activeBookFilter, setActiveBookFilter] = useState<string>("All");
+
+  // Read ?q= query param on mount to instantly trigger search mode
+  // (e.g. from tag clicks on detail pages).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+    if (q) setSearchQuery(q);
+  }, []);
 
   // When navigated in from another route (e.g. /india) with a hash like
   // #casestudies, set the active tab on mount so the right view loads.
@@ -1213,7 +1223,7 @@ export default function HomePage() {
                         <span
                           className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
                           style={{
-                            background: "#DB2777",
+                            background: solidColorFor(a.category),
                             color: "#ffffff",
                             letterSpacing: "0.12em",
                           }}

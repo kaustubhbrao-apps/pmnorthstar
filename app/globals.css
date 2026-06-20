@@ -12,7 +12,7 @@
   /* Classic, established typography. Moving away from Space Grotesk. */
   --font-display: "Georgia", "Cambria", "Times New Roman", Times, serif;
   --font-body:    "Georgia", "Cambria", "Times New Roman", Times, serif; /* Force Serif globally */
-  --font-mono:    "Courier New", Courier, monospace;
+  --font-mono:    var(--font-jetbrains-mono), "Courier New", Courier, monospace;
 
   /* Paper and Ink Palette */
   --page-bg:        #FDFCF8; /* Physical paper color */
@@ -208,11 +208,9 @@ button:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 
 }
 
 .btn-accent { 
-  background: linear-gradient(270deg, #FF007F, #7F00FF, #00D2FF, #00FF7F, #FFAA00) !important;
-  background-size: 400% 400% !important;
+  background: var(--brand-primary) !important;
   color: #FFFFFF !important; 
-  border: none !important;
-  animation: plethoraGradient 8s ease infinite;
+  border: 1px solid var(--brand-primary) !important;
 }
 .btn-ghost { 
   background: transparent !important; 
@@ -221,8 +219,8 @@ button:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 
 }
 .btn-accent-soft { 
   background: transparent !important; 
-  color: #7F00FF !important; 
-  border: 2px solid #7F00FF !important;
+  color: var(--brand-primary) !important; 
+  border: 2px solid var(--brand-primary) !important;
 }
 
 .btn-primary:hover, .btn-accent:hover, .btn-ghost:hover, .btn-accent-soft:hover { 
