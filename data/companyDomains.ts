@@ -76,6 +76,11 @@ export const companyDomains: Record<string, string> = {
 };
 
 export function getCompanyLogoUrl(company: string): string | null {
+  // Hardcode official logos for domains that block Google's Favicon API
+  if (company === "Coca-Cola") {
+    return "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/800px-Coca-Cola_logo.svg.png";
+  }
+
   const domain = companyDomains[company];
   return domain
     ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
