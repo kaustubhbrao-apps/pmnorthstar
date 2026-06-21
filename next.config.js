@@ -7,6 +7,7 @@ const nextConfig = {
       { protocol: "https", hostname: "images-na.ssl-images-amazon.com" },
       { protocol: "https", hostname: "via.placeholder.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
 
