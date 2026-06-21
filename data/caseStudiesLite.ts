@@ -422,20 +422,20 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-81",
-    company: "Coinbase",
-    title: "How Coinbase Made Regulation Its Competitive Advantage",
-    category: "Strategy",
-    description: "In an industry built on evading authorities, Coinbase bet that embracing regulation and compliance would be the durable moat — and became crypto's most trusted brand.",
-    logo: "🪙",
-    outcome: "Became the first major crypto company to go public, listed on Nasdaq in 2021.",
-    year: 2012,
+    id: "cs-80",
+    company: "DoorDash",
+    title: "How DoorDash Won Food Delivery by Ignoring the Cities",
+    category: "Growth",
+    description: "While rivals fought over dense urban markets, DoorDash quietly dominated the suburbs everyone else dismissed — and used that base to overtake the entire category.",
+    logo: "🛵",
+    outcome: "Became the largest US food-delivery platform with over 60% market share.",
+    year: 2018,
     tags: [
-      "fintech",
-      "compliance",
-      "trust"
+      "marketplace",
+      "logistics",
+      "go-to-market"
     ],
-    publishedAt: "2026-07-07",
+    publishedAt: "2026-06-30",
   },
   {
     id: "cs-82",
@@ -486,6 +486,38 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-07-26T15:00:00+00:00",
   },
   {
+    id: "cs-81",
+    company: "Coinbase",
+    title: "How Coinbase Made Regulation Its Competitive Advantage",
+    category: "Strategy",
+    description: "In an industry built on evading authorities, Coinbase bet that embracing regulation and compliance would be the durable moat — and became crypto's most trusted brand.",
+    logo: "🪙",
+    outcome: "Became the first major crypto company to go public, listed on Nasdaq in 2021.",
+    year: 2012,
+    tags: [
+      "fintech",
+      "compliance",
+      "trust"
+    ],
+    publishedAt: "2026-07-07",
+  },
+  {
+    id: "cs-101",
+    company: "Coca-Cola",
+    title: "The 'Hello Happiness' Phone Booths: Coca-Cola's Empathy Utility",
+    category: "Marketing",
+    description: "How Coca-Cola created custom phone booths in labor camps that accepted bottle caps instead of coins, allowing migrant workers to call home and transforming a product into an emotional utility.",
+    logo: "🥤",
+    outcome: "Over 40,000 calls made in a month, massive brand loyalty, and a masterclass in empathetic marketing.",
+    year: 2014,
+    tags: [
+      "brand",
+      "empathy",
+      "marketing",
+      "hardware"
+    ],
+  },
+  {
     id: "cs-competitor-roadmap-26",
     company: "SyncSpace",
     title: "When Goliath Ships Your Entire Q3 Roadmap on Tuesday",
@@ -532,22 +564,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Failure"
     ],
     publishedAt: "2026-08-05T15:00:00+00:00",
-  },
-  {
-    id: "cs-80",
-    company: "DoorDash",
-    title: "How DoorDash Won Food Delivery by Ignoring the Cities",
-    category: "Growth",
-    description: "While rivals fought over dense urban markets, DoorDash quietly dominated the suburbs everyone else dismissed — and used that base to overtake the entire category.",
-    logo: "🛵",
-    outcome: "Became the largest US food-delivery platform with over 60% market share.",
-    year: 2018,
-    tags: [
-      "marketplace",
-      "logistics",
-      "go-to-market"
-    ],
-    publishedAt: "2026-06-30",
   },
   {
     id: "cs-dbx-ref-8921",
@@ -917,6 +933,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-60",
+    company: "Meesho",
+    title: "How Meesho Built Social Commerce for Bharat",
+    category: "Growth",
+    description: "Meesho turned 14 million Indian women into entrepreneurs running social commerce businesses from their WhatsApp groups. Then pivoted entirely to a zero-commission marketplace and almost broke itself before becoming profitable.",
+    logo: "🛍️",
+    outcome: "$4.9B+ valuation. 14M+ resellers. 175M+ users across 27,000 PIN codes. India's largest social commerce platform — and the first major Indian e-commerce company to become profitable.",
+    year: 2015,
+    tags: [
+      "social-commerce",
+      "rural",
+      "marketplace"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-63",
     company: "Loom",
     title: "How Loom Made Async Video the New Default — Then Sold for $975M",
@@ -1078,23 +1111,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-09-13T15:00:00+00:00",
   },
   {
-    id: "cs-60",
-    company: "Meesho",
-    title: "How Meesho Built Social Commerce for Bharat",
-    category: "Growth",
-    description: "Meesho turned 14 million Indian women into entrepreneurs running social commerce businesses from their WhatsApp groups. Then pivoted entirely to a zero-commission marketplace and almost broke itself before becoming profitable.",
-    logo: "🛍️",
-    outcome: "$4.9B+ valuation. 14M+ resellers. 175M+ users across 27,000 PIN codes. India's largest social commerce platform — and the first major Indian e-commerce company to become profitable.",
-    year: 2015,
-    tags: [
-      "social-commerce",
-      "rural",
-      "marketplace"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-meta-vr-21",
     company: "Meta",
     title: "The Metaverse Gamble - Mark Zuckerberg's $50 Billion Pivot to Reality Labs",
@@ -1159,22 +1175,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-10-28T15:00:00+00:00",
   },
   {
-    id: "cs-4",
-    company: "Netflix",
-    title: "Netflix's Shift from DVD to Streaming",
-    category: "Product",
-    description: "Netflix deliberately cannibalized its own $1B DVD business to bet on streaming — a move that nearly split the company but ultimately defined its future.",
-    logo: "🎬",
-    outcome: "290M+ subscribers globally. Market cap peaked over $300B.",
-    year: 2007,
-    tags: [
-      "streaming",
-      "disruption",
-      "pivot"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-5h6j7k8l",
     company: "Peloton",
     title: "Running on Empty and the Peloton Tread+ Recall Crisis",
@@ -1189,22 +1189,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Brand Trust"
     ],
     publishedAt: "2026-10-14T15:00:00+00:00",
-  },
-  {
-    id: "cs-7",
-    company: "Notion",
-    title: "Notion's All-in-One Workspace Bet",
-    category: "Product",
-    description: "Notion almost shut down in 2015. The team moved to Kyoto, cut costs, and rebuilt from scratch — emerging with a product that collapsed note-taking, wikis, and project management into one.",
-    logo: "📝",
-    outcome: "Valued at $10B. Used by 30M+ people.",
-    year: 2018,
-    tags: [
-      "productivity",
-      "PLG",
-      "workspace"
-    ],
-    publishedAt: "2026-05-18",
   },
   {
     id: "cs-8f7a2b9d",
@@ -1223,6 +1207,54 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-11-01T15:00:00+00:00",
   },
   {
+    id: "cs-9m0n1p2q",
+    company: "PayPal",
+    title: "The $20 Bribe and How PayPal Built a Financial Empire on Referrals",
+    category: "Growth",
+    description: "In 1999, PayPal offered users $20 to sign up and another $20 to refer a friend, burning through millions to acquire users quickly. This aggressive, unprecedented referral program created an insurmountable network effect that secured their dominance.",
+    logo: "🚀",
+    outcome: "PayPal reached 1 million users by March 2000, IPO'd in 2002, and was acquired by eBay; today in 2026, it remains a global payments behemoth processing trillions annually.",
+    year: 1999,
+    tags: [
+      "Growth Hacking",
+      "FinTech",
+      "Network Effects"
+    ],
+    publishedAt: "2026-10-11T15:00:00+00:00",
+  },
+  {
+    id: "cs-15",
+    company: "Pinterest",
+    title: "Pinterest's Waitlist That Created Desire",
+    category: "Growth",
+    description: "Pinterest launched invite-only, creating scarcity and desire. They personally called new signups to learn about use cases — insights that shaped their entire product roadmap.",
+    logo: "📌",
+    outcome: "Reached 10M users faster than any site in history at the time.",
+    year: 2010,
+    tags: [
+      "waitlist",
+      "community",
+      "visual"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-20",
+    company: "PayPal",
+    title: "PayPal's $20 Referral That Built a Payments Empire",
+    category: "Growth",
+    description: "PayPal paid users $20 to sign up and $20 for each referral. They lost money on every user — but built critical mass on eBay and created network effects that made them unstoppable.",
+    logo: "💳",
+    outcome: "Acquired by eBay for $1.5B in 2002. Spun off, now worth $60B+.",
+    year: 1999,
+    tags: [
+      "referral",
+      "network effects",
+      "fintech"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-22",
     company: "Microsoft",
     title: "Satya Nadella's Cloud-First Cultural Turnaround",
@@ -1235,22 +1267,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "culture",
       "cloud",
       "turnaround"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-24",
-    company: "Nintendo",
-    title: "Nintendo's Blue Ocean Strategy with Wii",
-    category: "Strategy",
-    description: "Instead of competing on specs against PlayStation and Xbox, Nintendo targeted non-gamers with the motion-control Wii. They created a new market instead of fighting for an existing one.",
-    logo: "🎮",
-    outcome: "Wii sold 101M units. Nintendo survived near-bankruptcy to become iconic again.",
-    year: 2006,
-    tags: [
-      "blue ocean",
-      "gaming",
-      "positioning"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1303,50 +1319,50 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-09-23T15:00:00+00:00",
   },
   {
-    id: "cs-9m0n1p2q",
-    company: "PayPal",
-    title: "The $20 Bribe and How PayPal Built a Financial Empire on Referrals",
-    category: "Growth",
-    description: "In 1999, PayPal offered users $20 to sign up and another $20 to refer a friend, burning through millions to acquire users quickly. This aggressive, unprecedented referral program created an insurmountable network effect that secured their dominance.",
-    logo: "🚀",
-    outcome: "PayPal reached 1 million users by March 2000, IPO'd in 2002, and was acquired by eBay; today in 2026, it remains a global payments behemoth processing trillions annually.",
-    year: 1999,
+    id: "cs-4",
+    company: "Netflix",
+    title: "Netflix's Shift from DVD to Streaming",
+    category: "Product",
+    description: "Netflix deliberately cannibalized its own $1B DVD business to bet on streaming — a move that nearly split the company but ultimately defined its future.",
+    logo: "🎬",
+    outcome: "290M+ subscribers globally. Market cap peaked over $300B.",
+    year: 2007,
     tags: [
-      "Growth Hacking",
-      "FinTech",
-      "Network Effects"
-    ],
-    publishedAt: "2026-10-11T15:00:00+00:00",
-  },
-  {
-    id: "cs-15",
-    company: "Pinterest",
-    title: "Pinterest's Waitlist That Created Desire",
-    category: "Growth",
-    description: "Pinterest launched invite-only, creating scarcity and desire. They personally called new signups to learn about use cases — insights that shaped their entire product roadmap.",
-    logo: "📌",
-    outcome: "Reached 10M users faster than any site in history at the time.",
-    year: 2010,
-    tags: [
-      "waitlist",
-      "community",
-      "visual"
+      "streaming",
+      "disruption",
+      "pivot"
     ],
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-20",
-    company: "PayPal",
-    title: "PayPal's $20 Referral That Built a Payments Empire",
-    category: "Growth",
-    description: "PayPal paid users $20 to sign up and $20 for each referral. They lost money on every user — but built critical mass on eBay and created network effects that made them unstoppable.",
-    logo: "💳",
-    outcome: "Acquired by eBay for $1.5B in 2002. Spun off, now worth $60B+.",
-    year: 1999,
+    id: "cs-7",
+    company: "Notion",
+    title: "Notion's All-in-One Workspace Bet",
+    category: "Product",
+    description: "Notion almost shut down in 2015. The team moved to Kyoto, cut costs, and rebuilt from scratch — emerging with a product that collapsed note-taking, wikis, and project management into one.",
+    logo: "📝",
+    outcome: "Valued at $10B. Used by 30M+ people.",
+    year: 2018,
     tags: [
-      "referral",
-      "network effects",
-      "fintech"
+      "productivity",
+      "PLG",
+      "workspace"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-24",
+    company: "Nintendo",
+    title: "Nintendo's Blue Ocean Strategy with Wii",
+    category: "Strategy",
+    description: "Instead of competing on specs against PlayStation and Xbox, Nintendo targeted non-gamers with the motion-control Wii. They created a new market instead of fighting for an existing one.",
+    logo: "🎮",
+    outcome: "Wii sold 101M units. Nintendo survived near-bankruptcy to become iconic again.",
+    year: 2006,
+    tags: [
+      "blue ocean",
+      "gaming",
+      "positioning"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1483,6 +1499,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-61",
+    company: "Slice",
+    title: "How Slice Pivoted from Credit Cards to Banking — Twice",
+    category: "Strategy",
+    description: "Rajan Bajaj built India's first credit card for Gen Z when no bank would issue cards to under-25s. The RBI changed the rules, the business model broke, and Slice had to reinvent itself as a UPI-first bank in 18 months — twice.",
+    logo: "💳",
+    outcome: "Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+ users. Successfully pivoted twice without losing the brand. The Slice card brand survived three regulatory shifts that broke most fintech peers.",
+    year: 2016,
+    tags: [
+      "fintech",
+      "regulatory",
+      "pivot"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-67",
     company: "Ola",
     title: "How Ola Lost Cabs to Uber and Bet the Company on Electric Two-Wheelers",
@@ -1498,6 +1531,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
     ],
     region: "India",
     publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-79",
+    company: "Peloton",
+    title: "How Peloton Mistook a Pandemic Spike for the New Normal",
+    category: "Failure",
+    description: "Peloton read a temporary lockdown surge as permanent demand, scaled production and ambition to match, and nearly collapsed when gyms reopened and the curve bent back.",
+    logo: "🚲",
+    outcome: "Lost over 90% of its peak market value and cycled through CEOs as demand normalized.",
+    year: 2021,
+    tags: [
+      "demand forecasting",
+      "scaling",
+      "hardware"
+    ],
+    publishedAt: "2026-06-23",
   },
   {
     id: "cs-83",
@@ -1564,23 +1613,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-10-07T15:00:00+00:00",
   },
   {
-    id: "cs-61",
-    company: "Slice",
-    title: "How Slice Pivoted from Credit Cards to Banking — Twice",
-    category: "Strategy",
-    description: "Rajan Bajaj built India's first credit card for Gen Z when no bank would issue cards to under-25s. The RBI changed the rules, the business model broke, and Slice had to reinvent itself as a UPI-first bank in 18 months — twice.",
-    logo: "💳",
-    outcome: "Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+ users. Successfully pivoted twice without losing the brand. The Slice card brand survived three regulatory shifts that broke most fintech peers.",
-    year: 2016,
-    tags: [
-      "fintech",
-      "regulatory",
-      "pivot"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-78",
     company: "Roblox",
     title: "How Roblox Built a Game Platform by Not Making Games",
@@ -1597,20 +1629,20 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-06-16",
   },
   {
-    id: "cs-79",
-    company: "Peloton",
-    title: "How Peloton Mistook a Pandemic Spike for the New Normal",
-    category: "Failure",
-    description: "Peloton read a temporary lockdown surge as permanent demand, scaled production and ambition to match, and nearly collapsed when gyms reopened and the curve bent back.",
-    logo: "🚲",
-    outcome: "Lost over 90% of its peak market value and cycled through CEOs as demand normalized.",
-    year: 2021,
+    id: "cs-86",
+    company: "Reddit",
+    title: "How Reddit Outsourced Its Entire Platform to Volunteers",
+    category: "Strategy",
+    description: "Reddit built one of the internet's largest communities by handing governance to unpaid volunteer moderators — a model that scaled brilliantly until the company tried to monetize around them.",
+    logo: "👽",
+    outcome: "Grew to one of the world's most-visited sites and IPO'd in 2024, despite recurring user revolts.",
+    year: 2005,
     tags: [
-      "demand forecasting",
-      "scaling",
-      "hardware"
+      "community",
+      "governance",
+      "platform"
     ],
-    publishedAt: "2026-06-23",
+    publishedAt: "2026-08-11",
   },
   {
     id: "cs-snap16-5561",
@@ -1801,6 +1833,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "PMF",
       "email",
       "premium"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-39",
+    company: "WeWork",
+    title: "WeWork's $47B to $8B: The IPO Collapse",
+    category: "Failure",
+    description: "WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann, and a fundamentally broken business model. Investors finally read the fine print — and fled.",
+    logo: "🏢",
+    outcome: "Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023.",
+    year: 2019,
+    tags: [
+      "governance",
+      "real estate",
+      "startup"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1999,6 +2047,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-66",
+    company: "Zomato",
+    title: "How Zomato Survived a 75% IPO Crash and Became India's Most Watched Post-IPO Story",
+    category: "Strategy",
+    description: "Zomato IPO'd at a $12B valuation, crashed 75% within 18 months, then quietly became more valuable than ever. The second act was a $568M acquisition of Blinkit when quick commerce looked unviable — a bet that aged perfectly.",
+    logo: "🍅",
+    outcome: "Profitable by FY24. ₹4,000+ Cr annualized profit run rate. Quick commerce (Blinkit) became more profitable per order than food delivery. Stock recovered to all-time highs by 2026.",
+    year: 2008,
+    tags: [
+      "post-IPO",
+      "quick commerce",
+      "marketplace"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-70",
     company: "Walmart",
     title: "How Walmart Turned Web Performance into a Revenue Lever",
@@ -2029,39 +2094,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Economics"
     ],
     publishedAt: "2026-12-06T15:00:00+00:00",
-  },
-  {
-    id: "cs-39",
-    company: "WeWork",
-    title: "WeWork's $47B to $8B: The IPO Collapse",
-    category: "Failure",
-    description: "WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann, and a fundamentally broken business model. Investors finally read the fine print — and fled.",
-    logo: "🏢",
-    outcome: "Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023.",
-    year: 2019,
-    tags: [
-      "governance",
-      "real estate",
-      "startup"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-66",
-    company: "Zomato",
-    title: "How Zomato Survived a 75% IPO Crash and Became India's Most Watched Post-IPO Story",
-    category: "Strategy",
-    description: "Zomato IPO'd at a $12B valuation, crashed 75% within 18 months, then quietly became more valuable than ever. The second act was a $568M acquisition of Blinkit when quick commerce looked unviable — a bet that aged perfectly.",
-    logo: "🍅",
-    outcome: "Profitable by FY24. ₹4,000+ Cr annualized profit run rate. Quick commerce (Blinkit) became more profitable per order than food delivery. Stock recovered to all-time highs by 2026.",
-    year: 2008,
-    tags: [
-      "post-IPO",
-      "quick commerce",
-      "marketplace"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
   },
   {
     id: "cs-68",
@@ -2095,22 +2127,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "india"
     ],
     publishedAt: "2026-07-28",
-  },
-  {
-    id: "cs-86",
-    company: "Reddit",
-    title: "How Reddit Outsourced Its Entire Platform to Volunteers",
-    category: "Strategy",
-    description: "Reddit built one of the internet's largest communities by handing governance to unpaid volunteer moderators — a model that scaled brilliantly until the company tried to monetize around them.",
-    logo: "👽",
-    outcome: "Grew to one of the world's most-visited sites and IPO'd in 2024, despite recurring user revolts.",
-    year: 2005,
-    tags: [
-      "community",
-      "governance",
-      "platform"
-    ],
-    publishedAt: "2026-08-11",
   },
   {
     id: "cs-87",
