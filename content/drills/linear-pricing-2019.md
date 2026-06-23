@@ -305,3 +305,5 @@ nodes:
 This drill is loosely based on **Linear's pricing model from 2019 onward**. Linear shipped with **free for teams under 10 users, $8/user/month above** — and made the paid tier compelling by adding genuinely valuable team features. 
 
 The free tier became Linear's primary distribution channel. By 2024 Linear was the dominant project-management tool for high-growth software companies.
+
+**Related reading:** [Linear: brand as a moat from day one](/case-study/linear-brand-from-day-one)
