@@ -37,6 +37,7 @@ import type {
 } from "@/data/drills";
 import { track } from "@/lib/track";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { LiveLeaderboard } from "@/components/LiveLeaderboard";
 import { useUserState } from "@/lib/use-user-state";
 import { AuthModal } from "@/components/AuthModal";
 import { CountdownTimer } from "@/components/CountdownTimer";
@@ -1237,10 +1238,12 @@ function OutcomeView({
         </details>
       )}
 
-      {/* Stats tracking is paused — anonymous-play only for now. The
-          API endpoints (/api/simulate/save-attempt, /api/simulate/me)
-          and the /simulate/me page exist but aren't called from here.
-          When we re-enable, swap this back to the state-aware SaveBanner. */}
+      {/* Live Leaderboard for League Matches */}
+      {isLeagueActive && (
+        <div className="mb-8">
+          <LiveLeaderboard />
+        </div>
+      )}
 
       {/* Actions */}
       <div className="flex flex-wrap items-center gap-2.5">
