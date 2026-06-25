@@ -69,18 +69,47 @@ export default async function LeagueHypePage() {
                 The ultimate proving and learning ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Score points. Climb the ranks. Can you stay at the top across 50 intense Matchdays?
               </p>
 
-              <div className="w-full max-w-md mb-16 relative">
-                <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--brand-primary)]" style={{ boxShadow: "0 0 20px rgba(219, 39, 119, 0.2)" }}>
-                  <div className="p-5" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Matchday 1 Starts In</span>
-                      <CountdownTimer targetDate="2026-06-26T00:00:00Z" />
+              {/* Active Match or Countdown */}
+              {activeMatch ? (
+                <div className="w-full max-w-md mb-16 relative">
+                  <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--brand-primary)]" style={{ boxShadow: "0 0 20px rgba(219, 39, 119, 0.4)" }}>
+                    <div className="p-5 flex flex-col items-start" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)] animate-pulse shadow-[0_0_8px_var(--brand-primary)]" />
+                        <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>
+                          Matchday 1 is Live
+                        </span>
+                      </div>
+                      <h3 className="font-display text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+                        {activeMatch.title || "The First Drill"}
+                      </h3>
+                      <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
+                        The global leaderboard is officially open. You have 24 hours to secure your rank.
+                      </p>
+                      <Link 
+                        href={`/simulate/${activeMatch.slug}`}
+                        className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded font-bold uppercase tracking-wider transition-colors"
+                        style={{ background: "var(--brand-primary)", color: "white" }}
+                      >
+                        Play Now <ChevronRight size={18} />
+                      </Link>
                     </div>
-                    <h3 className="font-display text-2xl font-bold mb-2 uppercase" style={{ color: "var(--text-primary)" }}>Coming Soon</h3>
-                    <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>Get ready for 50 intense Matchdays. The league officially begins on Friday, June 26th.</p>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="w-full max-w-md mb-16 relative">
+                  <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--brand-primary)]" style={{ boxShadow: "0 0 20px rgba(219, 39, 119, 0.2)" }}>
+                    <div className="p-5" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Matchday 1 Starts In</span>
+                        <CountdownTimer targetDate="2026-06-25T18:30:00Z" />
+                      </div>
+                      <h3 className="font-display text-2xl font-bold mb-2 uppercase" style={{ color: "var(--text-primary)" }}>Coming Soon</h3>
+                      <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>Get ready for 50 intense Matchdays. The league officially begins on Friday, June 26th.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Substack Subscribe Box */}
               <div className="w-full max-w-md relative mb-16">
