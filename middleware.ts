@@ -59,6 +59,14 @@ const INVISIBLE_CHARS = /%C2%A0|%E2%80%8B|%EF%BB%BF/gi;
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const ip = req.ip || "127.0.0.1";
+  
+  // ─── -1. Geo-Blocking for Known Scraper Regions ───
+  // Block traffic originating from China (CN) and Singapore (SG)
+  const country = req.geo?.country;
+  if (country === "CN" || country === "SG") {
+    console.warn(`Blocked request from banned country: ${country} (IP: ${ip})`);
+    return new NextResponse("Access Denied: Region Blocked.", { status: 403 });
+  }
 
   // ─── 0. Global Rate Limiting for Aggressive Scrapers ───
   // Protects all routes against headless browsers ripping the site.
