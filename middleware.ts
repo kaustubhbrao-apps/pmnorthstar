@@ -57,7 +57,17 @@ export async function middleware(req: NextRequest) {
     }
   }
 
-  // ─── 2. URL Sanitization (Existing Logic) ───
+  // ─── 2. Block Automated Scrapers (Anti-Bot) ───
+  // Scrapers cause 100% bounce rates and waste bandwidth.
+  const ua = req.headers.get("user-agent") || "";
+  const SCRAPER_REGEX = /python-requests|scrapy|curl|wget|go-http-client|node-fetch|axios|libwww|urllib/i;
+  
+  if (SCRAPER_REGEX.test(ua)) {
+    console.warn(`Blocked scraper bot: ${ua} from IP: ${ip}`);
+    return new NextResponse("Scraping prohibited.", { status: 403 });
+  }
+
+  // ─── 3. URL Sanitization (Existing Logic) ───
   if (INVISIBLE_CHARS.test(pathname)) {
     const cleaned = pathname.replace(INVISIBLE_CHARS, "");
     const url = req.nextUrl.clone();
