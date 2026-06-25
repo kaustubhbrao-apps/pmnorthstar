@@ -17,6 +17,7 @@ export default async function LeagueHypePage() {
   
   // Find the active league match
   const leagueMatches = all.filter(d => d.isLeagueMatch);
+  const activeMatch = leagueMatches[0] || null;
   const completedMatchdays = 0;
   const totalMatchdays = 50;
 
