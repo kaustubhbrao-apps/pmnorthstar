@@ -3,7 +3,7 @@ slug: ai-agent-autonomy-2026
 caseStudySlug: ai-agent-autonomy-2026
 type: current
 category: product
-publishedAt: '2026-06-26T15:00:00+00:00'
+publishedAt: '2026-06-26T00:00:00+05:30'
 isLeagueMatch: true
 estimatedMinutes: 12
 principle: |

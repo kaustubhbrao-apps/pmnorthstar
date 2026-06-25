@@ -761,7 +761,7 @@ export const drills: Drill[] = [
     caseStudySlug: "ai-agent-autonomy-2026",
     type: "current",
     category: "product",
-    publishedAt: "2026-06-26T15:00:00+00:00",
+    publishedAt: "2026-06-26T00:00:00+05:30",
     isLeagueMatch: true,
     estimatedMinutes: 12,
     principle: "Autonomy is a product decision, not a capability decision. Just because your agent CAN take an action doesn't mean it should. The most-trusted agents are the ones that ask permission for the things users haven't yet learned to trust them with. Scaling autonomy prematurely breaks the trust bridge before users can cross it.\n",
