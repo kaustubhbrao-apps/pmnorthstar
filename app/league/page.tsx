@@ -5,9 +5,9 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { LeagueRulesCarousel } from "@/components/LeagueRulesCarousel";
+import { prisma } from "@/lib/prisma";
 
 export const revalidate = 60;
-
 
 export default async function LeagueHypePage() {
 
@@ -20,6 +20,14 @@ export default async function LeagueHypePage() {
   const activeMatch = leagueMatches[0] || null;
   const completedMatchdays = 0;
   const totalMatchdays = 50;
+
+  // Fetch top 3 users for the live leaderboard
+  const topUsers = await prisma.user.findMany({
+    where: { leaguePoints: { gt: 0 } },
+    orderBy: { leaguePoints: 'desc' },
+    take: 3,
+    select: { id: true, name: true, leaguePoints: true }
+  });
 
   return (
     <SidebarShell activeNav="league" backLabelDesktop="Back to the library" backHref="/">
@@ -160,33 +168,22 @@ export default async function LeagueHypePage() {
                   </div>
 
                   <div className="flex flex-col gap-2.5">
-                    {/* Rank 1 */}
-                    <div className="flex items-center justify-between p-3.5 rounded-lg border relative overflow-hidden" style={{ background: "linear-gradient(90deg, rgba(243,18,60,0.08) 0%, transparent 100%)", borderColor: "rgba(243,18,60,0.3)" }}>
-                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--brand-primary)]" />
-                      <div className="flex items-center gap-4 pl-2">
-                        <span className="font-mono text-sm font-bold w-4 text-center" style={{ color: "var(--brand-primary)" }}>1</span>
-                        <span className="font-bold tracking-wide" style={{ color: "var(--text-primary)" }}>King 👑</span>
+                    {topUsers.length === 0 ? (
+                      <div className="text-center py-4 text-sm" style={{ color: "var(--text-muted)" }}>
+                        No scores yet. Be the first!
                       </div>
-                      <span className="font-mono text-sm font-bold drop-shadow-[0_0_8px_rgba(243,18,60,0.5)]" style={{ color: "var(--brand-primary)" }}>---</span>
-                    </div>
-
-                    {/* Rank 2 */}
-                    <div className="flex items-center justify-between p-3.5 rounded-lg border" style={{ borderColor: "var(--border-subtle)", background: "rgba(128,128,128,0.02)" }}>
-                      <div className="flex items-center gap-4 pl-3">
-                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>2</span>
-                        <span className="text-sm font-medium" style={{ color: "var(--text-muted)" }}>???</span>
-                      </div>
-                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
-                    </div>
-
-                    {/* Rank 3 */}
-                    <div className="flex items-center justify-between p-3.5 rounded-lg border" style={{ borderColor: "var(--border-subtle)", background: "rgba(128,128,128,0.02)" }}>
-                      <div className="flex items-center gap-4 pl-3">
-                        <span className="font-mono text-xs font-bold w-4 text-center" style={{ color: "var(--text-faint)" }}>3</span>
-                        <span className="text-sm font-medium" style={{ color: "var(--text-muted)" }}>???</span>
-                      </div>
-                      <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>---</span>
-                    </div>
+                    ) : (
+                      topUsers.map((user, index) => (
+                        <div key={user.id} className="flex items-center justify-between p-3.5 rounded-lg border relative overflow-hidden" style={index === 0 ? { background: "linear-gradient(90deg, rgba(243,18,60,0.08) 0%, transparent 100%)", borderColor: "rgba(243,18,60,0.3)" } : { borderColor: "var(--border-subtle)", background: "rgba(128,128,128,0.02)" }}>
+                          {index === 0 && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--brand-primary)]" />}
+                          <div className={`flex items-center gap-4 ${index === 0 ? 'pl-2' : 'pl-3'}`}>
+                            <span className={`font-mono ${index === 0 ? 'text-sm' : 'text-xs'} font-bold w-4 text-center`} style={{ color: index === 0 ? "var(--brand-primary)" : "var(--text-faint)" }}>{index + 1}</span>
+                            <span className={index === 0 ? "font-bold tracking-wide" : "text-sm font-medium"} style={{ color: index === 0 ? "var(--text-primary)" : "var(--text-muted)" }}>{user.name || "Anonymous"}{index === 0 ? " 👑" : ""}</span>
+                          </div>
+                          <span className={`font-mono text-sm ${index === 0 ? 'font-bold drop-shadow-[0_0_8px_rgba(243,18,60,0.5)]' : ''}`} style={{ color: index === 0 ? "var(--brand-primary)" : "var(--text-faint)" }}>{user.leaguePoints} pts</span>
+                        </div>
+                      ))
+                    )}
                   </div>
                 </div>
               </div>
