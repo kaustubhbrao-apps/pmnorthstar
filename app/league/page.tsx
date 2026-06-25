@@ -82,7 +82,7 @@ export default async function LeagueHypePage() {
                         </span>
                       </div>
                       <h3 className="font-display text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
-                        {activeMatch.title || "The First Drill"}
+                        {activeMatch.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
                       </h3>
                       <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
                         The global leaderboard is officially open. You have 24 hours to secure your rank.
