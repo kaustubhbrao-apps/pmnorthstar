@@ -6,10 +6,14 @@ import type { NextRequest } from "next/server";
 // (like Redis), but it's extremely effective at stopping script-based spam 
 // and basic Layer 7 DDoS without adding latency or cost.
 const rateLimitStore = new Map<string, { count: number; reset: number }>();
+const globalRateLimitStore = new Map<string, { count: number; reset: number }>();
 
 // Rate limit config: 5 requests per 60 seconds
 const LIMIT = 5;
 const WINDOW_MS = 60 * 1000;
+
+// Global rate limit config for aggressive scrapers: 60 requests per 60 seconds
+const GLOBAL_LIMIT = 60;
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -28,6 +32,23 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+function isGlobalRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = globalRateLimitStore.get(ip);
+
+  if (!record || now > record.reset) {
+    globalRateLimitStore.set(ip, { count: 1, reset: now + WINDOW_MS });
+    return false;
+  }
+
+  record.count++;
+  if (record.count > GLOBAL_LIMIT) {
+    return true;
+  }
+
+  return false;
+}
+
 // Strip invisible Unicode characters (non-breaking space, zero-width space,
 // BOM) that occasionally end up in pasted URLs and turn legitimate paths
 // into 404s. Observed in Vercel Analytics: /%C2%A0 (URL-encoded nbsp).
@@ -38,6 +59,13 @@ const INVISIBLE_CHARS = /%C2%A0|%E2%80%8B|%EF%BB%BF/gi;
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
   const ip = req.ip || "127.0.0.1";
+
+  // ─── 0. Global Rate Limiting for Aggressive Scrapers ───
+  // Protects all routes against headless browsers ripping the site.
+  if (isGlobalRateLimited(ip)) {
+    console.warn(`Global rate limit exceeded (Scraper blocked) for IP: ${ip} on ${pathname}`);
+    return new NextResponse("Too many requests. Please slow down.", { status: 429 });
+  }
 
   // ─── 1. Rate Limiting for CheckIt Audit ───
   // This is the most expensive route (calls external fetch + DB write).
