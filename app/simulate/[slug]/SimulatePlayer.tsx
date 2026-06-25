@@ -246,20 +246,18 @@ export function SimulatePlayer({
           if (!node?.options) return sum;
           return sum + Math.max(...node.options.map((o) => o.points));
         }, 0);
-        if (process.env.NEXT_PUBLIC_ENABLE_LEAGUE === "true") {
-          fetch("/api/simulate/save-attempt", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              drillSlug: drill.slug,
-              pathTaken: state.history,
-              ref: referrerId,
-            }),
-            keepalive: true,
-          }).catch(() => {
-            /* swallow */
-          });
-        }
+        fetch("/api/simulate/save-attempt", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            drillSlug: drill.slug,
+            pathTaken: state.history,
+            ref: referrerId,
+          }),
+          keepalive: true,
+        }).catch(() => {
+          /* swallow */
+        });
 
       // The attempt has already been anonymously logged at the start of the drill to track clicks.
       }
