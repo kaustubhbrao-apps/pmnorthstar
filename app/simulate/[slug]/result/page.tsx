@@ -12,6 +12,7 @@ import { notFound } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { getDrillBySlug } from "@/data/drills";
 import { SidebarShell } from "@/components/SidebarShell";
+import { LiveLeaderboard } from "@/components/LiveLeaderboard";
 
 export const dynamic = "force-dynamic";
 
@@ -123,7 +124,7 @@ export default function ResultSharePage({ params, searchParams }: PageProps) {
           Play this drill
           <ArrowUpRight size={14} strokeWidth={1.8} />
         </Link>
-        <div className="mt-4">
+        <div className="mt-4 mb-12">
           <Link
             href="/simulate"
             className="text-sm font-medium"
@@ -132,6 +133,12 @@ export default function ResultSharePage({ params, searchParams }: PageProps) {
             Back to the library →
           </Link>
         </div>
+
+        {drill.isLeagueMatch && (
+          <div className="mt-12 pt-8 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+            <LiveLeaderboard />
+          </div>
+        )}
       </div>
     </SidebarShell>
   );
