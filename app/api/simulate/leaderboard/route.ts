@@ -15,7 +15,17 @@ export async function GET(req: NextRequest) {
       select: { id: true, name: true, username: true, leaguePoints: true }
     });
 
-    const top10 = topUsersRaw.map((u, i) => ({ ...u, rank: i + 1 }));
+    let currentRank = 1;
+    let prevScore: number | null = null;
+    const top10 = topUsersRaw.map((u, i) => {
+      if (prevScore === null) {
+        currentRank = 1;
+      } else if (u.leaguePoints < prevScore) {
+        currentRank = i + 1;
+      }
+      prevScore = u.leaguePoints;
+      return { ...u, rank: currentRank };
+    });
 
     const totalPlayers = await prisma.user.count({
       where: { leaguePoints: { gt: 0 } }
