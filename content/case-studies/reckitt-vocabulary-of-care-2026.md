@@ -28,3 +28,9 @@ Looking back, I realized something fascinating about the brands under the Reckit
 Reckitt understood that when people are in moments of minor distress, like dealing with a painful cough, a bleeding scrape, or a sleepless night, they are not looking to evaluate their options. They are looking for an immediate psychological anchor. By delivering absolute consistency over decades, these brands bypassed our logical decision-making and embedded themselves directly into our reflexes. They did not just want to be on the shelf. They wanted to be the only word you could think of when you needed help, creating such a deep impact that the brand name literally became the solution.
 
 To this day, whenever I have a cough, the very first thing my brain reaches for is not medicine. It is a Strepsils. Because it is more than just a lozenge. It is the fastest way to feel like you are being taken care of, even when you are taking care of yourself.
+
+### Lessons for Founders and Builders
+
+1. **Market the Resolution, Not the Feature:** People don't buy products; they buy the feeling of a resolved crisis. Stop marketing the clinical ingredients (e.g., amylmetacresol) and start marketing the psychological relief (the comforting anchor).
+2. **Genericization is a Reflex, Not a Choice:** You don't become a verb or a noun just by having a good product. You become the default reflex by delivering absolute, uncompromising consistency over decades. When a user is in distress, they default to what they trust without thinking.
+3. **Become the Vocabulary:** If your product solves a painful enough problem consistently, your brand name will eventually replace the problem's vocabulary. The ultimate moat is when your competitor's customers still use your brand name to describe what they are looking for.
