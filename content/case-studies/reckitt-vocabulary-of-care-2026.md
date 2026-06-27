@@ -19,9 +19,9 @@ publishedAt: '2026-06-27T15:00:00+00:00'
 
 When you move out of your parents' house and into a college hostel, you leave behind a lot of safety nets. Suddenly, you find yourself completely in charge of your own survival. But as I realized during my first year away, some things travel with you without you even noticing. For me, that hidden baggage was the vocabulary of care.
 
-When you are sick in a dorm room at seven in the morning, your brain does not process problems in clinical terms. You do not wake up thinking you need a medicated throat lozenge to soothe your pharynx. You just think about finding the **Strepsils**. 
+When you are sick in a dorm room at seven in the morning, your brain does not process problems in clinical terms. You do not wake up thinking you need a medicated throat lozenge to soothe your pharynx. You just think about finding the Strepsils. 
 
-It is a strange and powerful phenomenon. Growing up, we rarely used generic words for minor emergencies. If someone needed antiseptic for a cut, nobody ever asked for antiseptic liquid. We asked for the **Dettol** antiseptic. When mosquitoes swarmed our rooms during the monsoon, we did not buy insect repellent. We bought a **Mortein**. And whenever the inevitable college cough hit, nobody offered you a generic cough drop. They just handed you a **Strepsils**.
+It is a strange and powerful phenomenon. Growing up, we rarely used generic words for minor emergencies. If someone needed antiseptic for a cut, nobody ever asked for antiseptic liquid. We asked for the Dettol antiseptic. When mosquitoes swarmed our rooms during the monsoon, we did not buy insect repellent. We bought a Mortein. And whenever the inevitable college cough hit, nobody offered you a generic cough drop. They just handed you a Strepsils.
 
 Looking back, I realized something fascinating about the brands under the Reckitt umbrella. They did not just sell us products. They managed to achieve the absolute holy grail of marketing by becoming the actual nouns and verbs we use to take care of ourselves. They pulled this off because they did not just market features. Instead, they marketed the comforting feeling of a resolved crisis.
 
@@ -29,8 +29,10 @@ Reckitt understood that when people are in moments of minor distress, like deali
 
 To this day, whenever I have a cough, the very first thing my brain reaches for is not medicine. It is a Strepsils. Because it is more than just a lozenge. It is the fastest way to feel like you are being taken care of, even when you are taking care of yourself.
 
-### Lessons for Founders and Builders
+Lessons for Founders and Builders:
 
-1. **Market the Resolution, Not the Feature:** People don't buy products; they buy the feeling of a resolved crisis. Stop marketing the clinical ingredients (e.g., amylmetacresol) and start marketing the psychological relief (the comforting anchor).
-2. **Genericization is a Reflex, Not a Choice:** You don't become a verb or a noun just by having a good product. You become the default reflex by delivering absolute, uncompromising consistency over decades. When a user is in distress, they default to what they trust without thinking.
-3. **Become the Vocabulary:** If your product solves a painful enough problem consistently, your brand name will eventually replace the problem's vocabulary. The ultimate moat is when your competitor's customers still use your brand name to describe what they are looking for.
+Market the Resolution, Not the Feature. People don't buy products; they buy the feeling of a resolved crisis. Stop marketing the clinical ingredients and start marketing the psychological relief.
+
+Genericization is a Reflex, Not a Choice. You don't become a verb or a noun just by having a good product. You become the default reflex by delivering absolute, uncompromising consistency over decades. When a user is in distress, they default to what they trust without thinking.
+
+Become the Vocabulary. If your product solves a painful enough problem consistently, your brand name will eventually replace the problem's vocabulary. The ultimate moat is when your competitor's customers still use your brand name to describe what they are looking for.
