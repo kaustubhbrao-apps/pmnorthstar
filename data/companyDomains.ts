@@ -73,6 +73,7 @@ export const companyDomains: Record<string, string> = {
   Discord: "discord.com",
   Vercel: "vercel.com",
   "Coca-Cola": "coca-cola.com",
+  Reckitt: "reckitt.com",
 };
 
 export function getCompanyLogoUrl(company: string): string | null {
