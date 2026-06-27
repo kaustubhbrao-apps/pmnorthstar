@@ -29,10 +29,10 @@ Reckitt understood that when people are in moments of minor distress, like deali
 
 To this day, whenever I have a cough, the very first thing my brain reaches for is not medicine. It is a Strepsils. Because it is more than just a lozenge. It is the fastest way to feel like you are being taken care of, even when you are taking care of yourself.
 
-Lessons for Founders and Builders:
+### Lessons for Founders and Builders:
 
-Market the Resolution, Not the Feature. People don't buy products; they buy the feeling of a resolved crisis. Stop marketing the clinical ingredients and start marketing the psychological relief.
+**→ Market the Resolution, Not the Feature.** People don't buy products; they buy the feeling of a resolved crisis. Stop marketing the clinical ingredients and start marketing the psychological relief.
 
-Genericization is a Reflex, Not a Choice. You don't become a verb or a noun just by having a good product. You become the default reflex by delivering absolute, uncompromising consistency over decades. When a user is in distress, they default to what they trust without thinking.
+**→ Genericization is a Reflex, Not a Choice.** You don't become a verb or a noun just by having a good product. You become the default reflex by delivering absolute, uncompromising consistency over decades. When a user is in distress, they default to what they trust without thinking.
 
-Become the Vocabulary. If your product solves a painful enough problem consistently, your brand name will eventually replace the problem's vocabulary. The ultimate moat is when your competitor's customers still use your brand name to describe what they are looking for.
+**→ Become the Vocabulary.** If your product solves a painful enough problem consistently, your brand name will eventually replace the problem's vocabulary. The ultimate moat is when your competitor's customers still use your brand name to describe what they are looking for.
