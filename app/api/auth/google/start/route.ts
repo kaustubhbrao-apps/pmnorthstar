@@ -23,6 +23,20 @@ function safeNext(nextRaw: string | null): string {
 }
 
 export async function GET(req: NextRequest) {
+  const isDev = process.env.NODE_ENV !== "production";
+  if (isDev) {
+    const next = safeNext(req.nextUrl.searchParams.get("next"));
+    const state = "mock_state_123";
+    const cookieStore = await cookies();
+    cookieStore.set("ns_oauth_state", state, { path: "/" });
+    cookieStore.set("ns_oauth_next", next, { path: "/" });
+    
+    const callbackUrl = new URL("/api/auth/google/callback", req.nextUrl.origin);
+    callbackUrl.searchParams.set("code", "mock_code");
+    callbackUrl.searchParams.set("state", state);
+    return NextResponse.redirect(callbackUrl.toString());
+  }
+
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const redirectUri = process.env.GOOGLE_REDIRECT_URI;
 

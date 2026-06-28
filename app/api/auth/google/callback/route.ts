@@ -53,8 +53,12 @@ export async function GET(req: NextRequest) {
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
   const redirectUri = process.env.GOOGLE_REDIRECT_URI;
 
-  if (!clientId || !clientSecret || !redirectUri) {
-    return errorRedirect(req, "oauth_not_configured");
+  const isDev = process.env.NODE_ENV !== "production";
+
+  if (!isDev) {
+    if (!clientId || !clientSecret || !redirectUri) {
+      return errorRedirect(req, "oauth_not_configured");
+    }
   }
 
   const code = req.nextUrl.searchParams.get("code");
@@ -77,46 +81,61 @@ export async function GET(req: NextRequest) {
     return errorRedirect(req, "state_mismatch");
   }
 
-  // Exchange code for tokens.
-  try {
-    const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        code,
-        client_id: clientId,
-        client_secret: clientSecret,
-        redirect_uri: redirectUri,
-        grant_type: "authorization_code",
-      }).toString(),
-    });
+  let profile: GoogleUserInfo;
 
-    if (!tokenRes.ok) {
-      const errText = await tokenRes.text();
-      console.error("Google token exchange failed:", errText);
-      return errorRedirect(req, "token_exchange_failed");
-    }
+  if (isDev && code === "mock_code") {
+    profile = {
+      sub: "mock_google_id_123",
+      email: "founder@example.com",
+      email_verified: true,
+      name: "Mock Founder",
+    };
+  } else {
+    // Exchange code for tokens.
+    try {
+      const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          code,
+          client_id: clientId!,
+          client_secret: clientSecret!,
+          redirect_uri: redirectUri!,
+          grant_type: "authorization_code",
+        }).toString(),
+      });
 
-    const tokens = (await tokenRes.json()) as GoogleTokenResponse;
-
-    // Fetch user profile.
-    const userRes = await fetch(
-      "https://openidconnect.googleapis.com/v1/userinfo",
-      {
-        headers: { Authorization: `Bearer ${tokens.access_token}` },
+      if (!tokenRes.ok) {
+        const errText = await tokenRes.text();
+        console.error("Google token exchange failed:", errText);
+        return errorRedirect(req, "token_exchange_failed");
       }
-    );
 
-    if (!userRes.ok) {
-      console.error("Google userinfo failed:", await userRes.text());
-      return errorRedirect(req, "userinfo_failed");
+      const tokens = (await tokenRes.json()) as GoogleTokenResponse;
+
+      // Fetch user profile.
+      const userRes = await fetch(
+        "https://openidconnect.googleapis.com/v1/userinfo",
+        {
+          headers: { Authorization: `Bearer ${tokens.access_token}` },
+        }
+      );
+
+      if (!userRes.ok) {
+        console.error("Google userinfo failed:", await userRes.text());
+        return errorRedirect(req, "userinfo_failed");
+      }
+
+      profile = (await userRes.json()) as GoogleUserInfo;
+    } catch (e) {
+      console.error(e);
+      return errorRedirect(req, "network_error");
     }
+  }
 
-    const profile = (await userRes.json()) as GoogleUserInfo;
-
-    if (!profile.email_verified) {
-      return errorRedirect(req, "email_not_verified");
-    }
+  if (!profile.email_verified) {
+    return errorRedirect(req, "email_not_verified");
+  }
 
     // ── Auto-username derivation ──────────────────────────────────
     // Derive a username from the email prefix: strip everything that

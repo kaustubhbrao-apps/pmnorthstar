@@ -102,7 +102,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
                 {latestDrill.isLeagueMatch ? (
                   <span className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)] animate-pulse shadow-[0_0_8px_var(--brand-primary)]" />
-                    Live Matchday
+                    Matchday {publishedDrills().filter(d => d.isLeagueMatch).length} is Live
                   </span>
                 ) : (
                   "Latest Scenario"
