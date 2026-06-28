@@ -16,9 +16,13 @@ export default async function LeagueHypePage() {
   const all = publishedDrills(cutoff);
   
   // Find the active league match
-  const leagueMatches = all.filter(d => d.isLeagueMatch);
-  const activeMatch = leagueMatches[0] || null;
-  const completedMatchdays = 0;
+  // publishedDrills() sorts newest first. We want the newest one as the active match.
+  const leagueMatchesDesc = all.filter(d => d.isLeagueMatch);
+  const activeMatch = leagueMatchesDesc[0] || null;
+  // Matchday number is simply how many league matches have been published so far.
+  const currentMatchdayNum = leagueMatchesDesc.length;
+  // If there's an active match, completed matchdays is 1 less. If no active match, all are completed.
+  const completedMatchdays = activeMatch ? Math.max(0, currentMatchdayNum - 1) : currentMatchdayNum;
   const totalMatchdays = 50;
 
   // Fetch top 3 users for the live leaderboard
@@ -86,7 +90,7 @@ export default async function LeagueHypePage() {
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)] animate-pulse shadow-[0_0_8px_var(--brand-primary)]" />
                         <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>
-                          Matchday 1 is Live
+                          Matchday {currentMatchdayNum} is Live
                         </span>
                       </div>
                       <h3 className="font-display text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
@@ -110,7 +114,7 @@ export default async function LeagueHypePage() {
                   <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--brand-primary)]" style={{ boxShadow: "0 0 20px rgba(219, 39, 119, 0.2)" }}>
                     <div className="p-5" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
                       <div className="flex justify-between items-center mb-4">
-                        <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Matchday 1 Starts In</span>
+                        <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>Matchday {currentMatchdayNum + 1} Starts In</span>
                         <CountdownTimer targetDate="2026-06-25T18:30:00Z" />
                       </div>
                       <h3 className="font-display text-2xl font-bold mb-2 uppercase" style={{ color: "var(--text-primary)" }}>Coming Soon</h3>
@@ -127,7 +131,7 @@ export default async function LeagueHypePage() {
                     variant="card"
                     surface="league"
                     headline="Join the Roster."
-                    subhead="Enter your email to get drafted when Matchday 1 goes live."
+                    subhead={`Enter your email to get drafted when Matchday ${currentMatchdayNum + (activeMatch ? 1 : 0)} goes live.`}
                   />
                 </div>
               </div>
