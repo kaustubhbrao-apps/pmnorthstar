@@ -749,7 +749,7 @@ export const drills: Drill[] = [
     category: "hiring",
     publishedAt: "2026-06-28T15:00:00+00:00",
     isLeagueMatch: true,
-    leagueEndsAt: "2026-06-17T15:00:00+00:00",
+    leagueEndsAt: "2026-07-05T15:00:00+00:00",
     estimatedMinutes: 5,
     principle: "Assessment tools optimize for the easy signal, not the predictive\none. A test that filters for \"can solve this problem\" rarely\npredicts \"will be effective in this role.\" The best hiring loops\nuse assessments as one input among many, not as the gate.\n",
     intro: "You are the VP of Engineering at a growth-stage company. Hiring\npace has accelerated — 30+ open engineering roles, ~500 applicants\nper role. Your recruiting team is overwhelmed, and senior\nengineers are spending 10+ hours/week in interview loops.\n\nA vendor has pitched you their AI hiring assessment platform: every\napplicant takes a 60-minute structured exercise (coding, system\ndesign, behavioral), the AI scores and ranks them, and your team\nonly interviews the top 10%. Promised: 80% reduction in interview\nhours, \"objective\" candidate ranking.\n\nYour head of recruiting is enthusiastic. Your two most senior\nengineers are skeptical. You have to decide before the next\nhiring quarter starts.\n",
