@@ -1533,6 +1533,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-78",
+    company: "Roblox",
+    title: "How Roblox Built a Game Platform by Not Making Games",
+    category: "Product",
+    description: "Roblox bet that the most valuable game company would build none of its own games — and instead give millions of young creators the tools and the money to build them.",
+    logo: "🟥",
+    outcome: "Grew to over 70M daily active users and paid creators more than $700M in a single year.",
+    year: 2006,
+    tags: [
+      "platform",
+      "UGC",
+      "gaming"
+    ],
+    publishedAt: "2026-06-16",
+  },
+  {
     id: "cs-79",
     company: "Peloton",
     title: "How Peloton Mistook a Pandemic Spike for the New Normal",
@@ -1613,20 +1629,21 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-10-07T15:00:00+00:00",
   },
   {
-    id: "cs-78",
-    company: "Roblox",
-    title: "How Roblox Built a Game Platform by Not Making Games",
-    category: "Product",
-    description: "Roblox bet that the most valuable game company would build none of its own games — and instead give millions of young creators the tools and the money to build them.",
-    logo: "🟥",
-    outcome: "Grew to over 70M daily active users and paid creators more than $700M in a single year.",
-    year: 2006,
+    id: "cs-reckitt-vocabulary-26",
+    company: "Reckitt",
+    title: "The Vocabulary of Care: How Reckitt's Brands Became Reflex Actions",
+    category: "Marketing",
+    description: "How FMCG giant Reckitt bypassed logical decision-making by embedding its brands—Dettol, Strepsils, Mortein—so deeply into our routines that they replaced generic clinical terms entirely.",
+    logo: "❤️",
+    outcome: "Achieved the holy grail of marketing: total genericization where the brand name literally became the solution.",
+    year: 2026,
     tags: [
-      "platform",
-      "UGC",
-      "gaming"
+      "Marketing",
+      "Brand Strategy",
+      "Psychology",
+      "FMCG"
     ],
-    publishedAt: "2026-06-16",
+    publishedAt: "2026-06-27T15:00:00+00:00",
   },
   {
     id: "cs-86",
@@ -2031,6 +2048,38 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-70",
+    company: "Walmart",
+    title: "How Walmart Turned Web Performance into a Revenue Lever",
+    category: "Growth",
+    description: "Walmart's e-commerce team ran a simple study in 2012 and found that every 1-second improvement in page load time increased conversions by 2%. The number was so large that performance went from being an engineering concern to a board-level KPI.",
+    logo: "W",
+    outcome: "Walmart.com grew from $4.9B in 2012 to over $73B in online revenue by 2024. The performance team became a profit center. The 1s-=-2% finding became the most-cited number in web performance literature.",
+    year: 2012,
+    tags: [
+      "performance",
+      "conversion",
+      "e-commerce"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-ww-2017-901",
+    company: "WeWork",
+    title: "WeWork's 2017 Hypergrowth: The Illusion of Tech Multiples in Real Estate",
+    category: "Founder",
+    description: "Armed with Vision Fund capital, WeWork aggressively expanded global footprint while positioning itself as a technology company rather than a real estate provider. The mismatch between unit economics and scaling ambitions set the stage for a spectacular reality check.",
+    logo: "🚀",
+    outcome: "Following a failed 2019 IPO and eventual bankruptcy restructuring, WeWork emerged in 2026 as a leaner, profitable AI-managed flexible workspace provider operating at a fraction of its peak valuation.",
+    year: 2017,
+    tags: [
+      "Strategy",
+      "Real Estate",
+      "Economics"
+    ],
+    publishedAt: "2026-12-06T15:00:00+00:00",
+  },
+  {
     id: "cs-49",
     company: "Whatsapp",
     title: "WhatsApp's No-Ads, No-Games, No-Gimmicks Growth",
@@ -2062,38 +2111,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     ],
     region: "India",
     publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-70",
-    company: "Walmart",
-    title: "How Walmart Turned Web Performance into a Revenue Lever",
-    category: "Growth",
-    description: "Walmart's e-commerce team ran a simple study in 2012 and found that every 1-second improvement in page load time increased conversions by 2%. The number was so large that performance went from being an engineering concern to a board-level KPI.",
-    logo: "W",
-    outcome: "Walmart.com grew from $4.9B in 2012 to over $73B in online revenue by 2024. The performance team became a profit center. The 1s-=-2% finding became the most-cited number in web performance literature.",
-    year: 2012,
-    tags: [
-      "performance",
-      "conversion",
-      "e-commerce"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-ww-2017-901",
-    company: "WeWork",
-    title: "WeWork's 2017 Hypergrowth: The Illusion of Tech Multiples in Real Estate",
-    category: "Founder",
-    description: "Armed with Vision Fund capital, WeWork aggressively expanded global footprint while positioning itself as a technology company rather than a real estate provider. The mismatch between unit economics and scaling ambitions set the stage for a spectacular reality check.",
-    logo: "🚀",
-    outcome: "Following a failed 2019 IPO and eventual bankruptcy restructuring, WeWork emerged in 2026 as a leaner, profitable AI-managed flexible workspace provider operating at a fraction of its peak valuation.",
-    year: 2017,
-    tags: [
-      "Strategy",
-      "Real Estate",
-      "Economics"
-    ],
-    publishedAt: "2026-12-06T15:00:00+00:00",
   },
   {
     id: "cs-68",

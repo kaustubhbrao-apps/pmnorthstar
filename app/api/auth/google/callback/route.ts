@@ -81,7 +81,8 @@ export async function GET(req: NextRequest) {
     return errorRedirect(req, "state_mismatch");
   }
 
-  let profile: GoogleUserInfo;
+  try {
+    let profile: GoogleUserInfo;
 
   if (isDev && code === "mock_code") {
     profile = {
