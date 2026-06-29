@@ -38,6 +38,16 @@ export function useUserState(): UserState {
           if (!cancelled) setState({ loading: false, isLoggedIn: false, hasEngaged: false });
           return;
         }
+        if (!cancelled) {
+          setState((prev) => ({
+            ...prev,
+            loading: false,
+            isLoggedIn: true,
+            userName: user.name,
+            username: user.username ?? undefined,
+          }));
+        }
+
         // Probe saved/liked count to determine engagement.
         const [savedRes, likedRes] = await Promise.all([
           fetch("/api/saved", { credentials: "include" }).catch(() => null),
@@ -47,14 +57,12 @@ export function useUserState(): UserState {
         const liked = likedRes && likedRes.ok ? await likedRes.json() : { items: [] };
         const engaged =
           (saved?.items?.length ?? 0) > 0 || (liked?.items?.length ?? 0) > 0;
+        
         if (!cancelled) {
-          setState({
-            loading: false,
-            isLoggedIn: true,
+          setState((prev) => ({
+            ...prev,
             hasEngaged: engaged,
-            userName: user.name,
-            username: user.username ?? undefined,
-          });
+          }));
         }
       } catch {
         if (!cancelled) setState({ loading: false, isLoggedIn: false, hasEngaged: false });
