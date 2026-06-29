@@ -97,7 +97,7 @@ export default async function LeagueHypePage() {
                         {activeMatch.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
                       </h3>
                       <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
-                        The global leaderboard is officially open. You have 24 hours to secure your rank.
+                        The global leaderboard is officially open. You have until the next drop to lock in your score.
                       </p>
                       <Link 
                         href={`/simulate/${activeMatch.slug}`}
