@@ -69,7 +69,7 @@ export default async function LeagueHypePage() {
               >
                 <div className="w-2 h-2 bg-[var(--brand-primary)] animate-pulse" />
                 <span className="font-mono font-bold tracking-widest uppercase text-xs" style={{ color: "var(--text-muted)" }}>
-                  Matchday {completedMatchdays} of {totalMatchdays}
+                  Matchday {currentMatchdayNum} of {totalMatchdays}
                 </span>
               </div>
 
