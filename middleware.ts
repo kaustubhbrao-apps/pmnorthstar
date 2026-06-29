@@ -121,7 +121,7 @@ export async function middleware(req: NextRequest) {
 export const config = {
   // We now include /api in the matcher so we can rate limit the audit tool.
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|logo-icon.svg|logo-cover.svg).*)",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };
 
