@@ -1629,6 +1629,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-10-07T15:00:00+00:00",
   },
   {
+    id: "cs-88",
+    company: "Razorpay",
+    title: "The RTO Killer: How Razorpay Magic Checkout Solved India's Cash-on-Delivery Crisis",
+    category: "Product",
+    description: "How Razorpay used network-level data and one-click checkout to slash Return-to-Origin rates for D2C brands, turning a payment gateway into an e-commerce growth engine.",
+    logo: "🛒",
+    outcome: "Reduced RTOs by up to 30% for merchants and increased checkout conversion rates by 40%, making Razorpay indispensable to the Indian D2C boom.",
+    year: 2021,
+    tags: [
+      "fintech",
+      "product",
+      "ecommerce"
+    ],
+    region: "India",
+  },
+  {
     id: "cs-reckitt-vocabulary-26",
     company: "Reckitt",
     title: "The Vocabulary of Care: How Reckitt's Brands Became Reflex Actions",
@@ -1854,22 +1870,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-39",
-    company: "WeWork",
-    title: "WeWork's $47B to $8B: The IPO Collapse",
-    category: "Failure",
-    description: "WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann, and a fundamentally broken business model. Investors finally read the fine print — and fled.",
-    logo: "🏢",
-    outcome: "Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023.",
-    year: 2019,
-    tags: [
-      "governance",
-      "real estate",
-      "startup"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-43",
     company: "Theranos",
     title: "Theranos: When Product Fakery Goes Criminal",
@@ -2048,6 +2048,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-49",
+    company: "Whatsapp",
+    title: "WhatsApp's No-Ads, No-Games, No-Gimmicks Growth",
+    category: "Product",
+    description: "WhatsApp grew to 450M users with a team of 55 people and zero marketing budget. Their philosophy: no ads, no games, no gimmicks. Pure messaging utility at the lowest possible friction.",
+    logo: "💚",
+    outcome: "Acquired by Facebook for $19B in 2014. 2B+ users today.",
+    year: 2009,
+    tags: [
+      "messaging",
+      "simplicity",
+      "international"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-70",
     company: "Walmart",
     title: "How Walmart Turned Web Performance into a Revenue Lever",
@@ -2080,18 +2096,18 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-12-06T15:00:00+00:00",
   },
   {
-    id: "cs-49",
-    company: "Whatsapp",
-    title: "WhatsApp's No-Ads, No-Games, No-Gimmicks Growth",
-    category: "Product",
-    description: "WhatsApp grew to 450M users with a team of 55 people and zero marketing budget. Their philosophy: no ads, no games, no gimmicks. Pure messaging utility at the lowest possible friction.",
-    logo: "💚",
-    outcome: "Acquired by Facebook for $19B in 2014. 2B+ users today.",
-    year: 2009,
+    id: "cs-39",
+    company: "WeWork",
+    title: "WeWork's $47B to $8B: The IPO Collapse",
+    category: "Failure",
+    description: "WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann, and a fundamentally broken business model. Investors finally read the fine print — and fled.",
+    logo: "🏢",
+    outcome: "Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023.",
+    year: 2019,
     tags: [
-      "messaging",
-      "simplicity",
-      "international"
+      "governance",
+      "real estate",
+      "startup"
     ],
     publishedAt: "2026-05-18",
   },
