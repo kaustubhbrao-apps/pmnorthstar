@@ -1634,7 +1634,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     title: "The RTO Killer: How Razorpay Magic Checkout Solved India's Cash-on-Delivery Crisis",
     category: "Product",
     description: "How Razorpay used network-level data and one-click checkout to slash Return-to-Origin rates for D2C brands, turning a payment gateway into an e-commerce growth engine.",
-    logo: "🛒",
+    logo: "💸",
     outcome: "Reduced RTOs by up to 30% for merchants and increased checkout conversion rates by 40%, making Razorpay indispensable to the Indian D2C boom.",
     year: 2021,
     tags: [

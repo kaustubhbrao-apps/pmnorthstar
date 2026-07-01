@@ -13,7 +13,7 @@ tags:
   - fintech
   - product
   - ecommerce
-logo: "🛒"
+logo: "\U0001F4B8"
 region: India
 faqs:
   - question: What is RTO in Indian e-commerce?
