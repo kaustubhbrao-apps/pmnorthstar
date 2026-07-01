@@ -25,11 +25,10 @@ export default async function LeagueHypePage() {
   const completedMatchdays = activeMatch ? Math.max(0, currentMatchdayNum - 1) : currentMatchdayNum;
   const totalMatchdays = 50;
 
-  // Fetch top 3 users for the live leaderboard
+  // Fetch all users with points for the live leaderboard
   const topUsers = await prisma.user.findMany({
     where: { leaguePoints: { gt: 0 } },
     orderBy: { leaguePoints: 'desc' },
-    take: 3,
     select: { id: true, name: true, leaguePoints: true }
   });
 
@@ -168,10 +167,10 @@ export default async function LeagueHypePage() {
                       <div className="w-2 h-2 rounded-full bg-[var(--brand-primary)] shadow-[0_0_10px_var(--brand-primary)] animate-pulse" />
                       <h3 className="font-mono text-xs uppercase tracking-[0.2em] font-bold" style={{ color: "var(--text-primary)" }}>Live Standings</h3>
                     </div>
-                    <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--text-faint)" }}>Top 3</span>
+                    <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: "var(--text-faint)" }}>Full Rankings</span>
                   </div>
 
-                  <div className="flex flex-col gap-2.5">
+                  <div className="flex flex-col gap-2.5 max-h-[400px] overflow-y-auto pr-1 custom-scrollbar">
                     {topUsers.length === 0 ? (
                       <div className="text-center py-4 text-sm" style={{ color: "var(--text-muted)" }}>
                         No scores yet. Be the first!
