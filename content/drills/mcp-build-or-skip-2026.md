@@ -5,6 +5,7 @@ type: current
 category: strategic
 publishedAt: '2026-09-13T15:00:00+00:00'
 isLeagueMatch: true
+leagueEndsAt: '2026-09-16T15:00:00+00:00'
 estimatedMinutes: 6
 principle: |
   Standards become moats only when they're inevitable. Investing in

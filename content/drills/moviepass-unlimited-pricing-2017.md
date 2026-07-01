@@ -7,7 +7,7 @@ year: 2017
 estimatedMinutes: 15
 publishedAt: '2026-09-27T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-13T15:00:00+00:00'
+leagueEndsAt: '2026-09-30T15:00:00+00:00'
 principle: |
   Unit economics cannot be ignored by sheer scale. Subsidizing heavy usage without a clear, mathematical path to monetization is a death spiral, not a growth strategy. "We'll figure it out later" works in software where marginal cost is zero; it is fatal in real-world retail where marginal cost is $12 a ticket.
 intro: |

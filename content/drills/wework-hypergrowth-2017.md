@@ -7,7 +7,7 @@ year: 2017
 estimatedMinutes: 15
 publishedAt: '2026-12-06T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-11-25T15:00:00+00:00'
+leagueEndsAt: '2026-12-09T15:00:00+00:00'
 principle: |
   Disguising a capital-intensive real estate business as a high-margin software technology company 
   will eventually collapse under public market scrutiny. The reality distortion field that works on 

@@ -5,7 +5,7 @@ type: current
 category: growth
 publishedAt: '2026-08-26T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-19T15:00:00+00:00'
+leagueEndsAt: '2026-08-30T15:00:00+00:00'
 estimatedMinutes: 5
 principle: |
   When the discovery channel changes — search to social, social to

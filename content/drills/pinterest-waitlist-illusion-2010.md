@@ -7,7 +7,7 @@ year: 2010
 estimatedMinutes: 14
 publishedAt: '2026-10-18T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-07T15:00:00+00:00'
+leagueEndsAt: '2026-10-21T15:00:00+00:00'
 principle: Scarcity is the most powerful tool for engineering early-stage desire.
 intro: |
   It is late 2010. You are the first Product Manager at Pinterest. The site is a visual "pinboard" for collecting inspiration, and while the growth is steady, it's limited to a tiny, tight-knit community of designers and hobbyists in the Midwest.

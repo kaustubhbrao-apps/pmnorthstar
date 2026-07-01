@@ -7,7 +7,7 @@ year: 2017
 estimatedMinutes: 15
 publishedAt: '2026-11-22T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-11-11T15:00:00+00:00'
+leagueEndsAt: '2026-11-25T15:00:00+00:00'
 principle: |
   In UGC media, securing foundational IP rights early is a competitive moat that prevents existential platform risk.
   Reframing your value proposition from "content consumer" to "promotional engine" is the only way to survive

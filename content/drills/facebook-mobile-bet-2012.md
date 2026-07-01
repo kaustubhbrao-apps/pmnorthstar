@@ -7,7 +7,7 @@ year: 2012
 estimatedMinutes: 18
 publishedAt: '2026-08-12T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-09T15:00:00+00:00'
+leagueEndsAt: '2026-08-16T15:00:00+00:00'
 principle: You cannot win a paradigm shift with a "wrapper" of the old world.
 intro: |
   It is May 2012. You are a Product Director at Facebook. The company is weeks away from its IPO, and the pressure is suffocating. 

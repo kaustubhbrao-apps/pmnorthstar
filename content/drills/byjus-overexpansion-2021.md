@@ -5,7 +5,7 @@ type: historical
 category: scaling
 publishedAt: '2026-07-22T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-15T15:00:00+00:00'
+leagueEndsAt: '2026-07-26T15:00:00+00:00'
 year: 2021
 estimatedMinutes: 7
 principle: |

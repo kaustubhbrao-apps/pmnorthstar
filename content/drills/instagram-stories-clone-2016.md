@@ -7,7 +7,7 @@ year: 2016
 estimatedMinutes: 15
 publishedAt: '2026-09-06T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-26T15:00:00+00:00'
+leagueEndsAt: '2026-09-09T15:00:00+00:00'
 principle: |
   Don't be too proud to steal a working format if it solves your user's exact problem.
   When a new behavior shifts the landscape, adopting the proven format is a strategic

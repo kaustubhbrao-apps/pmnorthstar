@@ -8,6 +8,7 @@ summary: "Navigate a massive clearinghouse liquidity crisis driven by an unprece
 duration: "15 min"
 publishedAt: '2026-10-28T15:00:00+00:00'
 isLeagueMatch: true
+leagueEndsAt: '2026-11-01T15:00:00+00:00'
 nodes:
   start:
     dimension: business

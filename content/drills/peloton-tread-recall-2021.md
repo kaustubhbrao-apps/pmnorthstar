@@ -7,7 +7,7 @@ year: 2021
 estimatedMinutes: 15
 publishedAt: '2026-10-14T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-10-04T15:00:00+00:00'
+leagueEndsAt: '2026-10-18T15:00:00+00:00'
 principle: |
   When consumer safety is questioned—especially regarding children—a defensive posture destroys exponentially more enterprise value than an immediate, costly recall. In a crisis of trust, the brand is the only asset that matters; fighting regulators to protect short-term margins guarantees you will lose both.
 intro: |

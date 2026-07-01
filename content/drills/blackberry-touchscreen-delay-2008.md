@@ -7,7 +7,7 @@ year: 2008
 estimatedMinutes: 20
 publishedAt: '2026-07-19T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-12T15:00:00+00:00'
+leagueEndsAt: '2026-07-22T15:00:00+00:00'
 principle: Incremental half-measures fail when a paradigm shift demands a complete leap. Defending a legacy moat against a disruptive platform shift only guarantees you die with your moat intact.
 intro: |
   It's early 2008. You are a senior PM at Research In Motion (RIM / BlackBerry), the undisputed king of the smartphone market. 

@@ -5,6 +5,7 @@ title: "The Reality Labs Pivot"
 type: historical
 category: strategic
 isLeagueMatch: true
+leagueEndsAt: '2026-09-20T15:00:00+00:00'
 publishedAt: '2026-09-16T15:00:00+00:00'
 estimatedMinutes: 12
 principle: |

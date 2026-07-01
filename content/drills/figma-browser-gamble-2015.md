@@ -7,7 +7,7 @@ year: 2015
 estimatedMinutes: 18
 publishedAt: '2026-08-16T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-12T15:00:00+00:00'
+leagueEndsAt: '2026-08-19T15:00:00+00:00'
 principle: Building on a technically impossible foundation is the ultimate competitive moat.
 intro: |
   It is 2015. You are the VP of Product at Figma. The design world is dominated by Adobe Photoshop and Sketch. Both are native desktop applications. They are fast, powerful, and industry-standard.

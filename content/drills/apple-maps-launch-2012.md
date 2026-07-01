@@ -7,7 +7,7 @@ year: 2012
 estimatedMinutes: 20
 publishedAt: '2026-07-15T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-05T15:00:00+00:00'
+leagueEndsAt: '2026-07-19T15:00:00+00:00'
 principle: Never ship a core, trust-based utility before it matches the incumbent's quality, even if the incumbent is your rival. Strategic independence is useless if it costs you user trust.
 intro: |
   It's mid-2012. You are Scott Forstall, Apple's powerful SVP of iOS Software. For years, Google Maps has been the default, pre-installed mapping application on the iPhone, functioning as a massive driver of consumer value. 
