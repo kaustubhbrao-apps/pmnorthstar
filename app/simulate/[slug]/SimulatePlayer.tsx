@@ -939,15 +939,16 @@ function OutcomeView({
         ? window.location.origin
         : "https://pmnorthstar.in";
     const shareUrl = `${origin}/simulate/${drill.slug}/result?s=${totalScore}&m=${totalMax}&b=${letterBlocks}`;
-    const text = shareString + `\n\n${shareUrl}`;
+    const clipboardText = shareString + `\n\n${shareUrl}`;
+    
     if (typeof navigator !== "undefined" && navigator.share) {
       navigator
-        .share({ title: `SimulateIt — ${drillTitle(drill)}`, text, url: shareUrl })
+        .share({ title: `SimulateIt — ${drillTitle(drill)}`, text: shareString, url: shareUrl })
         .catch(() => {
           /* user cancelled */
         });
     } else if (typeof navigator !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(text);
+      navigator.clipboard.writeText(clipboardText);
       alert("Result copied to clipboard");
     }
   }, [shareString, letterBlocks, drill, totalScore, totalMax]);
@@ -960,16 +961,17 @@ function OutcomeView({
     if (username) {
       challengeUrl += `&ref=${username}`;
     }
-    const text = `I just scored ${totalScore}/${totalMax} on the "${drillTitle(drill)}" drill. Think you can beat my decisions? \n\nAccept the challenge: ${challengeUrl}`;
+    const shareText = `I just scored ${totalScore}/${totalMax} on the "${drillTitle(drill)}" drill. Think you can beat my decisions?`;
+    const clipboardText = `${shareText}\n\nAccept the challenge: ${challengeUrl}`;
     
     if (typeof navigator !== "undefined" && navigator.share) {
-      navigator.share({ title: "SimulateIt Challenge", text, url: challengeUrl })
+      navigator.share({ title: "SimulateIt Challenge", text: shareText, url: challengeUrl })
         .catch(() => { /* user cancelled */ });
     } else if (typeof navigator !== "undefined" && navigator.clipboard) {
-      navigator.clipboard.writeText(text);
+      navigator.clipboard.writeText(clipboardText);
       alert("Challenge link copied! Send it to a buddy.");
     }
-  }, [drill, totalScore, totalMax, letterBlocks]);
+  }, [drill, totalScore, totalMax, letterBlocks, username]);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
