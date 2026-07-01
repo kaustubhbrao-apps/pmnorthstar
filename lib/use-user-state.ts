@@ -27,7 +27,7 @@ export function useUserState(): UserState {
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch("/api/auth/me", { credentials: "include" });
+        const res = await fetch("/api/auth/me", { credentials: "include", cache: "no-store" });
         if (!res.ok) {
           if (!cancelled) setState({ loading: false, isLoggedIn: false, hasEngaged: false });
           return;
@@ -50,8 +50,8 @@ export function useUserState(): UserState {
 
         // Probe saved/liked count to determine engagement.
         const [savedRes, likedRes] = await Promise.all([
-          fetch("/api/saved", { credentials: "include" }).catch(() => null),
-          fetch("/api/liked", { credentials: "include" }).catch(() => null),
+          fetch("/api/saved", { credentials: "include", cache: "no-store" }).catch(() => null),
+          fetch("/api/liked", { credentials: "include", cache: "no-store" }).catch(() => null),
         ]);
         const saved = savedRes && savedRes.ok ? await savedRes.json() : { items: [] };
         const liked = likedRes && likedRes.ok ? await likedRes.json() : { items: [] };

@@ -229,11 +229,20 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    // Issue our own session token (matches existing /api/auth/login).
+    // Issue our own session token. Next.js sometimes drops cookies().set() 
+    // when followed immediately by NextResponse.redirect(), so we set it on the response.
     const token = await signToken(user.id, user.username);
-    await setTokenCookie(token);
+    
+    const response = NextResponse.redirect(new URL(next, req.nextUrl.origin));
+    response.cookies.set("northstar_token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 60 * 60 * 24 * 7,
+      path: "/",
+    });
 
-    return NextResponse.redirect(new URL(next, req.nextUrl.origin));
+    return response;
   } catch (err) {
     console.error("Google OAuth callback error:", err);
     return errorRedirect(req, "unexpected_error");
