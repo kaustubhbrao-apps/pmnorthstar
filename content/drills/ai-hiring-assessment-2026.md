@@ -5,7 +5,7 @@ type: current
 category: hiring
 publishedAt: '2026-06-28T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-01T15:00:00+00:00'
+leagueEndsAt: '2026-07-05T15:00:00+00:00'
 estimatedMinutes: 5
 principle: |
   Assessment tools optimize for the easy signal, not the predictive

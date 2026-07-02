@@ -5,7 +5,7 @@ type: current
 category: product
 publishedAt: '2026-06-26T00:00:00+05:30'
 isLeagueMatch: true
-leagueEndsAt: '2026-06-29T18:30:00+00:00'
+leagueEndsAt: '2026-07-02T18:30:00+00:00'
 estimatedMinutes: 12
 principle: |
   Autonomy is a product decision, not a capability decision. Just because your agent CAN take an action doesn't mean it should. The most-trusted agents are the ones that ask permission for the things users haven't yet learned to trust them with. Scaling autonomy prematurely breaks the trust bridge before users can cross it.

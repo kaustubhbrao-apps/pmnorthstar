@@ -7,7 +7,7 @@ year: 2018
 estimatedMinutes: 15
 publishedAt: '2026-11-15T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-11-18T15:00:00+00:00'
+leagueEndsAt: '2026-11-22T15:00:00+00:00'
 principle: |
   Over-automation of complex physical processes leads to catastrophic bottlenecks; humans are underrated 
   at complex dexterity. Furthermore, during an existential crisis, survival metrics (cash flow and units 

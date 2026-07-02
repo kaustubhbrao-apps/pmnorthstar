@@ -7,7 +7,7 @@ year: 2005
 estimatedMinutes: 20
 publishedAt: '2026-07-08T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-12T15:00:00+00:00'
+leagueEndsAt: '2026-07-15T15:00:00+00:00'
 principle: Create moats through irrational upfront value that changes consumer psychology. When you absorb the friction of a transaction, you unlock compounding behavior that math models can't predict.
 intro: |
   It is late 2004. You are Jeff Bezos, CEO of Amazon.

@@ -7,7 +7,7 @@ year: 2014
 estimatedMinutes: 15
 publishedAt: '2026-08-23T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-26T15:00:00+00:00'
+leagueEndsAt: '2026-08-30T15:00:00+00:00'
 principle: |
   Splitting a single app into two to serve divergent use cases breaks the core habit loop
   that built the network. When utility is powered by gamified social interactions, unbundling

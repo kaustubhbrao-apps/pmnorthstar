@@ -7,7 +7,7 @@ year: 2011
 estimatedMinutes: 15
 publishedAt: '2026-08-30T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-09-02T15:00:00+00:00'
+leagueEndsAt: '2026-09-06T15:00:00+00:00'
 principle: |
   Identity policies must align with user trust and platform culture, not just internal
   data aggregation goals. Forcing strict real-name policies on vulnerable early adopters

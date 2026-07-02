@@ -15,14 +15,22 @@ export default async function LeagueHypePage() {
   const cutoff = isDev ? new Date("2099-12-31") : new Date();
   const all = publishedDrills(cutoff);
   
-  // Find the active league match
-  // publishedDrills() sorts newest first. We want the newest one as the active match.
+  // Find the active league matches
+  // publishedDrills() sorts newest first.
   const leagueMatchesDesc = all.filter(d => d.isLeagueMatch);
-  const activeMatch = leagueMatchesDesc[0] || null;
+  const activeMatches = leagueMatchesDesc.filter((d) => {
+    if (!d.leagueEndsAt) return false;
+    return new Date(d.leagueEndsAt).getTime() > Date.now();
+  });
+  const completedMatches = leagueMatchesDesc.filter((d) => {
+    if (!d.leagueEndsAt) return true;
+    return Date.now() >= new Date(d.leagueEndsAt).getTime();
+  });
+  
   // Matchday number is simply how many league matches have been published so far.
   const currentMatchdayNum = leagueMatchesDesc.length;
-  // If there's an active match, completed matchdays is 1 less. If no active match, all are completed.
-  const completedMatchdays = activeMatch ? Math.max(0, currentMatchdayNum - 1) : currentMatchdayNum;
+  // Completed matchdays count
+  const completedMatchdaysCount = completedMatches.length;
   const totalMatchdays = 50;
 
   // Fetch all users with points for the live leaderboard
@@ -81,32 +89,40 @@ export default async function LeagueHypePage() {
                 The ultimate proving and learning ground for <span style={{ color: "var(--text-primary)" }}>Builders, Founders, and Operators</span>. Score points. Climb the ranks. Can you stay at the top across 50 intense Matchdays?
               </p>
 
-              {/* Active Match or Countdown */}
-              {activeMatch ? (
-                <div className="w-full max-w-md mb-16 relative">
-                  <div className="p-1 rounded bg-[var(--card-bg)] border border-[var(--brand-primary)]" style={{ boxShadow: "0 0 20px rgba(219, 39, 119, 0.4)" }}>
-                    <div className="p-5 flex flex-col items-start" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)] animate-pulse shadow-[0_0_8px_var(--brand-primary)]" />
-                        <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>
-                          Matchday {currentMatchdayNum} is Live
-                        </span>
+              {/* Active Matches or Countdown */}
+              {activeMatches.length > 0 ? (
+                <div className="w-full max-w-md mb-16 relative flex flex-col gap-4">
+                  {activeMatches.map((match, idx) => {
+                    // Reverse calculate the matchday number for this match
+                    const matchIndex = leagueMatchesDesc.findIndex(m => m.slug === match.slug);
+                    const matchNumber = leagueMatchesDesc.length - matchIndex;
+                    
+                    return (
+                      <div key={match.slug} className="p-1 rounded bg-[var(--card-bg)] border border-[var(--brand-primary)]" style={{ boxShadow: "0 0 20px rgba(219, 39, 119, 0.4)" }}>
+                        <div className="p-5 flex flex-col items-start" style={{ background: "rgba(255, 255, 255, 0.02)" }}>
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)] animate-pulse shadow-[0_0_8px_var(--brand-primary)]" />
+                            <span className="font-mono text-xs uppercase tracking-widest font-bold" style={{ color: "var(--brand-primary)" }}>
+                              Matchday {matchNumber} is Live
+                            </span>
+                          </div>
+                          <h3 className="font-display text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+                            {match.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+                          </h3>
+                          <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
+                            The global leaderboard is open. Lock in your score before the 7-day window closes.
+                          </p>
+                          <Link 
+                            href={`/simulate/${match.slug}`}
+                            className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded font-bold uppercase tracking-wider transition-colors"
+                            style={{ background: "var(--brand-primary)", color: "white" }}
+                          >
+                            Play Now <ChevronRight size={18} />
+                          </Link>
+                        </div>
                       </div>
-                      <h3 className="font-display text-3xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
-                        {activeMatch.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
-                      </h3>
-                      <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
-                        The global leaderboard is officially open. You have until the next drop to lock in your score.
-                      </p>
-                      <Link 
-                        href={`/simulate/${activeMatch.slug}`}
-                        className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded font-bold uppercase tracking-wider transition-colors"
-                        style={{ background: "var(--brand-primary)", color: "white" }}
-                      >
-                        Play Now <ChevronRight size={18} />
-                      </Link>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
               ) : (
                 <div className="w-full max-w-md mb-16 relative">
@@ -130,7 +146,7 @@ export default async function LeagueHypePage() {
                     variant="card"
                     surface="league"
                     headline="Join the Roster."
-                    subhead={`Enter your email to get drafted when Matchday ${currentMatchdayNum + (activeMatch ? 1 : 0)} goes live.`}
+                    subhead={`Enter your email to get drafted when Matchday ${currentMatchdayNum + 1} goes live.`}
                   />
                 </div>
               </div>
@@ -190,10 +206,41 @@ export default async function LeagueHypePage() {
                   </div>
                 </div>
               </div>
+            </div>
           </div>
 
+          {/* Previous Matchdays */}
+          {completedMatches.length > 0 && (
+            <div className="w-full mt-10">
+              <h2 className="font-mono text-sm uppercase tracking-[0.2em] mb-6 border-b pb-4" style={{ color: "var(--text-faint)", borderColor: "var(--border-subtle)" }}>
+                Completed Matchdays
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {completedMatches.map((match) => {
+                  const matchIndex = leagueMatchesDesc.findIndex(m => m.slug === match.slug);
+                  const matchNumber = leagueMatchesDesc.length - matchIndex;
+                  return (
+                    <Link
+                      key={match.slug}
+                      href={`/simulate/${match.slug}`}
+                      className="group p-5 rounded-lg border transition-all hover:-translate-y-1"
+                      style={{ background: "var(--card-bg)", borderColor: "var(--border-subtle)" }}
+                    >
+                      <div className="font-mono text-xs uppercase tracking-widest mb-3" style={{ color: "var(--text-faint)" }}>Matchday {matchNumber}</div>
+                      <h4 className="font-bold text-lg mb-2 group-hover:text-[var(--brand-primary)] transition-colors" style={{ color: "var(--text-primary)" }}>
+                        {match.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+                      </h4>
+                      <p className="text-sm line-clamp-2" style={{ color: "var(--text-muted)" }}>
+                        {match.intro}
+                      </p>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
         </div>
-      </div>
       </div>
     </SidebarShell>
   );

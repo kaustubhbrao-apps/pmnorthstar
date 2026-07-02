@@ -4,7 +4,7 @@ caseStudySlug: google-reader-sunset-2013
 type: historical
 category: strategic
 isLeagueMatch: true
-leagueEndsAt: '2026-09-06T15:00:00+00:00'
+leagueEndsAt: '2026-09-09T15:00:00+00:00'
 publishedAt: '2026-09-02T15:00:00+00:00'
 estimatedMinutes: 12
 principle: |

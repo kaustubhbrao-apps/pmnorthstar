@@ -7,7 +7,7 @@ year: 2008
 estimatedMinutes: 14
 publishedAt: '2026-08-09T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-08-12T15:00:00+00:00'
+leagueEndsAt: '2026-08-16T15:00:00+00:00'
 principle: Virality is a product feature, not a marketing tactic.
 intro: |
   It is late 2008. You are the Head of Growth at Dropbox. You have a product that people love, but your Cost Per Acquisition (CAC) is killing you. 

@@ -5,7 +5,7 @@ type: current
 category: scope
 publishedAt: '2026-11-29T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-12-02T15:00:00+00:00'
+leagueEndsAt: '2026-12-06T15:00:00+00:00'
 estimatedMinutes: 5
 principle: |
   Speed of building is now uncoupled from quality of shipping.

@@ -16,19 +16,7 @@ for (const file of files) {
   const pubDateIso = pubMatch[1];
   const pubDate = new Date(pubDateIso);
   
-  // Determine if it was published on a Wednesday (3) or Sunday (0)
-  // Wednesday match ends on Sunday (4 days later)
-  // Sunday match ends on Wednesday (3 days later)
-  const day = pubDate.getUTCDay();
-  let addDays = 4; // default to 4
-  if (day === 0) { // Sunday
-    addDays = 3;
-  } else if (day === 3) { // Wednesday
-    addDays = 4;
-  } else {
-    addDays = 4; // fallback
-  }
-
+  const addDays = 7;
   const endMs = pubDate.getTime() + addDays * 24 * 60 * 60 * 1000;
   const endDate = new Date(endMs);
   

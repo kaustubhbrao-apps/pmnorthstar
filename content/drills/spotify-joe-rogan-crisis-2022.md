@@ -5,7 +5,7 @@ type: historical
 category: strategic
 publishedAt: '2026-11-11T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-11-15T15:00:00+00:00'
+leagueEndsAt: '2026-11-18T15:00:00+00:00'
 estimatedMinutes: 10
 principle: |
   A platform's rules must be systemic, not episodic. When you make moderation 

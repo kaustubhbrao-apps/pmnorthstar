@@ -7,7 +7,7 @@ year: 2020
 estimatedMinutes: 12
 publishedAt: '2026-07-26T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-07-29T15:00:00+00:00'
+leagueEndsAt: '2026-08-02T15:00:00+00:00'
 principle: |
   Constraints are the only way to protect community quality during explosive growth.
   When you are the hottest product in the world, your constraint is not acquisition, it is

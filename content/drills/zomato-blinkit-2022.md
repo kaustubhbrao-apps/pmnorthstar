@@ -5,7 +5,7 @@ type: historical
 category: strategic
 publishedAt: '2026-12-09T15:00:00+00:00'
 isLeagueMatch: true
-leagueEndsAt: '2026-12-13T15:00:00+00:00'
+leagueEndsAt: '2026-12-16T15:00:00+00:00'
 year: 2022
 estimatedMinutes: 5
 principle: |
