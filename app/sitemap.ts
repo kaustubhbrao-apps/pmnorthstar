@@ -59,6 +59,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const personas = ["product-managers", "founders", "engineers", "designers", "marketers"];
+  personas.forEach(persona => {
+    routes.push({
+      url: `${SITE_URL}/for/${persona}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+  });
+
   for (const study of publishedCaseStudies(now)) {
     routes.push({
       url: `${SITE_URL}/case-study/${getCaseStudySlug(study.id)}`,
