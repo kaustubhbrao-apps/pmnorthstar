@@ -4,10 +4,10 @@
 // importing the massive JSON objects for the full content.
 // Regenerated via scripts/sync-content.ts.
 
-export const CASE_STUDY_COUNT = 89;
+export const CASE_STUDY_COUNT = 92;
 export const BOOK_COUNT = 30;
 export const PLAYLIST_COUNT = 18;
-export const TOPIC_COUNT = 7;
-export const COMPARISON_COUNT = 8;
-export const AI_DECODED_COUNT = 23;
-export const DRILL_COUNT = 11;
+export const TOPIC_COUNT = 8;
+export const COMPARISON_COUNT = 9;
+export const AI_DECODED_COUNT = 24;
+export const DRILL_COUNT = 13;

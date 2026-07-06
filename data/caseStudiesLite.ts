@@ -1223,6 +1223,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-10-11T15:00:00+00:00",
   },
   {
+    id: "cs-13",
+    company: "Twitter",
+    title: "Twitter's 'Suggested Users' Retention Fix",
+    category: "Growth",
+    description: "Twitter discovered users who followed 30+ people retained far better. They redesigned onboarding around a 'suggested users' list — retention jumped overnight.",
+    logo: "🐦",
+    outcome: "Monthly active users grew from 30M to 100M in one year.",
+    year: 2009,
+    tags: [
+      "onboarding",
+      "retention",
+      "aha moment"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-15",
     company: "Pinterest",
     title: "Pinterest's Waitlist That Created Desire",
@@ -1235,6 +1251,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "waitlist",
       "community",
       "visual"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-17",
+    company: "TikTok",
+    title: "TikTok's Algorithm-First Content Strategy",
+    category: "Growth",
+    description: "Unlike every other social network, TikTok's FYP serves content from strangers — not friends. The algorithm, not social graph, drives discovery. New creators get immediate reach.",
+    logo: "🎭",
+    outcome: "1B+ MAU in 5 years. Fastest app to reach 1B users ever.",
+    year: 2018,
+    tags: [
+      "algorithm",
+      "content",
+      "virality"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1499,23 +1531,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-61",
-    company: "Slice",
-    title: "How Slice Pivoted from Credit Cards to Banking — Twice",
-    category: "Strategy",
-    description: "Rajan Bajaj built India's first credit card for Gen Z when no bank would issue cards to under-25s. The RBI changed the rules, the business model broke, and Slice had to reinvent itself as a UPI-first bank in 18 months — twice.",
-    logo: "💳",
-    outcome: "Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+ users. Successfully pivoted twice without losing the brand. The Slice card brand survived three regulatory shifts that broke most fintech peers.",
-    year: 2016,
-    tags: [
-      "fintech",
-      "regulatory",
-      "pivot"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-67",
     company: "Ola",
     title: "How Ola Lost Cabs to Uber and Bet the Company on Electric Two-Wheelers",
@@ -1662,6 +1677,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-06-27T15:00:00+00:00",
   },
   {
+    id: "cs-61",
+    company: "Slice",
+    title: "How Slice Pivoted from Credit Cards to Banking — Twice",
+    category: "Strategy",
+    description: "Rajan Bajaj built India's first credit card for Gen Z when no bank would issue cards to under-25s. The RBI changed the rules, the business model broke, and Slice had to reinvent itself as a UPI-first bank in 18 months — twice.",
+    logo: "💳",
+    outcome: "Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+ users. Successfully pivoted twice without losing the brand. The Slice card brand survived three regulatory shifts that broke most fintech peers.",
+    year: 2016,
+    tags: [
+      "fintech",
+      "regulatory",
+      "pivot"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-86",
     company: "Reddit",
     title: "How Reddit Outsourced Its Entire Platform to Volunteers",
@@ -1774,22 +1806,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-13",
-    company: "Twitter",
-    title: "Twitter's 'Suggested Users' Retention Fix",
-    category: "Growth",
-    description: "Twitter discovered users who followed 30+ people retained far better. They redesigned onboarding around a 'suggested users' list — retention jumped overnight.",
-    logo: "🐦",
-    outcome: "Monthly active users grew from 30M to 100M in one year.",
-    year: 2009,
-    tags: [
-      "onboarding",
-      "retention",
-      "aha moment"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-16",
     company: "Uber",
     title: "Uber's City-by-City Blitzscaling Playbook",
@@ -1802,22 +1818,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "marketplace",
       "supply",
       "expansion"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-17",
-    company: "TikTok",
-    title: "TikTok's Algorithm-First Content Strategy",
-    category: "Growth",
-    description: "Unlike every other social network, TikTok's FYP serves content from strangers — not friends. The algorithm, not social graph, drives discovery. New creators get immediate reach.",
-    logo: "🎭",
-    outcome: "1B+ MAU in 5 years. Fastest app to reach 1B users ever.",
-    year: 2018,
-    tags: [
-      "algorithm",
-      "content",
-      "virality"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1920,22 +1920,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-65",
-    company: "Vercel",
-    title: "How Vercel Won Frontend by Making Deployment Stupidly Easy",
-    category: "Growth",
-    description: "Guillermo Rauch built a deployment tool that took 30 seconds to set up, while AWS took 30 hours. Then he gave away the open-source framework underneath (Next.js) and watched developers carry his platform into every company they joined.",
-    logo: "▲",
-    outcome: "$3.25B valuation. Powers websites for OpenAI, Stripe, Notion, Hashnode, McDonald's, Washington Post, GitHub. Next.js downloads cross 8M+ weekly. Frontend developer experience standard.",
-    year: 2015,
-    tags: [
-      "developer-tools",
-      "open-source",
-      "PLG"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-77",
     company: "Substack",
     title: "How Substack Turned Email Into a Media Business",
@@ -2000,38 +1984,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-11-25T15:00:00+00:00",
   },
   {
-    id: "cs-vibe-2026-442",
-    company: "Acme AI",
-    title: "The 2026 Vibe-Coded Launch Crisis: When Autonomous Agents Met Broken APIs",
-    category: "Scope",
-    description: "In the rush to capitalize on the agentic economy, a prominent B2B startup launched a \"vibe-coded\" platform that looked great to humans but completely failed machine-to-machine interactions. The resulting cascade of failed autonomous purchases forced a fundamental pivot in how readiness is measured.",
-    logo: "🚀",
-    outcome: "The company adopted the CheckIt standard for agent-readiness, eventually recovering to process $50M in autonomous agent transactions by late 2026, proving that \"vibes\" aren't enough for machine users.",
-    year: 2026,
-    tags: [
-      "AI Agents",
-      "API Design",
-      "Future of Work"
-    ],
-    publishedAt: "2026-11-29T15:00:00+00:00",
-  },
-  {
-    id: "cs-vine-2013-104",
-    company: "Vine",
-    title: "Vine vs Instagram Video: The 15-Second Execution That Killed the 6-Second Loop",
-    category: "Strategy",
-    description: "Vine invented the short-form video loop, cultivating a unique creator culture that defined early mobile video. But when Instagram launched 15-second videos in 2013, Vine's failure to adapt to creator needs and monetization spelled its doom.",
-    logo: "🚀",
-    outcome: "Vine was shut down by Twitter in 2017, while its spiritual successor TikTok dominated the 2020s, leading to the 2026 landscape where AI-generated synthetic loops have completely replaced organic short-form video.",
-    year: 2013,
-    tags: [
-      "Social Media",
-      "Competition",
-      "Creator Economy"
-    ],
-    publishedAt: "2026-12-02T15:00:00+00:00",
-  },
-  {
     id: "cs-45",
     company: "Yahoo",
     title: "Yahoo Turned Down Google for $1M and Microsoft for $45B",
@@ -2062,6 +2014,54 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "international"
     ],
     publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-65",
+    company: "Vercel",
+    title: "How Vercel Won Frontend by Making Deployment Stupidly Easy",
+    category: "Growth",
+    description: "Guillermo Rauch built a deployment tool that took 30 seconds to set up, while AWS took 30 hours. Then he gave away the open-source framework underneath (Next.js) and watched developers carry his platform into every company they joined.",
+    logo: "▲",
+    outcome: "$3.25B valuation. Powers websites for OpenAI, Stripe, Notion, Hashnode, McDonald's, Washington Post, GitHub. Next.js downloads cross 8M+ weekly. Frontend developer experience standard.",
+    year: 2015,
+    tags: [
+      "developer-tools",
+      "open-source",
+      "PLG"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-vibe-2026-442",
+    company: "Acme AI",
+    title: "The 2026 Vibe-Coded Launch Crisis: When Autonomous Agents Met Broken APIs",
+    category: "Scope",
+    description: "In the rush to capitalize on the agentic economy, a prominent B2B startup launched a \"vibe-coded\" platform that looked great to humans but completely failed machine-to-machine interactions. The resulting cascade of failed autonomous purchases forced a fundamental pivot in how readiness is measured.",
+    logo: "🚀",
+    outcome: "The company adopted the CheckIt standard for agent-readiness, eventually recovering to process $50M in autonomous agent transactions by late 2026, proving that \"vibes\" aren't enough for machine users.",
+    year: 2026,
+    tags: [
+      "AI Agents",
+      "API Design",
+      "Future of Work"
+    ],
+    publishedAt: "2026-11-29T15:00:00+00:00",
+  },
+  {
+    id: "cs-vine-2013-104",
+    company: "Vine",
+    title: "Vine vs Instagram Video: The 15-Second Execution That Killed the 6-Second Loop",
+    category: "Strategy",
+    description: "Vine invented the short-form video loop, cultivating a unique creator culture that defined early mobile video. But when Instagram launched 15-second videos in 2013, Vine's failure to adapt to creator needs and monetization spelled its doom.",
+    logo: "🚀",
+    outcome: "Vine was shut down by Twitter in 2017, while its spiritual successor TikTok dominated the 2020s, leading to the 2026 landscape where AI-generated synthetic loops have completely replaced organic short-form video.",
+    year: 2013,
+    tags: [
+      "Social Media",
+      "Competition",
+      "Creator Economy"
+    ],
+    publishedAt: "2026-12-02T15:00:00+00:00",
   },
   {
     id: "cs-70",
@@ -2177,6 +2177,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     ],
     region: "India",
     publishedAt: "2026-05-31T20:00:00+05:30",
+  },
+  {
+    id: "cs-136",
+    company: "Salesforce",
+    title: "Salesforce's \"No Software\" Revolution",
+    category: "Strategy",
+    description: "Salesforce aggressively launched with a \"No Software\" positioning campaign, attacking legacy incumbents like Siebel Systems by offering CRM delivered over the internet via a subscription. They invented the modern SaaS business model and revolutionized B2B software distribution.",
+    logo: "☁️",
+    outcome: "Created the multi-billion dollar SaaS industry and reached a market cap over $250 billion.",
+    year: 1999,
+    tags: [
+      "B2B",
+      "SaaS",
+      "Marketing",
+      "Strategy",
+      "Positioning"
+    ],
   },
   {
     id: "cs-zoom-2018-842",
