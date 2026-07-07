@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { marked } from "marked";
 import { getCaseStudyById, getCaseStudyBySlug, getCaseStudySlug, publishedCaseStudies } from "@/data/caseStudies";
 import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
 import { CaseStudyFaqs } from "@/components/CaseStudyFaqs";
@@ -320,12 +321,11 @@ export default function CaseStudyPage({ params }: { params: { id: string } }) {
                           style={{ border: "1.5px solid var(--card-border)" }}
                         />
                       ) : (
-                        <p
-                          className="text-base sm:text-lg lg:text-xl leading-[1.85] mb-8"
+                        <div
+                          className="markdown-prose text-base sm:text-lg lg:text-xl leading-[1.85] mb-8"
                           style={{ color: "var(--text-primary)", opacity: 0.9 }}
-                        >
-                          {p}
-                        </p>
+                          dangerouslySetInnerHTML={{ __html: marked.parse(p) as string }}
+                        />
                       )}
                       {i === injectAfter && (
                         <div className="my-8">
