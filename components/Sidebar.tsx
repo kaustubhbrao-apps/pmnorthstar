@@ -197,6 +197,30 @@ export function Sidebar({
             </span>
           </Link>
 
+          {/* Builder Draft */}
+          <Link
+            href="/draft"
+            onClick={onClose}
+            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "draft" ? "active" : ""}`}
+            style={{
+              background: activeNav === "draft" ? "rgba(212, 16, 47, 0.1)" : "transparent",
+            }}
+          >
+            <Users size={15} strokeWidth={1.8} style={{ color: activeNav === "draft" ? "#D4102F" : "inherit" }} />
+            <span style={{ letterSpacing: "-0.005em", color: activeNav === "draft" ? "#D4102F" : "inherit" }}>
+              Builder Draft
+            </span>
+            <span
+              className="ml-auto text-xs font-semibold px-1.5 py-0.5 rounded"
+              style={{
+                background: activeNav === "draft" ? "rgba(212, 16, 47, 0.25)" : "rgba(212, 16, 47, 0.18)",
+                color: activeNav === "draft" ? "#ffffff" : "#D4102F",
+              }}
+            >
+              NEW
+            </span>
+          </Link>
+
           <div className="pt-5">
             <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Collections</p>
             

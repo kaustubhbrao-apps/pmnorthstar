@@ -97,11 +97,23 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
           style={{
             background: "#F3123C",
             color: "#fff",
-            letterSpacing: "0.04em",
           }}
         >
           NEW
         </span>
+      </Link>
+
+      {/* Builder Draft */}
+      <Link
+        href="/draft"
+        className="chip flex-shrink-0 inline-flex items-center gap-1.5"
+        style={{
+          borderColor: "rgba(212, 16, 47, 0.4)",
+          background: "rgba(212, 16, 47, 0.08)",
+        }}
+      >
+        <Trophy size={11} strokeWidth={1.6} style={{ color: "#D4102F" }} />
+        <span style={{ color: "var(--text-primary)" }}>Draft</span>
       </Link>
 
       {/* SimulateIt */}
