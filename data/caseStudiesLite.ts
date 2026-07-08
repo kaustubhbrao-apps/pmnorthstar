@@ -18,6 +18,23 @@ export interface CaseStudyLite {
 
 export const caseStudiesLite: CaseStudyLite[] = [
   {
+    id: "cs-138",
+    company: "Adyen",
+    title: "Adyen: The Silent Giant of Enterprise Acquiring",
+    category: "Growth",
+    description: "How Adyen built a $40B+ payments empire without courting developers or small startups, focusing entirely on a unified global acquiring stack for enterprise behemoths like Uber and Spotify.",
+    logo: "🟢",
+    outcome: "Processed nearly $1 trillion in volume with a phenomenally high take-rate efficiency, dominating the global enterprise space.",
+    year: 2006,
+    tags: [
+      "Fintech",
+      "Payments",
+      "Enterprise",
+      "GTM",
+      "Infrastructure"
+    ],
+  },
+  {
     id: "cs-autonomy-26",
     company: "AutoTask AI",
     title: "Unleashing the Agents: The Cost of Premature Autonomy",
@@ -274,6 +291,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-54",
+    company: "Byju's",
+    title: "How BYJU'S Lost $20 Billion in Two Years",
+    category: "Failure",
+    description: "BYJU'S became India's most valuable startup at $22B by aggressively acquiring twelve companies and selling expensive contracts to anxious parents. Then the music stopped, and almost everything that could break, did. By 2026, the company is in NCLT proceedings and effectively dismantled.",
+    logo: "📚",
+    outcome: "Peak $22B valuation collapsed to effectively zero. Insolvency proceedings initiated 2024. Aakash separated. Acquired assets sold off or written down to nothing. One of the largest valuation destructions in startup history.",
+    year: 2011,
+    tags: [
+      "edtech",
+      "M&A",
+      "growth"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-64",
     company: "Discord",
     title: "How Discord Pivoted from Gaming Chat to Community Infrastructure",
@@ -290,20 +324,68 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-80",
-    company: "DoorDash",
-    title: "How DoorDash Won Food Delivery by Ignoring the Cities",
-    category: "Growth",
-    description: "While rivals fought over dense urban markets, DoorDash quietly dominated the suburbs everyone else dismissed — and used that base to overtake the entire category.",
-    logo: "🛵",
-    outcome: "Became the largest US food-delivery platform with over 60% market share.",
-    year: 2018,
+    id: "cs-74",
+    company: "Cloudflare",
+    title: "How Cloudflare Made Security Headers the Default and Won Enterprise",
+    category: "Strategy",
+    description: "Cloudflare shipped strict transport security, content security policy, and HSTS preload as one-click defaults on every site behind the network. The decision saved customers from themselves and turned 'security posture' into a sales tool that competitors couldn't match.",
+    logo: "C",
+    outcome: "Cloudflare grew from a small DDoS-mitigation startup in 2010 to a $30B public company powering ~20% of the global web. Enterprise security questionnaires that used to take weeks now close in days for Cloudflare customers. Security-as-default became the category convention.",
+    year: 2014,
     tags: [
-      "marketplace",
-      "logistics",
-      "go-to-market"
+      "security",
+      "infrastructure",
+      "trust"
     ],
-    publishedAt: "2026-06-30",
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-81",
+    company: "Coinbase",
+    title: "How Coinbase Made Regulation Its Competitive Advantage",
+    category: "Strategy",
+    description: "In an industry built on evading authorities, Coinbase bet that embracing regulation and compliance would be the durable moat — and became crypto's most trusted brand.",
+    logo: "🪙",
+    outcome: "Became the first major crypto company to go public, listed on Nasdaq in 2021.",
+    year: 2012,
+    tags: [
+      "fintech",
+      "compliance",
+      "trust"
+    ],
+    publishedAt: "2026-07-07",
+  },
+  {
+    id: "cs-82",
+    company: "Calendly",
+    title: "How Calendly Turned Every Meeting Link Into a Growth Engine",
+    category: "Growth",
+    description: "Calendly built virality into its core action: every time a user shared a scheduling link, they exposed a new prospect to the product — turning the feature itself into the marketing.",
+    logo: "📅",
+    outcome: "Bootstrapped to a $3B valuation with tens of millions of users and strong profitability.",
+    year: 2013,
+    tags: [
+      "product-led growth",
+      "virality",
+      "SaaS"
+    ],
+    publishedAt: "2026-07-14",
+  },
+  {
+    id: "cs-101",
+    company: "Coca-Cola",
+    title: "The 'Hello Happiness' Phone Booths: Coca-Cola's Empathy Utility",
+    category: "Marketing",
+    description: "How Coca-Cola created custom phone booths in labor camps that accepted bottle caps instead of coins, allowing migrant workers to call home and transforming a product into an emotional utility.",
+    logo: "🥤",
+    outcome: "Over 40,000 calls made in a month, massive brand loyalty, and a masterclass in empathetic marketing.",
+    year: 2014,
+    tags: [
+      "brand",
+      "empathy",
+      "marketing",
+      "hardware"
+    ],
   },
   {
     id: "cs-137",
@@ -355,57 +437,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-51",
-    company: "Cred",
-    title: "How Cred Built India's Most Designed Fintech",
-    category: "Design",
-    description: "Kunal Shah turned credit card bill payments into a status product. Cred rejected two-thirds of users, spent obscenely on design and brand, and built India's most-watched premium fintech. The monetization story finally started cohering in 2024-26.",
-    logo: "💳",
-    outcome: "$6.4B peak valuation, held flat through 2024 raise. 13M+ members. Cred Cash, Cred Money, Cred Garage layering monetization on top of the original brand asset.",
-    year: 2018,
-    tags: [
-      "design",
-      "fintech",
-      "exclusivity"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-54",
-    company: "Byju's",
-    title: "How BYJU'S Lost $20 Billion in Two Years",
-    category: "Failure",
-    description: "BYJU'S became India's most valuable startup at $22B by aggressively acquiring twelve companies and selling expensive contracts to anxious parents. Then the music stopped, and almost everything that could break, did. By 2026, the company is in NCLT proceedings and effectively dismantled.",
-    logo: "📚",
-    outcome: "Peak $22B valuation collapsed to effectively zero. Insolvency proceedings initiated 2024. Aakash separated. Acquired assets sold off or written down to nothing. One of the largest valuation destructions in startup history.",
-    year: 2011,
-    tags: [
-      "edtech",
-      "M&A",
-      "growth"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-59",
-    company: "Cult.fit",
-    title: "Cult.fit's Wellness Super-App Bet (and the Return to Focus)",
-    category: "Strategy",
-    description: "Mukesh Bansal pioneered India's first 'lifestyle-as-subscription' brand. Then tried to bundle meal delivery, meditation, and telemedicine into one app. The bundle didn't hold, the company nearly broke, and the recovery has been a study in refocusing.",
-    logo: "🏋️",
-    outcome: "500+ fitness centers, India's largest chain. Tata Digital became a major shareholder in 2021. Founder Mukesh Bansal stepped back in 2023. 2025-26: a more focused, slowly-profitable business at a meaningfully lower valuation than the late-2021 peak.",
-    year: 2016,
-    tags: [
-      "subscription",
-      "wellness",
-      "brand"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-69",
     company: "Boat",
     title: "How Boat Became India's #1 Audio Brand Without a Factory, a Store, or a Celebrity",
@@ -439,22 +470,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-82",
-    company: "Calendly",
-    title: "How Calendly Turned Every Meeting Link Into a Growth Engine",
-    category: "Growth",
-    description: "Calendly built virality into its core action: every time a user shared a scheduling link, they exposed a new prospect to the product — turning the feature itself into the marketing.",
-    logo: "📅",
-    outcome: "Bootstrapped to a $3B valuation with tens of millions of users and strong profitability.",
-    year: 2013,
-    tags: [
-      "product-led growth",
-      "virality",
-      "SaaS"
-    ],
-    publishedAt: "2026-07-14",
-  },
-  {
     id: "cs-claude-5-26",
     company: "Anthropic",
     title: "Claude 5: The Operating System for the Agentic Enterprise",
@@ -469,22 +484,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Launch"
     ],
     publishedAt: "2026-06-01T19:00:00+05:30",
-  },
-  {
-    id: "cs-74",
-    company: "Cloudflare",
-    title: "How Cloudflare Made Security Headers the Default and Won Enterprise",
-    category: "Strategy",
-    description: "Cloudflare shipped strict transport security, content security policy, and HSTS preload as one-click defaults on every site behind the network. The decision saved customers from themselves and turned 'security posture' into a sales tool that competitors couldn't match.",
-    logo: "C",
-    outcome: "Cloudflare grew from a small DDoS-mitigation startup in 2010 to a $30B public company powering ~20% of the global web. Enterprise security questionnaires that used to take weeks now close in days for Cloudflare customers. Security-as-default became the category convention.",
-    year: 2014,
-    tags: [
-      "security",
-      "infrastructure",
-      "trust"
-    ],
-    publishedAt: "2026-05-18",
   },
   {
     id: "cs-club-fomo-9921",
@@ -503,38 +502,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-07-26T15:00:00+00:00",
   },
   {
-    id: "cs-81",
-    company: "Coinbase",
-    title: "How Coinbase Made Regulation Its Competitive Advantage",
-    category: "Strategy",
-    description: "In an industry built on evading authorities, Coinbase bet that embracing regulation and compliance would be the durable moat — and became crypto's most trusted brand.",
-    logo: "🪙",
-    outcome: "Became the first major crypto company to go public, listed on Nasdaq in 2021.",
-    year: 2012,
-    tags: [
-      "fintech",
-      "compliance",
-      "trust"
-    ],
-    publishedAt: "2026-07-07",
-  },
-  {
-    id: "cs-101",
-    company: "Coca-Cola",
-    title: "The 'Hello Happiness' Phone Booths: Coca-Cola's Empathy Utility",
-    category: "Marketing",
-    description: "How Coca-Cola created custom phone booths in labor camps that accepted bottle caps instead of coins, allowing migrant workers to call home and transforming a product into an emotional utility.",
-    logo: "🥤",
-    outcome: "Over 40,000 calls made in a month, massive brand loyalty, and a masterclass in empathetic marketing.",
-    year: 2014,
-    tags: [
-      "brand",
-      "empathy",
-      "marketing",
-      "hardware"
-    ],
-  },
-  {
     id: "cs-competitor-roadmap-26",
     company: "SyncSpace",
     title: "When Goliath Ships Your Entire Q3 Roadmap on Tuesday",
@@ -549,6 +516,40 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Pivot"
     ],
     publishedAt: "2026-06-15T19:00:00+05:30",
+  },
+  {
+    id: "cs-51",
+    company: "Cred",
+    title: "How Cred Built India's Most Designed Fintech",
+    category: "Design",
+    description: "Kunal Shah turned credit card bill payments into a status product. Cred rejected two-thirds of users, spent obscenely on design and brand, and built India's most-watched premium fintech. The monetization story finally started cohering in 2024-26.",
+    logo: "💳",
+    outcome: "$6.4B peak valuation, held flat through 2024 raise. 13M+ members. Cred Cash, Cred Money, Cred Garage layering monetization on top of the original brand asset.",
+    year: 2018,
+    tags: [
+      "design",
+      "fintech",
+      "exclusivity"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-59",
+    company: "Cult.fit",
+    title: "Cult.fit's Wellness Super-App Bet (and the Return to Focus)",
+    category: "Strategy",
+    description: "Mukesh Bansal pioneered India's first 'lifestyle-as-subscription' brand. Then tried to bundle meal delivery, meditation, and telemedicine into one app. The bundle didn't hold, the company nearly broke, and the recovery has been a study in refocusing.",
+    logo: "🏋️",
+    outcome: "500+ fitness centers, India's largest chain. Tata Digital became a major shareholder in 2021. Founder Mukesh Bansal stepped back in 2023. 2025-26: a more focused, slowly-profitable business at a meaningfully lower valuation than the late-2021 peak.",
+    year: 2016,
+    tags: [
+      "subscription",
+      "wellness",
+      "brand"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
   },
   {
     id: "cs-cursor-ws-1102",
@@ -581,6 +582,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Failure"
     ],
     publishedAt: "2026-08-05T15:00:00+00:00",
+  },
+  {
+    id: "cs-80",
+    company: "DoorDash",
+    title: "How DoorDash Won Food Delivery by Ignoring the Cities",
+    category: "Growth",
+    description: "While rivals fought over dense urban markets, DoorDash quietly dominated the suburbs everyone else dismissed — and used that base to overtake the entire category.",
+    logo: "🛵",
+    outcome: "Became the largest US food-delivery platform with over 60% market share.",
+    year: 2018,
+    tags: [
+      "marketplace",
+      "logistics",
+      "go-to-market"
+    ],
+    publishedAt: "2026-06-30",
   },
   {
     id: "cs-dbx-ref-8921",
@@ -631,149 +648,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-11",
-    company: "Dropbox",
-    title: "Dropbox's Referral Loop That Grew 3900%",
-    category: "Growth",
-    description: "Dropbox's referral program — give storage, get storage — grew their user base from 100K to 4M in 15 months without paid advertising.",
-    logo: "📦",
-    outcome: "IPO in 2018. 700M+ registered users.",
-    year: 2008,
-    tags: [
-      "referral",
-      "viral",
-      "PLG"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-42",
-    company: "Facebook",
-    title: "Facebook Home: When Feature Becomes Prison",
-    category: "Failure",
-    description: "Facebook Home replaced Android's home screen with a Facebook feed. Users hated losing control of their own phones. It had a 1.5-star rating within days and was quietly abandoned.",
-    logo: "👤",
-    outcome: "Downloaded by only 500K users. Quietly discontinued.",
-    year: 2013,
-    tags: [
-      "mobile",
-      "UX",
-      "overreach"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-85",
-    company: "Dunzo",
-    title: "How Dunzo Pivoted Itself Into the Ground",
-    category: "Failure",
-    description: "Dunzo pioneered hyperlocal delivery in India with a beloved 'get anything' concept, then chased the capital-hungry quick-commerce war and burned out trying to be something it wasn't.",
-    logo: "📦",
-    outcome: "Collapsed from a celebrated unicorn to delayed salaries, mass exits, and a fire sale.",
-    year: 2022,
-    tags: [
-      "quick commerce",
-      "unit economics",
-      "india"
-    ],
-    publishedAt: "2026-08-04",
-  },
-  {
-    id: "cs-fb-mobile-12",
-    company: "Facebook (Meta)",
-    title: "HTML5 to Native: Facebook's Existential Mobile Pivot",
-    category: "Strategy",
-    description: "Before going public, Facebook's mobile app was a sluggish HTML5 wrapper, and mobile revenue was zero. Zuckerberg ordered a complete rewrite to native code to save the company.",
-    logo: "🚀",
-    outcome: "Facebook successfully transitioned to a mobile-first behemoth, driving 98%+ of its revenue from mobile today, setting the stage for its modern AI and spatial computing dominance.",
-    year: 2012,
-    tags: [
-      "Engineering",
-      "Pivot",
-      "Leadership"
-    ],
-    publishedAt: "2026-08-12T15:00:00+00:00",
-  },
-  {
-    id: "cs-figma-web-15",
-    company: "Figma",
-    title: "Betting the Company on WebGL: Figma's Browser Gamble",
-    category: "Strategy",
-    description: "When Sketch dominated UI design via native Mac apps, Figma bet everything that complex design tools could run in the browser. It took years to build but changed collaboration forever.",
-    logo: "🚀",
-    outcome: "Figma dominates the design market, survived the blocked Adobe acquisition, and is highly profitable in 2026 as the standard for spatial and agent-assisted design.",
-    year: 2015,
-    tags: [
-      "Engineering",
-      "Growth",
-      "Design"
-    ],
-    publishedAt: "2026-08-16T15:00:00+00:00",
-  },
-  {
-    id: "cs-76",
-    company: "Figma",
-    title: "Figma's Progressive Web App Bet That Paid Off Six Years Later",
-    category: "Strategy",
-    description: "Figma shipped a web app manifest, service worker, and PWA installability in 2017 — three years before iOS supported PWAs and five years before Chrome made them genuinely first-class. The bet looked premature at the time and paid off when Apple finally enabled PWA installation on iPad in 2023.",
-    logo: "F",
-    outcome: "Adobe acquired Figma for $20B in 2022 (deal blocked by EU regulators in 2023, paid $1B breakup fee). Figma reached 4M+ users by 2023 with the web-and-PWA strategy. The standards-first approach became the canonical pattern for browser-native creative tools.",
-    year: 2017,
-    tags: [
-      "PWA",
-      "browser-native",
-      "standards"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-fm-shipped-26",
-    company: "Jasper & Copy.ai",
-    title: "When the Foundation Model Becomes the Product",
-    category: "Strategic",
-    description: "Generative AI wrappers faced an extinction event when OpenAI and Anthropic natively integrated their core features into the foundation models. How did the survivors adapt?",
-    logo: "🚀",
-    outcome: "Companies pivoted to deeply integrated workflow agents and proprietary enterprise data, abandoning generic text generation.",
-    year: 2026,
-    tags: [
-      "AI",
-      "Strategy",
-      "Pivot"
-    ],
-    publishedAt: "2026-08-19T15:00:00+00:00",
-  },
-  {
-    id: "cs-fsq-swarm-14",
-    company: "Foursquare",
-    title: "The Great Unbundling: Foursquare's Risky Swarm Split",
-    category: "Strategy",
-    description: "In 2014, Foursquare faced a bloated app trying to serve two distinct use cases local discovery and social check-ins. They made the controversial decision to split the app into two.",
-    logo: "🚀",
-    outcome: "Foursquare lost consumer mindshare to Instagram and Google Maps but survived as an enterprise location data broker worth hundreds of millions in 2026.",
-    year: 2014,
-    tags: [
-      "Product Strategy",
-      "Unbundling"
-    ],
-    publishedAt: "2026-08-23T15:00:00+00:00",
-  },
-  {
-    id: "cs-geo-aeo-2026",
-    company: "Global Publishers & Tech Brands",
-    title: "The Great Pivot: How SEO Died and GEO/AEO Took Over",
-    category: "Growth",
-    description: "With AI overviews cannibalizing click-through rates, publishers faced an existential crisis. This case study explores the transition from traditional SEO to Generative Engine Optimization (GEO).",
-    logo: "🚀",
-    outcome: "Publishers adapted to Answer Engine Optimization, recovering high-intent traffic through AI citations and real-time agent API integrations in 2026.",
-    year: 2026,
-    tags: [
-      "AI",
-      "SEO",
-      "Growth"
-    ],
-    publishedAt: "2026-08-26T15:00:00+00:00",
-  },
-  {
     id: "cs-10",
     company: "Instagram",
     title: "Instagram's Pivot from Burbn to Photo Sharing",
@@ -786,6 +660,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "pivot",
       "simplicity",
       "social"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-11",
+    company: "Dropbox",
+    title: "Dropbox's Referral Loop That Grew 3900%",
+    category: "Growth",
+    description: "Dropbox's referral program — give storage, get storage — grew their user base from 100K to 4M in 15 months without paid advertising.",
+    logo: "📦",
+    outcome: "IPO in 2018. 700M+ registered users.",
+    year: 2008,
+    tags: [
+      "referral",
+      "viral",
+      "PLG"
     ],
     publishedAt: "2026-05-18",
   },
@@ -950,52 +840,52 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-60",
-    company: "Meesho",
-    title: "How Meesho Built Social Commerce for Bharat",
-    category: "Growth",
-    description: "Meesho turned 14 million Indian women into entrepreneurs running social commerce businesses from their WhatsApp groups. Then pivoted entirely to a zero-commission marketplace and almost broke itself before becoming profitable.",
-    logo: "🛍️",
-    outcome: "$4.9B+ valuation. 14M+ resellers. 175M+ users across 27,000 PIN codes. India's largest social commerce platform — and the first major Indian e-commerce company to become profitable.",
-    year: 2015,
+    id: "cs-42",
+    company: "Facebook",
+    title: "Facebook Home: When Feature Becomes Prison",
+    category: "Failure",
+    description: "Facebook Home replaced Android's home screen with a Facebook feed. Users hated losing control of their own phones. It had a 1.5-star rating within days and was quietly abandoned.",
+    logo: "👤",
+    outcome: "Downloaded by only 500K users. Quietly discontinued.",
+    year: 2013,
     tags: [
-      "social-commerce",
-      "rural",
-      "marketplace"
+      "mobile",
+      "UX",
+      "overreach"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-46",
+    company: "Intercom",
+    title: "Intercom's Jobs-to-Be-Done Product Framework",
+    category: "Product",
+    description: "Intercom built their entire product strategy around JTBD — understanding what job customers hire their product to do. This led them to build messaging, support, and marketing in one platform.",
+    logo: "💬",
+    outcome: "Valued at $1.27B. Used by 30K+ businesses.",
+    year: 2011,
+    tags: [
+      "JTBD",
+      "B2B",
+      "messaging"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-62",
+    company: "Groww",
+    title: "How Groww Took on Zerodha by Being Slightly Less Hardcore",
+    category: "Product",
+    description: "Lalit Keshre and his Flipkart-veteran co-founders looked at Zerodha's massive market lead and built the opposite product. Mobile-first instead of desktop-first. Mutual funds instead of trading. Tutorials instead of professional terminals. Five years later, Groww has more users than Zerodha.",
+    logo: "📈",
+    outcome: "13M+ active users (more than Zerodha by user count). $3B valuation. IPO prep in 2025-26. Largest Indian broker by user count, though Zerodha leads by trading volume.",
+    year: 2017,
+    tags: [
+      "fintech",
+      "mobile-first",
+      "challenger"
     ],
     region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-63",
-    company: "Loom",
-    title: "How Loom Made Async Video the New Default — Then Sold for $975M",
-    category: "Product",
-    description: "Joe Thomas, Vinay Hiremath, and Shahed Khan thought screen recordings should be as easy as sending a text. They built a product so frictionless it changed how distributed teams communicate — and got acquired by Atlassian.",
-    logo: "🎥",
-    outcome: "Sold to Atlassian for $975M in 2023. 25M+ users at peak. The product category they defined (async video messaging) became standard across remote work.",
-    year: 2015,
-    tags: [
-      "async",
-      "remote-work",
-      "video"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-73",
-    company: "Linear",
-    title: "How Linear Looked Like a $1B Company at Five Engineers",
-    category: "Design",
-    description: "Linear launched in 2019 with a real domain (linear.app), a real favicon, a real OG image, a real title tag, and a brand identity that felt like Stripe or Notion's design team had spent six months on it. The team was five engineers and one designer. The brand discipline became as much of their competitive advantage as the product.",
-    logo: "L",
-    outcome: "Linear became the default issue tracker for modern software teams within four years. $400M+ ARR by 2025. Brand-first approach became a category convention — every new dev tool now ships with Linear-grade brand polish from day one.",
-    year: 2019,
-    tags: [
-      "brand",
-      "design",
-      "developer-tools"
-    ],
     publishedAt: "2026-05-18",
   },
   {
@@ -1013,6 +903,134 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "developer-tools"
     ],
     publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-85",
+    company: "Dunzo",
+    title: "How Dunzo Pivoted Itself Into the Ground",
+    category: "Failure",
+    description: "Dunzo pioneered hyperlocal delivery in India with a beloved 'get anything' concept, then chased the capital-hungry quick-commerce war and burned out trying to be something it wasn't.",
+    logo: "📦",
+    outcome: "Collapsed from a celebrated unicorn to delayed salaries, mass exits, and a fire sale.",
+    year: 2022,
+    tags: [
+      "quick commerce",
+      "unit economics",
+      "india"
+    ],
+    publishedAt: "2026-08-04",
+  },
+  {
+    id: "cs-142",
+    company: "Evernote",
+    title: "Evernote: The Downfall of the Digital Filing Cabinet",
+    category: "Failure",
+    description: "How the original darling of Silicon Valley productivity software failed to adapt to the multiplayer era, clinging to a single-player filing cabinet metaphor while competitors built collaborative ecosystems.",
+    logo: "🐘",
+    outcome: "Lost its dominant market position, eventually being sold to an Italian app developer after years of stagnation.",
+    year: 2008,
+    tags: [
+      "Failure",
+      "Product",
+      "SaaS",
+      "UX",
+      "Productivity"
+    ],
+  },
+  {
+    id: "cs-fb-mobile-12",
+    company: "Facebook (Meta)",
+    title: "HTML5 to Native: Facebook's Existential Mobile Pivot",
+    category: "Strategy",
+    description: "Before going public, Facebook's mobile app was a sluggish HTML5 wrapper, and mobile revenue was zero. Zuckerberg ordered a complete rewrite to native code to save the company.",
+    logo: "🚀",
+    outcome: "Facebook successfully transitioned to a mobile-first behemoth, driving 98%+ of its revenue from mobile today, setting the stage for its modern AI and spatial computing dominance.",
+    year: 2012,
+    tags: [
+      "Engineering",
+      "Pivot",
+      "Leadership"
+    ],
+    publishedAt: "2026-08-12T15:00:00+00:00",
+  },
+  {
+    id: "cs-figma-web-15",
+    company: "Figma",
+    title: "Betting the Company on WebGL: Figma's Browser Gamble",
+    category: "Strategy",
+    description: "When Sketch dominated UI design via native Mac apps, Figma bet everything that complex design tools could run in the browser. It took years to build but changed collaboration forever.",
+    logo: "🚀",
+    outcome: "Figma dominates the design market, survived the blocked Adobe acquisition, and is highly profitable in 2026 as the standard for spatial and agent-assisted design.",
+    year: 2015,
+    tags: [
+      "Engineering",
+      "Growth",
+      "Design"
+    ],
+    publishedAt: "2026-08-16T15:00:00+00:00",
+  },
+  {
+    id: "cs-76",
+    company: "Figma",
+    title: "Figma's Progressive Web App Bet That Paid Off Six Years Later",
+    category: "Strategy",
+    description: "Figma shipped a web app manifest, service worker, and PWA installability in 2017 — three years before iOS supported PWAs and five years before Chrome made them genuinely first-class. The bet looked premature at the time and paid off when Apple finally enabled PWA installation on iPad in 2023.",
+    logo: "F",
+    outcome: "Adobe acquired Figma for $20B in 2022 (deal blocked by EU regulators in 2023, paid $1B breakup fee). Figma reached 4M+ users by 2023 with the web-and-PWA strategy. The standards-first approach became the canonical pattern for browser-native creative tools.",
+    year: 2017,
+    tags: [
+      "PWA",
+      "browser-native",
+      "standards"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-fm-shipped-26",
+    company: "Jasper & Copy.ai",
+    title: "When the Foundation Model Becomes the Product",
+    category: "Strategic",
+    description: "Generative AI wrappers faced an extinction event when OpenAI and Anthropic natively integrated their core features into the foundation models. How did the survivors adapt?",
+    logo: "🚀",
+    outcome: "Companies pivoted to deeply integrated workflow agents and proprietary enterprise data, abandoning generic text generation.",
+    year: 2026,
+    tags: [
+      "AI",
+      "Strategy",
+      "Pivot"
+    ],
+    publishedAt: "2026-08-19T15:00:00+00:00",
+  },
+  {
+    id: "cs-fsq-swarm-14",
+    company: "Foursquare",
+    title: "The Great Unbundling: Foursquare's Risky Swarm Split",
+    category: "Strategy",
+    description: "In 2014, Foursquare faced a bloated app trying to serve two distinct use cases local discovery and social check-ins. They made the controversial decision to split the app into two.",
+    logo: "🚀",
+    outcome: "Foursquare lost consumer mindshare to Instagram and Google Maps but survived as an enterprise location data broker worth hundreds of millions in 2026.",
+    year: 2014,
+    tags: [
+      "Product Strategy",
+      "Unbundling"
+    ],
+    publishedAt: "2026-08-23T15:00:00+00:00",
+  },
+  {
+    id: "cs-geo-aeo-2026",
+    company: "Global Publishers & Tech Brands",
+    title: "The Great Pivot: How SEO Died and GEO/AEO Took Over",
+    category: "Growth",
+    description: "With AI overviews cannibalizing click-through rates, publishers faced an existential crisis. This case study explores the transition from traditional SEO to Generative Engine Optimization (GEO).",
+    logo: "🚀",
+    outcome: "Publishers adapted to Answer Engine Optimization, recovering high-intent traffic through AI citations and real-time agent API integrations in 2026.",
+    year: 2026,
+    tags: [
+      "AI",
+      "SEO",
+      "Growth"
+    ],
+    publishedAt: "2026-08-26T15:00:00+00:00",
   },
   {
     id: "cs-google-plus-names-2011",
@@ -1047,23 +1065,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-09-02T15:00:00+00:00",
   },
   {
-    id: "cs-62",
-    company: "Groww",
-    title: "How Groww Took on Zerodha by Being Slightly Less Hardcore",
-    category: "Product",
-    description: "Lalit Keshre and his Flipkart-veteran co-founders looked at Zerodha's massive market lead and built the opposite product. Mobile-first instead of desktop-first. Mutual funds instead of trading. Tutorials instead of professional terminals. Five years later, Groww has more users than Zerodha.",
-    logo: "📈",
-    outcome: "13M+ active users (more than Zerodha by user count). $3B valuation. IPO prep in 2025-26. Largest Indian broker by user count, though Zerodha leads by trading volume.",
-    year: 2017,
-    tags: [
-      "fintech",
-      "mobile-first",
-      "challenger"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-instagram-stories-2016",
     company: "Instagram",
     title: "The Great Snapchat Clone",
@@ -1080,20 +1081,70 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-09-06T15:00:00+00:00",
   },
   {
-    id: "cs-46",
-    company: "Intercom",
-    title: "Intercom's Jobs-to-Be-Done Product Framework",
+    id: "cs-63",
+    company: "Loom",
+    title: "How Loom Made Async Video the New Default — Then Sold for $975M",
     category: "Product",
-    description: "Intercom built their entire product strategy around JTBD — understanding what job customers hire their product to do. This led them to build messaging, support, and marketing in one platform.",
-    logo: "💬",
-    outcome: "Valued at $1.27B. Used by 30K+ businesses.",
-    year: 2011,
+    description: "Joe Thomas, Vinay Hiremath, and Shahed Khan thought screen recordings should be as easy as sending a text. They built a product so frictionless it changed how distributed teams communicate — and got acquired by Atlassian.",
+    logo: "🎥",
+    outcome: "Sold to Atlassian for $975M in 2023. 25M+ users at peak. The product category they defined (async video messaging) became standard across remote work.",
+    year: 2015,
     tags: [
-      "JTBD",
-      "B2B",
-      "messaging"
+      "async",
+      "remote-work",
+      "video"
     ],
     publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-73",
+    company: "Linear",
+    title: "How Linear Looked Like a $1B Company at Five Engineers",
+    category: "Design",
+    description: "Linear launched in 2019 with a real domain (linear.app), a real favicon, a real OG image, a real title tag, and a brand identity that felt like Stripe or Notion's design team had spent six months on it. The team was five engineers and one designer. The brand discipline became as much of their competitive advantage as the product.",
+    logo: "L",
+    outcome: "Linear became the default issue tracker for modern software teams within four years. $400M+ ARR by 2025. Brand-first approach became a category convention — every new dev tool now ships with Linear-grade brand polish from day one.",
+    year: 2019,
+    tags: [
+      "brand",
+      "design",
+      "developer-tools"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-139",
+    company: "Linear",
+    title: "Linear: The Rise of Opinionated Software",
+    category: "Product",
+    description: "How Linear took on Atlassian's Jira by building the exact opposite product: an extremely opinionated, blazingly fast issue tracker that refused to let users configure it into a bloated mess.",
+    logo: "⚡",
+    outcome: "Valued at $400M with a cult-like developer following, proving that speed and UX can disrupt incumbent giants.",
+    year: 2019,
+    tags: [
+      "Product",
+      "B2B",
+      "SaaS",
+      "UX",
+      "Productivity"
+    ],
+  },
+  {
+    id: "cs-140",
+    company: "Atlassian",
+    title: "Jira: The Configurability Monster that Swallowed the Enterprise",
+    category: "Growth",
+    description: "How Atlassian built an unkillable SaaS giant not by building the fastest software, but by building the most malleable software—allowing enterprises to codify their bureaucracy into the product itself.",
+    logo: "🟦",
+    outcome: "Atlassian surpassed $100B in market cap, dominating the developer tools market for two decades.",
+    year: 2002,
+    tags: [
+      "Enterprise",
+      "SaaS",
+      "B2B",
+      "Product",
+      "Strategy"
+    ],
   },
   {
     id: "cs-lego-turnaround-2003",
@@ -1128,6 +1179,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-09-13T15:00:00+00:00",
   },
   {
+    id: "cs-60",
+    company: "Meesho",
+    title: "How Meesho Built Social Commerce for Bharat",
+    category: "Growth",
+    description: "Meesho turned 14 million Indian women into entrepreneurs running social commerce businesses from their WhatsApp groups. Then pivoted entirely to a zero-commission marketplace and almost broke itself before becoming profitable.",
+    logo: "🛍️",
+    outcome: "$4.9B+ valuation. 14M+ resellers. 175M+ users across 27,000 PIN codes. India's largest social commerce platform — and the first major Indian e-commerce company to become profitable.",
+    year: 2015,
+    tags: [
+      "social-commerce",
+      "rural",
+      "marketplace"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-meta-vr-21",
     company: "Meta",
     title: "The Metaverse Gamble - Mark Zuckerberg's $50 Billion Pivot to Reality Labs",
@@ -1158,38 +1226,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Exclusivity"
     ],
     publishedAt: "2026-10-18T15:00:00+00:00",
-  },
-  {
-    id: "cs-2",
-    company: "Slack",
-    title: "Slack's Pivot from Gaming to Messaging",
-    category: "Product",
-    description: "Slack started as an internal tool built while making a game called Glitch. When the game failed, the team pivoted to the tool — and changed workplace communication forever.",
-    logo: "💬",
-    outcome: "Acquired by Salesforce for $27.7B in 2021.",
-    year: 2013,
-    tags: [
-      "pivot",
-      "B2B",
-      "SaaS"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-3c4e5f6a",
-    company: "Robinhood",
-    title: "The GameStop Short Squeeze and How Robinhood Survived a Liquidity Nightmare",
-    category: "Strategic",
-    description: "In January 2021, unprecedented retail trading in meme stocks forced Robinhood to halt buying, sparking mass outrage. The company scrambled to raise emergency capital to meet massive clearinghouse deposit requirements.",
-    logo: "🚀",
-    outcome: "Robinhood raised $3.4 billion in emergency funds, survived the crisis, IPO'd in 2021, and by 2026 had evolved into a comprehensive AI-powered financial hub.",
-    year: 2021,
-    tags: [
-      "Crisis Management",
-      "FinTech",
-      "Liquidity"
-    ],
-    publishedAt: "2026-10-28T15:00:00+00:00",
   },
   {
     id: "cs-4",
@@ -1240,22 +1276,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-8f7a2b9d",
-    company: "OmniAI",
-    title: "Surviving the Series A Mid-Pivot in the Age of Agentic AI",
-    category: "Founding-funding",
-    description: "OmniAI realized their copilot product was obsolete just weeks before their Series A pitch. They aggressively pivoted to a fully autonomous AI agent platform to survive.",
-    logo: "🚀",
-    outcome: "OmniAI successfully raised a $30M Series A and became a market leader in agent-to-agent orchestration by mid-2026, boasting over $15M ARR.",
-    year: 2026,
-    tags: [
-      "Pivot",
-      "Agentic AI",
-      "Fundraising"
-    ],
-    publishedAt: "2026-11-01T15:00:00+00:00",
-  },
-  {
     id: "cs-9m0n1p2q",
     company: "PayPal",
     title: "The $20 Bribe and How PayPal Built a Financial Empire on Referrals",
@@ -1284,22 +1304,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "waitlist",
       "community",
       "visual"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-20",
-    company: "PayPal",
-    title: "PayPal's $20 Referral That Built a Payments Empire",
-    category: "Growth",
-    description: "PayPal paid users $20 to sign up and $20 for each referral. They lost money on every user — but built critical mass on eBay and created network effects that made them unstoppable.",
-    logo: "💳",
-    outcome: "Acquired by eBay for $1.5B in 2002. Spun off, now worth $60B+.",
-    year: 1999,
-    tags: [
-      "referral",
-      "network effects",
-      "fintech"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1336,6 +1340,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-34",
+    company: "Monzo",
+    title: "Monzo's Hot Coral Card That Sparked Word of Mouth",
+    category: "Design",
+    description: "Monzo's bright coral debit card was a deliberate design choice — it stood out in wallets and prompted questions. The card became a conversation starter that drove organic acquisition.",
+    logo: "🏦",
+    outcome: "9M+ UK customers. Fastest growing bank in UK history.",
+    year: 2015,
+    tags: [
+      "branding",
+      "word of mouth",
+      "fintech"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-41",
     company: "Microsoft",
     title: "Microsoft Zune: Too Little, Too Late",
@@ -1368,6 +1388,118 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-09-23T15:00:00+00:00",
   },
   {
+    id: "cs-44",
+    company: "Myspace",
+    title: "MySpace Lost to Facebook by Ignoring Developers",
+    category: "Failure",
+    description: "MySpace had 100M users and could have bought Facebook for $75M. They chose monetization over experience, allowed chaotic profile customization, and closed their platform to developers.",
+    logo: "💀",
+    outcome: "Sold to News Corp for $580M in 2005. Sold again for $35M in 2011.",
+    year: 2008,
+    tags: [
+      "social",
+      "platform",
+      "developer"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-83",
+    company: "Miro",
+    title: "How Miro Won the Whiteboard When the World Went Remote",
+    category: "Product",
+    description: "Miro spent years building a multiplayer infinite canvas almost nobody needed — then remote work arrived and turned its patient, unglamorous bet into the default collaboration surface.",
+    logo: "🧑‍🎨",
+    outcome: "Reached tens of millions of users and a $17.5B valuation as remote collaboration exploded.",
+    year: 2011,
+    tags: [
+      "collaboration",
+      "remote work",
+      "real-time"
+    ],
+    publishedAt: "2026-07-21",
+  },
+  {
+    id: "cs-moviepass-17",
+    company: "MoviePass",
+    title: "The $9.95 Mirage - How MoviePass Subsidized the Cinema Industry Into Bankruptcy",
+    category: "Business",
+    description: "In 2017, MoviePass dropped its subscription price to an unsustainable $9.95 per month for one movie ticket every day. The goal was to build a massive subscriber base and force theaters into revenue-sharing agreements.",
+    logo: "🎟️",
+    outcome: "The company burned through hundreds of millions of dollars as heavy usage outpaced revenue, resulting in spectacular bankruptcy in 2019.",
+    year: 2017,
+    tags: [
+      "Pricing",
+      "Subscription",
+      "Entertainment"
+    ],
+    publishedAt: "2026-09-27T15:00:00+00:00",
+  },
+  {
+    id: "cs-nokia-wp-11",
+    company: "Nokia",
+    title: "The Burning Platform - Why Nokia's Exclusive Windows Phone Bet Doomed a Giant",
+    category: "Strategy",
+    description: "Faced with plummeting market share in the smartphone era, Nokia CEO Stephen Elop drafted the infamous \"Burning Platform\" memo. Rather than adopting Android, Nokia made an exclusive, high-stakes alliance with Microsoft's Windows Phone OS.",
+    logo: "📱",
+    outcome: "The strategy failed catastrophically. Nokia's phone division was sold to Microsoft for $7.2 billion in 2013 and later written off entirely, marking the end of Nokia's consumer hardware dominance.",
+    year: 2011,
+    tags: [
+      "Mobile",
+      "Strategy",
+      "Hardware"
+    ],
+    publishedAt: "2026-10-04T15:00:00+00:00",
+  },
+  {
+    id: "cs-3c4e5f6a",
+    company: "Robinhood",
+    title: "The GameStop Short Squeeze and How Robinhood Survived a Liquidity Nightmare",
+    category: "Strategic",
+    description: "In January 2021, unprecedented retail trading in meme stocks forced Robinhood to halt buying, sparking mass outrage. The company scrambled to raise emergency capital to meet massive clearinghouse deposit requirements.",
+    logo: "🚀",
+    outcome: "Robinhood raised $3.4 billion in emergency funds, survived the crisis, IPO'd in 2021, and by 2026 had evolved into a comprehensive AI-powered financial hub.",
+    year: 2021,
+    tags: [
+      "Crisis Management",
+      "FinTech",
+      "Liquidity"
+    ],
+    publishedAt: "2026-10-28T15:00:00+00:00",
+  },
+  {
+    id: "cs-8f7a2b9d",
+    company: "OmniAI",
+    title: "Surviving the Series A Mid-Pivot in the Age of Agentic AI",
+    category: "Founding-funding",
+    description: "OmniAI realized their copilot product was obsolete just weeks before their Series A pitch. They aggressively pivoted to a fully autonomous AI agent platform to survive.",
+    logo: "🚀",
+    outcome: "OmniAI successfully raised a $30M Series A and became a market leader in agent-to-agent orchestration by mid-2026, boasting over $15M ARR.",
+    year: 2026,
+    tags: [
+      "Pivot",
+      "Agentic AI",
+      "Fundraising"
+    ],
+    publishedAt: "2026-11-01T15:00:00+00:00",
+  },
+  {
+    id: "cs-20",
+    company: "PayPal",
+    title: "PayPal's $20 Referral That Built a Payments Empire",
+    category: "Growth",
+    description: "PayPal paid users $20 to sign up and $20 for each referral. They lost money on every user — but built critical mass on eBay and created network effects that made them unstoppable.",
+    logo: "💳",
+    outcome: "Acquired by eBay for $1.5B in 2002. Spun off, now worth $60B+.",
+    year: 1999,
+    tags: [
+      "referral",
+      "network effects",
+      "fintech"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-25",
     company: "Shopify",
     title: "Shopify's Bet on Merchants Over Consumers",
@@ -1384,18 +1516,18 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-34",
-    company: "Monzo",
-    title: "Monzo's Hot Coral Card That Sparked Word of Mouth",
-    category: "Design",
-    description: "Monzo's bright coral debit card was a deliberate design choice — it stood out in wallets and prompted questions. The card became a conversation starter that drove organic acquisition.",
-    logo: "🏦",
-    outcome: "9M+ UK customers. Fastest growing bank in UK history.",
-    year: 2015,
+    id: "cs-40",
+    company: "Quibi",
+    title: "Quibi Raised $1.75B and Shut Down in 6 Months",
+    category: "Failure",
+    description: "Quibi bet that people wanted premium short-form video only on mobile, only in portrait mode. They never validated whether the problem existed before raising nearly $2B.",
+    logo: "📺",
+    outcome: "Launched April 2020. Shut down October 2020. Assets sold for $100M.",
+    year: 2020,
     tags: [
-      "branding",
-      "word of mouth",
-      "fintech"
+      "validation",
+      "mobile",
+      "media"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1433,86 +1565,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-83",
-    company: "Miro",
-    title: "How Miro Won the Whiteboard When the World Went Remote",
-    category: "Product",
-    description: "Miro spent years building a multiplayer infinite canvas almost nobody needed — then remote work arrived and turned its patient, unglamorous bet into the default collaboration surface.",
-    logo: "🧑‍🎨",
-    outcome: "Reached tens of millions of users and a $17.5B valuation as remote collaboration exploded.",
-    year: 2011,
-    tags: [
-      "collaboration",
-      "remote work",
-      "real-time"
-    ],
-    publishedAt: "2026-07-21",
-  },
-  {
-    id: "cs-moviepass-17",
-    company: "MoviePass",
-    title: "The $9.95 Mirage - How MoviePass Subsidized the Cinema Industry Into Bankruptcy",
-    category: "Business",
-    description: "In 2017, MoviePass dropped its subscription price to an unsustainable $9.95 per month for one movie ticket every day. The goal was to build a massive subscriber base and force theaters into revenue-sharing agreements.",
-    logo: "🎟️",
-    outcome: "The company burned through hundreds of millions of dollars as heavy usage outpaced revenue, resulting in spectacular bankruptcy in 2019.",
-    year: 2017,
-    tags: [
-      "Pricing",
-      "Subscription",
-      "Entertainment"
-    ],
-    publishedAt: "2026-09-27T15:00:00+00:00",
-  },
-  {
-    id: "cs-40",
-    company: "Quibi",
-    title: "Quibi Raised $1.75B and Shut Down in 6 Months",
-    category: "Failure",
-    description: "Quibi bet that people wanted premium short-form video only on mobile, only in portrait mode. They never validated whether the problem existed before raising nearly $2B.",
-    logo: "📺",
-    outcome: "Launched April 2020. Shut down October 2020. Assets sold for $100M.",
-    year: 2020,
-    tags: [
-      "validation",
-      "mobile",
-      "media"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-44",
-    company: "Myspace",
-    title: "MySpace Lost to Facebook by Ignoring Developers",
-    category: "Failure",
-    description: "MySpace had 100M users and could have bought Facebook for $75M. They chose monetization over experience, allowed chaotic profile customization, and closed their platform to developers.",
-    logo: "💀",
-    outcome: "Sold to News Corp for $580M in 2005. Sold again for $35M in 2011.",
-    year: 2008,
-    tags: [
-      "social",
-      "platform",
-      "developer"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-nokia-wp-11",
-    company: "Nokia",
-    title: "The Burning Platform - Why Nokia's Exclusive Windows Phone Bet Doomed a Giant",
-    category: "Strategy",
-    description: "Faced with plummeting market share in the smartphone era, Nokia CEO Stephen Elop drafted the infamous \"Burning Platform\" memo. Rather than adopting Android, Nokia made an exclusive, high-stakes alliance with Microsoft's Windows Phone OS.",
-    logo: "📱",
-    outcome: "The strategy failed catastrophically. Nokia's phone division was sold to Microsoft for $7.2 billion in 2013 and later written off entirely, marking the end of Nokia's consumer hardware dominance.",
-    year: 2011,
-    tags: [
-      "Mobile",
-      "Strategy",
-      "Hardware"
-    ],
-    publishedAt: "2026-10-04T15:00:00+00:00",
-  },
-  {
     id: "cs-55",
     company: "Paytm",
     title: "Paytm's Super-App Bet: From Collapse to Comeback",
@@ -1525,6 +1577,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "super-app",
       "payments",
       "regulatory"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-57",
+    company: "PhonePe",
+    title: "How PhonePe Beat Paytm and Google Pay at UPI",
+    category: "Strategy",
+    description: "Three Flipkart veterans bet that UPI — not wallets — would be the future of Indian payments. They built PhonePe as UPI-first while Paytm doubled down on wallets. Five years later, PhonePe processed half of all UPI transactions in India.",
+    logo: "📲",
+    outcome: "$12B valuation under Walmart. 50%+ UPI market share. 6B+ transactions/month. Reverse-flipped from Singapore to India in 2022 with a $1B tax bill. IPO prep underway 2025-26.",
+    year: 2015,
+    tags: [
+      "fintech",
+      "UPI",
+      "focus"
     ],
     region: "India",
     publishedAt: "2026-05-18",
@@ -1564,72 +1633,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-openai-dev-26",
-    company: "OpenAI",
-    title: "The Omnipresent Assistant - How OpenAI's Halo Wearable Redefined Consumer Hardware",
-    category: "Strategic",
-    description: "In late 2025, OpenAI decided to bypass the traditional smartphone ecosystem, launching a dedicated, agent-first wearable device. The move aimed to free ChatGPT from the constraints of iOS and Android app stores.",
-    logo: "🧠",
-    outcome: "Sold 12 million units in its first two quarters, achieving a 15% market share in the new AI companion hardware category by mid-2026.",
-    year: 2026,
-    tags: [
-      "Hardware",
-      "AI",
-      "Consumer"
-    ],
-    publishedAt: "2026-10-07T15:00:00+00:00",
-  },
-  {
-    id: "cs-57",
-    company: "PhonePe",
-    title: "How PhonePe Beat Paytm and Google Pay at UPI",
-    category: "Strategy",
-    description: "Three Flipkart veterans bet that UPI — not wallets — would be the future of Indian payments. They built PhonePe as UPI-first while Paytm doubled down on wallets. Five years later, PhonePe processed half of all UPI transactions in India.",
-    logo: "📲",
-    outcome: "$12B valuation under Walmart. 50%+ UPI market share. 6B+ transactions/month. Reverse-flipped from Singapore to India in 2022 with a $1B tax bill. IPO prep underway 2025-26.",
-    year: 2015,
-    tags: [
-      "fintech",
-      "UPI",
-      "focus"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-61",
-    company: "Slice",
-    title: "How Slice Pivoted from Credit Cards to Banking — Twice",
-    category: "Strategy",
-    description: "Rajan Bajaj built India's first credit card for Gen Z when no bank would issue cards to under-25s. The RBI changed the rules, the business model broke, and Slice had to reinvent itself as a UPI-first bank in 18 months — twice.",
-    logo: "💳",
-    outcome: "Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+ users. Successfully pivoted twice without losing the brand. The Slice card brand survived three regulatory shifts that broke most fintech peers.",
-    year: 2016,
-    tags: [
-      "fintech",
-      "regulatory",
-      "pivot"
-    ],
-    region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-78",
-    company: "Roblox",
-    title: "How Roblox Built a Game Platform by Not Making Games",
-    category: "Product",
-    description: "Roblox bet that the most valuable game company would build none of its own games — and instead give millions of young creators the tools and the money to build them.",
-    logo: "🟥",
-    outcome: "Grew to over 70M daily active users and paid creators more than $700M in a single year.",
-    year: 2006,
-    tags: [
-      "platform",
-      "UGC",
-      "gaming"
-    ],
-    publishedAt: "2026-06-16",
-  },
-  {
     id: "cs-79",
     company: "Peloton",
     title: "How Peloton Mistook a Pandemic Spike for the New Normal",
@@ -1644,6 +1647,39 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "hardware"
     ],
     publishedAt: "2026-06-23",
+  },
+  {
+    id: "cs-141",
+    company: "Notion",
+    title: "Notion: The Invention of the Relational Block",
+    category: "Product",
+    description: "How Notion disrupted the massive digital workspace category by treating everything—text, images, and databases—as a Lego block, creating a profoundly viral, multiplayer canvas.",
+    logo: "⬛",
+    outcome: "Valued at over $10B, becoming the default operating system for startups globally.",
+    year: 2016,
+    tags: [
+      "Product",
+      "SaaS",
+      "UX",
+      "PLG",
+      "Productivity"
+    ],
+  },
+  {
+    id: "cs-openai-dev-26",
+    company: "OpenAI",
+    title: "The Omnipresent Assistant - How OpenAI's Halo Wearable Redefined Consumer Hardware",
+    category: "Strategic",
+    description: "In late 2025, OpenAI decided to bypass the traditional smartphone ecosystem, launching a dedicated, agent-first wearable device. The move aimed to free ChatGPT from the constraints of iOS and Android app stores.",
+    logo: "🧠",
+    outcome: "Sold 12 million units in its first two quarters, achieving a 15% market share in the new AI companion hardware category by mid-2026.",
+    year: 2026,
+    tags: [
+      "Hardware",
+      "AI",
+      "Consumer"
+    ],
+    publishedAt: "2026-10-07T15:00:00+00:00",
   },
   {
     id: "cs-88",
@@ -1679,37 +1715,69 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-06-27T15:00:00+00:00",
   },
   {
-    id: "cs-86",
-    company: "Reddit",
-    title: "How Reddit Outsourced Its Entire Platform to Volunteers",
-    category: "Strategy",
-    description: "Reddit built one of the internet's largest communities by handing governance to unpaid volunteer moderators — a model that scaled brilliantly until the company tried to monetize around them.",
-    logo: "👽",
-    outcome: "Grew to one of the world's most-visited sites and IPO'd in 2024, despite recurring user revolts.",
-    year: 2005,
+    id: "cs-2",
+    company: "Slack",
+    title: "Slack's Pivot from Gaming to Messaging",
+    category: "Product",
+    description: "Slack started as an internal tool built while making a game called Glitch. When the game failed, the team pivoted to the tool — and changed workplace communication forever.",
+    logo: "💬",
+    outcome: "Acquired by Salesforce for $27.7B in 2021.",
+    year: 2013,
     tags: [
-      "community",
-      "governance",
-      "platform"
+      "pivot",
+      "B2B",
+      "SaaS"
     ],
-    publishedAt: "2026-08-11",
+    publishedAt: "2026-05-18",
   },
   {
-    id: "cs-136",
-    company: "Salesforce",
-    title: "Salesforce's \"No Software\" Revolution",
-    category: "Strategy",
-    description: "Salesforce aggressively launched with a \"No Software\" positioning campaign, attacking legacy incumbents like Siebel Systems by offering CRM delivered over the internet via a subscription. They invented the modern SaaS business model and revolutionized B2B software distribution.",
-    logo: "☁️",
-    outcome: "Created the multi-billion dollar SaaS industry and reached a market cap over $250 billion.",
-    year: 1999,
+    id: "cs-13",
+    company: "Twitter",
+    title: "Twitter's 'Suggested Users' Retention Fix",
+    category: "Growth",
+    description: "Twitter discovered users who followed 30+ people retained far better. They redesigned onboarding around a 'suggested users' list — retention jumped overnight.",
+    logo: "🐦",
+    outcome: "Monthly active users grew from 30M to 100M in one year.",
+    year: 2009,
     tags: [
-      "B2B",
-      "SaaS",
-      "Marketing",
-      "Strategy",
-      "Positioning"
+      "onboarding",
+      "retention",
+      "aha moment"
     ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-17",
+    company: "TikTok",
+    title: "TikTok's Algorithm-First Content Strategy",
+    category: "Growth",
+    description: "Unlike every other social network, TikTok's FYP serves content from strangers — not friends. The algorithm, not social graph, drives discovery. New creators get immediate reach.",
+    logo: "🎭",
+    outcome: "1B+ MAU in 5 years. Fastest app to reach 1B users ever.",
+    year: 2018,
+    tags: [
+      "algorithm",
+      "content",
+      "virality"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-61",
+    company: "Slice",
+    title: "How Slice Pivoted from Credit Cards to Banking — Twice",
+    category: "Strategy",
+    description: "Rajan Bajaj built India's first credit card for Gen Z when no bank would issue cards to under-25s. The RBI changed the rules, the business model broke, and Slice had to reinvent itself as a UPI-first bank in 18 months — twice.",
+    logo: "💳",
+    outcome: "Merged with North East Small Finance Bank in 2024 to become a full bank. ~10M+ users. Successfully pivoted twice without losing the brand. The Slice card brand survived three regulatory shifts that broke most fintech peers.",
+    year: 2016,
+    tags: [
+      "fintech",
+      "regulatory",
+      "pivot"
+    ],
+    region: "India",
+    publishedAt: "2026-05-18",
   },
   {
     id: "cs-snap16-5561",
@@ -1808,22 +1876,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-13",
-    company: "Twitter",
-    title: "Twitter's 'Suggested Users' Retention Fix",
-    category: "Growth",
-    description: "Twitter discovered users who followed 30+ people retained far better. They redesigned onboarding around a 'suggested users' list — retention jumped overnight.",
-    logo: "🐦",
-    outcome: "Monthly active users grew from 30M to 100M in one year.",
-    year: 2009,
-    tags: [
-      "onboarding",
-      "retention",
-      "aha moment"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-16",
     company: "Uber",
     title: "Uber's City-by-City Blitzscaling Playbook",
@@ -1836,22 +1888,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "marketplace",
       "supply",
       "expansion"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-17",
-    company: "TikTok",
-    title: "TikTok's Algorithm-First Content Strategy",
-    category: "Growth",
-    description: "Unlike every other social network, TikTok's FYP serves content from strangers — not friends. The algorithm, not social graph, drives discovery. New creators get immediate reach.",
-    logo: "🎭",
-    outcome: "1B+ MAU in 5 years. Fastest app to reach 1B users ever.",
-    year: 2018,
-    tags: [
-      "algorithm",
-      "content",
-      "virality"
     ],
     publishedAt: "2026-05-18",
   },
@@ -1904,22 +1940,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
-    id: "cs-39",
-    company: "WeWork",
-    title: "WeWork's $47B to $8B: The IPO Collapse",
-    category: "Failure",
-    description: "WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann, and a fundamentally broken business model. Investors finally read the fine print — and fled.",
-    logo: "🏢",
-    outcome: "Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023.",
-    year: 2019,
-    tags: [
-      "governance",
-      "real estate",
-      "startup"
-    ],
-    publishedAt: "2026-05-18",
-  },
-  {
     id: "cs-43",
     company: "Theranos",
     title: "Theranos: When Product Fakery Goes Criminal",
@@ -1967,22 +1987,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "quick-commerce"
     ],
     region: "India",
-    publishedAt: "2026-05-18",
-  },
-  {
-    id: "cs-65",
-    company: "Vercel",
-    title: "How Vercel Won Frontend by Making Deployment Stupidly Easy",
-    category: "Growth",
-    description: "Guillermo Rauch built a deployment tool that took 30 seconds to set up, while AWS took 30 hours. Then he gave away the open-source framework underneath (Next.js) and watched developers carry his platform into every company they joined.",
-    logo: "▲",
-    outcome: "$3.25B valuation. Powers websites for OpenAI, Stripe, Notion, Hashnode, McDonald's, Washington Post, GitHub. Next.js downloads cross 8M+ weekly. Frontend developer experience standard.",
-    year: 2015,
-    tags: [
-      "developer-tools",
-      "open-source",
-      "PLG"
-    ],
     publishedAt: "2026-05-18",
   },
   {
@@ -2050,6 +2054,54 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-11-25T15:00:00+00:00",
   },
   {
+    id: "cs-45",
+    company: "Yahoo",
+    title: "Yahoo Turned Down Google for $1M and Microsoft for $45B",
+    category: "Failure",
+    description: "Yahoo had two legendary opportunities: acquire Google in 2002 for $1M and sell to Microsoft in 2008 for $45B. They declined both. In 2016, Verizon bought them for $4.8B.",
+    logo: "🟣",
+    outcome: "Sold to Verizon for $4.8B. A masterclass in strategic indecision.",
+    year: 2008,
+    tags: [
+      "acquisition",
+      "strategy",
+      "decline"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-49",
+    company: "Whatsapp",
+    title: "WhatsApp's No-Ads, No-Games, No-Gimmicks Growth",
+    category: "Product",
+    description: "WhatsApp grew to 450M users with a team of 55 people and zero marketing budget. Their philosophy: no ads, no games, no gimmicks. Pure messaging utility at the lowest possible friction.",
+    logo: "💚",
+    outcome: "Acquired by Facebook for $19B in 2014. 2B+ users today.",
+    year: 2009,
+    tags: [
+      "messaging",
+      "simplicity",
+      "international"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
+    id: "cs-65",
+    company: "Vercel",
+    title: "How Vercel Won Frontend by Making Deployment Stupidly Easy",
+    category: "Growth",
+    description: "Guillermo Rauch built a deployment tool that took 30 seconds to set up, while AWS took 30 hours. Then he gave away the open-source framework underneath (Next.js) and watched developers carry his platform into every company they joined.",
+    logo: "▲",
+    outcome: "$3.25B valuation. Powers websites for OpenAI, Stripe, Notion, Hashnode, McDonald's, Washington Post, GitHub. Next.js downloads cross 8M+ weekly. Frontend developer experience standard.",
+    year: 2015,
+    tags: [
+      "developer-tools",
+      "open-source",
+      "PLG"
+    ],
+    publishedAt: "2026-05-18",
+  },
+  {
     id: "cs-vibe-2026-442",
     company: "Acme AI",
     title: "The 2026 Vibe-Coded Launch Crisis: When Autonomous Agents Met Broken APIs",
@@ -2080,22 +2132,6 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Creator Economy"
     ],
     publishedAt: "2026-12-02T15:00:00+00:00",
-  },
-  {
-    id: "cs-45",
-    company: "Yahoo",
-    title: "Yahoo Turned Down Google for $1M and Microsoft for $45B",
-    category: "Failure",
-    description: "Yahoo had two legendary opportunities: acquire Google in 2002 for $1M and sell to Microsoft in 2008 for $45B. They declined both. In 2016, Verizon bought them for $4.8B.",
-    logo: "🟣",
-    outcome: "Sold to Verizon for $4.8B. A masterclass in strategic indecision.",
-    year: 2008,
-    tags: [
-      "acquisition",
-      "strategy",
-      "decline"
-    ],
-    publishedAt: "2026-05-18",
   },
   {
     id: "cs-70",
@@ -2130,18 +2166,18 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-12-06T15:00:00+00:00",
   },
   {
-    id: "cs-49",
-    company: "Whatsapp",
-    title: "WhatsApp's No-Ads, No-Games, No-Gimmicks Growth",
-    category: "Product",
-    description: "WhatsApp grew to 450M users with a team of 55 people and zero marketing budget. Their philosophy: no ads, no games, no gimmicks. Pure messaging utility at the lowest possible friction.",
-    logo: "💚",
-    outcome: "Acquired by Facebook for $19B in 2014. 2B+ users today.",
-    year: 2009,
+    id: "cs-39",
+    company: "WeWork",
+    title: "WeWork's $47B to $8B: The IPO Collapse",
+    category: "Failure",
+    description: "WeWork's S-1 filing revealed massive losses, self-dealing by CEO Adam Neumann, and a fundamentally broken business model. Investors finally read the fine print — and fled.",
+    logo: "🏢",
+    outcome: "Valuation crashed from $47B to $8B. Eventually filed bankruptcy in 2023.",
+    year: 2019,
     tags: [
-      "messaging",
-      "simplicity",
-      "international"
+      "governance",
+      "real estate",
+      "startup"
     ],
     publishedAt: "2026-05-18",
   },
@@ -2180,6 +2216,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
     publishedAt: "2026-05-18",
   },
   {
+    id: "cs-78",
+    company: "Roblox",
+    title: "How Roblox Built a Game Platform by Not Making Games",
+    category: "Product",
+    description: "Roblox bet that the most valuable game company would build none of its own games — and instead give millions of young creators the tools and the money to build them.",
+    logo: "🟥",
+    outcome: "Grew to over 70M daily active users and paid creators more than $700M in a single year.",
+    year: 2006,
+    tags: [
+      "platform",
+      "UGC",
+      "gaming"
+    ],
+    publishedAt: "2026-06-16",
+  },
+  {
     id: "cs-84",
     company: "Zepto",
     title: "How Two Teenagers Built Zepto on a 10-Minute Promise",
@@ -2194,6 +2246,22 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "india"
     ],
     publishedAt: "2026-07-28",
+  },
+  {
+    id: "cs-86",
+    company: "Reddit",
+    title: "How Reddit Outsourced Its Entire Platform to Volunteers",
+    category: "Strategy",
+    description: "Reddit built one of the internet's largest communities by handing governance to unpaid volunteer moderators — a model that scaled brilliantly until the company tried to monetize around them.",
+    logo: "👽",
+    outcome: "Grew to one of the world's most-visited sites and IPO'd in 2024, despite recurring user revolts.",
+    year: 2005,
+    tags: [
+      "community",
+      "governance",
+      "platform"
+    ],
+    publishedAt: "2026-08-11",
   },
   {
     id: "cs-87",
@@ -2211,6 +2279,23 @@ export const caseStudiesLite: CaseStudyLite[] = [
     ],
     region: "India",
     publishedAt: "2026-05-31T20:00:00+05:30",
+  },
+  {
+    id: "cs-136",
+    company: "Salesforce",
+    title: "Salesforce's \"No Software\" Revolution",
+    category: "Strategy",
+    description: "Salesforce aggressively launched with a \"No Software\" positioning campaign, attacking legacy incumbents like Siebel Systems by offering CRM delivered over the internet via a subscription. They invented the modern SaaS business model and revolutionized B2B software distribution.",
+    logo: "☁️",
+    outcome: "Created the multi-billion dollar SaaS industry and reached a market cap over $250 billion.",
+    year: 1999,
+    tags: [
+      "B2B",
+      "SaaS",
+      "Marketing",
+      "Strategy",
+      "Positioning"
+    ],
   },
   {
     id: "cs-zoom-2018-842",

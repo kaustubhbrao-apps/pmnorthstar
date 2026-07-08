@@ -342,6 +342,48 @@ export const comparisons: Comparison[] = [
     ],
   },
   {
+    slug: "linear-vs-jira",
+    companyA: "cs-139",
+    companyB: "cs-140",
+    title: "Linear vs Jira — Opinionated Speed vs Infinite Configurability",
+    eyebrow: "The battle for the modern software development lifecycle",
+    intro: "The battle between Linear and Jira is the ultimate case study in product philosophy: **Opinionated Design vs. Infinite Configurability.**\n\nJira's success was built on allowing large enterprises to mold the software to their existing processes. If a massive bank needed a 14-step bug tracking workflow with 8 mandatory compliance fields, Jira could do it. But this flexibility created massive architectural debt. Jira became notorious for being slow, bloated, and universally hated by the developers forced to use it. It was software designed for the manager, not the maker.\n\nLinear launched with the exact opposite thesis. They restricted configurability to force best practices and ensure blazingly fast performance. By using a local-first sync engine, Linear achieved sub-100ms latency on every click. They didn't let users build custom spaghetti workflows, and as a result, the tool remained incredibly focused. \n\nLinear successfully bypassed the traditional economic buyer (the Project Manager) and won through bottom-up adoption from frustrated engineers who demanded consumer-grade UX in their enterprise tools.",
+    verdict: "Jira built an unkillable enterprise moat by allowing companies to codify their complex bureaucracies into custom workflows. Linear proved that high-performing engineering teams will abandon bureaucracy if you offer them an opinionated, sub-100ms UX. Jira wins the CIO; Linear wins the IC.",
+    metaTitle: "Linear vs Jira — Compare Issue Trackers and PM Tools",
+    metaDescription: "Linear vs Jira. Why do developers hate Jira and love Linear? A deep dive into opinionated software vs infinitely configurable enterprise bloat.",
+    keywords: [
+      "Linear vs Jira",
+      "issue trackers",
+      "agile project management",
+      "opinionated software",
+      "enterprise SaaS"
+    ],
+    accentColor: "#5E6AD2",
+    rows: [
+      {
+        label: "Founded",
+        a: "2019",
+        b: "2002"
+      },
+      {
+        label: "Core Philosophy",
+        a: "Opinionated, strict workflows",
+        b: "Infinitely configurable"
+      },
+      {
+        label: "Target Buyer",
+        a: "Software Engineers (Bottom-Up)",
+        b: "Project Managers & CIOs (Top-Down)"
+      },
+      {
+        label: "Performance Focus",
+        a: "Local-first cache, sub-100ms latency",
+        b: "Server-side rendering, complex validations"
+      }
+    ],
+    publishedAt: "2026-07-08",
+  },
+  {
     slug: "loom-vs-zoom",
     companyA: "cs-63",
     companyB: "cs-8",
@@ -502,6 +544,48 @@ export const comparisons: Comparison[] = [
         answer: "Thematically yes — both are value-retail champions for the mass market. But the mechanism is opposite. Walmart industrialized physical retail; Meesho is digitizing informal, trust-based commerce. Same promise of low prices for the many, built on completely different infrastructure for completely different eras."
       }
     ],
+  },
+  {
+    slug: "notion-vs-evernote",
+    companyA: "cs-141",
+    companyB: "cs-142",
+    title: "Notion vs Evernote — The Block vs The Filing Cabinet",
+    eyebrow: "How relational primitives killed static storage",
+    intro: "Evernote was the original unicorn of productivity software, built on a simple premise: a digital filing cabinet that synced across all your devices. In 2008, before iCloud existed, this was magic. But Evernote failed to realize that as cloud storage became a free commodity provided by Apple and Google, syncing text was no longer a defensible moat. They clung to the static \"notebook and note\" metaphor, leaving their product isolated as a single-player storage locker.\n\nNotion looked at productivity and realized the fundamental flaw was the format itself. They killed the concept of a \"document\" and replaced it with a \"block.\" A block could be text, a kanban board, or a row in a relational database. \n\nBy making the primitives modular, Notion didn't just build a note-taking app; they built a no-code visual programming language. While Evernote users were struggling to organize tags in a static list, Notion users were building dynamic, multiplayer CRM systems and sprint trackers out of blocks. Notion's architecture allowed it to evolve from a personal utility into the default operating system for entire startups.",
+    verdict: "Evernote failed to evolve past the physical metaphor of a filing cabinet, becoming a bloated storage locker for static text. Notion completely reimagined the digital workspace by turning everything into a modular 'block', allowing users to build dynamic, relational databases that scaled into operating systems for entire companies.",
+    metaTitle: "Notion vs Evernote — Note Taking Apps Compared",
+    metaDescription: "Compare Notion and Evernote. Learn why Evernote's single-player filing cabinet metaphor lost out to Notion's multiplayer, modular block architecture.",
+    keywords: [
+      "Notion vs Evernote",
+      "productivity software",
+      "note taking apps",
+      "relational databases",
+      "digital workspaces"
+    ],
+    accentColor: "#000000",
+    rows: [
+      {
+        label: "Founded",
+        a: "2016",
+        b: "2008"
+      },
+      {
+        label: "Core Metaphor",
+        a: "Lego Blocks (Relational)",
+        b: "Digital Filing Cabinet (Static)"
+      },
+      {
+        label: "Collaboration",
+        a: "Multiplayer, Real-time",
+        b: "Single-player focus"
+      },
+      {
+        label: "Growth Engine",
+        a: "Viral Template Ecosystem",
+        b: "Cross-platform sync (commoditized)"
+      }
+    ],
+    publishedAt: "2026-07-08",
   },
   {
     slug: "notion-vs-slack",
@@ -996,6 +1080,48 @@ export const comparisons: Comparison[] = [
         answer: "Spotify, by consensus. Its algorithmic playlists and personalization set the category standard. Apple Music leans more on human editorial curation and integration with your existing iTunes library, which appeals to a different listener but doesn't match Spotify's discovery loop."
       }
     ],
+  },
+  {
+    slug: "stripe-vs-adyen",
+    companyA: "cs-27",
+    companyB: "cs-138",
+    title: "Stripe vs Adyen — The Battle for Global Payments",
+    eyebrow: "Developer-First APIs against Enterprise Acquiring",
+    intro: "Stripe and Adyen are the two most important companies in modern payments, yet their strategies are completely inverted. \n\nWhen Stripe launched, their thesis was simple: developers should not have to understand banking. They built a beautiful, seven-line API that abstracted away the nightmarish complexity of payment processors, gateways, and merchant accounts. If you were a Y Combinator startup, you used Stripe. They won via extreme developer love and a bottom-up PLG motion.\n\nAdyen took the opposite approach. They realized that for massive global enterprises (like Netflix, Uber, or Spotify), abstraction was actually a liability. Enterprises needed to optimize authorization rates by fractions of a percent, and you can only do that if you own the entire banking stack. Adyen did the grueling, unsexy work of acquiring local banking licenses across the globe to become the gateway, processor, and acquirer all in one. \n\nStripe sold speed to developers. Adyen sold basis-point optimizations to CFOs. Both strategies worked flawlessly, proving that in a market as massive as global payments, you can build a titan by polarizing your feature set toward a highly specific ideal customer profile.",
+    verdict: "Stripe won the startup and developer ecosystem by abstracting away the complexity of banking with a beautiful API; Adyen won the global enterprise market by embracing the complexity and building the banking infrastructure themselves. Both built trillion-dollar payment empires by targeting entirely different buyers with entirely different product philosophies.",
+    metaTitle: "Stripe vs Adyen — API Wrappers vs Full-Stack Acquiring",
+    metaDescription: "Compare Stripe and Adyen. Learn how Stripe used developer-first PLG to win startups, while Adyen used top-down enterprise sales to win global giants like Uber.",
+    keywords: [
+      "Stripe vs Adyen",
+      "payment gateways",
+      "fintech infrastructure",
+      "developer first",
+      "enterprise acquiring"
+    ],
+    accentColor: "#635BFF",
+    rows: [
+      {
+        label: "Founded",
+        a: "2010",
+        b: "2006"
+      },
+      {
+        label: "Target user",
+        a: "Developers, Startups, SMBs",
+        b: "CFOs, Global Enterprises"
+      },
+      {
+        label: "GTM Strategy",
+        a: "Product-Led Growth (Bottom-Up)",
+        b: "Direct Enterprise Sales (Top-Down)"
+      },
+      {
+        label: "Core Moat",
+        a: "API Abstraction & Developer Love",
+        b: "Full-Stack Global Banking Licenses"
+      }
+    ],
+    publishedAt: "2026-07-08",
   },
   {
     slug: "swiggy-vs-zomato",
