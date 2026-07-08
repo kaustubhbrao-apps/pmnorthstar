@@ -1,7 +1,7 @@
 ---
 slug: "linear-vs-jira"
-companyA: "cs-139"
-companyB: "cs-140"
+companyA: "cs-73"
+companyB: "cs-50"
 title: "Linear vs Jira — Opinionated Speed vs Infinite Configurability"
 eyebrow: "The battle for the modern software development lifecycle"
 verdict: "Jira built an unkillable enterprise moat by allowing companies to codify their complex bureaucracies into custom workflows. Linear proved that high-performing engineering teams will abandon bureaucracy if you offer them an opinionated, sub-100ms UX. Jira wins the CIO; Linear wins the IC."

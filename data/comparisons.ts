@@ -343,8 +343,8 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "linear-vs-jira",
-    companyA: "cs-139",
-    companyB: "cs-140",
+    companyA: "cs-73",
+    companyB: "cs-50",
     title: "Linear vs Jira — Opinionated Speed vs Infinite Configurability",
     eyebrow: "The battle for the modern software development lifecycle",
     intro: "The battle between Linear and Jira is the ultimate case study in product philosophy: **Opinionated Design vs. Infinite Configurability.**\n\nJira's success was built on allowing large enterprises to mold the software to their existing processes. If a massive bank needed a 14-step bug tracking workflow with 8 mandatory compliance fields, Jira could do it. But this flexibility created massive architectural debt. Jira became notorious for being slow, bloated, and universally hated by the developers forced to use it. It was software designed for the manager, not the maker.\n\nLinear launched with the exact opposite thesis. They restricted configurability to force best practices and ensure blazingly fast performance. By using a local-first sync engine, Linear achieved sub-100ms latency on every click. They didn't let users build custom spaghetti workflows, and as a result, the tool remained incredibly focused. \n\nLinear successfully bypassed the traditional economic buyer (the Project Manager) and won through bottom-up adoption from frustrated engineers who demanded consumer-grade UX in their enterprise tools.",
@@ -547,7 +547,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "notion-vs-evernote",
-    companyA: "cs-141",
+    companyA: "cs-7",
     companyB: "cs-142",
     title: "Notion vs Evernote — The Block vs The Filing Cabinet",
     eyebrow: "How relational primitives killed static storage",

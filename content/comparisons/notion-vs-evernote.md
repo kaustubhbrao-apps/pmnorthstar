@@ -1,6 +1,6 @@
 ---
 slug: "notion-vs-evernote"
-companyA: "cs-141"
+companyA: "cs-7"
 companyB: "cs-142"
 title: "Notion vs Evernote — The Block vs The Filing Cabinet"
 eyebrow: "How relational primitives killed static storage"
