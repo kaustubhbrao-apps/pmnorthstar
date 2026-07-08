@@ -103,6 +103,18 @@ export function SimulatePlayer({
   const searchParams = useSearchParams();
   const referrerId = searchParams?.get("ref") || undefined;
 
+  const isPastLeagueMatch = drill.isLeagueMatch && drill.leagueEndsAt && new Date(drill.leagueEndsAt) < new Date();
+  const [hasArchetype, setHasArchetype] = useState<boolean | null>(!isPastLeagueMatch ? true : null);
+
+  useEffect(() => {
+    if (isPastLeagueMatch) {
+      fetch("/api/draft/me")
+        .then(res => res.json())
+        .then(data => setHasArchetype(data.hasArchetype))
+        .catch(() => setHasArchetype(false));
+    }
+  }, [isPastLeagueMatch]);
+
   const [state, setState] = useState<PlayState>(() => ({
     phase: "intro",
     currentNodeId: "start",
@@ -300,6 +312,31 @@ export function SimulatePlayer({
   const showRunningScore =
     (state.phase === "decision" || state.phase === "reveal") &&
     runningTotals.max > 0;
+
+  if (hasArchetype === false) {
+    return (
+      <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-2xl mx-auto flex flex-col items-center justify-center min-h-[50vh] text-center">
+        <h2 className="text-3xl font-bold mb-4">League Match Locked</h2>
+        <p className="text-zinc-400 mb-8 text-lg">
+          This is an archived Simulation League Match. To play past matchdays, you must first discover your startup archetype in the Builder Draft.
+        </p>
+        <Link 
+          href="/draft" 
+          className="inline-block bg-[#D4102F] hover:bg-[#b00d25] text-white font-bold py-4 px-10 rounded-lg text-lg transition-transform hover:scale-105"
+        >
+          Take the Draft
+        </Link>
+      </div>
+    );
+  }
+
+  if (hasArchetype === null) {
+    return (
+      <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-4xl mx-auto text-center opacity-50">
+        Checking draft status...
+      </div>
+    );
+  }
 
   return (
     <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-4xl mx-auto">
