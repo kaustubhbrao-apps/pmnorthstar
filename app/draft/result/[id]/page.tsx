@@ -45,7 +45,7 @@ export default async function DraftResultPage({ params, searchParams }: { params
             <div className="pt-8 border-t border-zinc-800 mt-8">
               <h3 className="text-2xl font-bold mb-4">Join the Simulation League</h3>
               <p className="text-zinc-400 mb-6">
-                You now have a verified archetype profile. The next step is to put your skills to the test in the Simulation League. Compete against thousands of other builders.
+                You now have a verified archetype profile. The next step is to put your skills to the test in the Simulation League. Compete against builders of your level.
               </p>
               <a 
                 href="/simulate" 
