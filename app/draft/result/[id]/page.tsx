@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import { DraftCardActions } from "./DraftCardActions";
 
 export default async function DraftResultPage({ params, searchParams }: { params: { id: string }, searchParams: { v: string, e: string, c: string, d: string, f: string } }) {
   const session = await getSession();
@@ -42,6 +43,7 @@ export default async function DraftResultPage({ params, searchParams }: { params
               className="w-full rounded-2xl shadow-2xl border border-zinc-800"
               unoptimized
             />
+            <DraftCardActions ogImageUrl={ogImageUrl} playerId={player.id} />
           </div>
 
           <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
