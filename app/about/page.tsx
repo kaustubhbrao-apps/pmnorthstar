@@ -79,7 +79,7 @@ export default function AboutPage() {
               className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl"
               style={{ color: "var(--text-muted)" }}
             >
-              {CASE_STUDY_COUNT} long-form case studies. {BOOK_COUNT} original book reviews with takeaways. {PLAYLIST_COUNT} hand-picked YouTube playlists. No paywall, no signup wall, no ads.
+              {CASE_STUDY_COUNT} long-form case studies. {BOOK_COUNT} original book reviews with takeaways. {PLAYLIST_COUNT} hand-picked YouTube playlists. No paywall, no signup wall, no ads. Built and curated by Kaustubh Bhalerao.
             </p>
           </div>
         </section>
@@ -215,7 +215,7 @@ export default function AboutPage() {
                 <strong style={{ color: "var(--text-primary)" }}>No display ads.</strong> The only monetization is Amazon affiliate links on book pages, which help fund continued work.
               </li>
               <li>
-                <strong style={{ color: "var(--text-primary)" }}>No fake personal byline.</strong> Every piece is credited to &quot;northstar editorial&quot; — the brand, not a person. The prose is AI-assisted; the curation and editing is human. We&apos;d rather be honest than mint a fictional author headshot for trust.
+                <strong style={{ color: "var(--text-primary)" }}>No fake personal byline.</strong> Every piece is credited to &quot;northstar editorial&quot; — the brand, not a person. The prose is AI-assisted; the curation and editing is done by Kaustubh Bhalerao. We&apos;d rather be honest than mint a fictional author headshot for trust.
               </li>
               <li>
                 <strong style={{ color: "var(--text-primary)" }}>No SEO-stuffed listicles.</strong> The site doesn&apos;t chase &quot;top 10 PM books 2026&quot; ranking traffic. Each page exists because it&apos;s actually useful.

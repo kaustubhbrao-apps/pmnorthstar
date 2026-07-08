@@ -14,11 +14,11 @@ export default async function DraftLandingPage() {
           New Feature
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8 uppercase leading-none text-white">
+        <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8 uppercase leading-none" style={{ color: "var(--text-primary)" }}>
           The Builder Draft
         </h1>
         
-        <p className="text-2xl text-zinc-300 mb-12 font-medium leading-relaxed">
+        <p className="text-2xl mb-12 font-medium leading-relaxed" style={{ color: "var(--text-muted)" }}>
           Find out your exact startup archetype based on our World Cup database of a diverse set of 20 players. Are you the visionary playmaker, the chaotic defender, or the ice-cold closer?
         </p>
 
@@ -40,7 +40,7 @@ export default async function DraftLandingPage() {
           </div>
         </div>
 
-        <div className="border-t-2 border-zinc-800 pt-12">
+        <div className="border-t-2 pt-12" style={{ borderColor: "var(--card-border)" }}>
           {session ? (
             <Link
               href="/draft/play"
@@ -52,11 +52,15 @@ export default async function DraftLandingPage() {
             <div>
               <a
                 href="/api/auth/google/start?next=/draft/play"
-                className="inline-block bg-white hover:bg-zinc-200 text-black font-bold py-5 px-12 text-xl transition-colors mb-4"
+                className="inline-block font-bold py-5 px-12 text-xl transition-all mb-4"
+                style={{
+                  background: "var(--text-primary)",
+                  color: "var(--page-bg)",
+                }}
               >
                 Sign in with Google to Play
               </a>
-              <p className="text-zinc-500 font-medium">You must be logged in to save your goated player card and join the Simulation League.</p>
+              <p className="font-medium" style={{ color: "var(--text-muted)" }}>You must be logged in to save your goated player card and join the Simulation League.</p>
             </div>
           )}
         </div>

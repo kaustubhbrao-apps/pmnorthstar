@@ -23,145 +23,227 @@ export async function GET(req: NextRequest) {
     const host = isDev ? "http://localhost:8000" : new URL(req.url).origin;
     const imageUrl = `${host}/players/${player.id}.jpg`;
 
+    // Red gradient based on overall score (optional, we use static brand red)
+    const brandRed = "#F3123C";
+    const bgDark = "#0A0A0F";
+
     return new ImageResponse(
       (
         <div
           style={{
-            height: "100%",
+            background: bgDark,
             width: "100%",
+            height: "100%",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#F3123C", // Northstar Brand Red Background
-            fontFamily: "sans-serif",
-            backgroundImage: "radial-gradient(circle at 50% 50%, #ff2a55 0%, #D4102F 100%)",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            padding: "64px 80px",
+            color: "#ffffff",
+            position: "relative",
           }}
         >
-          {/* Card Container */}
+          {/* Subtle red glow in top-left corner for brand accent */}
+          <div
+            style={{
+              position: "absolute",
+              top: -120,
+              left: -120,
+              width: 400,
+              height: 400,
+              borderRadius: 9999,
+              background: "rgba(243,18,60,0.18)",
+              filter: "blur(90px)",
+              display: "flex",
+            }}
+          />
+
+          {/* Left Column: Info & Stats */}
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "420px",
-              height: "580px",
-              backgroundColor: "#000000",
-              border: "12px solid #FFFFFF",
-              borderRadius: "16px",
-              boxShadow: "20px 20px 0px 0px rgba(0,0,0,0.5)",
-              overflow: "hidden",
-              position: "relative",
+              justifyContent: "space-between",
+              zIndex: 1,
+              width: "60%",
             }}
           >
-            {/* Top Left OVR and Position */}
+            {/* Top: brand eyebrow */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+              }}
+            >
+              <div
+                style={{
+                  width: 12,
+                  height: 12,
+                  borderRadius: 9999,
+                  background: brandRed,
+                  display: "flex",
+                }}
+              />
+              <span
+                style={{
+                  color: brandRed,
+                  fontSize: 22,
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                }}
+              >
+                northstar · draft
+              </span>
+            </div>
+
+            {/* Middle: Name & Big Score */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 16,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 4,
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: 64,
+                    fontWeight: 800,
+                    letterSpacing: "-0.04em",
+                    lineHeight: 1,
+                    color: "#ffffff",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {player.name}
+                </span>
+                <span
+                  style={{
+                    fontSize: 28,
+                    fontWeight: 500,
+                    color: "rgba(255,255,255,0.6)",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {player.archetype}
+                </span>
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  color: brandRed,
+                  fontWeight: 800,
+                  letterSpacing: "-0.05em",
+                  lineHeight: 0.9,
+                  marginTop: 20,
+                }}
+              >
+                <span style={{ fontSize: 160, color: "#ffffff" }}>{ovr}</span>
+                <span
+                  style={{
+                    fontSize: 48,
+                    opacity: 0.8,
+                    marginLeft: 12,
+                    fontWeight: 600,
+                    color: brandRed,
+                  }}
+                >
+                  OVR
+                </span>
+              </div>
+            </div>
+
+            {/* Bottom: The 5 Stats Array */}
+            <div style={{ display: "flex", gap: 32, marginTop: 40 }}>
+              {[
+                { label: "VIS", val: v },
+                { label: "EXE", val: e },
+                { label: "CHA", val: c },
+                { label: "DEF", val: d },
+                { label: "FLR", val: f },
+              ].map((stat) => (
+                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  <span style={{ fontSize: 32, fontWeight: 800, color: "#ffffff" }}>{stat.val}</span>
+                  <span style={{ fontSize: 16, fontWeight: 600, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em" }}>
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Player Photo Cutout */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "flex-end",
+              width: "40%",
+              height: "100%",
+              position: "relative",
+              zIndex: 1,
+            }}
+          >
+            {/* Background texture/box for portrait */}
             <div
               style={{
                 position: "absolute",
-                top: "20px",
-                left: "20px",
+                bottom: 0,
+                right: 0,
+                width: "320px",
+                height: "440px",
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: "16px",
                 display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                zIndex: 10,
               }}
-            >
-              <span style={{ fontSize: "64px", fontWeight: "900", color: "#FFFFFF", lineHeight: "1" }}>{ovr}</span>
-              <span style={{ fontSize: "20px", fontWeight: "bold", color: "#FACC15", letterSpacing: "2px" }}>OVR</span>
-            </div>
-
-            {/* "Portrait" Area */}
-            <div
+            />
+            <img
+              src={imageUrl}
+              width="500"
+              height="500"
               style={{
-                width: "100%",
-                height: "320px",
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: "center",
-                backgroundColor: "#111111",
-                backgroundImage: "linear-gradient(180deg, #222222 0%, #000000 100%)",
-                borderBottom: "4px solid #333333",
-                position: "relative",
-                overflow: "hidden",
+                width: "480px",
+                height: "480px",
+                objectFit: "contain",
+                objectPosition: "bottom right",
+                filter: "drop-shadow(0px 20px 40px rgba(0,0,0,0.8))",
               }}
-            >
-              <img
-                src={imageUrl}
-                width="500"
-                height="500"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "top",
-                  opacity: 0.9,
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  backgroundImage: "linear-gradient(180deg, transparent 70%, #000000 100%)",
-                }}
-              />
-            </div>
+            />
+          </div>
 
-            {/* Player Info */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                padding: "15px 20px",
-                width: "100%",
-              }}
-            >
-              <h1 style={{ fontSize: "36px", fontWeight: "900", color: "#FFFFFF", textTransform: "uppercase", margin: "0", letterSpacing: "1px", textAlign: "center" }}>
-                {player.name}
-              </h1>
-              <h2 style={{ fontSize: "16px", fontWeight: "bold", color: "#FACC15", margin: "5px 0 15px 0", textTransform: "uppercase", letterSpacing: "2px" }}>
-                {player.archetype}
-              </h2>
-
-              <div style={{ width: "100%", height: "2px", backgroundColor: "#333333", marginBottom: "15px" }} />
-
-              {/* Stats Grid */}
-              <div style={{ display: "flex", justifyContent: "space-between", width: "100%", padding: "0 10px" }}>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <span style={{ fontSize: "28px", color: "#fff", fontWeight: "900" }}>{v}</span>
-                  <span style={{ fontSize: "12px", color: "#888", fontWeight: "bold" }}>VIS</span>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <span style={{ fontSize: "28px", color: "#fff", fontWeight: "900" }}>{e}</span>
-                  <span style={{ fontSize: "12px", color: "#888", fontWeight: "bold" }}>EXE</span>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <span style={{ fontSize: "28px", color: "#fff", fontWeight: "900" }}>{c}</span>
-                  <span style={{ fontSize: "12px", color: "#888", fontWeight: "bold" }}>CHA</span>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <span style={{ fontSize: "28px", color: "#fff", fontWeight: "900" }}>{d}</span>
-                  <span style={{ fontSize: "12px", color: "#888", fontWeight: "bold" }}>DEF</span>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <span style={{ fontSize: "28px", color: "#fff", fontWeight: "900" }}>{f}</span>
-                  <span style={{ fontSize: "12px", color: "#888", fontWeight: "bold" }}>FLR</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Northstar logo pill */}
-            <div style={{
+          {/* Absolute Bottom Right: URL */}
+          <div
+            style={{
               position: "absolute",
-              bottom: "15px",
-              left: "50%",
-              transform: "translateX(-50%)",
+              bottom: 64,
+              right: 80,
               display: "flex",
-              alignItems: "center",
-              backgroundColor: "#D4102F",
-              padding: "4px 12px",
-              borderRadius: "12px",
-            }}>
-              <span style={{ fontSize: "10px", color: "#FFF", fontWeight: "bold", letterSpacing: "1px" }}>NORTHSTAR</span>
-            </div>
+              flexDirection: "column",
+              alignItems: "flex-end",
+              gap: 4,
+              zIndex: 10,
+            }}
+          >
+            <span
+              style={{
+                fontSize: 22,
+                color: "#ffffff",
+                fontWeight: 700,
+                letterSpacing: "-0.01em",
+              }}
+            >
+              pmnorthstar.in/draft
+            </span>
           </div>
         </div>
       ),

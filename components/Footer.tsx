@@ -118,7 +118,7 @@ export function Footer() {
           style={{ borderTop: "1.5px solid var(--card-border)" }}
         >
           <p className="text-xs" style={{ color: "var(--text-faint)" }}>
-            © {year} northstar · made for the product community
+            © {year} northstar · curated by Kaustubh Bhalerao for the product community
           </p>
           <p className="text-xs" style={{ color: "var(--text-faint)" }}>
             Amazon affiliate links help fund the work. No paywall, ever.
