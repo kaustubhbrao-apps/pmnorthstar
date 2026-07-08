@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { DRAFT_QUESTIONS, INITIAL_STATS } from "@/lib/draft/questions";
 import { calculateClosestMatch, PlayerStatVector } from "@/lib/draft/players";
@@ -9,7 +9,13 @@ export function DraftQuizClient() {
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
   const [stats, setStats] = useState<PlayerStatVector>(INITIAL_STATS);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [questions, setQuestions] = useState(DRAFT_QUESTIONS);
   const router = useRouter();
+
+  useEffect(() => {
+    const shuffled = [...DRAFT_QUESTIONS].sort(() => 0.5 - Math.random());
+    setQuestions(shuffled.slice(0, 10));
+  }, []);
 
   const handleOptionSelect = async (impact: Partial<PlayerStatVector>) => {
     const newStats = {
@@ -21,7 +27,7 @@ export function DraftQuizClient() {
     };
     setStats(newStats);
 
-    if (currentQuestionIdx < DRAFT_QUESTIONS.length - 1) {
+    if (currentQuestionIdx < questions.length - 1) {
       setCurrentQuestionIdx(currentQuestionIdx + 1);
     } else {
       setIsSubmitting(true);
@@ -49,9 +55,9 @@ export function DraftQuizClient() {
     }
   };
 
-  const question = DRAFT_QUESTIONS[currentQuestionIdx];
+  const question = questions[currentQuestionIdx];
 
-  if (isSubmitting) {
+  if (isSubmitting || !question) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] text-center">
         <h2 className="text-3xl font-bold mb-4 animate-pulse">Calculating your archetype...</h2>
@@ -64,12 +70,12 @@ export function DraftQuizClient() {
     <div className="max-w-3xl mx-auto py-12 px-6">
       <div className="mb-8">
         <div className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-2">
-          Question {currentQuestionIdx + 1} of {DRAFT_QUESTIONS.length}
+          Question {currentQuestionIdx + 1} of {questions.length}
         </div>
         <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
           <div 
             className="h-full bg-[#D4102F] transition-all duration-300" 
-            style={{ width: `${((currentQuestionIdx + 1) / DRAFT_QUESTIONS.length) * 100}%` }}
+            style={{ width: `${((currentQuestionIdx + 1) / questions.length) * 100}%` }}
           />
         </div>
       </div>

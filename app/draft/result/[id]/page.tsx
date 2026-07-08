@@ -3,9 +3,17 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { DRAFT_PLAYERS } from "@/lib/draft/players";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 
 export default async function DraftResultPage({ params, searchParams }: { params: { id: string }, searchParams: { v: string, e: string, c: string, d: string, f: string } }) {
   const session = await getSession();
+  let attemptsCount = 0;
+  if (session) {
+    attemptsCount = await prisma.builderDraftAttempt.count({
+      where: { userId: session.id }
+    });
+  }
   const player = DRAFT_PLAYERS.find(p => p.id === params.id);
 
   if (!player) {
@@ -47,12 +55,26 @@ export default async function DraftResultPage({ params, searchParams }: { params
               <p className="text-zinc-400 mb-6">
                 You now have a verified archetype profile. The next step is to put your skills to the test in the Simulation League. Compete against builders of your level.
               </p>
-              <a 
-                href="/simulate" 
-                className="inline-block w-full text-center bg-white hover:bg-zinc-200 text-black font-bold py-4 px-8 rounded-lg text-lg transition-transform hover:scale-105"
-              >
-                Enter the League
-              </a>
+              <div className="flex flex-col gap-4">
+                <a 
+                  href="/simulate" 
+                  className="inline-block w-full text-center bg-[#D4102F] hover:bg-[#b00d25] text-white font-bold py-4 px-8 rounded-lg text-lg transition-transform hover:scale-105"
+                >
+                  Enter the League
+                </a>
+                
+                {attemptsCount === 1 && (
+                  <Link 
+                    href="/draft/play" 
+                    className="inline-block w-full text-center bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-transform hover:scale-105"
+                  >
+                    Not happy? Use your 1 Lifeline to retake.
+                  </Link>
+                )}
+                {attemptsCount >= 2 && (
+                  <p className="text-xs text-zinc-500 mt-2 text-center">You have used your lifeline. Your archetype is locked forever.</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
