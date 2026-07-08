@@ -19,8 +19,9 @@ export async function GET(req: NextRequest) {
     // Overall rating
     const ovr = Math.round((v + e + c + d + f) / 5);
 
-    // Get initials for the portrait replacement
-    const initials = player.name.split(" ").map(n => n[0]).join("").substring(0, 2).toUpperCase();
+    const isDev = process.env.NODE_ENV === "development" || req.url.includes("localhost");
+    const host = isDev ? "http://localhost:8000" : new URL(req.url).origin;
+    const imageUrl = `${host}/players/${player.id}.jpg`;
 
     return new ImageResponse(
       (
@@ -60,6 +61,7 @@ export async function GET(req: NextRequest) {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                zIndex: 10,
               }}
             >
               <span style={{ fontSize: "64px", fontWeight: "900", color: "#FFFFFF", lineHeight: "1" }}>{ovr}</span>
@@ -78,22 +80,28 @@ export async function GET(req: NextRequest) {
                 backgroundImage: "linear-gradient(180deg, #222222 0%, #000000 100%)",
                 borderBottom: "4px solid #333333",
                 position: "relative",
+                overflow: "hidden",
               }}
             >
-              
-              {/* Initials as the portrait */}
+              <img
+                src={imageUrl}
+                width="500"
+                height="500"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "top",
+                  opacity: 0.9,
+                }}
+              />
               <div
                 style={{
-                  fontSize: "180px",
-                  fontWeight: "900",
-                  color: "#333333",
-                  lineHeight: "1",
-                  letterSpacing: "-10px",
-                  marginBottom: "-20px", // Sink it into the bottom
+                  position: "absolute",
+                  inset: 0,
+                  backgroundImage: "linear-gradient(180deg, transparent 70%, #000000 100%)",
                 }}
-              >
-                {initials}
-              </div>
+              />
             </div>
 
             {/* Player Info */}
