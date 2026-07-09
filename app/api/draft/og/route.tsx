@@ -162,22 +162,40 @@ export async function GET(req: NextRequest) {
               </div>
             </div>
 
-            {/* Bottom: The 5 Stats Array */}
-            <div style={{ display: "flex", gap: 32, marginTop: 40 }}>
+            {/* Bottom: The 5 Stats Array (Multi-color boxes) */}
+            <div style={{ display: "flex", gap: 16, marginTop: 40 }}>
               {[
                 { label: "VIS", val: v },
                 { label: "EXE", val: e },
                 { label: "CHA", val: c },
                 { label: "DEF", val: d },
                 { label: "FLR", val: f },
-              ].map((stat) => (
-                <div key={stat.label} style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                  <span style={{ fontSize: 32, fontWeight: 800, color: "#ffffff" }}>{stat.val}</span>
-                  <span style={{ fontSize: 16, fontWeight: 600, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em" }}>
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+              ].map((stat) => {
+                let bg = "#EF4444"; // Red
+                if (stat.val >= 90) bg = "#22C55E";      // Green
+                else if (stat.val >= 75) bg = "#84CC16"; // Lime
+                else if (stat.val >= 60) bg = "#EAB308"; // Yellow
+                else if (stat.val >= 40) bg = "#F97316"; // Orange
+
+                return (
+                  <div key={stat.label} style={{ 
+                    display: "flex", 
+                    flexDirection: "column", 
+                    alignItems: "center", 
+                    justifyContent: "center",
+                    background: bg, 
+                    width: 76, 
+                    height: 76, 
+                    borderRadius: 12,
+                    color: "#ffffff"
+                  }}>
+                    <span style={{ fontSize: 30, fontWeight: 800, lineHeight: 1 }}>{stat.val}</span>
+                    <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.05em", opacity: 0.9, marginTop: 4 }}>
+                      {stat.label}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

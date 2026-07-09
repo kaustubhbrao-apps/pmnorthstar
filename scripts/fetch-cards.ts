@@ -8,7 +8,7 @@ const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 async function fetchCards() {
   for (const player of DRAFT_PLAYERS) {
-    const url = `http://localhost:3006/api/draft/og?id=${player.id}&v=${player.stats.vision}&e=${player.stats.execution}&c=${player.stats.chaos}&d=${player.stats.defense}&f=${player.stats.flair}`;
+    const url = `http://localhost:3007/api/draft/og?id=${player.id}&v=${player.stats.vision}&e=${player.stats.execution}&c=${player.stats.chaos}&d=${player.stats.defense}&f=${player.stats.flair}`;
     console.log(`Fetching ${player.name}...`);
     try {
       const response = await fetch(url);
