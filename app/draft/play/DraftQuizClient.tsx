@@ -17,13 +17,15 @@ export function DraftQuizClient() {
     setQuestions(shuffled.slice(0, 10));
   }, []);
 
+  const clamp = (n: number) => Math.min(100, Math.max(0, n));
+
   const handleOptionSelect = async (impact: Partial<PlayerStatVector>) => {
     const newStats = {
-      vision: stats.vision + (impact.vision || 0),
-      execution: stats.execution + (impact.execution || 0),
-      chaos: stats.chaos + (impact.chaos || 0),
-      defense: stats.defense + (impact.defense || 0),
-      flair: stats.flair + (impact.flair || 0),
+      vision: clamp(stats.vision + (impact.vision || 0)),
+      execution: clamp(stats.execution + (impact.execution || 0)),
+      chaos: clamp(stats.chaos + (impact.chaos || 0)),
+      defense: clamp(stats.defense + (impact.defense || 0)),
+      flair: clamp(stats.flair + (impact.flair || 0)),
     };
     setStats(newStats);
 

@@ -2,6 +2,14 @@ import { getSession } from "@/lib/auth";
 import Link from "next/link";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Users, Shield, Zap } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The Builder Draft — Find Your Startup Archetype",
+  description: "Answer 10 decisions and get matched to one of 20 legendary builder archetypes — from Messi's vision to Kanté's relentless execution. What kind of builder are you?",
+  alternates: { canonical: "/draft" },
+  openGraph: { title: "The Builder Draft", description: "Find your startup archetype in 10 decisions." },
+};
 
 export default async function DraftLandingPage() {
   const session = await getSession();

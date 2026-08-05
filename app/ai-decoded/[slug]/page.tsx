@@ -10,10 +10,26 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { solidColorFor } from "@/lib/category-colors";
 import { ViewCounter } from "@/components/ViewCounter";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
+import type { Metadata } from "next";
 
 // ISR: re-render hourly so a scheduled (future-dated) article goes live on
 // its publishedAt date without a redeploy.
 export const revalidate = 3600;
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const article = getAIDecodedArticleBySlug(params.slug);
+  if (!article) return {};
+  const { title, excerpt, metaTitle, slug } = article.frontmatter;
+  const resolvedTitle = metaTitle ?? title;
+  const desc = excerpt?.slice(0, 160) ?? title;
+  return {
+    title: resolvedTitle,
+    description: desc,
+    openGraph: { title: resolvedTitle, description: desc, type: "article" },
+    twitter: { card: "summary_large_image", title: resolvedTitle, description: desc },
+    alternates: { canonical: `/ai-decoded/${slug}` },
+  };
+}
 
 // Split rendered HTML at the </p> tag closest to `ratio` through the
 // article so we can inject a CTA mid-read. Keeps both halves valid HTML.

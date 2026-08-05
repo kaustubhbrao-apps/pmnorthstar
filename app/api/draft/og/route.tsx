@@ -15,251 +15,208 @@ export async function GET(req: NextRequest) {
     const f = parseInt(searchParams.get("f") || "50");
 
     const player = DRAFT_PLAYERS.find((p) => p.id === archetypeId) || DRAFT_PLAYERS[0];
-    
-    // Overall rating
     const ovr = Math.round((v + e + c + d + f) / 5);
 
-    const isDev = process.env.NODE_ENV === "development" || req.url.includes("localhost");
-    const host = isDev ? "http://localhost:8000" : new URL(req.url).origin;
+    const host = new URL(req.url).origin;
     const imageUrl = `${host}/players/${player.id}.jpg`;
 
-    // Red gradient based on overall score (optional, we use static brand red)
-    const brandRed = "#F3123C";
-    const bgDark = "#0A0A0F";
+    const getStatColor = (val: number) => {
+      if (val >= 90) return "#22C55E";
+      if (val >= 75) return "#84CC16";
+      if (val >= 60) return "#EAB308";
+      if (val >= 40) return "#F97316";
+      return "#EF4444";
+    };
 
     return new ImageResponse(
       (
         <div
           style={{
-            background: bgDark,
+            background: "#0A0A0F",
             width: "100%",
             height: "100%",
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            padding: "64px 80px",
-            color: "#ffffff",
             position: "relative",
+            fontFamily: "Inter, sans-serif",
+            overflow: "hidden",
+            border: "20px solid #16161F",
           }}
         >
-          {/* Subtle red glow in top-left corner for brand accent */}
+          {/* Foil / Holographic Inner Border */}
           <div
             style={{
               position: "absolute",
-              top: -120,
-              left: -120,
-              width: 400,
-              height: 400,
-              borderRadius: 9999,
-              background: "rgba(243,18,60,0.18)",
-              filter: "blur(90px)",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              border: "4px solid rgba(255,255,255,0.1)",
               display: "flex",
             }}
           />
 
-          {/* Left Column: Info & Stats */}
+          {/* Background Glow Elements */}
+          <div
+            style={{
+              position: "absolute",
+              top: -200,
+              right: -100,
+              width: 800,
+              height: 800,
+              background: "rgba(243,18,60,0.15)",
+              filter: "blur(120px)",
+              borderRadius: "50%",
+              display: "flex",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: -200,
+              left: -100,
+              width: 600,
+              height: 600,
+              background: "rgba(108,99,255,0.1)",
+              filter: "blur(100px)",
+              borderRadius: "50%",
+              display: "flex",
+            }}
+          />
+
+          {/* Player Cutout - Huge on Right */}
+          <div
+            style={{
+              position: "absolute",
+              right: -20,
+              bottom: -20,
+              width: "650px",
+              height: "650px",
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
+            }}
+          >
+            <img
+              src={imageUrl}
+              width="650"
+              height="650"
+              style={{
+                objectFit: "contain",
+                objectPosition: "bottom right",
+                filter: "drop-shadow(-10px 10px 30px rgba(0,0,0,0.8))",
+              }}
+            />
+          </div>
+
+          {/* Main Content Layout */}
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              zIndex: 1,
-              width: "60%",
+              flexDirection: "row",
+              width: "100%",
+              height: "100%",
+              position: "relative",
+              zIndex: 10,
+              padding: "48px 64px",
             }}
           >
-            {/* Top: brand eyebrow */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 14,
-              }}
-            >
-              <div
-                style={{
-                  width: 12,
-                  height: 12,
-                  borderRadius: 9999,
-                  background: brandRed,
-                  display: "flex",
-                }}
-              />
-              <span
-                style={{
-                  color: brandRed,
-                  fontSize: 22,
-                  fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                }}
-              >
-                northstar · draft
-              </span>
-            </div>
-
-            {/* Middle: Name & Big Score */}
+            {/* Left Panel */}
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 16,
+                width: "55%",
+                height: "100%",
+                justifyContent: "space-between",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 4,
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 64,
-                    fontWeight: 800,
-                    letterSpacing: "-0.04em",
-                    lineHeight: 1,
-                    color: "#ffffff",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {player.name}
-                </span>
-                <span
-                  style={{
-                    fontSize: 28,
-                    fontWeight: 500,
-                    color: "rgba(255,255,255,0.6)",
-                    letterSpacing: "0.02em",
-                  }}
-                >
-                  {player.archetype}
+              {/* Header */}
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <div style={{ width: 12, height: 12, background: "#F3123C", borderRadius: "50%", display: "flex" }} />
+                <span style={{ color: "#F3123C", fontSize: 20, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                  The Builder Draft
                 </span>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  color: brandRed,
-                  fontWeight: 800,
-                  letterSpacing: "-0.05em",
-                  lineHeight: 0.9,
-                  marginTop: 20,
-                }}
-              >
-                <span style={{ fontSize: 160, color: "#ffffff" }}>{ovr}</span>
-                <span
-                  style={{
-                    fontSize: 48,
-                    opacity: 0.8,
-                    marginLeft: 12,
-                    fontWeight: 600,
-                    color: brandRed,
-                  }}
-                >
-                  OVR
-                </span>
-              </div>
-            </div>
-
-            {/* Bottom: The 5 Stats Array (Multi-color boxes) */}
-            <div style={{ display: "flex", gap: 16, marginTop: 40 }}>
-              {[
-                { label: "VIS", val: v },
-                { label: "EXE", val: e },
-                { label: "CHA", val: c },
-                { label: "DEF", val: d },
-                { label: "FLR", val: f },
-              ].map((stat) => {
-                let bg = "#EF4444"; // Red
-                if (stat.val >= 90) bg = "#22C55E";      // Green
-                else if (stat.val >= 75) bg = "#84CC16"; // Lime
-                else if (stat.val >= 60) bg = "#EAB308"; // Yellow
-                else if (stat.val >= 40) bg = "#F97316"; // Orange
-
-                return (
-                  <div key={stat.label} style={{ 
-                    display: "flex", 
-                    flexDirection: "column", 
-                    alignItems: "center", 
+              {/* Title & OVR */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+                  <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
                     justifyContent: "center",
-                    background: bg, 
-                    width: 76, 
-                    height: 76, 
-                    borderRadius: 12,
-                    color: "#ffffff"
+                    background: "linear-gradient(135deg, #F3123C 0%, #9f0b25 100%)",
+                    borderRadius: 24,
+                    padding: "16px 24px",
+                    boxShadow: "0 20px 40px rgba(243,18,60,0.3)",
+                    border: "2px solid rgba(255,255,255,0.2)"
                   }}>
-                    <span style={{ fontSize: 30, fontWeight: 800, lineHeight: 1 }}>{stat.val}</span>
-                    <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.05em", opacity: 0.9, marginTop: 4 }}>
+                    <span style={{ fontSize: 64, fontWeight: 900, color: "#fff", lineHeight: 1 }}>{ovr}</span>
+                    <span style={{ fontSize: 18, fontWeight: 800, color: "rgba(255,255,255,0.8)", letterSpacing: "0.1em" }}>OVR</span>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                    <span style={{ fontSize: 64, fontWeight: 900, color: "#ffffff", letterSpacing: "-0.03em", lineHeight: 1, textTransform: "uppercase" }}>
+                      {player.name}
+                    </span>
+                    <span style={{ fontSize: 24, fontWeight: 600, color: "#A1A1AA", letterSpacing: "0.02em" }}>
+                      {player.archetype}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Multi-color Stat Boxes Grid */}
+              <div style={{ display: "flex", gap: 16, marginTop: "auto" }}>
+                {[
+                  { label: "VIS", val: v },
+                  { label: "EXE", val: e },
+                  { label: "CHA", val: c },
+                  { label: "DEF", val: d },
+                  { label: "FLR", val: f },
+                ].map((stat) => (
+                  <div key={stat.label} style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 80,
+                    height: 100,
+                    background: "rgba(255,255,255,0.03)",
+                    borderTop: `4px solid ${getStatColor(stat.val)}`,
+                    borderBottom: "1px solid rgba(255,255,255,0.1)",
+                    borderLeft: "1px solid rgba(255,255,255,0.1)",
+                    borderRight: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: 16,
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                  }}>
+                    <span style={{ fontSize: 36, fontWeight: 900, color: getStatColor(stat.val), lineHeight: 1 }}>
+                      {stat.val}
+                    </span>
+                    <span style={{ fontSize: 14, fontWeight: 800, color: "rgba(255,255,255,0.6)", letterSpacing: "0.1em", marginTop: 8 }}>
                       {stat.label}
                     </span>
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right Column: Player Photo Cutout */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "flex-end",
-              width: "40%",
-              height: "100%",
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            {/* Background texture/box for portrait */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                right: 0,
-                width: "320px",
-                height: "440px",
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "16px",
-                display: "flex",
-              }}
-            />
-            <img
-              src={imageUrl}
-              width="500"
-              height="500"
-              style={{
-                width: "480px",
-                height: "480px",
-                objectFit: "contain",
-                objectPosition: "bottom right",
-                filter: "drop-shadow(0px 20px 40px rgba(0,0,0,0.8))",
-              }}
-            />
+            {/* Right side overlays if any (leaving empty since player cutout takes this space) */}
           </div>
-
-          {/* Absolute Bottom Right: URL */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: 64,
-              right: 80,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              gap: 4,
-              zIndex: 10,
-            }}
-          >
-            <span
-              style={{
-                fontSize: 22,
-                color: "#ffffff",
-                fontWeight: 700,
-                letterSpacing: "-0.01em",
-              }}
-            >
+          
+          {/* URL Tag */}
+          <div style={{
+            position: "absolute",
+            bottom: 40,
+            right: 40,
+            background: "rgba(0,0,0,0.6)",
+            padding: "8px 16px",
+            borderRadius: 999,
+            display: "flex",
+            border: "1px solid rgba(255,255,255,0.1)",
+            zIndex: 20
+          }}>
+            <span style={{ fontSize: 16, fontWeight: 600, color: "#fff", letterSpacing: "0.05em" }}>
               pmnorthstar.in/draft
             </span>
           </div>

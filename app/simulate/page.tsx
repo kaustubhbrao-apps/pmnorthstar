@@ -8,8 +8,16 @@ import { Sparkles, Brain, Clock, ChevronRight, ArrowUpRight } from "lucide-react
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
 import { prisma } from "@/lib/prisma";
+import type { Metadata } from "next";
 
-export const revalidate = 60; // ISR: Revalidate the leaderboard and play count every 60 seconds
+export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "SimulateIt — PM Case Simulations",
+  description: "Step into real product crises and make the call. Time-boxed PM simulations built from actual startup decisions. Free, no signup required.",
+  alternates: { canonical: "/simulate" },
+  openGraph: { title: "SimulateIt — PM Case Simulations", description: "Step into real product crises and make the call." },
+}; // ISR: Revalidate the leaderboard and play count every 60 seconds
 
 // Site-wide drill-completion count for the hero social-proof line.
 // Best-effort — a DB hiccup returns 0 and the line simply doesn't render.

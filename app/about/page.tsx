@@ -10,6 +10,13 @@ import {
   BOOK_COUNT,
   PLAYLIST_COUNT,
 } from "@/data/inventory-counts";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About northstar",
+  description: "northstar is a free, opinionated library for product managers and builders — case studies, book reviews, and simulations. No paywall, no fluff.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   const socials: Array<{ href: string; label: string; icon: LucideIcon }> = [];

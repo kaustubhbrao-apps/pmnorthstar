@@ -6,6 +6,24 @@ import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { DraftCardActions } from "./DraftCardActions";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params, searchParams }: { params: { id: string }, searchParams: { v: string, e: string, c: string, d: string, f: string } }): Promise<Metadata> {
+  const player = DRAFT_PLAYERS.find(p => p.id === params.id);
+  if (!player) return {};
+  const ogImageUrl = `/api/draft/og?id=${player.id}&v=${searchParams.v}&e=${searchParams.e}&c=${searchParams.c}&d=${searchParams.d}&f=${searchParams.f}`;
+  return {
+    title: `I am ${player.name} — The Builder Draft`,
+    description: player.description,
+    openGraph: {
+      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [ogImageUrl],
+    },
+  };
+}
 
 export default async function DraftResultPage({ params, searchParams }: { params: { id: string }, searchParams: { v: string, e: string, c: string, d: string, f: string } }) {
   const session = await getSession();
