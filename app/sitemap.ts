@@ -63,12 +63,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.85,
     },
-    {
-      url: `${SITE_URL}/draft`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // /draft temporarily hidden
+    // { url: `${SITE_URL}/draft`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const personas = ["product-managers", "founders", "engineers", "designers", "marketers"];

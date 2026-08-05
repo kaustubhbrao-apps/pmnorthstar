@@ -197,7 +197,7 @@ export function Sidebar({
             </span>
           </Link>
 
-          {/* Builder Draft */}
+          {/* Builder Draft — temporarily hidden
           <Link
             href="/draft"
             onClick={onClose}
@@ -220,6 +220,7 @@ export function Sidebar({
               NEW
             </span>
           </Link>
+          */}
 
           <div className="pt-5">
             <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Collections</p>
