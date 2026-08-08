@@ -12,10 +12,17 @@ import {
   Brain,
   Trophy,
 } from "lucide-react";
-import { caseStudies } from "@/data/caseStudies";
-import { playlists } from "@/data/learn";
-import { topics } from "@/data/topics";
-import { comparisons } from "@/data/comparisons";
+// Counts only — never import the full content datasets here. MobileNav is a
+// client component rendered by SidebarShell on nearly every page, so a data
+// import ships the entire corpus (caseStudies alone is ~820 KB) into the
+// client bundle of every route. inventory-counts exists for exactly this.
+// These counts are also published-only, matching what Sidebar already shows.
+import {
+  CASE_STUDY_COUNT,
+  PLAYLIST_COUNT,
+  TOPIC_COUNT,
+  COMPARISON_COUNT,
+} from "@/data/inventory-counts";
 
 interface MobileNavProps {
   activeNav: string;
@@ -37,19 +44,19 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
       id: "casestudies",
       label: "Case Studies",
       icon: FlameIcon,
-      count: caseStudies.length,
+      count: CASE_STUDY_COUNT,
     },
     {
       id: "learn",
       label: "Learn",
       icon: GraduationCap,
-      count: playlists.length,
+      count: PLAYLIST_COUNT,
     },
     {
       id: "explore",
       label: "Explore",
       icon: Layers,
-      count: topics.length + comparisons.length,
+      count: TOPIC_COUNT + COMPARISON_COUNT,
     },
   ];
 
