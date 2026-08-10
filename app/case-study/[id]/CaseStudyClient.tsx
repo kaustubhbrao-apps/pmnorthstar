@@ -2,8 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { marked } from "marked";
-import { getCaseStudyById, getCaseStudyBySlug, getCaseStudySlug, publishedCaseStudies } from "@/data/caseStudies";
-import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
+// Type-only — erased at compile time.
+import type { CaseStudy } from "@/data/caseStudies";
+import type { FAQ } from "@/data/caseStudyFaqs";
+// getCaseStudySlug comes from the slug leaf module (~7 KB of static maps).
+// Importing it from @/data/caseStudies would pull in the whole corpus.
+import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { CaseStudyFaqs } from "@/components/CaseStudyFaqs";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -30,14 +34,42 @@ const categoryColors: Record<string, string> = {
   Failure: "#FF4B4B",
 };
 
-export function CaseStudyClient({ params }: { params: { id: string } }) {
-  const { id } = params;
-  // Param is the slug; legacy cs-X URLs are 301-redirected by the layout.
-  const study = getCaseStudyBySlug(id) || getCaseStudyById(id);
+// Narrowed shapes for the surrounding-navigation entries. The page resolves
+// these server-side; only the fields rendered below travel to the browser.
+export type AdjacentStudy = Pick<CaseStudy, "id" | "title">;
+export type RelatedStudy = Pick<
+  CaseStudy,
+  "id" | "title" | "category" | "company" | "logo" | "year"
+>;
+
+interface CaseStudyClientProps {
+  study: CaseStudy | null;
+  prevStudy: AdjacentStudy | null;
+  nextStudy: AdjacentStudy | null;
+  related: RelatedStudy[];
+  faqs: FAQ[];
+  /** 1-based position of this study among published ones, for the "N of M" label. */
+  position: number;
+  /** Total published studies, for the "N of M" label. */
+  total: number;
+}
+
+export function CaseStudyClient({
+  study,
+  prevStudy,
+  nextStudy,
+  related,
+  faqs,
+  position,
+  total,
+}: CaseStudyClientProps) {
   const router = useRouter();
 
   const [isDark, setIsDark] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  // Kept with the other hooks: this used to sit below the `if (!study)`
+  // early return, which made it a conditional hook call.
+  const [logoFailed, setLogoFailed] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
@@ -49,11 +81,6 @@ export function CaseStudyClient({ params }: { params: { id: string } }) {
   }, [isDark]);
 
   const handleNavChange = () => router.push("/");
-
-  const liveStudies = publishedCaseStudies();
-  const currentIndex = study ? liveStudies.findIndex((c) => c.id === study.id) : -1;
-  const prevStudy = currentIndex > 0 ? liveStudies[currentIndex - 1] : null;
-  const nextStudy = currentIndex < liveStudies.length - 1 ? liveStudies[currentIndex + 1] : null;
 
   if (!study) {
     return (
@@ -78,22 +105,10 @@ export function CaseStudyClient({ params }: { params: { id: string } }) {
   const color = categoryColors[study.category] ?? "var(--brand-primary)";
   const paragraphs = study.content.split("\n\n").filter(Boolean);
   const readTime = Math.max(3, Math.ceil(study.content.split(" ").length / 200));
-  const indexLabel = String(currentIndex + 1).padStart(2, "0");
+  const indexLabel = String(position).padStart(2, "0");
   const logoUrl = getCompanyLogoUrl(study.company);
-  const [logoFailed, setLogoFailed] = useState(false);
 
-  // Related = same category, not the current one. Pick up to 4 closest by tag overlap.
-  const related = liveStudies
-    .filter((c) => c.id !== study.id && c.category === study.category)
-    .map((c) => ({
-      study: c,
-      overlap: c.tags.filter((t) => study.tags.includes(t)).length,
-    }))
-    .sort((a, b) => b.overlap - a.overlap)
-    .slice(0, 4)
-    .map((x) => x.study);
-
-  const faqs = getCaseStudyFaqs(study.id);
+  // `related` and `faqs` now arrive as props — see page.tsx.
 
   // ─── Structured Data (JSON-LD) ──────────────────────────────────────────
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
@@ -167,7 +182,7 @@ export function CaseStudyClient({ params }: { params: { id: string } }) {
 
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline text-xs" style={{ color: "var(--text-faint)" }}>
-              {currentIndex + 1} of {liveStudies.length}
+              {position} of {total}
             </span>
             <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} className="hidden sm:inline-flex" />
           </div>
@@ -406,7 +421,7 @@ export function CaseStudyClient({ params }: { params: { id: string } }) {
               </div>
 
               {/* Frequently asked — long-tail SEO + reader engagement */}
-              <CaseStudyFaqs faqs={getCaseStudyFaqs(study.id)} />
+              <CaseStudyFaqs faqs={faqs} />
 
               {/* Related case studies */}
               {related.length > 0 && (

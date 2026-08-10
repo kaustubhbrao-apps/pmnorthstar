@@ -386,6 +386,15 @@ function syncCaseStudies() {
   );
 
   const out = `${HEADER}
+import { ID_BY_SLUG } from "./caseStudySlugs";
+
+// Slug helpers live in ./caseStudySlugs — a leaf module holding nothing but
+// the static id<->slug maps, with no reference to the caseStudies array. A
+// client component that only needs to build a /case-study/<slug> URL can
+// import from there without dragging the ~800 KB dataset into the browser
+// bundle. Re-exported here so existing call sites keep working unchanged.
+export { getCaseStudySlug, isLegacyId } from "./caseStudySlugs";
+
 // Bumped when case studies are added, edited, or have material changes.
 // Sitemap reads this so Google sees an accurate lastModified date.
 export const CASE_STUDIES_LAST_UPDATED = "2026-05-18";
@@ -442,29 +451,38 @@ export const getCaseStudyById = (id: string): CaseStudy | undefined => {
 export const getIndianCaseStudies = (): CaseStudy[] =>
   caseStudies.filter((c) => c.region === "India" && isCaseStudyPublished(c));
 
+// Resolving a slug to a full record needs the dataset, so this one stays
+// here rather than moving to the leaf module.
+export const getCaseStudyBySlug = (slug: string): CaseStudy | undefined => {
+  const id = ID_BY_SLUG[slug];
+  return id != null ? getCaseStudyById(id) : undefined;
+};
+`;
+  fs.writeFileSync(path.join(DATA, "caseStudies.ts"), out, "utf8");
+  console.log(`✓ data/caseStudies.ts (${entries.length} entries)`);
+
+  // ─── Slug leaf module ───
+  // Static id<->slug maps only. Nothing here references the caseStudies
+  // array, so importing it costs a client bundle ~4 KB instead of ~800 KB.
+  const slugsOut = `${HEADER}
 // Legacy slug map — keeps URL stability after the markdown migration.
-const SLUG_MAP: Record<string, string> = {
+export const SLUG_MAP: Record<string, string> = {
 ${slugEntries.join("\n")}
 };
 
-const ID_BY_SLUG: Record<string, string> = Object.fromEntries(
+export const ID_BY_SLUG: Record<string, string> = Object.fromEntries(
   Object.entries(SLUG_MAP).map(([id, slug]) => [slug, id])
 );
 
 export const getCaseStudySlug = (id: string): string =>
   SLUG_MAP[id] || id;
 
-export const getCaseStudyBySlug = (slug: string): CaseStudy | undefined => {
-  const id = ID_BY_SLUG[slug];
-  return id != null ? getCaseStudyById(id) : undefined;
-};
-
 // True if param looks like a legacy cs-X identifier
 export const isLegacyId = (param: string): boolean =>
   /^cs-\\d+$/.test(param);
 `;
-  fs.writeFileSync(path.join(DATA, "caseStudies.ts"), out, "utf8");
-  console.log(`✓ data/caseStudies.ts (${entries.length} entries)`);
+  fs.writeFileSync(path.join(DATA, "caseStudySlugs.ts"), slugsOut, "utf8");
+  console.log(`✓ data/caseStudySlugs.ts (${slugEntries.length} slugs)`);
 
   const liteStudyBody = entries
     .map((e) => {

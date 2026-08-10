@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { ArrowUpRight, TrendingUp, TrendingDown } from "lucide-react";
-import { CaseStudy, getCaseStudySlug } from "@/data/caseStudies";
+// Type-only import: erased at compile time, so it costs the client nothing.
+import type { CaseStudy } from "@/data/caseStudies";
+// Value import comes from the slug leaf module, not the dataset — importing
+// getCaseStudySlug from @/data/caseStudies would pull the whole ~800 KB
+// array into every bundle that renders a card.
+import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
 import { solidColorFor } from "@/lib/category-colors";
