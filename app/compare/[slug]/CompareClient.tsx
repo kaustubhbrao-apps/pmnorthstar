@@ -1,12 +1,13 @@
 "use client";
 
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Footer } from "@/components/Footer";
-import { getCaseStudyById, getCaseStudySlug } from "@/data/caseStudies";
-import { getCompanyLogoUrl } from "@/data/companyDomains";
-import { getComparisonBySlug, publishedComparisons } from "@/data/comparisons";
+// Type-only — erased at compile time.
+import type { CaseStudy } from "@/data/caseStudies";
+import type { Comparison } from "@/data/comparisons";
+// Value import from the slug leaf module, not the dataset.
+import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { ArrowUpRight } from "lucide-react";
@@ -14,21 +15,33 @@ import { useState } from "react";
 import { ViewCounter } from "@/components/ViewCounter";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
 
-export function CompareClient({ params }: { params: { slug: string } }) {
-  const cmp = getComparisonBySlug(params.slug);
+// Only the fields this view renders. The page resolves these server-side so
+// the browser never receives the case-study or comparison datasets.
+export type ComparedCompany = Pick<CaseStudy, "id" | "company" | "logo">;
+export type OtherComparison = Pick<
+  Comparison,
+  "slug" | "title" | "eyebrow" | "accentColor"
+>;
+
+interface CompareClientProps {
+  cmp: Comparison;
+  a: ComparedCompany;
+  b: ComparedCompany;
+  aLogo: string | null;
+  bLogo: string | null;
+  otherComps: OtherComparison[];
+}
+
+export function CompareClient({
+  cmp,
+  a,
+  b,
+  aLogo,
+  bLogo,
+  otherComps,
+}: CompareClientProps) {
   const [aLogoFailed, setALogoFailed] = useState(false);
   const [bLogoFailed, setBLogoFailed] = useState(false);
-
-  if (!cmp) notFound();
-
-  const a = getCaseStudyById(cmp.companyA);
-  const b = getCaseStudyById(cmp.companyB);
-  if (!a || !b) notFound();
-
-  const aLogo = getCompanyLogoUrl(a.company);
-  const bLogo = getCompanyLogoUrl(b.company);
-
-  const otherComps = publishedComparisons().filter((c) => c.slug !== cmp.slug);
 
   return (
     <SidebarShell
