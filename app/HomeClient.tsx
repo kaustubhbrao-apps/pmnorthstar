@@ -35,7 +35,9 @@ import { AuthModal } from "@/components/AuthModal";
 import { Footer } from "@/components/Footer";
 import { publishedTopics } from "@/data/topics";
 import { publishedComparisons } from "@/data/comparisons";
-import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
+// Type-only: the search itself runs server-side via /api/search, so none of
+// the corpora it matches against are imported here.
+import type { SearchResults } from "@/lib/search";
 import { publishedAIDecoded } from "@/data/aiDecodedManifest";
 import Link from "next/link";
 import {
@@ -201,42 +203,55 @@ export default function HomeClient() {
     return Array.from(new Set(books.map((b) => b.category))).sort();
   }, []);
 
-  const filteredBooks = useMemo(() => {
-    let result = books;
-    if (activeBookFilter !== "All") {
-      result = result.filter((b) => b.category === activeBookFilter);
+  // ─── Search ───────────────────────────────────────────────────────────
+  // Runs on the server (/api/search). The homepage previously filtered every
+  // dataset in the browser, which meant the whole library — FAQ corpus and
+  // build-time searchable blobs included — had to download before a visitor
+  // could type. Debounced so a burst of keystrokes is one request, and
+  // aborted on change so a slow response can't overwrite a newer one.
+  const isSearching = searchQuery.trim() !== "";
+  const [searchResults, setSearchResults] = useState<SearchResults | null>(null);
+  const [searchPending, setSearchPending] = useState(false);
+
+  useEffect(() => {
+    const q = searchQuery.trim();
+    if (!q) {
+      setSearchResults(null);
+      setSearchPending(false);
+      return;
     }
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
-      result = result.filter((b) => {
-        // Search the obvious fields first
-        if (
-          b.title.toLowerCase().includes(q) ||
-          b.author.toLowerCase().includes(q) ||
-          b.category.toLowerCase().includes(q) ||
-          b.tags.some((t) => t.toLowerCase().includes(q)) ||
-          b.description.toLowerCase().includes(q)
-        )
-          return true;
-        // Then the editorial review body — analysis paragraphs,
-        // key concept names + explanations, who-should-read.
-        const s = b.summary;
-        if (!s) return false;
-        if (s.whoShouldRead.toLowerCase().includes(q)) return true;
-        if (s.analysis.some((p) => p.toLowerCase().includes(q))) return true;
-        if (
-          s.keyConcepts.some(
-            (kc) =>
-              kc.name.toLowerCase().includes(q) ||
-              kc.explanation.toLowerCase().includes(q)
-          )
-        )
-          return true;
-        return false;
-      });
-    }
-    return result;
+    setSearchPending(true);
+    const controller = new AbortController();
+    const timer = setTimeout(() => {
+      fetch(
+        `/api/search?q=${encodeURIComponent(q)}&bookCategory=${encodeURIComponent(activeBookFilter)}`,
+        { signal: controller.signal }
+      )
+        .then((r) => r.json())
+        .then((data: SearchResults) => {
+          setSearchResults(data);
+          setSearchPending(false);
+        })
+        .catch((err) => {
+          if (err?.name === "AbortError") return;
+          setSearchResults(null);
+          setSearchPending(false);
+        });
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [searchQuery, activeBookFilter]);
+
+  // Browsing (no query) still filters the local list by category — that data
+  // is already here for the shelves. Searching defers to the server.
+  const filteredBooks = useMemo(() => {
+    if (isSearching) return searchResults?.books ?? [];
+    return activeBookFilter === "All"
+      ? books
+      : books.filter((b) => b.category === activeBookFilter);
+  }, [isSearching, searchResults, activeBookFilter]);
 
   const filteredCaseStudies = useMemo(
     () => getCaseStudiesByCategory(activeCsFilter),
@@ -249,117 +264,20 @@ export default function HomeClient() {
   );
 
   // ── Cross-section search ──────────────────────────────────────────────
-  const searchedCaseStudies = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return [] as typeof caseStudies;
-    return caseStudies.filter((c) => {
-      if (
-        c.title.toLowerCase().includes(q) ||
-        c.company.toLowerCase().includes(q) ||
-        c.description.toLowerCase().includes(q) ||
-        c.outcome.toLowerCase().includes(q) ||
-        c.category.toLowerCase().includes(q) ||
-        (c.region && c.region.toLowerCase().includes(q)) ||
-        c.tags.some((t) => t.toLowerCase().includes(q))
-      )
-        return true;
-      // FAQ Q&A matching — surfaces case studies whose FAQs cover
-      // the query even if the body doesn't.
-      const faqs = getCaseStudyFaqs(c.id);
-      return faqs.some(
-        (f) =>
-          f.question.toLowerCase().includes(q) ||
-          f.answer.toLowerCase().includes(q)
-      );
-    });
-  }, [searchQuery]);
 
-  const searchedPlaylists = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return [] as typeof playlists;
-    return playlists.filter(
-      (p) =>
-        p.title.toLowerCase().includes(q) ||
-        p.channel.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        (p.level && p.level.toLowerCase().includes(q)) ||
-        (p.tags ?? []).some((t) => t.toLowerCase().includes(q))
-    );
-  }, [searchQuery]);
 
-  const searchedTopics = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return [] as typeof topics;
-    return topics.filter((t) => {
-      if (
-        t.title.toLowerCase().includes(q) ||
-        t.eyebrow.toLowerCase().includes(q) ||
-        t.intro.toLowerCase().includes(q) ||
-        t.metaTitle.toLowerCase().includes(q) ||
-        t.metaDescription.toLowerCase().includes(q) ||
-        t.keywords.some((k) => k.toLowerCase().includes(q))
-      )
-        return true;
-      if (
-        t.faqs &&
-        t.faqs.some(
-          (f) =>
-            f.question.toLowerCase().includes(q) ||
-            f.answer.toLowerCase().includes(q)
-        )
-      )
-        return true;
-      return false;
-    });
-  }, [searchQuery]);
 
-  const searchedAIDecoded = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return [] as typeof aiDecodedManifest;
-    return aiDecodedManifest.filter(
-      (a) =>
-        a.title.toLowerCase().includes(q) ||
-        a.excerpt.toLowerCase().includes(q) ||
-        a.category.toLowerCase().includes(q) ||
-        a.primaryKeyword.toLowerCase().includes(q) ||
-        a.longTailKeywords.some((k) => k.toLowerCase().includes(q)) ||
-        a.searchableContent.includes(q) // already lowercased at build time
-    );
-  }, [searchQuery]);
 
-  const searchedComparisons = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return [] as typeof comparisons;
-    return comparisons.filter((c) => {
-      if (
-        c.title.toLowerCase().includes(q) ||
-        c.eyebrow.toLowerCase().includes(q) ||
-        c.intro.toLowerCase().includes(q) ||
-        c.verdict.toLowerCase().includes(q) ||
-        c.metaTitle.toLowerCase().includes(q) ||
-        c.metaDescription.toLowerCase().includes(q) ||
-        c.keywords.some((k) => k.toLowerCase().includes(q)) ||
-        c.rows.some(
-          (r) =>
-            r.label.toLowerCase().includes(q) ||
-            r.a.toLowerCase().includes(q) ||
-            r.b.toLowerCase().includes(q)
-        )
-      )
-        return true;
-      if (
-        c.faqs &&
-        c.faqs.some(
-          (f) =>
-            f.question.toLowerCase().includes(q) ||
-            f.answer.toLowerCase().includes(q)
-        )
-      )
-        return true;
-      return false;
-    });
-  }, [searchQuery]);
+
+
+
+
+  // All five come from the same server response.
+  const searchedCaseStudies = searchResults?.caseStudies ?? [];
+  const searchedPlaylists = searchResults?.playlists ?? [];
+  const searchedTopics = searchResults?.topics ?? [];
+  const searchedAIDecoded = searchResults?.aiDecoded ?? [];
+  const searchedComparisons = searchResults?.comparisons ?? [];
 
   const learnStats = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -1494,12 +1412,22 @@ export default function HomeClient() {
                         “{searchQuery}”
                       </h1>
                       <span className="font-mono text-xs" style={{ color: "var(--text-faint)" }}>
-                        {String(filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedAIDecoded.length + searchedTopics.length + searchedComparisons.length)}
+                        {searchPending
+                          ? "…"
+                          : String(filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedAIDecoded.length + searchedTopics.length + searchedComparisons.length)}
                       </span>
                     </div>
                   </div>
 
-                  {filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedAIDecoded.length + searchedTopics.length + searchedComparisons.length === 0 ? (
+                  {/* Results arrive from /api/search, so there is a beat between
+                      typing and results. Showing "Nothing matched" during that
+                      window would call every in-flight query a dead end. */}
+                  {searchPending ? (
+                    <div className="flex flex-col items-center justify-center py-20 text-center">
+                      <p className="eyebrow mb-3">Searching</p>
+                      <p className="text-sm" style={{ color: "var(--text-muted)" }}>Looking through the library…</p>
+                    </div>
+                  ) : filteredBooks.length + searchedCaseStudies.length + searchedPlaylists.length + searchedAIDecoded.length + searchedTopics.length + searchedComparisons.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-20 text-center">
                       <p className="eyebrow mb-3">No results</p>
                       <p className="text-base font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>Nothing matched</p>
