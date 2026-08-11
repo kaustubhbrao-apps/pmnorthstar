@@ -39,14 +39,9 @@ const nextConfig = {
     ];
   },
 
-  // Ensure content files are bundled for ISR Serverless functions
-  experimental: {
-    outputFileTracingIncludes: {
-      '/sitemap.xml': ['./content/ai-decoded/**/*'],
-      '/ai-decoded': ['./content/ai-decoded/**/*'],
-      '/ai-decoded/[slug]': ['./content/ai-decoded/**/*'],
-    },
-  },
+  // No outputFileTracingIncludes needed: ai-decoded markdown is rendered to
+  // HTML at build time into data/aiDecodedArticles.ts, so nothing reads
+  // content/ at runtime any more.
 };
 
 module.exports = nextConfig;

@@ -1,12 +1,14 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { marked } from "marked";
-
 // AI Decoded — northstar's section on how PMs, marketers, founders,
 // and operators should adapt to the latest AI developments. Markdown
-// files in content/ai-decoded/ are the source of truth. Each file
-// follows the Decoder template (frontmatter + 6 sections).
+// files in content/ai-decoded/ remain the source of truth; they are
+// rendered to HTML at build time by scripts/sync-content.ts into
+// data/aiDecodedArticles.ts.
+//
+// This module used to read and parse those markdown files on every
+// request (fs.readFileSync -> gray-matter -> marked). Because the route
+// is ISR with a low hit rate, that parsing landed in TTFB on most visits
+// and made /ai-decoded/[slug] the slowest route on the site. Reading a
+// prebuilt array costs nothing at request time.
 
 export interface AIDecodedFrontmatter {
   slug: string;
@@ -27,65 +29,41 @@ export interface AIDecodedFrontmatter {
   tags?: string[];
   faqs?: Array<{ question: string; answer: string }>;
   readTime?: number;      // minutes; calculated from word count if absent
+  // Authors add ad-hoc frontmatter keys (e.g. category_note). The old runtime
+  // parser cast the parsed object and silently tolerated them; the build-time
+  // generated literal is checked strictly, so allow them explicitly rather
+  // than dropping fields or widening with a cast.
+  [key: string]: unknown;
 }
 
 export interface AIDecodedArticle {
   frontmatter: AIDecodedFrontmatter;
-  htmlContent: string;    // body rendered to HTML
-  rawMarkdown: string;    // raw markdown body (for editing flows)
+  htmlContent: string;    // body rendered to HTML at build time
   wordCount: number;
   readTime: number;
 }
 
-const CONTENT_DIR = path.join(process.cwd(), "content", "ai-decoded");
-
-function ensureContentDir() {
-  if (!fs.existsSync(CONTENT_DIR)) {
-    fs.mkdirSync(CONTENT_DIR, { recursive: true });
-  }
-}
-
-// Configure marked: GFM (tables, task lists), header IDs for in-page
-// anchors, line breaks honored. Synchronous mode keeps server components
-// simple — async would force route components to be async too.
-marked.setOptions({ gfm: true, breaks: false });
+// Imported below the type declarations because the generated module imports
+// AIDecodedArticle back from here.
+import { aiDecodedArticles } from "@/data/aiDecodedArticles";
 
 export function getAllAIDecodedSlugs(): string[] {
-  ensureContentDir();
-  return fs
-    .readdirSync(CONTENT_DIR)
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => f.replace(/\.md$/, ""));
+  return aiDecodedArticles.map((a) => a.frontmatter.slug);
 }
 
 export function getAIDecodedArticleBySlug(
   slug: string
 ): AIDecodedArticle | null {
-  ensureContentDir();
-  const filePath = path.join(CONTENT_DIR, `${slug}.md`);
-  if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(raw);
-  const wordCount = content.split(/\s+/).filter(Boolean).length;
-  const readTime =
-    (data.readTime as number | undefined) ?? Math.max(1, Math.round(wordCount / 220));
-  const htmlContent = marked.parse(content, { async: false }) as string;
-  return {
-    frontmatter: { ...(data as AIDecodedFrontmatter), slug },
-    htmlContent,
-    rawMarkdown: content,
-    wordCount,
-    readTime,
-  };
+  return aiDecodedArticles.find((a) => a.frontmatter.slug === slug) ?? null;
 }
 
 export function getAllAIDecodedArticles(): AIDecodedArticle[] {
   const now = new Date();
-  const slugs = getAllAIDecodedSlugs();
-  return slugs
-    .map((s) => getAIDecodedArticleBySlug(s))
-    .filter((a): a is AIDecodedArticle => a !== null)
-    .filter((a) => !!a.frontmatter.publishedAt && new Date(a.frontmatter.publishedAt) <= now)
+  return aiDecodedArticles
+    .filter(
+      (a) =>
+        !!a.frontmatter.publishedAt && new Date(a.frontmatter.publishedAt) <= now
+    )
     .sort((a, b) => {
       // Most recent first.
       return (

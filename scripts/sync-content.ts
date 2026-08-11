@@ -11,6 +11,11 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { marked } from "marked";
+
+// Match the runtime renderer's options exactly — this now produces the HTML
+// that ships, so any drift here changes published pages.
+marked.setOptions({ gfm: true, breaks: false });
 
 const ROOT = process.cwd();
 const CONTENT = path.join(ROOT, "content");
@@ -660,6 +665,53 @@ export const publishedAIDecoded = (
 `;
   fs.writeFileSync(path.join(DATA, "aiDecodedManifest.ts"), out, "utf8");
   console.log(`✓ data/aiDecodedManifest.ts (${entries.length} entries)`);
+
+  syncAIDecodedArticles(DIR);
+}
+
+// ─── AI DECODED ARTICLES (full, pre-rendered) ───────────────────────────
+// Every other content type is precomputed into data/ at build time, but
+// ai-decoded parsed markdown on the server on every request: fs.readFileSync
+// -> gray-matter -> marked, inside the function, for a page that is supposed
+// to be static. On a cache miss that work sat directly in TTFB, which is why
+// /ai-decoded/[slug] was the site's slowest route.
+//
+// Rendering here moves it to build time and lets next.config drop the
+// outputFileTracingIncludes hack that shipped content/ into the function.
+function syncAIDecodedArticles(DIR: string) {
+  const files = fs.readdirSync(DIR).filter((f) => f.endsWith(".md"));
+
+  const items = files
+    .map((f) => {
+      const raw = fs.readFileSync(path.join(DIR, f), "utf8");
+      const { data, content } = matter(raw);
+      const slug = f.replace(/\.md$/, "");
+      const wordCount = content.split(/\s+/).filter(Boolean).length;
+      const readTime =
+        (data.readTime as number | undefined) ??
+        Math.max(1, Math.round(wordCount / 220));
+      const htmlContent = marked.parse(content, { async: false }) as string;
+      return `  {
+    frontmatter: ${JSON.stringify({ ...data, slug })},
+    htmlContent: ${ts(htmlContent)},
+    wordCount: ${wordCount},
+    readTime: ${readTime},
+  }`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+// Full AI Decoded articles with body already rendered to HTML. Server-only:
+// this file is large, so never import it from a client component — use
+// data/aiDecodedManifest.ts (metadata + search text) for browse surfaces.
+import type { AIDecodedArticle } from "@/lib/ai-decoded";
+
+export const aiDecodedArticles: AIDecodedArticle[] = [
+${items},
+];
+`;
+  fs.writeFileSync(path.join(DATA, "aiDecodedArticles.ts"), out, "utf8");
+  console.log(`✓ data/aiDecodedArticles.ts (${files.length} pre-rendered)`);
 }
 
 // ─── DRILLS ─────────────────────────────────────────────────────────────
