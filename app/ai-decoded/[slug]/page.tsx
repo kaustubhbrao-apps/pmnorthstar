@@ -14,7 +14,11 @@ import type { Metadata } from "next";
 
 // ISR: re-render hourly so a scheduled (future-dated) article goes live on
 // its publishedAt date without a redeploy.
-export const revalidate = 3600;
+// 6h. Scheduled content normally goes live via /api/cron/revalidate just
+// after UTC midnight, so this window is a fallback, not the mechanism.
+// Kept at 6h rather than 24h so a missed cron run (or an unset
+// CRON_SECRET) delays a publish by hours, not a full day.
+export const revalidate = 21600;
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = getAIDecodedArticleBySlug(params.slug);

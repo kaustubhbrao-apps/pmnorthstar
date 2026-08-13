@@ -15,7 +15,11 @@ import { SimulatePlayer } from "./SimulatePlayer";
 // publishedAt gate below (404), and go live within ~1h of their date once
 // the revalidation window turns over. Matches the case-study/topic/compare
 // scheduled-publishing path; replaces the old force-dynamic render.
-export const revalidate = 3600;
+// 6h. Scheduled content normally goes live via /api/cron/revalidate just
+// after UTC midnight, so this window is a fallback, not the mechanism.
+// Kept at 6h rather than 24h so a missed cron run (or an unset
+// CRON_SECRET) delays a publish by hours, not a full day.
+export const revalidate = 21600;
 
 export function generateStaticParams() {
   return publishedDrills().map((drill) => ({ slug: drill.slug }));

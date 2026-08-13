@@ -9,7 +9,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
 // ISR: refresh metadata/JSON-LD hourly so a scheduled article's SEO data
 // appears on its publish date without a redeploy.
-export const revalidate = 3600;
+// 6h. Scheduled content normally goes live via /api/cron/revalidate just
+// after UTC midnight, so this window is a fallback, not the mechanism.
+// Kept at 6h rather than 24h so a missed cron run (or an unset
+// CRON_SECRET) delays a publish by hours, not a full day.
+export const revalidate = 21600;
 
 export async function generateStaticParams() {
   return getAllAIDecodedSlugs().map((slug) => ({ slug }));
