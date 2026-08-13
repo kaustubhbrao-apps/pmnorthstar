@@ -239,7 +239,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
                 </h3>
               </div>
               <span className="inline-flex items-center gap-1 text-sm font-semibold transition-transform group-hover:translate-x-0.5 mt-4" style={{ color: "#ffffff" }}>
-                Read this week's take
+                Read this week&apos;s take
                 <ArrowUpRight size={14} strokeWidth={2} />
               </span>
             </Link>
@@ -297,7 +297,7 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
                 {DRILL_COUNT} drills. Two per week. Free.
               </p>
               <span className="inline-flex items-center gap-1 text-sm font-semibold transition-transform group-hover:translate-x-0.5" style={{ color: "#ffffff" }}>
-                Play this week's drill
+                Play this week&apos;s drill
                 <ArrowUpRight size={14} strokeWidth={2} />
               </span>
             </Link>

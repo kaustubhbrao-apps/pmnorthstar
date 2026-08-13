@@ -13,6 +13,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { searchSite } from "@/lib/search";
 
 export const runtime = "nodejs";
+// The response depends entirely on searchParams, so there is nothing to
+// prerender. Without this, the build attempts a static render, throws
+// "Dynamic server usage" into the catch below, and logs a spurious error.
+// CDN caching still applies via the Cache-Control header set below.
+export const dynamic = "force-dynamic";
 
 // Long queries can only be pathological — the longest thing worth matching is
 // a book subtitle. Cap rather than reject so a paste doesn't error the UI.

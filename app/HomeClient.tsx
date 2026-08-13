@@ -292,7 +292,7 @@ export default function HomeClient() {
     const counts: Record<string, number> = {};
     caseStudies.forEach((c) => { counts[c.category] = (counts[c.category] || 0) + 1; });
     return counts;
-  }, []);
+  }, [caseStudies]);
 
   const shuffledCsCategories = useMemo(() => {
     return Object.entries(csStats).sort(() => Math.random() - 0.5);
@@ -302,7 +302,7 @@ export default function HomeClient() {
   const homeFeaturedCaseStudies = useMemo(() => {
     const cats = Array.from(new Set(caseStudies.map(s => s.category)));
     return cats.map(cat => caseStudies.find(s => s.category === cat)!).filter(Boolean);
-  }, []);
+  }, [caseStudies]);
 
   // ── Derived lists (used across views + sidebar counts) ─────────────────
   const savedBooks = books.filter((b) => savedIds.has(b.id) && !likedIds.has(b.id));

@@ -186,7 +186,7 @@ export default function IndiaPage() {
                 className="text-sm sm:text-base leading-relaxed mb-8 max-w-2xl"
                 style={{ color: "var(--text-muted)" }}
               >
-                Long-form analyses of the product decisions behind India's
+                Long-form analyses of the product decisions behind India&apos;s
                 biggest companies. These also live in the main library.
               </p>
 
@@ -223,7 +223,7 @@ export default function IndiaPage() {
                 className="text-base sm:text-lg lg:text-xl leading-relaxed mb-8 max-w-3xl"
                 style={{ color: "var(--text-muted)" }}
               >
-                Long-form analyses of the product decisions behind India's
+                Long-form analyses of the product decisions behind India&apos;s
                 biggest companies — what worked, what broke, what every PM
                 here should learn from them. Published one per week.
               </p>
@@ -285,8 +285,8 @@ export default function IndiaPage() {
               style={{ color: "var(--text-muted)" }}
             >
               The product playbooks behind these companies are the closest
-              analogues to what's being built in India today. Stripe is
-              Razorpay's reference. Slack is the workplace SaaS template.
+              analogues to what&apos;s being built in India today. Stripe is
+              Razorpay&apos;s reference. Slack is the workplace SaaS template.
               Notion is what every productivity startup gets benchmarked
               against.
             </p>
@@ -319,7 +319,7 @@ export default function IndiaPage() {
               className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6"
               style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
             >
-              Most PM resources are written for the US. This one's for here.
+              Most PM resources are written for the US. This one&apos;s for here.
             </h2>
             <div
               className="text-base sm:text-lg lg:text-xl leading-relaxed space-y-6"

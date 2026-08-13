@@ -380,7 +380,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                   letterSpacing: "-0.02em",
                 }}
               >
-                northstar's take on this book
+                northstar&apos;s take on this book
               </h2>
               <div className="mb-7">
                 <Byline label="Reviewed" date={SITE_LAST_REVIEWED} />
@@ -506,10 +506,10 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                     className="text-sm leading-relaxed"
                     style={{ color: "var(--text-muted)" }}
                   >
-                    We're writing northstar's take on this one — what makes it
+                    We&apos;re writing northstar&apos;s take on this one — what makes it
                     worth reading, the key concepts it introduces, and who
                     should add it to their shelf. Subscribe to the newsletter
-                    to get notified when it's live.
+                    to get notified when it&apos;s live.
                   </p>
                 </div>
               )}

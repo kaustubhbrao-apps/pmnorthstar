@@ -165,6 +165,10 @@ export function TopNav({
                     className="px-4 py-3"
                     style={{ borderBottom: "1.5px solid var(--card-border)" }}
                   >
+                    {/* The "//" is deliberate label styling, not a stray
+                        code comment — it reads as a comment marker to match
+                        the mono/brutalist type treatment. */}
+                    {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
                     <p className="eyebrow mb-1">// account</p>
                     <p className="text-sm font-semibold" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
                       {userName || "Member"}

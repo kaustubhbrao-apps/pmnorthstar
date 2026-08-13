@@ -85,6 +85,11 @@ const DIMENSION_ICON: Record<
   strategy: Compass,
 };
 
+// Module scope: this was declared inside the component, so it was a new
+// array on every render and the useMemos below it could not honestly list
+// it as a dependency. The contents are constant.
+const DIMS: DrillDimension[] = ["product", "business", "founder", "strategy"];
+
 function storageKey(slug: string): string {
   return `simulateit:play:${slug}`;
 }
@@ -277,7 +282,7 @@ export function SimulatePlayer({
     } else {
       setState((s) => (s.phase !== "reveal" ? s : { ...s, phase: "decision", currentNodeId: nextId }));
     }
-  }, [currentNode, state.history, state.phase, drill.nodes, drill.slug]);
+  }, [currentNode, state.history, state.phase, drill.nodes, drill.slug, referrerId]);
 
   const restart = useCallback(() => {
     track({ name: "simulateit_drill_restarted", drill_slug: drill.slug });
@@ -880,7 +885,6 @@ function OutcomeView({
   }, []);
 
   // Score math — per-dimension and total.
-  const dims: DrillDimension[] = ["product", "business", "founder", "strategy"];
   const scoreByDim = useMemo(() => {
     const result: Record<DrillDimension, { score: number; max: number }> = {
       product: { score: 0, max: 0 },
@@ -903,13 +907,13 @@ function OutcomeView({
   }, [history, drill.nodes]);
 
   const totalScore = history.reduce((sum, h) => sum + h.points, 0);
-  const totalMax = dims.reduce((sum, d) => sum + scoreByDim[d].max, 0);
+  const totalMax = DIMS.reduce((sum, d) => sum + scoreByDim[d].max, 0);
   const isLeagueActive = !!drill.isLeagueMatch;
 
   const dominantDim = useMemo(() => {
     let best: DrillDimension = "product";
     let bestPct = -1;
-    for (const d of dims) {
+    for (const d of DIMS) {
       const s = scoreByDim[d];
       if (s.max === 0) continue;
       const pct = s.score / s.max;
@@ -924,7 +928,7 @@ function OutcomeView({
   const weakestDim = useMemo(() => {
     let worst: DrillDimension = "product";
     let worstPct = 2;
-    for (const d of dims) {
+    for (const d of DIMS) {
       const s = scoreByDim[d];
       if (s.max === 0) continue;
       const pct = s.score / s.max;
@@ -1129,7 +1133,7 @@ function OutcomeView({
         How you scored across dimensions
       </h3>
       <div className="space-y-2.5 mb-7">
-        {dims.map((d) => {
+        {DIMS.map((d) => {
           const s = scoreByDim[d];
           if (s.max === 0) return null;
           const pct = s.score / s.max;
