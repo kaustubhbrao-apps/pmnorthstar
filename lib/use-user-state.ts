@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useUserStateContext } from "@/components/UserStateProvider";
 
 interface UserState {
   loading: boolean;
@@ -10,68 +10,18 @@ interface UserState {
   username?: string; // the @handle
 }
 
-// Lightweight hook that fetches user + engagement state for the
-// SmartEngagementBlock decision (newsletter vs recommendations).
-// Re-fetches on every mount: auth state DOES change mid-session in this
-// SPA (login/logout via the modal without a full reload), so a persisted
-// module cache would strand engaged/logged-in users on the wrong variant
-// until a hard refresh. The calls are cheap and best-effort.
+// Thin read of the shared UserStateProvider (mounted in app/layout.tsx).
+//
+// This used to own the fetching itself and re-fetch on every mount. That was
+// fine when one component used it; it became a problem once five did — and
+// two of those (SmartSaveButton, NotificationToaster) mount per card and per
+// page, so a single homepage view issued 55 requests to /api/auth/me. The
+// provider fetches once and every consumer reads the same value.
+//
+// Auth state still changes mid-session (login/logout without a full reload);
+// the provider exposes refresh() for that, and Google sign-in completes via a
+// full-page redirect which remounts it anyway.
 export function useUserState(): UserState {
-  const [state, setState] = useState<UserState>({
-    loading: true,
-    isLoggedIn: false,
-    hasEngaged: false,
-  });
-
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch("/api/auth/me", { credentials: "include", cache: "no-store" });
-        if (!res.ok) {
-          if (!cancelled) setState({ loading: false, isLoggedIn: false, hasEngaged: false });
-          return;
-        }
-        const data = await res.json();
-        const user = data?.user;
-        if (!user) {
-          if (!cancelled) setState({ loading: false, isLoggedIn: false, hasEngaged: false });
-          return;
-        }
-        if (!cancelled) {
-          setState((prev) => ({
-            ...prev,
-            loading: false,
-            isLoggedIn: true,
-            userName: user.name,
-            username: user.username ?? undefined,
-          }));
-        }
-
-        // Probe saved/liked count to determine engagement.
-        const [savedRes, likedRes] = await Promise.all([
-          fetch("/api/saved", { credentials: "include", cache: "no-store" }).catch(() => null),
-          fetch("/api/liked", { credentials: "include", cache: "no-store" }).catch(() => null),
-        ]);
-        const saved = savedRes && savedRes.ok ? await savedRes.json() : { items: [] };
-        const liked = likedRes && likedRes.ok ? await likedRes.json() : { items: [] };
-        const engaged =
-          (saved?.items?.length ?? 0) > 0 || (liked?.items?.length ?? 0) > 0;
-        
-        if (!cancelled) {
-          setState((prev) => ({
-            ...prev,
-            hasEngaged: engaged,
-          }));
-        }
-      } catch {
-        if (!cancelled) setState({ loading: false, isLoggedIn: false, hasEngaged: false });
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  return state;
+  const { loading, isLoggedIn, hasEngaged, userName, username } = useUserStateContext();
+  return { loading, isLoggedIn, hasEngaged, userName, username };
 }

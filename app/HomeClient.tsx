@@ -32,6 +32,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { MobileNav } from "@/components/MobileNav";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { AuthModal } from "@/components/AuthModal";
+import { useUserStateContext } from "@/components/UserStateProvider";
 import { Footer } from "@/components/Footer";
 import { publishedTopics } from "@/data/topics";
 import { publishedComparisons } from "@/data/comparisons";
@@ -53,12 +54,6 @@ import {
   Sparkles,
   ArrowLeft,
 } from "lucide-react";
-
-interface AuthUser {
-  id: string;
-  name: string;
-  email: string;
-}
 
 const categoryAccents: Record<string, string> = {
   "Product Management": "#9B8FFF", // purple
@@ -98,66 +93,26 @@ export default function HomeClient() {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
-  const [user, setUser] = useState<AuthUser | null>(null);
-  const [authLoading, setAuthLoading] = useState(true);
+  // Auth + saved/liked come from the shared UserStateProvider (app/layout.tsx).
+  // This component used to fetch /api/auth/me, /api/saved and /api/liked
+  // itself, duplicating what all 53 SmartSaveButtons on this page were each
+  // doing independently.
+  //
+  // The old localhost bypass that faked a signed-in user in development is
+  // gone. It only ever applied here, so in dev the header thought you were
+  // logged in while every card on the same page (doing a real auth check)
+  // thought you were not. Dev now performs the same real check as production.
+  const {
+    user,
+    loading: authLoading,
+    savedIds,
+    likedIds,
+    markSaved: handleSavedChange,
+    markLiked: handleLikedChange,
+    logout: handleLogout,
+    refresh: refreshUserState,
+  } = useUserStateContext();
   const [showAuthModal, setShowAuthModal] = useState(false);
-  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
-  const [likedIds, setLikedIds] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    // Local dev bypass: Supabase is restoring, skip auth check on localhost.
-    // Production is unaffected (NODE_ENV === "production" there).
-    if (process.env.NODE_ENV === "development") {
-      setUser({ id: "local-dev", name: "Local Dev", email: "dev@localhost" });
-      setAuthLoading(false);
-      return;
-    }
-    fetch("/api/auth/me")
-      .then((r) => r.json())
-      .then((data) => { if (data.user) setUser(data.user); })
-      .catch(() => {})
-      .finally(() => setAuthLoading(false));
-  }, []);
-
-  useEffect(() => {
-    if (!user) return;
-    if (process.env.NODE_ENV === "development") return;
-    fetch("/api/saved")
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.saved) setSavedIds(new Set(data.saved.map((s: any) => s.resourceId)));
-      });
-    fetch("/api/liked")
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.liked) setLikedIds(new Set(data.liked.map((l: any) => l.resourceId)));
-      });
-  }, [user]);
-
-  const handleLogout = async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
-    setUser(null);
-    setSavedIds(new Set());
-    setLikedIds(new Set());
-  };
-
-  const handleSavedChange = (id: string, saved: boolean) => {
-    setSavedIds((prev) => {
-      const next = new Set(prev);
-      if (saved) next.add(id);
-      else next.delete(id);
-      return next;
-    });
-  };
-
-  const handleLikedChange = (id: string, liked: boolean) => {
-    setLikedIds((prev) => {
-      const next = new Set(prev);
-      if (liked) next.add(id);
-      else next.delete(id);
-      return next;
-    });
-  };
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeNav, setActiveNav] = useState("home");
@@ -441,7 +396,7 @@ export default function HomeClient() {
             )}
           </main>
         </div>
-        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
+        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
   }
@@ -569,7 +524,7 @@ export default function HomeClient() {
             )}
           </main>
         </div>
-        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
+        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
   }
@@ -700,7 +655,7 @@ export default function HomeClient() {
               </>
           </main>
         </div>
-        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
+        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
   }
@@ -840,7 +795,7 @@ export default function HomeClient() {
               </>
           </main>
         </div>
-        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
+        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
   }
@@ -975,7 +930,7 @@ export default function HomeClient() {
             </section>
           </main>
         </div>
-        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
+        {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
   }
@@ -1682,7 +1637,7 @@ export default function HomeClient() {
         </main>
       </div>
 
-      {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={(u) => setUser(u)} />}
+      {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
     </div>
   );
 }

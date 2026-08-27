@@ -1,59 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { ArrowUpRight, Star } from "lucide-react";
 import { Book, getBookSlug } from "@/data/books";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
 import { getCategoryColor } from "@/lib/category-colors";
+import { useAuthorPhoto } from "@/lib/author-photo";
 
-// Pull a Wikipedia thumbnail for the author. CORS-friendly, fast, cached
-// in localStorage so repeat visits don't re-fetch. Returns null while
-// loading or if Wikipedia has no thumbnail — the card falls back to a
-// red-gradient initials avatar in that case.
-function useAuthorPhoto(author: string): string | null {
-  const [photo, setPhoto] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    // v2 cache key — invalidates any stale 'none' entries that were
-    // saved during transient network failures in earlier sessions, so
-    // we get a fresh shot at fetching the photo.
-    const cacheKey = `pmnorthstar:author-photo-v2:${author}`;
-    const cached = window.localStorage.getItem(cacheKey);
-    if (cached === "none") return;
-    if (cached) {
-      setPhoto(cached);
-      return;
-    }
-
-    let cancelled = false;
-    const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(
-      author
-    )}`;
-    fetch(url, { headers: { Accept: "application/json" } })
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((data) => {
-        if (cancelled) return;
-        const src = data?.thumbnail?.source;
-        if (src) {
-          window.localStorage.setItem(cacheKey, src);
-          setPhoto(src);
-        } else {
-          window.localStorage.setItem(cacheKey, "none");
-        }
-      })
-      .catch(() => {
-        if (!cancelled) window.localStorage.setItem(cacheKey, "none");
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [author]);
-
-  return photo;
-}
 
 interface ResourceCardProps {
   book: Book;

@@ -9,6 +9,7 @@
 // (Free tier shows event counts; Pro adds funnels/conversions.)
 
 import { track as vercelTrack } from "@vercel/analytics";
+import type { AnalyticsEventName } from "@/lib/analytics-events";
 
 // Discriminated union — adding a new event = adding here = type
 // safety enforced at every call site.
@@ -102,3 +103,18 @@ export function track(event: AnalyticsEvent) {
     });
   }
 }
+
+// ── Drift guard ────────────────────────────────────────────────────────────
+// /api/track validates incoming names against the runtime allowlist in
+// lib/analytics-events.ts, because this union is a type and is erased at
+// build time. If the two fall out of step, real events start getting
+// rejected with 400 and the loss is silent (track() is fire-and-forget).
+//
+// Equal<> is used rather than a bare `extends` check: a failing `extends`
+// resolves to `never`, and `never extends true` is true, so the naive form
+// passes even when the two sides disagree. Equal<> resolves to a literal
+// true/false, so Expect<false> is a real compile error.
+type Equal<X, Y> =
+  (<T>() => T extends X ? 1 : 2) extends (<T>() => T extends Y ? 1 : 2) ? true : false;
+type Expect<T extends true> = T;
+type _AllowlistMatchesUnion = Expect<Equal<AnalyticsEvent["name"], AnalyticsEventName>>;
