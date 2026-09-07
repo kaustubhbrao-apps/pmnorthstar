@@ -10,6 +10,7 @@ import { books, getBookSlug, BOOKS_LAST_UPDATED } from "@/data/books";
 import { getAllAIDecodedArticles } from "@/lib/ai-decoded";
 import { publishedDrills } from "@/data/drills";
 import { publishedAnswers } from "@/data/answers";
+import { YC_STUDY } from "@/data/yc-study";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -53,6 +54,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Section hubs. These are the crawl entry points for the topic,
     // comparison and book detail pages — before they existed, comparisons
     // had no internal link anywhere in the site's server-rendered HTML.
+    // Original research. High priority: it's the only page on the site
+    // carrying data that exists nowhere else, which is what gets cited.
+    {
+      url: `${SITE_URL}/reports/startup-website-audit-2026`,
+      lastModified: new Date(YC_STUDY.ranAt),
+      changeFrequency: "yearly",
+      priority: 0.9,
+    },
     {
       url: `${SITE_URL}/answers`,
       lastModified: now,

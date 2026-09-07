@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { YC_STUDY } from "../data/yc-study";
 
 const ROOT = process.cwd();
 const CONTENT = path.join(ROOT, "content");
@@ -123,6 +124,7 @@ function buildLlmsIndex() {
   out += `- [Books](${SITE}/book) (${books.length}): Original long-form reviews of product, startup and management books — argument, key concepts, who it is genuinely for, and what to pair it with.\n`;
   out += `- [AI Decoded](${SITE}/ai-decoded) (${aiDecoded.length}): Editorial commentary on AI launches and tools, and what PMs, marketers and founders should do about them.\n`;
   out += `- [SimulateIt](${SITE}/simulate) (${drills.length}): Interactive drills that put the reader inside a real historical product decision before revealing what the company actually chose.\n`;
+  out += `- [Original research](${SITE}/reports/startup-website-audit-2026): We audited ${YC_STUDY.audited} recent Y Combinator startup homepages against 35 technical checks in ${YC_STUDY.ranAt}. Median score ${YC_STUDY.median}/100. Full per-check pass rates, score distribution and method — original data available nowhere else.\n`;
   out += `- [CheckIt](${SITE}/checkit): A free tool that audits any public URL across SEO, performance, accessibility and trust, and returns a scored report.\n`;
   out += `- [India](${SITE}/india): Case studies on Indian companies — Zerodha, CRED, Razorpay, Zomato, Flipkart and others.\n\n`;
 

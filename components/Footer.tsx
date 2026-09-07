@@ -13,6 +13,7 @@ const navLinks: Array<{ label: string; href: string }> = [
   { label: "AI Decoded", href: "/ai-decoded" },
   { label: "SimulateIt", href: "/simulate" },
   { label: "CheckIt", href: "/checkit" },
+  { label: "Research", href: "/reports/startup-website-audit-2026" },
   { label: "India", href: "/india" },
   { label: "About", href: "/about" },
 ];
