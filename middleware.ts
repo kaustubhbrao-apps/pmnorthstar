@@ -85,6 +85,23 @@ function isGlobalRateLimited(ip: string, limit: number): boolean {
 const SEARCH_CRAWLER_REGEX =
   /googlebot|google-inspectiontool|google-extended|storebot-google|adsbot-google|bingbot|duckduckbot|yandexbot|baiduspider|applebot|slurp|petalbot/i;
 
+// ─── AI assistants ───
+// Same treatment as search crawlers, for the same reason. Referrer data now
+// shows chatgpt.com ahead of google.com as the site's top source, with
+// claude.ai, perplexity, copilot and gemini behind it — roughly half of all
+// referred visits arrive through an assistant rather than a search page. None
+// of those agents matched SEARCH_CRAWLER_REGEX, so every one of them was
+// running against GLOBAL_LIMIT (120/min) and the CN/SG geo-block.
+//
+// The *-User agents matter most: they fetch live, mid-conversation, when
+// someone asks about a specific page. A 429 there doesn't cost a crawl slot
+// later — it costs that citation, immediately and silently.
+//
+// Deliberately excluded: bytespider and ccbot. They scrape for training
+// corpora and send no traffic back, so they stay on the ordinary limit.
+const AI_AGENT_REGEX =
+  /gptbot|oai-searchbot|chatgpt-user|claudebot|claude-user|claude-searchbot|anthropic-ai|perplexitybot|perplexity-user|google-notebooklm|duckassistbot|amazonbot|meta-externalagent|meta-externalfetcher/i;
+
 // Crawl-critical endpoints. Never throttled for anyone — if Google can't
 // read these, nothing else about the site's SEO matters.
 const ALWAYS_ALLOW = new Set(["/robots.txt", "/sitemap.xml"]);
@@ -113,7 +130,7 @@ export async function middleware(req: NextRequest) {
     "unknown";
 
   const ua = req.headers.get("user-agent") || "";
-  const isSearchCrawler = SEARCH_CRAWLER_REGEX.test(ua);
+  const isTrustedBot = SEARCH_CRAWLER_REGEX.test(ua) || AI_AGENT_REGEX.test(ua);
 
   // ─── -2. Crawl-Critical Endpoints ───
   // robots.txt and sitemap.xml short-circuit everything below.
@@ -123,23 +140,24 @@ export async function middleware(req: NextRequest) {
 
   // ─── -1. Geo-Blocking for Known Scraper Regions ───
   // Block traffic originating from China (CN) and Singapore (SG).
-  // Search crawlers are exempt — Google crawls locale-adaptive sites from
-  // multiple regions, and a 403 to a crawler is a de-indexing signal.
+  // Crawlers and AI agents are exempt — Google crawls locale-adaptive sites
+  // from multiple regions, and a 403 to a bot that indexes or cites you is a
+  // de-listing signal wherever it lands.
   const country = req.geo?.country;
-  if (!isSearchCrawler && (country === "CN" || country === "SG")) {
+  if (!isTrustedBot && (country === "CN" || country === "SG")) {
     console.warn(`Blocked request from banned country: ${country} (IP: ${ip})`);
     return new NextResponse("Access Denied: Region Blocked.", { status: 403 });
   }
 
   // ─── 0. Global Rate Limiting for Aggressive Scrapers ───
   // Protects all routes against headless browsers ripping the site.
-  const globalLimit = isSearchCrawler ? CRAWLER_LIMIT : GLOBAL_LIMIT;
+  const globalLimit = isTrustedBot ? CRAWLER_LIMIT : GLOBAL_LIMIT;
   if (isGlobalRateLimited(ip, globalLimit)) {
-    console.warn(`Global rate limit exceeded for IP: ${ip} on ${pathname} (crawler=${isSearchCrawler})`);
+    console.warn(`Global rate limit exceeded for IP: ${ip} on ${pathname} (trustedBot=${isTrustedBot})`);
     // 503 + Retry-After is the correct "try again shortly" signal for an
     // automated client; 429 without Retry-After reads as a hard throttle.
     return new NextResponse("Too many requests. Please slow down.", {
-      status: isSearchCrawler ? 503 : 429,
+      status: isTrustedBot ? 503 : 429,
       headers: { "Retry-After": "60" },
     });
   }
@@ -166,7 +184,7 @@ export async function middleware(req: NextRequest) {
   // Scrapers cause 100% bounce rates and waste bandwidth.
   const SCRAPER_REGEX = /python-requests|scrapy|curl|wget|go-http-client|node-fetch|axios|libwww|urllib/i;
 
-  if (!isSearchCrawler && SCRAPER_REGEX.test(ua)) {
+  if (!isTrustedBot && SCRAPER_REGEX.test(ua)) {
     console.warn(`Blocked scraper bot: ${ua} from IP: ${ip}`);
     return new NextResponse("Scraping prohibited.", { status: 403 });
   }
