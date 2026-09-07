@@ -6,12 +6,13 @@
 // of YC's public directory). Only the homepage of each company is fetched,
 // once, at a concurrency low enough to be a rounding error on any host.
 //
-// The output is deliberately aggregate-only. Per-company scores are computed
-// in memory to produce the distributions and never written out — the report
-// is about the state of the cohort, not a league table of named startups.
+// Output includes both the aggregate distributions and a per-company row
+// (name, batch, domain, score, band) so the report can publish the full
+// ranked table. Every figure is reproducible by running this script again.
 
 import fs from "fs";
 import path from "path";
+import { execFileSync } from "child_process";
 import { runAudit } from "../lib/checkit/audit";
 import { DIMENSIONS } from "../lib/checkit/dimensions";
 
@@ -22,7 +23,55 @@ const OUT_DIR = path.join(process.cwd(), "data");
 
 const SEASON_ORDER: Record<string, number> = { Winter: 0, Spring: 1, Summer: 2, Fall: 3 };
 
-type Company = { name: string; website: string; batch: string; status: string; industry?: string };
+type Company = {
+  name: string;
+  slug: string;
+  website: string;
+  batch: string;
+  status: string;
+  industry?: string;
+  small_logo_thumb_url?: string;
+};
+
+type Row = {
+  name: string;
+  slug: string;
+  batch: string;
+  domain: string;
+  score: number;
+  band: string;
+  // Whether public/yc-logos/<slug>.webp exists. Some directory entries
+  // point at a placeholder rather than a real logo.
+  logo: boolean;
+};
+
+const RAW_LOGOS = path.join(process.cwd(), ".yc-logos-raw");
+
+// One small thumbnail per company, fetched alongside the audit it belongs to.
+// Entries whose logo URL is the directory's "missing.png" placeholder are
+// skipped rather than downloaded and discarded later.
+async function fetchLogo(company: Company): Promise<boolean> {
+  const url = company.small_logo_thumb_url;
+  if (!url || !/^https?:\/\//i.test(url) || /missing\.png$/i.test(url)) return false;
+  try {
+    const res = await fetch(url, { signal: AbortSignal.timeout(10_000) });
+    if (!res.ok) return false;
+    const buf = Buffer.from(await res.arrayBuffer());
+    if (buf.length < 100) return false;
+    fs.writeFileSync(path.join(RAW_LOGOS, `${company.slug}.png`), buf);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function domainOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
 
 function batchRank(batch: string): number {
   const m = /^(Winter|Spring|Summer|Fall)\s+(\d{4})$/.exec(batch ?? "");
@@ -53,9 +102,13 @@ async function main() {
     .sort((a, b) => batchRank(b.batch) - batchRank(a.batch))
     .slice(0, SAMPLE);
 
+  fs.rmSync(RAW_LOGOS, { recursive: true, force: true });
+  fs.mkdirSync(RAW_LOGOS, { recursive: true });
+
   console.log(`Auditing ${pool.length} companies at concurrency ${CONCURRENCY}...`);
 
   const scores: number[] = [];
+  const rows: Row[] = [];
   const checkPass = new Map<string, number>();
   const checkLabel = new Map<string, string>();
   const dimTotals = new Map<string, { score: number; max: number }>();
@@ -71,7 +124,10 @@ async function main() {
       const company = queue.shift();
       if (!company) return;
       try {
-        const result = await runAudit(company.website);
+        const [result, hasLogo] = await Promise.all([
+          runAudit(company.website),
+          fetchLogo(company),
+        ]);
         done++;
         if (done % 25 === 0) console.log(`  ${done}/${pool.length}`);
 
@@ -85,6 +141,15 @@ async function main() {
         }
 
         scores.push(result.totalScore);
+        rows.push({
+          name: company.name,
+          slug: company.slug,
+          batch: company.batch,
+          domain: domainOf(company.website),
+          score: result.totalScore,
+          band: result.band,
+          logo: hasLogo,
+        });
         batchCounts.set(company.batch, (batchCounts.get(company.batch) ?? 0) + 1);
         const ind = company.industry || "Unknown";
         if (!industryScores.has(ind)) industryScores.set(ind, []);
@@ -151,6 +216,16 @@ async function main() {
     }))
     .sort((a, b) => b.avg - a.avg);
 
+  rows.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+
+  // Downscale the raw thumbnails into WebP the site can serve directly.
+  try {
+    execFileSync("python3", [path.join("scripts", "optimize-yc-logos.py")], { stdio: "inherit" });
+    fs.rmSync(RAW_LOGOS, { recursive: true, force: true });
+  } catch (e) {
+    console.warn("Logo optimisation skipped (python3 + Pillow required):", e);
+  }
+
   const study = {
     ranAt: new Date().toISOString().slice(0, 10),
     attempted: pool.length,
@@ -165,14 +240,17 @@ async function main() {
     dimensions,
     batches,
     industries,
+    rows,
   };
 
   const out = `// ⚠️  AUTO-GENERATED — DO NOT EDIT BY HAND.
-// Produced by scripts/yc-audit-study.ts. Aggregate only: no per-company
-// scores are recorded, by design.
+// Produced by scripts/yc-audit-study.ts. Carries the aggregate stats plus one
+// row per audited company (name, batch, domain, score, band, logo), sorted by
+// score descending. Re-run the script to refresh; hand edits are lost.
 
 export interface StudyCheck { id: string; label: string; passRate: number }
 export interface StudyDimension { id: string; label: string; avgPct: number; maxPoints: number }
+export interface StudyRow { name: string; slug: string; batch: string; domain: string; score: number; band: string; logo: boolean }
 
 export const YC_STUDY = ${JSON.stringify(study, null, 2)} as const;
 `;
@@ -181,6 +259,7 @@ export const YC_STUDY = ${JSON.stringify(study, null, 2)} as const;
   console.log(`\n✓ data/yc-study.ts written`);
   console.log(`  audited ${n}/${pool.length}, ${unreachable} unreachable`);
   console.log(`  mean ${mean}, median ${study.median}, p10 ${study.p10}, p90 ${study.p90}`);
+  console.log(`  ${rows.length} named rows, top: ${rows[0].name} (${rows[0].score})`);
 }
 
 main();

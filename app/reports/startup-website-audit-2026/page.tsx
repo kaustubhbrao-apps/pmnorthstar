@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: {
     absolute: `We Audited ${S.audited} YC Startup Websites — What They Get Wrong (${S.ranAt.slice(0, 4)})`,
   },
-  description: `Original data: ${S.audited} Y Combinator startup homepages scored against 35 technical checks. Median score ${S.median}/100. The full pass-rate table, distribution and method.`,
+  description: `Original data: ${S.audited} Y Combinator startup homepages scored against 35 technical checks. Median ${S.median}/100. Every company named and ranked, plus per-check pass rates, the score distribution and the full method.`,
   keywords: [
     "startup website audit",
     "YC startup websites",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "article",
     url: `${SITE_URL}${URL_PATH}`,
     title: `We audited ${S.audited} YC startup websites`,
-    description: `Median score ${S.median}/100 across 35 technical checks. Original data, full method.`,
+    description: `Median ${S.median}/100 across 35 technical checks. Every company named and ranked. Original data, full method.`,
     siteName: "northstar",
     publishedTime: S.ranAt,
   },
@@ -135,7 +135,7 @@ export default function StartupWebsiteAuditReport() {
             security scanner would notice is a coin flip or worse — structured data at{" "}
             {rate("structured-data")}%, a content security policy at {rate("csp-header")}%,
             HSTS preload at {rate("hsts-preload")}%. Startups optimise for the demo, not
-            the crawler.
+            the crawler. Every company is named and ranked further down.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -366,6 +366,124 @@ export default function StartupWebsiteAuditReport() {
         </div>
       </section>
 
+      {/* ── Every site, named ────────────────────────────────── */}
+      <section
+        className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
+        style={{ borderBottom: "1.5px solid var(--card-border)" }}
+      >
+        <div className="w-full max-w-4xl">
+          <h2
+            className="text-2xl font-semibold mb-1"
+            style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+          >
+            Every site we scored
+          </h2>
+          <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
+            All {S.rows.length} companies, ranked. Scores are out of 100 across the same 35
+            checks, measured on {S.ranAt}. Run your own site through{" "}
+            <Link href="/checkit" style={{ color: BAR }}>CheckIt</Link> to compare on the
+            same scale.
+          </p>
+
+          <div
+            className="rounded-lg overflow-hidden"
+            style={{ border: "1.5px solid var(--card-border)" }}
+          >
+            <div className="overflow-y-auto" style={{ maxHeight: 620 }}>
+              <table className="w-full text-sm">
+                <thead className="sticky top-0" style={{ background: "var(--page-bg)" }}>
+                  <tr>
+                    <th
+                      className="text-left font-mono text-[11px] uppercase py-3 px-4"
+                      style={{ color: "var(--text-faint)", letterSpacing: "0.1em", borderBottom: "1.5px solid var(--card-border)", width: 56 }}
+                    >
+                      #
+                    </th>
+                    <th
+                      className="text-left font-mono text-[11px] uppercase py-3 px-2"
+                      style={{ color: "var(--text-faint)", letterSpacing: "0.1em", borderBottom: "1.5px solid var(--card-border)" }}
+                    >
+                      Company
+                    </th>
+                    <th
+                      className="text-left font-mono text-[11px] uppercase py-3 px-2 hidden sm:table-cell"
+                      style={{ color: "var(--text-faint)", letterSpacing: "0.1em", borderBottom: "1.5px solid var(--card-border)" }}
+                    >
+                      Batch
+                    </th>
+                    <th
+                      className="text-right font-mono text-[11px] uppercase py-3 px-4"
+                      style={{ color: "var(--text-faint)", letterSpacing: "0.1em", borderBottom: "1.5px solid var(--card-border)", width: 80 }}
+                    >
+                      Score
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {S.rows.map((r, i) => (
+                    <tr key={r.slug}>
+                      <td
+                        className="py-2.5 px-4 font-mono text-xs align-middle"
+                        style={{ color: "var(--text-faint)", borderBottom: "1px solid var(--card-border)" }}
+                      >
+                        {i + 1}
+                      </td>
+                      <td
+                        className="py-2.5 px-2 align-middle"
+                        style={{ borderBottom: "1px solid var(--card-border)" }}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          {r.logo ? (
+                            /* Plain img, not next/image: 496 lazy-loaded 2KB files
+                               cost nothing and stay off the optimisation quota. */
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={`/yc-logos/${r.slug}.webp`}
+                              alt=""
+                              width={20}
+                              height={20}
+                              loading="lazy"
+                              decoding="async"
+                              style={{ width: 20, height: 20, objectFit: "contain", flexShrink: 0, borderRadius: 3 }}
+                            />
+                          ) : (
+                            <span
+                              aria-hidden
+                              style={{ width: 20, height: 20, flexShrink: 0, borderRadius: 3, background: "var(--card-border)" }}
+                            />
+                          )}
+                          <span style={{ color: "var(--text-primary)" }}>{r.name}</span>
+                          <span className="hidden sm:inline text-xs font-mono" style={{ color: "var(--text-faint)" }}>
+                            {r.domain}
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        className="py-2.5 px-2 text-xs font-mono align-middle hidden sm:table-cell"
+                        style={{ color: "var(--text-muted)", borderBottom: "1px solid var(--card-border)" }}
+                      >
+                        {r.batch}
+                      </td>
+                      <td
+                        className="py-2.5 px-4 text-right align-middle"
+                        style={{ borderBottom: "1px solid var(--card-border)" }}
+                      >
+                        <span
+                          className="font-mono text-sm font-semibold"
+                          style={{ color: r.score >= S.median ? "var(--text-primary)" : "var(--text-muted)" }}
+                        >
+                          {r.score}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Method ───────────────────────────────────────────── */}
       <section
         className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
@@ -405,8 +523,10 @@ export default function StartupWebsiteAuditReport() {
               measures the homepage only, at one moment, without executing JavaScript — so
               a site that renders its content client-side will score worse here than a
               browser would suggest, which is itself part of what the SEO checks are
-              detecting. Scores are not a judgment of the underlying business, and no
-              per-company results are published: the aggregate is the finding.
+              detecting. A score here is a measurement of one page&apos;s technical
+              fundamentals on one day — not a judgment of the company, the product, or
+              the team behind it. Several of the lowest-scoring sites in this table
+              belong to companies doing extremely well.
             </p>
             <p>
               <strong style={{ color: "var(--text-primary)" }}>Reproducing it.</strong> The

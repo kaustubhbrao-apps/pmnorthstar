@@ -36,3 +36,6 @@ next-env.d.ts
 
 # Local cache for scripts/yc-audit-study.ts (10MB public dataset)
 .yc-cache.json
+
+# Raw logo staging for scripts/yc-audit-study.ts
+.yc-logos-raw/
