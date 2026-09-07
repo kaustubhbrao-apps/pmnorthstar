@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 const navLinks: Array<{ label: string; href: string }> = [
   { label: "Books", href: "/book" },
   { label: "Case studies", href: "/#casestudies" },
+  { label: "Answers", href: "/answers" },
   { label: "Topics", href: "/topics" },
   { label: "Compare", href: "/compare" },
   { label: "Playlists", href: "/#playlists" },

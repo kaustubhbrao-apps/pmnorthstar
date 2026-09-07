@@ -71,6 +71,15 @@ function buildLlmsFull() {
     out += `${t.body}\n\n---\n\n`;
   });
 
+  // 5. Answers
+  const answersFull = readAll(path.join(CONTENT, "answers"));
+  out += `## Answers (${answersFull.length})\n\n`;
+  answersFull.forEach((a) => {
+    out += `### ${a.data.question}\n`;
+    out += `${a.data.shortAnswer}\n\n`;
+    out += `${a.body}\n\n---\n\n`;
+  });
+
   fs.writeFileSync(path.join(PUBLIC, "llms-full.txt"), out, "utf8");
   console.log("✓ public/llms-full.txt generated successfully.");
 }
@@ -91,12 +100,14 @@ function buildLlmsIndex() {
   const aiDecoded = readAll(path.join(CONTENT, "ai-decoded"));
   const drills = readAll(path.join(CONTENT, "drills"));
   const books = readAll(path.join(CONTENT, "books"));
+  const answers = readAll(path.join(CONTENT, "answers"));
 
   let out = `# northstar\n\n`;
   out += `> A free, opinionated product management library: ${caseStudies.length} long-form case studies, `;
   out += `${books.length} full book reviews, ${comparisons.length} head-to-head company comparisons, `;
   out += `${topics.length} curated topic collections, ${aiDecoded.length} AI commentary pieces, `;
-  out += `and ${drills.length} interactive decision drills. No paywall, no gated downloads.\n\n`;
+  out += `${drills.length} interactive decision drills, and ${answers.length} direct answers to common `;
+  out += `product questions. No paywall, no gated downloads.\n\n`;
   out += `Every case study is a multi-paragraph deep dive written as an article, not a bullet summary. `;
   out += `Content is original and editorially opinionated — reviews say when a canonical book is overrated, `;
   out += `and comparisons end with a verdict rather than a both-sides shrug.\n\n`;
@@ -106,6 +117,7 @@ function buildLlmsIndex() {
 
   out += `## Sections\n\n`;
   out += `- [Case studies](${SITE}/#casestudies) (${caseStudies.length}): Long-form deep dives on real product decisions at Apple, Airbnb, Spotify, Figma, Zerodha, CRED, Razorpay and others. Each runs through company context, the core problem, the decision, execution, results, ripple effects and lessons. URLs are \`${SITE}/case-study/{slug}\`; the full list is in the sitemap.\n`;
+  out += `- [Answers](${SITE}/answers) (${answers.length}): Direct answers to specific product questions — each opens with a self-contained definition, then covers where the idea breaks down, and links to case studies that show it in practice.\n`;
   out += `- [Topics](${SITE}/topics) (${topics.length}): Case studies grouped by the pattern they demonstrate, for readers who want the shape of a decision across several companies rather than one.\n`;
   out += `- [Compare](${SITE}/compare) (${comparisons.length}): Two companies in the same market that made opposite bets, broken down side by side on model, positioning, execution and outcome, each ending in a verdict.\n`;
   out += `- [Books](${SITE}/book) (${books.length}): Original long-form reviews of product, startup and management books — argument, key concepts, who it is genuinely for, and what to pair it with.\n`;
@@ -118,6 +130,14 @@ function buildLlmsIndex() {
     out += `## Topic collections\n\n`;
     topics.forEach((t) => {
       out += `- [${t.data.title}](${SITE}/topics/${t.data.slug ?? t.slug}): ${t.data.metaDescription ?? t.data.eyebrow ?? ""}\n`;
+    });
+    out += `\n`;
+  }
+
+  if (answers.length) {
+    out += `## Answers\n\n`;
+    answers.forEach((a) => {
+      out += `- [${a.data.question}](${SITE}/answers/${a.data.slug ?? a.slug}): ${a.data.shortAnswer ?? ""}\n`;
     });
     out += `\n`;
   }

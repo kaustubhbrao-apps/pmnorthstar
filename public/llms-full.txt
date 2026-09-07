@@ -5464,3 +5464,1059 @@ The most efficient growth never shows up as a line item. The companies in this c
 
 ---
 
+## Answers (40)
+
+### What are AARRR (pirate) metrics?
+AARRR is a five-stage funnel framework — Acquisition, Activation, Retention, Referral, Revenue — coined by Dave McClure. It gives a startup one metric per stage so problems can be located rather than guessed at. The order matters: fixing acquisition while retention leaks is the classic misuse.
+
+## The five stages
+
+**Acquisition** — how people find you. Measured by traffic and signups by channel, not in aggregate; a blended number hides that one channel works and four don't.
+
+**Activation** — whether they reach first value. The most commonly skipped stage and usually the most broken.
+
+**Retention** — whether they come back. The stage that determines whether the other four are worth anything.
+
+**Referral** — whether they bring others. Dropbox's two-sided storage referral and PayPal's $20 signup bonus are the canonical examples, and both worked because the product was already retaining; a referral programme on a leaky product just distributes disappointment faster.
+
+**Revenue** — whether they pay. Deliberately last, which is the framework's actual argument.
+
+## The order is the insight
+
+Almost every team that "uses AARRR" reads it as a list and works on the first item, because acquisition is the stage you can buy. Uber's city-by-city playbook is often cited as blitzscaled acquisition, but the reason it worked is that the underlying product retained — a rider who got a car in four minutes came back without persuasion. Blitzscaling a product that doesn't retain, as Dunzo eventually demonstrated, converts funding into churn at speed.
+
+## Where it breaks down
+
+AARRR assumes a single linear funnel. Marketplaces have two — supply and demand acquire, activate and retain differently, and a marketplace with great demand-side retention and broken supply looks healthy in a blended AARRR dashboard right up until it isn't.
+
+Use it as a diagnostic that tells you *where* to look, then throw it away and study the specific stage properly. It is a map, not a strategy.
+
+---
+
+### What is the difference between activation and retention?
+Activation is a user reaching first value — the moment your product proves it works for them. Retention is them coming back after that. Activation is a one-time event you can design, retention is an ongoing verdict on whether the value holds. Fixing retention with an activation problem underneath never works.
+
+## The distinction that matters
+
+A user who signs up, pokes around and leaves never activated. A user who uploaded a file, shared it with a colleague, saw the colleague open it — and then left three weeks later — churned. These are completely different problems with completely different fixes, and blended retention numbers hide which one you have.
+
+Twitter's early growth was stuck on exactly this. New users arrived to an empty feed, saw nothing worth returning for, and left. No retention feature would have helped, because the product had never worked for them once. Suggested Users fixed the activation event — a populated feed on day one — and the retention curve moved as a consequence.
+
+## Activation is designed, retention is earned
+
+Activation is largely an onboarding and product-design problem. You know what the valuable action is; the work is removing everything between the user and it. Dropbox's referral loop is usually filed under growth, but its quiet achievement was activation: installing the desktop client and putting a file in the folder, which is the moment Dropbox becomes obvious.
+
+Retention is harder because it isn't a moment you can engineer. It's the accumulated verdict on whether the product keeps being worth opening. Superhuman's approach — refusing to onboard users at scale, running a personal setup session for each one — looks absurdly unscalable until you realise they were treating activation as the thing worth spending a founder's hour on.
+
+## How to tell which one you have
+
+Split your cohort at the activation event and plot both retention curves. If activated users retain well and unactivated users don't, you have an activation problem, and your job is onboarding. If activated users also decay, you have a retention problem, and no amount of onboarding polish will save you — the product isn't delivering repeat value yet.
+
+Teams get this backwards constantly, shipping re-engagement emails to people who never understood the product in the first place.
+
+---
+
+### What is the difference between bottom-up and top-down sales?
+Bottom-up starts with individual users adopting a product and spreading it inside the company until a purchase becomes formality. Top-down starts with an executive buying for the organisation and rolling it out. Bottom-up needs a product one person can love; top-down needs a business case one executive can defend.
+
+## They demand different products
+
+A bottom-up product must be immediately useful to one person with no permission, no configuration and no training. That constraint shapes everything — onboarding, pricing page, even the depth of the feature set, because complexity that requires explanation kills the motion.
+
+A top-down product must satisfy a buyer who will never use it daily: security posture, compliance, admin controls, reporting, integration with systems of record. Those requirements are invisible to individual users and decisive to procurement.
+
+Building for both simultaneously from day one usually produces something that does neither well.
+
+## Where each wins
+
+Stripe is the reference bottom-up case. Developers integrated it because the documentation and API were better than the alternatives, and by the time anyone senior was asked to approve a payments provider, it was already processing transactions. The decision had been made by the people who'd done the work.
+
+Jira arrived through the opposite door — an organisational decision about process, configured centrally, rolled out to teams. That's why its history is one of accumulating configurability: the buyer was the person who wanted it to model their process, not the person who used it every day.
+
+## The collision point
+
+Bottom-up companies hit a wall around the enterprise boundary. Usage has spread, IT notices, and suddenly there's a security review, an SSO requirement and a procurement process the self-serve motion has no answer for.
+
+This isn't a failure of the model — it's the moment to add the top-down motion on top of the demand the product created. The companies that struggle are the ones that treat it as an interruption rather than a stage, and try to solve an enterprise buying process with a better pricing page.
+
+---
+
+### How do you make a build vs buy decision?
+Build what differentiates you, buy what doesn't. The test isn't cost — it's whether customers would ever choose you because of this component. Teams get burned by underestimating the permanent maintenance cost of building, and by buying the one thing that was actually their edge.
+
+## The differentiation test
+
+Ask whether a customer would ever pick you over a competitor because of this piece. Auth, billing, email delivery, error tracking — almost never. Your matching algorithm, your pricing engine, your core editing experience — possibly yes.
+
+Buying a commodity frees engineers for the parts that matter. Building a commodity spends your scarcest resource proving you can rebuild something that already exists.
+
+## When building the hard thing is the strategy
+
+Figma's decision to render a design tool in the browser using WebGL was a build decision on the highest-difficulty setting. No vendor solution existed, and the browser wasn't obviously capable. It took years before the bet looked sane.
+
+It was correct because the component *was* the product. Browser-native collaborative design wasn't a feature of Figma; it was the entire reason Figma could exist against incumbents. Nobody outsources that.
+
+Vercel's business is the mirror image — it exists because deployment infrastructure is something most teams should buy rather than build, and it made buying dramatically easier than the DIY alternative.
+
+## The questions worth actually asking
+
+How long until value, on each path? Buying is usually weeks, building is usually quarters, and the gap is often decisive on its own.
+
+What's the exit cost if you buy and the vendor disappoints you? Shallow integration is cheap to leave; a vendor woven through your data model is not.
+
+And who owns it in two years? Built components need a permanent owner. If you can't name the team that maintains this after the people who built it have moved on, you're accumulating orphaned infrastructure — the most expensive category there is.
+
+---
+
+### What is the DAU/MAU ratio and what is a good one?
+DAU/MAU divides daily active users by monthly active users to estimate how many days a month the average user shows up. 20% is a common baseline, 50%+ is exceptional. It only means something for products people should use daily — applying it to a tax product or a job board produces nonsense.
+
+## What it actually estimates
+
+If 200,000 people used your product yesterday and 1,000,000 used it in the last 30 days, your ratio is 20% — meaning the average monthly user shows up roughly six days a month. It's a rough proxy for habit.
+
+The reference points people quote: 20% is a reasonable consumer baseline, 50%+ puts you in the company of messaging and social products, and the very top of the market sits higher still. TikTok's early ratios were extraordinary precisely because the recommendation feed removed the need to have a reason to open the app.
+
+## Where the metric lies
+
+**Products with legitimate low frequency.** A hiring tool, a tax filer, a travel booking product — nobody should use these daily, and a 5% ratio is not a failure. Measuring them this way creates pressure to add engagement mechanics that make the product worse.
+
+**Averages hiding bimodality.** A 20% ratio can mean everyone uses it six days a month, or that 20% use it every day and 80% never return. Those are completely different companies. Always look at the distribution.
+
+**Spikes driven by scarcity.** Clubhouse posted remarkable engagement while invitations were scarce and the format was novel. Both were temporary conditions, and the ratio measured the moment rather than the habit — which is exactly the mistake the metric invites when it's read as a verdict rather than a signal.
+
+## How to use it well
+
+Track it as a trend against your own history, segmented by cohort and platform. A ratio moving from 18% to 24% over two quarters tells you something real about whether recent work built habit. The absolute number compared to somebody else's absolute number usually tells you nothing at all.
+
+---
+
+### Freemium vs free trial — which should you choose?
+A free trial gives full access for a limited time; freemium gives limited access forever. Trials suit products with fast, obvious value and a clear buying moment. Freemium suits products with network effects or slow-building value, and only works if the free tier costs you little to serve.
+
+## Choosing the model
+
+**Free trial** fits when value is obvious quickly and there's a natural moment of decision. The clock creates urgency, and full access means the evaluation is honest.
+
+**Freemium** fits when value compounds slowly, when free users create value for paid ones, or when the product spreads by being used in public. Canva's free tier is a distribution engine — millions of people making things, sharing them, and pulling in others, with paid conversion arriving whenever a user's needs outgrow the limits.
+
+Spotify's free tier does something different again: it undercuts piracy. The strategic job of that tier was never conversion rate alone; it was making the legal option the easiest one, in a market where the alternative was free and illegal.
+
+## The cost question nobody asks early
+
+Freemium's hidden bill is serving free users forever. If each one costs you storage, bandwidth, model inference or support, the free tier is a permanent operating expense that scales with your success. Products with near-zero marginal cost per free user can absorb it; products with real per-user costs frequently cannot, and discover this at scale.
+
+## Getting the limit right
+
+The limit should hurt exactly when the user is getting real value, and not before. Too generous and nobody upgrades — you've built a free product with a paid tier nobody needs. Too tight and users never experience enough to want more.
+
+The signal to watch: are free users hitting the limit *while succeeding*? That's a good limit. Are they hitting it during setup, before anything works? That's a limit that generates churn and resentment rather than revenue.
+
+---
+
+### What is the difference between horizontal and vertical SaaS?
+Horizontal SaaS solves one function across every industry — CRM, payroll, ticketing. Vertical SaaS solves many functions for one industry, like software for dental practices or construction firms. Horizontal has a larger market and fiercer competition; vertical has a smaller ceiling and far better retention.
+
+## The structural trade-off
+
+Horizontal products have enormous addressable markets and correspondingly brutal competition, because everyone can see the same opportunity. Differentiation is hard and acquisition is expensive.
+
+Vertical products have a defined ceiling, but within it: less competition, a customer who feels understood, workflows the generalist can't match, and word of mouth that travels quickly through a small industry. Retention is typically far better, because switching means giving up domain-specific depth for something generic.
+
+## Depth is a moat, size is a ceiling
+
+Retool built a business on the unglamorous internal-tooling layer — a horizontal problem approached with unusual depth, which is a third path. The insight was that the market for boring internal software was much larger than anyone was treating it as.
+
+Rippling's compound approach ran the other way: rather than perfecting one function, it built several integrated ones on a shared employee data model, arguing that the integration itself was the product. That bet only works with capital and execution depth most companies don't have, but it illustrates the real question — where does your advantage compound, across functions or across industries?
+
+## Choosing
+
+Pick vertical if you have genuine domain knowledge, if the industry has specialised workflows generalists handle badly, and if you can reach buyers through a concentrated channel like a trade association or conference.
+
+Pick horizontal if the problem is genuinely universal, if you have a distribution advantage, and if you can survive competing against well-funded companies solving the same thing.
+
+The most common failure is a horizontal product with a vertical sales motion — selling one industry at a time on custom promises, accumulating industry-specific code in a general product, and ending up with neither depth nor breadth.
+
+---
+
+### How many users do you need for user research?
+Five to eight users per segment for qualitative usability work — that range surfaces most severe issues, and returns drop sharply after. Quantitative claims need hundreds. The mistake isn't sample size, it's using five interviews to justify a number instead of a direction.
+
+## The two questions are different
+
+**Qualitative** asks why and how — where people get stuck, what they misunderstand, what they were actually trying to do. Small samples work because obstacles are shared: if three of five people can't find the export button, the sixth won't change your mind.
+
+**Quantitative** asks how many and how much. "Does variant B convert better?" needs enough traffic for the difference to be distinguishable from noise, which is usually thousands of sessions, not five.
+
+Most research arguments are really an unstated disagreement about which question is being asked.
+
+## Segment first, then count
+
+Five per segment, not five total. If your product serves both a solo practitioner and an enterprise admin, five sessions split across both tells you little about either — you have two-and-a-half users per group, which is anecdote.
+
+Intercom's discovery practice reflects this: the job people were hiring the product for varied sharply between segments, so blending them would have averaged away the very distinction that mattered.
+
+## Recruit for the situation, not the demographic
+
+The most common recruiting error is screening on job title. What determines behaviour is whether someone is currently in the situation your product addresses — someone who tried to solve this problem in the last month will tell you more than someone with the right title who has never had the problem.
+
+Headspace's early design work leaned heavily on a specific struggle: people who wanted to meditate and found existing tools intimidating. That's a situation, not a demographic, and it's a far better recruiting screen.
+
+## Small samples, honest claims
+
+Five interviews justify "we saw people struggle here, let's fix it." They don't justify "62% of users prefer this." Use the evidence at the strength you gathered it, and the sample-size argument mostly disappears.
+
+---
+
+### How do you become a product manager without prior PM experience?
+Do the job before you have the title. Find product-shaped work in your current role — a problem you can research, define and get shipped — and build a track record of decisions with outcomes. Internal transfers are by far the most common route in, and the least discussed.
+
+## The route that works
+
+Almost nobody gets hired into a first PM role from outside. Companies hire for the role internally because the risk is lower — they've seen your judgment.
+
+So the practical path is to be inside a company with product teams, in any function, and start doing the work. Take a problem nobody owns. Talk to the customers who have it. Write up what you found and what you'd do. Get one thing shipped and measure whether it worked.
+
+That artefact — a decision, an argument, an outcome — is what an interview is trying to find out about, and it doesn't require a title.
+
+## What each background carries
+
+**Engineers** bring feasibility judgment and credibility with the team; the gap is usually customer contact and comfort with ambiguous, non-technical trade-offs.
+
+**Designers** bring user empathy and craft; the gap is typically commercial reasoning and data.
+
+**Support and customer success** bring the deepest knowledge of what customers actually struggle with, which is enormously undervalued; the gap is strategy and technical fluency.
+
+**Analysts** bring rigour; the gap is qualitative research and the tolerance for deciding without a clean number.
+
+Name your gap honestly and close it visibly. That's a better interview answer than pretending the gap isn't there.
+
+## In the interview
+
+You'll be asked how you'd improve some product, and the answer that fails is a list of features. The answer that works establishes who the user is, what problem you're solving, why it matters, how you'd know it worked, and what you'd deliberately not do.
+
+Superhuman's product process is a useful thing to have studied for this reason: it's a public example of someone deciding what evidence would change their mind, then acting on it. That's the mode of thinking the interview is looking for — not familiarity with a framework, but a habit of turning vague questions into answerable ones.
+
+---
+
+### How do you say no to stakeholders without damaging the relationship?
+Say no to the solution while taking the problem seriously. Most stakeholder requests are a proposed fix wrapped around a real pain — rejecting the fix while visibly capturing the pain preserves the relationship. Saying no to both is what makes people route around you.
+
+## Separate the request from the problem
+
+"We need a bulk export button" is a proposed solution. The problem underneath might be a monthly report that takes four hours, and there may be three better fixes. Asking what they're trying to accomplish isn't a deflection technique; it frequently produces a smaller, faster answer that makes them happier than the original ask.
+
+It also converts the conversation from yes/no into a shared investigation, which is where relationships survive.
+
+## Make the trade-off visible
+
+No is unpersuasive in the abstract and obvious in the concrete. "We can't do that" invites argument. "We can, and it would push the billing migration to Q3 — do you want to make that trade?" hands over the actual decision.
+
+Most stakeholders, given a real trade-off, choose reasonably. They push hard because they assume there's slack somewhere, and the only way to disprove that is to show the queue.
+
+## Say no in public, honour it in private
+
+Record the decision and the reasoning somewhere the person can see it. A written "not now, because X, revisit when Y" does two things: it proves you listened, and it stops the same request arriving every six weeks with fresh urgency.
+
+WhatsApp's decade of refusing ads, games and gimmicks is the extreme version — a product identity maintained by saying no far more often than yes, at real short-term revenue cost. Linear's refusal to become configurable is the same discipline at a smaller scale.
+
+The pattern in both: the no was principled and consistent, so it read as strategy rather than obstruction. A no that changes based on who's asking is just politics, and people learn to escalate instead of asking.
+
+---
+
+### What is jobs-to-be-done (JTBD)?
+Jobs-to-be-done says people don't buy products, they hire them to make progress in a situation. The unit of analysis is the job, not the customer — which is why demographic personas often mislead and why your real competitor is frequently a spreadsheet, a habit, or doing nothing at all.
+
+## The reframe
+
+Products get hired and fired. A customer has a situation, feels a struggle, and reaches for something that will make progress. That thing might be your software, a competitor, a manual workaround, or nothing.
+
+The practical consequence is that your competitive set is defined by the job, not the category. Intercom built its early product thinking explicitly in these terms, which is how a messaging product ended up competing with email, helpdesks and internal tooling simultaneously — all things people had hired for the same job.
+
+## Why it beats feature requests
+
+Ask what customers want and you get solutions shaped by what they've already seen. Ask what they were trying to do, what they tried first, and what made them give up, and you get the job.
+
+The second question is the valuable one. Customers are reliable reporters of their own struggles and unreliable designers of their own solutions.
+
+## Forces that decide the switch
+
+JTBD frames every adoption decision as four competing pressures: the push of the current situation, the pull of the new solution, the anxiety about switching, and the habit of what exists today. Most product teams over-invest in pull — more features, better demos — and ignore anxiety and habit, which are usually what actually block the switch.
+
+Lego's turnaround has a version of this in it. The company nearly died building products designed around what it thought children should want, and recovered partly by re-examining what building sets were actually hired for: absorbed, sustained, tangible progress that a video game was also competing for.
+
+## Where it gets misused
+
+JTBD is a discovery lens, not a planning system. Teams that convert it into a rigid taxonomy of hundreds of micro-jobs end up with a documentation exercise. The value is in the interview and the reframe — in noticing that you're not competing with who you thought.
+
+---
+
+### What is the difference between OKRs and KPIs?
+KPIs are the numbers you watch continuously to know whether the business is healthy. OKRs are the ambitious, time-boxed changes you commit to this quarter. A KPI can run flat forever and still be doing its job; an OKR that doesn't move has failed. Most confusion comes from writing KPIs and calling them OKRs.
+
+## The practical difference
+
+A KPI is a **thermometer**. Monthly active users, gross margin, p95 latency, support ticket volume — you watch them permanently, and a flat line is often good news.
+
+An OKR is a **destination**. An Objective states what changes and why it matters; Key Results state how you'll know it happened. It exists for one quarter and then it's over.
+
+The test: if the number would still be worth reporting when nobody is actively working on it, it's a KPI.
+
+## Why the confusion is expensive
+
+The most common failure is converting the whole KPI dashboard into OKRs. Twelve metrics become twelve objectives, every team owns a number, and the quarter is spent nudging things that were already fine. The framework's entire value — forcing a choice about what actually changes — is thrown away in the setup.
+
+The second failure is the opposite: objectives so aspirational they can't be evidenced. "Delight our customers" is not an objective, because no key result honestly attaches to it.
+
+## What good looks like
+
+Satya Nadella's cloud-first turnaround at Microsoft is a useful illustration of scale. The objective was a genuine change of direction, and the key results were unambiguous and countable — Azure revenue, commercial cloud run rate — not "improve cloud perception". People could tell whether it was working.
+
+Amazon's working-backwards method solves the same problem from the other end: writing the press release first forces you to state the outcome in a way that can later be checked. Whatever the framework, the discipline is identical — commit to a number that can embarrass you.
+
+---
+
+### What is the difference between a product manager and a product owner?
+Product manager is a role covering strategy, discovery and outcomes. Product owner is a specific title from Scrum, responsible for the backlog and for representing requirements to the development team. In many companies one person does both; where they're split, the PO's scope is deliberately narrower.
+
+## Different kinds of thing
+
+Product manager describes a job that exists independently of any process framework: understand the market, choose the problems, define success, ship, learn.
+
+Product owner is a Scrum accountability. It exists because Scrum needed a single named person to own the backlog and be available to the development team, replacing the committee-of-stakeholders arrangement that made requirements incoherent.
+
+Comparing them is slightly category-confused, which is why the debate never resolves. One is a profession; the other is a seat in a specific meeting structure.
+
+## How companies actually split them
+
+Where both exist, the usual division is: PM owns why and what, PO owns the ordered how. The PM does discovery, talks to customers, defines outcomes; the PO turns that into stories, grooms the backlog, and answers the team's questions during the sprint.
+
+This works when the two are genuinely joined at the hip. It fails when the split becomes a handoff — the PM does research the PO never sees, and the PO manages a backlog whose purpose they can't explain. You get a team executing accurately against requirements nobody can justify.
+
+Jira's history is instructive here: a tool built to serve process compliance, configured centrally, gradually optimising for tracking work rather than understanding why the work exists. Linear's opinionated stance is a direct reaction to that drift.
+
+## What to ask in an interview
+
+Titles vary too much to trust. The useful questions: who decides what goes on the roadmap, who talks to customers, and who is accountable for the outcome after launch. Whatever the title, if the answer to all three is someone else, the role is delivery coordination, and it's better to know that before accepting.
+
+---
+
+### What is the difference between a product manager and a project manager?
+A product manager is accountable for what gets built and whether it works for customers. A project manager is accountable for delivery — scope, schedule, dependencies and risk. One optimises for outcome, the other for predictable execution, and confusing them produces teams that ship on time to no effect.
+
+## The accountability line
+
+Ask what each person fails at. A product manager fails when the team ships something customers don't want. A project manager fails when a committed delivery slips without warning or mitigation.
+
+Those are different failures with different skills attached, and they can occur independently. Shipping precisely on schedule something nobody needed is a product failure and a project success.
+
+## Quibi as the illustration
+
+Quibi executed. The app was built, the content slate was produced, the launch happened on time with enormous funding behind it. By project standards it was a success.
+
+What was missing was the product question — whether anyone wanted premium short-form video on a phone-only app with no sharing. Excellent delivery of an unvalidated bet produces an expensive, well-run failure, and the schedule can look green throughout.
+
+## Where they overlap in practice
+
+At small scale the same person does both, and that's fine — coordination for one team is a few hours a week. The trouble starts when scale grows and the delivery load quietly consumes the discovery time. The calendar fills with status, dependencies and unblocking, all urgent, all visible, while the customer conversations quietly stop happening.
+
+That's the moment to add a delivery role, not because the PM can't run a schedule, but because the two jobs compete for the same hours and only one of them has a deadline attached.
+
+## Choosing which you want to be
+
+If you're energised by shipping complex things reliably, project management is a real craft and undersold. If you're energised by deciding what's worth shipping and living with being wrong, that's product. Neither is a stepping stone to the other.
+
+---
+
+### How should product managers think about technical debt?
+Technical debt is deliberate or accidental shortcutting that makes future changes slower. PMs should treat it as a tax on delivery speed rather than an engineering hobby — the question is never 'should we pay it down' but 'which debt is charging us the most interest right now'.
+
+## The metaphor is load-bearing
+
+Debt has principal and interest. The principal is the shortcut; the interest is every future change that costs more because of it. Debt nobody touches charges no interest and can be safely ignored forever — which is why a blanket "let's clean up the codebase" quarter is usually a bad trade. It pays down principal on loans that weren't charging anything.
+
+The right question is narrower: where is the interest actually being paid? That's identifiable — the modules where estimates are consistently wrong, where bugs cluster, where engineers negotiate about who has to go in.
+
+## Facebook's version of the bill
+
+Facebook's mobile app was built on HTML5 to ship once across platforms — a completely rational trade at the time. The interest came due when mobile became the entire business and the performance ceiling of that choice became an existential constraint. The rewrite to native wasn't a refactor; it was a company-level bet made under duress.
+
+The lesson isn't that the original choice was wrong. It's that the interest rate on a platform decision rises with the platform's importance, and nobody re-evaluated the loan as mobile went from side channel to main channel.
+
+## What a PM can actually do
+
+Keep the debt on the same list as the features. Separate lists guarantee the debt list loses, because it's judged on different criteria by people with less power in the room.
+
+Ask engineers for the specific delivery consequence rather than a severity rating. And when you deliberately take on debt to hit a date — which is often correct — write down what you took and what would trigger repaying it. Most debt becomes dangerous through forgetting, not through the original decision.
+
+---
+
+### RICE vs ICE — which prioritisation framework should you use?
+ICE scores Impact, Confidence and Ease; RICE adds Reach and swaps Ease for Effort, giving a value-per-unit-of-work score. Use ICE when you need to rank a backlog in an afternoon. Use RICE when reach genuinely varies between items and you need to defend the order to someone else.
+
+## The two formulas
+
+**ICE** = Impact × Confidence × Ease. Three numbers, usually 1-10, multiplied. Fast enough to do live in a room.
+
+**RICE** = (Reach × Impact × Confidence) ÷ Effort. Reach is how many users are affected in a period; Effort is person-months. The division is the real difference — RICE gives you value per unit of work, which is the question a resource-constrained team is actually asking.
+
+## When the extra rigour earns its keep
+
+Reach only helps when it varies. If you're comparing a change to the signup flow that touches every new user against a settings-page fix that touches 2%, RICE separates them and ICE doesn't. If you're comparing five features that all sit in the same core flow, Reach is a constant and you've added a step for nothing.
+
+Effort as a divisor matters most when your list mixes two-day fixes with two-quarter projects. It's what stops a marginally higher-impact epic from perpetually outranking a week of cheap wins.
+
+## The failure mode both share
+
+Scoring converts judgment into arithmetic, and arithmetic looks objective. It isn't — Impact and Confidence are guesses, and the person who wants their project prioritised will guess generously. The number's real value is that it forces those guesses to be stated where colleagues can argue with them.
+
+Linear's product decisions are a useful counterexample to score-driven roadmaps: a deliberately opinionated tool that says no to configurability would score poorly on any framework weighting reach and requests. Jira's history shows the other end — years of accommodating every high-scoring customer request, producing a product nobody would design on purpose.
+
+Use the score to surface disagreement about assumptions. Then make the call as a human being, and be willing to override the sheet when the sheet is wrong.
+
+---
+
+### Should you build your product on a foundation model API?
+Almost always yes for the intelligence layer — training your own model rarely beats an API on cost or quality. The real question is what you own besides the model call, because that's the only part a provider shipping your feature natively can't take from you.
+
+## The easy half of the decision
+
+Use the API. The capability gap between a frontier model and anything a startup can train is enormous, the cost curve keeps falling, and improvements arrive without you doing anything. Building your own intelligence layer to avoid dependency is a way of spending two years arriving somewhere worse.
+
+## The hard half
+
+Every company building on the same APIs has access to the same capability. So the differentiation question is what you have that they don't, and "we prompt it better" is not a durable answer — prompts are copyable in an afternoon.
+
+The categories that hold up:
+
+**Proprietary data** the model doesn't have and can't get. Your customers' history, your industry's documents, your accumulated corrections.
+
+**Workflow ownership** — being the system where the work actually happens, so the model output lands in context rather than in a chat window the user has to copy from.
+
+**Integrations and permissions** — the unglamorous plumbing into systems of record, which is slow to build and slower to displace.
+
+**Distribution and trust** — particularly in regulated domains where being the approved vendor is worth more than being the cleverest one.
+
+## The lesson from the wrapper wave
+
+When foundation model providers shipped features natively, the companies that evaporated were the ones whose entire product was a thin layer over a prompt. The ones that survived had the model as an input to something larger — the workflow, the data, the integrations were theirs, and swapping the model underneath was a Tuesday.
+
+## The question to answer before you start
+
+Write down what remains if your provider ships your headline feature next month. If the honest answer is "nothing", you don't have a product yet — you have a demonstration, and the clock started when you launched it.
+
+---
+
+### What does a product manager actually do?
+A product manager decides what gets built and why, then makes sure it happens. Day to day that means research, prioritisation, writing, and a lot of alignment across engineering, design and the business. The role has no authority attached — influence comes from judgment and evidence.
+
+## The job in one sentence
+
+Figure out which problem is most worth solving, make sure it's solved well, and keep everyone pointed in the same direction while it happens.
+
+Everything on a PM's calendar is downstream of that. Research exists to find the problem. Writing exists to make the decision legible. The meetings exist because a decision that only lives in your head hasn't been made.
+
+## What a week actually contains
+
+**Talking to customers** — support tickets, sales calls, scheduled interviews. Cut first when things get busy, and consistently regretted.
+
+**Deciding and defending** — what's next, what's not, and why. This produces the documents.
+
+**Unblocking** — the ambiguity that surfaces mid-build. Should this edge case error or degrade? Is this scope creep or the actual requirement? Someone has to answer within hours, not days.
+
+**Communicating outward** — sales, support and leadership all need to know what's coming and what changed.
+
+**Looking at data** — did the last thing work, and is the current thing working.
+
+## What it isn't
+
+Not project management, though there's scheduling in it. Not design, though there's judgment about experience. Not a mini-CEO — the phrase does real damage, because it implies authority the job doesn't have and rarely survives contact with an engineering team.
+
+The Amazon working-backwards method captures the actual core: the PM's distinctive contribution is deciding what's worth building and articulating it clearly enough that others can build it well. Linear's team demonstrates the same thing through what they refuse — a coherent product is mostly a record of decisions not taken.
+
+## The uncomfortable truth
+
+Most of the role is judgment under uncertainty, and judgment can't be delegated to a framework. The frameworks organise the thinking; they don't do it. That's why the job is hard to teach and why two PMs with identical processes produce completely different products.
+
+---
+
+### What is a competitive moat?
+A moat is a structural advantage that makes your position harder to attack over time — network effects, switching costs, proprietary data, economies of scale, or brand. Features are not moats. If a well-funded competitor could copy it in a quarter, it's a lead, not a moat.
+
+## The five that hold up
+
+**Network effects** — the product improves as more people use it. Strongest when the network is global rather than local.
+
+**Switching costs** — leaving is expensive in data, retraining, integration or risk. This is what makes unglamorous enterprise software so durable.
+
+**Proprietary data** — usage generates data that makes the product better, which attracts usage. Google Maps is the definitive version: years of corrections, traffic patterns and Street View imagery that a competitor cannot simply buy.
+
+**Scale economics** — unit costs fall as you grow, so you can price where entrants can't follow.
+
+**Brand** — when a category name and a product name converge, acquisition gets structurally cheaper.
+
+## Distribution counts too
+
+Stripe's advantage is often described as developer experience, which is a feature and copyable. The durable part is what that experience produced: default status in a generation of developers' mental toolkit, plus the integration depth that follows once payments run through your code. That's brand and switching cost compounding out of what began as a documentation advantage.
+
+The pattern generalises. Features aren't moats, but features can be the mechanism that builds one, if you're deliberate about which structural asset they accumulate into.
+
+## The test to run on your own product
+
+Imagine a competitor with three times your funding and a copy of your product. What still stops them? If the honest answer is "nothing, we'd just have to be faster", you don't have a moat yet — and knowing that is more useful than the flattering answer.
+
+---
+
+### What is a north star metric?
+A north star metric is the single number that best captures the value your product delivers to customers. Good ones measure realised value, not activity — Spotify tracks time spent listening, not signups. It exists to align teams on one outcome, and there should only ever be one.
+
+## What makes a metric a north star, and not just a KPI
+
+Three tests. It has to measure **value the customer actually received**, not activity they performed. It has to be something your team can **move through product work** rather than through a discount or an ad spend. And it has to be **leading** — if it only moves after the customer has already churned, it can't guide a roadmap.
+
+Spotify's monthly active users would fail the first test. Time spent listening passes: nobody listens for six hours a month by accident, and it rises only when discovery, playlists and catalogue genuinely improve.
+
+## The three ways teams pick the wrong one
+
+**Choosing an activity metric.** Signups, logins and page views all go up when marketing spends more. They tell you about acquisition, not about whether the product works. Duolingo's obsession with daily active learners rather than downloads is the difference between a metric you can buy and one you have to earn.
+
+**Choosing a metric nobody can influence.** If the metric only moves when the CEO closes an enterprise deal, the product team will quietly ignore it and optimise something else.
+
+**Choosing a metric that rewards the wrong behaviour.** This is the dangerous one. TikTok's early focus on watch time built an extraordinary recommendation engine and, simultaneously, a product accused of being engineered for compulsion. A north star is an instruction to a hundred people about what to optimise, and they will optimise it literally.
+
+## What to do with it once you have one
+
+The metric itself is too blunt to work on directly. Break it into inputs — for time spent listening, that's sessions per week, session length, and share of sessions with a completed track — and give each team one input. The north star aligns; the inputs are what people actually ship against.
+
+Then leave it alone. A north star metric that changes every two quarters is a strategy that changes every two quarters, which is the real problem the metric was supposed to expose.
+
+---
+
+### What is a PRD and what goes in one?
+A product requirements document states the problem, who has it, what success looks like, and what's in and out of scope. Its purpose is alignment before building, not documentation after. A PRD nobody argues with in review is usually too vague to be useful.
+
+## A structure that works
+
+**Problem** — what's broken, for whom, with evidence. If this section cites no data or research, stop here; the rest is decoration.
+
+**Why now** — what changed. Competitive move, platform shift, a support queue that's grown 40%. This is the section that gets cut and the one that most often exposes that the answer is "someone senior asked".
+
+**Success criteria** — the metric and the target. Stated before building, so the result can't be reinterpreted afterwards.
+
+**Scope** — in and, more importantly, out. The out-of-scope list prevents the slow expansion that turns a two-week feature into a quarter.
+
+**Open questions** — what you don't know yet, named. A PRD with no open questions is usually hiding them.
+
+Notably absent: solution detail. The PRD frames the problem; design and engineering own the shape of the answer.
+
+## Amazon's inversion
+
+Amazon's working-backwards method replaces the requirements doc with a press release and FAQ written as if the product already shipped. It's a forcing function — if the press release is boring, the product is boring, and you've learned that before spending a quarter rather than after.
+
+The mechanism transfers even if the format doesn't: write the outcome first, in language a customer would recognise, and check whether it's worth wanting.
+
+## The test of a good one
+
+Hand it to an engineer and a designer who weren't in the discovery. If they can independently explain who this is for, what problem it solves, and how you'll know it worked, it's doing its job. If they come back asking what it's actually for, no amount of additional requirements will fix it.
+
+---
+
+### What is a product roadmap and how detailed should it be?
+A product roadmap communicates what you intend to build and why, over time. The useful version states problems and outcomes rather than dated features — because dated feature lists become promises, and promises made twelve months out are wrong in ways that damage trust when they change.
+
+## What it's for
+
+Not scheduling. A roadmap exists so that people outside the team — sales, support, leadership, sometimes customers — can make their own decisions with an accurate picture of yours. That framing settles most format arguments: include what those people need to act on, exclude what they don't.
+
+## Detail should decay with distance
+
+The current quarter can be specific because you've done the discovery. Two quarters out you know the problem but not the solution. Four quarters out you have a theme and a hypothesis.
+
+A roadmap that shows the same fidelity across all four is lying about at least three of them. Now/Next/Later formalises this, which is most of why it spread — it makes uncertainty visible rather than papering over it with equally-sized boxes.
+
+## Outcomes over features
+
+"Reduce time-to-first-invoice from 3 days to 1 hour" survives being wrong about the solution. "Ship invoice wizard v2" does not. When discovery reveals the wizard was the wrong answer, the outcome roadmap absorbs it and the feature roadmap turns into a credibility problem.
+
+This matters even more when a competitor moves. A roadmap built on outcomes can respond to a rival shipping your Q3 plan on a Tuesday by rerouting to the same outcome. A roadmap built on features has to either abandon a public commitment or ship something that no longer differentiates.
+
+## The uncomfortable part
+
+Someone will always ask for dates, and often for legitimate reasons — a contract, a conference, a hiring plan. Give dates where you have real confidence, refuse them where you don't, and be explicit about which is which. The team that dates everything and misses half is trusted less than the team that dates three things and hits them.
+
+---
+
+### What is a technical product manager?
+A technical product manager works on products whose users or building blocks are technical — APIs, infrastructure, developer tools, platforms. The difference isn't seniority or coding ability; it's that the customer is an engineer, so understanding their workflow requires real technical depth.
+
+## What changes when the customer is an engineer
+
+Developers evaluate products by trying them, not by taking a demo. That inverts the entire go-to-market: documentation is the sales page, the first API call is the pitch, and a confusing error message is a lost customer.
+
+Stripe's advantage came from taking this seriously earlier than anyone else. Docs, error messages and the quality of the first integration experience were treated as core product surface rather than support material, and developers made the buying decision before any salesperson was involved.
+
+Vercel's position comes from the same recognition applied to deployment — that the workflow friction engineers tolerated was itself the opportunity.
+
+## The extra depth required
+
+You need to hold a conversation about architecture without being carried. Not to design the system, but to distinguish a genuine constraint from a preference, understand why one approach costs three weeks and another costs three months, and notice when a technical answer is really a scoping decision in disguise.
+
+This is also what makes discovery different. Engineers describe problems in terms of their current workaround, and interpreting that requires understanding the workaround.
+
+## Where the title gets misused
+
+Two common misuses. Some companies apply it to any PM working with an engineering team, which is all of them. Others use it to mean a project manager for technical work, which is a different job entirely — closer to technical programme management.
+
+Before taking a role with the title, ask who the customer is. If the answer is developers, platform teams or systems, it's a genuine technical PM role. If the answer is "the engineering team, and I'd coordinate their delivery", the title is doing something else.
+
+---
+
+### What is a viral loop?
+A viral loop is a cycle where using the product causes existing users to bring new ones, who then repeat the cycle. It's measured by the viral coefficient (K) — new users generated per existing user per cycle. K above 1 compounds; below 1, it usefully lowers acquisition cost but doesn't grow on its own.
+
+## The three canonical shapes
+
+**Incentivised referral.** Dropbox gave storage to both the referrer and the invitee. The incentive was the product itself, which meant it cost Dropbox marginal storage rather than cash, and it selected for people who actually wanted more Dropbox.
+
+**Embedded distribution.** Hotmail appended a signup link to every outgoing message. Nobody chose to refer anyone — using the product broadcast it, which is the cheapest loop that exists.
+
+**Paid referral.** PayPal's $20 for signup and $20 for referring was expensive and blunt, and it bought a payments network in a market where the network was the entire product. It worked because the lifetime value of an early network node justified it; the same tactic bankrupts a business with weaker economics.
+
+## The maths people skip
+
+K = invites sent per user × conversion rate of those invites. Both halves are addressable, and the second is usually where the leverage is — teams obsess over prompting more invites while the invite landing page converts at 8%.
+
+Cycle time then determines whether K matters. Compounding is a function of how many cycles fit in a period, so a loop that completes in days is worth far more than the same K completing in months.
+
+## Where it goes wrong
+
+A viral loop on a product that doesn't retain accelerates failure. You spend acquisition budget to introduce more people to something they'll abandon, and you burn the goodwill of everyone who was referred.
+
+The sequencing that works: retention first, then activation, then the loop. Dropbox's referral programme is famous because the product underneath it was genuinely sticky — the loop distributed something worth having.
+
+---
+
+### What is an AI agent?
+An AI agent is a system that pursues a goal over multiple steps, choosing its own actions and using tools, rather than answering a single prompt. The distinguishing feature is autonomy over the sequence — the model decides what to do next, which is also where most of the product risk lives.
+
+## The definitional line
+
+Three things distinguish an agent: a **goal** rather than an instruction, **tool use** to act on the world rather than only produce text, and **autonomy over sequencing** — the model chooses the next step based on what happened in the last one.
+
+That third property is the whole thing. It's what makes agents able to handle situations nobody scripted, and it's what makes their failures hard to predict.
+
+## Where autonomy earns its cost
+
+Agents are worth it when the space of situations is too large to enumerate. Debugging an unfamiliar codebase, researching across sources whose structure you don't know in advance, handling support requests whose resolution path varies — these are genuinely hard to express as workflows.
+
+They're a poor trade when the sequence is known. If your process has six steps that never change, an agent adds latency, cost and non-determinism to something a workflow does reliably.
+
+## The cost of premature autonomy
+
+The recurring failure pattern in early agent deployments is granting autonomy before reliability justifies it. Each step in a chain has an error rate, and those errors compound — a sequence of ten steps at 95% reliability succeeds around 60% of the time. Add the ability to take irreversible actions and the tail risk becomes the product's defining characteristic.
+
+The teams that shipped successfully generally did the unglamorous thing: constrained the action space, put a human at the points of no return, and expanded autonomy as evidence accumulated. That's slower than a demo and considerably cheaper than an incident.
+
+## The product question underneath
+
+Not "can the model do this" but "what happens when it does it wrong". If the answer is a wasted minute, ship it. If the answer is a deleted database or a sent email, the design problem is containment, not capability.
+
+---
+
+### What is an MVP (minimum viable product)?
+An MVP is the smallest thing that generates a real learning about whether people want what you're building. Viable means it delivers actual value to someone, not that it's technically functional — which is why a manual, unscalable process often makes a better MVP than a thin version of the full product.
+
+## Viable is the word that matters
+
+Minimum is easy to over-index on. Teams strip a product until it's a skeleton, ship it, watch it fail, and conclude the market doesn't want it — when what the market rejected was something that didn't work.
+
+The MVP has to actually do a job for someone. Everything else — scale, polish, automation, edge cases — is negotiable.
+
+## Manual beats thin
+
+The best MVPs are frequently not software. Airbnb's founders photographed apartments themselves and handled bookings by hand; the learning they needed was whether strangers would sleep in each other's homes, and no amount of platform engineering would have answered that faster.
+
+This is the concierge pattern: deliver the outcome manually, learn what the workflow really is, automate afterwards. It feels wrong to engineers and it consistently produces better information than a scaled-down v1.
+
+## Cut features, not quality
+
+The other common error is treating MVP as licence to ship something broken. Instagram launched with a tiny feature set — photos, filters, a feed — and those few things worked beautifully. The pivot away from Burbn's bloated check-in app worked precisely because the remaining slice was excellent, not because it was small.
+
+A minimal product that's good tells you whether people want the thing. A minimal product that's buggy tells you nothing except that people don't like bugs.
+
+## Know what you're testing
+
+Write the question down before you build. "Will small businesses pay for automated invoice reminders?" is answerable. "Is our product good?" is not. Once the question is explicit, the minimum thing that answers it is usually much smaller than the thing you were about to build — and occasionally isn't software at all.
+
+---
+
+### What is blitzscaling?
+Blitzscaling is prioritising speed over efficiency in conditions of uncertainty, deliberately accepting waste and organisational chaos to win a market before competitors can. It's rational only when the market is genuinely winner-take-most and you have the capital to survive the burn.
+
+## The trade being made
+
+Ordinary scaling optimises for efficiency: hire when you need someone, expand when the market is proven, build systems before you need them. Blitzscaling inverts all three, accepting that a lot of money will be wasted in exchange for occupying the market first.
+
+The justification is market structure. If a market ends with one dominant player, second place is worth a fraction of first, and the expected value of moving fast exceeds the certain cost of the waste.
+
+## Uber's version, and what it required
+
+Uber's city-by-city expansion is the canonical example — enter, subsidise both sides until liquidity is reached, tolerate regulatory conflict, move to the next city before competitors organise. The core insight is that ride-hailing liquidity is local, so the race was a hundred separate races and speed compounded in each one.
+
+It also required a functioning underlying product. A rider who got a car in four minutes returned unprompted. Subsidy bought the first ride; the product kept it.
+
+## Where it goes wrong
+
+Dunzo's trajectory shows the failure pattern: aggressive expansion and category-broadening in a market where unit economics didn't improve with scale and no winner-take-most dynamic materialised. Growth spending bought volume that never converted into a defensible position, and each expansion made the underlying economics harder rather than easier.
+
+The diagnostic question isn't "can we grow fast" — most companies can, given money. It's whether scale makes your economics better. If each new city, customer or category costs the same or more to serve, speed is just an expensive way to reach the same place.
+
+## The part that gets omitted
+
+Blitzscaling assumes a later phase where you fix everything you broke. Companies that never plan that phase, or never reach the market position that funded the breakage, end up with the organisational damage and none of the prize.
+
+---
+
+### What is blue ocean strategy?
+Blue ocean strategy means competing where competition doesn't exist yet — creating new demand rather than fighting for share in a saturated market. The mechanism is deliberately dropping attributes the industry treats as mandatory, and adding ones it ignores, so you're no longer comparable.
+
+## The core move: subtract, then add
+
+Most strategy work is additive — match competitors' features, then add a few. Blue ocean strategy insists on subtraction first. Which attributes does everyone in the industry compete on, and which of those could you drop entirely?
+
+Nintendo's Wii is the textbook case. The console industry competed on processing power and graphics; the Wii conceded both, decisively, and added motion control and a price point that put it in living rooms belonging to people who had never bought a console. Against a spec sheet it lost. Against the market it had invented, it had no competitor.
+
+## Why it's hard to actually do
+
+Dropping an industry-standard attribute feels like shipping a worse product, because by the incumbent scorecard it is. Every internal incentive pushes back — sales will report losing deals on the missing feature, reviewers will mark it down, and the comparison table will look bad.
+
+Tesla's direct-to-consumer model met exactly this resistance. Dealership networks were treated as a structural requirement of selling cars, and eliminating them looked like a handicap rather than a strategy until the economics and the customer experience proved otherwise.
+
+## The honest limitations
+
+The framework is much better at explaining successes than generating them. Its examples are chosen retrospectively, and the four actions framework will happily produce a list of eliminations that just makes your product worse. There is no test inside the framework for distinguishing a bold subtraction from a stupid one.
+
+The useful discipline it does provide: write down what your entire industry assumes is mandatory. Most of those assumptions have never been tested, and one of them is occasionally wrong in a way that's worth a company.
+
+---
+
+### What is churn rate and what counts as good?
+Churn rate is the share of customers or revenue lost in a period. Below roughly 1% monthly is strong for B2B SaaS; consumer subscription churn is routinely 5-8%. But the headline number matters far less than its shape — churn concentrated in month one is an onboarding problem, not a retention one.
+
+## Calculating it
+
+Customers lost during a period divided by customers at the start of that period. Simple, and easy to accidentally flatter: exclude trials, exclude involuntary churn from expired cards, and pick a long enough window and almost any number can be made presentable.
+
+Report voluntary and involuntary churn separately. Failed payments are a billing problem with a technical fix; cancellations are a product problem.
+
+## What "good" means depends entirely on the model
+
+For B2B SaaS with annual contracts, monthly logo churn under 1% is healthy. For consumer subscriptions, 5-8% monthly is normal and the entire business is built around it — which is why consumer subscription companies spend so heavily on acquisition. A number that would be an emergency in one model is the operating assumption in the other.
+
+## The shape matters more than the number
+
+Segment churn by tenure. Heavy churn in the first 30 days means users never reached value — that's an activation problem, and no win-back campaign will fix it. Churn that's flat across tenure means the product's value genuinely expires for a segment. Churn that rises at month 12 usually means an annual renewal decision, not a product decision.
+
+Peloton is the cautionary case. Churn stayed low through the pandemic, when a locked-down customer base had no alternatives, and the company read a temporary market condition as a durable product truth — building supply chain, staffing and forecasts on it. Cult.fit ran into a version of the same problem in its super-app phase, where breadth diluted the core habit that kept people renewing.
+
+A churn rate is a lagging indicator of a decision you made months earlier. By the time it moves, the thing that caused it is already shipped.
+
+---
+
+### What is cohort analysis?
+Cohort analysis groups users by when they joined and tracks each group separately over time. It exists because aggregate metrics hide direction: total usage can grow while every individual cohort retains worse than the last. Cohorts are how you tell growth from churn masked by acquisition.
+
+## Why the aggregate lies
+
+A product adding 10,000 users a month can show rising total actives for a year while every cohort retains worse than the one before. New arrivals mask the leak. The moment acquisition slows, the whole thing deflates — and by then the underlying decay has been running for four quarters.
+
+Cohorts are the correction. Group users by their join month, then measure each group's retention at month 1, 2, 3 and so on. Now improvement and decay are visible as changes between rows.
+
+## Reading the table
+
+Rows are cohorts, columns are periods since joining. Three things to look for:
+
+**Down a column** — are newer cohorts retaining better than older ones at the same age? This is the only clean read on whether your product work is landing.
+
+**Across a row** — where does each cohort fall off? A cliff between period 0 and 1 is activation. A steady slide is value that doesn't compound.
+
+**The floor** — does the curve flatten? A cohort that stabilises at 30% has 30% of users for whom the product became infrastructure. A curve heading to zero has no such group, which is the signal that no amount of acquisition will build a business.
+
+## Cohorts as a testing discipline
+
+Booking.com's culture of relentless experimentation is really a cohort discipline — every change is judged on what it does to a group of users over time, not on what it does to a dashboard on the day it ships. Duolingo's streak mechanics are similarly evaluated: the question isn't whether streaks are used, it's whether cohorts exposed to them retain measurably longer.
+
+The habit worth building: never report a metric to your team without asking which cohort it came from.
+
+---
+
+### What is continuous discovery?
+Continuous discovery is the practice of talking to customers every week, as an ongoing habit, rather than in project-shaped research phases. The premise is that a small weekly touchpoint compounds into judgment, while a research sprint every six months produces a report that ages before it's used.
+
+## The problem it solves
+
+Project-based research has a structural flaw: you learn a great deal at the start, then spend months building on knowledge that decays. By launch, the assumptions are old and nobody re-checked them, because re-checking would require another project.
+
+Continuous discovery flattens that. A little contact every week means assumptions are challenged while they're still cheap to change.
+
+## What the cadence actually is
+
+One interview a week, ideally with the trio present. That's it. Not a research programme, not a quarterly initiative — a recurring calendar entry.
+
+The scale is deliberately small because sustainability is the whole point. Teams that plan five interviews a week do it for a fortnight and stop. Teams that do one a week are still doing it two years later, and the accumulated context is the real asset.
+
+## Pair it with a way to decide
+
+Interviews without a decision structure produce a pile of anecdotes and a team that quotes whichever customer supports their preference. The common pairing is an opportunity solution tree: a desired outcome at the top, discovered opportunities beneath it, candidate solutions beneath those. It makes the reasoning from evidence to bet visible and arguable.
+
+Booking.com's experimentation culture is the quantitative sibling of the same principle — a permanent mechanism for being told you're wrong, running constantly rather than in phases. Intercom's early practice was the qualitative version. Both organisations built a habit rather than a project, which is why the learning compounded.
+
+## The failure to watch for
+
+Discovery becoming theatre — the meeting happens, notes are taken, nothing changes. If you can't point to a decision in the last month that went differently because of a customer conversation, you don't have continuous discovery. You have a standing meeting.
+
+---
+
+### What is generative engine optimisation (GEO)?
+Generative engine optimisation is the practice of making your content likely to be surfaced and cited by AI assistants rather than ranked in a list of links. It overlaps heavily with good SEO, but optimises for being quotable and verifiable rather than for click-through.
+
+## Why it emerged
+
+When a question is answered directly in a chat interface, the traditional funnel changes shape. Fewer people click through, and the ones who do arrive with the answer already in hand. Sites that depended on ranking for informational queries have watched referral traffic decline while their content continues to be used.
+
+That shift is the entire reason GEO exists as a distinct practice.
+
+## What actually influences citation
+
+**Extractability.** Models quote passages that stand alone. A definition in the first paragraph, phrased so it makes sense with no surrounding context, is far more likely to be lifted than the same information distributed across four paragraphs of build-up.
+
+**Structure.** Clear headings, question-shaped H2s, tables and lists all make content easier to parse and section.
+
+**Verifiability.** Specific numbers, named sources and dates are quoted more readily than general claims, because they're checkable.
+
+**Presence in the retrieval path.** Being crawlable, being in the index, and — for assistants that fetch live — being fast and not blocked at the edge.
+
+## The practical starting list
+
+Answer the literal question in the heading, then answer it immediately in the text. Add structured data where it fits, particularly FAQ and QA schema. Keep a machine-readable summary of your corpus. Make sure AI crawlers and live fetchers aren't being rate-limited or geo-blocked by infrastructure that was configured for a different threat model.
+
+## The honest caveat
+
+None of this is a ranking algorithm you can reverse-engineer. There's no equivalent of a link graph to manipulate, and the systems change without notice. What holds is the underlying property: being the clearest, most quotable, most verifiable answer to a specific question is useful regardless of which system is doing the reading.
+
+---
+
+### What is MoSCoW prioritisation?
+MoSCoW sorts requirements into Must have, Should have, Could have and Won't have. It's a scoping tool for a fixed deadline, not a roadmap tool — its job is to establish what can be dropped when time runs short, which is why the Won't-have list is the most valuable part.
+
+## The four buckets
+
+**Must have** — the release is not viable without it. The honest test: would you delay the launch rather than ship without this? If not, it isn't a Must.
+
+**Should have** — painful to omit, but the release still works. These are the first things to go when the date holds and the estimate doesn't.
+
+**Could have** — nice, low cost, cut without ceremony.
+
+**Won't have (this time)** — explicitly out of scope, and explicitly *this time*. This is the category that does the actual work, because it converts an unspoken assumption into a written decision that stakeholders have seen.
+
+## Why it belongs to fixed deadlines
+
+MoSCoW comes from timeboxed delivery. The assumption is that the date is immovable and scope is the variable, so the framework's purpose is to agree the order of sacrifice *before* you're under pressure. Deciding what to cut at 11pm two days before a launch is how teams cut the wrong thing.
+
+That also explains why it's a poor roadmap tool. It has no notion of value per effort and no way to compare two Must-haves, so a backlog sorted into MoSCoW is barely sorted at all.
+
+## The failure everyone hits
+
+Everything becomes a Must have. It happens because Should-have reads as "unimportant" to whoever requested it, and nobody wants their feature demoted in a room. Two defences: cap Musts by effort share, and require a named consequence for each — what specifically breaks if this ships without it. Requirements that can't produce a concrete consequence aren't Musts.
+
+Jira's long accumulation of configurability is what a decade of unchecked Must-haves looks like: every one defensible in isolation, and collectively a product that needs a consultant. Linear's constraint is the same lesson run in reverse.
+
+---
+
+### What are network effects?
+A network effect exists when a product becomes more valuable to each user as more people use it. It's the strongest form of defensibility because the advantage grows with scale, but many claimed network effects are actually local, weak, or just economies of scale wearing a better name.
+
+## The types
+
+**Direct** — each additional user makes the product better for existing ones. Messaging and social products.
+
+**Indirect (two-sided)** — more users on one side attract the other. Marketplaces, app stores, payment networks.
+
+**Data** — usage produces data that improves the experience for everyone. Google Maps is the canonical version: reports, corrections and traffic patterns accumulated over years into something no competitor can replicate by spending money.
+
+## Density beats size
+
+A network of ten million users spread thinly across the world can be weaker than one hundred thousand concentrated in a single city or profession. Value comes from overlap with the people you actually want to reach.
+
+This is why local networks get attacked successfully. A ride-hailing incumbent with global scale still competes city by city, because a rider in one city gains nothing from drivers in another. Challengers who understood this beat incumbents that looked unassailable on aggregate numbers.
+
+## Roblox and the developer side
+
+Roblox's network is indirect and unusually strong: creators build the games, players attract creators, creators attract players, and the company builds almost none of the content itself. The platform's job is tooling and economics, and the flywheel does the rest.
+
+The lesson generalises to the cold start problem — Roblox had to make creation worthwhile before the audience existed, which is the standard sequencing for two-sided networks. Solve the harder side first, usually with subsidy or manual effort.
+
+## The honest test
+
+If you claim a network effect, name the specific mechanism by which user 1,001 makes the product better for user 12. If you can't state it in one sentence, you probably have scale advantages — real, useful, and much easier to compete with.
+
+---
+
+### What is platform risk?
+Platform risk is the exposure a business carries when a critical part of its product, distribution or economics depends on a platform it doesn't control. The platform can change terms, absorb your feature, or cut access — and historically all three happen, usually at the worst moment.
+
+## Three ways it materialises
+
+**Terms change.** Pricing, rate limits or data access shift, and margins that worked stop working. You have no vote.
+
+**The platform absorbs you.** Your product becomes a feature of theirs. This is the most common outcome for successful add-ons: succeeding visibly on someone else's platform is a demonstration that the capability is worth building natively.
+
+**Access is cut.** Rare, sudden, and terminal for anyone without an alternative channel.
+
+## The AI-era version
+
+Companies built as a thin layer over a foundation model have run into all three at speed. When the model provider ships the capability natively, the wrapper's differentiation evaporates in a single release note — and the customers were never really the wrapper's to keep.
+
+The teams that survived it generally had something the platform didn't: proprietary workflow, industry-specific data, deep integrations into systems the platform had no interest in touching. The model was an input to their product rather than the product.
+
+## The other direction
+
+Myspace's decline is usually told as a design story, but the platform dimension matters: Facebook opened to developers and let others build on top, accumulating an ecosystem with reasons to stay, while Myspace kept the surface closed. Being the platform is the structural answer to platform risk, and it's available to fewer companies than would like it.
+
+## What to do about it
+
+Assume the platform will eventually compete with you, and ask what remains when it does. If the answer is "our brand and our speed", that's thin. If it's "the data we've accumulated and the workflow we own end to end", the platform becomes a supplier rather than a landlord.
+
+---
+
+### What is product-led growth (PLG)?
+Product-led growth is a go-to-market model where the product itself drives acquisition, conversion and expansion — users try it before talking to anyone, and often before their employer knows. It works when time-to-value is short enough that a person can succeed alone, and fails badly when it isn't.
+
+## The mechanism
+
+In a sales-led motion, a buyer is convinced and then the product is deployed. In PLG the order reverses: a user succeeds with the product, and the purchase ratifies something that already happened.
+
+That inversion has consequences everywhere. Onboarding becomes the sales pitch. Documentation becomes marketing. The free tier is a customer acquisition channel with a real cost, not a discount.
+
+## What it requires
+
+**Fast time-to-value.** Figma's decisive advantage was opening a design file from a link, in a browser, with no install and no licence. That removed the entire evaluation apparatus that competitors depended on.
+
+**Individual utility.** The product must be useful to one person before it's useful to a team. Calendly is the pure case — a single user gets full value immediately, and every meeting they book exposes the product to someone new.
+
+**Natural expansion.** Slack spread by being more useful with each colleague added, so growth within an account happened without anyone selling it.
+
+## Where it breaks
+
+PLG fails when value is gated behind setup. If a customer needs data migrated, permissions modelled and three teams trained before anything works, no free trial will demonstrate value — the trial expires during configuration, and the buyer concludes the product doesn't work.
+
+It also strains at the enterprise boundary. Bottom-up adoption creates security reviews, procurement and compliance requirements that a self-serve motion isn't built for, which is why nearly every PLG company eventually builds a sales team it once claimed not to need.
+
+## The honest framing
+
+PLG isn't a superior strategy, it's a fit question. The right test: can one person, alone, get real value in a single sitting? If yes, PLG is probably cheaper than sales. If no, adopting it anyway just means acquiring users who never activate.
+
+---
+
+### What is product-market fit?
+Product-market fit is the point where a market pulls your product out of you faster than you can supply it. It shows up as retention that flattens instead of decaying, users who complain when it breaks, and sales that get easier. It is a state you observe, not a milestone you declare.
+
+## What it actually feels like
+
+Marc Andreessen's original description is still the best one: you can always feel when it isn't happening — customers aren't getting value, word of mouth isn't spreading, sales cycles take forever. And you can always feel when it is: usage grows faster than you can add servers, money piles up, you're hiring as fast as you can.
+
+The reason this matters is that fit is not subtle. Teams debating whether they have it almost never do.
+
+## Measure it, don't sense it
+
+**The retention curve.** Plot each cohort's usage over months. Three shapes exist: decay to zero (no fit), decay then flatten (fit within a segment), and the smile curve where usage climbs back (strong fit and expanding value). A flattening curve means a stable set of people for whom the product is now infrastructure.
+
+**The 40% test.** Ask users how they'd feel if they could no longer use the product. Superhuman built an entire product process around this question — segmenting to the users who said "very disappointed", ignoring the rest, and building exclusively for the segment that already loved it. That is the useful move: fit is found in a segment first, not in an average.
+
+## Why teams fake it
+
+Because the alternative is admitting a year was wrong. Quibi launched with $1.75 billion, a full content slate and a fully-built product, and no evidence that anyone wanted premium short-form video on a phone-only app. Fit was assumed at the funding stage and tested at the launch stage, which is the most expensive possible ordering.
+
+Slack, by contrast, found fit sideways — the internal chat tool built for a failing game company turned out to be the product. That only happens if you're watching what people actually use rather than what you planned to sell.
+
+---
+
+### What is programmatic SEO?
+Programmatic SEO generates large numbers of landing pages from a structured dataset, each targeting a specific long-tail query. It works when you own data that genuinely answers those queries, and fails as thin-content spam when the pages are templates with the nouns swapped.
+
+## The pattern
+
+Take a dataset with two or three dimensions — city × property type, app × app, role × skill — and generate a page per meaningful combination. Each targets a query too specific for anyone to write by hand, and collectively they capture enormous long-tail volume.
+
+Airbnb's version covers destinations, neighbourhoods and property types. Each page is backed by real listings, real prices and real availability, which is what separates it from a template farm: the data is the product, and the page is a view onto it.
+
+Zapier's integration pages follow the same logic — one page per app pairing, each answering a question somebody genuinely typed, with the actual connection available at the end of it.
+
+## What makes it work
+
+**Unique data per page.** If the only difference between two pages is a city name in the heading, you've built a doorway page.
+
+**Real search demand.** Validate that people search these combinations before generating them. Most dimension crosses produce combinations nobody has ever looked for.
+
+**Something to do on arrival.** The page should complete the user's task, not funnel them into a search box to start over.
+
+**Quality gates.** Suppress combinations with insufficient data. A page for a city with two listings is worse than no page — it teaches Google your pages are unreliable.
+
+## The failure mode
+
+Sites generate the full cross product, publish 50,000 near-identical pages, watch indexing collapse, and conclude programmatic SEO doesn't work. What didn't work was publishing pages with nothing on them.
+
+The discipline is subtractive: generate everything you can, then aggressively suppress the pages that don't stand alone. What's left is smaller, better, and actually gets indexed.
+
+---
+
+### What is RAG (retrieval-augmented generation)?
+RAG retrieves relevant documents from your own data and puts them in the model's context before it answers, so responses are grounded in your sources rather than only in training data. It's the standard way to make a general model answer accurately about specific, private or recent information.
+
+## The pipeline in plain terms
+
+Documents are split into chunks and converted into embeddings — numeric representations of meaning — then stored in a vector index. At query time, the question is embedded too, the closest chunks are retrieved, and those chunks are inserted into the prompt with an instruction to answer using them.
+
+The model doesn't learn anything. It's being handed the reference material at the moment it answers.
+
+## Why it became the default
+
+Three practical reasons. **Freshness** — update a document and the next answer reflects it, with no retraining. **Attribution** — you know which sources were used, so the answer can cite them, which matters enormously for trust. **Access control** — retrieval can respect permissions, so users only get answers from documents they're allowed to see.
+
+That last one is why RAG dominates enterprise deployments. A fine-tuned model has no notion of who is asking.
+
+## Where it actually breaks
+
+Retrieval quality, almost always. If chunks are too small, the answer is split across several and none looks relevant. If too large, the useful sentence is diluted. Pure semantic search misses exact identifiers — part numbers, error codes, names — which is why hybrid search combining keyword and vector retrieval outperforms either alone in most production systems.
+
+The second failure is confident synthesis from partial context. Given three chunks that don't contain the answer, a model will often produce a plausible one anyway. Instructing it to say when the sources are insufficient helps, and evaluating on questions your corpus can't answer is the only way to know whether it's working.
+
+## The product framing
+
+RAG is a search product with a language model on the end. Teams that treat it as a model problem tune prompts for weeks; teams that treat it as a search problem fix retrieval and watch the answers improve.
+
+---
+
+### What is the innovator's dilemma?
+The innovator's dilemma is that well-run companies fail by doing exactly what good management prescribes — listening to their best customers, protecting margins, and investing in proven markets. Those behaviours make disruptive entrants look unattractive right up until they're unbeatable.
+
+## The uncomfortable part
+
+The dilemma isn't that incumbents are complacent. It's that they're disciplined. A disruptive product arrives with worse performance, lower margins and a tiny market. Every serious framework a good company uses — customer research, margin analysis, portfolio management — correctly recommends ignoring it.
+
+Then the entrant improves along the dimension the incumbent's customers care about, and the decision that was right at every step turns out to have been fatal in aggregate.
+
+## What Kodak and BlackBerry actually show
+
+The popular version of Kodak — the company that missed digital — is wrong. Kodak built one of the first digital cameras and spent heavily on the technology. What it couldn't do was escape a model where film and processing generated the margins, and a retail network organised entirely around that flow. Structure, not foresight, was the trap.
+
+BlackBerry is the cleaner case of customer-listening as a failure mode. Its enterprise customers genuinely preferred the physical keyboard, security and battery life. Listening to them was correct by every conventional measure, and it produced a several-year delay in accepting the touchscreen era, by which point the platform advantage had moved to app ecosystems the company couldn't rebuild.
+
+## What it means for a product team
+
+Watch the low end you've chosen to ignore, and be specific about why you're ignoring it. "It's not good enough for our customers" is the exact sentence that precedes every case in the book.
+
+And notice when your reason for not building something is margin structure rather than customer value. Apple's willingness to cannibalise the iPod with the iPhone is the counterexample — the decision was available to everyone and taken by almost no one, because it required accepting a worse P&L on purpose.
+
+---
+

@@ -2,7 +2,7 @@
 //
 // Run via: npx tsx scripts/sync-content.ts
 //
-// Reads every file in content/{topics,comparisons,books,case-studies}/
+// Reads every file in content/{topics,answers,comparisons,books,case-studies}/
 // and regenerates the corresponding data/*.ts file. The data files are
 // auto-generated artifacts — markdown is the source of truth.
 //
@@ -30,6 +30,7 @@ const INVENTORY = {
   aiDecoded: 0,
   drills: 0,
   playlists: 0,
+  answers: 0,
 };
 
 function readAll(dir: string): Array<{ slug: string; data: any; body: string }> {
@@ -149,6 +150,95 @@ export const getTopicBySlug = (slug: string): Topic | undefined => {
 `;
   fs.writeFileSync(path.join(DATA, "topics.ts"), out, "utf8");
   console.log(`✓ data/topics.ts (${entries.length} entries)`);
+}
+
+// ─── ANSWERS ────────────────────────────────────────────────────────────
+// Question-shaped reference pages. Unlike case studies, which answer "what
+// happened at company X", these answer the literal question someone types
+// into a search box or an assistant. The shape is deliberate: shortAnswer is
+// a self-contained 40-60 word definition that can be lifted verbatim as a
+// citation, and everything below it is the depth a human wants after that.
+//
+// Body markdown is rendered to HTML here rather than at runtime — same
+// approach as AI Decoded — so the route stays a pure server component.
+function syncAnswers() {
+  const entries = readAll(path.join(CONTENT, "answers"));
+  const now = new Date();
+  INVENTORY.answers = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
+
+  const body = entries
+    .map((e) => {
+      const d = e.data;
+      const html = marked.parse(e.body, { async: false }) as string;
+      const fields: string[] = [];
+      fields.push(`    slug: ${ts(d.slug)}`);
+      fields.push(`    question: ${ts(d.question)}`);
+      fields.push(`    shortAnswer: ${ts(d.shortAnswer)}`);
+      fields.push(`    bodyHtml: ${ts(html)}`);
+      fields.push(`    category: ${ts(d.category)}`);
+      fields.push(`    metaTitle: ${ts(d.metaTitle)}`);
+      fields.push(`    metaDescription: ${ts(d.metaDescription)}`);
+      fields.push(`    keywords: ${tsArr(d.keywords, 6)}`);
+      fields.push(`    accentColor: ${ts(d.accentColor)}`);
+      fields.push(`    relatedCaseStudyIds: ${tsArr(d.relatedCaseStudyIds, 6)}`);
+      fields.push(`    updatedAt: ${ts(d.updatedAt)}`);
+      if (d.publishedAt) fields.push(`    publishedAt: ${ts(d.publishedAt)}`);
+      if (d.faqs) fields.push(`    faqs: ${tsObjArr(d.faqs, 6)}`);
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const out = `${HEADER}
+export interface AnswerFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface Answer {
+  slug: string;
+  // The literal question, phrased the way a person asks it.
+  question: string;
+  // 40-60 words, self-contained. This is the unit that gets quoted, so it
+  // must make sense with zero surrounding context.
+  shortAnswer: string;
+  // Pre-rendered at sync time from the markdown body.
+  bodyHtml: string;
+  category: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords: string[];
+  accentColor: string;
+  // Case studies that demonstrate the concept in practice. Every answer
+  // links out to at least two, which is how these pages pass authority
+  // down into the corpus.
+  relatedCaseStudyIds: string[];
+  updatedAt: string;
+  // ISO date. No publishedAt = always live; a future date hides it in
+  // production until then.
+  publishedAt?: string;
+  faqs?: AnswerFAQ[];
+}
+
+export const answers: Answer[] = [
+${body},
+];
+
+export const isAnswerPublished = (a: Answer, now: Date = new Date()): boolean =>
+  !a.publishedAt || new Date(a.publishedAt) <= now;
+
+export const publishedAnswers = (now: Date = new Date()): Answer[] =>
+  answers.filter((a) => isAnswerPublished(a, now));
+
+export const getAnswerBySlug = (slug: string): Answer | undefined => {
+  const a = answers.find((x) => x.slug === slug);
+  return a && isAnswerPublished(a) ? a : undefined;
+};
+
+export const answerCategories = (now: Date = new Date()): string[] =>
+  Array.from(new Set(publishedAnswers(now).map((a) => a.category))).sort();
+`;
+  fs.writeFileSync(path.join(DATA, "answers.ts"), out, "utf8");
+  console.log(`\u2713 data/answers.ts (${entries.length} entries)`);
 }
 
 // ─── COMPARISONS ────────────────────────────────────────────────────────
@@ -840,6 +930,7 @@ export const TOPIC_COUNT = ${INVENTORY.topics};
 export const COMPARISON_COUNT = ${INVENTORY.comparisons};
 export const AI_DECODED_COUNT = ${INVENTORY.aiDecoded};
 export const DRILL_COUNT = ${INVENTORY.drills};
+export const ANSWER_COUNT = ${INVENTORY.answers};
 `;
   fs.writeFileSync(path.join(DATA, "inventory-counts.ts"), out, "utf8");
   console.log(`✓ data/inventory-counts.ts (registry updated)`);
@@ -853,6 +944,7 @@ export const DRILL_COUNT = ${INVENTORY.drills};
 function main() {
   console.log("Syncing markdown content → data/*.ts...\\n");
   syncTopics();
+  syncAnswers();
   syncComparisons();
   syncBooks();
   syncCaseStudies();

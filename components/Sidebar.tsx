@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, Trophy, ArrowUpRight, Users } from "lucide-react";
+import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, Trophy, ArrowUpRight, Users, HelpCircle } from "lucide-react";
 import {
   CASE_STUDY_COUNT,
   BOOK_COUNT,
@@ -139,6 +139,18 @@ export function Sidebar({
           >
             <MapPin size={15} strokeWidth={1.6} />
             <span style={{ letterSpacing: "-0.005em" }}>India</span>
+          </Link>
+
+          {/* Answers — question-shaped reference pages. Its own nav entry
+              rather than a home-page tab because every one of them is a
+              landing page for a specific search, not a browse surface. */}
+          <Link
+            href="/answers"
+            onClick={onClose}
+            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "answers" ? "active" : ""}`}
+          >
+            <HelpCircle size={15} strokeWidth={1.6} />
+            <span style={{ letterSpacing: "-0.005em" }}>Answers</span>
           </Link>
 
           {/* AI Decoded — editorial section on AI launches + tools */}

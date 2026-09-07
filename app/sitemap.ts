@@ -9,6 +9,7 @@ import { publishedComparisons } from "@/data/comparisons";
 import { books, getBookSlug, BOOKS_LAST_UPDATED } from "@/data/books";
 import { getAllAIDecodedArticles } from "@/lib/ai-decoded";
 import { publishedDrills } from "@/data/drills";
+import { publishedAnswers } from "@/data/answers";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -52,6 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Section hubs. These are the crawl entry points for the topic,
     // comparison and book detail pages — before they existed, comparisons
     // had no internal link anywhere in the site's server-rendered HTML.
+    {
+      url: `${SITE_URL}/answers`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
     {
       url: `${SITE_URL}/topics`,
       lastModified: now,
@@ -108,6 +115,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: casesUpdated,
       changeFrequency: "monthly",
       priority: 0.7,
+    });
+  }
+
+  // Answers — question-shaped reference pages. lastModified comes from the
+  // page's own updatedAt rather than today, so a reviewed date is honest.
+  for (const answer of publishedAnswers(now)) {
+    routes.push({
+      url: `${SITE_URL}/answers/${answer.slug}`,
+      lastModified: new Date(answer.updatedAt),
+      changeFrequency: "monthly",
+      priority: 0.8,
     });
   }
 
