@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import {
   getCaseStudyById,
   getCaseStudyBySlug,
@@ -28,9 +29,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
     },
-    alternates: {
-      canonical: `/case-study/${params.id}`,
-    },
+    // No canonical here: layout.tsx emits the absolute, slug-based canonical.
+    // This one echoed whatever form was requested (slug *or* legacy cs-N id),
+    // so an id-form URL declared itself canonical instead of deferring to the
+    // slug — and page metadata overrides the layout's on merge.
   };
 }
 
@@ -44,18 +46,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default function CaseStudyPage({ params }: PageProps) {
   const study = getCaseStudyBySlug(params.id) || getCaseStudyById(params.id);
 
+  // An unknown or not-yet-published slug must be a real 404. Rendering the
+  // client's empty state here returned HTTP 200 with no content, which Google
+  // reports as a Soft 404 — and it also served an empty page for scheduled
+  // case studies before their publishedAt date.
   if (!study) {
-    return (
-      <CaseStudyClient
-        study={null}
-        prevStudy={null}
-        nextStudy={null}
-        related={[]}
-        faqs={[]}
-        position={0}
-        total={0}
-      />
-    );
+    notFound();
   }
 
   const liveStudies = publishedCaseStudies();

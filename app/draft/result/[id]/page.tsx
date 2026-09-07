@@ -10,9 +10,12 @@ import type { Metadata } from "next";
 
 export async function generateMetadata({ params, searchParams }: { params: { id: string }, searchParams: { v: string, e: string, c: string, d: string, f: string } }): Promise<Metadata> {
   const player = DRAFT_PLAYERS.find(p => p.id === params.id);
-  if (!player) return {};
+  if (!player) return { robots: { index: false, follow: false } };
   const ogImageUrl = `/api/draft/og?id=${player.id}&v=${searchParams.v}&e=${searchParams.e}&c=${searchParams.c}&d=${searchParams.d}&f=${searchParams.f}`;
   return {
+    // Personal share cards, one per result permutation — they exist to be
+    // opened from a link, not to be indexed as pages.
+    robots: { index: false, follow: true },
     title: `I am ${player.name} — The Builder Draft`,
     description: player.description,
     openGraph: {

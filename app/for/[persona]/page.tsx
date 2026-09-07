@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { SidebarShell } from "@/components/SidebarShell";
-import { publishedCaseStudies } from "@/data/caseStudies";
+import { publishedCaseStudies, getCaseStudySlug } from "@/data/caseStudies";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
@@ -71,6 +71,10 @@ export async function generateMetadata({ params }: { params: { persona: string }
   return {
     title: `${p.title} - Northstar`,
     description: p.description,
+    // These five pages are in the sitemap and each one re-lists a slice of the
+    // same case-study corpus. Without a self-referential canonical Google
+    // clusters them as duplicates and picks its own representative.
+    alternates: { canonical: `/for/${params.persona}` },
   };
 }
 
@@ -116,7 +120,7 @@ export default async function PersonaPage({ params }: { params: { persona: strin
             {matchedStudies.map(study => (
               <Link 
                 key={study.id} 
-                href={`/case-study/${study.id}`}
+                href={`/case-study/${getCaseStudySlug(study.id)}`}
                 className="group flex flex-col p-5 rounded-lg border transition-all hover:-translate-y-1"
                 style={{ background: "var(--card-bg)", borderColor: "var(--border-subtle)" }}
               >

@@ -3,6 +3,7 @@
 // page never sees another user's data — getSession() + the API
 // endpoint both gate on the cookie.
 
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import {
@@ -16,6 +17,11 @@ import {
   Compass,
 } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
+
+// Per-user stats behind a session. Never indexable.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 import { getSession } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { getDrillBySlug } from "@/data/drills";

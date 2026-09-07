@@ -92,7 +92,12 @@ const ALWAYS_ALLOW = new Set(["/robots.txt", "/sitemap.xml"]);
 // Strip invisible Unicode characters (non-breaking space, zero-width space,
 // BOM) that occasionally end up in pasted URLs and turn legitimate paths
 // into 404s. Observed in Vercel Analytics: /%C2%A0 (URL-encoded nbsp).
-const INVISIBLE_CHARS = /%C2%A0|%E2%80%8B|%EF%BB%BF/gi;
+// NOT global: a /g regex kept in module scope carries `lastIndex` between
+// requests, so .test() alternates true/false on identical URLs and the
+// sanitizing redirect fires only every other time. Matching is done with
+// .test() below and replacing uses its own /g copy.
+const INVISIBLE_CHARS = /%C2%A0|%E2%80%8B|%EF%BB%BF/i;
+const INVISIBLE_CHARS_ALL = /%C2%A0|%E2%80%8B|%EF%BB%BF/gi;
 
 // Removed USERNAME_REDIRECT_EXCLUDE since username redirect was removed
 
@@ -168,7 +173,7 @@ export async function middleware(req: NextRequest) {
 
   // ─── 3. URL Sanitization (Existing Logic) ───
   if (INVISIBLE_CHARS.test(pathname)) {
-    const cleaned = pathname.replace(INVISIBLE_CHARS, "");
+    const cleaned = pathname.replace(INVISIBLE_CHARS_ALL, "");
     const url = req.nextUrl.clone();
     url.pathname = cleaned || "/";
     return NextResponse.redirect(url, 308);
