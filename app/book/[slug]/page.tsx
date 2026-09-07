@@ -168,8 +168,8 @@ export default function BookPage({ params }: { params: { slug: string } }) {
                 className="mb-5"
                 items={[
                   { label: "northstar", href: "/" },
-                  { label: "Books", href: "/#books-section" },
-                  { label: book.category, href: "/#books-section" },
+                  { label: "Books", href: "/book" },
+                  { label: book.category, href: "/book" },
                   { label: book.title },
                 ]}
               />

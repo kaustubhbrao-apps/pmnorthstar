@@ -1,34 +1,78 @@
 # northstar
 
-> A free product management resource: 87+ long-form case studies, original reviews and key takeaways for essential PM books, and curated AI insights.
+> A free, opinionated product management library: 121 long-form case studies, 30 full book reviews, 29 head-to-head company comparisons, 14 curated topic collections, 29 AI commentary pieces, and 31 interactive decision drills. No paywall, no gated downloads.
 
-## Full Content for AI Ingestion
-- [Full Knowledge Base](https://pmnorthstar.in/.well-known/llms-full.txt): Complete raw text of all 87+ case studies, 30 books, and AI articles in one file.
+Every case study is a multi-paragraph deep dive written as an article, not a bullet summary. Content is original and editorially opinionated — reviews say when a canonical book is overrated, and comparisons end with a verdict rather than a both-sides shrug.
 
-## What's inside
+## Full content
 
-- [Home](https://pmnorthstar.in/): The main library — browse all books, case studies, and playlists in one place.
-- 30 essential books across Product Management, Startups, and Management — each with summary and direct external link.
-- 87+ in-depth case studies on real products and companies (Apple, Spotify, Airbnb, Slack, Netflix, Figma, Cred, Razorpay, Zerodha, Cult.fit, and 55 more) — full multi-paragraph deep dives, written as articles rather than bullet points.
-- 18 curated YouTube playlists across 8 topics: Design, Product Management (incl. AI PM), Data Analytics, Product Analytics, Marketing, Branding, Startup, Finances.
+- [Complete knowledge base](https://pmnorthstar.in/llms-full.txt): Every case study, comparison, topic and AI article as raw text in one file.
 
-## Case studies
+## Sections
 
-The full list of 87+ case study URLs is available in the sitemap: https://pmnorthstar.in/sitemap.xml
+- [Case studies](https://pmnorthstar.in/#casestudies) (121): Long-form deep dives on real product decisions at Apple, Airbnb, Spotify, Figma, Zerodha, CRED, Razorpay and others. Each runs through company context, the core problem, the decision, execution, results, ripple effects and lessons. URLs are `https://pmnorthstar.in/case-study/{slug}`; the full list is in the sitemap.
+- [Topics](https://pmnorthstar.in/topics) (14): Case studies grouped by the pattern they demonstrate, for readers who want the shape of a decision across several companies rather than one.
+- [Compare](https://pmnorthstar.in/compare) (29): Two companies in the same market that made opposite bets, broken down side by side on model, positioning, execution and outcome, each ending in a verdict.
+- [Books](https://pmnorthstar.in/book) (30): Original long-form reviews of product, startup and management books — argument, key concepts, who it is genuinely for, and what to pair it with.
+- [AI Decoded](https://pmnorthstar.in/ai-decoded) (29): Editorial commentary on AI launches and tools, and what PMs, marketers and founders should do about them.
+- [SimulateIt](https://pmnorthstar.in/simulate) (31): Interactive drills that put the reader inside a real historical product decision before revealing what the company actually chose.
+- [CheckIt](https://pmnorthstar.in/checkit): A free tool that audits any public URL across SEO, performance, accessibility and trust, and returns a scored report.
+- [India](https://pmnorthstar.in/india): Case studies on Indian companies — Zerodha, CRED, Razorpay, Zomato, Flipkart and others.
 
-Each case study lives at `https://pmnorthstar.in/case-study/{slug}` where slug is a descriptive identifier (e.g. `cred-design-fintech`, `razorpay-pivot-fintech`, `apple-iphone-launch`). Legacy `/case-study/cs-{N}` URLs (N is 1 through 76) 301-redirect to the slug URL. Each page contains a 7-paragraph deep dive structured around: the company context, the core problem, the key decision, execution details, results, ripple effects, and lessons for product managers.
+## Topic collections
 
-## Categories covered
+- [Bootstrapped to Billion](https://pmnorthstar.in/topics/bootstrapped-companies): How Zerodha, Atlassian, and other bootstrapped companies built billion-dollar businesses without raising VC. Long-form case studies, no paywall.
+- [Back From the Brink](https://pmnorthstar.in/topics/comeback-stories): Long-form case studies on companies that came back from the edge: Airbnb's near-death survival, Lego's bankruptcy escape, Microsoft's cloud reinvention, and more.
+- [Skipping the Middleman](https://pmnorthstar.in/topics/d2c-brands): Long-form case studies on direct-to-consumer brands: Boat, Nykaa, Tesla, and Meesho. How owning distribution and the customer became the strategy.
+- [Sell to the Developer First](https://pmnorthstar.in/topics/developer-first-gtm): Long-form case studies on companies that won by selling to developers first: Stripe, Atlassian, Vercel, Cloudflare, and the cautionary tale of MySpace.
+- [Distribution Eats Product](https://pmnorthstar.in/topics/distribution-wins): Long-form case studies on companies that won through distribution: Airbnb's programmatic SEO, Booking.com's A/B testing, Walmart's web performance, and GitHub.
+- [Let the Product Sell Itself](https://pmnorthstar.in/topics/freemium-plg): Long-form case studies on freemium and product-led growth: Canva, Notion, Duolingo, Superhuman, and Zoom. How the free tier became the funnel.
+- [The Pivot That Saved the Company](https://pmnorthstar.in/topics/great-pivots): Long-form case studies on the pivots that built billion-dollar companies: Slack from a failed game, Instagram from Burbn, Discord from gaming chat, and more.
+- [Betting on Atoms](https://pmnorthstar.in/topics/hardware-bets): Long-form case studies on the hardware gambles that defined eras: the iPhone, the iPod's scroll wheel, Google Glass, the Zune, and BlackBerry's touchscreen denial.
+- [Indian Fintech Case Studies](https://pmnorthstar.in/topics/indian-fintech): Long-form case studies on India's biggest fintech companies: Razorpay, Cred, Zerodha, PhonePe, Paytm, Slice, Groww. Free, in-depth, no paywall.
+- [The Moat That Compounds](https://pmnorthstar.in/topics/network-effects-moats): Long-form case studies on companies defended by network effects: Google Maps, Figma, Spotify, TikTok, and WhatsApp. How usage itself became the moat.
+- [Design as a Moat](https://pmnorthstar.in/topics/product-design): Long-form case studies on companies where design was the competitive moat: Figma, Cred, Headspace, Monzo, Superhuman. Free, in-depth analysis.
+- [Hype Meets Reality](https://pmnorthstar.in/topics/spectacular-flameouts): Long-form case studies on the companies that flamed out under their own hype: Quibi, WeWork, Theranos, Clubhouse, and Facebook Home.
+- [When Super-Apps Break](https://pmnorthstar.in/topics/super-app-failures): Why super-apps break outside China: long-form case studies on Paytm, Cult.fit, BYJU'S, and other multi-vertical bets that nearly collapsed.
+- [Built-In Virality](https://pmnorthstar.in/topics/viral-growth-loops): Long-form case studies on engineered virality: Dropbox's referral loop, Hotmail's email signature, PayPal's $20 referral, LinkedIn, and Twitter's retention fix.
 
-- Product Management — discovery, delivery, prioritization, AI product management
-- Startups — 0-to-1, fundraising, founder lessons
-- Management — team building, leadership for builders
-- Design — UX, UI, visual design fundamentals
-- Data Analytics — SQL, dashboards, analyst skills
-- Product Analytics — metrics, funnels, retention
-- Marketing — positioning, channels, growth
-- Branding — identity, naming, visual systems
-- Finances — runway, fundraising, founder finance
+## Comparisons
+
+- [Cred vs Monzo — Two Models of Premium Fintech](https://pmnorthstar.in/compare/cred-vs-monzo): Cred and Monzo took opposite paths to premium fintech. Compare their business models, design strategy, and growth playbooks.
+- [Discord vs Clubhouse — Why One Survived and One Didn't](https://pmnorthstar.in/compare/discord-vs-clubhouse): Discord and Clubhouse both bet on community audio. Discord won by building for persistence; Clubhouse fell because of ephemerality. Full comparison.
+- [Dropbox vs Google Drive — The Startup That Invented a Category vs the Giant That Commoditized It](https://pmnorthstar.in/compare/dropbox-vs-google-drive): Dropbox invented consumer cloud storage. Google bundled it for free. How Dropbox survived commoditization and what it teaches about platform risk and product strategy.
+- [Duolingo vs BYJU'S — Gamified Habit vs Coached Aspiration](https://pmnorthstar.in/compare/duolingo-vs-byjus): Duolingo is profitable and growing. BYJU'S collapsed from a $22B valuation. Compare the two EdTech giants' models, what went wrong, and what each teaches about education businesses.
+- [Facebook vs Twitter — The Graph vs The Stream](https://pmnorthstar.in/compare/facebook-vs-twitter): Facebook monetizes who you know. Twitter monetizes what you care about. A deep comparison of two social giants and why their architectures led to wildly different outcomes.
+- [Figma vs Canva — Pro Tool vs People's Tool](https://pmnorthstar.in/compare/figma-vs-canva): Figma serves professional designers; Canva serves everyone else. Compare the two design platforms' wedges, audiences, and growth strategies.
+- [Instagram vs Snapchat — The Copycat That Won](https://pmnorthstar.in/compare/instagram-vs-snapchat): Snapchat invented Stories. Instagram copied them and won. A detailed comparison of how the two platforms diverged and what it means for product strategy.
+- [Kodak vs BlackBerry — Two Giants Disrupted From Within Reach](https://pmnorthstar.in/compare/kodak-vs-blackberry): Kodak invented digital photography; BlackBerry pioneered the smartphone. Both were disrupted by the shift they saw coming. A comparison of two classic failures.
+- [Linear vs Jira — Opinionated Speed vs Infinite Configurability](https://pmnorthstar.in/compare/linear-vs-jira): Linear vs Jira. Why do developers hate Jira and love Linear? A deep dive into opinionated software vs infinitely configurable enterprise bloat.
+- [Loom vs Zoom — Async Video vs Real-Time Video](https://pmnorthstar.in/compare/loom-vs-zoom): Zoom owns live meetings; Loom owns recorded async video. Compare the two video companies' opposite bets on how teams communicate and their business models.
+- [Meesho vs Walmart — Value Retail for Two Different Centuries](https://pmnorthstar.in/compare/meesho-vs-walmart): Walmart mastered value retail with stores and supply chains; Meesho does it asset-light through resellers and social commerce. Compare two value-retail models.
+- [MySpace vs Facebook — Why the First Mover Lost Everything](https://pmnorthstar.in/compare/myspace-vs-facebook): MySpace had 100M users and News Corp's money. Facebook had a cleaner product. How Facebook won the first great social network war and what it teaches about product strategy.
+- [Netflix vs Spotify — Two Subscription Giants, Two Different Bets](https://pmnorthstar.in/compare/netflix-vs-spotify): Netflix owns its content. Spotify doesn't. Compare the two subscription giants' business models, content strategies, and what each one actually owns.
+- [Notion vs Evernote — The Block vs The Filing Cabinet](https://pmnorthstar.in/compare/notion-vs-evernote): Compare Notion and Evernote. Learn why Evernote's single-player filing cabinet metaphor lost out to Notion's multiplayer, modular block architecture.
+- [Notion vs Slack — The Document vs The Conversation](https://pmnorthstar.in/compare/notion-vs-slack): Notion and Slack both fought to be the home base of work — one through documents, one through messaging. Compare their wedges, growth loops, and business models.
+- [PayPal vs Stripe — The Original Disruptor vs the Disruptor of the Disruptor](https://pmnorthstar.in/compare/paypal-vs-stripe): PayPal dominated consumer payments in the 2000s. Stripe built the API that replaced PayPal as the default for businesses. Compare their models, revenue, and moats.
+- [PhonePe vs Paytm — How UPI Changed Everything](https://pmnorthstar.in/compare/phonepe-vs-paytm): How PhonePe overtook Paytm in UPI: market share, valuation, regulatory history. Full comparison of India's two biggest payment apps.
+- [Quibi vs Clubhouse — Two Ways to Squander a Moment](https://pmnorthstar.in/compare/quibi-vs-clubhouse): Quibi spent $1.75B; Clubhouse went viral for free. Both collapsed within two years. Compare two opposite paths to the same failure and what killed each.
+- [Razorpay vs Stripe — Two Continents, Same Playbook](https://pmnorthstar.in/compare/razorpay-vs-stripe): Razorpay built India's Stripe — then expanded into a neo-banking platform. Detailed comparison of the two API-first fintech leaders.
+- [Robinhood vs Zerodha — Free Trading, Two Philosophies](https://pmnorthstar.in/compare/robinhood-vs-zerodha): Robinhood and Zerodha both made trading cheap and accessible, but with opposite philosophies on monetization, funding, and engagement. A detailed comparison.
+- [Shopify vs Amazon — Arm the Rebels vs Build the Empire](https://pmnorthstar.in/compare/shopify-vs-amazon): Amazon aggregates all commerce. Shopify helps merchants escape it. Compare the two giants' strategies, revenue models, and what each one actually owns.
+- [Spotify vs Apple Music — Software Company vs Hardware Empire](https://pmnorthstar.in/compare/spotify-vs-apple-music): Spotify lives or dies on music alone. Apple Music is a feature of the iPhone. A detailed comparison of the two streaming leaders and their opposite business models.
+- [Stripe vs Adyen — The Battle for Global Payments](https://pmnorthstar.in/compare/stripe-vs-adyen): Compare Stripe and Adyen. Learn how Stripe used developer-first PLG to win startups, while Adyen used top-down enterprise sales to win global giants like Uber.
+- [Swiggy vs Zomato — Logistics-First vs Discovery-First](https://pmnorthstar.in/compare/swiggy-vs-zomato): Swiggy built a delivery network; Zomato built restaurant discovery. Compare India's two food-delivery giants and their race into quick-commerce.
+- [TikTok vs Instagram — Interest Graph vs Social Graph, Round Two](https://pmnorthstar.in/compare/tiktok-vs-instagram): TikTok's For You page doesn't care who you follow. Instagram's algorithm does. Compare the two platforms' content models, creator economics, and what each owns.
+- [Twitter vs Substack — The Broadcast vs the Letter](https://pmnorthstar.in/compare/twitter-vs-substack): Twitter owns the broadcast. Substack owns the letter. Compare how the two writer platforms think about audience, monetization, and the future of media.
+- [Uber vs Ola — Global Playbook vs Local Knowledge](https://pmnorthstar.in/compare/uber-vs-ola): Uber's global playbook met Ola's local mastery in India. Compare how the two ride-hailing companies fought to a stalemate and what it teaches about local moats.
+- [Yahoo vs Google — The Portal vs The Algorithm](https://pmnorthstar.in/compare/yahoo-vs-google): Yahoo was the internet's home page. Google replaced it with a blank search box and an algorithm. Compare the two companies' strategies and why one failed and one won.
+- [Zerodha vs Groww — Two Paths to Indian Investing](https://pmnorthstar.in/compare/zerodha-vs-groww): Side-by-side comparison of Zerodha and Groww — pricing, product, user base, profitability. Which is better for Indian investors in 2026?
+
+## Notes for agents
+
+- Legacy `https://pmnorthstar.in/case-study/cs-{N}` URLs 308-redirect to the descriptive slug URL. Cite the slug form.
+- Scheduled content is excluded from this file until its publish date, so anything listed here is live.
+- Content is free to quote with attribution to northstar (https://pmnorthstar.in).
 
 ## Optional
 

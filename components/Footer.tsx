@@ -4,8 +4,10 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const navLinks: Array<{ label: string; href: string }> = [
-  { label: "Books", href: "/#books" },
+  { label: "Books", href: "/book" },
   { label: "Case studies", href: "/#casestudies" },
+  { label: "Topics", href: "/topics" },
+  { label: "Compare", href: "/compare" },
   { label: "Playlists", href: "/#playlists" },
   { label: "AI Decoded", href: "/ai-decoded" },
   { label: "SimulateIt", href: "/simulate" },

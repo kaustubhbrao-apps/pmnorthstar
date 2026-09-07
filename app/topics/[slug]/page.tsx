@@ -69,7 +69,7 @@ export default function TopicPage({ params }: PageProps) {
               className="mb-6"
               items={[
                 { label: "northstar", href: "/" },
-                { label: "Topics" },
+                { label: "Topics", href: "/topics" },
                 { label: topic.title },
               ]}
             />

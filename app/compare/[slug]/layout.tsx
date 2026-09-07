@@ -94,7 +94,7 @@ export default function CompareLayout({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
-              { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE_URL}/#explore` },
+              { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE_URL}/compare` },
               { "@type": "ListItem", position: 3, name: cmp.title, item: url },
             ],
           }),

@@ -63,7 +63,7 @@ export function CompareClient({
               className="mb-6"
               items={[
                 { label: "northstar", href: "/" },
-                { label: "Compare" },
+                { label: "Compare", href: "/compare" },
                 { label: cmp.title },
               ]}
             />

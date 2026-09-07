@@ -86,7 +86,7 @@ export default function TopicLayout({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
-              { "@type": "ListItem", position: 2, name: "Topics", item: `${SITE_URL}/#explore` },
+              { "@type": "ListItem", position: 2, name: "Topics", item: `${SITE_URL}/topics` },
               { "@type": "ListItem", position: 3, name: topic.title, item: url },
             ],
           }),

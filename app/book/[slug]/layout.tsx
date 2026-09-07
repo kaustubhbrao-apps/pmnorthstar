@@ -137,8 +137,8 @@ export default function BookLayout({
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
-              { "@type": "ListItem", position: 2, name: "Books", item: `${SITE_URL}/#books-section` },
-              { "@type": "ListItem", position: 3, name: book.category, item: `${SITE_URL}/#books-section` },
+              { "@type": "ListItem", position: 2, name: "Books", item: `${SITE_URL}/book` },
+              { "@type": "ListItem", position: 3, name: book.category, item: `${SITE_URL}/book` },
               { "@type": "ListItem", position: 4, name: book.title, item: url },
             ],
           }),

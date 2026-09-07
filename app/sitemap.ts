@@ -49,6 +49,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    // Section hubs. These are the crawl entry points for the topic,
+    // comparison and book detail pages — before they existed, comparisons
+    // had no internal link anywhere in the site's server-rendered HTML.
+    {
+      url: `${SITE_URL}/topics`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/compare`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/book`,
+      lastModified: booksUpdated,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
     {
       url: `${SITE_URL}/checkit`,
       lastModified: now,
