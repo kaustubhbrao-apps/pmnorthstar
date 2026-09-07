@@ -36,6 +36,10 @@ import { useUserStateContext } from "@/components/UserStateProvider";
 import { Footer } from "@/components/Footer";
 import { publishedTopics } from "@/data/topics";
 import { publishedComparisons } from "@/data/comparisons";
+// Lite twin — the full answers.ts carries 40 pre-rendered bodyHtml blobs
+// and this is a client component, so importing it here would ship them all.
+import { publishedAnswersLite } from "@/data/answersLite";
+import { YC_STUDY_SUMMARY as YC } from "@/data/yc-study-summary";
 // Type-only: the search itself runs server-side via /api/search, so none of
 // the corpora it matches against are imported here.
 import type { SearchResults } from "@/lib/search";
@@ -78,6 +82,7 @@ export default function HomeClient() {
   const topics = useMemo(() => publishedTopics(), []);
   const comparisons = useMemo(() => publishedComparisons(), []);
   const aiDecodedManifest = useMemo(() => publishedAIDecoded(), []);
+  const answers = useMemo(() => publishedAnswersLite(), []);
 
   // Lazy-init from localStorage so the home page doesn't flash light
   // when a user navigates here from a dark-mode page. SSR-safe: the
@@ -1109,6 +1114,58 @@ export default function HomeClient() {
 
               <div className="section-divider my-10" />
 
+              {/* Answers — question-shaped reference pages. Each card leads
+                  with the question as a visitor would type it, and shows the
+                  self-contained short answer beneath. */}
+              <SectionRow
+                title="Answers"
+                subtitle="Direct answers to the questions product people actually ask"
+                accentColor="#2563EB"
+              >
+                {answers.slice(0, 10).map((a) => (
+                  <div
+                    key={a.slug}
+                    className="playlist-card surface flex flex-col overflow-hidden flex-shrink-0 w-[280px] sm:w-[320px]"
+                  >
+                    <Link href={`/answers/${a.slug}`} className="p-4 sm:p-5 group flex-1 flex flex-col">
+                      <div className="flex-shrink-0">
+                        <span
+                          className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                          style={{ background: a.accentColor, color: "#ffffff", letterSpacing: "0.12em" }}
+                        >
+                          {a.category}
+                        </span>
+                        <p
+                          className="text-base sm:text-lg font-semibold leading-snug group-hover:underline"
+                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+                        >
+                          {a.question}
+                        </p>
+                      </div>
+                      <p className="text-sm mt-2 line-clamp-3" style={{ color: "var(--text-muted)" }}>
+                        {a.shortAnswer}
+                      </p>
+                    </Link>
+                    <div
+                      className="px-5 py-3 flex items-center justify-between"
+                      style={{ borderTop: "1.5px solid var(--card-border)" }}
+                    >
+                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Read answer</span>
+                      <ArrowUpRight size={14} strokeWidth={1.8} style={{ color: "var(--text-faint)" }} />
+                    </div>
+                  </div>
+                ))}
+              </SectionRow>
+
+              <div className="px-4 sm:px-6 mt-2 mb-8">
+                <Link href="/answers" className="btn-ghost inline-flex text-sm">
+                  See all {answers.length} answers
+                  <ArrowUpRight size={14} strokeWidth={1.8} className="ml-1" />
+                </Link>
+              </div>
+
+              <div className="section-divider my-10" />
+
               {/* AI Decoded Preview */}
               <SectionRow title="AI Decoded" subtitle="Demystifying AI for product managers" accentColor="#DB2777">
                 {aiDecodedManifest.map((a) => (
@@ -1202,6 +1259,106 @@ export default function HomeClient() {
                   </div>
                 ))}
               </SectionRow>
+
+              <div className="px-4 sm:px-6 mt-2 mb-8">
+                <Link href="/topics" className="btn-ghost inline-flex text-sm">
+                  See all {topics.length} topics
+                  <ArrowUpRight size={14} strokeWidth={1.8} className="ml-1" />
+                </Link>
+              </div>
+
+              <div className="section-divider my-10" />
+
+              {/* Compare — head-to-heads had no link anywhere in the
+                  homepage's server-rendered HTML before this, which is why
+                  Search Console reported them as "crawled, currently not
+                  indexed": nothing on the site pointed at them. */}
+              <SectionRow
+                title="Compare"
+                subtitle="Two companies, same market, opposite bets — each ending in a verdict"
+                accentColor="#F3123C"
+              >
+                {comparisons.slice(0, 10).map((c) => (
+                  <div
+                    key={c.slug}
+                    className="playlist-card surface flex flex-col overflow-hidden flex-shrink-0 w-[280px] sm:w-[320px]"
+                  >
+                    <Link href={`/compare/${c.slug}`} className="p-4 sm:p-5 group flex-1 flex flex-col justify-between">
+                      <div>
+                        <span
+                          className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
+                          style={{ background: c.accentColor, color: "#ffffff", letterSpacing: "0.12em" }}
+                        >
+                          {c.eyebrow}
+                        </span>
+                        <p
+                          className="text-base sm:text-lg font-semibold leading-snug group-hover:underline"
+                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+                        >
+                          {c.title}
+                        </p>
+                      </div>
+                      <p className="text-sm mt-3 line-clamp-2" style={{ color: "var(--text-muted)" }}>
+                        {c.verdict}
+                      </p>
+                    </Link>
+                    <div
+                      className="px-5 py-3 flex items-center justify-between"
+                      style={{ borderTop: "1.5px solid var(--card-border)" }}
+                    >
+                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Read comparison</span>
+                      <ArrowUpRight size={14} strokeWidth={1.8} style={{ color: "var(--text-faint)" }} />
+                    </div>
+                  </div>
+                ))}
+              </SectionRow>
+
+              <div className="px-4 sm:px-6 mt-2 mb-8">
+                <Link href="/compare" className="btn-ghost inline-flex text-sm">
+                  See all {comparisons.length} comparisons
+                  <ArrowUpRight size={14} strokeWidth={1.8} className="ml-1" />
+                </Link>
+              </div>
+
+              <div className="section-divider my-10" />
+
+              {/* Original research. Solid block rather than a card: it's the
+                  only page on the site carrying first-party data, and it was
+                  reachable only from the footer. */}
+              <div className="px-4 sm:px-6">
+                <Link
+                  href="/reports/startup-website-audit-2026"
+                  className="block rounded-xl p-5 sm:p-7 group transition-transform hover:-translate-y-0.5"
+                  style={{ background: "#0F9D58" }}
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p
+                        className="font-mono text-sm font-bold uppercase mb-2"
+                        style={{ color: "#fff", opacity: 0.75, letterSpacing: "0.16em" }}
+                      >
+                        Original research
+                      </p>
+                      <p
+                        className="text-xl sm:text-2xl font-semibold leading-snug mb-1.5"
+                        style={{ color: "#fff", letterSpacing: "-0.02em" }}
+                      >
+                        We audited {YC.audited} YC startup homepages
+                      </p>
+                      <p className="text-sm" style={{ color: "#fff", opacity: 0.85 }}>
+                        35 technical checks each. Median {YC.median}/100, top score {YC.topScore}.
+                        Every company named and ranked.
+                      </p>
+                    </div>
+                    <ArrowUpRight
+                      size={24}
+                      strokeWidth={1.8}
+                      className="shrink-0 transition-transform group-hover:translate-x-1"
+                      style={{ color: "#fff" }}
+                    />
+                  </div>
+                </Link>
+              </div>
 
               <div className="section-divider my-10" />
 

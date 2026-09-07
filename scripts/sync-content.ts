@@ -239,6 +239,44 @@ export const answerCategories = (now: Date = new Date()): string[] =>
 `;
   fs.writeFileSync(path.join(DATA, "answers.ts"), out, "utf8");
   console.log(`\u2713 data/answers.ts (${entries.length} entries)`);
+
+  // Lite twin, same reason as caseStudiesLite: the homepage is a client
+  // component, so importing answers.ts there would ship 40 pre-rendered
+  // bodyHtml blobs (~200KB) to every visitor to render a row of cards
+  // that only needs the question and one line of answer.
+  const liteBody = entries
+    .map((e) => {
+      const d = e.data;
+      const fields: string[] = [];
+      fields.push(`    slug: ${ts(d.slug)}`);
+      fields.push(`    question: ${ts(d.question)}`);
+      fields.push(`    shortAnswer: ${ts(d.shortAnswer)}`);
+      fields.push(`    category: ${ts(d.category)}`);
+      fields.push(`    accentColor: ${ts(d.accentColor)}`);
+      if (d.publishedAt) fields.push(`    publishedAt: ${ts(d.publishedAt)}`);
+      return `  {\n${fields.join(",\n")},\n  }`;
+    })
+    .join(",\n");
+
+  const liteOut = `${HEADER}
+export interface AnswerLite {
+  slug: string;
+  question: string;
+  shortAnswer: string;
+  category: string;
+  accentColor: string;
+  publishedAt?: string;
+}
+
+export const answersLite: AnswerLite[] = [
+${liteBody},
+];
+
+export const publishedAnswersLite = (now: Date = new Date()): AnswerLite[] =>
+  answersLite.filter((a) => !a.publishedAt || new Date(a.publishedAt) <= now);
+`;
+  fs.writeFileSync(path.join(DATA, "answersLite.ts"), liteOut, "utf8");
+  console.log(`\u2713 data/answersLite.ts (${entries.length} entries)`);
 }
 
 // ─── COMPARISONS ────────────────────────────────────────────────────────

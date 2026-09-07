@@ -1,0 +1,298 @@
+// ⚠️  AUTO-GENERATED — DO NOT EDIT BY HAND.
+// Source of truth is content/. Run `npx tsx scripts/sync-content.ts`
+// to regenerate after editing markdown files.
+
+export interface AnswerLite {
+  slug: string;
+  question: string;
+  shortAnswer: string;
+  category: string;
+  accentColor: string;
+  publishedAt?: string;
+}
+
+export const answersLite: AnswerLite[] = [
+  {
+    slug: "aarrr-pirate-metrics",
+    question: "What are AARRR (pirate) metrics?",
+    shortAnswer: "AARRR is a five-stage funnel framework — Acquisition, Activation, Retention, Referral, Revenue — coined by Dave McClure. It gives a startup one metric per stage so problems can be located rather than guessed at. The order matters: fixing acquisition while retention leaks is the classic misuse.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "activation-vs-retention",
+    question: "What is the difference between activation and retention?",
+    shortAnswer: "Activation is a user reaching first value — the moment your product proves it works for them. Retention is them coming back after that. Activation is a one-time event you can design, retention is an ongoing verdict on whether the value holds. Fixing retention with an activation problem underneath never works.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "bottom-up-vs-top-down-sales",
+    question: "What is the difference between bottom-up and top-down sales?",
+    shortAnswer: "Bottom-up starts with individual users adopting a product and spreading it inside the company until a purchase becomes formality. Top-down starts with an executive buying for the organisation and rolling it out. Bottom-up needs a product one person can love; top-down needs a business case one executive can defend.",
+    category: "Growth",
+    accentColor: "#0F9D58",
+  },
+  {
+    slug: "build-vs-buy-decision",
+    question: "How do you make a build vs buy decision?",
+    shortAnswer: "Build what differentiates you, buy what doesn't. The test isn't cost — it's whether customers would ever choose you because of this component. Teams get burned by underestimating the permanent maintenance cost of building, and by buying the one thing that was actually their edge.",
+    category: "Strategy",
+    accentColor: "#F3123C",
+  },
+  {
+    slug: "dau-mau-ratio-explained",
+    question: "What is the DAU/MAU ratio and what is a good one?",
+    shortAnswer: "DAU/MAU divides daily active users by monthly active users to estimate how many days a month the average user shows up. 20% is a common baseline, 50%+ is exceptional. It only means something for products people should use daily — applying it to a tax product or a job board produces nonsense.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "freemium-vs-free-trial",
+    question: "Freemium vs free trial — which should you choose?",
+    shortAnswer: "A free trial gives full access for a limited time; freemium gives limited access forever. Trials suit products with fast, obvious value and a clear buying moment. Freemium suits products with network effects or slow-building value, and only works if the free tier costs you little to serve.",
+    category: "Growth",
+    accentColor: "#0F9D58",
+  },
+  {
+    slug: "horizontal-vs-vertical-saas",
+    question: "What is the difference between horizontal and vertical SaaS?",
+    shortAnswer: "Horizontal SaaS solves one function across every industry — CRM, payroll, ticketing. Vertical SaaS solves many functions for one industry, like software for dental practices or construction firms. Horizontal has a larger market and fiercer competition; vertical has a smaller ceiling and far better retention.",
+    category: "Strategy",
+    accentColor: "#F3123C",
+  },
+  {
+    slug: "how-many-users-for-user-research",
+    question: "How many users do you need for user research?",
+    shortAnswer: "Five to eight users per segment for qualitative usability work — that range surfaces most severe issues, and returns drop sharply after. Quantitative claims need hundreds. The mistake isn't sample size, it's using five interviews to justify a number instead of a direction.",
+    category: "Discovery",
+    accentColor: "#9B8FFF",
+  },
+  {
+    slug: "how-to-become-a-product-manager",
+    question: "How do you become a product manager without prior PM experience?",
+    shortAnswer: "Do the job before you have the title. Find product-shaped work in your current role — a problem you can research, define and get shipped — and build a track record of decisions with outcomes. Internal transfers are by far the most common route in, and the least discussed.",
+    category: "Role",
+    accentColor: "#DB2777",
+  },
+  {
+    slug: "how-to-say-no-to-stakeholders",
+    question: "How do you say no to stakeholders without damaging the relationship?",
+    shortAnswer: "Say no to the solution while taking the problem seriously. Most stakeholder requests are a proposed fix wrapped around a real pain — rejecting the fix while visibly capturing the pain preserves the relationship. Saying no to both is what makes people route around you.",
+    category: "Prioritisation",
+    accentColor: "#26A69A",
+  },
+  {
+    slug: "jobs-to-be-done-explained",
+    question: "What is jobs-to-be-done (JTBD)?",
+    shortAnswer: "Jobs-to-be-done says people don't buy products, they hire them to make progress in a situation. The unit of analysis is the job, not the customer — which is why demographic personas often mislead and why your real competitor is frequently a spreadsheet, a habit, or doing nothing at all.",
+    category: "Discovery",
+    accentColor: "#9B8FFF",
+  },
+  {
+    slug: "okrs-vs-kpis",
+    question: "What is the difference between OKRs and KPIs?",
+    shortAnswer: "KPIs are the numbers you watch continuously to know whether the business is healthy. OKRs are the ambitious, time-boxed changes you commit to this quarter. A KPI can run flat forever and still be doing its job; an OKR that doesn't move has failed. Most confusion comes from writing KPIs and calling them OKRs.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "product-manager-vs-product-owner",
+    question: "What is the difference between a product manager and a product owner?",
+    shortAnswer: "Product manager is a role covering strategy, discovery and outcomes. Product owner is a specific title from Scrum, responsible for the backlog and for representing requirements to the development team. In many companies one person does both; where they're split, the PO's scope is deliberately narrower.",
+    category: "Role",
+    accentColor: "#DB2777",
+  },
+  {
+    slug: "product-manager-vs-project-manager",
+    question: "What is the difference between a product manager and a project manager?",
+    shortAnswer: "A product manager is accountable for what gets built and whether it works for customers. A project manager is accountable for delivery — scope, schedule, dependencies and risk. One optimises for outcome, the other for predictable execution, and confusing them produces teams that ship on time to no effect.",
+    category: "Role",
+    accentColor: "#DB2777",
+  },
+  {
+    slug: "product-technical-debt",
+    question: "How should product managers think about technical debt?",
+    shortAnswer: "Technical debt is deliberate or accidental shortcutting that makes future changes slower. PMs should treat it as a tax on delivery speed rather than an engineering hobby — the question is never 'should we pay it down' but 'which debt is charging us the most interest right now'.",
+    category: "Prioritisation",
+    accentColor: "#26A69A",
+  },
+  {
+    slug: "rice-vs-ice-prioritization",
+    question: "RICE vs ICE — which prioritisation framework should you use?",
+    shortAnswer: "ICE scores Impact, Confidence and Ease; RICE adds Reach and swaps Ease for Effort, giving a value-per-unit-of-work score. Use ICE when you need to rank a backlog in an afternoon. Use RICE when reach genuinely varies between items and you need to defend the order to someone else.",
+    category: "Prioritisation",
+    accentColor: "#26A69A",
+  },
+  {
+    slug: "should-you-build-on-a-foundation-model",
+    question: "Should you build your product on a foundation model API?",
+    shortAnswer: "Almost always yes for the intelligence layer — training your own model rarely beats an API on cost or quality. The real question is what you own besides the model call, because that's the only part a provider shipping your feature natively can't take from you.",
+    category: "AI",
+    accentColor: "#2563EB",
+  },
+  {
+    slug: "what-does-a-product-manager-actually-do",
+    question: "What does a product manager actually do?",
+    shortAnswer: "A product manager decides what gets built and why, then makes sure it happens. Day to day that means research, prioritisation, writing, and a lot of alignment across engineering, design and the business. The role has no authority attached — influence comes from judgment and evidence.",
+    category: "Role",
+    accentColor: "#DB2777",
+  },
+  {
+    slug: "what-is-a-moat",
+    question: "What is a competitive moat?",
+    shortAnswer: "A moat is a structural advantage that makes your position harder to attack over time — network effects, switching costs, proprietary data, economies of scale, or brand. Features are not moats. If a well-funded competitor could copy it in a quarter, it's a lead, not a moat.",
+    category: "Strategy",
+    accentColor: "#F3123C",
+  },
+  {
+    slug: "what-is-a-north-star-metric",
+    question: "What is a north star metric?",
+    shortAnswer: "A north star metric is the single number that best captures the value your product delivers to customers. Good ones measure realised value, not activity — Spotify tracks time spent listening, not signups. It exists to align teams on one outcome, and there should only ever be one.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "what-is-a-prd",
+    question: "What is a PRD and what goes in one?",
+    shortAnswer: "A product requirements document states the problem, who has it, what success looks like, and what's in and out of scope. Its purpose is alignment before building, not documentation after. A PRD nobody argues with in review is usually too vague to be useful.",
+    category: "Discovery",
+    accentColor: "#9B8FFF",
+  },
+  {
+    slug: "what-is-a-product-roadmap",
+    question: "What is a product roadmap and how detailed should it be?",
+    shortAnswer: "A product roadmap communicates what you intend to build and why, over time. The useful version states problems and outcomes rather than dated features — because dated feature lists become promises, and promises made twelve months out are wrong in ways that damage trust when they change.",
+    category: "Prioritisation",
+    accentColor: "#26A69A",
+  },
+  {
+    slug: "what-is-a-technical-product-manager",
+    question: "What is a technical product manager?",
+    shortAnswer: "A technical product manager works on products whose users or building blocks are technical — APIs, infrastructure, developer tools, platforms. The difference isn't seniority or coding ability; it's that the customer is an engineer, so understanding their workflow requires real technical depth.",
+    category: "Role",
+    accentColor: "#DB2777",
+  },
+  {
+    slug: "what-is-a-viral-loop",
+    question: "What is a viral loop?",
+    shortAnswer: "A viral loop is a cycle where using the product causes existing users to bring new ones, who then repeat the cycle. It's measured by the viral coefficient (K) — new users generated per existing user per cycle. K above 1 compounds; below 1, it usefully lowers acquisition cost but doesn't grow on its own.",
+    category: "Growth",
+    accentColor: "#0F9D58",
+  },
+  {
+    slug: "what-is-an-ai-agent",
+    question: "What is an AI agent?",
+    shortAnswer: "An AI agent is a system that pursues a goal over multiple steps, choosing its own actions and using tools, rather than answering a single prompt. The distinguishing feature is autonomy over the sequence — the model decides what to do next, which is also where most of the product risk lives.",
+    category: "AI",
+    accentColor: "#2563EB",
+  },
+  {
+    slug: "what-is-an-mvp",
+    question: "What is an MVP (minimum viable product)?",
+    shortAnswer: "An MVP is the smallest thing that generates a real learning about whether people want what you're building. Viable means it delivers actual value to someone, not that it's technically functional — which is why a manual, unscalable process often makes a better MVP than a thin version of the full product.",
+    category: "Discovery",
+    accentColor: "#9B8FFF",
+  },
+  {
+    slug: "what-is-blitzscaling",
+    question: "What is blitzscaling?",
+    shortAnswer: "Blitzscaling is prioritising speed over efficiency in conditions of uncertainty, deliberately accepting waste and organisational chaos to win a market before competitors can. It's rational only when the market is genuinely winner-take-most and you have the capital to survive the burn.",
+    category: "Growth",
+    accentColor: "#0F9D58",
+  },
+  {
+    slug: "what-is-blue-ocean-strategy",
+    question: "What is blue ocean strategy?",
+    shortAnswer: "Blue ocean strategy means competing where competition doesn't exist yet — creating new demand rather than fighting for share in a saturated market. The mechanism is deliberately dropping attributes the industry treats as mandatory, and adding ones it ignores, so you're no longer comparable.",
+    category: "Strategy",
+    accentColor: "#F3123C",
+  },
+  {
+    slug: "what-is-churn-rate",
+    question: "What is churn rate and what counts as good?",
+    shortAnswer: "Churn rate is the share of customers or revenue lost in a period. Below roughly 1% monthly is strong for B2B SaaS; consumer subscription churn is routinely 5-8%. But the headline number matters far less than its shape — churn concentrated in month one is an onboarding problem, not a retention one.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "what-is-cohort-analysis",
+    question: "What is cohort analysis?",
+    shortAnswer: "Cohort analysis groups users by when they joined and tracks each group separately over time. It exists because aggregate metrics hide direction: total usage can grow while every individual cohort retains worse than the last. Cohorts are how you tell growth from churn masked by acquisition.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "what-is-continuous-discovery",
+    question: "What is continuous discovery?",
+    shortAnswer: "Continuous discovery is the practice of talking to customers every week, as an ongoing habit, rather than in project-shaped research phases. The premise is that a small weekly touchpoint compounds into judgment, while a research sprint every six months produces a report that ages before it's used.",
+    category: "Discovery",
+    accentColor: "#9B8FFF",
+  },
+  {
+    slug: "what-is-generative-engine-optimization",
+    question: "What is generative engine optimisation (GEO)?",
+    shortAnswer: "Generative engine optimisation is the practice of making your content likely to be surfaced and cited by AI assistants rather than ranked in a list of links. It overlaps heavily with good SEO, but optimises for being quotable and verifiable rather than for click-through.",
+    category: "AI",
+    accentColor: "#2563EB",
+  },
+  {
+    slug: "what-is-moscow-prioritization",
+    question: "What is MoSCoW prioritisation?",
+    shortAnswer: "MoSCoW sorts requirements into Must have, Should have, Could have and Won't have. It's a scoping tool for a fixed deadline, not a roadmap tool — its job is to establish what can be dropped when time runs short, which is why the Won't-have list is the most valuable part.",
+    category: "Prioritisation",
+    accentColor: "#26A69A",
+  },
+  {
+    slug: "what-is-network-effects",
+    question: "What are network effects?",
+    shortAnswer: "A network effect exists when a product becomes more valuable to each user as more people use it. It's the strongest form of defensibility because the advantage grows with scale, but many claimed network effects are actually local, weak, or just economies of scale wearing a better name.",
+    category: "Growth",
+    accentColor: "#0F9D58",
+  },
+  {
+    slug: "what-is-platform-risk",
+    question: "What is platform risk?",
+    shortAnswer: "Platform risk is the exposure a business carries when a critical part of its product, distribution or economics depends on a platform it doesn't control. The platform can change terms, absorb your feature, or cut access — and historically all three happen, usually at the worst moment.",
+    category: "Strategy",
+    accentColor: "#F3123C",
+  },
+  {
+    slug: "what-is-product-led-growth",
+    question: "What is product-led growth (PLG)?",
+    shortAnswer: "Product-led growth is a go-to-market model where the product itself drives acquisition, conversion and expansion — users try it before talking to anyone, and often before their employer knows. It works when time-to-value is short enough that a person can succeed alone, and fails badly when it isn't.",
+    category: "Growth",
+    accentColor: "#0F9D58",
+  },
+  {
+    slug: "what-is-product-market-fit",
+    question: "What is product-market fit?",
+    shortAnswer: "Product-market fit is the point where a market pulls your product out of you faster than you can supply it. It shows up as retention that flattens instead of decaying, users who complain when it breaks, and sales that get easier. It is a state you observe, not a milestone you declare.",
+    category: "Metrics",
+    accentColor: "#EA580C",
+  },
+  {
+    slug: "what-is-programmatic-seo",
+    question: "What is programmatic SEO?",
+    shortAnswer: "Programmatic SEO generates large numbers of landing pages from a structured dataset, each targeting a specific long-tail query. It works when you own data that genuinely answers those queries, and fails as thin-content spam when the pages are templates with the nouns swapped.",
+    category: "Growth",
+    accentColor: "#0F9D58",
+  },
+  {
+    slug: "what-is-rag",
+    question: "What is RAG (retrieval-augmented generation)?",
+    shortAnswer: "RAG retrieves relevant documents from your own data and puts them in the model's context before it answers, so responses are grounded in your sources rather than only in training data. It's the standard way to make a general model answer accurately about specific, private or recent information.",
+    category: "AI",
+    accentColor: "#2563EB",
+  },
+  {
+    slug: "what-is-the-innovators-dilemma",
+    question: "What is the innovator's dilemma?",
+    shortAnswer: "The innovator's dilemma is that well-run companies fail by doing exactly what good management prescribes — listening to their best customers, protecting margins, and investing in proven markets. Those behaviours make disruptive entrants look unattractive right up until they're unbeatable.",
+    category: "Strategy",
+    accentColor: "#F3123C",
+  },
+];
+
+export const publishedAnswersLite = (now: Date = new Date()): AnswerLite[] =>
+  answersLite.filter((a) => !a.publishedAt || new Date(a.publishedAt) <= now);

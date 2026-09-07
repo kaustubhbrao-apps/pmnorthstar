@@ -15,6 +15,7 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { CASE_STUDY_COUNT } from "@/data/inventory-counts";
 import { CHECKIT_WAR_LEADERBOARD, type LeaderboardEntry } from "@/data/checkit-leaderboard";
+import { YC_STUDY_SUMMARY as YC } from "@/data/yc-study-summary";
 import { DIMENSIONS } from "@/lib/checkit/dimensions";
 import { BAND_COPY } from "@/lib/checkit/types";
 import type { AuditResult, DimensionResult, Band } from "@/lib/checkit/types";
@@ -371,6 +372,45 @@ function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) 
             </p>
           </div>
         ))}
+      </div>
+
+      {/* The study ran these same 35 checks over 496 YC homepages. The
+          leaderboard below shows five sites; the report shows every one of
+          them, ranked — and it was reachable only from the footer and the
+          sitemap before this, despite being the one page here carrying data
+          that exists nowhere else. */}
+      <div className="max-w-3xl mx-auto">
+        <Link
+          href="/reports/startup-website-audit-2026"
+          className="block rounded-xl p-5 sm:p-6 group transition-transform hover:-translate-y-0.5"
+          style={{ background: "var(--brand-primary)" }}
+        >
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p
+                className="font-mono text-xs font-bold uppercase mb-2"
+                style={{ color: "#fff", opacity: 0.75, letterSpacing: "0.16em" }}
+              >
+                Original research
+              </p>
+              <p
+                className="font-display text-xl sm:text-2xl font-bold leading-snug mb-1.5"
+                style={{ color: "#fff", letterSpacing: "-0.02em" }}
+              >
+                We ran {YC.audited} YC startup homepages through CheckIt
+              </p>
+              <p className="text-sm" style={{ color: "#fff", opacity: 0.85 }}>
+                Median {YC.median}/100. Every company named and ranked, plus
+                per-check pass rates and the full method.
+              </p>
+            </div>
+            <ArrowRight
+              size={22}
+              className="shrink-0 transition-transform group-hover:translate-x-1"
+              style={{ color: "#fff" }}
+            />
+          </div>
+        </Link>
       </div>
 
       <div className="max-w-3xl mx-auto">
