@@ -355,7 +355,15 @@ h1, h2, h3, h4, h5, h6 {
 .section-divider {
   height: 1px;
   background: var(--text-primary);
-  margin: 0;
+  /* Editorial spacing, declared here rather than borrowed from a utility.
+     Matches what .my-10 was being overridden to, so the homepage keeps the
+     rhythm it has today. */
+  margin: 4.5rem 0;
+}
+@media (min-width: 768px) {
+  .section-divider {
+    margin: 6rem 0;
+  }
 }
 
 .star { color: var(--text-primary); }
@@ -405,24 +413,24 @@ html { transition: none; }
   scroll-snap-type: x proximity;
 }
 
-/* 2. Better Section Spacing (Breathing Room) */
-/* We intercept the existing Tailwind margin classes to enforce larger, editorial spacing globally */
-.mb-8 { 
-  margin-bottom: 3.5rem !important; 
-}
-.my-10 { 
-  margin-top: 4.5rem !important; 
-  margin-bottom: 4.5rem !important; 
-}
-.py-10 { 
-  padding-top: 4rem !important; 
-  padding-bottom: 4rem !important; 
-}
-@media (min-width: 768px) {
-  .mb-8 { margin-bottom: 5rem !important; }
-  .my-10 { margin-top: 6rem !important; margin-bottom: 6rem !important; }
-  .py-10 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
-}
+/* 2. Section spacing.
+   There used to be a block here that redefined the Tailwind utilities
+   .mb-8, .my-10 and .py-10 with !important, to "enforce larger, editorial
+   spacing globally" — mb-8 became 5rem at desktop rather than 2rem.
+   Hijacking a utility class breaks it everywhere it is used, and it was
+   used 39 / 10 / 47 times:
+
+   - Case study bodies render one block per paragraph, each carrying mb-8,
+     so every paragraph sat in 80px of blank page and a heading floated in
+     ~150px of it.
+   - Every `py-10 sm:py-14` and `py-10 sm:py-16` pair was dead. The base
+     !important outranks a responsive class that carries none, so the
+     larger value the author asked for at wider viewports never applied.
+
+   The utilities now mean what they say. The one place that genuinely
+   wanted the extra air — the homepage section rules — asks for it by
+   name below, at the same size it was rendering before, so the homepage
+   rhythm is unchanged. */
 
 /* ── SYSTEM-WIDE ENFORCEMENT ────────────────────────────────────────────── */
 /* Ensure the Analog Editorial aesthetic is strictly applied site-wide, 
@@ -460,6 +468,21 @@ html { transition: none; }
    stay in the comfortable 65-75 range. */
 .markdown-prose {
   max-width: 68ch;
+}
+/* Case study bodies split the article into one block per paragraph, and
+   each block used to carry `mb-8` — which the global editorial-spacing
+   override below turns into 5rem at desktop. That is section spacing
+   applied between every paragraph, so an article read as a series of
+   disconnected fragments with ~80px of blank page between each one, and
+   ~150px around a heading. Paragraph rhythm belongs at ~1.5em. */
+.case-para {
+  margin-bottom: 1.5em;
+}
+/* A block whose only content is a heading should hug the paragraph it
+   introduces rather than sit in the middle of two equal gaps. */
+.case-para:has(> h2:only-child),
+.case-para:has(> h3:only-child) {
+  margin-bottom: 0.4em;
 }
 .markdown-prose p {
   margin-bottom: 0;

@@ -337,7 +337,7 @@ export function CaseStudyClient({
                         />
                       ) : (
                         <div
-                          className="markdown-prose text-base sm:text-lg lg:text-xl leading-[1.85] mb-8"
+                          className="markdown-prose case-para text-base sm:text-lg lg:text-xl leading-[1.85]"
                           style={{ color: "var(--text-primary)", opacity: 0.9 }}
                           dangerouslySetInnerHTML={{ __html: marked.parse(p) as string }}
                         />
