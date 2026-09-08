@@ -10,7 +10,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 export const metadata: Metadata = {
   title: "Books — Product, Startup and Management Reviews",
   description:
-    "Every book on northstar, reviewed in full. Original long-form reviews of essential product management, startup and management books — key concepts, who each one is actually for, and what it pairs with. No affiliate-bait listicles.",
+    "Original long-form reviews of product, startup and management books — the argument, the key concepts, who each is for, and what to pair it with.",
   alternates: { canonical: `${SITE_URL}/book` },
   openGraph: {
     type: "website",
@@ -49,6 +49,35 @@ export default function BooksIndexPage() {
       shareTitle="Book reviews on northstar"
       shareText="Original long-form reviews of essential product, startup and management books."
     >
+      {/* CollectionPage + ItemList.
+          These three hubs exist so the detail pages have a crawl entry
+          point; without an ItemList an assistant still has to fetch the
+          hub and parse markup to learn what it contains. The list is the
+          page's whole substance, so it belongs in the structured data. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Books",
+            url: `${SITE_URL}/book`,
+            description: "Original long-form reviews of product, startup and management books.",
+            isPartOf: { "@type": "WebSite", name: "northstar", url: SITE_URL },
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: books.length,
+              itemListElement: books.map((x, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${SITE_URL}/book/${getBookSlug(x)}`,
+                name: x.title,
+              })),
+            },
+          }),
+        }}
+      />
+
       <section
         className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
         style={{ borderBottom: "1.5px solid var(--card-border)" }}

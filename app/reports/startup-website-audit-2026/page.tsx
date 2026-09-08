@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: {
     absolute: `We Audited ${S.audited} YC Startup Websites — What They Get Wrong (${S.ranAt.slice(0, 4)})`,
   },
-  description: `Original data: ${S.audited} Y Combinator startup homepages scored against 35 technical checks. Median ${S.median}/100. Every company named and ranked, plus per-check pass rates, the score distribution and the full method.`,
+  description: `Original data: ${S.audited} Y Combinator startup homepages scored against 35 technical checks. Median ${S.median}/100. Every company named and ranked.`,
   keywords: [
     "startup website audit",
     "YC startup websites",

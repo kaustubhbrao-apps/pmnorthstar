@@ -69,21 +69,35 @@ export default function AnswerPage({ params }: PageProps) {
       shareTitle={answer.question}
       shareText={answer.shortAnswer}
     >
-      {/* Structured data. QAPage carries the question/answer pair; FAQPage
-          covers the follow-ups. Both are what assistants and People-Also-Ask
-          read to lift a direct answer. */}
+      {/* Structured data.
+          This was QAPage, which is the wrong type: Google defines it as a
+          page carrying one question with *user-submitted* answers — a
+          community forum thread. These are single-author editorial, so the
+          page was declaring a format it does not have and was not eligible
+          for the rich result it was asking for. Article is the honest type,
+          with the question as the headline and the short answer as the
+          description — which is also the passage a model lifts. FAQPage
+          below still covers the follow-ups, which is its correct use. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "QAPage",
-            mainEntity: {
-              "@type": "Question",
-              name: answer.question,
-              text: answer.question,
-              answerCount: 1,
-              acceptedAnswer: { "@type": "Answer", text: answer.shortAnswer, url },
+            "@type": "Article",
+            headline: answer.question,
+            description: answer.shortAnswer,
+            url,
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+            datePublished: answer.publishedAt ?? answer.updatedAt,
+            dateModified: answer.updatedAt,
+            author: { "@type": "Organization", name: "northstar", url: SITE_URL },
+            publisher: { "@type": "Organization", name: "northstar", url: SITE_URL },
+            articleSection: answer.category,
+            inLanguage: "en",
+            isPartOf: {
+              "@type": "CollectionPage",
+              name: "Answers",
+              url: `${SITE_URL}/answers`,
             },
           }),
         }}

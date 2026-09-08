@@ -14,7 +14,7 @@ export const revalidate = 21600;
 export const metadata: Metadata = {
   title: "Answers — Straight Answers to Product Questions",
   description:
-    "Direct, no-preamble answers to the questions product people actually ask: north star metrics, RICE vs ICE, PLG, PM vs PO, JTBD, OKRs vs KPIs and more — each backed by real case studies.",
+    "Straight answers to the questions product people actually ask — north star metrics, RICE vs ICE, PLG, JTBD, OKRs — each backed by a real case study.",
   alternates: { canonical: `${SITE_URL}/answers` },
   openGraph: {
     type: "website",

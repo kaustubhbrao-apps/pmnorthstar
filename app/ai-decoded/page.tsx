@@ -19,7 +19,7 @@ export const revalidate = 21600;
 export const metadata: Metadata = {
   title: "AI Decoded — northstar",
   description:
-    "What's actually happening in AI, and what PMs, marketers, founders, and operators should do about it. Editorial commentary on AI launches, conferences, and tools. No hype, no fluff.",
+    "What is actually happening in AI and what PMs, founders and operators should do about it. Commentary on launches and tools. No hype, no fluff.",
   alternates: { canonical: `${SITE_URL}/ai-decoded` },
   openGraph: {
     type: "website",

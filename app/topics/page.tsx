@@ -15,7 +15,7 @@ export const revalidate = 21600;
 export const metadata: Metadata = {
   title: "Topics — Curated Product Case Study Collections",
   description:
-    "Every northstar topic in one place: curated collections of long-form product case studies grouped by theme — bootstrapped companies, comeback stories, D2C brands, pricing, growth loops and more.",
+    "Curated collections of long-form product case studies grouped by theme — bootstrapped companies, comeback stories, D2C brands, pricing and growth loops.",
   alternates: { canonical: `${SITE_URL}/topics` },
   openGraph: {
     type: "website",
@@ -44,6 +44,35 @@ export default function TopicsIndexPage() {
       shareTitle="Topics on northstar"
       shareText="Curated collections of long-form product case studies, grouped by theme."
     >
+      {/* CollectionPage + ItemList.
+          These three hubs exist so the detail pages have a crawl entry
+          point; without an ItemList an assistant still has to fetch the
+          hub and parse markup to learn what it contains. The list is the
+          page's whole substance, so it belongs in the structured data. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Topics",
+            url: `${SITE_URL}/topics`,
+            description: "Case studies grouped by the pattern they demonstrate.",
+            isPartOf: { "@type": "WebSite", name: "northstar", url: SITE_URL },
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: topics.length,
+              itemListElement: topics.map((x, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${SITE_URL}/topics/${x.slug}`,
+                name: x.title,
+              })),
+            },
+          }),
+        }}
+      />
+
       <section
         className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
         style={{ borderBottom: "1.5px solid var(--card-border)" }}

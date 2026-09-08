@@ -14,7 +14,7 @@ export const revalidate = 21600;
 export const metadata: Metadata = {
   title: "Compare — Head-to-Head Product Breakdowns",
   description:
-    "Every northstar comparison in one place. Two companies, the same market, opposite bets — broken down side by side on strategy, model, execution and outcome, with a verdict on which call held up.",
+    "Two companies, same market, opposite bets — compared side by side on model, positioning, execution and outcome, each ending in a verdict.",
   alternates: { canonical: `${SITE_URL}/compare` },
   openGraph: {
     type: "website",
@@ -37,6 +37,35 @@ export default function CompareIndexPage() {
       shareTitle="Comparisons on northstar"
       shareText="Head-to-head product breakdowns: two companies, the same market, opposite bets."
     >
+      {/* CollectionPage + ItemList.
+          These three hubs exist so the detail pages have a crawl entry
+          point; without an ItemList an assistant still has to fetch the
+          hub and parse markup to learn what it contains. The list is the
+          page's whole substance, so it belongs in the structured data. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Compare",
+            url: `${SITE_URL}/compare`,
+            description: "Two companies in the same market that made opposite bets, each ending in a verdict.",
+            isPartOf: { "@type": "WebSite", name: "northstar", url: SITE_URL },
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: comparisons.length,
+              itemListElement: comparisons.map((x, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${SITE_URL}/compare/${x.slug}`,
+                name: x.title,
+              })),
+            },
+          }),
+        }}
+      />
+
       <section
         className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
         style={{ borderBottom: "1.5px solid var(--card-border)" }}
