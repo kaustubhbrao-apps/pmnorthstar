@@ -84,6 +84,63 @@ export default function StartupWebsiteAuditReport() {
         }}
       />
 
+      {/* Every audited company as structured data.
+          The names are already in the rendered table, but as table cells
+          they carry no machine-readable relationship to their score. This
+          emits the full ranked list as a Dataset + ItemList, so a crawler
+          or an assistant answering "how did <company> score" can read the
+          company, its domain, its rank and its number without parsing
+          layout — and can cite the row anchor for that company directly.
+          ~496 entries, which is the point: the value of this page is the
+          completeness of the list. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Dataset",
+            name: `CheckIt scores for ${S.audited} Y Combinator startup homepages (${S.ranAt})`,
+            description: `Every audited company, named and ranked. Each homepage was fetched once on ${S.ranAt} and scored 0-100 across 35 technical checks in seven weighted dimensions. Median ${S.median}, mean ${S.mean}.`,
+            url: `${SITE_URL}${URL_PATH}`,
+            dateCreated: S.ranAt,
+            creator: { "@type": "Organization", name: "northstar", url: SITE_URL },
+            license: `${SITE_URL}/about`,
+            measurementTechnique: "Automated static analysis of the public homepage",
+            variableMeasured: {
+              "@type": "PropertyValue",
+              name: "CheckIt score",
+              minValue: 0,
+              maxValue: 100,
+              description: "Weighted total across 35 technical checks",
+            },
+            hasPart: {
+              "@type": "ItemList",
+              name: "Ranked scores",
+              numberOfItems: S.rows.length,
+              itemListOrder: "https://schema.org/ItemListOrderDescending",
+              itemListElement: S.rows.map((r, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${SITE_URL}${URL_PATH}#${r.slug}`,
+                item: {
+                  "@type": "Organization",
+                  name: r.name,
+                  url: `https://${r.domain}`,
+                  identifier: r.batch,
+                  subjectOf: {
+                    "@type": "Rating",
+                    ratingValue: r.score,
+                    bestRating: 100,
+                    worstRating: 0,
+                    ratingExplanation: `CheckIt score for ${r.domain}, ${S.ranAt}`,
+                  },
+                },
+              })),
+            },
+          }),
+        }}
+      />
+
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section
         className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
@@ -421,7 +478,10 @@ export default function StartupWebsiteAuditReport() {
                 </thead>
                 <tbody>
                   {S.rows.map((r, i) => (
-                    <tr key={r.slug}>
+                    /* id per row so a single company is deep-linkable —
+                       /reports/startup-website-audit-2026#didit — which is
+                       what a citation of one company's score can point at. */
+                    <tr key={r.slug} id={r.slug}>
                       <td
                         className="py-2.5 px-4 font-mono text-xs align-middle"
                         style={{ color: "var(--text-faint)", borderBottom: "1px solid var(--card-border)" }}

@@ -81,6 +81,28 @@ function buildLlmsFull() {
     out += `${a.body}\n\n---\n\n`;
   });
 
+  // 6. Original research — the full ranked table.
+  // The report page renders all of these, but an assistant asked "how did
+  // <company> score" has to fetch and parse a 1.3MB page to find one row.
+  // Here it is as flat text in the file assistants are pointed at, with the
+  // anchor to cite. Assistants are already this site's largest referrer, so
+  // this is the channel where the completeness of the list is worth most.
+  out += `## Original research: YC startup website audit (${YC_STUDY.ranAt})\n\n`;
+  out += `We fetched the homepage of ${YC_STUDY.audited} recent Y Combinator companies once on ${YC_STUDY.ranAt} `;
+  out += `and scored each 0-100 across 35 technical checks in seven weighted dimensions. `;
+  out += `Mean ${YC_STUDY.mean}, median ${YC_STUDY.median}, 10th-90th percentile ${YC_STUDY.p10}-${YC_STUDY.p90}. `;
+  out += `${YC_STUDY.unreachable} of ${YC_STUDY.attempted} did not respond and are excluded.\n\n`;
+  out += `A score measures one page's technical fundamentals on one day. It is not a judgement of the `;
+  out += `company, the product or the team, and several of the lowest-scoring sites belong to companies `;
+  out += `doing extremely well.\n\n`;
+  out += `Full report, method and per-check pass rates: ${SITE}/reports/startup-website-audit-2026\n`;
+  out += `Cite an individual company at ${SITE}/reports/startup-website-audit-2026#<slug>\n\n`;
+  out += `Rank | Company | Domain | Batch | Score | Anchor\n`;
+  YC_STUDY.rows.forEach((r, i) => {
+    out += `${i + 1} | ${r.name} | ${r.domain} | ${r.batch} | ${r.score} | #${r.slug}\n`;
+  });
+  out += `\n---\n\n`;
+
   fs.writeFileSync(path.join(PUBLIC, "llms-full.txt"), out, "utf8");
   console.log("✓ public/llms-full.txt generated successfully.");
 }
