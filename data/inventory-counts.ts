@@ -11,4 +11,4 @@ export const TOPIC_COUNT = 14;
 export const COMPARISON_COUNT = 29;
 export const AI_DECODED_COUNT = 29;
 export const DRILL_COUNT = 31;
-export const ANSWER_COUNT = 40;
+export const ANSWER_COUNT = 72;

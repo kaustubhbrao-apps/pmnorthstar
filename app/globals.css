@@ -491,3 +491,99 @@ html { transition: none; }
   font-style: italic;
   opacity: 0.9;
 }
+
+/* Answers body copy.
+   The Answers pages were rendering with class "answer-prose", which was
+   never defined — so headings inside the injected bodyHtml fell back to
+   the CSS reset and read as plain paragraphs, and paragraphs had no
+   spacing at all. Every answer page was affected. */
+.answer-prose > * + * {
+  margin-top: 1.15em;
+}
+.answer-prose p {
+  color: var(--text-primary);
+}
+.answer-prose h2 {
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  color: var(--text-primary);
+}
+.answer-prose h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--text-primary);
+}
+.answer-prose ul {
+  list-style-type: disc;
+  padding-left: 1.4em;
+}
+.answer-prose ol {
+  list-style-type: decimal;
+  padding-left: 1.4em;
+}
+.answer-prose li {
+  margin-bottom: 0.4em;
+}
+.answer-prose li > p {
+  margin-top: 0;
+}
+.answer-prose strong {
+  font-weight: 700;
+}
+.answer-prose em {
+  font-style: italic;
+}
+.answer-prose a {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.answer-prose a:hover {
+  color: var(--brand-hover);
+}
+.answer-prose blockquote {
+  border-left: 3px solid var(--brand-primary);
+  padding-left: 1em;
+  font-style: italic;
+  opacity: 0.9;
+}
+.answer-prose code {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 0.9em;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+/* Comparison tables appear in several answers. Wrapped in its own
+   scroll container so a wide table never makes the page scroll
+   sideways on a phone. */
+.answer-prose table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+.answer-prose th,
+.answer-prose td {
+  text-align: left;
+  padding: 0.6em 0.9em;
+  border-bottom: 1px solid var(--card-border);
+  vertical-align: top;
+}
+.answer-prose th {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}

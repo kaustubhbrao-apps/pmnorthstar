@@ -5464,7 +5464,7 @@ The most efficient growth never shows up as a line item. The companies in this c
 
 ---
 
-## Answers (40)
+## Answers (72)
 
 ### What are AARRR (pirate) metrics?
 AARRR is a five-stage funnel framework — Acquisition, Activation, Retention, Referral, Revenue — coined by Dave McClure. It gives a startup one metric per stage so problems can be located rather than guessed at. The order matters: fixing acquisition while retention leaks is the classic misuse.
@@ -5513,6 +5513,40 @@ Retention is harder because it isn't a moment you can engineer. It's the accumul
 Split your cohort at the activation event and plot both retention curves. If activated users retain well and unactivated users don't, you have an activation problem, and your job is onboarding. If activated users also decay, you have a retention problem, and no amount of onboarding polish will save you — the product isn't delivering repeat value yet.
 
 Teams get this backwards constantly, shipping re-engagement emails to people who never understood the product in the first place.
+
+---
+
+### What is the difference between ARR and MRR?
+MRR is monthly recurring revenue — the predictable subscription revenue you bill in a month. ARR is annual recurring revenue, usually just MRR multiplied by twelve. The distinction that matters is not the timeframe but the word recurring: one-off fees, services and usage overages belong in neither, and including them is the most common way these numbers get inflated.
+
+## The mechanical difference
+
+MRR is the sum of recurring subscription revenue normalised to a month. An annual contract of 12,000 contributes 1,000 of MRR, not 12,000 in the month it was signed. ARR is that MRR times twelve.
+
+Because ARR is derived, the two never disagree. Choosing between them is a matter of contract length: monthly-billing businesses talk in MRR because that is the rhythm of the business, and businesses selling annual enterprise contracts talk in ARR because a single deal would make MRR lurch.
+
+## What does not belong in either
+
+This is the whole game. Recurring means contractually repeating without a new sales decision.
+
+- **One-time setup and implementation fees** are not recurring, however reliably new customers pay them.
+- **Professional services** are not recurring. A services line can be a healthy business — it is just not the thing a revenue multiple is being applied to.
+- **Hardware** sold alongside a subscription is a one-time sale.
+- **Usage overages above a committed minimum** are not recurring until they are contracted.
+
+Every one of these gets quietly folded in when a number needs to look larger, and each makes the resulting figure less predictive of next year.
+
+## Movement is the informative part
+
+A single ARR figure tells you size. The decomposition tells you health, and it has four components: **new** from new customers, **expansion** from existing customers buying more, **contraction** from downgrades, and **churn** from departures.
+
+Two companies at 10M ARR can be entirely different businesses. One added 4M new and lost 1M — growing but leaking. The other added 1M new and 2M expansion with almost no churn, which is the profile of a product that gets more valuable the longer it is used. Rippling's compound-startup strategy is essentially a bet on the second shape: sell one product, expand into the rest of the payroll and IT stack inside the same customer.
+
+## Why the run rate misleads at the edges
+
+ARR assumes today's book repeats. That assumption is weakest exactly when it matters most — right after a large deal lands, right before a large renewal, and in any business with concentrated customers. A company at 10M ARR where one customer is 3M of it does not have 10M of predictable revenue; it has a renewal conversation that decides a third of the company.
+
+Zoho's decades of profitable growth without outside capital came from treating recurring revenue as something to be earned every year rather than a number to be maximised for a fundraise.
 
 ---
 
@@ -5568,6 +5602,45 @@ And who owns it in two years? Built components need a permanent owner. If you ca
 
 ---
 
+### What is bundling and unbundling in product strategy?
+Bundling combines several capabilities into one offering; unbundling splits a capability out of an incumbent bundle and does it much better alone. Startups typically unbundle to get a wedge, then re-bundle as they grow — the cycle is real, but the failure mode is unbundling your own product for internal reasons and calling it strategy.
+
+## The cycle
+
+An incumbent assembles many capabilities into a bundle. Because it must serve all of them, none is outstanding. A new entrant picks one, makes it dramatically better, and wins the customers for whom that capability is the point. As the entrant grows, it adds adjacent capabilities and becomes a bundle. Somebody unbundles it.
+
+This is not a law, but it recurs often enough to be a useful lens on where a market is in its life.
+
+## Why unbundling works as a wedge
+
+Bundles defend with switching costs and integration, not with quality of any single part. That is the seam. A focused product only needs to be better at one thing than a bundle can afford to be — and it usually can be, because the bundle's roadmap is split across a dozen priorities.
+
+The entrant's advantage is not being smarter. It is having a narrower obligation.
+
+Zoom entered a market with many well-funded conferencing products by being obsessively good at one thing: joining a call working, every time, quickly. Everything else was secondary, and the incumbents could not match the focus because their conferencing was one module inside a suite.
+
+## Why re-bundling follows
+
+Focus that wins a wedge eventually caps it. Once you have most of the customers who care intensely about that one capability, growth means either raising prices or selling more to the same people.
+
+Rippling's compound-startup approach makes the re-bundling explicit — payroll, devices, identity and benefits sold as one because the same underlying employee record powers all of them. That is the strong form: the pieces share a substrate and each addition makes the others better.
+
+The weak form is a set of products sharing only a brand and a bill. Customers detect this quickly, and the bundle discount becomes the only argument for it.
+
+## The trap: unbundling yourself
+
+The cycle describes what a **new entrant** does to an **incumbent's** bundle. It is not advice to split your own product.
+
+Foursquare separating check-ins into Swarm is the standard illustration: internally the two use cases were distinct, and to users it meant one habit now required two apps, with the friction landing entirely on the people who liked the product most. The reasoning was sound and the outcome was still bad, because users experience a split as a subtraction.
+
+Before splitting, ask whether the problem is genuinely that two audiences want different things — or that your own teams want clearer ownership. Only the first is a product reason.
+
+## Reading a market with the lens
+
+Ask what the dominant bundle is, and which part of it customers complain about while continuing to pay. That gap is where a wedge exists. Then ask what makes the bundle sticky — data, workflow, procurement, compliance — because that is what you will eventually have to overcome, and being better at one feature has never been sufficient on its own.
+
+---
+
 ### What is the DAU/MAU ratio and what is a good one?
 DAU/MAU divides daily active users by monthly active users to estimate how many days a month the average user shows up. 20% is a common baseline, 50%+ is exceptional. It only means something for products people should use daily — applying it to a tax product or a job board produces nonsense.
 
@@ -5588,6 +5661,51 @@ The reference points people quote: 20% is a reasonable consumer baseline, 50%+ p
 ## How to use it well
 
 Track it as a trend against your own history, segmented by cohort and platform. A ratio moving from 18% to 24% over two quarters tells you something real about whether recent work built habit. The absolute number compared to somebody else's absolute number usually tells you nothing at all.
+
+---
+
+### Should you fine-tune a model or use RAG?
+Use RAG when the model needs knowledge it does not have — documents, current data, anything that changes. Fine-tune when it needs a behaviour it will not follow reliably from a prompt — a format, a style, a narrow classification task. Knowledge problems are almost always RAG problems, and most teams reach for fine-tuning to solve one and are disappointed.
+
+## The distinction that decides it
+
+**RAG adds knowledge.** At request time you retrieve relevant documents and put them in the context, and the model answers from them. Knowledge is external, updatable and citable.
+
+**Fine-tuning adjusts behaviour.** You train on examples so the model reliably produces a particular shape of output — a format, a tone, a classification, a domain convention.
+
+Almost every question reduces to: is the problem that the model does not know something, or that it does not behave how you want?
+
+## When RAG is right
+
+- The information changes. Policies, prices, inventory, docs.
+- The information is private and per-customer.
+- You need citations. Users need to see where an answer came from, and a fine-tuned model cannot tell you.
+- The corpus is large. Retrieval scales with a vector store; training does not scale with corpus size the same way.
+- You need to remove something. Deleting a document removes its influence immediately, which matters for correction and for compliance.
+
+That last point is underrated. A fine-tuned model that learned something wrong requires retraining to unlearn it.
+
+## When fine-tuning is right
+
+- **Format compliance.** You need exact structured output every time and prompting gets you to 95%.
+- **A narrow, high-volume classification.** A small fine-tuned model can be far cheaper and faster than a large model with a long prompt.
+- **A style or voice** that is tedious to specify and easy to demonstrate.
+- **Latency and cost pressure** where a smaller model, tuned, matches a bigger one prompted.
+- **Domain convention** — a specialist register that prompting keeps drifting away from.
+
+## Try prompting properly first
+
+A significant share of fine-tuning projects are solving a prompt problem. Before training anything: give clear instructions, provide several examples in context, constrain the output format explicitly, and break the task into steps.
+
+This is not a fallback — it is the cheapest experiment available, it takes hours instead of weeks, and the resulting prompt is a better specification of what you wanted than the fine-tune would have been.
+
+## The maintenance difference
+
+RAG's ongoing cost is retrieval quality: chunking, embeddings, ranking, and keeping the index fresh. It is real work, and it is the usual cause of a RAG system that answers fluently and wrongly.
+
+Fine-tuning's ongoing cost is that the artefact ages. Base models improve, and a fine-tune on last year's base is a decision you have to periodically remake. Products that fine-tuned heavily on early foundation models found the ground shifting under them as the base models absorbed the capability they had trained for.
+
+Start with RAG plus a well-built prompt. Fine-tune when you have a specific, measured behaviour problem that prompting demonstrably cannot fix — and keep evals running either way, because both approaches fail quietly.
 
 ---
 
@@ -5699,6 +5817,191 @@ Superhuman's product process is a useful thing to have studied for this reason: 
 
 ---
 
+### How do you build a referral program that works?
+Reward both sides, make the reward something that makes your product better rather than cash where possible, and place the ask at the moment of realised value rather than at signup. Most referral programmes fail because they ask too early, reward only the referrer, or attract people motivated by the incentive rather than the product.
+
+## Reward both sides
+
+A one-sided reward asks your user to spend social capital so that you and they benefit and their friend gets nothing. That framing is uncomfortable, and it shows in conversion.
+
+Two-sided changes the message from I get something if you sign up to here is something for both of us. Dropbox gave storage to referrer and referred alike; PayPal paid both. In both cases the invitation became a gift rather than a solicitation.
+
+## Make the reward native to the product
+
+Cash and gift cards work, in the narrow sense that they produce signups. They also select for people whose motivation is the cash, and those users churn quickly and refer more people like themselves. The programme grows a population that is expensive and worthless at the same time.
+
+Product-native rewards — more storage, an extra seat, an unlocked capability, extended access — filter for people who want the product. They are usually cheaper for you, and they make the referred user's first experience better, which raises the chance they refer someone in turn.
+
+## Time the ask to realised value
+
+The single most common design error is asking at signup. The user has not yet decided whether they like the thing you are asking them to recommend.
+
+Place the ask immediately after a success: a project completed, a file shared, a first payment received, a milestone reached. Calendly's growth works partly because the ask is structural rather than prompted — every meeting link sent is an exposure at exactly the moment the tool has just been useful.
+
+## Reward on activation, not on signup
+
+Whatever action triggers the payout will be optimised by people who want the payout. Pay on account creation and you will get farmed accounts. Pay on a meaningful action — activation, first transaction, thirty days retained — and the incentive points at the outcome you actually want.
+
+This also protects the referrer relationship. Nobody wants to be told their friend signed up but the reward is withheld; state the condition plainly up front.
+
+## Measure the right things
+
+- **Share of new users from referral**, not the raw referral count.
+- **Retention of referred users versus other channels.** Referred users often retain better; if yours retain worse, the incentive is attracting the wrong people.
+- **Cost per activated referred user**, compared against your other channels. A referral programme is an acquisition channel and should be judged against the alternatives.
+- **Participation rate.** If 2% of users ever refer anyone, the problem is the ask or the timing, not the reward size.
+
+## When not to build one
+
+If your retention curve does not flatten, a referral programme accelerates the leak. Referral amplifies whatever the product already does — it makes a good product spread and a mediocre one reach its ceiling faster while burning goodwill.
+
+Fix retention first. A programme launched on a product people quietly abandon converts the most valuable thing you have, your users' willingness to vouch for you, into nothing.
+
+---
+
+### How do you prepare for a product manager interview?
+Prepare four things: a structured approach to product-sense questions, a way to reason about metrics out loud, two or three of your own stories told in detail, and genuine knowledge of the company's product. Most candidates over-prepare frameworks and under-prepare their own examples, and the examples are what actually differentiate.
+
+## The question types
+
+**Product sense.** Design something for someone, improve an existing product, decide between options. Testing whether you think about users before features.
+
+**Analytical / metrics.** A number moved, work out why. Or: what would you measure for this feature. Testing whether you can decompose a metric and reason about causes.
+
+**Execution.** Prioritisation, tradeoffs, what you would cut. Testing judgment under constraint.
+
+**Behavioural.** Your actual past. Testing whether the answers above describe things you have really done.
+
+**Strategy**, at senior levels. Should the company enter this market, how should it respond to a competitor.
+
+## Structure without recitation
+
+You need enough structure to stay organised out loud and not so much that you sound like you are filling in a form. A workable spine for product sense:
+
+1. Clarify the goal and constraints. Ask one or two real questions, not five stalling ones.
+2. Pick a user segment and say why that one.
+3. Name their problems, then pick the one worth solving.
+4. Propose two or three genuinely different solutions.
+5. Choose, with a stated reason.
+6. Say how you would measure it, and what would tell you that you were wrong.
+
+Step six is the differentiator. Almost nobody volunteers the conditions under which their idea fails, and it is the most senior thing you can do in an interview.
+
+## Your stories matter more than your frameworks
+
+Prepare two or three situations in genuine detail: the context, what you actually decided, what the tradeoff was, what happened, what you would do differently. Interviewers probe, and stories rehearsed at headline level collapse on the second follow-up question.
+
+Include one where you were wrong. Candidates avoid these and the avoidance is obvious; a well-told failure with a real lesson is more convincing than another success.
+
+The most useful preparation is to write the stories out and then delete the parts where you sound blameless.
+
+## Know the product properly
+
+Use it. Sign up, complete the core flow, hit a rough edge. Then form an opinion you can defend about one thing you would change and why — including who it would be worse for, since every change has a loser.
+
+Candidates who have clearly not used the product are memorable in the wrong way, and the bar here is low enough that clearing it is genuinely differentiating.
+
+## Reason out loud on metrics questions
+
+When asked why a number dropped, resist guessing. Segment it: is it all users or one group, one platform, one geography, one channel. Is it a measurement change or a behaviour change. Is it seasonal.
+
+Working through the decomposition audibly is the answer. Intercom's jobs-to-be-done thinking is useful background here — the strongest candidates keep returning to what the user was trying to accomplish rather than to the feature under discussion.
+
+---
+
+### How do you price a product?
+Price against the value the customer receives, not against your costs and not against a competitor's list price. Pick a value metric that grows as the customer gets more out of the product, then set the level by testing willingness to pay in the segment you actually want. Most products are underpriced, and the usual cause is founders projecting their own price sensitivity onto buyers.
+
+## Three approaches, only one of which is usually right
+
+**Cost-plus** — compute your costs, add a margin. Defensible for commodities and almost meaningless for software, where marginal cost approaches zero and the price would be arbitrary anyway.
+
+**Competitive** — anchor to what similar products charge. Fast, and it hands the most powerful lever in your business to a company whose costs, customers and strategy you do not know.
+
+**Value-based** — price against the value the customer receives. Harder, requires actually understanding your buyer, and is the only one of the three that can capture what you are worth.
+
+## Structure before level
+
+Two decisions, in order.
+
+**The value metric.** What you charge by. The test is whether it rises as the customer gets more value. Seats work when value scales with team size. Transactions work when value scales with volume. A flat monthly fee works when neither varies much, and it caps you at the value of your smallest customer.
+
+Stripe's percentage-of-transaction model is the clean case: a customer processing more money is getting more value, and pays proportionally, with no renegotiation and no tier cliff.
+
+**The level.** Once the metric is right, the number is a narrower question — and one you can test.
+
+## Packaging is where segments get separated
+
+Tiers exist to let different segments self-select. The mistake is building tiers around arbitrary feature groupings rather than around what distinct segments actually need.
+
+Canva's freemium split works because the free tier delivers genuine value to individuals, and the paid tier is organised around things teams and businesses need — brand consistency, collaboration, asset management. The line falls where the segments naturally divide, so upgrading feels like outgrowing rather than being blocked.
+
+The failing version withholds something the free tier obviously ought to have. Users experience that as hostility, and it poisons the upgrade rather than motivating it.
+
+## Why most products are underpriced
+
+Founders and PMs anchor on their own willingness to pay, which is systematically lower than that of a business buyer solving an expensive problem. A tool saving a team twenty hours a month is not competing with other tools' prices; it is competing with the cost of twenty hours.
+
+Zerodha ran the opposite play deliberately — a flat, radically low fee that was a strategic weapon rather than an underestimation, aimed at a segment incumbents could not profitably serve. That works when low price is the strategy. It is very different from a low price arrived at through nervousness.
+
+## Testing before committing
+
+Ask existing customers what they would do at a higher price and you will get a hypothetical. Better signals:
+
+- Raise the price for new customers only and watch conversion, not opinion.
+- Offer an annual prepay discount and see who takes it — a proxy for confidence in the product.
+- Run price differences by segment or geography where legitimate.
+- Watch which tier people actually pick when the middle option changes.
+
+And revisit it. Pricing set at launch and never touched is pricing set by a company that no longer exists, for a product that has since become more valuable.
+
+---
+
+### How do you run a good customer interview?
+Ask about specific past behaviour, not hypothetical futures. Tell me about the last time you had this problem produces evidence; would you use a feature that does X produces politeness. Keep the interview to one story told in detail, resist pitching your idea, and stop talking — the useful material is almost always in the pause you were tempted to fill.
+
+## The one rule that carries most of the value
+
+**Ask about the past, not the future.**
+
+Would you use a tool that automatically categorised your expenses? Almost everyone says yes. It costs nothing to agree, the described product sounds pleasant, and the respondent would like to be helpful.
+
+Tell me about the last time you categorised expenses. Now you get a real story: when it happened, what triggered it, what they used, where they gave up, whether they finished. Buried in that story is whether the problem is frequent enough and painful enough to be worth solving — which is the thing you came to find out and the thing no hypothetical can tell you.
+
+## Questions that work
+
+- **Tell me about the last time you…** — the opener for almost every interview.
+- **Walk me through what you did.** Step by step, in order.
+- **What did you do before that? And after?** The surrounding steps are where unmet needs hide.
+- **What were you using instead?** Everyone has a current solution, even if it is a spreadsheet, a colleague, or doing nothing.
+- **How often does that happen?** Frequency separates an annoyance from a business.
+- **What did you do when that went wrong?** Workarounds are the most reliable signal of real pain — people only build them for problems that matter.
+
+## Questions to cut
+
+- Would you use…? and Do you think…? — both are hypotheticals.
+- How much would you pay for this? People cannot answer this accurately about a product that does not exist.
+- Do you like this idea? Nobody tells a stranger their idea is bad.
+- Any question naming your feature before they have described their problem.
+
+## Recruit for the situation, not the title
+
+The most common recruiting mistake is screening on job title. What predicts a useful interview is whether the person is currently in the situation your product addresses. Somebody who wrestled with this problem last month is worth ten people with the right title who have never encountered it.
+
+Headspace's early design work targeted a specific struggle — people who wanted to meditate and found existing tools intimidating and faintly embarrassing. That is a situation, and it made a far better screen than any demographic.
+
+## Handling the urge to pitch
+
+You will want to explain what you are building. The moment you do, the interview is over — everything after it is feedback on your idea from someone being nice to you.
+
+If you must, save it for the last five minutes and mark it in your notes as a separate mode. Everything said after the demo goes in a different bucket from everything said before.
+
+## Telling a useful interview from a pleasant one
+
+A useful interview contains at least one thing you did not expect and did not want to hear. If every conversation confirms your plan, you are either asking leading questions or talking to people who like you. Intercom's jobs-to-be-done practice earned its reputation by producing exactly those uncomfortable findings — customers repeatedly described hiring the product for a job the team had not designed for.
+
+---
+
 ### How do you say no to stakeholders without damaging the relationship?
 Say no to the solution while taking the problem seriously. Most stakeholder requests are a proposed fix wrapped around a real pain — rejecting the fix while visibly capturing the pain preserves the relationship. Saying no to both is what makes people route around you.
 
@@ -5721,6 +6024,45 @@ Record the decision and the reasoning somewhere the person can see it. A written
 WhatsApp's decade of refusing ads, games and gimmicks is the extreme version — a product identity maintained by saying no far more often than yes, at real short-term revenue cost. Linear's refusal to become configurable is the same discipline at a smaller scale.
 
 The pattern in both: the no was principled and consistent, so it read as strategy rather than obstruction. A no that changes based on who's asking is just politics, and people learn to escalate instead of asking.
+
+---
+
+### Should a product manager go into management or stay an individual contributor?
+They are different jobs at the same level, not a ladder. Management means your output is your team's output — hiring, coaching, unblocking, allocating. The senior IC track means you keep doing product work on the hardest problems. Choose on which set of daily activities you find energising, not on which sounds more senior.
+
+## They are different jobs, not sequential ones
+
+The framing of management as promotion is a leftover from organisations with no other way to increase someone's scope. In a company with a genuine principal track, both are ways to have more impact and they require almost disjoint skills.
+
+**Management:** hiring, developing people, allocating work, resolving conflict, representing the team upward, and building the conditions in which other people do good product work. Your output is what your team produces.
+
+**Senior IC:** the hardest, most ambiguous, most cross-cutting product problems. The ones spanning teams, or that nobody has been able to make progress on. Your output is still your own thinking.
+
+## The honest daily comparison
+
+A manager's day is largely conversations: one-to-ones, hiring loops, calibration, unblocking, stakeholder alignment. Progress is measured in weeks and is mostly other people's.
+
+A principal's day still contains research, analysis, writing and product decisions. The problems are harder and slower, but the feedback loop is direct.
+
+The choice reduces to something quite personal: does it satisfy you when someone on your team ships something good, roughly as much as when you ship something good yourself? Genuine yes points to management. Reluctant yes usually does not survive contact with the job.
+
+## What each requires that people underestimate
+
+**Management** requires tolerating being one step removed, and the specific discomfort of watching someone solve a problem differently — and often more slowly — than you would have, and not taking it back. The instinct to take it back is what makes strong ICs into weak managers.
+
+**Senior IC** requires influence without authority, permanently. You have no reporting line and must move an organisation by argument, evidence and relationships. Reddit's reliance on volunteer moderators is a structural analogue: enormous influence, no authority, and it works only through credibility.
+
+## The company question comes first
+
+Before choosing, find out whether the IC track is real where you are. Ask what levels exist above principal, who currently holds them, what they work on, and how their compensation compares to directors.
+
+If the answer is thin, the IC track is aspirational rather than actual, and choosing it means choosing to plateau or to move. That is a legitimate choice, but make it knowingly.
+
+## Switching is normal
+
+People move between the tracks more often than the ladder diagram suggests, and doing so is not a demotion. The version that goes badly is switching by attrition — staying in management long past the point of disliking it because leaving looks like failure.
+
+Deciding deliberately, and saying plainly that the other work suits you better, costs very little and is generally respected.
 
 ---
 
@@ -5751,6 +6093,35 @@ JTBD is a discovery lens, not a planning system. Teams that convert it into a ri
 
 ---
 
+### What is a good LTV to CAC ratio?
+LTV:CAC compares the gross profit a customer generates over their lifetime to what it cost to acquire them. Around 3:1 is the common benchmark — below 1:1 you lose money on every customer, and far above 3:1 usually means you are underspending on growth rather than winning. The ratio is only as honest as the retention assumption inside LTV.
+
+## The calculation, and the part everyone fudges
+
+**CAC** is total sales and marketing spend in a period divided by new customers acquired in that period. Include salaries, not just ad spend — a team of five running content is a real acquisition cost.
+
+**LTV** is average gross profit per customer per period, divided by the churn rate for that period. The division is where the fiction enters. If you have twelve months of data and you divide by a 2% monthly churn rate, you are asserting the average customer stays fifty months — thirty-eight months longer than your product has existed. Early-stage LTV is a projection wearing the costume of a measurement.
+
+## Why 3:1
+
+It is a heuristic, not a law. The logic: at 1:1 you have exactly recovered acquisition cost and funded none of the engineering, overhead or support that made the product exist. Roughly three times gives room for those costs plus margin. Below about 1.5:1 most businesses cannot grow without continuously raising money to fund the gap.
+
+MoviePass is the cautionary version. Ten dollars a month against customers who saw several twenty-dollar films made the ratio permanently negative, and volume made it worse rather than better — every new subscriber deepened the loss. No amount of growth fixes an inverted ratio, because growth is the thing multiplying it.
+
+## Ratios lie in three specific ways
+
+**Blended CAC hides a broken channel.** Averaging cheap organic signups with expensive paid ones produces a comfortable number that conceals a paid channel losing money. Segment by channel or the ratio tells you nothing you can act on.
+
+**Cohort effects get averaged away.** Your first customers were enthusiasts who retained well. Later cohorts, acquired through broader channels, often churn faster. A blended LTV built on early cohorts overstates every customer you will acquire next year.
+
+**A pandemic or a spike gets extrapolated.** Peloton read an extraordinary demand surge as the new baseline, which flattered every forward-looking unit economic it had. The ratio was accurate about a moment and wrong about the future.
+
+## Using it well
+
+Compute it by channel and by cohort, use gross profit, and pair it with payback period. Then treat the number as a decision aid for how much to spend, not as a score. The ratio's real job is answering one question — should we put more money into this channel — and it answers that well as long as you refuse to average away the segments where the answer is no.
+
+---
+
 ### What is the difference between OKRs and KPIs?
 KPIs are the numbers you watch continuously to know whether the business is healthy. OKRs are the ambitious, time-boxed changes you commit to this quarter. A KPI can run flat forever and still be doing its job; an OKR that doesn't move has failed. Most confusion comes from writing KPIs and calling them OKRs.
 
@@ -5773,6 +6144,132 @@ The second failure is the opposite: objectives so aspirational they can't be evi
 Satya Nadella's cloud-first turnaround at Microsoft is a useful illustration of scale. The objective was a genuine change of direction, and the key results were unambiguous and countable — Azure revenue, commercial cloud run rate — not "improve cloud perception". People could tell whether it was working.
 
 Amazon's working-backwards method solves the same problem from the other end: writing the press release first forces you to state the outcome in a way that can later be checked. Whatever the framework, the discipline is identical — commit to a number that can embarrass you.
+
+---
+
+### Should you focus on paid or organic acquisition?
+Paid buys immediate, controllable volume and stops the moment you stop paying. Organic compounds and cannot be switched on quickly. The honest answer for most companies is paid to learn and organic to grow — use paid channels to find which message and segment works, then build the compounding channel around what you learned.
+
+## Rent versus own
+
+**Paid** is rented distribution. You buy attention, and it arrives fast, predictably and in whatever quantity you can afford. You can target precisely and turn it up or down this afternoon. When you stop, it stops entirely — nothing accumulates.
+
+**Organic** is owned distribution. Content, SEO, community, word of mouth, product-led loops. Slow to start, hard to control, and each unit of work keeps returning value long after it was done.
+
+The comparison is not which is better. It is what each is for.
+
+## Paid is a research instrument
+
+The most valuable use of a small paid budget early on is not the customers it brings. It is what it tells you.
+
+You control who sees which message, so you can test positioning, segments, price framing and offers in days rather than quarters. Which headline converts, which audience is cheapest to reach, which objection kills the click — all of it is learnable for a few thousand in spend and is exactly what organic channels take six months to reveal.
+
+Then take the winning message and build the compounding channel around it.
+
+## Organic compounds and cannot be rushed
+
+HubSpot's inbound approach is the long-form version: build a library that answers what your buyers are searching for, and each article keeps working indefinitely. Zapier's integration pages and Airbnb's location pages are the programmatic version, where the content grows with the business rather than with a writing team.
+
+The catch is timeline. These take months to accumulate authority and traffic, which means the decision to invest has to be made well before the need is urgent. Companies routinely reach for paid precisely at the moment when a channel started a year earlier would be carrying them.
+
+## The economics diverge over time
+
+Paid has a floor set by auction dynamics, and the floor rises as more competitors bid. Your cost per acquisition generally gets worse with scale, not better, because you exhaust the cheapest audiences first.
+
+Organic has a high fixed cost and a marginal cost that falls. The tenth article is cheaper to produce than the first and benefits from the authority the first nine built.
+
+This is why paid-only businesses hit a wall: growth requires more spend, spend gets less efficient, and the ratio compresses until it inverts.
+
+## A workable sequence
+
+1. **Learn with paid.** Small budget, structured tests, focused on message and segment.
+2. **Build the owned asset around what worked.** Content, product loops, community.
+3. **Keep paid running where the maths works**, by channel and cohort — not blended.
+4. **Watch the share of new users from owned channels.** If it is not rising over quarters, the compounding asset is not compounding.
+
+The failure mode on each side is symmetrical. Paid-only businesses have no asset and pay more each year for the same growth. Organic-only businesses are slow and frequently learn the wrong lesson slowly, because they never ran a controlled test of anything.
+
+---
+
+### What are the product manager career levels?
+The common ladder runs associate PM, PM, senior PM, then a split into group PM or principal PM, and above that director, VP and CPO. What changes across levels is not the amount of work but the size and ambiguity of the problem you are handed — juniors are given a defined problem, seniors are given an outcome, and leaders are given a market.
+
+## The ladder
+
+**Associate PM.** Given a defined problem and often a defined solution. Learning the mechanics — writing specs, running rituals, working with engineering and design. Success is reliable execution.
+
+**Product manager.** Owns a feature area. Given a problem, expected to find the solution. Success is shipping things that move a metric.
+
+**Senior PM.** Owns a substantial area with real business consequences. Given an outcome, expected to work out which problems are worth solving to reach it. Success is judgment — including the things they decided not to build.
+
+**Group PM / principal PM.** The fork. Group PMs manage PMs and own several areas. Principals stay individual contributors and take the hardest, most cross-cutting problems. Same level, different work.
+
+**Director, VP, CPO.** Increasingly about strategy, organisational design and allocation. At this level you are deciding what the product organisation is for, and how many people work on what.
+
+## What actually changes
+
+Not workload. **Ambiguity.**
+
+A junior PM is told the problem. A PM is told the outcome. A senior PM is told the goal and works out which outcomes matter. A director decides which goals the organisation should have.
+
+This is why the most common promotion failure is doing more of the previous level's work exceptionally well. Being the fastest executor does not demonstrate you can handle a vaguer brief, and vague briefs are the entire content of the next rung.
+
+## The IC and management split
+
+Linear's product culture is a useful illustration of the principal archetype at company scale — sustained, opinionated product judgment applied over years, which is a different skill from running a team.
+
+The two tracks diverge more than titles suggest. A group PM's output is their team's output, and their day is spent on hiring, unblocking, coaching and prioritising across people. A principal's output is still their own thinking, applied to problems nobody else can make progress on. People who are excellent at one are often mediocre at the other, and the ladder exists so that neither is forced into the wrong one to keep progressing.
+
+Satya Nadella's turnaround at Microsoft is a leadership-level version: the substantive work was changing what the organisation believed and rewarded, which is not product management in any recognisable form.
+
+## The uncomfortable part
+
+Promotion is gated by available scope. If your company has no larger ambiguous problem to hand you, you can perform perfectly and not be promoted — not unfairness, just an absence of room.
+
+That is worth knowing early, because the honest options are to create scope where none was assigned, wait for the company to grow into it, or move. The one that does not work is doing the current job harder.
+
+---
+
+### What should a product manager do in their first 90 days?
+Spend the first month learning rather than proposing — talk to customers, read support tickets, use the product until you hit its rough edges, and find out how decisions actually get made. Then ship one small useful thing to establish credibility, and only after that propose a direction. New PMs who arrive with a strategy in week two are usually wrong and always resented.
+
+## Days 1-30: learn, and resist proposing
+
+**Talk to customers.** Ten conversations in the first month. Not demos — ask about their work and where the product fails them.
+
+**Read support tickets.** A few hundred. It is the least glamorous and highest-yield activity available, and it will contradict at least one thing you were told in onboarding.
+
+**Use the product as a customer.** Sign up fresh, pay if you can, go through the whole flow. Note every point of friction, because in three months you will have stopped noticing them.
+
+**Learn how decisions actually get made.** Not the documented process — the real one. Who has to be convinced, what evidence moves them, where things quietly die.
+
+**Read the graveyard.** Ask what has been tried and abandoned, and why. This is the single best defence against proposing something that failed for a reason still true.
+
+## Days 31-60: one small useful thing
+
+Pick something small, visible and genuinely useful, and ship it. Not a strategic initiative — a fix, a clarification, a piece of friction removed.
+
+The purpose is credibility. You want the team's first experience of you to be that things get slightly better, not that there is a new person with opinions. This is also where you learn how the machine actually works: how long a change really takes, where it gets stuck, who has to sign off.
+
+Choose something the engineers already wanted to do. You get the win and they get the thing they have been asking for.
+
+## Days 61-90: form a view and say it
+
+Now you have earned the right to a direction. Write it down: what you believe the biggest opportunity is, what evidence you have, what you would stop doing to pursue it.
+
+Include the second part. A proposal that only adds is not a strategy, and the willingness to name what you would drop is what distinguishes a plan from a wish.
+
+Then socialise it before presenting it. The people who will have to support it should have seen it and had a chance to argue with it in private first.
+
+## The mistakes that cost the most
+
+**Arriving with the answer.** Every product has obvious improvements that were tried. Digg's v4 is the cautionary tale about changing something users depended on without understanding why it was as it was.
+
+**Ignoring the graveyard.** Repeating a failed initiative with fresh enthusiasm is the fastest way to spend all your credibility at once.
+
+**Overcorrecting into pure listening.** Ninety days of learning with nothing shipped reads as passivity. The small win in month two exists to prevent this.
+
+**Rewriting process first.** New PMs often reach for rituals because process is the thing you can change without domain knowledge. It is also the change teams resent most from someone who has not yet been useful.
 
 ---
 
@@ -5907,6 +6404,170 @@ Write down what remains if your provider ships your headline feature next month.
 
 ---
 
+### When should you use a survey instead of interviews?
+Interviews tell you what is happening and why; surveys tell you how many. Use interviews when you do not yet know what the options are, and surveys once you do — a survey can only measure the answers you already thought to offer. Running the survey first is the most common and most expensive ordering mistake in product research.
+
+## The two methods answer different questions
+
+**Interviews** answer what and why. Where do people get stuck, what were they actually trying to do, what did they try before you. Small samples work because obstacles are shared — if four of six people cannot find the export button, the seventh will not change your mind.
+
+**Surveys** answer how many and how much. What share of users hit this problem, which of these three options is most preferred, how does this differ by segment. They need enough respondents for the differences to exceed the noise.
+
+## Why the order is nearly always discover, then measure
+
+A closed survey question can only return the options you wrote. If you ask why did you cancel and list price, missing features, switched to a competitor and other, you will get a tidy distribution — even when the real answer is that the onboarding email went to spam and half of them never activated. That reason was not on the list, so it appears nowhere, and other is the box people tick on the way out.
+
+Interviews first tell you what the options are. The survey then tells you how big each one is. Reversed, the survey manufactures a finding out of your own assumptions and hands it back to you with a percentage attached, which is far more persuasive than it deserves to be.
+
+## When a survey genuinely is the right first move
+
+- You need to **size** something you already understand well.
+- You need to **segment** — the same known question across enough respondents to compare groups.
+- You need a **tracked measure** over time, asked identically each period.
+- The population is large and geographically spread and you need coverage, not depth.
+
+Superhuman's product-market-fit survey is a good example of the format used correctly: one question, asked at scale, tracked over time, on a topic the team already understood qualitatively. The number was a thermometer, not a discovery tool.
+
+## Writing a survey that does not lie to you
+
+**Ask about behaviour, not intent.** How many times did you do X last week beats how likely are you to do X.
+
+**One idea per question.** Was the setup fast and easy is two questions and gets one confused answer.
+
+**Avoid leading framings.** How much did our new dashboard improve your workflow assumes the answer.
+
+**Always include an open-text box.** It is the only part of the instrument that can surprise you.
+
+**Watch who answers.** Surveys are answered disproportionately by your most engaged and most annoyed users. The quiet middle, which is usually the majority, is systematically underrepresented, and a survey that ignores this will overstate both enthusiasm and outrage.
+
+## The combination that works
+
+Interview six to eight people in a segment until the same obstacles repeat. Turn those obstacles into survey options. Field the survey to size them. Then go back and interview the group whose answer surprised you.
+
+That loop is what continuous discovery looks like in practice, and neither method does the job alone.
+
+---
+
+### What are vanity metrics?
+A vanity metric is a number that reliably goes up, looks impressive, and changes no decision. Total registered users, cumulative downloads and pageviews are the classic examples — they only ever increase, so they can never tell you something is wrong. The test is simple: if a metric moving could not change what you do next week, it is vanity.
+
+## The defining property
+
+Vanity metrics are not simply metrics that are wrong. They are metrics that are structurally incapable of delivering bad news.
+
+Cumulative totals are the purest form. Total downloads since launch, total accounts created, total documents ever uploaded — each rises monotonically regardless of whether the product is thriving or dying. A team watching one of these has built a dashboard that cannot alarm them.
+
+The second form is the impressive-but-disconnected number: raw traffic for a product with no conversion path, social followers for a business with no acquisition from social, press mentions. Real numbers, genuinely large, attached to nothing.
+
+## The replacement, metric by metric
+
+| Vanity | Actionable replacement |
+|---|---|
+| Total registered users | Weekly active users, by cohort |
+| Cumulative downloads | Activation rate — share reaching first value |
+| Pageviews | Conversion rate on the path that matters |
+| Total revenue to date | Net revenue retention |
+| Social followers | Referral traffic that converts |
+| Number of features shipped | Share of users touching each feature |
+
+The pattern: replace a total with a rate, and an aggregate with a cohort.
+
+## Why smart teams keep them anyway
+
+Not stupidity — incentives. Vanity metrics are excellent for fundraising, recruiting and press, all of which are real needs. The failure is not reporting a big cumulative number externally; it is letting that number back inside and steering by it.
+
+Clubhouse is the clearest case. Downloads, waitlist size and invite scarcity were spectacular and widely reported, and none of them measured whether people came back after the novelty passed. The metrics that would have shown the problem — cohort retention, session frequency — were available the whole time and told a different story than the one everyone was watching.
+
+MySpace and Evernote both stayed comfortable on totals while the underlying engagement thinned. Totals were still setting records on the way down.
+
+## The one-line test
+
+For every number on your dashboard, ask: **if this doubled, what would we do? If it halved, what would we do?**
+
+Two blanks mean the metric is decoration. Delete it — not because it is false, but because every metric on a dashboard costs attention, and attention spent on a number that cannot change your behaviour is attention not spent on one that can.
+
+---
+
+### What is the difference between vision, strategy and roadmap?
+Vision is the future state you are trying to create and rarely changes. Strategy is the choice of how to get there — which means choosing what not to do. Roadmap is the sequence of work implied by the strategy. Most companies that claim to lack a strategy actually have a vision and a roadmap with nothing in between, which is why their roadmap is a wish list.
+
+## The three layers
+
+**Vision** describes the world once you have succeeded. It is directional, durable and deliberately not measurable. Anyone should be able to design tools for merchants of every size, or every person has a private financial life that is not sold. Vision answers why this company exists and survives changes of leadership.
+
+**Strategy** is the chosen path. Which customers, which problem, which advantage, and — the load-bearing part — which attractive things you will not do. Strategy is where the actual decisions live.
+
+**Roadmap** is the sequenced consequence. It should be derivable from the strategy: someone who understood the strategy should find most of the roadmap unsurprising.
+
+## The missing middle
+
+The common failure is having layers one and three and nothing between them. The vision is inspiring, the roadmap is full, and no principle connects them — so every stakeholder request is equally admissible, because nothing in writing excludes anything.
+
+The diagnostic is simple. Take your strategy statement and ask which currently-requested feature it rules out. If the answer is none, you have a description of your ambitions rather than a strategy.
+
+WhatsApp is the sharpest illustration of the opposite. No ads, no games, no gimmicks was a strategy because it forbade specific, immediately lucrative things. It settled hundreds of roadmap arguments without any of them being escalated, and it cost real money to hold.
+
+## Strategy is subtraction
+
+Shopify's orientation toward merchants rather than consumers is a strategy in the strict sense: it makes an entire category of consumer-facing opportunity ineligible, however attractive individual examples look. Microsoft's cloud-first turnaround was a strategy because it demoted the business that had defined the company for two decades.
+
+Both are choices with a cost. That is how you recognise one.
+
+## What each layer is for, practically
+
+| Layer | Answers | Changes | Fails when |
+|---|---|---|---|
+| Vision | Why we exist | Rarely | It is a slogan nobody can act on |
+| Strategy | How we will win, and what we decline | Occasionally | It forbids nothing |
+| Roadmap | What we are doing and roughly when | Continuously | It is a list of stakeholder requests |
+
+## The test for a roadmap
+
+For each item, ask which part of the strategy it serves. Items that answer nothing are either strategy drift or an unwritten strategy the roadmap has been following instead of the stated one — and the second case is worth investigating, because the unwritten one may be the better strategy.
+
+---
+
+### What are LLM evals and why do AI products need them?
+Evals are a test suite for model behaviour — a fixed set of inputs with expected properties, run automatically so you can tell whether a prompt, model or retrieval change made things better or worse. They exist because LLM outputs are non-deterministic, so the alternative is a team trying a few examples by hand and forming an impression.
+
+## Why ordinary tests do not work
+
+A conventional test asserts an exact output. Model outputs vary between runs, and two different phrasings can both be correct, so equality assertions either fail constantly or get loosened until they assert nothing.
+
+Evals replace exact matching with property checking. Does the answer contain the right figure. Does it refuse when it should. Is it grounded in the retrieved documents. Is it under the length limit. Does it avoid the failure mode we saw last month.
+
+## The main kinds
+
+**Deterministic checks.** Cheap, fast, unambiguous. Valid JSON, required fields present, no forbidden strings, a specific number appears. Run these first — they catch a surprising share of real failures.
+
+**Reference-based.** Compare against a known good answer, exactly or by similarity. Works when there is a correct answer; useless for open-ended generation.
+
+**LLM-as-judge.** A model scores the output against a written rubric. Necessary for tone, helpfulness, and groundedness. Requires validation — sample the judge's scores against human labels until you trust the correlation, then re-check periodically.
+
+**Human review.** The most accurate and the least scalable. Reserve it for calibrating the automated layers and for the highest-stakes categories.
+
+## Building the first set
+
+Collect real failures. Every time someone reports a bad output, add the input to the eval set with a note on what was wrong. Within a few weeks you have a suite encoding your product's actual weaknesses, which is worth more than any generic benchmark.
+
+Include the boring cases too. Suites made only of adversarial edge cases fail to notice when the model gets worse at the ordinary path most users are on.
+
+## What evals protect you from
+
+**Prompt changes that fix one case and break four.** Extremely common, invisible without a suite, and the reason prompt work feels like whack-a-mole.
+
+**Silent model updates.** A provider ships a new version and behaviour shifts. Without evals you find out from users.
+
+**Retrieval regressions.** Someone changes chunking or the embedding model and groundedness quietly degrades while the answers still read fluently — the hardest failure mode to notice by eye.
+
+The 2026 wave of vibe-coded launches produced a recognisable pattern: products generated quickly, shipped confidently, with no systematic check on whether behaviour held up as they were changed. Evals are the difference between an AI feature you can modify and one you are afraid to touch.
+
+## The practical minimum
+
+A set of real inputs, a mix of deterministic and judged checks, run automatically on every change to prompt, model or retrieval, with results compared to the previous run. Then treat a score drop the way you would treat a failing test — as a blocker, not as a data point to discuss.
+
+---
+
 ### What does a product manager actually do?
 A product manager decides what gets built and why, then makes sure it happens. Day to day that means research, prioritisation, writing, and a lot of alignment across engineering, design and the business. The role has no authority attached — influence comes from judgment and evidence.
 
@@ -5937,6 +6598,136 @@ The Amazon working-backwards method captures the actual core: the PM's distincti
 ## The uncomfortable truth
 
 Most of the role is judgment under uncertainty, and judgment can't be delegated to a framework. The frameworks organise the thinking; they don't do it. That's why the job is hard to teach and why two PMs with identical processes produce completely different products.
+
+---
+
+### How do you run a good beta program?
+A beta exists to answer a specific question before general release — usually does this hold up in real conditions, not do people like it. Recruit for the situation you need represented rather than for enthusiasm, keep the group small enough to talk to individually, set an explicit end date, and decide in advance what result would make you not ship.
+
+## Start with the question
+
+A beta without a question becomes an indefinite early-access tier that nobody can close. Before inviting anyone, write down what you are trying to learn:
+
+- Does it hold up under real data volume and real edge cases?
+- Do people reach the core value without hand-holding?
+- Does it survive contact with the workflows around it?
+- Is the pricing comprehensible?
+
+Each of these implies a different participant list and a different definition of success. Trying to answer all four at once answers none of them.
+
+## Recruit against your instinct
+
+The people who volunteer loudest are the worst sample. They are tolerant of bugs, motivated to see you succeed, unusually technical, and delighted to be early — the four traits your general population will not have.
+
+Deliberately include:
+
+- People who evaluated you and chose something else.
+- People in the situation your feature addresses, whether or not they are excited about it.
+- At least a few who will be annoyed by the change.
+
+Digg's v4 rebuild is the case study in getting this wrong. The changes were tested and shipped, and the reaction from the actual power-user base — whose behaviour the redesign disrupted — was severe and immediate. A beta weighted toward people who liked the new direction would have confirmed the plan right up to launch.
+
+## Keep it small and talk to people
+
+The value of a beta is in conversation, not ticket volume. Twenty participants you speak with individually will teach you more than a thousand filing reports, because the thing you most need to learn — what they expected and did not get — rarely arrives as a bug report.
+
+Watch what they do, not only what they say. Instrument the beta the same way you would instrument production. The gap between reported enthusiasm and actual usage is usually the finding.
+
+## Set an end date and exit criteria
+
+Two things, written before you start:
+
+**An end date.** Betas without one drift into permanent limbo, where the feature is neither supported nor cancelled and nobody may plan around it.
+
+**Exit criteria, including a stop condition.** What result means ship, and what result means do not ship. A beta that can only conclude in shipping is a rollout with extra steps and a research budget attached.
+
+## Close it honestly
+
+Tell participants what you learned and what you decided, including when you decided against something they asked for. Beta participants are the highest-signal group you have, and how you close the loop determines whether they answer next time.
+
+Headspace's approach to a nervous, easily-put-off audience is the useful analogy: the design work assumed people would quietly leave rather than complain. In a beta, silence from a participant is data, and it usually means the same thing.
+
+---
+
+### What is a context window?
+The context window is the maximum amount of text — measured in tokens — a model can consider at once, covering the system prompt, conversation history, retrieved documents and the response. Larger windows are not automatically better: attention degrades across very long contexts, cost rises with every token, and filling a window is rarely a substitute for retrieving well.
+
+## What counts toward the limit
+
+Everything in the request, plus the response:
+
+- The system prompt.
+- Conversation history you replay each turn.
+- Retrieved documents.
+- Tool definitions and tool results.
+- The output the model generates.
+
+That last one catches people out. A window is shared between input and output, so a request that nearly fills it leaves no room for an answer.
+
+## Why bigger is not simply better
+
+**Cost scales with tokens.** Long context is charged on every request. A system that dumps 100,000 tokens of documents into each call has an expensive per-request floor whether or not the extra material was needed.
+
+**Latency scales too.** Time to first token grows with input length, and in an interactive product that is felt directly.
+
+**Attention is uneven.** Recall is strongest at the start and end of a long context and weakest in the middle. A crucial instruction placed in the centre of a very long prompt is genuinely more likely to be missed.
+
+**More context can mean worse answers.** Irrelevant material is a distraction, not neutral filler. Ten relevant paragraphs frequently beat two hundred mixed ones.
+
+## What this means for product design
+
+**Retrieve, do not stuff.** The job is finding the right context, not the most. Retrieval quality determines answer quality far more than window size does.
+
+**Manage conversation history deliberately.** Replaying the full transcript every turn grows cost linearly and eventually truncates. Summarise older turns, or keep a structured state and replay only what matters.
+
+**Place important things at the edges.** Instructions at the top, the most relevant retrieved document last, the question at the end.
+
+**Budget the window explicitly.** Decide how many tokens go to system prompt, history, retrieval and response, and enforce it. Systems without a budget fail unpredictably at the worst moment, when a user pastes something large.
+
+## The trend, and what it does not change
+
+Windows have grown by orders of magnitude, and each jump genuinely enables things that were awkward before — whole codebases, long documents, extended agent runs. Anthropic's and OpenAI's recent assistant platforms both lean on long context to hold multi-step work together.
+
+What has not changed is that context is a resource with a price, and that models reason better over well-selected material than over everything you have. Treat the window as a budget to spend carefully, not a container to fill.
+
+---
+
+### What is a growth loop and how is it different from a funnel?
+A funnel is linear — traffic enters at the top and some fraction converts, so more growth requires more input. A growth loop is circular: the output of one cycle becomes the input to the next, so each cohort of users produces the next one. Loops compound and funnels do not, which is why loop-driven companies keep growing when they stop spending.
+
+## The structural difference
+
+A **funnel** is a one-way path. Visitors arrive, some sign up, some activate, some pay. It is a conversion machine, and its output is entirely determined by its input. Double the growth means double the traffic, which usually means double the spend.
+
+A **loop** feeds itself. Each pass produces something that generates the next pass — a new user, a new page, more revenue to reinvest. Growth becomes a function of the existing base rather than of this month's budget.
+
+The practical consequence: turn off spend on a funnel business and growth stops immediately. Turn it off on a loop business and growth continues, more slowly.
+
+## The three common shapes
+
+**Viral loop.** A user's normal use of the product exposes another person to it, who signs up, and repeats. Dropbox's referral programme is the canonical version, though the more important detail is that the reward — storage — made the product better for both parties, so the loop strengthened retention instead of buying signups from people who wanted a gift card.
+
+**Content loop.** Usage generates pages, pages attract search or assistant traffic, that traffic produces users, who generate more pages. Airbnb's programmatic location pages and Zapier's integration pages are both this: the catalogue of content grows with the business rather than with a content team's headcount.
+
+**Paid loop.** Revenue from acquired customers funds acquiring more. It compounds only if payback is fast relative to your cash cycle — otherwise it is a funnel with a financing problem.
+
+## Why loops are hard
+
+They only compound above a threshold. A viral loop where each user brings 0.4 new users does not grow — it decays, just more slowly than no loop at all. Most referral features live in this range, which is why so many exist and so few matter.
+
+They also take time to show up. A funnel improvement is visible in a week. A loop improvement is visible over several cycles, and the cycle time is itself one of the variables you should be optimising — halving the time from signup to invitation matters as much as raising the invitation rate.
+
+## Where teams fool themselves
+
+**Drawing a funnel in a circle.** Adding an invite friends button to the end of onboarding does not create a loop unless invitations actually convert at a meaningful rate and the invited user is themselves likely to invite.
+
+**Ignoring saturation.** Every loop eventually saturates its addressable network. Growth slows not because the loop broke but because the people reachable by it have been reached, and the fix is a new loop, not a tuned old one.
+
+**Rewarding the wrong action.** A loop optimised for signups rather than activated users manufactures accounts that never come back and never propagate. The loop looks healthy in the numerator and is dead in the mechanism.
+
+## Where to start
+
+Pick one loop and make it work. Diagram it explicitly: this action, by this user, produces this artefact, which reaches this person, who becomes a user. Measure each arrow. Most loops fail at exactly one arrow, and it is almost never the one the team assumed.
 
 ---
 
@@ -6046,6 +6837,41 @@ Someone will always ask for dates, and often for legitimate reasons — a contra
 
 ---
 
+### What is a retention curve and what does it mean when it flattens?
+A retention curve plots what percentage of a cohort is still active at each period after signup. It always falls at first — the question is whether it flattens into a horizontal line, which means you have a group of users who keep coming back indefinitely. A curve that keeps declining toward zero means you have no retained base, only a leaky funnel.
+
+## How to read one
+
+Take everyone who signed up in a given week. Plot the share of them still active one week later, two weeks later, and so on. Repeat per cohort. Every curve starts at 100% and falls, because some portion of any signup group was never going to stay.
+
+The interesting part is what the line does after the initial drop.
+
+**A curve that flattens** means you found a group for whom the product genuinely works. Losses stop at some level and that level is your retained base — every new cohort adds to it. This is what growth compounds on.
+
+**A curve that keeps falling** means you are renting users, not keeping them. Growth is entirely a function of how fast you can pour new signups into the top, and it stops the moment acquisition spend stops.
+
+The distinction is more important than any single retention percentage, and it is the closest thing to a measurable definition of product-market fit.
+
+## Why the flattening level matters less than the flattening
+
+A curve that flattens at 15% is a real business if the market is large enough. A curve that declines to 40% and keeps declining is not, even though it looks better at every point in the first three months. Teams routinely celebrate the second and worry about the first, because the level is easy to see and the asymptote takes patience.
+
+Duolingo's growth is the flattening version taken seriously: the streak, the reminders and the gamification exist to move users into the flat part of the curve, and the company measures daily active learners rather than downloads precisely because downloads say nothing about whether the curve flattens.
+
+## The three ways teams fool themselves
+
+**Blending cohorts.** Averaging all users into one number hides that recent cohorts retain worse than early ones — the standard consequence of broadening acquisition. Always look at cohorts separately.
+
+**Choosing a generous definition of active.** If opening an email counts as active, every curve flattens. Define active as the action that delivers the product's value, then live with the uglier chart.
+
+**Reading a spike as a shape.** A surge of signups from one campaign or one news cycle creates a cohort that behaves nothing like the rest. Evernote's long decline was visible in cohort behaviour well before it was visible in totals, because the totals kept being topped up.
+
+## What to do about a curve that will not flatten
+
+Look at where users fall off, not at the aggregate. Almost always, retention problems are activation problems in disguise — the users who leave in week one never reached the moment the product becomes useful. Twitter's suggested-users fix was exactly this: new accounts that followed nobody had nothing to come back to, so the fix was at the start of the curve, not the end.
+
+---
+
 ### What is a technical product manager?
 A technical product manager works on products whose users or building blocks are technical — APIs, infrastructure, developer tools, platforms. The difference isn't seniority or coding ability; it's that the customer is an engineer, so understanding their workflow requires real technical depth.
 
@@ -6150,6 +6976,43 @@ Write the question down before you build. "Will small businesses pay for automat
 
 ---
 
+### What is an opportunity solution tree?
+An opportunity solution tree is a visual map connecting one desired outcome to the customer opportunities that could produce it, then to candidate solutions, then to the experiments that would test them. Its purpose is structural: it makes visible whether you are exploring several ways to reach an outcome or have quietly committed to one idea and are now only elaborating it.
+
+## The four layers
+
+**Outcome** sits at the root — one measurable change in customer behaviour, not a feature and not a revenue target. Increase the share of new teams that create a second document in week one.
+
+**Opportunities** branch beneath it: the needs, pains and desires that, if addressed, would move that outcome. These come from customer conversations and are phrased in the customer's terms. They must not name solutions.
+
+**Solutions** branch from each opportunity — several per opportunity, deliberately. One solution under an opportunity is a signal you skipped the divergent step.
+
+**Experiments** hang off the solutions: the cheapest thing that would tell you whether the solution addresses the opportunity.
+
+## The problem it exists to solve
+
+Most teams jump from a vague goal straight to a feature list, then spend the quarter refining the feature list. The tree makes that jump visible, because the missing middle layer is a literal gap in the diagram.
+
+It also forces a specific discipline: you compare solutions **within** an opportunity, not across the whole backlog. That is a better comparison, because two solutions to the same customer need are genuinely comparable, whereas ranking a billing fix against an onboarding change is mostly guesswork dressed as scoring.
+
+Intercom's jobs-to-be-done practice reaches the same place by a different route — describing what the customer was trying to accomplish before proposing what to build, so the eventual feature is one answer among several rather than the only one anyone considered.
+
+## Three ways teams build a tree that changes nothing
+
+**Solutions disguised as opportunities.** Add SSO is not an opportunity. The opportunity is that IT administrators cannot enforce access policy, and SSO is one of at least three responses to it. A tree full of feature names has already made every decision it was meant to open up.
+
+**A tree built once.** The value is in updating it as customer conversations arrive. A tree drawn in a workshop and left alone is a diagram of what you believed in January.
+
+**Opportunities invented in the room.** If the opportunities came from the team's imagination rather than from customers, the tree is a well-structured guess. It needs a real discovery cadence underneath it or it is just organised opinion.
+
+## What good looks like
+
+One outcome. Opportunities phrased as customer needs, each traceable to something a real person said. At least two or three solutions under any opportunity you are actively working. And experiments small enough that being wrong costs a week, not a quarter.
+
+Shopify's long-running orientation toward merchants over consumers works like a permanent root node: it settles which opportunities are even eligible for the tree, which is a question no prioritisation framework can answer for you.
+
+---
+
 ### What is blitzscaling?
 Blitzscaling is prioritising speed over efficiency in conditions of uncertainty, deliberately accepting waste and organisational chaos to win a market before competitors can. It's rational only when the market is genuinely winner-take-most and you have the capital to survive the burn.
 
@@ -6250,6 +7113,48 @@ The habit worth building: never report a metric to your team without asking whic
 
 ---
 
+### What is concept testing?
+Concept testing puts a description or rough representation of an unbuilt product in front of potential users to gauge whether the idea lands before you invest in building it. It is genuinely useful for catching comprehension failures and completely unreliable as a predictor of demand — people can tell you they do not understand something, but not whether they would eventually pay for it.
+
+## What it is
+
+Show people a concept — a description, a storyboard, a landing page, a clickable prototype — and collect their reactions before committing engineering to it. The cost is days rather than quarters, which is the appeal.
+
+The method is honest about being a proxy. The failure is treating the proxy as the thing.
+
+## What it reliably catches
+
+**Comprehension failures.** Ask someone to explain the product back to you in their own words. If they cannot, no amount of demand would have saved the launch, because they cannot buy something they cannot describe.
+
+**Wrong mental model.** People will tell you what they expect the product to do, and it is frequently not what you built it to do. This is cheap to learn now and brutal to learn after launch.
+
+**Category confusion.** If half the room thinks it competes with a product you consider unrelated, your positioning has a problem that is much easier to fix on a landing page than in the market.
+
+**Obvious dealbreakers.** Requires a bank login, needs my team to switch tools, only works on desktop — objections that arrive in the first five minutes and would have arrived in month six anyway.
+
+## What it cannot tell you
+
+Whether anyone will actually use it.
+
+Enthusiasm in a concept test is close to free. The respondent is not choosing between your idea and their current workflow, not paying, not migrating data, not persuading a colleague. Every one of those frictions is absent from the test and present in reality.
+
+Quibi is the standard illustration: the concept — premium short-form video for phones, with real stars — tested and pitched extremely well. What testing could not surface was whether anyone would add another paid subscription for a format they were already getting free. Google Glass has a similar shape, where the concept was thrilling in a demo and socially impossible in a café.
+
+## Better signals, roughly in order of strength
+
+1. **Money.** A pre-order, a deposit, a signed letter of intent. Costly to give, therefore meaningful.
+2. **A fake door.** A real entry point in your live product leading to a not-yet-available page. Measures behaviour among people in context. Show the people who clicked an honest message and let them opt into being told at launch — anything else is a trick your users will remember.
+3. **Concierge delivery.** Deliver the outcome manually for ten customers. Slow, unscalable, and the most reliable demand signal short of revenue.
+4. **Concept test.** Useful, cheap, and the weakest of the four.
+
+## How to run one properly
+
+Show the concept, then be quiet. Ask them to explain it back. Ask what it would replace and what they do today. Ask what would stop them.
+
+Then ask for a small commitment — an email for early access, a calendar slot, a deposit — and record who actually gives it. That single behavioural question is worth more than every rating scale on the page, because it is the only moment in the test where the answer costs the respondent anything.
+
+---
+
 ### What is continuous discovery?
 Continuous discovery is the practice of talking to customers every week, as an ongoing habit, rather than in project-shaped research phases. The premise is that a small weekly touchpoint compounds into judgment, while a research sprint every six months produces a report that ages before it's used.
 
@@ -6306,6 +7211,86 @@ None of this is a ranking algorithm you can reverse-engineer. There's no equival
 
 ---
 
+### What is the k-factor in viral growth?
+K-factor is the number of new users each existing user generates — invitations sent multiplied by the conversion rate of those invitations. Above 1.0 growth is self-sustaining and exponential; below 1.0 each cohort produces a smaller one and virality only amplifies other acquisition. Sustained k above 1 is genuinely rare, and cycle time matters nearly as much as the number.
+
+## The formula
+
+**k = invitations sent per user × conversion rate of an invitation**
+
+If the average user sends 8 invitations and 15% of recipients sign up, k is 1.2. Each generation of users produces a slightly larger next generation, and the base grows without any acquisition spend.
+
+At k below 1, each generation is smaller than the last. The series converges — you get a finite multiplier on whatever you acquired elsewhere, not perpetual growth.
+
+## What k above 1 actually requires
+
+Both terms have to be high simultaneously, and they tend to trade off. Making invitations easier raises the count and usually lowers the conversion rate, because low-effort invitations reach people with weaker interest. Making invitations targeted raises conversion and lowers the count.
+
+The products that sustained k above 1 for long typically had the invitation embedded in the core action rather than bolted alongside it. Hotmail's footer on every outgoing message is the origin story of the whole idea: the invitation was the product being used, so the count was enormous and cost the sender nothing. PayPal's referral bonus paid both sides in cash — expensive, deliberately so, and it bought a network that then defended itself.
+
+## Cycle time is the underrated variable
+
+K tells you the multiplier per generation. **Cycle time** tells you how long a generation takes. Growth rate depends on both, and cycle time is usually the cheaper one to improve.
+
+A user who invites on day one is worth far more than an identical user who invites on day thirty, because the compounding starts sooner and every subsequent generation shifts forward with them. Practical levers: prompt at the moment of first value rather than at signup, reduce the steps between deciding to invite and the invitation being sent, and make the invited person's first experience fast enough that they reach their own invitation point quickly.
+
+## Why k decays
+
+No loop holds its coefficient. Early users are enthusiasts with dense, relevant networks. Later users have thinner ones, and increasingly the people they would invite are already members. Saturation shows up as a falling conversion rate on invitations even though nothing about the product changed.
+
+This is why viral growth curves bend. The right response is a different loop, not a harder push on the old one.
+
+## Measuring it honestly
+
+Attribute properly — a signup that would have happened anyway does not belong in the numerator. Measure over a window long enough to capture delayed invitations. And segment: a blended k hides that one segment has a k of 2 and the rest have almost none, which is a much more actionable picture than the average.
+
+Dropbox's referral loop is often quoted for its headline growth figure; the more transferable lesson is that the reward was storage, so both parties got a better product and the invitation strengthened retention rather than trading it for reach.
+
+---
+
+### What is MCP (Model Context Protocol)?
+MCP is an open protocol that standardises how AI applications connect to external tools and data sources. Instead of every assistant building a bespoke integration for every system, a service exposes one MCP server and any compatible client can use it. It is plumbing — the value is the reduction from an N-times-M integration problem to N plus M.
+
+## The problem it solves
+
+Before a shared protocol, connecting AI applications to external systems was quadratic. Each assistant needed a custom integration with each service — five assistants and twenty services means a hundred integrations, each separately built and maintained.
+
+MCP makes it additive. A service builds one MCP server; an assistant builds one MCP client. Five plus twenty is twenty-five, and each side maintains one thing.
+
+This is the same structural argument as USB, or ODBC before it. Protocols win when the integration matrix gets embarrassing, and by 2026 the matrix was embarrassing.
+
+## What a server exposes
+
+**Tools** — actions the model can invoke. Create an issue, run a query, send a message. Each has a schema and a description written for a model to read.
+
+**Resources** — data the model can read. Files, records, documents, addressed by URI.
+
+**Prompts** — reusable templates the server offers for common tasks.
+
+The descriptions matter more than they look. The model chooses tools by reading them, so a badly described tool is an unused or misused one. Writing them is a product task rather than an engineering one, and it is regularly delegated to whoever wrote the endpoint.
+
+## Deciding whether to build one
+
+Ask whether an assistant acting on your data does something a user actually wants. For a project tracker, a CRM, a data warehouse, a design tool — plainly yes, and increasingly expected. For a product with no meaningful actions to take, an MCP server is engineering effort meeting no user.
+
+The second question is what you would expose. A thin server wrapping three read-only endpoints is a weekend of work and genuinely useful. A comprehensive one exposing every mutation you support is a large surface area with real security consequences.
+
+Start read-only. Add writes when you have watched how the reads get used.
+
+## The security part is not optional
+
+An MCP server hands a model the ability to act on a user's behalf. The failure modes are the ones you would expect: over-broad permissions, writes performed without the user understanding what was about to happen, and prompt injection through retrieved content steering the model into calling a tool it should not.
+
+Practical minimums: scope tokens to the narrowest useful permission, require explicit confirmation for destructive or outbound actions, log every call with enough detail to reconstruct what happened, and treat any content the model reads as untrusted input rather than as instructions.
+
+## How to think about it strategically
+
+MCP is distribution. If assistants become a common way people reach software — and referrer data across many sites now shows assistants sending meaningful traffic — then being connectable is the equivalent of being indexable a decade ago.
+
+That does not make it urgent for everyone. It makes it a question worth answering deliberately rather than by default, and the honest answer for many products is a small read-only server now and a review in six months.
+
+---
+
 ### What is MoSCoW prioritisation?
 MoSCoW sorts requirements into Must have, Should have, Could have and Won't have. It's a scoping tool for a fixed deadline, not a roadmap tool — its job is to establish what can be dropped when time runs short, which is why the Won't-have list is the most valuable part.
 
@@ -6359,6 +7344,35 @@ The lesson generalises to the cold start problem — Roblox had to make creation
 ## The honest test
 
 If you claim a network effect, name the specific mechanism by which user 1,001 makes the product better for user 12. If you can't state it in one sentence, you probably have scale advantages — real, useful, and much easier to compete with.
+
+---
+
+### What is NPS and is it actually useful?
+Net Promoter Score asks how likely someone is to recommend you on a 0-10 scale, then subtracts the percentage of detractors (0-6) from promoters (9-10). It is useful as a tracked trend on a stable population and close to useless as a single number compared across companies, because the score moves with who you sampled and when.
+
+## What the number actually is
+
+You ask one question — how likely are you to recommend this to a friend or colleague, 0 to 10 — and sort the answers into three buckets. **Promoters** are 9-10. **Passives** are 7-8. **Detractors** are 0-6. The score is the percentage of promoters minus the percentage of detractors, so it runs from -100 to +100.
+
+Two things about that formula matter more than they look. The passives are discarded, and the detractor band is enormous: a 6 out of 10, which most people would read as mild approval, is counted the same as a 0.
+
+## Why cross-company comparison is mostly noise
+
+An NPS of 42 means nothing without knowing who was asked and when. Survey people right after a successful onboarding and the score climbs. Survey the same population after a billing change and it collapses. Neither movement tells you the product got better or worse.
+
+Cultural response patterns matter too — the same satisfaction level produces systematically different numbers in different markets, because willingness to give a 10 is not constant across the world. So a global product comparing its NPS to a published US benchmark is comparing two different things and calling the gap a finding.
+
+## The one way it earns its place
+
+Track it on a fixed cadence, with a fixed sampling method, on your own product, and read only the trend. That version is genuinely useful: it catches slow deterioration that usage metrics hide, because people often keep using something they have started to resent.
+
+And read the free-text box, not the score. The comment field attached to an NPS survey is usually worth more than the number it is attached to — it is a standing, low-effort channel for the specific complaints that would otherwise never reach you. Monzo's early growth ran heavily on word of mouth precisely because it treated that feedback loop as the product, not as a reporting obligation.
+
+## Where it actively misleads
+
+The metric rewards being loved by a niche and punishes being useful to a majority. A product that solves a boring problem adequately for a large market will score worse than a polarising product with a devoted core, even when the first is the better business. WhatsApp spent a decade being unglamorous, universal and enormously valuable, which is not the profile NPS flatters.
+
+Treat a low score as a question, not a verdict.
 
 ---
 
@@ -6441,6 +7455,49 @@ Slack, by contrast, found fit sideways — the internal chat tool built for a fa
 
 ---
 
+### What is product positioning?
+Positioning is the context you put your product in so people understand what it is and why it is better. It is a choice of comparison set — naming the alternative you want to be measured against — plus the attribute on which you win. Weak positioning is nearly always a positioning that avoids naming any competitor at all.
+
+## Positioning is choosing your comparison
+
+Every product is understood by comparison to something. If you do not choose the comparison, the customer chooses it, and they will usually choose the most familiar option — often the one where you look worst.
+
+That choice is the strategic core. The same product positioned against different alternatives becomes a different business:
+
+- A design tool positioned against desktop design software competes on power and file compatibility.
+- The same tool positioned against emailing files around competes on collaboration and versioning.
+
+Figma's browser-first bet only makes sense under the second frame. Judged as a replacement for a desktop editor, running in a browser is a limitation. Judged against the practice of sending files to each other, it is the entire product.
+
+## The five components
+
+1. **Competitive alternatives.** What would people use if you did not exist — including doing nothing, and including a spreadsheet.
+2. **Unique attributes.** What you have that those alternatives do not. Features, factually stated.
+3. **Value.** What those attributes let the customer do that they could not before. Attributes are not value; the translation is the work.
+4. **Who cares most.** The segment for whom that value is disproportionately important. This is the segment you win.
+5. **Market category.** The frame you place yourself in, which sets expectations for everything above.
+
+Fill these in order. The temptation is to start at category, and starting there produces a frame nobody asked for.
+
+## Repositioning is often the cheapest fix available
+
+Slack's origin inside a failed game company is well known; the less-told part is that the product was positioned as a replacement for email in the workplace, which set the comparison against something everyone already hated. Positioned instead as another chat app, it would have entered a crowded and unremarkable category.
+
+Loom did something similar — positioned against writing a long explanatory message rather than against video conferencing, which made asynchronous the feature rather than the compromise.
+
+Cloudflare made security headers a default rather than an expert configuration, repositioning a category of work from something specialists do to something that is simply on. The technical change was modest; the framing change was the product.
+
+## How to tell yours is broken
+
+- Prospects consistently compare you to something you consider irrelevant.
+- Demos go well and deals stall, because the buyer cannot explain you to a colleague.
+- Your homepage would read identically with a competitor's logo on it.
+- Sales invents its own framing, and each rep's is different.
+
+The last one is the reliable early warning. Sales will always fill a positioning vacuum, and the improvised versions are usually the frame the market actually uses — worth listening to before you overwrite it.
+
+---
+
 ### What is programmatic SEO?
 Programmatic SEO generates large numbers of landing pages from a structured dataset, each targeting a specific long-tail query. It works when you own data that genuinely answers those queries, and fails as thin-content spam when the pages are templates with the nouns swapped.
 
@@ -6497,6 +7554,49 @@ RAG is a search product with a language model on the end. Teams that treat it as
 
 ---
 
+### What are TAM, SAM and SOM?
+TAM is the total market for the problem, SAM is the portion your model can actually serve, and SOM is the share you could realistically win in a few years. The purpose is not the headline number — it is the reasoning that gets you from a large abstraction to a small defensible one, and a bottom-up calculation is worth more than any industry report.
+
+## The three figures
+
+**TAM — total addressable market.** Everyone with the problem, if you could serve all of them with no constraints. Deliberately theoretical.
+
+**SAM — serviceable addressable market.** The portion your product, geography, language, regulation and business model can actually reach today. TAM minus reality.
+
+**SOM — serviceable obtainable market.** What you could plausibly capture in three to five years given competitors, your sales capacity and your distribution. This is the only figure with any operational meaning.
+
+## Bottom-up beats top-down every time
+
+Top-down goes: the global market is 50 billion, we will take 1%, that is 500 million. The 1% is invented, and everyone reading it knows so. It is the single fastest way to lose credibility in a strategy document.
+
+Bottom-up goes: there are roughly 180,000 companies in this segment in our launch markets, our realistic price is 400 per month, giving a SAM of about 860 million annually; our sales capacity supports reaching perhaps 3% within three years, so SOM is around 26 million.
+
+Every number in the second version is challengeable, which is precisely why it persuades. It also produces something useful — if the arithmetic only works at a price nobody will pay, or at a customer count exceeding the entire industry, you have learned something about the business rather than about the spreadsheet.
+
+## What sizing is actually for
+
+Three genuine uses:
+
+**Sanity-checking ambition against the model.** If reaching your target requires 40% share of a market with three entrenched incumbents, the plan needs changing now.
+
+**Choosing between segments.** Relative sizing across two candidate markets is far more reliable than absolute sizing of either, because the same systematic errors apply to both.
+
+**Finding the wedge.** The valuable output is usually not the total but the discovery of a specific subsegment that is underserved, reachable and large enough to start in.
+
+Zerodha did not enter a large broking market and take a slice of it. It priced for a segment the incumbents were structurally unable to serve profitably, and grew from there. The sizing that mattered was of the wedge, not of the industry.
+
+## Where the number misleads
+
+**Redefining the market to inflate it.** Every failing product can reach a huge TAM by describing itself more broadly. Communication, productivity and wellness are not markets; they are categories of aspiration.
+
+**Assuming the market is available.** A large market with entrenched network effects is not addressable just because it is large. Foursquare's unbundling into Swarm faced a market that existed but had already resolved around habits the split disrupted.
+
+**Confusing a market with a moment.** MoviePass had a real and large market of people who liked cheap cinema tickets. Nothing about the size of that market made the unit economics survivable.
+
+If your strategy depends on the TAM being large, it is not a strategy. If it depends on a specific reachable wedge inside it, it might be.
+
+---
+
 ### What is the innovator's dilemma?
 The innovator's dilemma is that well-run companies fail by doing exactly what good management prescribes — listening to their best customers, protecting margins, and investing in proven markets. Those behaviours make disruptive entrants look unattractive right up until they're unbeatable.
 
@@ -6517,6 +7617,201 @@ BlackBerry is the cleaner case of customer-listening as a failure mode. Its ente
 Watch the low end you've chosen to ignore, and be specific about why you're ignoring it. "It's not good enough for our customers" is the exact sentence that precedes every case in the book.
 
 And notice when your reason for not building something is margin structure rather than customer value. Apple's willingness to cannibalise the iPod with the iPhone is the counterexample — the decision was available to everyone and taken by almost no one, because it required accepting a worse P&L on purpose.
+
+---
+
+### What is the Kano model?
+The Kano model sorts features by how satisfaction responds to them. Basic expectations cause anger when missing and no delight when present, performance features scale linearly with how much you deliver, and delighters produce disproportionate joy but are not missed if absent. Its real use is showing that the three types must be funded differently — and that today's delighter becomes tomorrow's basic expectation.
+
+## The three categories
+
+**Basic expectations** are invisible when present and outrageous when absent. Nobody praises an app for loading, and everybody abandons one that does not. Satisfaction from these caps at zero — perfect execution buys you neutrality.
+
+**Performance features** move satisfaction proportionally. Faster is better, cheaper is better, more storage is better, and each increment buys a matching increment of goodwill. These are where competitive comparison lives.
+
+**Delighters** are unexpected and produce satisfaction out of proportion to their cost. Nobody asked for them, so their absence costs nothing — which makes them the only category where you can win without spending more than a rival.
+
+Two minor categories complete the model: **indifferent** features nobody cares about either way, and **reverse** features some users actively dislike.
+
+## Why the categories need different funding
+
+The practical value of Kano is that it exposes a common allocation error. A roadmap made entirely of performance features produces a product that is measurably competitive and entirely forgettable. A roadmap made entirely of delighters produces a charming product that fails at something basic and loses the customer anyway.
+
+The rough shape that works: basics get whatever they need and no more, because over-delivering on them is invisible. Performance features get the bulk of steady capacity. Delighters get a deliberate, protected slice — small, but never zero, because zero is how a product becomes a commodity.
+
+The iPod's scroll wheel is a delighter in the strict sense. No one requested it. Competing players had all the performance features. The wheel made the device feel different in the hand in a way spec sheets could not represent.
+
+## The decay problem
+
+Every delighter is on a timer. Once a feature is copied widely enough, users stop being pleased by it and start being annoyed by its absence — it has migrated from delighter to basic.
+
+Zoom's frictionless join is the textbook case in both directions. Joining a call without an account or a download was a genuine delighter when every competitor demanded installation and login. Within a few years it was table stakes, and any conferencing tool lacking it now reads as broken.
+
+This is why Kano is a repeated exercise, not a one-time classification. A model built three years ago has features in the wrong buckets today.
+
+## Where it breaks down
+
+Kano surveys ask people to react to described features, and people are poor at predicting their own reaction to something they have not used. The method is strongest on concrete, easily imagined features and weakest on exactly the ambitious ones you most want guidance on.
+
+Use it to check a roadmap's balance across the three types. Do not use it to settle whether a specific ambitious bet is worth making — that question is not one a survey can answer.
+
+---
+
+### What is user story mapping?
+User story mapping arranges work as a two-dimensional map: the horizontal axis is the sequence of steps a user takes to accomplish something, and the vertical axis is depth of implementation within each step. Slicing horizontally across the map produces a release that works end to end, which is the entire point — a flat backlog cannot show you whether a release is usable.
+
+## The two axes
+
+The **horizontal** axis is the user's journey in the order it happens. For a marketplace: find an item, evaluate it, buy it, track delivery, get support. This row is the backbone, and it is narrative — you should be able to read it aloud as a sentence.
+
+The **vertical** axis is depth. Beneath find an item sit the many possible implementations: a search box, filters, saved searches, personalised recommendations, visual similarity search. Higher means more essential, lower means more elaborate.
+
+## Why the second axis is the whole idea
+
+A flat backlog ranked by score will happily produce a top ten that contains four excellent search features and nothing about checkout. Every item is individually justified, and the release is unusable, because a user cannot buy anything.
+
+The map makes this impossible to miss. You cut a release by drawing a **horizontal line** across the map, taking the top row of everything. The result is thin in every step but complete across all of them — the user can get from one end to the other. The second release drops the line lower.
+
+That is the technique. Everything else is stationery.
+
+## Where it pays off most
+
+Anywhere a partial journey is worthless. Payments, onboarding, checkout, anything regulated. Half a KYC flow is not half a feature; it is zero features and some wasted engineering.
+
+It is also the fastest way to surface disagreement about scope. Teams that agree on a feature list frequently disagree about the journey it belongs to, and that disagreement stays hidden in a list and becomes obvious on a map.
+
+Gmail's redesign was fundamentally a rearrangement of the mail journey rather than a set of new capabilities — conversation threading changed the sequence of steps a user moved through, which is the kind of change a story map represents well and a ranked backlog represents badly.
+
+## The common failures
+
+**A backbone that is a feature list.** If the top row reads search, filters, notifications, it is a component inventory, not a journey. It should read as things a person does, in order.
+
+**Mapping the system instead of the user.** The axis is what the user does, not what your services do. As soon as the backbone contains a queue or a service name, the map has stopped answering its question.
+
+**Treating the map as permanent.** It is a planning conversation that leaves a residue, not a document to maintain. Use it to cut releases, then let the tracker carry the work.
+
+Linear's opinionated refusal to be endlessly configurable is the same instinct at product level: pick the journey, make it excellent, and decline to support every possible variation of it.
+
+---
+
+### What is vibe coding and what are its risks?
+Vibe coding is building software by describing what you want to an AI model and accepting the generated result without closely reviewing it. It is genuinely transformative for prototypes, throwaway tools and exploration. The risk appears when vibe-coded work reaches production, because nobody on the team understands the code well enough to debug, secure or change it.
+
+## What it means
+
+The term describes generating code from natural-language description and accepting it largely on trust, judging by whether it appears to work rather than by reading it. Modern coding assistants make this fast enough that a working application can exist before anyone has read a line of it.
+
+For a category of work this is straightforwardly good. Prototypes, internal tools, data scripts, spikes into an unfamiliar API — all are throwaway, and time spent deeply understanding throwaway code is wasted.
+
+## Where it breaks
+
+**Nobody can debug it.** When a vibe-coded system fails in a way the model cannot fix from the error message, there is no fallback. The team's understanding of the system is the model's, and it does not persist between sessions.
+
+**The failure cases were never specified.** Generated code satisfies the description it was given. Descriptions almost never enumerate malformed input, concurrent writes, partial failures, or the second code path that also needs the permission check. The result works on the happy path and is silently fragile everywhere else.
+
+**Security defaults are not defaults.** Auth checks on one route and not another, secrets in the repository, input concatenated into queries, permissive CORS. Not because models are careless, but because the prompt asked for a working feature and got exactly that.
+
+**Change becomes frightening.** The compounding cost. A codebase nobody understands is one nobody can confidently modify, so changes get made by asking the model again, and the system accumulates layers nobody has read.
+
+The 2026 wave of vibe-coded launches made this shape familiar: fast to build, fine at launch, and progressively harder to operate as reality diverged from the demo.
+
+## The line most teams settle on
+
+**Understood code required:** authentication and authorisation, payments, anything handling personal data, data migrations, anything a user's money or privacy depends on.
+
+**Speed wins:** prototypes, internal tooling, analysis scripts, UI experiments, throwaway integrations.
+
+The important part is writing the line down. Without one, prototypes ship — not through a decision, but because the prototype worked and the deadline arrived, which is how almost every one of these gets into production.
+
+## Using it well
+
+Read the generated code for anything that will persist. Ask the model to explain its own choices, and treat an unconvincing explanation as a signal. Write tests you understand even when the implementation was generated — the tests are where your understanding lives. And keep the boundary visible in the repository, so that promoting something across it is a deliberate act rather than an accident of scheduling.
+
+---
+
+### What is cost of delay and how does WSJF use it?
+Cost of delay is what it costs you per unit of time to not have something yet — lost revenue, growing risk, a closing window. WSJF, weighted shortest job first, ranks work by dividing cost of delay by job size, so small urgent things beat large ones. Its value is forcing the question most prioritisation avoids: what does waiting actually cost?
+
+## The idea behind cost of delay
+
+Most prioritisation asks what something is worth. Cost of delay asks a sharper question: what does each week of not having it cost?
+
+The distinction matters because value and urgency are independent. A feature worth a great deal that will be worth the same amount next year has a high value and a low cost of delay. A modest feature that becomes worthless after a competitor ships theirs has a low value and an enormous cost of delay. Ranking by value alone systematically defers the second kind until it is too late.
+
+## The three components
+
+SAFe decomposes cost of delay into three relative scores:
+
+**User or business value** — the direct benefit of having it.
+
+**Time criticality** — how sharply that benefit decays with time. A regulatory deadline, a seasonal peak, a competitor's roadmap, a partnership window. This is the component that does the work.
+
+**Risk reduction or opportunity enablement** — value that is not the feature itself but what it unlocks or de-risks. Platform work lives here, which is the framework's answer to why infrastructure never wins a pure value ranking.
+
+Add the three, divide by job size, rank descending.
+
+## Why dividing by size changes the order so much
+
+Two items with identical cost of delay are not equally urgent if one takes two weeks and the other takes two quarters. Doing the short one first means the long one starts only slightly later while the short one's cost of delay stops accruing immediately.
+
+This is why the framework is called weighted **shortest job first**. Given similar urgency, sequence by size — the aggregate delay across the whole queue is lower, and that is a mathematical result, not a preference.
+
+## What it catches that other frameworks miss
+
+Windows that close. Facebook's shift from HTML5 to native mobile is the canonical example: the value of a competent mobile app was not falling, but the cost of each additional quarter without one was rising steeply as usage moved to phones. A value-ranked backlog would have kept the work respectable and non-urgent. Cost of delay makes the escalation visible.
+
+Nokia and Kodak are the same shape viewed from the other end. In both, the strategic response was understood and unhurried, and the cost of delay was accruing the entire time at a rate nobody put a number on.
+
+## Where it breaks
+
+Time criticality is the easiest score in any framework to inflate — every stakeholder's item is urgent. Without a shared, written definition of what each point on the scale means, WSJF becomes a laundering mechanism for whoever argues hardest.
+
+It is also poorly suited to genuinely exploratory work, where both the value and the size are unknown. Scoring a research spike produces a confident-looking number derived from nothing. Give discovery a protected allocation instead of forcing it through the same ranking.
+
+---
+
+### What makes a good landing page?
+One audience, one promise, one action. The page should say what the product does in plain language above the fold, show it rather than describe it, and remove every link that is not the action you want. Most underperforming landing pages fail on clarity rather than persuasion — the visitor cannot tell what the thing is.
+
+## The above-the-fold test
+
+Show the top of your page to someone unfamiliar with the product for five seconds, then ask them what it does and who it is for. If they cannot answer, nothing further down the page matters.
+
+This is where most pages fail, and the cause is nearly always a headline written for insiders. Reimagine your workflow, the operating system for modern teams and unlock your potential are compatible with any product in any category. Replace them with what the product literally does, in the words a customer would use.
+
+Stripe's developer-first positioning worked in part because the page said what the thing was and showed the code that did it. There was nothing to decode.
+
+## Show, do not describe
+
+A screenshot, a short looping video, or an interactive demo outperforms paragraphs about capabilities. People assess software visually and quickly, and a product that will not show itself reads as a product with something to hide.
+
+If a visitor can try it without signing up, let them. Removing the account requirement before first value is often the single largest conversion change available — Zoom's growth rested substantially on the fact that joining a meeting required neither.
+
+## Proof that persuades
+
+Ranked roughly by strength:
+
+1. **Specific numbers from named customers.** Cut onboarding from 6 weeks to 4 days.
+2. **Recognisable logos**, if genuinely customers.
+3. **A quote with a real name, role and company.**
+4. **Volume indicators** — used by 40,000 teams.
+5. **Generic testimonials from unnamed people**, which read as decorative and are widely ignored.
+
+Anonymous praise is worse than no praise, because it signals you could not get permission to use a name.
+
+## One action
+
+Decide what you want the visitor to do and make everything serve it. A page offering start free, book a demo, read the docs, join the community and subscribe to the newsletter has offered a menu, and menus produce deliberation rather than action.
+
+The secondary path should exist for people not ready — but it should be visibly secondary, not a competing button of equal weight.
+
+## The technical layer people forget
+
+Across 496 recent YC startup homepages we audited, the pattern was consistent: everything a visitor notices was nearly universal, and everything only a crawler or a scanner notices was a coin flip. Custom domains, mobile viewports and descriptive titles were near-100%. Structured data, content security policy and HSTS preload were far below half.
+
+That gap matters more than it used to. A landing page is now read by search crawlers, by AI assistants deciding whether to cite you, and by security scanners in procurement reviews — none of which are impressed by your hero animation. Fast load, a real title and description, structured data, working links and clean HTML are conversion features.
+
+Booking.com's conversion machine and Walmart's performance work both point the same direction: the unglamorous layer is where the measurable money is.
 
 ---
 
