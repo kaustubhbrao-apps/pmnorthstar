@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { YC_STUDY } from "@/data/yc-study";
+import { SITE_INFO } from "@/lib/site";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -593,6 +594,34 @@ export default function StartupWebsiteAuditReport() {
               runner is <code style={{ color: "var(--text-primary)" }}>scripts/yc-audit-study.ts</code>{" "}
               in this site&apos;s repository, and the checks are the same ones any visitor
               gets from CheckIt.
+            </p>
+            {/* Corrections and removal.
+                Every company here is named, ranked and individually
+                linkable, and none of them asked to be. Saying plainly that
+                the entry can be corrected or taken down — and meaning it —
+                is what makes publishing the list defensible. */}
+            <p>
+              <strong style={{ color: "var(--text-primary)" }}>
+                Corrections and removal.
+              </strong>{" "}
+              If your company appears here and the result is wrong, or you would
+              rather not be listed, tell us and we will re-run it or remove the
+              entry. No justification needed.{" "}
+              {SITE_INFO.email ? (
+                <a
+                  href={`mailto:${SITE_INFO.email}?subject=${encodeURIComponent(
+                    "YC website audit — correction or removal"
+                  )}`}
+                  style={{ color: BAR }}
+                >
+                  {SITE_INFO.email}
+                </a>
+              ) : (
+                <Link href="/about" style={{ color: BAR }}>
+                  Get in touch
+                </Link>
+              )}
+              .
             </p>
           </div>
         </div>
