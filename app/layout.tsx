@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Nunito_Sans, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
@@ -16,11 +16,21 @@ import "./globals.css";
 // fonts.googleapis.com roundtrip that PSI flagged for ~1.9s LCP
 // savings. display:swap keeps the page paintable while fonts arrive;
 // the metric-similar system-ui fallback prevents visible reflow.
-const spaceGrotesk = Space_Grotesk({
+//
+// Avenir fallback. Avenir and Avenir Next are Monotype licences and are
+// not redistributable, so they cannot be self-hosted here — the stack in
+// globals.css asks for them first (they ship with macOS and iOS, which is
+// a large share of this audience) and lands on Nunito Sans everywhere
+// else. Nunito Sans is the closest freely-licensed match: geometric
+// skeleton, humanist detailing, similar x-height and open apertures.
+//
+// This replaces Space Grotesk, which was loaded on every page and
+// referenced by no CSS rule — a font download nobody rendered.
+const avenirFallback = Nunito_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "600", "700", "800"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-avenir-fallback",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -134,7 +144,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${avenirFallback.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script

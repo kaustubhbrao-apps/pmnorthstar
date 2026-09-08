@@ -1040,20 +1040,20 @@ export default function HomeClient() {
                   own bold color, white type. Different from the hero
                   blue/green (which signal Tool / Editorial) so the page
                   doesn't read as a single-system color block. */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mx-4 sm:mx-6 mt-6 mb-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mx-4 sm:mx-6 mt-6 mb-8">
                 {[
                   { label: "books", value: String(books.length), color: "#EA580C", action: () => document.getElementById("books-section")?.scrollIntoView({ behavior: "smooth", block: "start" }) },
                   { label: "case studies", value: String(caseStudies.length), color: "#F3123C", action: () => setActiveNav("casestudies") },
+                  // Answers lives on its own route rather than a nav tab, so
+                  // this tile navigates instead of scrolling. href renders a
+                  // real anchor, which also makes it a crawlable link.
+                  { label: "answers", value: String(answers.length), color: "#2563EB", href: "/answers" },
                   { label: "playlists", value: String(playlists.length), color: "#7C3AED", action: () => setActiveNav("learn") },
                   { label: "categories", value: "3", color: "#0891B2", action: () => document.getElementById("books-section")?.scrollIntoView({ behavior: "smooth", block: "start" }) },
-                ].map(({ label, value, color, action }) => (
-                  <button
-                    key={label}
-                    type="button"
-                    className="text-left p-4 rounded-2xl transition-all group hover:opacity-95 hover:-translate-y-0.5"
-                    style={{ background: color, color: "#ffffff" }}
-                    onClick={action}
-                  >
+                ].map(({ label, value, color, action, href }: { label: string; value: string; color: string; action?: () => void; href?: string }) => {
+                  const tileClass = "text-left p-4 rounded-2xl transition-all group hover:opacity-95 hover:-translate-y-0.5";
+                  const inner = (
+                    <>
                     <div className="flex items-center justify-between mb-2">
                       <span
                         className="text-sm font-semibold tracking-wider uppercase"
@@ -1074,8 +1074,18 @@ export default function HomeClient() {
                     >
                       {value}
                     </div>
-                  </button>
-                ))}
+                    </>
+                  );
+                  return href ? (
+                    <Link key={label} href={href} className={tileClass} style={{ background: color, color: "#ffffff" }}>
+                      {inner}
+                    </Link>
+                  ) : (
+                    <button key={label} type="button" className={tileClass} style={{ background: color, color: "#ffffff" }} onClick={action}>
+                      {inner}
+                    </button>
+                  );
+                })}
               </div>
 
               {/* Case Studies Preview — horizontal carousel, one from each category.

@@ -23,10 +23,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-display)", "serif"],
-        serif: ["var(--font-display)", "serif"],
-        display: ["var(--font-display)", "serif"],
-        body: ["var(--font-display)", "serif"],
+        sans: ["var(--font-display)", "sans-serif"],
+        serif: ["var(--font-display)", "sans-serif"],
+        display: ["var(--font-display)", "sans-serif"],
+        body: ["var(--font-display)", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       animation: {

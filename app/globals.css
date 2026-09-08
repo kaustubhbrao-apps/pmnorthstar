@@ -9,9 +9,18 @@
 :root {
   color-scheme: light dark;
 
-  /* Classic, established typography. Moving away from Space Grotesk. */
-  --font-display: "Georgia", "Cambria", "Times New Roman", Times, serif;
-  --font-body:    "Georgia", "Cambria", "Times New Roman", Times, serif; /* Force Serif globally */
+  /* Avenir throughout.
+     "Avenir Next" ships with macOS and iOS, "Avenir" with older macOS —
+     those visitors get the real face. Everyone else falls to Nunito Sans,
+     loaded via next/font in app/layout.tsx, which is the closest freely
+     licensed match (Avenir itself is a Monotype licence and cannot be
+     self-hosted here). The system stack after it covers the case where
+     the webfont has not arrived yet. */
+  --font-avenir:  "Avenir Next", "Avenir", var(--font-avenir-fallback),
+                  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-avenir);
+  --font-body:    var(--font-avenir);
   --font-mono:    var(--font-jetbrains-mono), "Courier New", Courier, monospace;
 
   /* Paper and Ink Palette */

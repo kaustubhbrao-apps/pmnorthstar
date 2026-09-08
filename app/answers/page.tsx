@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { publishedAnswers, answerCategories } from "@/data/answers";
+import { publishedAnswers } from "@/data/answers";
+import { AnswersClient, type AnswerCard } from "./AnswersClient";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -28,7 +28,17 @@ export const metadata: Metadata = {
 
 export default function AnswersIndexPage() {
   const all = publishedAnswers();
-  const categories = answerCategories();
+  // Map to the card shape here, on the server. Passing the full answers
+  // through would serialise 72 pre-rendered bodyHtml blobs into the RSC
+  // payload for a list that renders none of them.
+  const cards: AnswerCard[] = all.map((a) => ({
+    slug: a.slug,
+    question: a.question,
+    shortAnswer: a.shortAnswer,
+    category: a.category,
+    accentColor: a.accentColor,
+    updatedAt: a.updatedAt,
+  }));
 
   return (
     <SidebarShell
@@ -97,58 +107,7 @@ export default function AnswersIndexPage() {
         </div>
       </section>
 
-      {categories.map((category) => {
-        const items = all.filter((a) => a.category === category);
-        return (
-          <section
-            key={category}
-            className="px-4 sm:px-8 lg:px-12 py-9 sm:py-12 flex justify-center"
-            style={{ borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="w-full max-w-5xl">
-              <div className="flex items-baseline gap-3 mb-6">
-                <h2
-                  className="text-xl sm:text-2xl font-semibold"
-                  style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-                >
-                  {category}
-                </h2>
-                <span className="text-xs font-mono" style={{ color: "var(--text-faint)" }}>
-                  {String(items.length).padStart(2, "0")}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                {items.map((a) => (
-                  <Link
-                    key={a.slug}
-                    href={`/answers/${a.slug}`}
-                    className="playlist-card surface flex flex-col p-5 group"
-                  >
-                    <h3
-                      className="text-base sm:text-lg font-semibold leading-snug mb-2.5 group-hover:underline"
-                      style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                    >
-                      {a.question}
-                    </h3>
-                    <p
-                      className="text-sm leading-relaxed flex-1"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {a.shortAnswer.length > 175
-                        ? `${a.shortAnswer.slice(0, 175).trimEnd()}…`
-                        : a.shortAnswer}
-                    </p>
-                    <p className="text-sm font-medium mt-4" style={{ color: a.accentColor }}>
-                      Read the full answer →
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      })}
+      <AnswersClient answers={cards} />
 
       <Footer />
     </SidebarShell>
