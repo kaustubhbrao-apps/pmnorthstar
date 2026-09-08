@@ -276,7 +276,13 @@ button:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: normal !important; /* Classic serif doesn't need heavy weight */
+  /* Was `normal !important`, written when the site was set in Georgia — a
+     high-contrast serif carries a display size at regular weight. Avenir is
+     a low-contrast geometric sans and goes flat at 400, and the !important
+     was silently overriding every font-bold / font-semibold class in the
+     markup (the H1 on an answer page computed to 400). 600 is the default
+     for headings that carry no weight class; utility classes now win. */
+  font-weight: 600;
   color: var(--text-primary);
 }
 
@@ -447,6 +453,14 @@ html { transition: none; }
 }
 
 /* Markdown Prose Styles */
+/* Measure. Case study bodies sit in a max-w-4xl column (896px) at
+   text-xl, which runs ~90 characters per line — the column was sized for
+   the layout, not for reading. Capping the running text keeps the section
+   headers, callouts and images on the full column while the paragraphs
+   stay in the comfortable 65-75 range. */
+.markdown-prose {
+  max-width: 68ch;
+}
 .markdown-prose p {
   margin-bottom: 0;
 }
@@ -506,8 +520,21 @@ html { transition: none; }
    never defined — so headings inside the injected bodyHtml fell back to
    the CSS reset and read as plain paragraphs, and paragraphs had no
    spacing at all. Every answer page was affected. */
+.answer-prose {
+  /* Measure. The column is max-w-3xl (768px), which at 16px runs ~91
+     characters per line — well past the 65-75 that stays comfortable to
+     read. The heading and the short-answer card keep the full column
+     width; only the running text is capped. */
+  max-width: 70ch;
+}
 .answer-prose > * + * {
   margin-top: 1.15em;
+}
+/* Tables and the short-answer callout are reference material rather than
+   running prose, so they keep the full column. */
+.answer-prose > table {
+  max-width: none;
+  width: 100%;
 }
 .answer-prose p {
   color: var(--text-primary);
