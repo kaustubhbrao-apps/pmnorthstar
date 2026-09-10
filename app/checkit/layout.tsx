@@ -5,8 +5,10 @@ const DEFAULT_OG = `${SITE_URL}/api/checkit/og`;
 
 export const metadata: Metadata = {
   title: "CheckIt: Is your vibe-coded site ready for the business world?",
+  // Trimmed to fit the ~160 characters a search result shows; the full
+  // framing already leads the page itself.
   description:
-    "Free site readiness scorecard. We run 35 weighted checks across performance, SEO, UX, brand, trust, polish, and modern web standards — the basics that decide whether users treat you as a product or a project.",
+    "Free site readiness scorecard: 35 weighted checks across performance, SEO, UX, brand, trust and modern web standards. Paste a URL, get scored, no signup.",
   openGraph: {
     title: "CheckIt by northstar",
     description:

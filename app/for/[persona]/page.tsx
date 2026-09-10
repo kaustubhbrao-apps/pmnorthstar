@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { clampDescription } from "@/lib/seo";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedCaseStudies, getCaseStudySlug } from "@/data/caseStudies";
 import { SubscribeForm } from "@/components/SubscribeForm";
@@ -69,8 +70,12 @@ export async function generateMetadata({ params }: { params: { persona: string }
   if (!p) return {};
   
   return {
-    title: `${p.title} - Northstar`,
-    description: p.description,
+    // Just the persona title. The root layout's "%s | northstar" template
+    // supplies the brand — appending "- Northstar" here as well produced
+    // "For Founders - Northstar | northstar", the brand twice, in two
+    // different casings, costing 12 characters of a ~60 character budget.
+    title: p.title,
+    description: clampDescription(p.description),
     // These five pages are in the sitemap and each one re-lists a slice of the
     // same case-study corpus. Without a self-referential canonical Google
     // clusters them as duplicates and picks its own representative.
