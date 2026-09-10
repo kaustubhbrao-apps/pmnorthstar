@@ -4,6 +4,7 @@
 // out by publishedDrills() at request time.
 
 import Link from "next/link";
+import { drillTitle } from "@/lib/drills";
 import { Sparkles, Brain, Clock, ChevronRight, ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
@@ -422,11 +423,4 @@ function NoDrillYet() {
   );
 }
 
-function drillTitle(drill: Drill): string {
-  // Derive a human-readable title from the slug. Eventually drills can
-  // carry their own `title` field; for now slug-based is fine.
-  return drill.slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
+

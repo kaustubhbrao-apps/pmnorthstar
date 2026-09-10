@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getDrillBySlug, publishedDrills } from "@/data/drills";
+import { drillTitle, drillDescription } from "@/lib/drills";
 import { SidebarShell } from "@/components/SidebarShell";
 import { SimulatePlayer } from "./SimulatePlayer";
 
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${drillTitle(drill)} — SimulateIt`,
-    description: drill.intro.split("\n\n")[0].slice(0, 180),
+    description: drillDescription(drill),
     alternates: { canonical: `${SITE_URL}/simulate/${drill.slug}` },
   };
 }
@@ -60,16 +61,70 @@ export default function DrillPage({ params }: PageProps) {
       shareTitle={`SimulateIt Drill: ${drillTitle(drill)}`}
       shareText={drill.principle}
     >
-      <Suspense fallback={<div className="p-12 text-center opacity-50">Loading simulation...</div>}>
-        <SimulatePlayer drill={drill} />
-      </Suspense>
+      {/* SimulatePlayer calls useSearchParams, which opts its whole Suspense
+          boundary out of server rendering. The result was that every drill
+          page served crawlers ~418 characters — site chrome plus the string
+          "Loading simulation..." — with no heading and none of the scenario.
+          Anything that must be in the initial HTML has to live outside that
+          boundary, so the briefing is rendered here, on the server.
+
+          It stays in the DOM for the whole drill and is hidden by CSS once
+          play starts (see .drill-briefing in globals.css, keyed off the
+          data-phase the player sets). Hiding it in React instead would put
+          it back inside the boundary and undo the point of the change. */}
+      <div className="drill-shell">
+        <header className="drill-briefing px-4 sm:px-6 pt-8 sm:pt-12 max-w-4xl mx-auto">
+          <h1
+            className="font-display font-bold leading-[1.05] mb-5"
+            style={{
+              color: "var(--text-primary)",
+              letterSpacing: "-0.025em",
+              fontSize: "clamp(28px, 4.5vw, 44px)",
+            }}
+          >
+            {drillTitle(drill)}
+          </h1>
+          <div
+            className="text-sm font-mono uppercase mb-5 inline-flex items-center gap-2 flex-wrap"
+            style={{ color: "var(--text-faint)", letterSpacing: "0.14em" }}
+          >
+            <span>~{drill.estimatedMinutes} minutes</span>
+            <span>•</span>
+            <span>{drill.category}</span>
+            {drill.year && (
+              <>
+                <span>•</span>
+                <span>{drill.year}</span>
+              </>
+            )}
+          </div>
+          {drill.intro
+            .split("\n\n")
+            .map((para) => para.trim())
+            .filter(Boolean)
+            .map((para, i) => (
+              <p
+                key={i}
+                className="text-base sm:text-lg leading-relaxed mb-4"
+                style={{ color: "var(--text-muted)" }}
+              >
+                {para}
+              </p>
+            ))}
+          <p
+            className="text-base sm:text-lg leading-relaxed mb-4"
+            style={{ color: "var(--text-muted)" }}
+          >
+            <strong style={{ color: "var(--text-primary)" }}>The principle:</strong>{" "}
+            {drill.principle}
+          </p>
+        </header>
+        <Suspense fallback={<div className="p-12 text-center opacity-50">Loading simulation...</div>}>
+          <SimulatePlayer drill={drill} />
+        </Suspense>
+      </div>
     </SidebarShell>
   );
 }
 
-function drillTitle(drill: { slug: string }): string {
-  return drill.slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
+

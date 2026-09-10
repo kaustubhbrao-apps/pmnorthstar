@@ -4,6 +4,7 @@
 // endpoint both gate on the cookie.
 
 import type { Metadata } from "next";
+import { drillTitle as sharedDrillTitle } from "@/lib/drills";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import {
@@ -86,11 +87,10 @@ function computeStreaks(dates: Date[]): { current: number; best: number } {
   return { current, best };
 }
 
+// Takes a bare slug here (this page only has play records, not drills),
+// so it adapts to the shared helper's shape rather than re-implementing it.
 function drillTitle(slug: string): string {
-  return slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+  return sharedDrillTitle({ slug });
 }
 
 function pct(n: number, d: number): number {

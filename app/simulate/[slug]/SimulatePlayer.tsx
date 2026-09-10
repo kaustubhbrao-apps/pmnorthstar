@@ -16,6 +16,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { drillTitle } from "@/lib/drills";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -344,7 +345,7 @@ export function SimulatePlayer({
   }
 
   return (
-    <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-4xl mx-auto">
+    <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-4xl mx-auto" data-phase={state.phase}>
       {/* Top breadcrumb */}
       <div className="flex items-center gap-2 mb-6 flex-wrap">
         <Link
@@ -505,55 +506,35 @@ function IntroView({
       });
   }, [drill.slug]);
 
+  // The title, the run-length/category line and the scenario prose are all
+  // rendered on the server in page.tsx now, so they reach a crawler. What is
+  // left here is only what genuinely cannot be: the live play count and the
+  // League countdown, both of which need the browser.
   return (
     <div>
-      <h1
-        className="font-display font-bold leading-[1.05] mb-5"
-        style={{
-          color: "var(--text-primary)",
-          letterSpacing: "-0.025em",
-          fontSize: "clamp(28px, 4.5vw, 44px)",
-        }}
-      >
-        {drillTitle(drill)}
-      </h1>
-
-      <div
-        className="text-sm font-mono uppercase mb-5 inline-flex items-center gap-2 flex-wrap"
-        style={{
-          color: "var(--text-faint)",
-          letterSpacing: "0.14em",
-        }}
-      >
-        <span>~{drill.estimatedMinutes} minutes</span>
-        <span>•</span>
-        <span>{drill.category}</span>
-        {plays !== null && plays > 0 && (
-          <>
-            <span>•</span>
+      {(plays !== null && plays > 0) ||
+      (drill.isLeagueMatch && drill.leagueEndsAt) ? (
+        <div
+          className="text-sm font-mono uppercase mb-5 inline-flex items-center gap-2 flex-wrap"
+          style={{
+            color: "var(--text-faint)",
+            letterSpacing: "0.14em",
+          }}
+        >
+          {plays !== null && plays > 0 && (
             <span style={{ color: "var(--brand-primary)" }}>
               {plays.toLocaleString()} {plays === 1 ? "play" : "plays"}
             </span>
-          </>
-        )}
-        {drill.isLeagueMatch && drill.leagueEndsAt && (
-          <span className="flex items-center gap-2">
-            <span>•</span>
-            <span className="opacity-70">Points close in:</span>
-            <CountdownTimer targetDate={drill.leagueEndsAt} />
-          </span>
-        )}
-      </div>
-
-      {drill.intro.split("\n\n").map((para, i) => (
-        <p
-          key={i}
-          className="text-base sm:text-lg leading-relaxed mb-4"
-          style={{ color: "var(--text-muted)" }}
-        >
-          {para}
-        </p>
-      ))}
+          )}
+          {drill.isLeagueMatch && drill.leagueEndsAt && (
+            <span className="flex items-center gap-2">
+              {plays !== null && plays > 0 && <span>•</span>}
+              <span className="opacity-70">Points close in:</span>
+              <CountdownTimer targetDate={drill.leagueEndsAt} />
+            </span>
+          )}
+        </div>
+      ) : null}
 
       <button
         onClick={onBegin}
@@ -1350,12 +1331,7 @@ function OutcomeView({
 
 // ── Helpers ───────────────────────────────────────────────────────────
 
-function drillTitle(drill: Drill): string {
-  return drill.slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
+
 
 // Score-color gradient — green at the top, amber in the middle, red
 // reserved only for genuinely poor results so the page doesn't shout

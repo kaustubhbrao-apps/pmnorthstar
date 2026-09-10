@@ -646,3 +646,18 @@ html { transition: none; }
   color: var(--text-muted);
   white-space: nowrap;
 }
+
+/* SimulateIt briefing ------------------------------------------------------
+   The drill title, run length and scenario prose are server-rendered in
+   app/simulate/[slug]/page.tsx, outside the Suspense boundary, because
+   SimulatePlayer calls useSearchParams and is therefore client-rendered —
+   crawlers were being served "Loading simulation..." and nothing else.
+
+   Being outside that boundary means React inside the player cannot unmount
+   the briefing when play starts, so it is hidden here instead: the player
+   stamps data-phase on its root, and :has() lets the preceding sibling
+   react to it. A browser without :has() support simply leaves the briefing
+   on screen, which is untidy but never broken. */
+.drill-shell:has([data-phase]:not([data-phase="intro"])) .drill-briefing {
+  display: none;
+}
