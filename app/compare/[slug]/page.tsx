@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getComparisonBySlug, publishedComparisons } from "@/data/comparisons";
 import { getCaseStudyById } from "@/data/caseStudies";
@@ -8,29 +7,10 @@ import type { OtherComparison } from "./CompareClient";
 
 type PageProps = { params: { slug: string } };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const cmp = getComparisonBySlug(params.slug);
-  if (!cmp) return {};
-  const title = cmp.title;
-  const description = cmp.intro.slice(0, 160);
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-    alternates: {
-      canonical: `/compare/${params.slug}`,
-    },
-  };
-}
+// No generateMetadata here. layout.tsx owns it, and page metadata overrides
+// layout metadata on merge — so this copy was replacing the hand-written
+// metaTitle and metaDescription with cmp.title and cmp.intro.slice(0, 160),
+// a raw cut through the middle of the opening paragraph.
 
 // Resolved server-side so CompareClient never imports the comparison or
 // case-study datasets. The two compared companies are narrowed to the id and

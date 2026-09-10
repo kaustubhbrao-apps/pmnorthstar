@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { clampDescription, titleField } from "@/lib/seo";
 import { permanentRedirect } from "next/navigation";
 import {
   CASE_STUDIES_LAST_UPDATED,
@@ -40,17 +41,10 @@ export async function generateMetadata(
   }
   const slug = getCaseStudySlug(study.id);
   const url = `${SITE_URL}/case-study/${slug}`;
-  // If the natural title is already long, drop the ' | northstar'
-  // template suffix so the SERP title stays under 60 chars and doesn't
-  // get truncated mid-word. Brand is still in the URL, OG, and JSON-LD.
-  const SUFFIX_LEN = " | northstar".length;
-  const titleField =
-    study.title.length + SUFFIX_LEN > 60
-      ? { absolute: study.title }
-      : study.title;
+
   return {
-    title: titleField,
-    description: study.description,
+    title: titleField(study.title),
+    description: clampDescription(study.description),
     keywords: [
       study.company,
       ...study.tags,
@@ -66,7 +60,7 @@ export async function generateMetadata(
       type: "article",
       url,
       title: study.title,
-      description: study.description,
+      description: clampDescription(study.description),
       siteName: "northstar",
       // The study's publish date, not study.year — that is when the events
       // described happened, which is not when this article went up.
@@ -76,7 +70,7 @@ export async function generateMetadata(
     twitter: {
       card: "summary_large_image",
       title: study.title,
-      description: study.description,
+      description: clampDescription(study.description),
     },
   };
 }

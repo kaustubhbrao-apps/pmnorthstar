@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { clampDescription } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { answers, getAnswerBySlug, publishedAnswers } from "@/data/answers";
@@ -25,21 +26,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `${SITE_URL}/answers/${answer.slug}`;
   return {
     title: { absolute: answer.metaTitle },
-    description: answer.metaDescription,
+    description: clampDescription(answer.metaDescription),
     keywords: answer.keywords,
     alternates: { canonical: url },
     openGraph: {
       type: "article",
       url,
       title: answer.metaTitle,
-      description: answer.metaDescription,
+      description: clampDescription(answer.metaDescription),
       siteName: "northstar",
       modifiedTime: answer.updatedAt,
     },
     twitter: {
       card: "summary_large_image",
       title: answer.metaTitle,
-      description: answer.metaDescription,
+      description: clampDescription(answer.metaDescription),
     },
   };
 }

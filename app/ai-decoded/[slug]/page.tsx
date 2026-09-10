@@ -10,7 +10,6 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { solidColorFor } from "@/lib/category-colors";
 import { ViewCounter } from "@/components/ViewCounter";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
-import type { Metadata } from "next";
 
 // ISR: re-render hourly so a scheduled (future-dated) article goes live on
 // its publishedAt date without a redeploy.
@@ -20,20 +19,10 @@ import type { Metadata } from "next";
 // CRON_SECRET) delays a publish by hours, not a full day.
 export const revalidate = 21600;
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const article = getAIDecodedArticleBySlug(params.slug);
-  if (!article) return {};
-  const { title, excerpt, metaTitle, slug } = article.frontmatter;
-  const resolvedTitle = metaTitle ?? title;
-  const desc = excerpt?.slice(0, 160) ?? title;
-  return {
-    title: resolvedTitle,
-    description: desc,
-    openGraph: { title: resolvedTitle, description: desc, type: "article" },
-    twitter: { card: "summary_large_image", title: resolvedTitle, description: desc },
-    alternates: { canonical: `/ai-decoded/${slug}` },
-  };
-}
+// No generateMetadata here. layout.tsx owns it. This copy returned the title
+// as a plain string, so the root template appended " | northstar" and the
+// layout's length-aware { absolute } switch never got to run; it also declared
+// a relative canonical, overriding the absolute one the layout emits.
 
 // Split rendered HTML at the </p> tag closest to `ratio` through the
 // article so we can inject a CTA mid-read. Keeps both halves valid HTML.

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { clampDescription, titleField } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { topics, getTopicBySlug } from "@/data/topics";
 
@@ -25,8 +26,8 @@ export async function generateMetadata({
   if (!topic) return { title: "Topic not found" };
   const url = `${SITE_URL}/topics/${topic.slug}`;
   return {
-    title: topic.metaTitle,
-    description: topic.metaDescription,
+    title: titleField(topic.metaTitle),
+    description: clampDescription(topic.metaDescription),
     keywords: [
       ...(topic.keywords || []),
       "product management",
@@ -39,13 +40,13 @@ export async function generateMetadata({
       type: "website",
       url,
       title: topic.metaTitle,
-      description: topic.metaDescription,
+      description: clampDescription(topic.metaDescription),
       siteName: "northstar",
     },
     twitter: {
       card: "summary_large_image",
       title: topic.metaTitle,
-      description: topic.metaDescription,
+      description: clampDescription(topic.metaDescription),
     },
   };
 }

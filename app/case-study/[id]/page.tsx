@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   getCaseStudyById,
@@ -11,30 +10,16 @@ import type { AdjacentStudy, RelatedStudy } from "./CaseStudyClient";
 
 type PageProps = { params: { id: string } };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const study = getCaseStudyBySlug(params.id) || getCaseStudyById(params.id);
-  if (!study) return {};
-  const title = `${study.title} | ${study.company} Case Study`;
-  const description = study.description.slice(0, 160);
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-    // No canonical here: layout.tsx emits the absolute, slug-based canonical.
-    // This one echoed whatever form was requested (slug *or* legacy cs-N id),
-    // so an id-form URL declared itself canonical instead of deferring to the
-    // slug — and page metadata overrides the layout's on merge.
-  };
-}
+// No generateMetadata here. layout.tsx owns the full set — keywords, the
+// absolute canonical, OpenGraph and Twitter — and page metadata overrides
+// layout metadata on merge, so this copy was quietly disabling it.
+//
+// It built `${study.title} | ${study.company} Case Study` and returned it as a
+// plain string, so the root template appended " | northstar" on top: every
+// case study shipped a title carrying 25-29 characters of suffix that a search
+// result, which cuts around 60, never had room to show. Worse, layout.tsx
+// already contains the fix — it switches to { absolute } to drop the brand
+// suffix once the natural title is long — and that logic had never run.
 
 // Everything the page needs from the dataset is resolved here, on the server,
 // and handed to the client component as props. CaseStudyClient used to import

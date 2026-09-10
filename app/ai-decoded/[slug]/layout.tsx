@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { clampDescription, titleField } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import {
   getAIDecodedArticleBySlug,
@@ -30,13 +31,9 @@ export async function generateMetadata({
   const url = `${SITE_URL}/ai-decoded/${fm.slug}`;
   const seoTitle = fm.metaTitle ?? fm.title;
   // Drop the ' | northstar' suffix if the natural title is already long.
-  const titleField =
-    seoTitle.length + " | northstar".length > 60
-      ? { absolute: seoTitle }
-      : seoTitle;
   return {
-    title: titleField,
-    description: fm.excerpt,
+    title: titleField(seoTitle),
+    description: clampDescription(fm.excerpt),
     keywords: [
       fm.primaryKeyword,
       ...fm.longTailKeywords,
@@ -51,7 +48,7 @@ export async function generateMetadata({
       type: "article",
       url,
       title: fm.title,
-      description: fm.excerpt,
+      description: clampDescription(fm.excerpt),
       siteName: "northstar",
       publishedTime: fm.publishedAt,
       modifiedTime: fm.updatedAt ?? fm.publishedAt,
@@ -61,7 +58,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: fm.title,
-      description: fm.excerpt,
+      description: clampDescription(fm.excerpt),
       ...(fm.heroImage ? { images: [fm.heroImage.src] } : {}),
     },
   };

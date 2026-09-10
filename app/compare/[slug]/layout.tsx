@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { clampDescription, titleField } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { comparisons, getComparisonBySlug } from "@/data/comparisons";
 import { getCaseStudyById } from "@/data/caseStudies";
@@ -26,9 +27,13 @@ export async function generateMetadata({
   const cmp = getComparisonBySlug(params.slug);
   if (!cmp) return { title: "Comparison not found" };
   const url = `${SITE_URL}/compare/${cmp.slug}`;
+  // Drop the " | northstar" template suffix once the natural title is long
+  // enough that a search result would cut it off anyway — same rule as the
+  // case-study and AI Decoded layouts. Brand still appears in the URL, the
+  // OpenGraph tags and the JSON-LD.
   return {
-    title: cmp.metaTitle,
-    description: cmp.metaDescription,
+    title: titleField(cmp.metaTitle),
+    description: clampDescription(cmp.metaDescription),
     keywords: [
       ...(cmp.keywords || []),
       "product comparison",
@@ -41,13 +46,13 @@ export async function generateMetadata({
       type: "article",
       url,
       title: cmp.metaTitle,
-      description: cmp.metaDescription,
+      description: clampDescription(cmp.metaDescription),
       siteName: "northstar",
     },
     twitter: {
       card: "summary_large_image",
       title: cmp.metaTitle,
-      description: cmp.metaDescription,
+      description: clampDescription(cmp.metaDescription),
     },
   };
 }

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
@@ -29,15 +28,12 @@ interface PageProps {
   params: { slug: string };
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const topic = getTopicBySlug(params.slug);
-  if (!topic) return {};
-
-  return {
-    title: `${topic.title} — northstar Topics`,
-    description: topic.intro,
-  };
-}
+// No generateMetadata here. layout.tsx already builds the full set from the
+// topic's own metaTitle/metaDescription/keywords, and page metadata wins over
+// layout metadata — so this copy was overriding a hand-written 143-character
+// description with topic.intro, the entire opening paragraph. Live topic pages
+// were shipping descriptions with a median length of 699 characters against a
+// ~160 limit, and the frontmatter written for the job was never used.
 
 export default function TopicPage({ params }: PageProps) {
   const topic = getTopicBySlug(params.slug);
