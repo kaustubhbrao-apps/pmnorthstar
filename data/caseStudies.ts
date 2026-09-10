@@ -11,9 +11,11 @@ import { ID_BY_SLUG } from "./caseStudySlugs";
 // bundle. Re-exported here so existing call sites keep working unchanged.
 export { getCaseStudySlug, isLegacyId } from "./caseStudySlugs";
 
-// Bumped when case studies are added, edited, or have material changes.
-// Sitemap reads this so Google sees an accurate lastModified date.
-export const CASE_STUDIES_LAST_UPDATED = "2026-05-18";
+// Derived at sync time from the newest live publishedAt in
+// content/case-studies/, so it advances on its own as scheduled studies go
+// live instead of being hand-bumped and silently going stale. Sitemap reads
+// this so Google sees a lastModified date that is actually true.
+export const CASE_STUDIES_LAST_UPDATED = "2026-09-09";
 
 export interface CaseStudy {
   id: string;

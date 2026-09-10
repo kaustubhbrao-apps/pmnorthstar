@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "sync": "npx tsx scripts/sync-content.ts && npx tsx scripts/build-llms-full.ts",
+    "sync": "npx tsx scripts/sync-content.ts",
     "build": "npm run sync && next build",
     "start": "next start",
     "lint": "next lint",

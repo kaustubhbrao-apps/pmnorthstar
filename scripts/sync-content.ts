@@ -31,7 +31,25 @@ const INVENTORY = {
   drills: 0,
   playlists: 0,
   answers: 0,
+  caseStudiesLastUpdated: "",
+  comparisonsLastUpdated: "",
 };
+
+// Newest publishedAt that is already live, as a plain YYYY-MM-DD. Entries with
+// no publishedAt are legacy always-live pieces and carry no date to derive
+// from. Feeds the *_LAST_UPDATED constants, which stand in as datePublished /
+// dateModified for those legacy entries.
+function newestLiveDate(
+  entries: Array<{ data: any }>,
+  now: Date
+): string {
+  const dates = entries
+    .map((e) => e.data.publishedAt as string | undefined)
+    .filter((d): d is string => !!d && new Date(d) <= now)
+    .map((d) => String(d).slice(0, 10))
+    .sort();
+  return dates.length ? dates[dates.length - 1] : new Date().toISOString().slice(0, 10);
+}
 
 function readAll(dir: string): Array<{ slug: string; data: any; body: string }> {
   if (!fs.existsSync(dir)) return [];
@@ -284,6 +302,7 @@ function syncComparisons() {
   const entries = readAll(path.join(CONTENT, "comparisons"));
   const now = new Date();
   INVENTORY.comparisons = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
+  INVENTORY.comparisonsLastUpdated = newestLiveDate(entries, now);
 
   const body = entries
     .map((e) => {
@@ -518,6 +537,9 @@ function syncCaseStudies() {
     (e) => `  ${ts(e.data.id)}: ${ts(e.data.slug)},`
   );
 
+  const lastUpdated = newestLiveDate(entries, now);
+  INVENTORY.caseStudiesLastUpdated = lastUpdated;
+
   const out = `${HEADER}
 import { ID_BY_SLUG } from "./caseStudySlugs";
 
@@ -528,9 +550,11 @@ import { ID_BY_SLUG } from "./caseStudySlugs";
 // bundle. Re-exported here so existing call sites keep working unchanged.
 export { getCaseStudySlug, isLegacyId } from "./caseStudySlugs";
 
-// Bumped when case studies are added, edited, or have material changes.
-// Sitemap reads this so Google sees an accurate lastModified date.
-export const CASE_STUDIES_LAST_UPDATED = "2026-05-18";
+// Derived at sync time from the newest live publishedAt in
+// content/case-studies/, so it advances on its own as scheduled studies go
+// live instead of being hand-bumped and silently going stale. Sitemap reads
+// this so Google sees a lastModified date that is actually true.
+export const CASE_STUDIES_LAST_UPDATED = "${lastUpdated}";
 
 export interface CaseStudy {
   id: string;
@@ -969,6 +993,12 @@ export const COMPARISON_COUNT = ${INVENTORY.comparisons};
 export const AI_DECODED_COUNT = ${INVENTORY.aiDecoded};
 export const DRILL_COUNT = ${INVENTORY.drills};
 export const ANSWER_COUNT = ${INVENTORY.answers};
+
+// Mirror of CASE_STUDIES_LAST_UPDATED in data/caseStudies.ts, emitted here so
+// client components can read the date without importing the ~830 KB dataset.
+// Both come from the same computed value in this script, so they cannot drift.
+export const CASE_STUDIES_LAST_UPDATED = "${INVENTORY.caseStudiesLastUpdated}";
+export const COMPARISONS_LAST_UPDATED = "${INVENTORY.comparisonsLastUpdated}";
 `;
   fs.writeFileSync(path.join(DATA, "inventory-counts.ts"), out, "utf8");
   console.log(`✓ data/inventory-counts.ts (registry updated)`);

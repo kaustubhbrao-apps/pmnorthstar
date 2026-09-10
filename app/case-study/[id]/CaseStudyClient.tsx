@@ -14,7 +14,9 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { ShareButton } from "@/components/ShareButton";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Byline } from "@/components/Byline";
-import { SITE_LAST_REVIEWED } from "@/lib/site";
+// From the counts leaf module, not data/caseStudies.ts: this is a client
+// component and that module is ~830 KB. Same value, emitted by sync into both.
+import { CASE_STUDIES_LAST_UPDATED } from "@/data/inventory-counts";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SmartEngagementBlock } from "@/components/SmartEngagementBlock";
 import { Footer } from "@/components/Footer";
@@ -133,8 +135,23 @@ export function CaseStudyClient({
         "url": `${SITE_URL}/logo-icon.svg`
       }
     },
-    "datePublished": study.publishedAt || "2026-05-18",
-    "dateModified": SITE_LAST_REVIEWED,
+    // Both derive from the study's own date, falling back to the corpus date
+    // sync computes. dateModified deliberately mirrors datePublished rather
+    // than reporting a site-wide "last reviewed" constant: we do not track
+    // per-study edits, and claiming every one of 143 studies was revised on
+    // the same day is a freshness signal that is simply not true.
+    "datePublished": study.publishedAt || CASE_STUDIES_LAST_UPDATED,
+    "dateModified": study.publishedAt || CASE_STUDIES_LAST_UPDATED,
+    // The entity the study is about, stated as a thing rather than left for a
+    // reader to infer from prose. This is what lets an assistant resolve
+    // "the Adyen case study" to Adyen.
+    "about": {
+      "@type": "Organization",
+      "name": study.company,
+    },
+    "abstract": study.description,
+    "keywords": study.tags.join(", "),
+    "articleSection": study.category,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": studyUrl
@@ -267,7 +284,7 @@ export function CaseStudyClient({
               </p>
 
               <div className="flex items-center justify-between flex-wrap gap-4 mt-8">
-                <Byline label="Written" date={SITE_LAST_REVIEWED} />
+                <Byline label="Written" date={study.publishedAt || CASE_STUDIES_LAST_UPDATED} />
                 <div className="flex items-center gap-3">
                   <SmartSaveButton resource={{
                     id: study.id,

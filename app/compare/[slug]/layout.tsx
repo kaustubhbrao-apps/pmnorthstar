@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { comparisons, getComparisonBySlug } from "@/data/comparisons";
 import { getCaseStudyById } from "@/data/caseStudies";
+import { COMPARISONS_LAST_UPDATED } from "@/data/inventory-counts";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -79,7 +80,19 @@ export default function CompareLayout({
               name: "northstar",
               url: SITE_URL,
             },
-            about: [a?.company, b?.company].filter(Boolean).join(" and "),
+            // Was the string "Airbnb and Booking.com", which resolves to
+            // nothing. As Organizations both sides become entities an
+            // assistant can match against the company it was asked about —
+            // the whole reason a head-to-head page is worth citing.
+            about: [a?.company, b?.company]
+              .filter(Boolean)
+              .map((name) => ({ "@type": "Organization", name })),
+            // The verdict is the self-contained claim on the page: the one
+            // passage that answers "which won" without the surrounding table.
+            abstract: cmp.verdict,
+            datePublished: cmp.publishedAt ?? COMPARISONS_LAST_UPDATED,
+            dateModified: cmp.publishedAt ?? COMPARISONS_LAST_UPDATED,
+            keywords: cmp.keywords.join(", "),
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
           }),
         }}

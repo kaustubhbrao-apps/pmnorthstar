@@ -39,9 +39,17 @@ const nextConfig = {
     ];
   },
 
-  // No outputFileTracingIncludes needed: ai-decoded markdown is rendered to
-  // HTML at build time into data/aiDecodedArticles.ts, so nothing reads
-  // content/ at runtime any more.
+  // /llms.txt and /llms-full.txt build their output from content/ at request
+  // time so scheduled posts appear the moment they go live, without a deploy.
+  // That read is dynamic, so tracing cannot infer it — these globs are what
+  // put the markdown inside the lambda. Everything else on the site reads the
+  // pre-rendered data/*.ts modules and needs nothing here.
+  experimental: {
+    outputFileTracingIncludes: {
+      "/llms.txt": ["./content/**/*.md"],
+      "/llms-full.txt": ["./content/**/*.md"],
+    },
+  },
 };
 
 module.exports = nextConfig;

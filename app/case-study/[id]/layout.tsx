@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { permanentRedirect } from "next/navigation";
 import {
+  CASE_STUDIES_LAST_UPDATED,
   caseStudies,
   getCaseStudyById,
   getCaseStudyBySlug,
@@ -67,7 +68,9 @@ export async function generateMetadata(
       title: study.title,
       description: study.description,
       siteName: "northstar",
-      publishedTime: `${study.year}-01-01`,
+      // The study's publish date, not study.year — that is when the events
+      // described happened, which is not when this article went up.
+      publishedTime: study.publishedAt ?? CASE_STUDIES_LAST_UPDATED,
       tags: study.tags,
     },
     twitter: {
@@ -103,32 +106,13 @@ export default function CaseStudyLayout({
     <>
       {study && (
         <>
-          <script
-            id="ld-article"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                headline: study.title,
-                description: study.description,
-                datePublished: `${study.year}-01-01`,
-                author: { "@type": "Organization", name: "northstar" },
-                publisher: {
-                  "@type": "Organization",
-                  name: "northstar",
-                  url: SITE_URL,
-                },
-                about: study.company,
-                keywords: study.tags.join(", "),
-                articleSection: study.category,
-                mainEntityOfPage: {
-                  "@type": "WebPage",
-                  "@id": `${SITE_URL}/case-study/${slug}`,
-                },
-              }),
-            }}
-          />
+          {/* No Article schema here. CaseStudyClient emits one for this
+              same URL, and two Article nodes sharing a mainEntityOfPage @id
+              is a conflict, not a reinforcement — this copy also dated the
+              page to `${study.year}-01-01`, the year the events happened, so
+              a 2008 case study advertised itself to crawlers as an 18-year-old
+              article. The client copy carries the real publish date, the
+              company as an Organization, and dateModified. */}
           {/* Only emit FAQPage when the study actually has FAQs. An
               empty mainEntity[] is malformed JSON-LD and Google was
               flagging case studies as "Duplicate field FAQPage". Stable

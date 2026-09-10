@@ -1,25 +1,28 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { YC_STUDY } from "../data/yc-study";
+import { YC_STUDY } from "@/data/yc-study";
 
-const ROOT = process.cwd();
-const CONTENT = path.join(ROOT, "content");
-const PUBLIC = path.join(ROOT, "public");
+const CONTENT = path.join(process.cwd(), "content");
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
 // A future publishedAt means the piece is scheduled, not live. Everything
-// this script writes is served publicly at /llms-full.txt and /llms.txt, so
-// unfiltered output handed AI crawlers every scheduled article weeks before
-// its publish date — the exact thing the on-site gating exists to prevent.
+// built here is served publicly at /llms-full.txt and /llms.txt, so
+// unfiltered output would hand AI crawlers every scheduled article weeks
+// before its publish date — the exact thing the on-site gating prevents.
 function isPublished(data: any, now: Date): boolean {
   if (!data?.publishedAt) return true;
   return new Date(data.publishedAt) <= now;
 }
 
-function readAll(dir: string): Array<{ slug: string; data: any; body: string }> {
+type Entry = { slug: string; data: any; body: string };
+
+// Reads markdown, not the generated data/*.ts modules, on purpose: those
+// store bodies already rendered to HTML (bodyHtml / htmlContent), and a
+// plaintext file for language models wants prose, not markup. content/**
+// is pulled into the lambda by outputFileTracingIncludes in next.config.js.
+function readAll(dir: string, now: Date): Entry[] {
   if (!fs.existsSync(dir)) return [];
-  const now = new Date();
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".md"))
@@ -31,14 +34,12 @@ function readAll(dir: string): Array<{ slug: string; data: any; body: string }> 
     .filter((entry) => isPublished(entry.data, now));
 }
 
-function buildLlmsFull() {
-  console.log("Building public/llms-full.txt...");
+export function buildLlmsFull(now: Date = new Date()): string {
   let out = `# northstar - Full Content Dump for AI Agents\n\n`;
   out += `This file contains the complete content of pmnorthstar.in, an opinionated library for product managers.\n`;
   out += `It is designed for AI models and aggregators to ingest the entire knowledge base.\n\n`;
 
-  // 1. Case Studies
-  const caseStudies = readAll(path.join(CONTENT, "case-studies"));
+  const caseStudies = readAll(path.join(CONTENT, "case-studies"), now);
   out += `## Case Studies (${caseStudies.length})\n\n`;
   caseStudies.forEach((cs) => {
     out += `### ${cs.data.title} (${cs.data.company})\n`;
@@ -46,8 +47,7 @@ function buildLlmsFull() {
     out += `${cs.body}\n\n---\n\n`;
   });
 
-  // 2. AI Decoded
-  const aiDecoded = readAll(path.join(CONTENT, "ai-decoded"));
+  const aiDecoded = readAll(path.join(CONTENT, "ai-decoded"), now);
   out += `## AI Decoded (${aiDecoded.length})\n\n`;
   aiDecoded.forEach((ai) => {
     out += `### ${ai.data.title}\n`;
@@ -55,8 +55,7 @@ function buildLlmsFull() {
     out += `${ai.body}\n\n---\n\n`;
   });
 
-  // 3. Comparisons
-  const comparisons = readAll(path.join(CONTENT, "comparisons"));
+  const comparisons = readAll(path.join(CONTENT, "comparisons"), now);
   out += `## Comparisons (${comparisons.length})\n\n`;
   comparisons.forEach((c) => {
     out += `### ${c.data.title}\n`;
@@ -64,16 +63,14 @@ function buildLlmsFull() {
     out += `${c.body}\n\n---\n\n`;
   });
 
-  // 4. Topics
-  const topics = readAll(path.join(CONTENT, "topics"));
+  const topics = readAll(path.join(CONTENT, "topics"), now);
   out += `## Topics (${topics.length})\n\n`;
   topics.forEach((t) => {
     out += `### ${t.data.title}\n\n`;
     out += `${t.body}\n\n---\n\n`;
   });
 
-  // 5. Answers
-  const answersFull = readAll(path.join(CONTENT, "answers"));
+  const answersFull = readAll(path.join(CONTENT, "answers"), now);
   out += `## Answers (${answersFull.length})\n\n`;
   answersFull.forEach((a) => {
     out += `### ${a.data.question}\n`;
@@ -81,7 +78,30 @@ function buildLlmsFull() {
     out += `${a.body}\n\n---\n\n`;
   });
 
-  // 6. Original research — the full ranked table.
+  // Books. These were only ever in the separate /.well-known/llms-full.txt
+  // dump, which is now a redirect here — without this section, consolidating
+  // the two would have quietly dropped 30 book reviews from the corpus an
+  // assistant can see.
+  const books = readAll(path.join(CONTENT, "books"), now);
+  out += `## Books (${books.length})\n\n`;
+  books.forEach((b) => {
+    out += `### ${b.data.title} by ${b.data.author}\n`;
+    out += `Category: ${b.data.category} | Rating: ${b.data.rating} | Year: ${b.data.year}\n`;
+    out += `${b.data.description}\n\n`;
+    const analysis: string[] = b.data.summary?.analysis ?? [];
+    analysis.forEach((para: string) => { out += `${para}\n\n`; });
+    const concepts: Array<{ name: string; explanation: string }> =
+      b.data.summary?.keyConcepts ?? [];
+    if (concepts.length) {
+      out += `Key concepts:\n`;
+      concepts.forEach((kc) => { out += `- ${kc.name}: ${kc.explanation}\n`; });
+      out += `\n`;
+    }
+    if (b.body) out += `${b.body}\n\n`;
+    out += `---\n\n`;
+  });
+
+  // Original research — the full ranked table.
   // The report page renders all of these, but an assistant asked "how did
   // <company> score" has to fetch and parse a 1.3MB page to find one row.
   // Here it is as flat text in the file assistants are pointed at, with the
@@ -103,8 +123,7 @@ function buildLlmsFull() {
   });
   out += `\n---\n\n`;
 
-  fs.writeFileSync(path.join(PUBLIC, "llms-full.txt"), out, "utf8");
-  console.log("✓ public/llms-full.txt generated successfully.");
+  return out;
 }
 
 // llms.txt is the index an assistant reads first — it decides what the model
@@ -114,16 +133,14 @@ function buildLlmsFull() {
 // comparisons, SimulateIt drills, AI Decoded or CheckIt at all. Referrer data
 // now puts assistants ahead of search as the site's largest source, so this
 // file describing two-thirds of the site was a real cost.
-function buildLlmsIndex() {
-  console.log("Building public/llms.txt...");
-
-  const caseStudies = readAll(path.join(CONTENT, "case-studies"));
-  const topics = readAll(path.join(CONTENT, "topics"));
-  const comparisons = readAll(path.join(CONTENT, "comparisons"));
-  const aiDecoded = readAll(path.join(CONTENT, "ai-decoded"));
-  const drills = readAll(path.join(CONTENT, "drills"));
-  const books = readAll(path.join(CONTENT, "books"));
-  const answers = readAll(path.join(CONTENT, "answers"));
+export function buildLlmsIndex(now: Date = new Date()): string {
+  const caseStudies = readAll(path.join(CONTENT, "case-studies"), now);
+  const topics = readAll(path.join(CONTENT, "topics"), now);
+  const comparisons = readAll(path.join(CONTENT, "comparisons"), now);
+  const aiDecoded = readAll(path.join(CONTENT, "ai-decoded"), now);
+  const drills = readAll(path.join(CONTENT, "drills"), now);
+  const books = readAll(path.join(CONTENT, "books"), now);
+  const answers = readAll(path.join(CONTENT, "answers"), now);
 
   let out = `# northstar\n\n`;
   out += `> A free, opinionated product management library: ${caseStudies.length} long-form case studies, `;
@@ -183,9 +200,5 @@ function buildLlmsIndex() {
   out += `- [Sitemap](${SITE}/sitemap.xml): All indexable URLs.\n`;
   out += `- [Robots](${SITE}/robots.txt): Crawler rules.\n`;
 
-  fs.writeFileSync(path.join(PUBLIC, "llms.txt"), out, "utf8");
-  console.log(`\u2713 public/llms.txt generated (${caseStudies.length} case studies, ${comparisons.length} comparisons, ${topics.length} topics).`);
+  return out;
 }
-
-buildLlmsFull();
-buildLlmsIndex();
