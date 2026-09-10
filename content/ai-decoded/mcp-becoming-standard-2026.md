@@ -1,7 +1,7 @@
 ---
 slug: mcp-becoming-standard-2026
 title: "MCP Is Becoming the New HTTP: What Every PM Should Know in 2026"
-metaTitle: "Model Context Protocol (MCP) Explained: The 2026 Standard for AI Agents"
+metaTitle: "What Is MCP? The 2026 Standard for AI Agents"
 excerpt: "Anthropic's Model Context Protocol went from 'interesting experiment' to 'standard everyone implements' in 18 months. Cursor, Claude Desktop, OpenAI Agents SDK, Cline, Continue, Zed — all support MCP. Here's what it is, why it matters, and what your product should do."
 primaryKeyword: "model context protocol mcp"
 longTailKeywords:

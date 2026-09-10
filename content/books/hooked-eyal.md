@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781591847786-M.jpg"
 link: "https://drive.google.com/file/d/1R2JUi6KHLRx2BJsmDr_HGXvC1etM9bYY/view?usp=drive_link"
 amazonUrl: "https://amzn.to/4dRJCxC"
 description: "How to build habit-forming products using the Hook Model."
+metaDescription: "Our review of Nir Eyal's Hooked — trigger, action, variable reward and investment, plus the ethical questions the Hook Model raises for product teams."
 rating: 4.5
 pages: 256
 year: 2014

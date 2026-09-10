@@ -1,5 +1,6 @@
 ---
 slug: blackberry-touchscreen-delay-2008
+title: "BlackBerry Meets the iPhone"
 caseStudySlug: blackberry-touchscreen-delay-2008
 type: historical
 category: Strategy

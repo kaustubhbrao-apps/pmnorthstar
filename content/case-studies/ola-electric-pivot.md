@@ -3,6 +3,7 @@ id: cs-67
 slug: ola-electric-pivot
 company: Ola
 title: How Ola Lost Cabs to Uber and Bet the Company on Electric Two-Wheelers
+metaTitle: "Why Ola Bet the Company on Electric"
 category: Strategy
 description: >-
   Ola Cabs raised $5B+ to win Indian ride-hailing and slowly lost the urban

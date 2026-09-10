@@ -1,7 +1,7 @@
 ---
 slug: google-antigravity-2
 title: "Google Antigravity 2: Google's Real Answer to Cursor and Claude Code"
-metaTitle: "Google Antigravity 2 Review: Inside Google's AI Coding Platform"
+metaTitle: "Google Antigravity 2 Review"
 excerpt: "Google's Antigravity v2 dropped quietly in 2026 — the most ambitious AI coding platform from Big Tech since GitHub Copilot. Built on Gemini agents, vertically integrated into Google Cloud, designed to leapfrog Cursor on enterprise. Here's what's actually inside and who should care."
 primaryKeyword: "google antigravity 2"
 longTailKeywords:

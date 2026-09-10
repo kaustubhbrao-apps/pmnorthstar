@@ -3,7 +3,7 @@ slug: "what-is-user-story-mapping"
 question: "What is user story mapping?"
 shortAnswer: "User story mapping arranges work as a two-dimensional map: the horizontal axis is the sequence of steps a user takes to accomplish something, and the vertical axis is depth of implementation within each step. Slicing horizontally across the map produces a release that works end to end, which is the entire point — a flat backlog cannot show you whether a release is usable."
 category: "Prioritisation"
-metaTitle: "User Story Mapping Explained: The Two-Axis Alternative to a Flat Backlog"
+metaTitle: "User Story Mapping vs a Flat Backlog"
 metaDescription: "User story mapping explained — the backbone, the vertical slices, how to cut a first release that actually works end to end, and when the technique is overkill."
 keywords:
   - "user story mapping"

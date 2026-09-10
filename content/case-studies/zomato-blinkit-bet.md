@@ -5,6 +5,7 @@ company: Zomato
 title: >-
   How Zomato Survived a 75% IPO Crash and Became India's Most Watched Post-IPO
   Story
+metaTitle: "How Zomato Survived a 75% IPO Crash"
 category: Strategy
 description: >-
   Zomato IPO'd at a $12B valuation, crashed 75% within 18 months, then quietly

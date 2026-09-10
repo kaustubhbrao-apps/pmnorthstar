@@ -1,5 +1,6 @@
 ---
 slug: series-a-mid-pivot-2026
+title: "Pivot in the Middle of a Series A?"
 caseStudySlug: series-a-mid-pivot-2026
 type: current
 category: founding-funding

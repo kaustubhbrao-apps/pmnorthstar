@@ -1,5 +1,6 @@
 ---
 slug: airbnb-survival-2008
+title: "Airbnb, 2008: Out of Runway, No PMF"
 caseStudySlug: airbnb-cereal-survival
 type: historical
 category: crisis

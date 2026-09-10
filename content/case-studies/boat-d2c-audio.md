@@ -5,6 +5,7 @@ company: Boat
 title: >-
   How Boat Became India's #1 Audio Brand Without a Factory, a Store, or a
   Celebrity
+metaTitle: "How Boat Became India's #1 Audio Brand"
 category: Growth
 description: >-
   Aman Gupta and Sameer Mehta built Boat into India's largest audio brand in six

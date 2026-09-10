@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780008339548-M.jpg"
 link: "https://drive.google.com/file/d/1zI9fxv5euHrjNeAAyp4PQVmw0Zei-tA6/view?usp=drive_link"
 amazonUrl: "https://amzn.to/4tL4Ulw"
 description: "The lightning-fast path to building massively valuable companies."
+metaDescription: "Our review of Reid Hoffman's Blitzscaling — speed over efficiency in winner-take-most markets, and why the strategy aged badly once cheap capital ended."
 rating: 4.3
 pages: 336
 year: 2018

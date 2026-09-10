@@ -1,5 +1,6 @@
 ---
 slug: ai-agent-autonomy-2026
+title: "How Much Autonomy Do You Give an Agent?"
 caseStudySlug: ai-agent-autonomy-2026
 type: current
 category: product

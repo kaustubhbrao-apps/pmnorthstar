@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780578515960-M.jpg"
 link: "https://www.youtube.com/watch?v=hdjlCLb9Hl8"
 amazonUrl: "https://amzn.to/49TzT7y"
 description: "How to nail product positioning so customers get it, buy it, love it."
+metaDescription: "Our review of April Dunford's Obviously Awesome — the positioning process, competitive alternatives, and why it is the most practical book on the subject."
 rating: 4.7
 pages: 198
 year: 2019

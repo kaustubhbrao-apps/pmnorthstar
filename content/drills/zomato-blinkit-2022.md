@@ -1,5 +1,6 @@
 ---
 slug: zomato-blinkit-2022
+title: "Zomato: Acquire Blinkit?"
 caseStudySlug: zomato-blinkit-bet
 type: historical
 category: strategic

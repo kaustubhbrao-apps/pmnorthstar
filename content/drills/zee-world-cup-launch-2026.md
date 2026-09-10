@@ -1,6 +1,7 @@
 ---
 id: dr-28
 slug: zee-world-cup-launch-2026
+title: "Zee: Stream the World Cup at Scale"
 caseStudySlug: zee-fifa-world-cup-bet
 type: current
 category: product

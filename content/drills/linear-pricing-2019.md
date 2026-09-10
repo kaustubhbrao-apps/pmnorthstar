@@ -1,5 +1,6 @@
 ---
 slug: linear-pricing-2019
+title: "Linear: Free Forever for Individuals?"
 caseStudySlug: linear-brand-from-day-one
 type: historical
 category: pricing

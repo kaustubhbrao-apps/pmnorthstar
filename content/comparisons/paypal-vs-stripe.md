@@ -5,7 +5,7 @@ companyB: "cs-27"
 title: "PayPal vs Stripe — The Original Disruptor vs the Disruptor of the Disruptor"
 eyebrow: "How PayPal became the incumbent it once replaced, and why Stripe exists because of that"
 verdict: "PayPal won the consumer trust layer of internet payments in the 2000s and never had to win it again. Stripe won the developer infrastructure layer of internet payments in the 2010s and is still building. PayPal monetizes the consumer relationship; Stripe monetizes the business relationship. In payments, whoever owns the trust of the payer and the infrastructure of the payee controls both ends of every transaction."
-metaTitle: "PayPal vs Stripe — Legacy Payments Giant vs Developer-First Fintech"
+metaTitle: "PayPal vs Stripe — Legacy vs Developer-First"
 metaDescription: "PayPal dominated consumer payments in the 2000s. Stripe built the API that replaced PayPal as the default for businesses. Compare their models, revenue, and moats."
 accentColor: "#003087"
 keywords:

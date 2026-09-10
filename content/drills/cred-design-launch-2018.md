@@ -1,5 +1,6 @@
 ---
 slug: cred-design-launch-2018
+title: "CRED: Who Do You Let In?"
 caseStudySlug: cred-design-fintech
 type: historical
 category: positioning

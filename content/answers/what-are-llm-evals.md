@@ -3,7 +3,7 @@ slug: "what-are-llm-evals"
 question: "What are LLM evals and why do AI products need them?"
 shortAnswer: "Evals are a test suite for model behaviour — a fixed set of inputs with expected properties, run automatically so you can tell whether a prompt, model or retrieval change made things better or worse. They exist because LLM outputs are non-deterministic, so the alternative is a team trying a few examples by hand and forming an impression."
 category: "AI"
-metaTitle: "What Are LLM Evals? Testing AI Products That Are Not Deterministic"
+metaTitle: "What Are LLM Evals? A Practical Guide"
 metaDescription: "LLM evals explained — why traditional tests do not work on model outputs, the kinds of eval that exist, how to build a first eval set, and the traps in LLM-as-judge."
 keywords:
   - "LLM evals"

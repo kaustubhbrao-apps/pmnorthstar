@@ -1,5 +1,6 @@
 ---
 slug: instagram-stories-clone-2016
+title: "Instagram: Clone Stories or Not?"
 caseStudySlug: instagram-stories-clone-2016
 type: historical
 category: product

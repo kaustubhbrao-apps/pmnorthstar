@@ -3,7 +3,7 @@ slug: "what-makes-a-good-landing-page"
 question: "What makes a good landing page?"
 shortAnswer: "One audience, one promise, one action. The page should say what the product does in plain language above the fold, show it rather than describe it, and remove every link that is not the action you want. Most underperforming landing pages fail on clarity rather than persuasion — the visitor cannot tell what the thing is."
 category: "Growth"
-metaTitle: "What Makes a Good Landing Page? Clarity, Proof and One Action"
+metaTitle: "What Makes a Good Landing Page?"
 metaDescription: "Landing page fundamentals — the above-the-fold test, why clarity beats cleverness, what proof actually persuades, and the technical basics most startup pages still miss."
 keywords:
   - "landing page best practices"

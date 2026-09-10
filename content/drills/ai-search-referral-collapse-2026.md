@@ -1,5 +1,6 @@
 ---
 slug: ai-search-referral-collapse-2026
+title: "Your Search Traffic Is Collapsing"
 caseStudySlug: ai-search-referral-collapse-2026
 type: current
 category: growth

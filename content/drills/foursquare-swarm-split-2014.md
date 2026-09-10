@@ -1,5 +1,6 @@
 ---
 slug: foursquare-swarm-split-2014
+title: "Foursquare: Split the App in Two?"
 caseStudySlug: foursquare-swarm-split-2014
 type: historical
 category: Strategy

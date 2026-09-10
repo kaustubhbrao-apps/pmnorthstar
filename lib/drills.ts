@@ -61,9 +61,23 @@ function cap(w: string): string {
  * the ~160 chars a search result will show.
  */
 export function drillDescription(drill: Pick<Drill, "intro" | "principle">): string {
-  const source = (drill.intro || "").split("\n\n")[0].replace(/\s+/g, " ").trim()
-    || (drill.principle || "").replace(/\s+/g, " ").trim();
+  const paras = (drill.intro || "")
+    .split("\n\n")
+    .map((p) => p.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+
+  // Take paragraphs until there is enough to fill a result snippet. Several
+  // drills open with a one-line scene-setter ("It is late 2004. You are Jeff
+  // Bezos, CEO of Amazon.") — true, but 51 characters of a ~160 budget, and
+  // it says nothing about the decision the drill actually poses.
+  let source = "";
+  for (const p of paras) {
+    source = source ? `${source} ${p}` : p;
+    if (source.length >= 120) break;
+  }
+  if (!source) source = (drill.principle || "").replace(/\s+/g, " ").trim();
   if (source.length <= 160) return source;
+
   const cut = source.slice(0, 160);
   const lastSpace = cut.lastIndexOf(" ");
   return `${cut.slice(0, lastSpace > 100 ? lastSpace : 160).replace(/[,;:.\s]+$/, "")}…`;

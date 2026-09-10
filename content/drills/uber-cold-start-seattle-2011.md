@@ -1,5 +1,6 @@
 ---
 slug: uber-cold-start-seattle-2011
+title: "Uber: Cold-Start a New City"
 caseStudySlug: uber-cold-start-seattle-2011
 type: historical
 category: Strategy

@@ -1,5 +1,6 @@
 ---
 slug: claude-5-ships-2026
+title: "A Better Model Ships. Do You Switch?"
 caseStudySlug: claude-5-ships-2026
 type: current
 category: strategic

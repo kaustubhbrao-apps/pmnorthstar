@@ -3,7 +3,7 @@ slug: "what-is-generative-engine-optimization"
 question: "What is generative engine optimisation (GEO)?"
 shortAnswer: "Generative engine optimisation is the practice of making your content likely to be surfaced and cited by AI assistants rather than ranked in a list of links. It overlaps heavily with good SEO, but optimises for being quotable and verifiable rather than for click-through."
 category: "AI"
-metaTitle: "What Is Generative Engine Optimisation (GEO)? A Practical Guide"
+metaTitle: "What Is Generative Engine Optimisation?"
 metaDescription: "GEO optimises for citation by AI assistants rather than ranking. What actually influences whether a model quotes you, how it differs from SEO, and what to do first."
 keywords:
   - "generative engine optimization"

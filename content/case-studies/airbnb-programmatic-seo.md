@@ -3,6 +3,7 @@ id: cs-71
 slug: airbnb-programmatic-seo
 company: Airbnb
 title: How Airbnb Built the Largest Programmatic SEO Machine in Travel
+metaTitle: "Airbnb's Programmatic SEO Machine"
 category: Growth
 description: >-
   Airbnb generated tens of thousands of neighborhood pages with structured data,

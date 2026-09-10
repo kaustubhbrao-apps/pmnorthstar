@@ -1,5 +1,6 @@
 ---
 slug: ai-hiring-assessment-2026
+title: "Can an AI Assessment Predict a Good Hire?"
 caseStudySlug: ai-hiring-assessment-2026
 type: current
 category: hiring

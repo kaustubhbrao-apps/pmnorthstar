@@ -1,5 +1,6 @@
 ---
 slug: clubhouse-fomo-scaling-2020
+title: "Clubhouse: Open the Gates or Hold?"
 caseStudySlug: clubhouse-fomo-scaling-2020
 type: historical
 category: Growth

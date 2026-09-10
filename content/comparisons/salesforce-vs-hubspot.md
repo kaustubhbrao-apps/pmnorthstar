@@ -5,7 +5,7 @@ companyB: "cs-18"
 title: "Salesforce vs HubSpot — Top-Down CRM vs Inbound Everything"
 eyebrow: "The enterprise sales machine versus the company that made marketing software marketing itself"
 verdict: "Salesforce owns the enterprise CRM market through top-down sales, deep configurability, and a Trailblazer ecosystem that makes switching catastrophically expensive. HubSpot owns the SMB and mid-market by making marketing, sales, and CRM software so easy and free-to-start that companies grow into paying customers before they realize it. Salesforce sells to the CIO. HubSpot sells to the marketing intern who becomes the CIO."
-metaTitle: "Salesforce vs HubSpot — Enterprise CRM vs SMB Growth Platform Compared"
+metaTitle: "Salesforce vs HubSpot — Enterprise vs SMB CRM"
 metaDescription: "Salesforce dominates enterprise CRM through top-down sales. HubSpot wins SMBs with inbound freemium. Compare the two CRM giants' models, revenue, and customers."
 accentColor: "#00A1E0"
 keywords:

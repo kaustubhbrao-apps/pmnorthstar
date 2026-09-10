@@ -1,5 +1,6 @@
 ---
 slug: vibe-coded-launch-readiness-2026
+title: "Is Your Vibe-Coded App Ready to Ship?"
 caseStudySlug: vibe-coded-launch-readiness-2026
 type: current
 category: scope

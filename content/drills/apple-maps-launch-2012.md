@@ -1,5 +1,6 @@
 ---
 slug: apple-maps-launch-2012
+title: "Apple Maps: Ship Before It's Ready?"
 caseStudySlug: apple-maps-launch-2012
 type: historical
 category: Strategy

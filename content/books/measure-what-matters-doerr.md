@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780525536222-M.jpg"
 link: "https://drive.google.com/file/d/12wCzGZpiJtIZNzR4TFbP8qOL7zm2u9F-/view?usp=drive_link"
 amazonUrl: "https://amzn.to/4uQPUDq"
 description: "How Google, Bono, and the Gates Foundation rock the world with OKRs."
+metaDescription: "Our review of John Doerr's Measure What Matters — how OKRs actually work, the specific ways teams break them, and what the book leaves out."
 rating: 4.5
 pages: 320
 year: 2018

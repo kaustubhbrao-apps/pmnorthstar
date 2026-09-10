@@ -1,5 +1,6 @@
 ---
 slug: pinterest-waitlist-illusion-2010
+title: "Pinterest: Engineer Scarcity?"
 caseStudySlug: pinterest-waitlist-illusion-2010
 type: historical
 category: Growth

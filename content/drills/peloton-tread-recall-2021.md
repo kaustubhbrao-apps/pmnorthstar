@@ -1,5 +1,6 @@
 ---
 slug: peloton-tread-recall-2021
+title: "Peloton: Recall the Tread+?"
 caseStudySlug: peloton-tread-recall-2021
 type: historical
 category: Crisis

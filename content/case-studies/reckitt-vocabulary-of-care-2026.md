@@ -3,6 +3,7 @@ id: cs-reckitt-vocabulary-26
 slug: reckitt-vocabulary-of-care-2026
 company: Reckitt
 title: "The Vocabulary of Care: How Reckitt's Brands Became Reflex Actions"
+metaTitle: "How Reckitt's Brands Became Reflexes"
 category: Marketing
 description: "How FMCG giant Reckitt bypassed logical decision-making by embedding its brands—Dettol, Strepsils, Mortein—so deeply into our routines that they replaced generic clinical terms entirely."
 outcome: "Achieved the holy grail of marketing: total genericization where the brand name literally became the solution."

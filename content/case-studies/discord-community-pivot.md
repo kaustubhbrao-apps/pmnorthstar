@@ -3,6 +3,7 @@ id: cs-64
 slug: discord-community-pivot
 company: Discord
 title: How Discord Pivoted from Gaming Chat to Community Infrastructure
+metaTitle: "How Discord Pivoted Beyond Gaming Chat"
 category: Strategy
 description: >-
   Jason Citron built a chat tool for gamers because Skype and TeamSpeak were

@@ -3,6 +3,7 @@ id: cs-siri-llm-26
 slug: apple-opens-siri-to-llms-2026
 company: Apple
 title: "The Siri Revival: Opening the Walled Garden to External Intelligence"
+metaTitle: "Siri Opens Up to External AI Models"
 category: Strategic
 description: "After years of Siri falling behind conversational agents, Apple controversially decided to rebuild Siri as an orchestration layer routing queries to third-party models like Claude 5 and Gemini 2. This broke Apple's strict in-house-only AI philosophy but saved their ecosystem."
 outcome: "Siri usage surged 400%, maintaining iOS dominance in the agentic era."

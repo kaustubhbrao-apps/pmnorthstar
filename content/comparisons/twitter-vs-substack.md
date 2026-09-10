@@ -5,7 +5,7 @@ companyB: "cs-77"
 title: "Twitter vs Substack — The Broadcast vs the Letter"
 eyebrow: "Two platforms for writers, two opposite theories of what makes content valuable"
 verdict: "Twitter made every thought public, viral, and zero-cost. Substack made every thought private, direct, and potentially paid. Twitter's model produced the world's most influential real-time public square but never found a business model that monetized writers fairly. Substack's model produced a generation of independent writers earning real income directly from readers. One is built for reach; the other is built for depth. Depth turned out to have a better business model."
-metaTitle: "Twitter vs Substack — Public Feed vs Paid Newsletter Compared"
+metaTitle: "Twitter vs Substack — Feed vs Paid Newsletter"
 metaDescription: "Twitter owns the broadcast. Substack owns the letter. Compare how the two writer platforms think about audience, monetization, and the future of media."
 accentColor: "#FF6719"
 keywords:

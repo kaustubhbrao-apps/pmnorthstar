@@ -3,6 +3,7 @@ id: cs-apple-maps-2012
 slug: apple-maps-launch-2012
 company: Apple
 title: "The Apple Maps Launch: How a Spectacular Failure Birthed a Navigation Juggernaut"
+metaTitle: "The Apple Maps Launch Disaster"
 category: Strategy
 description: "Determined to break free from Google's data grip, Apple rushed its own mapping service into iOS 6 with disastrously inaccurate results. The fallout cost executive jobs but ultimately catalyzed a complete rebuild of Apple's spatial data infrastructure."
 outcome: "In 2026, Apple Maps has surpassed Google Maps in US iOS usage, leveraging advanced AR features and privacy-first on-device routing."

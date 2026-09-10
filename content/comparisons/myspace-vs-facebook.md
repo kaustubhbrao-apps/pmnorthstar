@@ -5,7 +5,7 @@ companyB: "cs-42"
 title: "MySpace vs Facebook — Why the First Mover Lost Everything"
 eyebrow: "The social network that had 100 million users and still lost to a dorm room startup"
 verdict: "MySpace had the users, the brand, and the News Corp distribution. Facebook had a cleaner product, a better network architecture, and an obsession with user experience over revenue. MySpace optimized for monetization too early and poisoned the UX with ads. Facebook optimized for engagement first and monetized second. The lesson: in consumer social, product quality compounds — and ugly products with bad UX eventually lose to clean ones with better architecture, even if the ugly one had a head start of 60 million users."
-metaTitle: "MySpace vs Facebook — Why the First Mover in Social Media Lost"
+metaTitle: "MySpace vs Facebook — Why the First Mover Lost"
 metaDescription: "MySpace had 100M users and News Corp's money. Facebook had a cleaner product. How Facebook won the first great social network war and what it teaches about product strategy."
 accentColor: "#003591"
 keywords:

@@ -5,6 +5,7 @@ company: Zoho
 title: >-
   How Zoho Built a Billion-Dollar SaaS Without VC, Without IPO, From a Village
   in Tamil Nadu
+metaTitle: "How Zoho Bootstrapped a Billion-Dollar SaaS"
 category: Strategy
 description: >-
   Sridhar Vembu built Zoho into a billion-dollar global SaaS company with zero

@@ -3,6 +3,7 @@ id: cs-hiring-eval-26
 slug: ai-hiring-assessment-2026
 company: HireBench
 title: "The AI Interviewer: Replacing Resumes with Agent-Led Assessments"
+metaTitle: "AI Interviewers Are Replacing Resumes"
 category: Hiring
 description: "In early 2026, recruiting startup HireBench realized static AI assessments were being easily gamed by candidate agents. They gambled their remaining runway on a fully autonomous interviewer agent capable of dynamic pair-programming and behavioral pressure testing."
 outcome: "Series B secured; now processing 40% of all YC startup technical screens."

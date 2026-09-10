@@ -1,5 +1,6 @@
 ---
 slug: tiktok-musically-licensing-2017
+title: "TikTok: Secure the Music Rights?"
 caseStudySlug: tiktok-musically-licensing-2017
 type: historical
 category: Strategy

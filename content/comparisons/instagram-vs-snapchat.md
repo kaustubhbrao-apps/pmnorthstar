@@ -5,7 +5,7 @@ companyB: "cs-47"
 title: "Instagram vs Snapchat — The Copycat That Won"
 eyebrow: "What happens when a $1B company steals your best idea and has 10x the users"
 verdict: "Snapchat invented ephemeral stories and built the most creative youth platform of its era. Instagram copied Stories in 2016 and within a year had more daily users on Stories than Snapchat had total. The lesson is brutal: in consumer social, distribution beats invention. A great idea on a small platform will always lose to a copied idea on a massive one, unless the small platform can build a moat fast enough."
-metaTitle: "Instagram vs Snapchat — Stories, Reels, and the Social War for Gen Z"
+metaTitle: "Instagram vs Snapchat — Stories and Reels"
 metaDescription: "Snapchat invented Stories. Instagram copied them and won. A detailed comparison of how the two platforms diverged and what it means for product strategy."
 accentColor: "#E1306C"
 keywords:

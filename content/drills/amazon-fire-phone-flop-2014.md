@@ -1,5 +1,6 @@
 ---
 slug: amazon-fire-phone-flop-2014
+title: "Amazon's Fire Phone: Ship or Kill?"
 caseStudySlug: amazon-fire-phone-flop-2014
 type: historical
 category: product

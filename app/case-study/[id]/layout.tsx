@@ -43,7 +43,7 @@ export async function generateMetadata(
   const url = `${SITE_URL}/case-study/${slug}`;
 
   return {
-    title: titleField(study.title),
+    title: titleField(study.metaTitle ?? study.title),
     description: clampDescription(study.description),
     keywords: [
       study.company,

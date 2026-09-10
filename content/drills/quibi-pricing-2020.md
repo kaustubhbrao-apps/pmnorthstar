@@ -1,5 +1,6 @@
 ---
 slug: quibi-pricing-2020
+title: "Quibi: Charge a Premium Price?"
 caseStudySlug: quibi-shutdown
 type: historical
 category: pricing

@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780385348690-M.jpg"
 link: "https://drive.google.com/file/d/1f90ZnKeGBNfAzHduVwAYxfHrhp40m5kh/view?usp=drive_link"
 amazonUrl: "https://amzn.to/3POvUlZ"
 description: "How today's fastest-growing companies drive breakout success."
+metaDescription: "Our review of Hacking Growth by Sean Ellis — the growth team model, experiment velocity, and why the whole playbook fails without product-market fit first."
 rating: 4.4
 pages: 320
 year: 2017

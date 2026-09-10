@@ -1,5 +1,6 @@
 ---
 slug: tesla-model-3-automation-2018
+title: "Tesla: Automate the Model 3 Line?"
 caseStudySlug: tesla-model-3-automation-2018
 type: historical
 category: Strategy

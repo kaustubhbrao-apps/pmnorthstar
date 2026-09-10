@@ -1,5 +1,6 @@
 ---
 slug: foundation-model-shipped-your-product-2026
+title: "A Model Lab Just Shipped Your Product"
 caseStudySlug: foundation-model-shipped-your-product-2026
 type: current
 category: strategic

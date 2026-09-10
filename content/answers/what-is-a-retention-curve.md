@@ -3,7 +3,7 @@ slug: "what-is-a-retention-curve"
 question: "What is a retention curve and what does it mean when it flattens?"
 shortAnswer: "A retention curve plots what percentage of a cohort is still active at each period after signup. It always falls at first — the question is whether it flattens into a horizontal line, which means you have a group of users who keep coming back indefinitely. A curve that keeps declining toward zero means you have no retained base, only a leaky funnel."
 category: "Metrics"
-metaTitle: "Retention Curve Explained: Why Flattening Is the Only Thing That Matters"
+metaTitle: "What Is a Retention Curve? Why It Flattens"
 metaDescription: "How to read a retention curve, why the flattening point is the real signal of product-market fit, and why a smiling curve is rarer than dashboards suggest."
 keywords:
   - "retention curve"

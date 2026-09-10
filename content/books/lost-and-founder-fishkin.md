@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780735213326-M.jpg"
 link: "https://drive.google.com/file/d/1RCmiJPWnYNFxAz4FIpOj2ZQNPy1MokZd/view?usp=drive_link"
 amazonUrl: "https://amzn.to/49DVwJ0"
 description: "A painfully honest field guide to the startup world."
+metaDescription: "Our review of Rand Fishkin's Lost and Founder — an unusually honest account of running a VC-backed startup, and what founders should actually take from it."
 rating: 4.5
 pages: 336
 year: 2018

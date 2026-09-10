@@ -3,7 +3,7 @@ slug: "what-does-a-product-manager-actually-do"
 question: "What does a product manager actually do?"
 shortAnswer: "A product manager decides what gets built and why, then makes sure it happens. Day to day that means research, prioritisation, writing, and a lot of alignment across engineering, design and the business. The role has no authority attached — influence comes from judgment and evidence."
 category: "Role"
-metaTitle: "What Does a Product Manager Actually Do? An Honest Description"
+metaTitle: "What Does a Product Manager Actually Do?"
 metaDescription: "The real job behind the title: deciding what to build, why, and getting it shipped. What a week looks like, what the role is not, and where the difficulty actually lies."
 keywords:
   - "what does a product manager do"

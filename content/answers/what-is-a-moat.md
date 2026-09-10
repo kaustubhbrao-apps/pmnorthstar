@@ -3,7 +3,7 @@ slug: "what-is-a-moat"
 question: "What is a competitive moat?"
 shortAnswer: "A moat is a structural advantage that makes your position harder to attack over time — network effects, switching costs, proprietary data, economies of scale, or brand. Features are not moats. If a well-funded competitor could copy it in a quarter, it's a lead, not a moat."
 category: "Strategy"
-metaTitle: "What Is a Competitive Moat? The Five Types That Actually Hold"
+metaTitle: "What Is a Competitive Moat? The Five Types"
 metaDescription: "Network effects, switching costs, data, scale and brand — the moats that compound, why features never qualify, and how Google Maps and Stripe built theirs."
 keywords:
   - "competitive moat"

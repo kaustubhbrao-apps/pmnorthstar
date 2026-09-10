@@ -1,5 +1,6 @@
 ---
 slug: google-reader-sunset-2013
+title: "Google Reader: Kill a Beloved Product"
 caseStudySlug: google-reader-sunset-2013
 type: historical
 category: strategic

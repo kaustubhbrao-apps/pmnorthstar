@@ -5,7 +5,7 @@ companyB: "cs-13"
 title: "Facebook vs Twitter — The Graph vs The Stream"
 eyebrow: "Social network architecture determines everything downstream"
 verdict: "Facebook built around the social graph — who you know — and that compounding friend network created a data moat and advertising machine with no peer. Twitter built around the interest graph — what you care about — and that produced the world's most influential real-time public square, but a business that could never match Facebook's monetization. The graph you choose at founding shapes your ceiling forever."
-metaTitle: "Facebook vs Twitter — Social Graph vs Interest Graph Compared"
+metaTitle: "Facebook vs Twitter — Social vs Interest Graph"
 metaDescription: "Facebook monetizes who you know. Twitter monetizes what you care about. A deep comparison of two social giants and why their architectures led to wildly different outcomes."
 accentColor: "#1877F2"
 keywords:

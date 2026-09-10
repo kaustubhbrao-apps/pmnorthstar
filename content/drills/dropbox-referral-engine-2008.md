@@ -1,5 +1,6 @@
 ---
 slug: dropbox-referral-engine-2008
+title: "Dropbox: Build Virality Into the Product"
 caseStudySlug: dropbox-referral-engine-2008
 type: historical
 category: Growth

@@ -2,7 +2,7 @@
 slug: "distribution-wins"
 title: "Distribution Eats Product"
 eyebrow: "When getting found was the whole game"
-metaTitle: "Distribution Wins — Case Studies on Programmatic SEO and Performance"
+metaTitle: "Distribution Wins — Programmatic SEO Cases"
 metaDescription: "Long-form case studies on companies that won through distribution: Airbnb's programmatic SEO, Booking.com's A/B testing, Walmart's web performance, and GitHub."
 accentColor: "#2DD4BF"
 keywords:

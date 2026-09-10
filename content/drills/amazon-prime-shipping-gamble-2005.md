@@ -1,5 +1,6 @@
 ---
 slug: amazon-prime-shipping-gamble-2005
+title: "Amazon Prime: Give Away Free Shipping?"
 caseStudySlug: amazon-prime-shipping-gamble-2005
 type: historical
 category: Growth

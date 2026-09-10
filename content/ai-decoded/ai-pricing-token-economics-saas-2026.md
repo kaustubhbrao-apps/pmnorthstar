@@ -1,6 +1,7 @@
 ---
 slug: ai-pricing-token-economics-saas-2026
 title: "Token Economics: Why AI Pricing Is Quietly Breaking Your SaaS Margins"
+metaTitle: "Token Economics vs Your SaaS Margins"
 excerpt: "Per-seat pricing assumed labor was the cost. When the model does the work, your COGS becomes a variable you don't control. Here's the math."
 primaryKeyword: "AI pricing models"
 longTailKeywords:

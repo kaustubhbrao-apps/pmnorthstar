@@ -1,6 +1,7 @@
 ---
 slug: ai-coding-agents-junior-dev-hiring-2026
 title: "Coding Agents Didn't Kill Junior Devs. They Killed the Junior Dev Job Description"
+metaTitle: "Coding Agents and the Junior Dev Job"
 excerpt: "The doom take says AI ends entry-level engineering. The reality is messier: the tasks juniors learned on vanished, and nobody rebuilt the ladder."
 primaryKeyword: "AI coding agents junior developers"
 longTailKeywords:

@@ -1,6 +1,7 @@
 ---
 slug: prompt-engineering-decline-2026
 title: "Prompt Engineering Was Never a Job. Here's the Skill That Outlasted It"
+metaTitle: "Prompt Engineering Was Never a Job"
 excerpt: "The 'prompt engineer' title peaked and crashed in 18 months. Clever phrasing stopped mattering. Specifying problems clearly never will."
 primaryKeyword: "prompt engineering decline"
 longTailKeywords:

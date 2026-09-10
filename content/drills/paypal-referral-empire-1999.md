@@ -1,5 +1,6 @@
 ---
 slug: paypal-referral-empire-1999
+title: "PayPal: Pay $20 Per Signup?"
 caseStudySlug: paypal-referral-empire-1999
 type: historical
 category: Growth

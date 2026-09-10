@@ -3,6 +3,7 @@ id: cs-dbx-ref-8921
 slug: dropbox-referral-engine-2008
 company: Dropbox
 title: "Gamifying Growth: How Dropbox Built the Ultimate Referral Engine"
+metaTitle: "How Dropbox Built Its Referral Engine"
 category: Growth
 description: "Facing exorbitant customer acquisition costs through traditional ads, Dropbox needed a radical growth strategy. They gamified storage, turning users into advocates and setting the gold standard for product-led growth."
 outcome: "Grew from 100k to 4M users in 15 months. IPO'd in 2018; operating as a highly profitable multi-product AI suite in 2026."

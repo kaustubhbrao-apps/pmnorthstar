@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780857197689-M.jpg"
 link: "https://drive.google.com/file/d/1p2VM5_FSryAxmKx4OWlYihhHjxxBSJqB/view?usp=drive_link"
 amazonUrl: "https://amzn.to/43fGl57"
 description: "Timeless lessons on wealth, greed, and happiness."
+metaDescription: "Our review of Morgan Housel's The Psychology of Money — why behaviour beats spreadsheets, the role of luck and risk, and who the book is genuinely for."
 rating: 4.8
 pages: 256
 year: 2020

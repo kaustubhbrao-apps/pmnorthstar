@@ -1,5 +1,6 @@
 ---
 slug: byjus-overexpansion-2021
+title: "BYJU'S: Too Much Capital, Too Fast"
 caseStudySlug: byjus-downfall
 type: historical
 category: scaling

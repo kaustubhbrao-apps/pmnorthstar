@@ -3,7 +3,7 @@ slug: "what-is-a-product-roadmap"
 question: "What is a product roadmap and how detailed should it be?"
 shortAnswer: "A product roadmap communicates what you intend to build and why, over time. The useful version states problems and outcomes rather than dated features — because dated feature lists become promises, and promises made twelve months out are wrong in ways that damage trust when they change."
 category: "Prioritisation"
-metaTitle: "What Is a Product Roadmap? Formats, Timeframes and What to Avoid"
+metaTitle: "What Is a Product Roadmap? Formats and Pitfalls"
 metaDescription: "Roadmaps communicate intent, not commitment. Now/Next/Later versus quarterly plans, how much detail each horizon deserves, and why dated feature lists reliably backfire."
 keywords:
   - "product roadmap"

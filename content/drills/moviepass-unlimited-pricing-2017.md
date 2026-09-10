@@ -1,5 +1,6 @@
 ---
 slug: moviepass-unlimited-pricing-2017
+title: "MoviePass: Price It at $9.95?"
 caseStudySlug: moviepass-unlimited-pricing-2017
 type: historical
 category: business

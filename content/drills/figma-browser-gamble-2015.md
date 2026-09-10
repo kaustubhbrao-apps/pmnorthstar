@@ -1,5 +1,6 @@
 ---
 slug: figma-browser-gamble-2015
+title: "Figma: Build Design in the Browser?"
 caseStudySlug: figma-browser-gamble-2015
 type: historical
 category: Strategy

@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "The Simulation League — Compete Weekly on PM Cases",
+  title: "The Simulation League — Weekly PM Cases",
   description: "Weekly live PM case competitions. Get ranked against other product managers and builders on real decisions under time pressure. New match every week.",
   alternates: { canonical: "/league" },
   openGraph: { title: "The Simulation League", description: "Weekly live PM case competitions. Ranked, timed, real decisions." },

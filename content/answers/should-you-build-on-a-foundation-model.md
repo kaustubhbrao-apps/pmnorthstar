@@ -3,7 +3,7 @@ slug: "should-you-build-on-a-foundation-model"
 question: "Should you build your product on a foundation model API?"
 shortAnswer: "Almost always yes for the intelligence layer — training your own model rarely beats an API on cost or quality. The real question is what you own besides the model call, because that's the only part a provider shipping your feature natively can't take from you."
 category: "AI"
-metaTitle: "Should You Build on a Foundation Model API? The Real Trade-offs"
+metaTitle: "Should You Build on a Foundation Model API?"
 metaDescription: "Building on an LLM API is usually right; depending on it for differentiation is not. Where defensibility actually comes from, and what happened to thin wrappers."
 keywords:
   - "building on LLM API"

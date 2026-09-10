@@ -1,5 +1,6 @@
 ---
 slug: slack-pivot-from-glitch-2013
+title: "Slack: Ship the Internal Tool?"
 caseStudySlug: slack-gaming-pivot
 type: historical
 category: pivots

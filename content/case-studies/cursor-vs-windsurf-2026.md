@@ -3,6 +3,7 @@ id: cs-cursor-ws-1102
 slug: cursor-vs-windsurf-2026
 company: Cursor & Codeium
 title: "The IDE Wars: Cursor, Windsurf, and the Swarm Development Paradigm"
+metaTitle: "Cursor vs Windsurf: The IDE Wars"
 category: Strategic
 description: "As LLMs shifted from code-completion to agentic orchestration, Cursor and Codeium's Windsurf engaged in an arms race. The battle redefined the IDE from a text editor into a multi-agent control center."
 outcome: "Both achieved $10B+ valuations by 2026, establishing the 'Contextual Swarm' era and making manual boilerplate coding obsolete."

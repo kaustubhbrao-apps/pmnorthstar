@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781633691780-M.jpg"
 link: "https://drive.google.com/file/d/1fcRecZO-EioBHo7I1_Kby_UqGc2kB5yr/view?usp=drive_link"
 amazonUrl: "https://amzn.to/3PQjf1U"
 description: "When new technologies cause great firms to fail."
+metaDescription: "Our review of Clayton Christensen's The Innovator's Dilemma — why well-run firms lose to worse products, and how the idea of disruption gets misused."
 rating: 4.5
 pages: 336
 year: 1997

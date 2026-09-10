@@ -3,7 +3,7 @@ slug: "what-is-an-opportunity-solution-tree"
 question: "What is an opportunity solution tree?"
 shortAnswer: "An opportunity solution tree is a visual map connecting one desired outcome to the customer opportunities that could produce it, then to candidate solutions, then to the experiments that would test them. Its purpose is structural: it makes visible whether you are exploring several ways to reach an outcome or have quietly committed to one idea and are now only elaborating it."
 category: "Prioritisation"
-metaTitle: "Opportunity Solution Trees Explained: Structure and Common Mistakes"
+metaTitle: "What Is an Opportunity Solution Tree?"
 metaDescription: "How an opportunity solution tree works — outcome, opportunities, solutions, experiments — and the three ways teams build one that looks right but changes nothing."
 keywords:
   - "opportunity solution tree"

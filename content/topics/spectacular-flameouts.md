@@ -2,7 +2,7 @@
 slug: "spectacular-flameouts"
 title: "Hype Meets Reality"
 eyebrow: "The crashes that came with the loudest launches"
-metaTitle: "Spectacular Flameouts — Case Studies on High-Profile Failures"
+metaTitle: "Spectacular Flameouts — High-Profile Failures"
 metaDescription: "Long-form case studies on the companies that flamed out under their own hype: Quibi, WeWork, Theranos, Clubhouse, and Facebook Home."
 accentColor: "#F87171"
 keywords:

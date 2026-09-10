@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781501124020-M.jpg"
 link: "https://www.youtube.com/watch?v=B9XGUpQZY38"
 amazonUrl: "https://amzn.to/4dsOW9h"
 description: "Life and work principles from the founder of Bridgewater Associates."
+metaDescription: "Our review of Ray Dalio's Principles — radical transparency, the idea meritocracy, and how much of Bridgewater's system survives outside Bridgewater."
 rating: 4.4
 pages: 592
 year: 2017

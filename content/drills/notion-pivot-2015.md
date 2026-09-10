@@ -1,5 +1,6 @@
 ---
 slug: notion-pivot-2015
+title: "Notion, 2015: Nuke It and Restart?"
 caseStudySlug: notion-all-in-one-workspace
 type: historical
 category: crisis

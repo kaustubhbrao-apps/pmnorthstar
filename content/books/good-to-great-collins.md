@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780066620992-M.jpg"
 link: "https://drive.google.com/file/d/1tbu663LbJLW9sqJjzpGIxh8Ix2dJ-3v2/view?usp=drive_link"
 amazonUrl: "https://amzn.to/3RdEbAs"
 description: "Why some companies make the leap and others don't."
+metaDescription: "Our review of Jim Collins's Good to Great — the Level 5 leader, the hedgehog concept, and how badly the findings aged against the companies it studied."
 rating: 4.5
 pages: 320
 year: 2001

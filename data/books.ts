@@ -23,6 +23,9 @@ export interface Book {
   thumbnailURL: string;
   link: string;
   description: string;
+  // Optional longer meta description. Falls back to the description field,
+  // which is also rendered on the page and is deliberately kept to one line.
+  metaDescription?: string;
   rating: number;
   pages: number;
   year: number;
@@ -429,6 +432,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780578515960-M.jpg",
     link: "https://www.youtube.com/watch?v=hdjlCLb9Hl8",
     description: "How to nail product positioning so customers get it, buy it, love it.",
+    metaDescription: "Our review of April Dunford's Obviously Awesome — the positioning process, competitive alternatives, and why it is the most practical book on the subject.",
     rating: 4.7,
     pages: 198,
     year: 2019,
@@ -550,6 +554,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781591847786-M.jpg",
     link: "https://drive.google.com/file/d/1R2JUi6KHLRx2BJsmDr_HGXvC1etM9bYY/view?usp=drive_link",
     description: "How to build habit-forming products using the Hook Model.",
+    metaDescription: "Our review of Nir Eyal's Hooked — trigger, action, variable reward and investment, plus the ethical questions the Hook Model raises for product teams.",
     rating: 4.5,
     pages: 256,
     year: 2014,
@@ -852,6 +857,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780008339548-M.jpg",
     link: "https://drive.google.com/file/d/1zI9fxv5euHrjNeAAyp4PQVmw0Zei-tA6/view?usp=drive_link",
     description: "The lightning-fast path to building massively valuable companies.",
+    metaDescription: "Our review of Reid Hoffman's Blitzscaling — speed over efficiency in winner-take-most markets, and why the strategy aged badly once cheap capital ended.",
     rating: 4.3,
     pages: 336,
     year: 2018,
@@ -1093,6 +1099,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780385348690-M.jpg",
     link: "https://drive.google.com/file/d/1f90ZnKeGBNfAzHduVwAYxfHrhp40m5kh/view?usp=drive_link",
     description: "How today's fastest-growing companies drive breakout success.",
+    metaDescription: "Our review of Hacking Growth by Sean Ellis — the growth team model, experiment velocity, and why the whole playbook fails without product-market fit first.",
     rating: 4.4,
     pages: 320,
     year: 2017,
@@ -1153,6 +1160,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780735213326-M.jpg",
     link: "https://drive.google.com/file/d/1RCmiJPWnYNFxAz4FIpOj2ZQNPy1MokZd/view?usp=drive_link",
     description: "A painfully honest field guide to the startup world.",
+    metaDescription: "Our review of Rand Fishkin's Lost and Founder — an unusually honest account of running a VC-backed startup, and what founders should actually take from it.",
     rating: 4.5,
     pages: 336,
     year: 2018,
@@ -1334,6 +1342,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780525536222-M.jpg",
     link: "https://drive.google.com/file/d/12wCzGZpiJtIZNzR4TFbP8qOL7zm2u9F-/view?usp=drive_link",
     description: "How Google, Bono, and the Gates Foundation rock the world with OKRs.",
+    metaDescription: "Our review of John Doerr's Measure What Matters — how OKRs actually work, the specific ways teams break them, and what the book leaves out.",
     rating: 4.5,
     pages: 320,
     year: 2018,
@@ -1394,6 +1403,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780066620992-M.jpg",
     link: "https://drive.google.com/file/d/1tbu663LbJLW9sqJjzpGIxh8Ix2dJ-3v2/view?usp=drive_link",
     description: "Why some companies make the leap and others don't.",
+    metaDescription: "Our review of Jim Collins's Good to Great — the Level 5 leader, the hedgehog concept, and how badly the findings aged against the companies it studied.",
     rating: 4.5,
     pages: 320,
     year: 2001,
@@ -1454,6 +1464,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781501124020-M.jpg",
     link: "https://www.youtube.com/watch?v=B9XGUpQZY38",
     description: "Life and work principles from the founder of Bridgewater Associates.",
+    metaDescription: "Our review of Ray Dalio's Principles — radical transparency, the idea meritocracy, and how much of Bridgewater's system survives outside Bridgewater.",
     rating: 4.4,
     pages: 592,
     year: 2017,
@@ -1515,6 +1526,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781633691780-M.jpg",
     link: "https://drive.google.com/file/d/1fcRecZO-EioBHo7I1_Kby_UqGc2kB5yr/view?usp=drive_link",
     description: "When new technologies cause great firms to fail.",
+    metaDescription: "Our review of Clayton Christensen's The Innovator's Dilemma — why well-run firms lose to worse products, and how the idea of disruption gets misused.",
     rating: 4.5,
     pages: 336,
     year: 1997,
@@ -1635,6 +1647,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780857197689-M.jpg",
     link: "https://drive.google.com/file/d/1p2VM5_FSryAxmKx4OWlYihhHjxxBSJqB/view?usp=drive_link",
     description: "Timeless lessons on wealth, greed, and happiness.",
+    metaDescription: "Our review of Morgan Housel's The Psychology of Money — why behaviour beats spreadsheets, the role of luck and risk, and who the book is genuinely for.",
     rating: 4.8,
     pages: 256,
     year: 2020,
@@ -1756,6 +1769,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781984877864-M.jpg",
     link: "https://drive.google.com/file/d/1r5y89w_1sWtZViYYZ72z-tZVxdWTgi0l/view?usp=drive_link",
     description: "Netflix and the culture of reinvention.",
+    metaDescription: "Our review of No Rules Rules by Reed Hastings — Netflix's freedom-and-responsibility culture, the talent-density argument, and where it stops transferring.",
     rating: 4.5,
     pages: 336,
     year: 2020,
@@ -1816,6 +1830,7 @@ export const books: Book[] = [
     thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780887307287-M.jpg",
     link: "https://drive.google.com/file/d/1eQ8bnJraiIDRdri3Y75mpeKABhKj_7dB/view?usp=drive_link",
     description: "Why most small businesses don't work and what to do about it.",
+    metaDescription: "Our review of Michael Gerber's The E-Myth Revisited — working on the business rather than in it, and why the technician's mindset caps how far a company grows.",
     rating: 4.4,
     pages: 288,
     year: 1995,

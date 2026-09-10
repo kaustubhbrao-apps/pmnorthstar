@@ -1,5 +1,6 @@
 ---
 slug: mcp-build-or-skip-2026
+title: "MCP: Build on It or Skip It?"
 caseStudySlug: mcp-build-or-skip-2026
 type: current
 category: strategic

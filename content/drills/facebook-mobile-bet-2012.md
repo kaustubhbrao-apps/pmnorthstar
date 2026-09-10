@@ -1,5 +1,6 @@
 ---
 slug: facebook-mobile-bet-2012
+title: "Facebook's Bet on Mobile"
 caseStudySlug: facebook-mobile-bet-2012
 type: historical
 category: Strategy

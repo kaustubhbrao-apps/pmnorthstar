@@ -1,5 +1,6 @@
 ---
 slug: snap-spectacles-launch-2016
+title: "Snap Spectacles: Hype or Product?"
 caseStudySlug: snap-spectacles-launch-2016
 type: historical
 category: Product

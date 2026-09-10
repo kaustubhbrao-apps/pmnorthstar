@@ -1,5 +1,6 @@
 ---
 slug: theranos-no-go-2013
+title: "Theranos: Do You Walk Away?"
 caseStudySlug: theranos-fraud
 type: historical
 category: crisis

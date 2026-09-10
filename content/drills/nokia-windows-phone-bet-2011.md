@@ -1,5 +1,6 @@
 ---
 slug: nokia-windows-phone-bet-2011
+title: "Nokia: Which Ecosystem Do You Pick?"
 caseStudySlug: nokia-windows-phone-bet-2011
 type: historical
 category: Strategy

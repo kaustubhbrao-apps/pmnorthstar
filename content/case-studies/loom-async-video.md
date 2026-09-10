@@ -3,6 +3,7 @@ id: cs-63
 slug: loom-async-video
 company: Loom
 title: How Loom Made Async Video the New Default — Then Sold for $975M
+metaTitle: "How Loom Made Async Video the Default"
 category: Product
 description: >-
   Joe Thomas, Vinay Hiremath, and Shahed Khan thought screen recordings should

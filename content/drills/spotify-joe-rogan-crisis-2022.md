@@ -1,5 +1,6 @@
 ---
 slug: spotify-joe-rogan-crisis-2022
+title: "Spotify: Moderate Joe Rogan?"
 caseStudySlug: spotify-joe-rogan-crisis-2022
 type: historical
 category: strategic

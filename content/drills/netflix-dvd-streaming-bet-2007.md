@@ -1,5 +1,6 @@
 ---
 slug: netflix-dvd-streaming-bet-2007
+title: "Netflix: Cannibalise the DVD Business"
 caseStudySlug: netflix-dvd-to-streaming
 type: historical
 category: strategic

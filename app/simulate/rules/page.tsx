@@ -5,7 +5,7 @@ import { SidebarShell } from "@/components/SidebarShell";
 
 export const metadata: Metadata = {
   title: "Rules | Simulation League | Northstar",
-  description: "Official rules and scoring system for the Simulation League.",
+  description: "Official rules and scoring for the Simulation League: how drills score across product, strategy, business and crisis, and how weekly ranking works.",
   alternates: { canonical: "/simulate/rules" },
 };
 

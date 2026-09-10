@@ -3,7 +3,7 @@ slug: "how-many-users-for-user-research"
 question: "How many users do you need for user research?"
 shortAnswer: "Five to eight users per segment for qualitative usability work — that range surfaces most severe issues, and returns drop sharply after. Quantitative claims need hundreds. The mistake isn't sample size, it's using five interviews to justify a number instead of a direction."
 category: "Discovery"
-metaTitle: "How Many Users Do You Need for User Research? (5 Is Usually Enough)"
+metaTitle: "How Many Users for User Research?"
 metaDescription: "Why five users find most usability problems, when five is badly insufficient, and how to tell whether your question is qualitative or quantitative before you recruit."
 keywords:
   - "how many users for usability testing"

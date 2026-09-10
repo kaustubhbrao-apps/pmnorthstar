@@ -1,5 +1,6 @@
 ---
 slug: cursor-vs-windsurf-2026
+title: "Entering the AI IDE War Third"
 caseStudySlug: cursor-vs-windsurf-2026
 type: current
 category: strategic

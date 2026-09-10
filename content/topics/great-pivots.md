@@ -2,7 +2,7 @@
 slug: "great-pivots"
 title: "The Pivot That Saved the Company"
 eyebrow: "When abandoning the original idea was the whole strategy"
-metaTitle: "Great Pivots — Case Studies on Companies That Changed Everything"
+metaTitle: "Great Pivots — Companies That Changed Course"
 metaDescription: "Long-form case studies on the pivots that built billion-dollar companies: Slack from a failed game, Instagram from Burbn, Discord from gaming chat, and more."
 accentColor: "#9B8FFF"
 keywords:

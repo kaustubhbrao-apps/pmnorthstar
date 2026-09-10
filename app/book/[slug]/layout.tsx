@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { clampDescription } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { books, getBookSlug, getBookBySlug } from "@/data/books";
 import { getBookFaqs } from "@/data/bookFaqs";
@@ -42,7 +43,7 @@ export async function generateMetadata({
   const url = `${SITE_URL}/book/${getBookSlug(book)}`;
   return {
     title: `${book.title} by ${book.author}`,
-    description: book.description,
+    description: clampDescription(book.metaDescription ?? book.description),
     keywords: [
       book.title,
       book.author,
@@ -57,13 +58,13 @@ export async function generateMetadata({
       type: "book",
       url,
       title: `${book.title} by ${book.author}`,
-      description: book.description,
+      description: clampDescription(book.metaDescription ?? book.description),
       siteName: "northstar",
     },
     twitter: {
       card: "summary_large_image",
       title: `${book.title} by ${book.author}`,
-      description: book.description,
+      description: clampDescription(book.metaDescription ?? book.description),
     },
   };
 }

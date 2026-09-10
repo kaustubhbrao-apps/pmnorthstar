@@ -5,7 +5,7 @@ companyB: "cs-5"
 title: "Netflix vs Spotify — Two Subscription Giants, Two Different Bets"
 eyebrow: "Watch vs listen, and two very different definitions of what owning content means"
 verdict: "Netflix bet on owning content and won by becoming a studio. Spotify bet on not owning content and won by becoming the algorithm. Netflix's content costs are staggering but create genuine lock-in; Spotify's royalty structure is brutal but keeps it asset-light. Both prove subscription entertainment works at scale — but only if you find something to own other than the catalog."
-metaTitle: "Netflix vs Spotify — Subscription Video vs Music Streaming Compared"
+metaTitle: "Netflix vs Spotify — Video vs Music Streaming"
 metaDescription: "Netflix owns its content. Spotify doesn't. Compare the two subscription giants' business models, content strategies, and what each one actually owns."
 accentColor: "#E50914"
 keywords:

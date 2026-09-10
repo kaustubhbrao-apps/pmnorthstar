@@ -3,6 +3,7 @@ id: cs-76
 slug: figma-pwa-bet
 company: Figma
 title: Figma's Progressive Web App Bet That Paid Off Six Years Later
+metaTitle: "Figma's Progressive Web App Bet"
 category: Strategy
 description: >-
   Figma shipped a web app manifest, service worker, and PWA installability in

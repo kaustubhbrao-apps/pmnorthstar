@@ -3,6 +3,7 @@ id: cs-amazon-prime-2005
 slug: amazon-prime-shipping-gamble-2005
 company: Amazon
 title: "The Prime Gamble: How Free Shipping Redefined Retail Economics"
+metaTitle: "The Amazon Prime Free Shipping Gamble"
 category: Growth
 description: "Facing stagnant growth, Amazon took a massive financial risk by offering an unlimited two-day shipping subscription for $79. Internal skeptics warned it would bankrupt the company, but Jeff Bezos pushed forward to change consumer psychology forever."
 outcome: "As of 2026, Prime boasts over 250 million members globally, acting as the bedrock of Amazon's sprawling e-commerce and media empire."

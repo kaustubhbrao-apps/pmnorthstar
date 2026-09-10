@@ -1,5 +1,6 @@
 ---
 slug: openai-consumer-device-launches-2026
+title: "OpenAI Ships Hardware. Now What?"
 caseStudySlug: openai-consumer-device-launches-2026
 type: current
 category: strategic

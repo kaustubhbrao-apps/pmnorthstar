@@ -5,7 +5,7 @@ companyB: "cs-27"
 title: "Razorpay vs Stripe — Two Continents, Same Playbook"
 eyebrow: "How an Indian fintech built the Stripe of Bharat"
 verdict: "Stripe stayed focused on payments and went global. Razorpay couldn't stay focused because Indian fintech demanded a fuller stack — gateway alone was too commoditized. The lesson: developer-first GTM is the wedge; what you expand into after the wedge is determined by the market structure you operate in."
-metaTitle: "Razorpay vs Stripe — How Indian Fintech Compares to the Global Standard"
+metaTitle: "Razorpay vs Stripe — Indian vs Global Fintech"
 metaDescription: "Razorpay built India's Stripe — then expanded into a neo-banking platform. Detailed comparison of the two API-first fintech leaders."
 accentColor: "#26A69A"
 keywords:

@@ -1,5 +1,6 @@
 ---
 slug: zoom-friction-obsession-2018
+title: "Zoom: One-Click Join at Any Cost?"
 caseStudySlug: zoom-friction-obsession-2018
 type: historical
 category: Strategy

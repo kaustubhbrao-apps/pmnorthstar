@@ -3,6 +3,7 @@ id: cs-amazon-fire-phone-2014
 slug: amazon-fire-phone-flop-2014
 company: Amazon
 title: "The Fire Phone Flop: The High Price of Ignored Consumer Needs"
+metaTitle: "Why the Amazon Fire Phone Flopped"
 category: Product
 description: "Amazon poured hundreds of millions into developing a smartphone with 3D effects and frictionless purchasing capabilities, assuming consumers wanted an Amazon-first device. The product launched to abysmal reviews and catastrophic sales figures, forcing a massive write-down."
 outcome: "The failure killed Amazon's phone ambitions but redirected hardware efforts toward the vastly successful Echo and Alexa ecosystem, a dominant smart home platform in 2026."

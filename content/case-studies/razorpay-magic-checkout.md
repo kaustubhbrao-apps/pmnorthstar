@@ -3,6 +3,7 @@ id: cs-88
 slug: razorpay-magic-checkout
 company: Razorpay
 title: "The RTO Killer: How Razorpay Magic Checkout Solved India's Cash-on-Delivery Crisis"
+metaTitle: "Razorpay Magic Checkout: Killing India's RTO"
 category: Product
 description: >-
   How Razorpay used network-level data and one-click checkout to slash Return-to-Origin rates for D2C brands, turning a payment gateway into an e-commerce growth engine.

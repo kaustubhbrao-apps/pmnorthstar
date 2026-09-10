@@ -3,6 +3,7 @@ id: cs-36
 slug: kodak-digital-camera-failure
 company: Kodak
 title: Kodak Didn't Hide the Digital Camera — It Was Trapped by Its Business Model
+metaTitle: "Why Kodak's Business Model Killed It"
 category: Failure
 description: >-
   The popular narrative says Kodak invented the digital camera in 1975 and buried it. The truth is they invested billions in digital R&D and led the market in the early 2000s—but couldn't escape the inertia of their highly profitable film business model.

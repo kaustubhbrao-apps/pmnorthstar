@@ -3,6 +3,7 @@ id: cs-ai-search-referral-2026
 slug: ai-search-referral-collapse-2026
 company: Global Tech Industry
 title: "The Great Traffic Drought: Navigating the 2026 AI Search Referral Collapse"
+metaTitle: "The 2026 AI Search Referral Collapse"
 category: Growth
 description: "As multimodal AI agents like Claude 5 and Gemini 2.0 became the default gateways for online discovery, traditional web search traffic plummeted by 40% overnight. Publishers and e-commerce platforms faced an existential crisis as zero-click interactions obliterated conventional referral economics."
 outcome: "Publishers pivoted to data-licensing consortiums and direct-agent APIs, stabilizing revenues and creating a new internet economy built on semantic data deals."

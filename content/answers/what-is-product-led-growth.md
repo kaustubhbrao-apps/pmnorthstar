@@ -3,7 +3,7 @@ slug: "what-is-product-led-growth"
 question: "What is product-led growth (PLG)?"
 shortAnswer: "Product-led growth is a go-to-market model where the product itself drives acquisition, conversion and expansion — users try it before talking to anyone, and often before their employer knows. It works when time-to-value is short enough that a person can succeed alone, and fails badly when it isn't."
 category: "Growth"
-metaTitle: "What Is Product-Led Growth? How PLG Works and When It Doesn't"
+metaTitle: "What Is Product-Led Growth? How PLG Works"
 metaDescription: "PLG makes the product the primary go-to-market channel. The conditions it requires, why bottom-up adoption beats demos for some products, and where sales-led still wins."
 keywords:
   - "product led growth"

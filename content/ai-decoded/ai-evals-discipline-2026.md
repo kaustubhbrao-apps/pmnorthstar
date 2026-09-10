@@ -1,6 +1,7 @@
 ---
 slug: ai-evals-discipline-2026
 title: "Evals Are the New Unit Tests (And Most Teams Are Doing Them Wrong)"
+metaTitle: "Evals Are the New Unit Tests"
 excerpt: "You can't ship a serious AI product on vibes. Evals are becoming the core engineering discipline of applied AI — and the moat nobody copies."
 primaryKeyword: "AI evals"
 longTailKeywords:

@@ -3,6 +3,7 @@ id: cs-75
 slug: github-polish-as-marketing
 company: GitHub
 title: How GitHub Turned 404 Pages and Easter Eggs into a Recruiting Funnel
+metaTitle: "How GitHub Turned Polish into Recruiting"
 category: Growth
 description: >-
   GitHub's famous Octocat 404 page, the parallax illustrations on the about

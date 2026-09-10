@@ -1,5 +1,6 @@
 ---
 slug: apple-iphone-cannibalization-2005
+title: "Would You Cannibalise the iPod?"
 caseStudySlug: apple-iphone-cannibalization-2005
 type: historical
 category: Strategy

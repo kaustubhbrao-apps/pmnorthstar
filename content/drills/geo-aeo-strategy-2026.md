@@ -1,5 +1,6 @@
 ---
 slug: geo-aeo-strategy-2026
+title: "Discovery Moved to AI Search"
 caseStudySlug: geo-aeo-strategy-2026
 type: current
 category: growth

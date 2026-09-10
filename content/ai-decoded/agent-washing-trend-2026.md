@@ -1,6 +1,7 @@
 ---
 slug: agent-washing-trend-2026
 title: "Agent Washing: How to Tell a Real AI Agent From a Glorified Workflow"
+metaTitle: "Agent Washing: Real AI Agent or Workflow?"
 excerpt: "Everything is an 'agent' now, which means nothing is. Here's the test that separates products that actually decide and act from chatbots with a thesaurus."
 primaryKeyword: "agent washing"
 longTailKeywords:

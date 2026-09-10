@@ -27,6 +27,8 @@ export interface DrillNode {
 
 export interface Drill {
   slug: string;
+  // Optional display title. lib/drills.ts falls back to a cased slug.
+  title?: string;
   caseStudySlug?: string;
   type: DrillType;
   category: string;
@@ -45,6 +47,7 @@ export const drills: Drill[] = [
   {
     slug: "zoom-friction-obsession-2018",
     caseStudySlug: "zoom-friction-obsession-2018",
+    title: "Zoom: One-Click Join at Any Cost?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-12-13T15:00:00+00:00",
@@ -60,6 +63,7 @@ export const drills: Drill[] = [
   {
     slug: "zomato-blinkit-2022",
     caseStudySlug: "zomato-blinkit-bet",
+    title: "Zomato: Acquire Blinkit?",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-12-09T15:00:00+00:00",
@@ -75,6 +79,7 @@ export const drills: Drill[] = [
   {
     slug: "wework-hypergrowth-2017",
     caseStudySlug: "wework-hypergrowth-2017",
+    title: "WeWork: Software Company or Landlord?",
     type: "historical",
     category: "Founder",
     publishedAt: "2026-12-06T15:00:00+00:00",
@@ -90,6 +95,7 @@ export const drills: Drill[] = [
   {
     slug: "vine-instagram-video-2013",
     caseStudySlug: "vine-instagram-video-2013",
+    title: "Vine vs Instagram Video",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-12-02T15:00:00+00:00",
@@ -105,6 +111,7 @@ export const drills: Drill[] = [
   {
     slug: "vibe-coded-launch-readiness-2026",
     caseStudySlug: "vibe-coded-launch-readiness-2026",
+    title: "Is Your Vibe-Coded App Ready to Ship?",
     type: "current",
     category: "scope",
     publishedAt: "2026-11-29T15:00:00+00:00",
@@ -119,6 +126,7 @@ export const drills: Drill[] = [
   {
     slug: "uber-cold-start-seattle-2011",
     caseStudySlug: "uber-cold-start-seattle-2011",
+    title: "Uber: Cold-Start a New City",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-25T15:00:00+00:00",
@@ -134,6 +142,7 @@ export const drills: Drill[] = [
   {
     slug: "tiktok-musically-licensing-2017",
     caseStudySlug: "tiktok-musically-licensing-2017",
+    title: "TikTok: Secure the Music Rights?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-22T15:00:00+00:00",
@@ -149,6 +158,7 @@ export const drills: Drill[] = [
   {
     slug: "theranos-no-go-2013",
     caseStudySlug: "theranos-fraud",
+    title: "Theranos: Do You Walk Away?",
     type: "historical",
     category: "crisis",
     publishedAt: "2026-11-18T15:00:00+00:00",
@@ -164,6 +174,7 @@ export const drills: Drill[] = [
   {
     slug: "tesla-model-3-automation-2018",
     caseStudySlug: "tesla-model-3-automation-2018",
+    title: "Tesla: Automate the Model 3 Line?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-15T15:00:00+00:00",
@@ -179,6 +190,7 @@ export const drills: Drill[] = [
   {
     slug: "spotify-joe-rogan-crisis-2022",
     caseStudySlug: "spotify-joe-rogan-crisis-2022",
+    title: "Spotify: Moderate Joe Rogan?",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-11-11T15:00:00+00:00",
@@ -193,6 +205,7 @@ export const drills: Drill[] = [
   {
     slug: "sony-betamax-format-war-1975",
     caseStudySlug: "sony-betamax-format-war-1975",
+    title: "Betamax vs VHS: Open or Proprietary?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-11-08T15:00:00+00:00",
@@ -208,6 +221,7 @@ export const drills: Drill[] = [
   {
     slug: "snap-spectacles-launch-2016",
     caseStudySlug: "snap-spectacles-launch-2016",
+    title: "Snap Spectacles: Hype or Product?",
     type: "historical",
     category: "Product",
     publishedAt: "2026-11-04T15:00:00+00:00",
@@ -223,6 +237,7 @@ export const drills: Drill[] = [
   {
     slug: "series-a-mid-pivot-2026",
     caseStudySlug: "series-a-mid-pivot-2026",
+    title: "Pivot in the Middle of a Series A?",
     type: "current",
     category: "founding-funding",
     publishedAt: "2026-11-01T15:00:00+00:00",
@@ -237,6 +252,7 @@ export const drills: Drill[] = [
   {
     slug: "robinhood-gamestop-crisis-2021",
     caseStudySlug: "robinhood-gamestop-crisis-2021",
+    title: "The 3AM Margin Call: Clearinghouse Crisis",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-10-28T15:00:00+00:00",
@@ -251,6 +267,7 @@ export const drills: Drill[] = [
   {
     slug: "razorpay-api-pivot-2014",
     caseStudySlug: "razorpay-pivot-fintech",
+    title: "Razorpay: Pivot Inside Regulation",
     type: "historical",
     category: "pivots",
     publishedAt: "2026-10-25T15:00:00+00:00",
@@ -266,6 +283,7 @@ export const drills: Drill[] = [
   {
     slug: "quibi-pricing-2020",
     caseStudySlug: "quibi-shutdown",
+    title: "Quibi: Charge a Premium Price?",
     type: "historical",
     category: "pricing",
     publishedAt: "2026-10-21T15:00:00+00:00",
@@ -281,6 +299,7 @@ export const drills: Drill[] = [
   {
     slug: "pinterest-waitlist-illusion-2010",
     caseStudySlug: "pinterest-waitlist-illusion-2010",
+    title: "Pinterest: Engineer Scarcity?",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-10-18T15:00:00+00:00",
@@ -296,6 +315,7 @@ export const drills: Drill[] = [
   {
     slug: "peloton-tread-recall-2021",
     caseStudySlug: "peloton-tread-recall-2021",
+    title: "Peloton: Recall the Tread+?",
     type: "historical",
     category: "Crisis",
     publishedAt: "2026-10-14T15:00:00+00:00",
@@ -311,6 +331,7 @@ export const drills: Drill[] = [
   {
     slug: "paypal-referral-empire-1999",
     caseStudySlug: "paypal-referral-empire-1999",
+    title: "PayPal: Pay $20 Per Signup?",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-10-11T15:00:00+00:00",
@@ -326,6 +347,7 @@ export const drills: Drill[] = [
   {
     slug: "openai-consumer-device-launches-2026",
     caseStudySlug: "openai-consumer-device-launches-2026",
+    title: "OpenAI Ships Hardware. Now What?",
     type: "current",
     category: "strategic",
     publishedAt: "2026-10-07T15:00:00+00:00",
@@ -340,6 +362,7 @@ export const drills: Drill[] = [
   {
     slug: "nokia-windows-phone-bet-2011",
     caseStudySlug: "nokia-windows-phone-bet-2011",
+    title: "Nokia: Which Ecosystem Do You Pick?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-10-04T15:00:00+00:00",
@@ -355,6 +378,7 @@ export const drills: Drill[] = [
   {
     slug: "netflix-dvd-streaming-bet-2007",
     caseStudySlug: "netflix-dvd-to-streaming",
+    title: "Netflix: Cannibalise the DVD Business",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-09-30T15:00:00+00:00",
@@ -370,6 +394,7 @@ export const drills: Drill[] = [
   {
     slug: "moviepass-unlimited-pricing-2017",
     caseStudySlug: "moviepass-unlimited-pricing-2017",
+    title: "MoviePass: Price It at $9.95?",
     type: "historical",
     category: "business",
     publishedAt: "2026-09-27T15:00:00+00:00",
@@ -385,6 +410,7 @@ export const drills: Drill[] = [
   {
     slug: "microsoft-zune-launch-2006",
     caseStudySlug: "microsoft-zune-launch-2006",
+    title: "Zune: Take On the iPod?",
     type: "historical",
     category: "strategy",
     publishedAt: "2026-09-23T15:00:00+00:00",
@@ -400,6 +426,7 @@ export const drills: Drill[] = [
   {
     slug: "microsoft-cloud-pivot-2014",
     caseStudySlug: "microsoft-cloud-turnaround",
+    title: "Microsoft: Give Up Windows First?",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-09-20T15:00:00+00:00",
@@ -415,6 +442,7 @@ export const drills: Drill[] = [
   {
     slug: "meta-vr-pivot-2021",
     caseStudySlug: "meta-vr-pivot-2021",
+    title: "The Reality Labs Pivot",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-09-16T15:00:00+00:00",
@@ -429,6 +457,7 @@ export const drills: Drill[] = [
   {
     slug: "mcp-build-or-skip-2026",
     caseStudySlug: "mcp-build-or-skip-2026",
+    title: "MCP: Build on It or Skip It?",
     type: "current",
     category: "strategic",
     publishedAt: "2026-09-13T15:00:00+00:00",
@@ -443,6 +472,7 @@ export const drills: Drill[] = [
   {
     slug: "lego-bankruptcy-comeback-2003",
     caseStudySlug: "lego-bankruptcy-comeback-2003",
+    title: "LEGO, 2003: Near Bankruptcy",
     type: "historical",
     category: "strategy",
     publishedAt: "2026-09-09T15:00:00+00:00",
@@ -458,6 +488,7 @@ export const drills: Drill[] = [
   {
     slug: "instagram-stories-clone-2016",
     caseStudySlug: "instagram-stories-clone-2016",
+    title: "Instagram: Clone Stories or Not?",
     type: "historical",
     category: "product",
     publishedAt: "2026-09-06T15:00:00+00:00",
@@ -473,6 +504,7 @@ export const drills: Drill[] = [
   {
     slug: "google-reader-sunset-2013",
     caseStudySlug: "google-reader-sunset-2013",
+    title: "Google Reader: Kill a Beloved Product",
     type: "historical",
     category: "strategic",
     publishedAt: "2026-09-02T15:00:00+00:00",
@@ -487,6 +519,7 @@ export const drills: Drill[] = [
   {
     slug: "google-plus-real-names-2011",
     caseStudySlug: "google-plus-real-names-2011",
+    title: "Google+: Enforce Real Names?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-30T15:00:00+00:00",
@@ -502,6 +535,7 @@ export const drills: Drill[] = [
   {
     slug: "geo-aeo-strategy-2026",
     caseStudySlug: "geo-aeo-strategy-2026",
+    title: "Discovery Moved to AI Search",
     type: "current",
     category: "growth",
     publishedAt: "2026-08-26T15:00:00+00:00",
@@ -516,6 +550,7 @@ export const drills: Drill[] = [
   {
     slug: "foursquare-swarm-split-2014",
     caseStudySlug: "foursquare-swarm-split-2014",
+    title: "Foursquare: Split the App in Two?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-23T15:00:00+00:00",
@@ -531,6 +566,7 @@ export const drills: Drill[] = [
   {
     slug: "foundation-model-shipped-your-product-2026",
     caseStudySlug: "foundation-model-shipped-your-product-2026",
+    title: "A Model Lab Just Shipped Your Product",
     type: "current",
     category: "strategic",
     publishedAt: "2026-08-19T15:00:00+00:00",
@@ -545,6 +581,7 @@ export const drills: Drill[] = [
   {
     slug: "figma-browser-gamble-2015",
     caseStudySlug: "figma-browser-gamble-2015",
+    title: "Figma: Build Design in the Browser?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-16T15:00:00+00:00",
@@ -560,6 +597,7 @@ export const drills: Drill[] = [
   {
     slug: "facebook-mobile-bet-2012",
     caseStudySlug: "facebook-mobile-bet-2012",
+    title: "Facebook's Bet on Mobile",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-08-12T15:00:00+00:00",
@@ -575,6 +613,7 @@ export const drills: Drill[] = [
   {
     slug: "dropbox-referral-engine-2008",
     caseStudySlug: "dropbox-referral-engine-2008",
+    title: "Dropbox: Build Virality Into the Product",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-08-09T15:00:00+00:00",
@@ -590,6 +629,7 @@ export const drills: Drill[] = [
   {
     slug: "digg-v4-redesign-2010",
     caseStudySlug: "digg-v4-redesign-2010",
+    title: "Digg v4: Redesign for the Mainstream?",
     type: "historical",
     category: "Product",
     publishedAt: "2026-08-05T15:00:00+00:00",
@@ -605,6 +645,7 @@ export const drills: Drill[] = [
   {
     slug: "cursor-vs-windsurf-2026",
     caseStudySlug: "cursor-vs-windsurf-2026",
+    title: "Entering the AI IDE War Third",
     type: "current",
     category: "strategic",
     publishedAt: "2026-08-02T15:00:00+00:00",
@@ -619,6 +660,7 @@ export const drills: Drill[] = [
   {
     slug: "cred-design-launch-2018",
     caseStudySlug: "cred-design-fintech",
+    title: "CRED: Who Do You Let In?",
     type: "historical",
     category: "positioning",
     publishedAt: "2026-07-29T15:00:00+00:00",
@@ -634,6 +676,7 @@ export const drills: Drill[] = [
   {
     slug: "clubhouse-fomo-scaling-2020",
     caseStudySlug: "clubhouse-fomo-scaling-2020",
+    title: "Clubhouse: Open the Gates or Hold?",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-07-26T15:00:00+00:00",
@@ -649,6 +692,7 @@ export const drills: Drill[] = [
   {
     slug: "byjus-overexpansion-2021",
     caseStudySlug: "byjus-downfall",
+    title: "BYJU'S: Too Much Capital, Too Fast",
     type: "historical",
     category: "scaling",
     publishedAt: "2026-07-22T15:00:00+00:00",
@@ -664,6 +708,7 @@ export const drills: Drill[] = [
   {
     slug: "blackberry-touchscreen-delay-2008",
     caseStudySlug: "blackberry-touchscreen-delay-2008",
+    title: "BlackBerry Meets the iPhone",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-07-19T15:00:00+00:00",
@@ -679,6 +724,7 @@ export const drills: Drill[] = [
   {
     slug: "apple-maps-launch-2012",
     caseStudySlug: "apple-maps-launch-2012",
+    title: "Apple Maps: Ship Before It's Ready?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-07-15T15:00:00+00:00",
@@ -694,6 +740,7 @@ export const drills: Drill[] = [
   {
     slug: "apple-iphone-cannibalization-2005",
     caseStudySlug: "apple-iphone-cannibalization-2005",
+    title: "Would You Cannibalise the iPod?",
     type: "historical",
     category: "Strategy",
     publishedAt: "2026-07-12T15:00:00+00:00",
@@ -709,6 +756,7 @@ export const drills: Drill[] = [
   {
     slug: "amazon-prime-shipping-gamble-2005",
     caseStudySlug: "amazon-prime-shipping-gamble-2005",
+    title: "Amazon Prime: Give Away Free Shipping?",
     type: "historical",
     category: "Growth",
     publishedAt: "2026-07-08T15:00:00+00:00",
@@ -724,6 +772,7 @@ export const drills: Drill[] = [
   {
     slug: "amazon-fire-phone-flop-2014",
     caseStudySlug: "amazon-fire-phone-flop-2014",
+    title: "Amazon's Fire Phone: Ship or Kill?",
     type: "historical",
     category: "product",
     publishedAt: "2026-07-05T15:00:00+00:00",
@@ -739,6 +788,7 @@ export const drills: Drill[] = [
   {
     slug: "ai-search-referral-collapse-2026",
     caseStudySlug: "ai-search-referral-collapse-2026",
+    title: "Your Search Traffic Is Collapsing",
     type: "current",
     category: "growth",
     publishedAt: "2026-07-01T15:00:00+00:00",
@@ -753,6 +803,7 @@ export const drills: Drill[] = [
   {
     slug: "ai-hiring-assessment-2026",
     caseStudySlug: "ai-hiring-assessment-2026",
+    title: "Can an AI Assessment Predict a Good Hire?",
     type: "current",
     category: "hiring",
     publishedAt: "2026-06-28T15:00:00+00:00",
@@ -767,6 +818,7 @@ export const drills: Drill[] = [
   {
     slug: "ai-agent-autonomy-2026",
     caseStudySlug: "ai-agent-autonomy-2026",
+    title: "How Much Autonomy Do You Give an Agent?",
     type: "current",
     category: "product",
     publishedAt: "2026-06-26T00:00:00+05:30",
@@ -781,6 +833,7 @@ export const drills: Drill[] = [
   {
     slug: "linear-pricing-2019",
     caseStudySlug: "linear-brand-from-day-one",
+    title: "Linear: Free Forever for Individuals?",
     type: "historical",
     category: "pricing",
     publishedAt: "2026-06-22T19:00:00+05:30",
@@ -794,6 +847,7 @@ export const drills: Drill[] = [
   {
     slug: "notion-pivot-2015",
     caseStudySlug: "notion-all-in-one-workspace",
+    title: "Notion, 2015: Nuke It and Restart?",
     type: "historical",
     category: "crisis",
     publishedAt: "2026-06-19T19:00:00+05:30",
@@ -807,6 +861,7 @@ export const drills: Drill[] = [
   {
     slug: "competitor-shipped-your-roadmap-2026",
     caseStudySlug: "competitor-shipped-your-roadmap-2026",
+    title: "A Rival Shipped Your Roadmap",
     type: "current",
     category: "strategic",
     publishedAt: "2026-06-15T19:00:00+05:30",
@@ -819,6 +874,7 @@ export const drills: Drill[] = [
   {
     slug: "stripe-pricing-call-2010",
     caseStudySlug: "stripe-developer-first",
+    title: "Stripe: Price at 2.9% + 30c?",
     type: "historical",
     category: "pricing",
     publishedAt: "2026-06-12T19:00:00+05:30",
@@ -832,6 +888,7 @@ export const drills: Drill[] = [
   {
     slug: "apple-opens-siri-to-llms-2026",
     caseStudySlug: "apple-opens-siri-to-llms-2026",
+    title: "Apple Opens Siri: Now What?",
     type: "current",
     category: "strategic",
     publishedAt: "2026-06-08T19:00:00+05:30",
@@ -844,6 +901,7 @@ export const drills: Drill[] = [
   {
     slug: "slack-pivot-from-glitch-2013",
     caseStudySlug: "slack-gaming-pivot",
+    title: "Slack: Ship the Internal Tool?",
     type: "historical",
     category: "pivots",
     publishedAt: "2026-06-05T19:00:00+05:30",
@@ -857,6 +915,7 @@ export const drills: Drill[] = [
   {
     slug: "zee-world-cup-launch-2026",
     caseStudySlug: "zee-fifa-world-cup-bet",
+    title: "Zee: Stream the World Cup at Scale",
     type: "current",
     category: "product",
     publishedAt: "2026-06-01T20:00:00+05:30",
@@ -869,6 +928,7 @@ export const drills: Drill[] = [
   {
     slug: "claude-5-ships-2026",
     caseStudySlug: "claude-5-ships-2026",
+    title: "A Better Model Ships. Do You Switch?",
     type: "current",
     category: "strategic",
     publishedAt: "2026-06-01T19:00:00+05:30",
@@ -881,6 +941,7 @@ export const drills: Drill[] = [
   {
     slug: "airbnb-survival-2008",
     caseStudySlug: "airbnb-cereal-survival",
+    title: "Airbnb, 2008: Out of Runway, No PMF",
     type: "historical",
     category: "crisis",
     publishedAt: "2026-05-29T01:00:00+05:30",

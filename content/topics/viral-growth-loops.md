@@ -2,7 +2,7 @@
 slug: "viral-growth-loops"
 title: "Built-In Virality"
 eyebrow: "When the product grows itself"
-metaTitle: "Viral Growth Loops — Case Studies on Self-Propelling Products"
+metaTitle: "Viral Growth Loops — Self-Propelling Products"
 metaDescription: "Long-form case studies on engineered virality: Dropbox's referral loop, Hotmail's email signature, PayPal's $20 referral, LinkedIn, and Twitter's retention fix."
 accentColor: "#F472B6"
 keywords:

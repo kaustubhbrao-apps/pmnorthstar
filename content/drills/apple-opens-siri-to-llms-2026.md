@@ -1,5 +1,6 @@
 ---
 slug: apple-opens-siri-to-llms-2026
+title: "Apple Opens Siri: Now What?"
 caseStudySlug: apple-opens-siri-to-llms-2026
 type: current
 category: strategic

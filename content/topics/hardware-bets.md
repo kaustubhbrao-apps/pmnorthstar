@@ -2,7 +2,7 @@
 slug: "hardware-bets"
 title: "Betting on Atoms"
 eyebrow: "When the product is a physical thing — and timing is everything"
-metaTitle: "Hardware Bets — Case Studies on the Devices That Won and Lost"
+metaTitle: "Hardware Bets — Devices That Won and Lost"
 metaDescription: "Long-form case studies on the hardware gambles that defined eras: the iPhone, the iPod's scroll wheel, Google Glass, the Zune, and BlackBerry's touchscreen denial."
 accentColor: "#60A5FA"
 keywords:

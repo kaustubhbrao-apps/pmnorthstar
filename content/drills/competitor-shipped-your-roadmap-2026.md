@@ -1,5 +1,6 @@
 ---
 slug: competitor-shipped-your-roadmap-2026
+title: "A Rival Shipped Your Roadmap"
 caseStudySlug: competitor-shipped-your-roadmap-2026
 type: current
 category: strategic

@@ -1,5 +1,6 @@
 ---
 slug: microsoft-cloud-pivot-2014
+title: "Microsoft: Give Up Windows First?"
 caseStudySlug: microsoft-cloud-turnaround
 type: historical
 category: strategic

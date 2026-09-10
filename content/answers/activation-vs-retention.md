@@ -3,7 +3,7 @@ slug: "activation-vs-retention"
 question: "What is the difference between activation and retention?"
 shortAnswer: "Activation is a user reaching first value — the moment your product proves it works for them. Retention is them coming back after that. Activation is a one-time event you can design, retention is an ongoing verdict on whether the value holds. Fixing retention with an activation problem underneath never works."
 category: "Metrics"
-metaTitle: "Activation vs Retention — What's the Difference? (With Examples)"
+metaTitle: "Activation vs Retention: The Difference"
 metaDescription: "Activation is first value; retention is repeat value. How to tell which one is actually broken, why fixing them in the wrong order wastes quarters, and what Dropbox and Superhuman did."
 keywords:
   - "activation vs retention"

@@ -4,7 +4,9 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 const DEFAULT_OG = `${SITE_URL}/api/checkit/og`;
 
 export const metadata: Metadata = {
-  title: "CheckIt: Is your vibe-coded site ready for the business world?",
+  // The full question leads the page itself; the tab and the result need the
+  // short form, or the brand suffix gets cut off with it.
+  title: "CheckIt: Is Your Site Ready for Business?",
   // Trimmed to fit the ~160 characters a search result shows; the full
   // framing already leads the page itself.
   description:

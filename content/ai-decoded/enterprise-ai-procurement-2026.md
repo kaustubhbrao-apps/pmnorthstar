@@ -1,6 +1,7 @@
 ---
 slug: enterprise-ai-procurement-2026
 title: "How Enterprise AI Procurement Actually Works Now (And How to Survive It)"
+metaTitle: "How Enterprise AI Procurement Works Now"
 excerpt: "Selling AI to enterprises in 2026 isn't a sales motion — it's a gauntlet of security review, data governance, and a buyer terrified of looking foolish."
 primaryKeyword: "enterprise AI procurement"
 longTailKeywords:

@@ -3,7 +3,7 @@ slug: "what-is-a-context-window"
 question: "What is a context window?"
 shortAnswer: "The context window is the maximum amount of text — measured in tokens — a model can consider at once, covering the system prompt, conversation history, retrieved documents and the response. Larger windows are not automatically better: attention degrades across very long contexts, cost rises with every token, and filling a window is rarely a substitute for retrieving well."
 category: "AI"
-metaTitle: "What Is a Context Window? Tokens, Limits and Practical Effects"
+metaTitle: "What Is a Context Window? Tokens and Limits"
 metaDescription: "Context windows explained — what counts toward the limit, why a bigger window is not always better, the lost-in-the-middle problem, and how it shapes AI product design."
 keywords:
   - "context window"

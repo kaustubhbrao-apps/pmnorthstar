@@ -1,5 +1,6 @@
 ---
 slug: digg-v4-redesign-2010
+title: "Digg v4: Redesign for the Mainstream?"
 caseStudySlug: digg-v4-redesign-2010
 type: historical
 category: Product

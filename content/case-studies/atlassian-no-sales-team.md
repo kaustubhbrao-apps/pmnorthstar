@@ -3,6 +3,7 @@ id: cs-50
 slug: atlassian-no-sales-team
 company: Atlassian
 title: "Jira: The Configurability Monster that Swallowed the Enterprise"
+metaTitle: "Jira: The Configurability Monster"
 category: Growth
 description: "How Atlassian built an unkillable SaaS giant not by building the fastest software, but by building the most malleable software—allowing enterprises to codify their bureaucracy into the product itself."
 outcome: "Atlassian surpassed $100B in market cap, dominating the developer tools market for two decades."

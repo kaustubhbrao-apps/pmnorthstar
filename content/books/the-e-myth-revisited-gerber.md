@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9780887307287-M.jpg"
 link: "https://drive.google.com/file/d/1eQ8bnJraiIDRdri3Y75mpeKABhKj_7dB/view?usp=drive_link"
 amazonUrl: "https://amzn.to/4tGXC1S"
 description: "Why most small businesses don't work and what to do about it."
+metaDescription: "Our review of Michael Gerber's The E-Myth Revisited — working on the business rather than in it, and why the technician's mindset caps how far a company grows."
 rating: 4.4
 pages: 288
 year: 1995

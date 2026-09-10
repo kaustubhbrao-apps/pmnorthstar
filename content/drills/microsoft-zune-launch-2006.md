@@ -1,5 +1,6 @@
 ---
 slug: microsoft-zune-launch-2006
+title: "Zune: Take On the iPod?"
 caseStudySlug: microsoft-zune-launch-2006
 type: historical
 category: strategy

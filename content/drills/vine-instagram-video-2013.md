@@ -1,5 +1,6 @@
 ---
 slug: vine-instagram-video-2013
+title: "Vine vs Instagram Video"
 caseStudySlug: vine-instagram-video-2013
 type: historical
 category: Strategy

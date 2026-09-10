@@ -1,5 +1,6 @@
 ---
 slug: stripe-pricing-call-2010
+title: "Stripe: Price at 2.9% + 30c?"
 caseStudySlug: stripe-developer-first
 type: historical
 category: pricing

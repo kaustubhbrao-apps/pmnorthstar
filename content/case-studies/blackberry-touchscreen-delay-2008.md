@@ -3,6 +3,7 @@ id: cs-bb-touch-4821
 slug: blackberry-touchscreen-delay-2008
 company: BlackBerry (RIM)
 title: "The Innovator's Dilemma: BlackBerry's Fatal Keyboard Addiction"
+metaTitle: "BlackBerry's Fatal Keyboard Addiction"
 category: Strategy
 description: "Dismissing the iPhone as a battery-draining toy for consumers, RIM doubled down on physical keyboards and enterprise security. This miscalculation blinded them to the reality that consumers now dictated enterprise IT."
 outcome: "Lost 99% of smartphone market share. Pivoted to enterprise software and automotive security, surviving as a niche firm in 2026."

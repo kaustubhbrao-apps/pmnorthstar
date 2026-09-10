@@ -1,5 +1,6 @@
 ---
 slug: wework-hypergrowth-2017
+title: "WeWork: Software Company or Landlord?"
 caseStudySlug: wework-hypergrowth-2017
 type: historical
 category: Founder

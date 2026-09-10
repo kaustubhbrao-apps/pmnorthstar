@@ -194,7 +194,7 @@ export const topics: Topic[] = [
     title: "Distribution Eats Product",
     eyebrow: "When getting found was the whole game",
     intro: "The best product doesn't win — the one people actually find and finish buying does. This collection studies companies that turned distribution itself into a competitive advantage. Airbnb built the largest programmatic SEO machine in travel, generating pages for millions of locations and capturing demand at the moment of search. Booking.com ran thousands of simultaneous A/B tests, compounding tiny conversion wins into an unbeatable funnel. Walmart proved that every fraction of a second of load time was a revenue lever. GitHub turned even its 404 pages and Easter eggs into a recruiting and brand funnel. None of these are product features in the usual sense — they're the unglamorous mechanics of being found, loading fast, and converting. These are the deep dives on winning through distribution.",
-    metaTitle: "Distribution Wins — Case Studies on Programmatic SEO and Performance",
+    metaTitle: "Distribution Wins — Programmatic SEO Cases",
     metaDescription: "Long-form case studies on companies that won through distribution: Airbnb's programmatic SEO, Booking.com's A/B testing, Walmart's web performance, and GitHub.",
     keywords: [
       "distribution strategy case studies",
@@ -279,7 +279,7 @@ export const topics: Topic[] = [
     title: "The Pivot That Saved the Company",
     eyebrow: "When abandoning the original idea was the whole strategy",
     intro: "Most startups die clinging to their first idea. The companies in this collection did the opposite — they noticed the original plan wasn't working, found the one feature or behavior users actually loved, and bet everything on it. Slack was the internal chat tool of a failed game studio. Instagram was a photo filter buried inside a bloated check-in app called Burbn. Discord was voice chat for gamers that communities of every kind colonized. Slice rebuilt itself from a credit-card startup into a bank — twice. Razorpay turned a payment gateway into a banking empire. A great pivot isn't a fresh start; it's the courage to subtract everything except the part that was already winning. These are the deep dives on the turns that made the companies.",
-    metaTitle: "Great Pivots — Case Studies on Companies That Changed Everything",
+    metaTitle: "Great Pivots — Companies That Changed Course",
     metaDescription: "Long-form case studies on the pivots that built billion-dollar companies: Slack from a failed game, Instagram from Burbn, Discord from gaming chat, and more.",
     keywords: [
       "startup pivot case studies",
@@ -322,7 +322,7 @@ export const topics: Topic[] = [
     title: "Betting on Atoms",
     eyebrow: "When the product is a physical thing — and timing is everything",
     intro: "Software forgives. Hardware doesn't. When your product is a physical object, you ship it once, you can't patch it, and timing becomes destiny. This collection puts the era-defining wins next to the cautionary failures. The iPhone reinvented the phone by solving problems people already felt; the iPod's scroll wheel turned a thousand songs into a single intuitive gesture. Google Glass was brilliant engineering launched years before the world had a use for it. The Zune arrived too late to a category Apple already owned. And BlackBerry rode its beloved keyboard straight into denial about the touchscreen. The difference between a legendary device and a write-off often comes down to timing and a real problem. These are the deep dives on betting the company on atoms.",
-    metaTitle: "Hardware Bets — Case Studies on the Devices That Won and Lost",
+    metaTitle: "Hardware Bets — Devices That Won and Lost",
     metaDescription: "Long-form case studies on the hardware gambles that defined eras: the iPhone, the iPod's scroll wheel, Google Glass, the Zune, and BlackBerry's touchscreen denial.",
     keywords: [
       "hardware product case studies",
@@ -493,7 +493,7 @@ export const topics: Topic[] = [
     title: "Hype Meets Reality",
     eyebrow: "The crashes that came with the loudest launches",
     intro: "A loud launch is a loan against future performance — and these companies couldn't pay it back. This collection studies the flameouts that arrived with maximum hype and minimum staying power. Quibi torched $1.75B on a short-video problem nobody had and folded in six months. WeWork's $47B story unraveled into an $8B reckoning the moment the world looked closely. Clubhouse mistook a lockdown spike for a permanent behavior. Facebook Home turned a feature into a prison users rejected. And Theranos stands apart as the line where optimistic hype curdled into outright fraud. The common thread: attention and capital outran product-market fit, and reality always collects. These are the deep dives on the crashes the world watched in real time.",
-    metaTitle: "Spectacular Flameouts — Case Studies on High-Profile Failures",
+    metaTitle: "Spectacular Flameouts — High-Profile Failures",
     metaDescription: "Long-form case studies on the companies that flamed out under their own hype: Quibi, WeWork, Theranos, Clubhouse, and Facebook Home.",
     keywords: [
       "startup failure case studies",
@@ -577,7 +577,7 @@ export const topics: Topic[] = [
     title: "Built-In Virality",
     eyebrow: "When the product grows itself",
     intro: "The most efficient growth never shows up as a line item. The companies in this collection built the act of acquisition directly into the act of using the product — so every user, just by using it, recruited the next. Dropbox handed out free storage for invites and grew signups 3900%. Hotmail stapled a one-line ad to the bottom of every email its users sent. PayPal paid $20 a head to prime a network that eventually grew itself. LinkedIn turned profile completeness into a nudge that pulled your contacts in, and Twitter cracked retention by suggesting who to follow on day one. These aren't gimmicks bolted on after launch — they're loops engineered into the core experience. These are the deep dives on products that grew themselves.",
-    metaTitle: "Viral Growth Loops — Case Studies on Self-Propelling Products",
+    metaTitle: "Viral Growth Loops — Self-Propelling Products",
     metaDescription: "Long-form case studies on engineered virality: Dropbox's referral loop, Hotmail's email signature, PayPal's $20 referral, LinkedIn, and Twitter's retention fix.",
     keywords: [
       "viral growth loops",

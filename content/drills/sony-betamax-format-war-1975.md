@@ -1,5 +1,6 @@
 ---
 slug: sony-betamax-format-war-1975
+title: "Betamax vs VHS: Open or Proprietary?"
 caseStudySlug: sony-betamax-format-war-1975
 type: historical
 category: Strategy

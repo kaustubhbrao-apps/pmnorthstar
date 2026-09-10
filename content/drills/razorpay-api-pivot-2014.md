@@ -1,5 +1,6 @@
 ---
 slug: razorpay-api-pivot-2014
+title: "Razorpay: Pivot Inside Regulation"
 caseStudySlug: razorpay-pivot-fintech
 type: historical
 category: pivots

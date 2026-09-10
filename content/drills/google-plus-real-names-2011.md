@@ -1,5 +1,6 @@
 ---
 slug: google-plus-real-names-2011
+title: "Google+: Enforce Real Names?"
 caseStudySlug: google-plus-real-names-2011
 type: historical
 category: Strategy

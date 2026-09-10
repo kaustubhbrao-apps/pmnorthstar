@@ -3,6 +3,7 @@ id: cs-74
 slug: cloudflare-security-defaults
 company: Cloudflare
 title: How Cloudflare Made Security Headers the Default and Won Enterprise
+metaTitle: "How Cloudflare Won Enterprise on Defaults"
 category: Strategy
 description: >-
   Cloudflare shipped strict transport security, content security policy, and

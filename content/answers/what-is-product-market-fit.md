@@ -3,7 +3,7 @@ slug: "what-is-product-market-fit"
 question: "What is product-market fit?"
 shortAnswer: "Product-market fit is the point where a market pulls your product out of you faster than you can supply it. It shows up as retention that flattens instead of decaying, users who complain when it breaks, and sales that get easier. It is a state you observe, not a milestone you declare."
 category: "Metrics"
-metaTitle: "What Is Product-Market Fit? How to Measure It and Know You Have It"
+metaTitle: "What Is Product-Market Fit? How to Measure It"
 metaDescription: "Product-market fit is a market pulling product out of you. How to measure it with retention curves and the 40% test, why teams fake it, and what Slack, Superhuman and Quibi show."
 keywords:
   - "product market fit"

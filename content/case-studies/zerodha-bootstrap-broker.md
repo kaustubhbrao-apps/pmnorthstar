@@ -3,6 +3,7 @@ id: cs-53
 slug: zerodha-bootstrap-broker
 company: Zerodha
 title: How Zerodha Built India's Largest Broker Without Raising a Single Rupee
+metaTitle: "How Zerodha Bootstrapped India's Top Broker"
 category: Strategy
 description: >-
   The Kamath brothers refused venture capital, refused advertising, and built

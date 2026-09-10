@@ -5,7 +5,7 @@ companyB: "cs-10"
 title: "TikTok vs Instagram — Interest Graph vs Social Graph, Round Two"
 eyebrow: "The algorithm that doesn't care who you follow, against the network that's built on who you know"
 verdict: "TikTok proved that the interest graph — what you engage with — is a stronger signal for content discovery than the social graph — who you know. Instagram was built for the network of people you already know. TikTok was built for the content you haven't discovered yet. Both can coexist, but TikTok's discovery algorithm is a decade ahead of Instagram's, and that gap in discovery is why every creator platform now tries to copy it."
-metaTitle: "TikTok vs Instagram — Algorithm vs Social Graph in the Creator Economy"
+metaTitle: "TikTok vs Instagram — Algorithm vs Social Graph"
 metaDescription: "TikTok's For You page doesn't care who you follow. Instagram's algorithm does. Compare the two platforms' content models, creator economics, and what each owns."
 accentColor: "#010101"
 keywords:

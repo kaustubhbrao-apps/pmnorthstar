@@ -3,7 +3,7 @@ slug: "how-to-run-customer-interviews"
 question: "How do you run a good customer interview?"
 shortAnswer: "Ask about specific past behaviour, not hypothetical futures. Tell me about the last time you had this problem produces evidence; would you use a feature that does X produces politeness. Keep the interview to one story told in detail, resist pitching your idea, and stop talking — the useful material is almost always in the pause you were tempted to fill."
 category: "Discovery"
-metaTitle: "How to Run a Customer Interview: Questions That Produce Evidence"
+metaTitle: "How to Run a Customer Interview"
 metaDescription: "A practical guide to customer interviews — the past-behaviour rule, questions to avoid, how to handle the urge to pitch, and how to tell a useful interview from a pleasant one."
 keywords:
   - "customer interviews"

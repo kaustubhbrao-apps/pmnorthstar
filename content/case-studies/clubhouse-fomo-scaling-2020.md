@@ -3,6 +3,7 @@ id: cs-club-fomo-9921
 slug: clubhouse-fomo-scaling-2020
 company: Clubhouse
 title: "Manufacturing FOMO: The Rise and Fall of the Audio Social Bubble"
+metaTitle: "Clubhouse: Manufacturing FOMO at Scale"
 category: Growth
 description: "Capitalizing on pandemic lockdowns and an invite-only model, Clubhouse engineered unprecedented hype. However, their inability to democratize the product fast enough allowed incumbents to clone their core feature."
 outcome: "Valued at $4B at its peak, the app faded into obscurity as Twitter Spaces dominated, operating as a ghost town by 2026."

@@ -3,6 +3,7 @@ id: cs-101
 slug: coca-cola-hello-happiness
 company: Coca-Cola
 title: "The 'Hello Happiness' Phone Booths: Coca-Cola's Empathy Utility"
+metaTitle: "Coca-Cola's 'Hello Happiness' Phone Booths"
 category: Marketing
 description: >-
   How Coca-Cola created custom phone booths in labor camps that accepted bottle caps instead of coins, allowing migrant workers to call home and transforming a product into an emotional utility.

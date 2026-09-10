@@ -5,7 +5,7 @@ companyB: "cs-54"
 title: "Duolingo vs BYJU'S — Gamified Habit vs Coached Aspiration"
 eyebrow: "Two EdTech giants, two opposite theories of how humans actually learn"
 verdict: "Duolingo built a free, gamified habit and monetized the tiny fraction who pay for uninterrupted learning. BYJU'S built a premium tutoring platform and sold aggressive long-term contracts to aspirational Indian parents. Duolingo's model is sustainable, profitable, and scalable. BYJU'S peaked at a $22 billion valuation and collapsed under predatory sales tactics, hidden debt, and the revelation that engagement metrics had been fabricated. One EdTech survived by making learning a daily ritual. The other imploded by making it a sales transaction."
-metaTitle: "Duolingo vs BYJU'S — Gamified Learning vs Premium EdTech Compared"
+metaTitle: "Duolingo vs BYJU'S — Gamified vs Premium EdTech"
 metaDescription: "Duolingo is profitable and growing. BYJU'S collapsed from a $22B valuation. Compare the two EdTech giants' models, what went wrong, and what each teaches about education businesses."
 accentColor: "#58CC02"
 keywords:

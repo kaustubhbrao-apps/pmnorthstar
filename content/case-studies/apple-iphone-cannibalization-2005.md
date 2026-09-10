@@ -3,6 +3,7 @@ id: cs-apple-iphone-cannibal-2005
 slug: apple-iphone-cannibalization-2005
 company: Apple
 title: "Cannibalizing the iPod: The Audacious Bet That Birthed the iPhone"
+metaTitle: "Cannibalizing the iPod to Build the iPhone"
 category: Strategy
 description: "At the peak of the iPod's dominance, Steve Jobs recognized that cell phones with built-in music players posed an existential threat. Apple preemptively cannibalized its own cash cow by developing a revolutionary touchscreen device."
 outcome: "The iPhone became the most profitable product in human history, driving Apple to a $3.5 trillion market cap by 2026."

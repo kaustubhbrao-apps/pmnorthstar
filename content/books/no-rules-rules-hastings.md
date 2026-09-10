@@ -8,6 +8,7 @@ thumbnailURL: "https://covers.openlibrary.org/b/isbn/9781984877864-M.jpg"
 link: "https://drive.google.com/file/d/1r5y89w_1sWtZViYYZ72z-tZVxdWTgi0l/view?usp=drive_link"
 amazonUrl: "https://amzn.to/4uPdtwm"
 description: "Netflix and the culture of reinvention."
+metaDescription: "Our review of No Rules Rules by Reed Hastings — Netflix's freedom-and-responsibility culture, the talent-density argument, and where it stops transferring."
 rating: 4.5
 pages: 336
 year: 2020

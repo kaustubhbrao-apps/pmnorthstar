@@ -399,6 +399,11 @@ function syncBooks() {
       fields.push(`    thumbnailURL: ${ts(d.thumbnailURL)}`);
       fields.push(`    link: ${ts(d.link)}`);
       fields.push(`    description: ${ts(d.description)}`);
+      // Optional. description is the visible one-line tagline rendered on the
+      // book page; metaDescription is the search snippet, which wants ~150
+      // characters of actual substance. Only set where the tagline is too
+      // short to be worth showing in a result.
+      if (d.metaDescription) fields.push(`    metaDescription: ${ts(d.metaDescription)}`);
       fields.push(`    rating: ${d.rating}`);
       fields.push(`    pages: ${d.pages}`);
       fields.push(`    year: ${d.year}`);
@@ -445,6 +450,9 @@ export interface Book {
   thumbnailURL: string;
   link: string;
   description: string;
+  // Optional longer meta description. Falls back to the description field,
+  // which is also rendered on the page and is deliberately kept to one line.
+  metaDescription?: string;
   rating: number;
   pages: number;
   year: number;
@@ -518,6 +526,10 @@ function syncCaseStudies() {
       fields.push(`    id: ${ts(d.id)}`);
       fields.push(`    company: ${ts(d.company)}`);
       fields.push(`    title: ${ts(d.title)}`);
+      // Optional. title is the editorial headline and the page's <h1>, which
+      // is allowed to run long; metaTitle is the <title>, which a result cuts
+      // at around 60 characters. Only set where the two need to differ.
+      if (d.metaTitle) fields.push(`    metaTitle: ${ts(d.metaTitle)}`);
       fields.push(`    category: ${ts(d.category)}`);
       fields.push(`    description: ${ts(d.description)}`);
       fields.push(`    outcome: ${ts(d.outcome)}`);
@@ -560,6 +572,9 @@ export interface CaseStudy {
   id: string;
   company: string;
   title: string;
+  // Optional shorter SEO title. Falls back to the title field, which doubles
+  // as the page's H1 and is free to run past what a search result will show.
+  metaTitle?: string;
   category: string;
   description: string;
   outcome: string;
@@ -891,6 +906,10 @@ function syncDrills() {
       const fields: string[] = [];
       fields.push(`    slug: ${ts(d.slug)}`);
       if (d.caseStudySlug) fields.push(`    caseStudySlug: ${ts(d.caseStudySlug)}`);
+      // Optional. Without it drillTitle() falls back to title-casing the slug,
+      // which is legible but flat — "Notion Pivot 2015" rather than the
+      // decision the drill actually puts you in front of.
+      if (d.title) fields.push(`    title: ${ts(d.title)}`);
       fields.push(`    type: ${ts(d.type)}`);
       fields.push(`    category: ${ts(d.category)}`);
       fields.push(`    publishedAt: ${ts(d.publishedAt)}`);
@@ -932,6 +951,8 @@ export interface DrillNode {
 
 export interface Drill {
   slug: string;
+  // Optional display title. lib/drills.ts falls back to a cased slug.
+  title?: string;
   caseStudySlug?: string;
   type: DrillType;
   category: string;

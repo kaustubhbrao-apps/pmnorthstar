@@ -3,7 +3,7 @@ slug: "what-is-a-north-star-metric"
 question: "What is a north star metric?"
 shortAnswer: "A north star metric is the single number that best captures the value your product delivers to customers. Good ones measure realised value, not activity — Spotify tracks time spent listening, not signups. It exists to align teams on one outcome, and there should only ever be one."
 category: "Metrics"
-metaTitle: "What Is a North Star Metric? Definition, Examples, Common Mistakes"
+metaTitle: "What Is a North Star Metric?"
 metaDescription: "A north star metric is the single number that captures the value your product delivers. Definition, real examples from Spotify and Duolingo, and the three ways teams pick the wrong one."
 keywords:
   - "north star metric"

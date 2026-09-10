@@ -5,7 +5,7 @@ companyB: "cs-26"
 title: "Dropbox vs Google Drive — The Startup That Invented a Category vs the Giant That Commoditized It"
 eyebrow: "What happens when your moat is a feature the platform can give away for free"
 verdict: "Dropbox invented consumer cloud storage and spent a decade proving you can build a real business on it. Google Drive commoditized cloud storage overnight by bundling it into Gmail for free. Dropbox's survival — and eventual profitability — is a case study in how a category-creator pivots up the stack to find defensible ground when the category itself gets free. It worked. But it took ten years and a near-death experience."
-metaTitle: "Dropbox vs Google Drive — Cloud Storage Pioneer vs Free Bundle"
+metaTitle: "Dropbox vs Google Drive — Pioneer vs Bundle"
 metaDescription: "Dropbox invented consumer cloud storage. Google bundled it for free. How Dropbox survived commoditization and what it teaches about platform risk and product strategy."
 accentColor: "#0061FF"
 keywords:
