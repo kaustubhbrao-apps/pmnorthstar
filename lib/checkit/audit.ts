@@ -52,6 +52,16 @@ export async function runAudit(rawUrl: string): Promise<AuditResult> {
     return fatalResult(url.toString(), `Site returned HTTP ${status}. Audit needs a page that loads.`);
   }
 
+  if (!isHtmlResponse(headers, html)) {
+    const type = (headers.get("content-type") ?? "").split(";")[0].trim();
+    return fatalResult(
+      url.toString(),
+      type
+        ? `That URL serves ${type}, not a web page. Point CheckIt at a page a visitor would land on.`
+        : `That URL doesn't return HTML. Point CheckIt at a page a visitor would land on.`,
+    );
+  }
+
   const ctx: FetchCtx = {
     inputUrl: url,
     finalUrl,
@@ -141,6 +151,21 @@ export async function runAudit(rawUrl: string): Promise<AuditResult> {
     band: bandFor(total),
     dimensions,
   };
+}
+
+// Every check reads markup, so a non-HTML URL produces a scorecard made of
+// nothing: /favicon.ico was scoring 51/100, because readCapped decodes the
+// binary as UTF-8 and 35 regexes find no title, no h1 and no OG tags in it.
+// A confidently wrong number is worse output than a refusal.
+//
+// Lenient on purpose: only reject when the server states a type that clearly
+// isn't a page. Plenty of real sites mislabel HTML as text/plain or send no
+// Content-Type at all, so those fall through to sniffing the body.
+function isHtmlResponse(headers: Headers, body: string): boolean {
+  const type = (headers.get("content-type") ?? "").split(";")[0].trim().toLowerCase();
+  if (type === "text/html" || type === "application/xhtml+xml") return true;
+  if (type && !type.startsWith("text/") && type !== "application/xml") return false;
+  return /<\s*(!doctype\s+html|html|head|body)\b/i.test(body.slice(0, 4000));
 }
 
 function fatalResult(url: string, message: string): AuditResult {
