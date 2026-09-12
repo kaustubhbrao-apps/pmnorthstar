@@ -11,6 +11,11 @@ const URL_PATH = "/reports/startup-website-audit-2026";
 
 const S = YC_STUDY;
 
+// When the report first went up. Distinct from S.ranAt, which is when the
+// numbers on it were last measured — re-running the study must not re-date
+// the article to today, or every refresh claims to be a brand-new piece.
+const FIRST_PUBLISHED = "2026-09-07";
+
 export const metadata: Metadata = {
   title: {
     absolute: `We Audited ${S.audited} YC Startup Websites (${S.ranAt.slice(0, 4)})`,
@@ -30,7 +35,8 @@ export const metadata: Metadata = {
     title: `We audited ${S.audited} YC startup websites`,
     description: `Median ${S.median}/100 across 35 technical checks. Every company named and ranked. Original data, full method.`,
     siteName: "northstar",
-    publishedTime: S.ranAt,
+    publishedTime: FIRST_PUBLISHED,
+    modifiedTime: S.ranAt,
   },
 };
 
@@ -103,7 +109,8 @@ export default function StartupWebsiteAuditReport() {
             name: `CheckIt scores for ${S.audited} Y Combinator startup homepages (${S.ranAt})`,
             description: `Every audited company, named and ranked. Each homepage was fetched once on ${S.ranAt} and scored 0-100 across 35 technical checks in seven weighted dimensions. Median ${S.median}, mean ${S.mean}.`,
             url: `${SITE_URL}${URL_PATH}`,
-            dateCreated: S.ranAt,
+            dateCreated: FIRST_PUBLISHED,
+            dateModified: S.ranAt,
             creator: { "@type": "Organization", name: "northstar", url: SITE_URL },
             license: `${SITE_URL}/about`,
             measurementTechnique: "Automated static analysis of the public homepage",
@@ -195,6 +202,40 @@ export default function StartupWebsiteAuditReport() {
             HSTS preload at {rate("hsts-preload")}%. Startups optimise for the demo, not
             the crawler. Every company is named and ranked further down.
           </p>
+
+          {/* The first publication of this report carried figures produced by
+              an older version of the scoring engine. Four of its per-check
+              rates were wrong, and the report's own thesis quoted one of them.
+              A page whose value is being original data does not get to quietly
+              swap the numbers out, so the correction is stated on the page. */}
+          <div
+            className="p-4 sm:p-5 rounded-lg mb-8"
+            style={{ background: "var(--card-bg)", border: `1.5px solid ${BAR}` }}
+          >
+            <div
+              className="text-xs font-mono uppercase tracking-wider mb-2"
+              style={{ color: BAR }}
+            >
+              Re-measured {S.ranAt}
+            </div>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
+              First published {FIRST_PUBLISHED} with figures from an earlier build
+              of CheckIt. An audit of the auditor found four checks scoring the
+              wrong answer: structured data missed the <code>@graph</code> form that
+              most CMS plugins emit, modern-image detection recognised only a
+              literal file extension and so missed every image CDN, font-loading
+              was looked for in the HTML instead of the stylesheet, and a soft 404
+              — a site answering <code>200</code> for a page that does not exist —
+              was being scored as a pass. The same {S.attempted} companies have
+              been re-scored on the corrected engine. Time-to-first-byte is also
+              now measured after a DNS and TLS warm-up, so it reflects the server
+              rather than this machine&apos;s cold cache; that single change
+              accounts for most of the movement in the median. Per-check rates
+              that moved: structured data, modern images, layout shift and
+              custom 404. The distribution, the ranking and the finding itself
+              are unchanged.
+            </p>
+          </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[

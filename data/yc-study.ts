@@ -8,14 +8,14 @@ export interface StudyDimension { id: string; label: string; avgPct: number; max
 export interface StudyRow { name: string; slug: string; batch: string; domain: string; score: number; band: string; logo: boolean }
 
 export const YC_STUDY = {
-  "ranAt": "2026-09-07",
+  "ranAt": "2026-09-12",
   "attempted": 500,
-  "audited": 496,
-  "unreachable": 4,
-  "mean": 70.3,
-  "median": 71,
-  "p10": 56,
-  "p90": 83,
+  "audited": 494,
+  "unreachable": 6,
+  "mean": 74.1,
+  "median": 75,
+  "p10": 59,
+  "p90": 87,
   "buckets": [
     {
       "range": "0-9",
@@ -35,119 +35,104 @@ export const YC_STUDY = {
     },
     {
       "range": "40-49",
-      "count": 15
+      "count": 8
     },
     {
       "range": "50-59",
-      "count": 63
+      "count": 43
     },
     {
       "range": "60-69",
-      "count": 146
+      "count": 106
     },
     {
       "range": "70-79",
-      "count": 175
+      "count": 166
     },
     {
       "range": "80-89",
-      "count": 92
+      "count": 142
     },
     {
       "range": "90-99",
-      "count": 5
+      "count": 29
     }
   ],
   "checks": [
     {
       "id": "hsts-preload",
       "label": "HSTS preload eligible",
-      "passRate": 12.9
+      "passRate": 12.8
     },
     {
       "id": "manifest-json",
       "label": "Web App Manifest present",
-      "passRate": 18.1
+      "passRate": 18.4
     },
     {
       "id": "csp-header",
       "label": "Content-Security-Policy set",
-      "passRate": 19.6
-    },
-    {
-      "id": "layout-shift-prevention",
-      "label": "Layout shift prevention",
-      "passRate": 24.6
-    },
-    {
-      "id": "structured-data",
-      "label": "Structured data (JSON-LD)",
-      "passRate": 31.9
-    },
-    {
-      "id": "theme-color",
-      "label": "Theme color meta tag",
-      "passRate": 34.5
+      "passRate": 19.8
     },
     {
       "id": "secure-transport",
       "label": "Secure transport (HTTPS + headers)",
-      "passRate": 35.5
+      "passRate": 35.4
     },
     {
-      "id": "modern-images",
-      "label": "Modern image formats or lazy loading",
-      "passRate": 41.9
+      "id": "theme-color",
+      "label": "Theme color meta tag",
+      "passRate": 35.4
+    },
+    {
+      "id": "layout-shift-prevention",
+      "label": "Layout shift prevention",
+      "passRate": 47
     },
     {
       "id": "alt-text-coverage",
       "label": "Image alt text coverage",
-      "passRate": 49
+      "passRate": 47.6
     },
     {
-      "id": "ttfb",
-      "label": "Server responds in under 600ms",
-      "passRate": 55.2
-    },
-    {
-      "id": "privacy-link",
-      "label": "Privacy / Terms link",
-      "passRate": 58.3
+      "id": "structured-data",
+      "label": "Structured data (JSON-LD)",
+      "passRate": 56.5
     },
     {
       "id": "apple-touch-icon",
       "label": "Apple touch icon present",
+      "passRate": 58.9
+    },
+    {
+      "id": "privacy-link",
+      "label": "Privacy / Terms link",
       "passRate": 59.1
     },
     {
       "id": "meta-description",
       "label": "Meta description (50 to 160 chars)",
-      "passRate": 60.7
+      "passRate": 61.9
+    },
+    {
+      "id": "modern-images",
+      "label": "Modern image formats or lazy loading",
+      "passRate": 66.8
     },
     {
       "id": "canonical-url",
       "label": "Canonical URL set",
-      "passRate": 66.9
+      "passRate": 68.4
     },
     {
       "id": "sitemap-xml",
       "label": "sitemap.xml present",
-      "passRate": 67.7
+      "passRate": 68.6
     },
     {
       "id": "title-length",
       "label": "Title length 30-60 chars",
-      "passRate": 69.2
-    },
-    {
-      "id": "h1-value-prop",
-      "label": "H1 names the value proposition",
-      "passRate": 69.6
-    },
-    {
-      "id": "aria-landmarks",
-      "label": "ARIA landmarks present",
-      "passRate": 70
+      "passRate": 69.8
     },
     {
       "id": "heading-hierarchy",
@@ -155,64 +140,74 @@ export const YC_STUDY = {
       "passRate": 70.4
     },
     {
+      "id": "h1-value-prop",
+      "label": "H1 names the value proposition",
+      "passRate": 70.6
+    },
+    {
+      "id": "aria-landmarks",
+      "label": "ARIA landmarks present",
+      "passRate": 71.9
+    },
+    {
       "id": "twitter-card",
       "label": "Twitter card meta tags",
-      "passRate": 70.8
+      "passRate": 72.1
     },
     {
       "id": "og-completeness",
       "label": "Open Graph link preview",
-      "passRate": 71
+      "passRate": 72.5
     },
     {
       "id": "primary-cta",
       "label": "Clear call-to-action",
-      "passRate": 73.8
-    },
-    {
-      "id": "html-payload",
-      "label": "Initial HTML under 200KB",
-      "passRate": 79
-    },
-    {
-      "id": "identity-signal",
-      "label": "Identity or contact signal",
-      "passRate": 80.2
-    },
-    {
-      "id": "robots-txt",
-      "label": "robots.txt accessible",
-      "passRate": 81.3
-    },
-    {
-      "id": "form-labels",
-      "label": "Form inputs are labeled",
-      "passRate": 85.5
+      "passRate": 75.3
     },
     {
       "id": "custom-404",
       "label": "Custom 404 handling",
-      "passRate": 93.3
+      "passRate": 77.5
+    },
+    {
+      "id": "html-payload",
+      "label": "Initial HTML under 200KB",
+      "passRate": 79.4
+    },
+    {
+      "id": "identity-signal",
+      "label": "Identity or contact signal",
+      "passRate": 80.6
+    },
+    {
+      "id": "robots-txt",
+      "label": "robots.txt accessible",
+      "passRate": 81.4
+    },
+    {
+      "id": "form-labels",
+      "label": "Form inputs are labeled",
+      "passRate": 85.2
+    },
+    {
+      "id": "ttfb",
+      "label": "Server responds in under 600ms",
+      "passRate": 88.3
     },
     {
       "id": "compression",
       "label": "HTTP compression enabled",
-      "passRate": 97.4
+      "passRate": 97
     },
     {
       "id": "real-favicon",
       "label": "Favicon present",
-      "passRate": 98
+      "passRate": 98.2
     },
     {
       "id": "lang-attribute",
       "label": "Language declared on <html>",
       "passRate": 99
-    },
-    {
-      "id": "placeholder-text",
-      "label": "No placeholder text",
-      "passRate": 99.2
     },
     {
       "id": "real-title",
@@ -222,7 +217,12 @@ export const YC_STUDY = {
     {
       "id": "render-blocking-scripts",
       "label": "Render-blocking scripts ≤ 2",
-      "passRate": 99.6
+      "passRate": 99.4
+    },
+    {
+      "id": "placeholder-text",
+      "label": "No placeholder text",
+      "passRate": 99.4
     },
     {
       "id": "viewport-meta",
@@ -239,43 +239,43 @@ export const YC_STUDY = {
     {
       "id": "trust",
       "label": "Trust & Compliance",
-      "avgPct": 56.3,
+      "avgPct": 54.7,
       "maxPoints": 17
     },
     {
       "id": "seo",
       "label": "SEO & Discoverability",
-      "avgPct": 58,
+      "avgPct": 63.3,
       "maxPoints": 15
-    },
-    {
-      "id": "performance",
-      "label": "Performance",
-      "avgPct": 60.8,
-      "maxPoints": 18
     },
     {
       "id": "standards",
       "label": "Modern Web Standards",
-      "avgPct": 62.7,
+      "avgPct": 63.8,
       "maxPoints": 7
     },
     {
       "id": "polish",
       "label": "Polish & Foundations",
-      "avgPct": 75.6,
+      "avgPct": 75.7,
       "maxPoints": 8
+    },
+    {
+      "id": "performance",
+      "label": "Performance",
+      "avgPct": 77.7,
+      "maxPoints": 18
     },
     {
       "id": "ux",
       "label": "UX & Conversion",
-      "avgPct": 85,
+      "avgPct": 85.6,
       "maxPoints": 20
     },
     {
       "id": "brand",
       "label": "Brand & Identity",
-      "avgPct": 90.9,
+      "avgPct": 91.2,
       "maxPoints": 15
     }
   ],
@@ -294,7 +294,7 @@ export const YC_STUDY = {
     },
     {
       "batch": "Spring 2026",
-      "count": 193
+      "count": 191
     },
     {
       "batch": "Winter 2026",
@@ -304,31 +304,58 @@ export const YC_STUDY = {
   "industries": [
     {
       "industry": "B2B",
-      "count": 268,
-      "avg": 73
-    },
-    {
-      "industry": "Healthcare",
-      "count": 42,
-      "avg": 70.5
+      "count": 267,
+      "avg": 76.9
     },
     {
       "industry": "Consumer",
       "count": 30,
-      "avg": 69.6
+      "avg": 73.7
+    },
+    {
+      "industry": "Healthcare",
+      "count": 42,
+      "avg": 73.7
     },
     {
       "industry": "Fintech",
       "count": 42,
-      "avg": 68
+      "avg": 71.4
     },
     {
       "industry": "Industrials",
-      "count": 97,
-      "avg": 64.4
+      "count": 96,
+      "avg": 68.6
     }
   ],
   "rows": [
+    {
+      "name": "Avoca Systems",
+      "slug": "avoca-systems",
+      "batch": "Summer 2026",
+      "domain": "avocasystems.com",
+      "score": 98,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Insurf",
+      "slug": "insurf",
+      "batch": "Summer 2026",
+      "domain": "insurf.io",
+      "score": 98,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Alkera AI",
+      "slug": "alkera-ai",
+      "batch": "Summer 2026",
+      "domain": "alkera.ai",
+      "score": 95,
+      "band": "stellar",
+      "logo": true
+    },
     {
       "name": "Didit",
       "slug": "didit",
@@ -339,10 +366,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Insurf",
-      "slug": "insurf",
+      "name": "Hedge",
+      "slug": "hedge",
+      "batch": "Spring 2026",
+      "domain": "hedgespecialty.com",
+      "score": 94,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Agency Tool Company",
+      "slug": "agency-tool-company",
       "batch": "Summer 2026",
-      "domain": "insurf.io",
+      "domain": "agencytool.com",
       "score": 93,
       "band": "stellar",
       "logo": true
@@ -352,16 +388,16 @@ export const YC_STUDY = {
       "slug": "agent-fm",
       "batch": "Summer 2026",
       "domain": "agentfm.ai",
-      "score": 91,
+      "score": 93,
       "band": "stellar",
       "logo": true
     },
     {
-      "name": "Hedge",
-      "slug": "hedge",
+      "name": "Asendia AI",
+      "slug": "asendia-ai",
       "batch": "Spring 2026",
-      "domain": "hedgespecialty.com",
-      "score": 91,
+      "domain": "asendia.ai",
+      "score": 93,
       "band": "stellar",
       "logo": true
     },
@@ -370,8 +406,197 @@ export const YC_STUDY = {
       "slug": "prescience-inc",
       "batch": "Summer 2026",
       "domain": "getprescience.com",
+      "score": 93,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Risklytics",
+      "slug": "risklytics",
+      "batch": "Summer 2026",
+      "domain": "risklytics.ai",
+      "score": 93,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "TesterArmy",
+      "slug": "testerarmy",
+      "batch": "Spring 2026",
+      "domain": "tester.army",
+      "score": 93,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Harbor",
+      "slug": "runharbor",
+      "batch": "Spring 2026",
+      "domain": "runharbor.com",
+      "score": 92,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "OneCLI",
+      "slug": "onecli",
+      "batch": "Summer 2026",
+      "domain": "onecli.sh",
+      "score": 92,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Rational",
+      "slug": "rational",
+      "batch": "Summer 2026",
+      "domain": "rational.to",
+      "score": 92,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Rindler",
+      "slug": "rindler",
+      "batch": "Summer 2026",
+      "domain": "maxxwell.dev",
+      "score": 92,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "RonanRx Inc.",
+      "slug": "ronanrx-inc",
+      "batch": "Summer 2026",
+      "domain": "ronanrx.com",
+      "score": 92,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "AICE",
+      "slug": "aice",
+      "batch": "Spring 2026",
+      "domain": "aicepower.com",
+      "score": 91,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Rapidfolio",
+      "slug": "rapidfolio",
+      "batch": "Summer 2026",
+      "domain": "rapidfolio.com",
+      "score": 91,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Archal",
+      "slug": "archal",
+      "batch": "Summer 2026",
+      "domain": "archal.ai",
       "score": 90,
       "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Ardent",
+      "slug": "ardent",
+      "batch": "Spring 2026",
+      "domain": "tryardent.com",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Complir",
+      "slug": "complir",
+      "batch": "Spring 2026",
+      "domain": "complir.io",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Denta",
+      "slug": "denta",
+      "batch": "Summer 2026",
+      "domain": "denta.com",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Donkey",
+      "slug": "donkey",
+      "batch": "Summer 2026",
+      "domain": "donkey.trade",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Hubble",
+      "slug": "hubble-ai",
+      "batch": "Summer 2026",
+      "domain": "hubble.ai",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Revnu",
+      "slug": "revnu",
+      "batch": "Spring 2026",
+      "domain": "revnu.com",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Superset",
+      "slug": "superset",
+      "batch": "Spring 2026",
+      "domain": "superset.sh",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Trident",
+      "slug": "trident",
+      "batch": "Summer 2026",
+      "domain": "tridentsecurity.io",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Trope",
+      "slug": "trope",
+      "batch": "Summer 2026",
+      "domain": "trope.ai",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Vector Legal",
+      "slug": "vector-legal",
+      "batch": "Winter 2026",
+      "domain": "vectorlegal.com",
+      "score": 90,
+      "band": "stellar",
+      "logo": true
+    },
+    {
+      "name": "Chert",
+      "slug": "chert",
+      "batch": "Spring 2026",
+      "domain": "trychert.com",
+      "score": 89,
+      "band": "ready",
       "logo": true
     },
     {
@@ -384,10 +609,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "OneCLI",
-      "slug": "onecli",
-      "batch": "Summer 2026",
-      "domain": "onecli.sh",
+      "name": "InsForge",
+      "slug": "insforge",
+      "batch": "Spring 2026",
+      "domain": "insforge.dev",
       "score": 89,
       "band": "ready",
       "logo": true
@@ -402,20 +627,38 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "RightNow",
-      "slug": "rightnow",
-      "batch": "Fall 2026",
-      "domain": "runinfra.ai",
+      "name": "Perceptron ML",
+      "slug": "perceptron-ml",
+      "batch": "Summer 2026",
+      "domain": "perceptronml.com",
       "score": 89,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Risklytics",
-      "slug": "risklytics",
-      "batch": "Summer 2026",
-      "domain": "risklytics.ai",
+      "name": "Userlens",
+      "slug": "userlens",
+      "batch": "Spring 2026",
+      "domain": "userlens.io",
       "score": 89,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Arctic Health",
+      "slug": "arctic-health",
+      "batch": "Spring 2026",
+      "domain": "arctic.health",
+      "score": 88,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Axelrod",
+      "slug": "axelrod",
+      "batch": "Summer 2026",
+      "domain": "axelrod.live",
+      "score": 88,
       "band": "ready",
       "logo": true
     },
@@ -429,64 +672,82 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Harbor",
-      "slug": "runharbor",
+      "name": "Decawork",
+      "slug": "decawork",
+      "batch": "Summer 2026",
+      "domain": "decawork.ai",
+      "score": 88,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Dreach",
+      "slug": "dreach",
       "batch": "Spring 2026",
-      "domain": "runharbor.com",
+      "domain": "dreach.ai",
       "score": 88,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "IMPACT Drones",
-      "slug": "impact-drones",
-      "batch": "Summer 2026",
-      "domain": "impact-drones.com",
-      "score": 88,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Perceptron ML",
-      "slug": "perceptron-ml",
-      "batch": "Summer 2026",
-      "domain": "perceptronml.com",
-      "score": 88,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Poth Labs",
-      "slug": "poth-labs",
-      "batch": "Summer 2026",
-      "domain": "pothlabs.com",
-      "score": 88,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Rapidfolio",
-      "slug": "rapidfolio",
-      "batch": "Summer 2026",
-      "domain": "rapidfolio.com",
-      "score": 88,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Superset",
-      "slug": "superset",
+      "name": "Framewise Health",
+      "slug": "framewise-health",
       "batch": "Spring 2026",
-      "domain": "superset.sh",
+      "domain": "framewisehealth.com",
       "score": 88,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Trident",
-      "slug": "trident",
+      "name": "LemonLime",
+      "slug": "lemonlime",
       "batch": "Summer 2026",
-      "domain": "tridentsecurity.io",
+      "domain": "lemonlime.com",
+      "score": 88,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Mireye",
+      "slug": "mireye",
+      "batch": "Summer 2026",
+      "domain": "mireye.com",
+      "score": 88,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Pacific",
+      "slug": "pacific",
+      "batch": "Summer 2026",
+      "domain": "gopacific.ai",
+      "score": 88,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Payna",
+      "slug": "payna",
+      "batch": "Winter 2026",
+      "domain": "payna.com",
+      "score": 88,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "RentAHuman",
+      "slug": "rentahuman",
+      "batch": "Spring 2026",
+      "domain": "rentahuman.ai",
+      "score": 88,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "screenpipe",
+      "slug": "screenpipe",
+      "batch": "Summer 2026",
+      "domain": "screenpipe.com",
       "score": 88,
       "band": "ready",
       "logo": true
@@ -501,6 +762,69 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "CentralComs",
+      "slug": "centralcoms",
+      "batch": "Spring 2026",
+      "domain": "centralcoms.com",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "CoArena",
+      "slug": "coarena",
+      "batch": "Summer 2026",
+      "domain": "coarena.ai",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Datoric",
+      "slug": "datoric",
+      "batch": "Summer 2026",
+      "domain": "datoric.com",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Expanse",
+      "slug": "expanse",
+      "batch": "Spring 2026",
+      "domain": "expanse.sh",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "FlowManual",
+      "slug": "flowmanual",
+      "batch": "Summer 2026",
+      "domain": "flowmanual.com",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Gigacatalyst",
+      "slug": "gigacatalyst",
+      "batch": "Spring 2026",
+      "domain": "gigacatalyst.com",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Graphify Labs",
+      "slug": "graphify-labs",
+      "batch": "Summer 2026",
+      "domain": "graphify.com",
+      "score": 87,
+      "band": "ready",
+      "logo": false
+    },
+    {
       "name": "Pluto",
       "slug": "talentpluto",
       "batch": "Summer 2026",
@@ -510,10 +834,73 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Framewise Health",
-      "slug": "framewise-health",
+      "name": "Rex",
+      "slug": "rex-inc",
+      "batch": "Summer 2026",
+      "domain": "rex.inc",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "RightNow",
+      "slug": "rightnow",
+      "batch": "Fall 2026",
+      "domain": "runinfra.ai",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Runtime",
+      "slug": "runtime",
       "batch": "Spring 2026",
-      "domain": "framewisehealth.com",
+      "domain": "runtm.com",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "smol machines",
+      "slug": "smol-machines",
+      "batch": "Spring 2026",
+      "domain": "smolmachines.com",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Studio",
+      "slug": "studio",
+      "batch": "Summer 2026",
+      "domain": "trystudio.ai",
+      "score": 87,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Bloom",
+      "slug": "trybloom",
+      "batch": "Spring 2026",
+      "domain": "trybloom.ai",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Caution",
+      "slug": "caution",
+      "batch": "Summer 2026",
+      "domain": "caution.co",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Egoist Machines",
+      "slug": "egoist-machines",
+      "batch": "Summer 2026",
+      "domain": "ego.ist",
       "score": 86,
       "band": "ready",
       "logo": true
@@ -528,10 +915,91 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "InstaAgent",
+      "slug": "instaagent",
+      "batch": "Spring 2026",
+      "domain": "instaagent.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Kinect",
+      "slug": "kinect",
+      "batch": "Spring 2026",
+      "domain": "trykinect.ai",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Manicule",
+      "slug": "manicule",
+      "batch": "Spring 2026",
+      "domain": "manicule.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Oddpool",
+      "slug": "oddpool",
+      "batch": "Spring 2026",
+      "domain": "oddpool.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Panta",
+      "slug": "panta",
+      "batch": "Winter 2026",
+      "domain": "pantainsure.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Pavoot",
+      "slug": "pavoot",
+      "batch": "Spring 2026",
+      "domain": "pavoot.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Poth Labs",
+      "slug": "poth-labs",
+      "batch": "Summer 2026",
+      "domain": "pothlabs.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
       "name": "Robocurve",
       "slug": "robocurve",
       "batch": "Summer 2026",
       "domain": "robocurve.org",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Skymerse",
+      "slug": "skymerse",
+      "batch": "Summer 2026",
+      "domain": "skymerse.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Speko",
+      "slug": "speko",
+      "batch": "Summer 2026",
+      "domain": "speko.ai",
       "score": 86,
       "band": "ready",
       "logo": true
@@ -546,19 +1014,46 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Trope",
-      "slug": "trope",
-      "batch": "Summer 2026",
-      "domain": "trope.ai",
+      "name": "tday.com",
+      "slug": "tdaycom",
+      "batch": "Spring 2026",
+      "domain": "tday.com",
       "score": 86,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Ardent",
-      "slug": "ardent",
+      "name": "Trellis",
+      "slug": "trellistech",
       "batch": "Spring 2026",
-      "domain": "tryardent.com",
+      "domain": "trellistech.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Velum Labs",
+      "slug": "velum-labs",
+      "batch": "Winter 2026",
+      "domain": "velum-labs.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Voquill",
+      "slug": "voquill",
+      "batch": "Spring 2026",
+      "domain": "voquill.com",
+      "score": 86,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Aktoria Robotics",
+      "slug": "aktoria-robotics",
+      "batch": "Summer 2026",
+      "domain": "aktoria.com",
       "score": 85,
       "band": "ready",
       "logo": true
@@ -573,10 +1068,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Hubble",
-      "slug": "hubble-ai",
+      "name": "Captain",
+      "slug": "captain",
+      "batch": "Winter 2026",
+      "domain": "captain.dev",
+      "score": 85,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "IMPACT Drones",
+      "slug": "impact-drones",
       "batch": "Summer 2026",
-      "domain": "hubble.ai",
+      "domain": "impact-drones.com",
       "score": 85,
       "band": "ready",
       "logo": true
@@ -591,19 +1095,64 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Mireye",
-      "slug": "mireye",
+      "name": "Lyon",
+      "slug": "lyon",
       "batch": "Summer 2026",
-      "domain": "mireye.com",
+      "domain": "lyon.so",
       "score": 85,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Rindler",
-      "slug": "rindler",
+      "name": "Marker",
+      "slug": "marker",
       "batch": "Summer 2026",
-      "domain": "maxxwell.dev",
+      "domain": "onmarker.com",
+      "score": 85,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Nine Fives",
+      "slug": "nine-fives",
+      "batch": "Spring 2026",
+      "domain": "ninefives.com",
+      "score": 85,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "OpenTrade",
+      "slug": "opentrade",
+      "batch": "Summer 2026",
+      "domain": "opentrade.live",
+      "score": 85,
+      "band": "ready",
+      "logo": false
+    },
+    {
+      "name": "primitive",
+      "slug": "primitive",
+      "batch": "Spring 2026",
+      "domain": "primitive.dev",
+      "score": 85,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "ProvenMetal",
+      "slug": "provenmetal",
+      "batch": "Summer 2026",
+      "domain": "provenmetal.com",
+      "score": 85,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Sazabi",
+      "slug": "sazabi",
+      "batch": "Spring 2026",
+      "domain": "sazabi.com",
       "score": 85,
       "band": "ready",
       "logo": true
@@ -618,20 +1167,20 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Zomma",
-      "slug": "zomma",
+      "name": "Vendo",
+      "slug": "vendo",
       "batch": "Summer 2026",
-      "domain": "zommalabs.com",
+      "domain": "vendo.run",
       "score": 85,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "AICE",
-      "slug": "aice",
-      "batch": "Spring 2026",
-      "domain": "aicepower.com",
-      "score": 84,
+      "name": "Zomma",
+      "slug": "zomma",
+      "batch": "Summer 2026",
+      "domain": "zommalabs.com",
+      "score": 85,
       "band": "ready",
       "logo": true
     },
@@ -645,127 +1194,154 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Arctic Health",
-      "slug": "arctic-health",
+      "name": "Button Computer",
+      "slug": "button-computer",
+      "batch": "Winter 2026",
+      "domain": "buttoncomputer.com",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Codag",
+      "slug": "codag",
+      "batch": "Summer 2026",
+      "domain": "codag.ai",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Hoplite",
+      "slug": "hoplite",
+      "batch": "Summer 2026",
+      "domain": "hoplite.sh",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Hub",
+      "slug": "hub",
       "batch": "Spring 2026",
-      "domain": "arctic.health",
+      "domain": "hub.xyz",
       "score": 84,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Avoca Systems",
-      "slug": "avoca-systems",
-      "batch": "Summer 2026",
-      "domain": "avocasystems.com",
-      "score": 84,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "CoArena",
-      "slug": "coarena",
-      "batch": "Summer 2026",
-      "domain": "coarena.ai",
-      "score": 84,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Decawork",
-      "slug": "decawork",
-      "batch": "Summer 2026",
-      "domain": "decawork.ai",
-      "score": 84,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Egoist Machines",
-      "slug": "egoist-machines",
-      "batch": "Summer 2026",
-      "domain": "ego.ist",
-      "score": 84,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Expanse",
-      "slug": "expanse",
+      "name": "Inth",
+      "slug": "inth",
       "batch": "Spring 2026",
-      "domain": "expanse.sh",
+      "domain": "inth.com",
       "score": 84,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "FlowManual",
-      "slug": "flowmanual",
-      "batch": "Summer 2026",
-      "domain": "flowmanual.com",
-      "score": 84,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Oddpool",
-      "slug": "oddpool",
+      "name": "Klarify",
+      "slug": "klarify",
       "batch": "Spring 2026",
-      "domain": "oddpool.com",
+      "domain": "klarify.ca",
       "score": 84,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Pacific",
-      "slug": "pacific",
-      "batch": "Summer 2026",
-      "domain": "gopacific.ai",
+      "name": "Minicor",
+      "slug": "minicor",
+      "batch": "Spring 2026",
+      "domain": "minicor.com",
       "score": 84,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "screenpipe",
-      "slug": "screenpipe",
-      "batch": "Summer 2026",
-      "domain": "screenpipe.com",
+      "name": "Miso Labs",
+      "slug": "miso-labs",
+      "batch": "Spring 2026",
+      "domain": "misolabs.ai",
       "score": 84,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Alkera AI",
-      "slug": "alkera-ai",
+      "name": "Multiplier",
+      "slug": "multiplier",
+      "batch": "Spring 2026",
+      "domain": "multiplier.ai",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "OneTriangle",
+      "slug": "onetriangle",
       "batch": "Summer 2026",
-      "domain": "alkera.ai",
+      "domain": "onetriangle.ai",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "OpenWork",
+      "slug": "openwork",
+      "batch": "Spring 2026",
+      "domain": "openworklabs.com",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Peer",
+      "slug": "peer",
+      "batch": "Summer 2026",
+      "domain": "peer-freight.com",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Sherpa",
+      "slug": "sherpa",
+      "batch": "Spring 2026",
+      "domain": "withsherpa.ai",
+      "score": 84,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Click",
+      "slug": "click",
+      "batch": "Summer 2026",
+      "domain": "useclick.ai",
       "score": 83,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Axelrod",
-      "slug": "axelrod",
+      "name": "Conifer",
+      "slug": "conifer",
       "batch": "Summer 2026",
-      "domain": "axelrod.live",
+      "domain": "conifer.build",
       "score": 83,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Complir",
-      "slug": "complir",
+      "name": "Corvera",
+      "slug": "corvera",
+      "batch": "Winter 2026",
+      "domain": "corvera.ai",
+      "score": 83,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "flowscope",
+      "slug": "flowscope",
       "batch": "Spring 2026",
-      "domain": "complir.io",
-      "score": 83,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Donkey",
-      "slug": "donkey",
-      "batch": "Summer 2026",
-      "domain": "donkey.trade",
+      "domain": "flowscope.com",
       "score": 83,
       "band": "ready",
       "logo": true
@@ -780,73 +1356,55 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "LemonLime",
-      "slug": "lemonlime",
-      "batch": "Summer 2026",
-      "domain": "lemonlime.com",
+      "name": "Lightfield",
+      "slug": "lightfield",
+      "batch": "Fall 2026",
+      "domain": "trylightfield.ai",
       "score": 83,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Lyon",
-      "slug": "lyon",
-      "batch": "Summer 2026",
-      "domain": "lyon.so",
-      "score": 83,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Pavoot",
-      "slug": "pavoot",
+      "name": "OpenProse",
+      "slug": "openprose",
       "batch": "Spring 2026",
-      "domain": "pavoot.com",
+      "domain": "prose.md",
       "score": 83,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "primitive",
-      "slug": "primitive",
-      "batch": "Spring 2026",
-      "domain": "primitive.dev",
-      "score": 83,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Rational",
-      "slug": "rational",
+      "name": "Prized",
+      "slug": "prized",
       "batch": "Summer 2026",
-      "domain": "rational.to",
+      "domain": "prized.dev",
       "score": 83,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Revnu",
-      "slug": "revnu",
+      "name": "Simantic",
+      "slug": "simantic",
+      "batch": "Fall 2026",
+      "domain": "simantic.dev",
+      "score": 83,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Simulithic",
+      "slug": "simulithic",
+      "batch": "Fall 2026",
+      "domain": "simulithic.com",
+      "score": 83,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Callab AI",
+      "slug": "callab-ai",
       "batch": "Spring 2026",
-      "domain": "revnu.com",
-      "score": 83,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Button Computer",
-      "slug": "button-computer",
-      "batch": "Winter 2026",
-      "domain": "buttoncomputer.com",
-      "score": 82,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Codag",
-      "slug": "codag",
-      "batch": "Summer 2026",
-      "domain": "codag.ai",
+      "domain": "callab.ai",
       "score": 82,
       "band": "ready",
       "logo": true
@@ -861,136 +1419,118 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Minicor",
-      "slug": "minicor",
-      "batch": "Spring 2026",
-      "domain": "minicor.com",
-      "score": 82,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "OneTriangle",
-      "slug": "onetriangle",
+      "name": "Instaplay",
+      "slug": "instaplay",
       "batch": "Summer 2026",
-      "domain": "onetriangle.ai",
+      "domain": "instaplay.ai",
       "score": 82,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Panta",
-      "slug": "panta",
-      "batch": "Winter 2026",
-      "domain": "pantainsure.com",
+      "name": "Keyframe Labs",
+      "slug": "keyframe-labs",
+      "batch": "Spring 2026",
+      "domain": "keyframelabs.com",
       "score": 82,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Rex",
-      "slug": "rex-inc",
+      "name": "Klaimee",
+      "slug": "klaimee",
+      "batch": "Spring 2026",
+      "domain": "klaimee.ai",
+      "score": 82,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Maritime",
+      "slug": "maritime",
+      "batch": "Fall 2026",
+      "domain": "maritime.sh",
+      "score": 82,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "OpenRelay",
+      "slug": "openrelay",
       "batch": "Summer 2026",
-      "domain": "rex.inc",
+      "domain": "openrelay.inc",
       "score": 82,
       "band": "ready",
-      "logo": true
+      "logo": false
     },
     {
-      "name": "Tasklet",
-      "slug": "tasklet-2",
-      "batch": "Spring 2026",
-      "domain": "tasklet.ai",
-      "score": 82,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "TesterArmy",
-      "slug": "testerarmy",
-      "batch": "Spring 2026",
-      "domain": "tester.army",
-      "score": 82,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Userlens",
-      "slug": "userlens",
-      "batch": "Spring 2026",
-      "domain": "userlens.io",
-      "score": 82,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Vector Legal",
-      "slug": "vector-legal",
-      "batch": "Winter 2026",
-      "domain": "vectorlegal.com",
-      "score": 82,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Voquill",
-      "slug": "voquill",
-      "batch": "Spring 2026",
-      "domain": "voquill.com",
-      "score": 82,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Agency Tool Company",
-      "slug": "agency-tool-company",
+      "name": "OpenVector",
+      "slug": "openvector",
       "batch": "Summer 2026",
-      "domain": "agencytool.com",
+      "domain": "openvector.com",
+      "score": 82,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Torus",
+      "slug": "torus",
+      "batch": "Summer 2026",
+      "domain": "usetorus.com",
+      "score": 82,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Tracer",
+      "slug": "tracer",
+      "batch": "Summer 2026",
+      "domain": "tracerml.ai",
+      "score": 82,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Agnost AI",
+      "slug": "agnost-ai",
+      "batch": "Summer 2026",
+      "domain": "agnost.ai",
+      "score": 81,
+      "band": "ready",
+      "logo": false
+    },
+    {
+      "name": "Arlo Industries",
+      "slug": "arlo-industries",
+      "batch": "Spring 2026",
+      "domain": "arlo1.com",
       "score": 81,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Archal",
-      "slug": "archal",
+      "name": "Async",
+      "slug": "withasync",
       "batch": "Summer 2026",
-      "domain": "archal.ai",
+      "domain": "withasync.com",
       "score": 81,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Bloom",
-      "slug": "trybloom",
+      "name": "Elyra",
+      "slug": "elyra",
       "batch": "Spring 2026",
-      "domain": "trybloom.ai",
+      "domain": "elyrasystems.com",
       "score": 81,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Captain",
-      "slug": "captain",
-      "batch": "Winter 2026",
-      "domain": "captain.dev",
-      "score": 81,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Datoric",
-      "slug": "datoric",
-      "batch": "Summer 2026",
-      "domain": "datoric.com",
-      "score": 81,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Dreach",
-      "slug": "dreach",
+      "name": "GovGuard",
+      "slug": "govguard",
       "batch": "Spring 2026",
-      "domain": "dreach.ai",
+      "domain": "govguard.com",
       "score": 81,
       "band": "ready",
       "logo": true
@@ -1005,28 +1545,46 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Instaplay",
-      "slug": "instaplay",
+      "name": "Hebbian Robotics",
+      "slug": "hebbian-robotics",
       "batch": "Summer 2026",
-      "domain": "instaplay.ai",
+      "domain": "hebbianrobotics.com",
       "score": 81,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Inth",
-      "slug": "inth",
+      "name": "Infera",
+      "slug": "infera",
       "batch": "Spring 2026",
-      "domain": "inth.com",
+      "domain": "infera.bio",
       "score": 81,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Marker",
-      "slug": "marker",
+      "name": "Meteoric",
+      "slug": "meteoric",
       "batch": "Summer 2026",
-      "domain": "onmarker.com",
+      "domain": "meteoric.earth",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Nebula Security",
+      "slug": "nebula-security",
+      "batch": "Summer 2026",
+      "domain": "nebusec.ai",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Nodus Compute",
+      "slug": "nodus-compute",
+      "batch": "Fall 2026",
+      "domain": "nodus-compute.ai",
       "score": 81,
       "band": "ready",
       "logo": true
@@ -1041,28 +1599,73 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "tday.com",
-      "slug": "tdaycom",
-      "batch": "Spring 2026",
-      "domain": "tday.com",
-      "score": 81,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Trellis",
-      "slug": "trellistech",
-      "batch": "Spring 2026",
-      "domain": "trellistech.com",
-      "score": 81,
-      "band": "ready",
-      "logo": true
-    },
-    {
-      "name": "Aktoria Robotics",
-      "slug": "aktoria-robotics",
+      "name": "Parasma",
+      "slug": "parasma",
       "batch": "Summer 2026",
-      "domain": "aktoria.com",
+      "domain": "parasma.com",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Pollen",
+      "slug": "pollen",
+      "batch": "Winter 2026",
+      "domain": "pollen.cx",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Pops",
+      "slug": "pops",
+      "batch": "Spring 2026",
+      "domain": "pops.fyi",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Quippy",
+      "slug": "quippy",
+      "batch": "Fall 2026",
+      "domain": "quippyapp.com",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Savant",
+      "slug": "savant",
+      "batch": "Spring 2026",
+      "domain": "heysavant.com",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Totalis",
+      "slug": "totalis",
+      "batch": "Spring 2026",
+      "domain": "totalis.trade",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Veeza AI",
+      "slug": "veeza-ai",
+      "batch": "Fall 2026",
+      "domain": "veeza.ai",
+      "score": 81,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "AgentPhone",
+      "slug": "agentphone",
+      "batch": "Spring 2026",
+      "domain": "agentphone.ai",
       "score": 80,
       "band": "ready",
       "logo": true
@@ -1077,37 +1680,82 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Asendia AI",
-      "slug": "asendia-ai",
-      "batch": "Spring 2026",
-      "domain": "asendia.ai",
+      "name": "Assemble",
+      "slug": "assemble",
+      "batch": "Summer 2026",
+      "domain": "assemble.ai",
       "score": 80,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Chert",
-      "slug": "chert",
-      "batch": "Spring 2026",
-      "domain": "trychert.com",
+      "name": "Buildbox",
+      "slug": "buildbox",
+      "batch": "Summer 2026",
+      "domain": "heybuildbox.com",
       "score": 80,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Corvera",
-      "slug": "corvera",
-      "batch": "Winter 2026",
-      "domain": "corvera.ai",
+      "name": "CarSignal",
+      "slug": "carsignal",
+      "batch": "Summer 2026",
+      "domain": "trycarsignal.com",
       "score": 80,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Lightfield",
-      "slug": "lightfield",
+      "name": "Dock",
+      "slug": "dock",
+      "batch": "Summer 2026",
+      "domain": "trydock.ai",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Familiar",
+      "slug": "familiar",
+      "batch": "Summer 2026",
+      "domain": "thefamiliarlab.com",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "herdr",
+      "slug": "herdr",
       "batch": "Fall 2026",
-      "domain": "trylightfield.ai",
+      "domain": "herdr.dev",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Lab0",
+      "slug": "lab0",
+      "batch": "Spring 2026",
+      "domain": "lab0.ai",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "LightSprint",
+      "slug": "lightsprint",
+      "batch": "Spring 2026",
+      "domain": "lightsprint.ai",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Litmus",
+      "slug": "litmus-hiring",
+      "batch": "Summer 2026",
+      "domain": "litmushiring.com",
       "score": 80,
       "band": "ready",
       "logo": true
@@ -1122,10 +1770,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "OpenWork",
-      "slug": "openwork",
+      "name": "Modern",
+      "slug": "modern",
       "batch": "Spring 2026",
-      "domain": "openworklabs.com",
+      "domain": "getmodern.ai",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Ooak Data",
+      "slug": "ooak-data",
+      "batch": "Summer 2026",
+      "domain": "ooakdata.com",
       "score": 80,
       "band": "ready",
       "logo": true
@@ -1140,37 +1797,55 @@ export const YC_STUDY = {
       "logo": false
     },
     {
-      "name": "ProvenMetal",
-      "slug": "provenmetal",
+      "name": "Osmaura",
+      "slug": "osmaura",
       "batch": "Summer 2026",
-      "domain": "provenmetal.com",
+      "domain": "osmaura.com",
       "score": 80,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "RentAHuman",
-      "slug": "rentahuman",
-      "batch": "Spring 2026",
-      "domain": "rentahuman.ai",
+      "name": "Oxus",
+      "slug": "oxus",
+      "batch": "Winter 2026",
+      "domain": "oxus-ai.com",
       "score": 80,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Sazabi",
-      "slug": "sazabi",
-      "batch": "Spring 2026",
-      "domain": "sazabi.com",
+      "name": "Sentient OS",
+      "slug": "sentient-os",
+      "batch": "Fall 2026",
+      "domain": "sentient-os.ai",
       "score": 80,
       "band": "ready",
       "logo": true
     },
     {
-      "name": "Sherpa",
-      "slug": "sherpa",
+      "name": "Silmaril",
+      "slug": "silmaril",
       "batch": "Spring 2026",
-      "domain": "withsherpa.ai",
+      "domain": "silmaril.dev",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Standout",
+      "slug": "standout",
+      "batch": "Spring 2026",
+      "domain": "standout.work",
+      "score": 80,
+      "band": "ready",
+      "logo": true
+    },
+    {
+      "name": "Tasklet",
+      "slug": "tasklet-2",
+      "batch": "Spring 2026",
+      "domain": "tasklet.ai",
       "score": 80,
       "band": "ready",
       "logo": true
@@ -1194,19 +1869,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Vendo",
-      "slug": "vendo",
+      "name": "6thSense",
+      "slug": "6thsense",
       "batch": "Summer 2026",
-      "domain": "vendo.run",
-      "score": 80,
-      "band": "ready",
+      "domain": "6thsense.dev",
+      "score": 79,
+      "band": "almost",
       "logo": true
     },
     {
-      "name": "Agentic Fabriq",
-      "slug": "agentic-fabriq",
-      "batch": "Winter 2026",
-      "domain": "agenticfabriq.com",
+      "name": "9 Mothers",
+      "slug": "9-mothers-corporation",
+      "batch": "Spring 2026",
+      "domain": "9mothers.com",
       "score": 79,
       "band": "almost",
       "logo": true
@@ -1216,6 +1891,15 @@ export const YC_STUDY = {
       "slug": "allia-health",
       "batch": "Summer 2026",
       "domain": "allia.health",
+      "score": 79,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Arzana",
+      "slug": "arzana",
+      "batch": "Spring 2026",
+      "domain": "arzana.com",
       "score": 79,
       "band": "almost",
       "logo": true
@@ -1239,6 +1923,24 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "Callbook AI",
+      "slug": "callbook-ai",
+      "batch": "Summer 2026",
+      "domain": "callbook.ai",
+      "score": 79,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Chronicle Labs",
+      "slug": "chronicle-labs",
+      "batch": "Spring 2026",
+      "domain": "chronicle-labs.com",
+      "score": 79,
+      "band": "almost",
+      "logo": true
+    },
+    {
       "name": "Definite",
       "slug": "definite",
       "batch": "Summer 2026",
@@ -1248,10 +1950,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "flowscope",
-      "slug": "flowscope",
-      "batch": "Spring 2026",
-      "domain": "flowscope.com",
+      "name": "Forward",
+      "slug": "useforward",
+      "batch": "Fall 2026",
+      "domain": "useforward.co",
       "score": 79,
       "band": "almost",
       "logo": true
@@ -1275,46 +1977,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Graphify Labs",
-      "slug": "graphify-labs",
-      "batch": "Summer 2026",
-      "domain": "graphify.com",
-      "score": 79,
-      "band": "almost",
-      "logo": true
-    },
-    {
       "name": "Hexa",
       "slug": "hexa",
       "batch": "Spring 2026",
       "domain": "hexaagents.com",
-      "score": 79,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Hoplite",
-      "slug": "hoplite",
-      "batch": "Summer 2026",
-      "domain": "hoplite.sh",
-      "score": 79,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Infera",
-      "slug": "infera",
-      "batch": "Spring 2026",
-      "domain": "infera.bio",
-      "score": 79,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "InsForge",
-      "slug": "insforge",
-      "batch": "Spring 2026",
-      "domain": "insforge.dev",
       "score": 79,
       "band": "almost",
       "logo": true
@@ -1329,28 +1995,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Keyframe Labs",
-      "slug": "keyframe-labs",
+      "name": "Lamina Labs",
+      "slug": "lamina-labs",
       "batch": "Spring 2026",
-      "domain": "keyframelabs.com",
-      "score": 79,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Klarify",
-      "slug": "klarify",
-      "batch": "Spring 2026",
-      "domain": "klarify.ca",
-      "score": 79,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Kuli",
-      "slug": "kuli",
-      "batch": "Spring 2026",
-      "domain": "kuli.one",
+      "domain": "laminalabs.ai",
       "score": 79,
       "band": "almost",
       "logo": true
@@ -1365,58 +2013,31 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Peer",
-      "slug": "peer",
-      "batch": "Summer 2026",
-      "domain": "peer-freight.com",
+      "name": "Overdrive Health",
+      "slug": "overdrive-health",
+      "batch": "Winter 2026",
+      "domain": "overdrive.health",
       "score": 79,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Scope",
-      "slug": "scope",
-      "batch": "Spring 2026",
-      "domain": "tryscope.app",
+      "name": "Palette",
+      "slug": "palette-2",
+      "batch": "Summer 2026",
+      "domain": "palettelabs.com",
       "score": 79,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Studio",
-      "slug": "studio",
-      "batch": "Summer 2026",
-      "domain": "trystudio.ai",
+      "name": "Redoubt Insurance",
+      "slug": "redoubt-insurance",
+      "batch": "Fall 2026",
+      "domain": "redoubt.agency",
       "score": 79,
       "band": "almost",
       "logo": true
-    },
-    {
-      "name": "Tracer",
-      "slug": "tracer",
-      "batch": "Summer 2026",
-      "domain": "tracerml.ai",
-      "score": 79,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "6thSense",
-      "slug": "6thsense",
-      "batch": "Summer 2026",
-      "domain": "6thsense.dev",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Agnost AI",
-      "slug": "agnost-ai",
-      "batch": "Summer 2026",
-      "domain": "agnost.ai",
-      "score": 78,
-      "band": "almost",
-      "logo": false
     },
     {
       "name": "Arden",
@@ -1428,128 +2049,137 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Callab AI",
-      "slug": "callab-ai",
-      "batch": "Spring 2026",
-      "domain": "callab.ai",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Dock",
-      "slug": "dock",
+      "name": "Atlia",
+      "slug": "atlia",
       "batch": "Summer 2026",
-      "domain": "trydock.ai",
+      "domain": "atlia.com",
       "score": 78,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Gigacatalyst",
-      "slug": "gigacatalyst",
-      "batch": "Spring 2026",
-      "domain": "gigacatalyst.com",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "InstaAgent",
-      "slug": "instaagent",
-      "batch": "Spring 2026",
-      "domain": "instaagent.com",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Nebula Security",
-      "slug": "nebula-security",
+      "name": "Cerenovus",
+      "slug": "cerenovus",
       "batch": "Summer 2026",
-      "domain": "nebusec.ai",
+      "domain": "cerenovus.ai",
       "score": 78,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Nine Fives",
-      "slug": "nine-fives",
+      "name": "Control Seat",
+      "slug": "control-seat",
+      "batch": "Summer 2026",
+      "domain": "controlseat.com",
+      "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Edgerun",
+      "slug": "edgerun",
+      "batch": "Summer 2026",
+      "domain": "edgerun.com",
+      "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Ekho Labs",
+      "slug": "ekho-labs",
+      "batch": "Summer 2026",
+      "domain": "ekholabs.com",
+      "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Juno",
+      "slug": "juno-chat",
       "batch": "Spring 2026",
-      "domain": "ninefives.com",
+      "domain": "junocompanion.com",
       "score": 78,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Pollen",
-      "slug": "pollen",
-      "batch": "Winter 2026",
-      "domain": "pollen.cx",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Pops",
-      "slug": "pops",
+      "name": "Kimpton",
+      "slug": "kimpton",
       "batch": "Spring 2026",
-      "domain": "pops.fyi",
+      "domain": "kimpton.ai",
       "score": 78,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Quippy",
-      "slug": "quippy",
+      "name": "Kinro",
+      "slug": "kinro",
+      "batch": "Spring 2026",
+      "domain": "kinro.com",
+      "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Luca IQ",
+      "slug": "luca-iq",
+      "batch": "Summer 2026",
+      "domain": "lucaiq.com",
+      "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "OnePatch",
+      "slug": "onepatch",
       "batch": "Fall 2026",
-      "domain": "quippyapp.com",
+      "domain": "onepatch.dev",
       "score": 78,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "RonanRx Inc.",
-      "slug": "ronanrx-inc",
-      "batch": "Summer 2026",
-      "domain": "ronanrx.com",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Sidekick",
-      "slug": "textsidekick",
-      "batch": "Summer 2026",
-      "domain": "textsidekick.com",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Silmaril",
-      "slug": "silmaril",
-      "batch": "Spring 2026",
-      "domain": "silmaril.dev",
-      "score": 78,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Simulithic",
-      "slug": "simulithic",
+      "name": "Orca Aerospace",
+      "slug": "orca-aerospace",
       "batch": "Fall 2026",
-      "domain": "simulithic.com",
+      "domain": "orcaaerospace.com",
       "score": 78,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Velum Labs",
-      "slug": "velum-labs",
-      "batch": "Winter 2026",
-      "domain": "velum-labs.com",
+      "name": "rekursiv.ai",
+      "slug": "rekursivai",
+      "batch": "Summer 2026",
+      "domain": "rekursiv.ai",
       "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Result",
+      "slug": "result",
+      "batch": "Spring 2026",
+      "domain": "result.dev",
+      "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Superlog",
+      "slug": "superlog",
+      "batch": "Spring 2026",
+      "domain": "superlog.sh",
+      "score": 78,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Agentic Fabriq",
+      "slug": "agentic-fabriq",
+      "batch": "Winter 2026",
+      "domain": "agenticfabriq.com",
+      "score": 77,
       "band": "almost",
       "logo": true
     },
@@ -1563,10 +2193,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Arlo Industries",
-      "slug": "arlo-industries",
-      "batch": "Spring 2026",
-      "domain": "arlo1.com",
+      "name": "Autumn AI",
+      "slug": "autumn-ai",
+      "batch": "Winter 2026",
+      "domain": "autumn.ai",
       "score": 77,
       "band": "almost",
       "logo": true
@@ -1581,37 +2211,28 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Buildbox",
-      "slug": "buildbox",
-      "batch": "Summer 2026",
-      "domain": "heybuildbox.com",
-      "score": 77,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Caution",
-      "slug": "caution",
-      "batch": "Summer 2026",
-      "domain": "caution.co",
-      "score": 77,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "CentralComs",
-      "slug": "centralcoms",
-      "batch": "Spring 2026",
-      "domain": "centralcoms.com",
-      "score": 77,
-      "band": "almost",
-      "logo": true
-    },
-    {
       "name": "CharacterQuilt",
       "slug": "characterquilt",
       "batch": "Spring 2026",
       "domain": "characterquilt.com",
+      "score": 77,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Dipole Labs",
+      "slug": "dipole-labs",
+      "batch": "Summer 2026",
+      "domain": "dipolelabs.com",
+      "score": 77,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Fuchsia",
+      "slug": "fuchsia",
+      "batch": "Spring 2026",
+      "domain": "getfuchsia.ai",
       "score": 77,
       "band": "almost",
       "logo": true
@@ -1635,190 +2256,118 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Manicule",
-      "slug": "manicule",
+      "name": "Levocred AI",
+      "slug": "levocred-ai",
+      "batch": "Summer 2026",
+      "domain": "levocred.com",
+      "score": 77,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Libra Robotics",
+      "slug": "libra-robotics",
+      "batch": "Summer 2026",
+      "domain": "librabots.com",
+      "score": 77,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Limrun",
+      "slug": "limrun",
       "batch": "Spring 2026",
-      "domain": "manicule.com",
+      "domain": "lim.run",
       "score": 77,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Meteoric",
-      "slug": "meteoric",
+      "name": "MOCHI.TV",
+      "slug": "mochitv",
       "batch": "Summer 2026",
-      "domain": "meteoric.earth",
+      "domain": "mochi.tv",
       "score": 77,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "OpenRelay",
-      "slug": "openrelay",
+      "name": "Qlo",
+      "slug": "qlo",
       "batch": "Summer 2026",
-      "domain": "openrelay.inc",
+      "domain": "getqlo.com",
       "score": 77,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Oxus",
-      "slug": "oxus",
+      "name": "Stratum Industries",
+      "slug": "stratum-industries",
+      "batch": "Summer 2026",
+      "domain": "stratumindustries.co",
+      "score": 77,
+      "band": "almost",
+      "logo": false
+    },
+    {
+      "name": "Sunflower",
+      "slug": "sunflower",
+      "batch": "Summer 2026",
+      "domain": "sunflowerclinic.com",
+      "score": 77,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "ARC Prize Foundation",
+      "slug": "arc-prize-foundation",
       "batch": "Winter 2026",
-      "domain": "oxus-ai.com",
-      "score": 77,
+      "domain": "arcprize.org",
+      "score": 76,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Runtime",
-      "slug": "runtime",
+      "name": "Archer",
+      "slug": "archer",
       "batch": "Spring 2026",
-      "domain": "runtm.com",
-      "score": 77,
+      "domain": "archermoney.com",
+      "score": 76,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Travo",
-      "slug": "travo",
-      "batch": "Winter 2026",
-      "domain": "travoai.com",
-      "score": 77,
+      "name": "Gravy",
+      "slug": "gravy",
+      "batch": "Spring 2026",
+      "domain": "gravy.finance",
+      "score": 76,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Veeza AI",
-      "slug": "veeza-ai",
+      "name": "Kebra",
+      "slug": "kebra",
+      "batch": "Summer 2026",
+      "domain": "kebra.com",
+      "score": 76,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Lantern AI",
+      "slug": "lantern-ai",
       "batch": "Fall 2026",
-      "domain": "veeza.ai",
-      "score": 77,
+      "domain": "lantern.md",
+      "score": 76,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Arzana",
-      "slug": "arzana",
+      "name": "Memory Store",
+      "slug": "memory-store",
       "batch": "Spring 2026",
-      "domain": "arzana.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "CarSignal",
-      "slug": "carsignal",
-      "batch": "Summer 2026",
-      "domain": "trycarsignal.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Chronicle Labs",
-      "slug": "chronicle-labs",
-      "batch": "Spring 2026",
-      "domain": "chronicle-labs.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Control Seat",
-      "slug": "control-seat",
-      "batch": "Summer 2026",
-      "domain": "controlseat.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Denta",
-      "slug": "denta",
-      "batch": "Summer 2026",
-      "domain": "denta.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Edviro",
-      "slug": "edviro",
-      "batch": "Summer 2026",
-      "domain": "edviroenergy.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Elyra",
-      "slug": "elyra",
-      "batch": "Spring 2026",
-      "domain": "elyrasystems.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Gutgutgoose",
-      "slug": "gutgutgoose",
-      "batch": "Summer 2026",
-      "domain": "gutgutgoose.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "herdr",
-      "slug": "herdr",
-      "batch": "Fall 2026",
-      "domain": "herdr.dev",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Hub",
-      "slug": "hub",
-      "batch": "Spring 2026",
-      "domain": "hub.xyz",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Kinect",
-      "slug": "kinect",
-      "batch": "Spring 2026",
-      "domain": "trykinect.ai",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Klaimee",
-      "slug": "klaimee",
-      "batch": "Spring 2026",
-      "domain": "klaimee.ai",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Luca IQ",
-      "slug": "luca-iq",
-      "batch": "Summer 2026",
-      "domain": "lucaiq.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Multiplier",
-      "slug": "multiplier",
-      "batch": "Spring 2026",
-      "domain": "multiplier.ai",
+      "domain": "memory.store",
       "score": 76,
       "band": "almost",
       "logo": true
@@ -1833,15 +2382,6 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Palette",
-      "slug": "palette-2",
-      "batch": "Summer 2026",
-      "domain": "palettelabs.com",
-      "score": 76,
-      "band": "almost",
-      "logo": true
-    },
-    {
       "name": "Pango",
       "slug": "pango",
       "batch": "Summer 2026",
@@ -1851,10 +2391,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Parasma",
-      "slug": "parasma",
+      "name": "Prototyping.io",
+      "slug": "prototypingio",
+      "batch": "Spring 2026",
+      "domain": "prototyping.io",
+      "score": 76,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "RealPact",
+      "slug": "realpact",
       "batch": "Summer 2026",
-      "domain": "parasma.com",
+      "domain": "realpact.ai",
+      "score": 76,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Salesgraph",
+      "slug": "salesgraph",
+      "batch": "Spring 2026",
+      "domain": "salesgraph.com",
+      "score": 76,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Sidekick",
+      "slug": "textsidekick",
+      "batch": "Summer 2026",
+      "domain": "textsidekick.com",
       "score": 76,
       "band": "almost",
       "logo": true
@@ -1878,19 +2445,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "AgentPhone",
-      "slug": "agentphone",
-      "batch": "Spring 2026",
-      "domain": "agentphone.ai",
-      "score": 75,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Atlia",
-      "slug": "atlia",
+      "name": "Akon Labs",
+      "slug": "akon-labs",
       "batch": "Summer 2026",
-      "domain": "atlia.com",
+      "domain": "akonlabs.com",
       "score": 75,
       "band": "almost",
       "logo": true
@@ -1905,10 +2463,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Conifer",
-      "slug": "conifer",
-      "batch": "Summer 2026",
-      "domain": "conifer.build",
+      "name": "Enjamb Labs",
+      "slug": "enjamb-labs",
+      "batch": "Spring 2026",
+      "domain": "enjamb.ai",
       "score": 75,
       "band": "almost",
       "logo": true
@@ -1923,67 +2481,58 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "GovGuard",
-      "slug": "govguard",
+      "name": "FinalDose",
+      "slug": "finaldose",
       "batch": "Spring 2026",
-      "domain": "govguard.com",
+      "domain": "finaldose.ai",
       "score": 75,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Juno",
-      "slug": "juno-chat",
-      "batch": "Spring 2026",
-      "domain": "junocompanion.com",
-      "score": 75,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Kinro",
-      "slug": "kinro",
-      "batch": "Spring 2026",
-      "domain": "kinro.com",
-      "score": 75,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Litmus",
-      "slug": "litmus-hiring",
+      "name": "Financial Datasets",
+      "slug": "financial-datasets",
       "batch": "Summer 2026",
-      "domain": "litmushiring.com",
+      "domain": "financialdatasets.ai",
       "score": 75,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Miso Labs",
-      "slug": "miso-labs",
-      "batch": "Spring 2026",
-      "domain": "misolabs.ai",
-      "score": 75,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "OnePatch",
-      "slug": "onepatch",
-      "batch": "Fall 2026",
-      "domain": "onepatch.dev",
-      "score": 75,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "OpenTrade",
-      "slug": "opentrade",
+      "name": "Greypoint Industries",
+      "slug": "greypoint-industries",
       "batch": "Summer 2026",
-      "domain": "opentrade.live",
+      "domain": "greypointindustries.com",
       "score": 75,
       "band": "almost",
-      "logo": false
+      "logo": true
+    },
+    {
+      "name": "Inkbox",
+      "slug": "inkbox",
+      "batch": "Summer 2026",
+      "domain": "inkbox.ai",
+      "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Kuli",
+      "slug": "kuli",
+      "batch": "Spring 2026",
+      "domain": "kuli.one",
+      "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Parrot",
+      "slug": "useparrot",
+      "batch": "Spring 2026",
+      "domain": "useparrot.com",
+      "score": 75,
+      "band": "almost",
+      "logo": true
     },
     {
       "name": "Ploy",
@@ -1995,20 +2544,74 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Sentient OS",
-      "slug": "sentient-os",
-      "batch": "Fall 2026",
-      "domain": "sentient-os.ai",
+      "name": "Radley",
+      "slug": "radley",
+      "batch": "Summer 2026",
+      "domain": "radley.health",
       "score": 75,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Skymerse",
-      "slug": "skymerse",
+      "name": "Rasyn",
+      "slug": "rasyn",
       "batch": "Summer 2026",
-      "domain": "skymerse.com",
+      "domain": "rasyn.ai",
       "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "River Markets",
+      "slug": "river-markets",
+      "batch": "Spring 2026",
+      "domain": "rivermarkets.com",
+      "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Stage",
+      "slug": "stage",
+      "batch": "Spring 2026",
+      "domain": "tryluke.dev",
+      "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Taiga",
+      "slug": "taiga",
+      "batch": "Spring 2026",
+      "domain": "taigabilling.com",
+      "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Tenor",
+      "slug": "tenor",
+      "batch": "Summer 2026",
+      "domain": "heytenor.com",
+      "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Waybill",
+      "slug": "waybill",
+      "batch": "Summer 2026",
+      "domain": "waybill.to",
+      "score": 75,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Armature",
+      "slug": "armature",
+      "batch": "Spring 2026",
+      "domain": "armature.tech",
+      "score": 74,
       "band": "almost",
       "logo": true
     },
@@ -2017,15 +2620,6 @@ export const YC_STUDY = {
       "slug": "biostack-platforms",
       "batch": "Spring 2026",
       "domain": "getbiostack.com",
-      "score": 74,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Callbook AI",
-      "slug": "callbook-ai",
-      "batch": "Summer 2026",
-      "domain": "callbook.ai",
       "score": 74,
       "band": "almost",
       "logo": true
@@ -2040,37 +2634,28 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Forward",
-      "slug": "useforward",
-      "batch": "Fall 2026",
-      "domain": "useforward.co",
-      "score": 74,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "MOCHI.TV",
-      "slug": "mochitv",
-      "batch": "Summer 2026",
-      "domain": "mochi.tv",
-      "score": 74,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Ooak Data",
-      "slug": "ooak-data",
-      "batch": "Summer 2026",
-      "domain": "ooakdata.com",
-      "score": 74,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "OpenProse",
-      "slug": "openprose",
+      "name": "jo",
+      "slug": "jo",
       "batch": "Spring 2026",
-      "domain": "prose.md",
+      "domain": "askjo.ai",
+      "score": 74,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Lumeria",
+      "slug": "lumeria",
+      "batch": "Summer 2026",
+      "domain": "lumeria.skin",
+      "score": 74,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "OS3",
+      "slug": "os3",
+      "batch": "Summer 2026",
+      "domain": "os3robotics.com",
       "score": 74,
       "band": "almost",
       "logo": true
@@ -2085,46 +2670,46 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Payna",
-      "slug": "payna",
-      "batch": "Winter 2026",
-      "domain": "payna.com",
-      "score": 74,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Prized",
-      "slug": "prized",
-      "batch": "Summer 2026",
-      "domain": "prized.dev",
-      "score": 74,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Prototyping.io",
-      "slug": "prototypingio",
+      "name": "Playabl.ai",
+      "slug": "playablai",
       "batch": "Spring 2026",
-      "domain": "prototyping.io",
+      "domain": "playabl.ai",
       "score": 74,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Qlo",
-      "slug": "qlo",
+      "name": "Replicas",
+      "slug": "replicas",
+      "batch": "Spring 2026",
+      "domain": "replicas.dev",
+      "score": 74,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Riften",
+      "slug": "riften",
       "batch": "Summer 2026",
-      "domain": "getqlo.com",
+      "domain": "riften.ai",
       "score": 74,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Redoubt Insurance",
-      "slug": "redoubt-insurance",
-      "batch": "Fall 2026",
-      "domain": "redoubt.agency",
+      "name": "Shielded",
+      "slug": "shielded",
+      "batch": "Summer 2026",
+      "domain": "shieldedglobal.com",
+      "score": 74,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "shotwell.ai",
+      "slug": "shotwellai",
+      "batch": "Spring 2026",
+      "domain": "shotwell.ai",
       "score": 74,
       "band": "almost",
       "logo": true
@@ -2139,19 +2724,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Speko",
-      "slug": "speko",
-      "batch": "Summer 2026",
-      "domain": "speko.ai",
+      "name": "TakeCareOS",
+      "slug": "takecareos",
+      "batch": "Spring 2026",
+      "domain": "takecareos.com",
       "score": 74,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Stratum Industries",
-      "slug": "stratum-industries",
+      "name": "Touchmark",
+      "slug": "touchmark",
       "batch": "Summer 2026",
-      "domain": "stratumindustries.co",
+      "domain": "touchmark.ai",
       "score": 74,
       "band": "almost",
       "logo": true
@@ -2166,10 +2751,28 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Cerenovus",
-      "slug": "cerenovus",
+      "name": "Alloovium",
+      "slug": "alloovium",
       "batch": "Summer 2026",
-      "domain": "cerenovus.ai",
+      "domain": "alloovium.com",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Amboras",
+      "slug": "amboras",
+      "batch": "Spring 2026",
+      "domain": "amboras.com",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Billow AI Labs",
+      "slug": "billow-ai-labs",
+      "batch": "Summer 2026",
+      "domain": "thebillow.ai",
       "score": 73,
       "band": "almost",
       "logo": true
@@ -2184,46 +2787,55 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Ekho Labs",
-      "slug": "ekho-labs",
+      "name": "Ekpa",
+      "slug": "ekpa",
       "batch": "Summer 2026",
-      "domain": "ekholabs.com",
+      "domain": "goekpa.com",
       "score": 73,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Kimpton",
-      "slug": "kimpton",
+      "name": "GitCafe",
+      "slug": "gitcafe",
+      "batch": "Summer 2026",
+      "domain": "git.cafe",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Gojiberry AI",
+      "slug": "gojiberry-ai",
       "batch": "Spring 2026",
-      "domain": "kimpton.ai",
+      "domain": "gojiberry.ai",
       "score": 73,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Lab0",
-      "slug": "lab0",
+      "name": "Hlabs",
+      "slug": "hlabs",
+      "batch": "Winter 2026",
+      "domain": "hlaboratories.com",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Inviscid AI",
+      "slug": "inviscid-ai",
+      "batch": "Winter 2026",
+      "domain": "inviscidai.com",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Linzumi",
+      "slug": "linzumi",
       "batch": "Spring 2026",
-      "domain": "lab0.ai",
-      "score": 73,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Lantern AI",
-      "slug": "lantern-ai",
-      "batch": "Fall 2026",
-      "domain": "lantern.md",
-      "score": 73,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "LightSprint",
-      "slug": "lightsprint",
-      "batch": "Spring 2026",
-      "domain": "lightsprint.ai",
+      "domain": "linzumi.com",
       "score": 73,
       "band": "almost",
       "logo": true
@@ -2238,10 +2850,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "Mass Magnetics",
+      "slug": "mass-magnetics",
+      "batch": "Summer 2026",
+      "domain": "massmagnetics.com",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Olam Labs",
+      "slug": "olam-labs",
+      "batch": "Summer 2026",
+      "domain": "olamlabs.ai",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
       "name": "Palisade",
       "slug": "palisade",
       "batch": "Summer 2026",
       "domain": "palisade.run",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "qomplement",
+      "slug": "qomplement",
+      "batch": "Spring 2026",
+      "domain": "qomplement.com",
       "score": 73,
       "band": "almost",
       "logo": true
@@ -2256,46 +2895,46 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Salesgraph",
-      "slug": "salesgraph",
+      "name": "Saffron",
+      "slug": "saffron",
       "batch": "Spring 2026",
-      "domain": "salesgraph.com",
+      "domain": "trysaffron.ai",
       "score": 73,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "smol machines",
-      "slug": "smol-machines",
+      "name": "Talos",
+      "slug": "talos-us",
+      "batch": "Fall 2026",
+      "domain": "talos-us.com",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "tash",
+      "slug": "tash",
+      "batch": "Summer 2026",
+      "domain": "tash.cards",
+      "score": 73,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Thomas",
+      "slug": "thomas",
       "batch": "Spring 2026",
-      "domain": "smolmachines.com",
+      "domain": "madebythomas.ai",
       "score": 73,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Sunflower",
-      "slug": "sunflower",
+      "name": "Agentcard",
+      "slug": "agentcard",
       "batch": "Summer 2026",
-      "domain": "sunflowerclinic.com",
-      "score": 73,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Waybill",
-      "slug": "waybill",
-      "batch": "Summer 2026",
-      "domain": "waybill.to",
-      "score": 73,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Alloovium",
-      "slug": "alloovium",
-      "batch": "Summer 2026",
-      "domain": "alloovium.com",
+      "domain": "agentcard.sh",
       "score": 72,
       "band": "almost",
       "logo": true
@@ -2310,28 +2949,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Armature",
-      "slug": "armature",
+      "name": "Atrisa",
+      "slug": "atrisa",
       "batch": "Spring 2026",
-      "domain": "armature.tech",
+      "domain": "atrisa.ai",
       "score": 72,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Autumn AI",
-      "slug": "autumn-ai",
-      "batch": "Winter 2026",
-      "domain": "autumn.ai",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Click",
-      "slug": "click",
+      "name": "Audun",
+      "slug": "audun",
       "batch": "Summer 2026",
-      "domain": "useclick.ai",
+      "domain": "audun.co",
       "score": 72,
       "band": "almost",
       "logo": true
@@ -2346,37 +2976,73 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Fuchsia",
-      "slug": "fuchsia",
+      "name": "Derya",
+      "slug": "derya",
+      "batch": "Summer 2026",
+      "domain": "usederya.com",
+      "score": 72,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Discovered Materials",
+      "slug": "discovered-materials",
       "batch": "Spring 2026",
-      "domain": "getfuchsia.ai",
+      "domain": "discoveredmaterials.com",
       "score": 72,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Greypoint Industries",
-      "slug": "greypoint-industries",
-      "batch": "Summer 2026",
-      "domain": "greypointindustries.com",
+      "name": "Drafted",
+      "slug": "drafted",
+      "batch": "Spring 2026",
+      "domain": "drafted.ai",
       "score": 72,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Grocalo",
-      "slug": "grocalo",
-      "batch": "Summer 2026",
-      "domain": "grocalo.com",
+      "name": "ED1TH",
+      "slug": "ed1th",
+      "batch": "Spring 2026",
+      "domain": "ed1th.com",
       "score": 72,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Hebbian Robotics",
-      "slug": "hebbian-robotics",
+      "name": "Gamgee",
+      "slug": "gamgee",
       "batch": "Summer 2026",
-      "domain": "hebbianrobotics.com",
+      "domain": "gamgee.io",
+      "score": 72,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "General Astronautics",
+      "slug": "generalastro",
+      "batch": "Winter 2026",
+      "domain": "generalastro.com",
+      "score": 72,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Gutgutgoose",
+      "slug": "gutgutgoose",
+      "batch": "Summer 2026",
+      "domain": "gutgutgoose.com",
+      "score": 72,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Kara",
+      "slug": "kara",
+      "batch": "Summer 2026",
+      "domain": "karalabs.ai",
       "score": 72,
       "band": "almost",
       "logo": true
@@ -2391,28 +3057,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Libra Robotics",
-      "slug": "libra-robotics",
-      "batch": "Summer 2026",
-      "domain": "librabots.com",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Lumeria",
-      "slug": "lumeria",
-      "batch": "Summer 2026",
-      "domain": "lumeria.skin",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Mochatrade",
-      "slug": "mochatrade",
+      "name": "Light Anchor",
+      "slug": "light-anchor",
       "batch": "Spring 2026",
-      "domain": "mochatrade.com",
+      "domain": "lightanchor.ai",
+      "score": 72,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Markov",
+      "slug": "markov",
+      "batch": "Summer 2026",
+      "domain": "markovstudios.com",
       "score": 72,
       "band": "almost",
       "logo": true
@@ -2427,91 +3084,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Osmaura",
-      "slug": "osmaura",
-      "batch": "Summer 2026",
-      "domain": "osmaura.com",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Radley",
-      "slug": "radley",
-      "batch": "Summer 2026",
-      "domain": "radley.health",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Rasyn",
-      "slug": "rasyn",
-      "batch": "Summer 2026",
-      "domain": "rasyn.ai",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "RealPact",
-      "slug": "realpact",
-      "batch": "Summer 2026",
-      "domain": "realpact.ai",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "River Markets",
-      "slug": "river-markets",
+      "name": "Aseon Labs",
+      "slug": "aseon-labs",
       "batch": "Spring 2026",
-      "domain": "rivermarkets.com",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Totalis",
-      "slug": "totalis",
-      "batch": "Spring 2026",
-      "domain": "totalis.trade",
-      "score": 72,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "ARC Prize Foundation",
-      "slug": "arc-prize-foundation",
-      "batch": "Winter 2026",
-      "domain": "arcprize.org",
+      "domain": "aseonlabs.com",
       "score": 71,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Enjamb Labs",
-      "slug": "enjamb-labs",
-      "batch": "Spring 2026",
-      "domain": "enjamb.ai",
-      "score": 71,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "FinalDose",
-      "slug": "finaldose",
-      "batch": "Spring 2026",
-      "domain": "finaldose.ai",
-      "score": 71,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Foresight",
-      "slug": "foresight",
-      "batch": "Spring 2026",
-      "domain": "foresight.tt",
+      "name": "Evergrove",
+      "slug": "evergrove",
+      "batch": "Summer 2026",
+      "domain": "evergrovelabs.com",
       "score": 71,
       "band": "almost",
       "logo": true
@@ -2526,73 +3111,64 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "GitCafe",
-      "slug": "gitcafe",
+      "name": "GUILD",
+      "slug": "guild",
       "batch": "Summer 2026",
-      "domain": "git.cafe",
+      "domain": "guildai.co",
       "score": 71,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Kebra",
-      "slug": "kebra",
+      "name": "HeyClicky",
+      "slug": "heyclicky",
+      "batch": "Spring 2026",
+      "domain": "heyclicky.com",
+      "score": 71,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Jcode",
+      "slug": "jcode",
       "batch": "Summer 2026",
-      "domain": "kebra.com",
+      "domain": "jcode.sh",
       "score": 71,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Memory Store",
-      "slug": "memory-store",
-      "batch": "Spring 2026",
-      "domain": "memory.store",
-      "score": 71,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Modern",
-      "slug": "modern",
-      "batch": "Spring 2026",
-      "domain": "getmodern.ai",
-      "score": 71,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "OS3",
-      "slug": "os3",
+      "name": "Maingen",
+      "slug": "maingen",
       "batch": "Summer 2026",
-      "domain": "os3robotics.com",
+      "domain": "maingen.ai",
       "score": 71,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Parrot",
-      "slug": "useparrot",
+      "name": "Maquoketa Research",
+      "slug": "maquoketa-research",
       "batch": "Spring 2026",
-      "domain": "useparrot.com",
+      "domain": "maquoketa.net",
       "score": 71,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Petrarch",
-      "slug": "petrarch",
-      "batch": "Summer 2026",
-      "domain": "petrarch.co",
-      "score": 71,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Saudara AI",
-      "slug": "saudara-ai",
+      "name": "Mochatrade",
+      "slug": "mochatrade",
       "batch": "Spring 2026",
-      "domain": "saudara.ai",
+      "domain": "mochatrade.com",
+      "score": 71,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Reason Machines",
+      "slug": "reason-machines",
+      "batch": "Spring 2026",
+      "domain": "reasonmachines.ai",
       "score": 71,
       "band": "almost",
       "logo": true
@@ -2607,10 +3183,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Tenor",
-      "slug": "tenor",
-      "batch": "Summer 2026",
-      "domain": "heytenor.com",
+      "name": "Veltha",
+      "slug": "veltha",
+      "batch": "Fall 2026",
+      "domain": "veltha.ai",
       "score": 71,
       "band": "almost",
       "logo": true
@@ -2625,10 +3201,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Billow AI Labs",
-      "slug": "billow-ai-labs",
-      "batch": "Summer 2026",
-      "domain": "thebillow.ai",
+      "name": "Ascii",
+      "slug": "ascii",
+      "batch": "Fall 2026",
+      "domain": "box.ascii.dev",
+      "score": 70,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Autostep",
+      "slug": "autostep",
+      "batch": "Spring 2026",
+      "domain": "autostep.ai",
       "score": 70,
       "band": "almost",
       "logo": true
@@ -2643,46 +3228,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Dipole Labs",
-      "slug": "dipole-labs",
+      "name": "Computable",
+      "slug": "computable",
       "batch": "Summer 2026",
-      "domain": "dipolelabs.com",
+      "domain": "getcomputable.com",
       "score": 70,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Gravy",
-      "slug": "gravy",
-      "batch": "Spring 2026",
-      "domain": "gravy.finance",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Hlabs",
-      "slug": "hlabs",
-      "batch": "Winter 2026",
-      "domain": "hlaboratories.com",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Inkbox",
-      "slug": "inkbox",
+      "name": "Edviro",
+      "slug": "edviro",
       "batch": "Summer 2026",
-      "domain": "inkbox.ai",
+      "domain": "edviroenergy.com",
       "score": 70,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "Inviscid AI",
-      "slug": "inviscid-ai",
-      "batch": "Winter 2026",
-      "domain": "inviscidai.com",
+      "name": "Grocalo",
+      "slug": "grocalo",
+      "batch": "Summer 2026",
+      "domain": "grocalo.com",
+      "score": 70,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "hiloop",
+      "slug": "hiloop",
+      "batch": "Summer 2026",
+      "domain": "hiloop.ai",
       "score": 70,
       "band": "almost",
       "logo": true
@@ -2692,6 +3268,24 @@ export const YC_STUDY = {
       "slug": "magma",
       "batch": "Summer 2026",
       "domain": "magmahq.ai",
+      "score": 70,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Mentlio",
+      "slug": "mentlio",
+      "batch": "Summer 2026",
+      "domain": "mentlio.com",
+      "score": 70,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Nori",
+      "slug": "noril1",
+      "batch": "Summer 2026",
+      "domain": "norirobotics.com",
       "score": 70,
       "band": "almost",
       "logo": true
@@ -2715,165 +3309,30 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Overdrive Health",
-      "slug": "overdrive-health",
-      "batch": "Winter 2026",
-      "domain": "overdrive.health",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Playabl.ai",
-      "slug": "playablai",
-      "batch": "Spring 2026",
-      "domain": "playabl.ai",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Replicas",
-      "slug": "replicas",
-      "batch": "Spring 2026",
-      "domain": "replicas.dev",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Result",
-      "slug": "result",
-      "batch": "Spring 2026",
-      "domain": "result.dev",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Stage",
-      "slug": "stage",
-      "batch": "Spring 2026",
-      "domain": "tryluke.dev",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Superlog",
-      "slug": "superlog",
-      "batch": "Spring 2026",
-      "domain": "superlog.sh",
-      "score": 70,
-      "band": "almost",
-      "logo": true
-    },
-    {
-      "name": "Torus",
-      "slug": "torus",
+      "name": "Prodigy Research",
+      "slug": "prodigy-research",
       "batch": "Summer 2026",
-      "domain": "usetorus.com",
+      "domain": "prodigy.markets",
       "score": 70,
       "band": "almost",
       "logo": true
     },
     {
-      "name": "9 Mothers",
-      "slug": "9-mothers-corporation",
-      "batch": "Spring 2026",
-      "domain": "9mothers.com",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Alchemize",
-      "slug": "alchemize",
-      "batch": "Spring 2026",
-      "domain": "tryalchemize.com",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Assemble",
-      "slug": "assemble",
+      "name": "Shiraz AI",
+      "slug": "shiraz-ai",
       "batch": "Summer 2026",
-      "domain": "assemble.ai",
-      "score": 69,
-      "band": "polish",
+      "domain": "shiraz.ai",
+      "score": 70,
+      "band": "almost",
       "logo": true
     },
     {
-      "name": "Async",
-      "slug": "withasync",
-      "batch": "Summer 2026",
-      "domain": "withasync.com",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "jo",
-      "slug": "jo",
-      "batch": "Spring 2026",
-      "domain": "askjo.ai",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Limrun",
-      "slug": "limrun",
-      "batch": "Spring 2026",
-      "domain": "lim.run",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Mass Magnetics",
-      "slug": "mass-magnetics",
-      "batch": "Summer 2026",
-      "domain": "massmagnetics.com",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Nodus Compute",
-      "slug": "nodus-compute",
+      "name": "The Subvocal Company",
+      "slug": "the-subvocal-company",
       "batch": "Fall 2026",
-      "domain": "nodus-compute.ai",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "rekursiv.ai",
-      "slug": "rekursivai",
-      "batch": "Summer 2026",
-      "domain": "rekursiv.ai",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "shotwell.ai",
-      "slug": "shotwellai",
-      "batch": "Spring 2026",
-      "domain": "shotwell.ai",
-      "score": 69,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Touchmark",
-      "slug": "touchmark",
-      "batch": "Summer 2026",
-      "domain": "touchmark.ai",
-      "score": 69,
-      "band": "polish",
+      "domain": "subvocal.company",
+      "score": 70,
+      "band": "almost",
       "logo": true
     },
     {
@@ -2881,150 +3340,177 @@ export const YC_STUDY = {
       "slug": "uno-wallet",
       "batch": "Spring 2026",
       "domain": "myunowallet.com",
+      "score": 70,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Valgo",
+      "slug": "valgo",
+      "batch": "Winter 2026",
+      "domain": "valgo.ai",
+      "score": 70,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Wealor",
+      "slug": "wealor",
+      "batch": "Spring 2026",
+      "domain": "wealor.ai",
+      "score": 70,
+      "band": "almost",
+      "logo": true
+    },
+    {
+      "name": "Capveon",
+      "slug": "capveon",
+      "batch": "Fall 2026",
+      "domain": "capveon.ai",
       "score": 69,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Zolvo",
-      "slug": "zolvo",
-      "batch": "Spring 2026",
-      "domain": "zolvo.com",
+      "name": "Collar",
+      "slug": "collar",
+      "batch": "Fall 2026",
+      "domain": "usecollarai.com",
       "score": 69,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Akon Labs",
-      "slug": "akon-labs",
-      "batch": "Summer 2026",
-      "domain": "akonlabs.com",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Amboras",
-      "slug": "amboras",
+      "name": "Foresight",
+      "slug": "foresight",
       "batch": "Spring 2026",
-      "domain": "amboras.com",
-      "score": 68,
+      "domain": "foresight.tt",
+      "score": 69,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Arbital",
-      "slug": "arbital",
-      "batch": "Summer 2026",
-      "domain": "arbital.xyz",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Discovered Materials",
-      "slug": "discovered-materials",
+      "name": "KugelAudio",
+      "slug": "kugelaudio",
       "batch": "Spring 2026",
-      "domain": "discoveredmaterials.com",
-      "score": 68,
+      "domain": "kugelaudio.com",
+      "score": 69,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Ekpa",
-      "slug": "ekpa",
-      "batch": "Summer 2026",
-      "domain": "goekpa.com",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Fabraix",
-      "slug": "fabraix",
-      "batch": "Summer 2026",
-      "domain": "fabraix.com",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Familiar",
-      "slug": "familiar",
-      "batch": "Summer 2026",
-      "domain": "thefamiliarlab.com",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Financial Datasets",
-      "slug": "financial-datasets",
-      "batch": "Summer 2026",
-      "domain": "financialdatasets.ai",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Gojiberry AI",
-      "slug": "gojiberry-ai",
+      "name": "Mount",
+      "slug": "mount",
       "batch": "Spring 2026",
-      "domain": "gojiberry.ai",
-      "score": 68,
+      "domain": "mount.insure",
+      "score": 69,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "GUILD",
-      "slug": "guild",
+      "name": "Moving Atoms",
+      "slug": "moving-atoms",
       "batch": "Summer 2026",
-      "domain": "guildai.co",
-      "score": 68,
+      "domain": "movingatoms.ai",
+      "score": 69,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "HeyClicky",
-      "slug": "heyclicky",
+      "name": "Petrarch",
+      "slug": "petrarch",
+      "batch": "Summer 2026",
+      "domain": "petrarch.co",
+      "score": 69,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Saudara AI",
+      "slug": "saudara-ai",
       "batch": "Spring 2026",
-      "domain": "heyclicky.com",
+      "domain": "saudara.ai",
+      "score": 69,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Touchy",
+      "slug": "touchy",
+      "batch": "Summer 2026",
+      "domain": "touchyapp.com",
+      "score": 69,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Twolabs",
+      "slug": "twolabs",
+      "batch": "Spring 2026",
+      "domain": "twolabs.ai",
+      "score": 69,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Aerogen Systems",
+      "slug": "aerogen-systems",
+      "batch": "Summer 2026",
+      "domain": "aerogensystems.com",
       "score": 68,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Levocred AI",
-      "slug": "levocred-ai",
+      "name": "Care GP",
+      "slug": "care-gp",
       "batch": "Summer 2026",
-      "domain": "levocred.com",
+      "domain": "caregp.com.au",
       "score": 68,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Markov",
-      "slug": "markov",
-      "batch": "Summer 2026",
-      "domain": "markovstudios.com",
+      "name": "Covera",
+      "slug": "covera",
+      "batch": "Fall 2026",
+      "domain": "covera-agents.com",
       "score": 68,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Olam Labs",
-      "slug": "olam-labs",
+      "name": "Erinys",
+      "slug": "erinys",
       "batch": "Summer 2026",
-      "domain": "olamlabs.ai",
+      "domain": "erinys.ai",
       "score": 68,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "OpenVector",
-      "slug": "openvector",
+      "name": "Humwork",
+      "slug": "humwork",
+      "batch": "Spring 2026",
+      "domain": "humwork.ai",
+      "score": 68,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Most Robotic",
+      "slug": "most-robotic",
       "batch": "Summer 2026",
-      "domain": "openvector.com",
+      "domain": "mostrobotic.com",
+      "score": 68,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Neuron Industries",
+      "slug": "neuron-industries",
+      "batch": "Summer 2026",
+      "domain": "neuronindustries.com",
       "score": 68,
       "band": "polish",
       "logo": true
@@ -3039,82 +3525,46 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Prodigy Research",
-      "slug": "prodigy-research",
+      "name": "Pennant",
+      "slug": "pennant",
       "batch": "Summer 2026",
-      "domain": "prodigy.markets",
+      "domain": "getpennant.ai",
       "score": 68,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "qomplement",
-      "slug": "qomplement",
+      "name": "Regbase",
+      "slug": "regbase",
       "batch": "Spring 2026",
-      "domain": "qomplement.com",
+      "domain": "regbase.com",
       "score": 68,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Shielded",
-      "slug": "shielded",
+      "name": "Ultrasonium",
+      "slug": "ultrasonium",
       "batch": "Summer 2026",
-      "domain": "shieldedglobal.com",
+      "domain": "ultrasonium.com",
       "score": 68,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Shiraz AI",
-      "slug": "shiraz-ai",
-      "batch": "Summer 2026",
-      "domain": "shiraz.ai",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "tash",
-      "slug": "tash",
-      "batch": "Summer 2026",
-      "domain": "tash.cards",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Wondering",
-      "slug": "wondering",
-      "batch": "Summer 2026",
-      "domain": "wondering.app",
-      "score": 68,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Agentcard",
-      "slug": "agentcard",
-      "batch": "Summer 2026",
-      "domain": "agentcard.sh",
+      "name": "Apollo Atomics, Inc.",
+      "slug": "apollo-atomics-inc",
+      "batch": "Spring 2026",
+      "domain": "apolloatomics.com",
       "score": 67,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Derya",
-      "slug": "derya",
-      "batch": "Summer 2026",
-      "domain": "usederya.com",
-      "score": 67,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Drafted",
-      "slug": "drafted",
-      "batch": "Spring 2026",
-      "domain": "drafted.ai",
+      "name": "Asakana",
+      "slug": "asakana",
+      "batch": "Fall 2026",
+      "domain": "asakana.co",
       "score": 67,
       "band": "polish",
       "logo": true
@@ -3129,6 +3579,15 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "HERA",
+      "slug": "manufacturingintelligence",
+      "batch": "Summer 2026",
+      "domain": "manufacturingintelligence.org",
+      "score": 67,
+      "band": "polish",
+      "logo": true
+    },
+    {
       "name": "Imperfect",
       "slug": "imperfect",
       "batch": "Spring 2026",
@@ -3138,28 +3597,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Lamina Labs",
-      "slug": "lamina-labs",
-      "batch": "Spring 2026",
-      "domain": "laminalabs.ai",
+      "name": "Molagri",
+      "slug": "molagri",
+      "batch": "Summer 2026",
+      "domain": "molagri.com",
       "score": 67,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Linzumi",
-      "slug": "linzumi",
+      "name": "Napkin Math",
+      "slug": "napkin-math",
       "batch": "Spring 2026",
-      "domain": "linzumi.com",
-      "score": 67,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Mount",
-      "slug": "mount",
-      "batch": "Spring 2026",
-      "domain": "mount.insure",
+      "domain": "napkinmath.club",
       "score": 67,
       "band": "polish",
       "logo": true
@@ -3174,56 +3624,47 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Orca Aerospace",
-      "slug": "orca-aerospace",
-      "batch": "Fall 2026",
-      "domain": "orcaaerospace.com",
+      "name": "Palisade",
+      "slug": "palisade-2",
+      "batch": "Summer 2026",
+      "domain": "palisade-ai.com",
       "score": 67,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Savant",
-      "slug": "savant",
+      "name": "Rise Reforming",
+      "slug": "rise-reforming",
+      "batch": "Summer 2026",
+      "domain": "rise-reforming.com",
+      "score": 67,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Whitespace",
+      "slug": "whitespace",
+      "batch": "Summer 2026",
+      "domain": "whitespacehq.ai",
+      "score": 67,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Zolvo",
+      "slug": "zolvo",
       "batch": "Spring 2026",
-      "domain": "heysavant.com",
+      "domain": "zolvo.com",
       "score": 67,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Taiga",
-      "slug": "taiga",
+      "name": "Adialante",
+      "slug": "adialante",
       "batch": "Spring 2026",
-      "domain": "taigabilling.com",
-      "score": 67,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "TakeCareOS",
-      "slug": "takecareos",
-      "batch": "Spring 2026",
-      "domain": "takecareos.com",
-      "score": 67,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Veltha",
-      "slug": "veltha",
-      "batch": "Fall 2026",
-      "domain": "veltha.ai",
-      "score": 67,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Wealor",
-      "slug": "wealor",
-      "batch": "Spring 2026",
-      "domain": "wealor.ai",
-      "score": 67,
+      "domain": "adialante.com",
+      "score": 66,
       "band": "polish",
       "logo": true
     },
@@ -3232,6 +3673,33 @@ export const YC_STUDY = {
       "slug": "amorphic-labs",
       "batch": "Summer 2026",
       "domain": "agentmuxer.com",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "ANORIA",
+      "slug": "anoria",
+      "batch": "Spring 2026",
+      "domain": "anoria.com",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Arbital",
+      "slug": "arbital",
+      "batch": "Summer 2026",
+      "domain": "arbital.xyz",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "CatchBack Cards",
+      "slug": "catchback-cards",
+      "batch": "Winter 2026",
+      "domain": "catchbackcards.com",
       "score": 66,
       "band": "polish",
       "logo": true
@@ -3246,28 +3714,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "Daqstra",
+      "slug": "daqstra",
+      "batch": "Summer 2026",
+      "domain": "daqstra.com",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Fabraix",
+      "slug": "fabraix",
+      "batch": "Summer 2026",
+      "domain": "fabraix.com",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Grip",
+      "slug": "grip",
+      "batch": "Summer 2026",
+      "domain": "griprobotics.ai",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
       "name": "Haladir",
       "slug": "haladir",
       "batch": "Winter 2026",
       "domain": "haladir.com",
-      "score": 66,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "hiloop",
-      "slug": "hiloop",
-      "batch": "Summer 2026",
-      "domain": "hiloop.ai",
-      "score": 66,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Humwork",
-      "slug": "humwork",
-      "batch": "Spring 2026",
-      "domain": "humwork.ai",
       "score": 66,
       "band": "polish",
       "logo": true
@@ -3282,46 +3759,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "KugelAudio",
-      "slug": "kugelaudio",
+      "name": "Isengard Industries Inc",
+      "slug": "isengard-industries-inc",
+      "batch": "Summer 2026",
+      "domain": "isengardindustries.com",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Pentagon",
+      "slug": "pentagon",
       "batch": "Spring 2026",
-      "domain": "kugelaudio.com",
+      "domain": "pentagon.run",
       "score": 66,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Maritime",
-      "slug": "maritime",
-      "batch": "Fall 2026",
-      "domain": "maritime.sh",
-      "score": 66,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Saffron",
-      "slug": "saffron",
+      "name": "ValCtrl",
+      "slug": "valctrl",
       "batch": "Spring 2026",
-      "domain": "trysaffron.ai",
+      "domain": "valctrl.com",
       "score": 66,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Soria",
-      "slug": "soria",
-      "batch": "Spring 2026",
-      "domain": "soriaanalytics.com",
-      "score": 66,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Talos",
-      "slug": "talos-us",
-      "batch": "Fall 2026",
-      "domain": "talos-us.com",
+      "name": "Vernius Systems, Inc.",
+      "slug": "vernius-systems-inc",
+      "batch": "Summer 2026",
+      "domain": "vernius.systems",
       "score": 66,
       "band": "polish",
       "logo": true
@@ -3336,6 +3804,42 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "Wondering",
+      "slug": "wondering",
+      "batch": "Summer 2026",
+      "domain": "wondering.app",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "YouArt",
+      "slug": "youart",
+      "batch": "Spring 2026",
+      "domain": "youart.ai",
+      "score": 66,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "83 Sciences",
+      "slug": "83-sciences",
+      "batch": "Summer 2026",
+      "domain": "83sciences.ai",
+      "score": 65,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Alchemize",
+      "slug": "alchemize",
+      "batch": "Spring 2026",
+      "domain": "tryalchemize.com",
+      "score": 65,
+      "band": "polish",
+      "logo": true
+    },
+    {
       "name": "Antropi Robotics",
       "slug": "antropi-robotics",
       "batch": "Fall 2026",
@@ -3345,64 +3849,28 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Archer",
-      "slug": "archer",
+      "name": "Ethos Space Resources",
+      "slug": "ethos-space-resources",
+      "batch": "Summer 2026",
+      "domain": "ethos-space.com",
+      "score": 65,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "HyperProbe",
+      "slug": "hyperprobe",
+      "batch": "Summer 2026",
+      "domain": "hyperprobe.co",
+      "score": 65,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Lumius",
+      "slug": "lumius",
       "batch": "Spring 2026",
-      "domain": "archermoney.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Ascii",
-      "slug": "ascii",
-      "batch": "Fall 2026",
-      "domain": "box.ascii.dev",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Autostep",
-      "slug": "autostep",
-      "batch": "Spring 2026",
-      "domain": "autostep.ai",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Collar",
-      "slug": "collar",
-      "batch": "Fall 2026",
-      "domain": "usecollarai.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Computable",
-      "slug": "computable",
-      "batch": "Summer 2026",
-      "domain": "getcomputable.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Edgerun",
-      "slug": "edgerun",
-      "batch": "Summer 2026",
-      "domain": "edgerun.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Jcode",
-      "slug": "jcode",
-      "batch": "Summer 2026",
-      "domain": "jcode.sh",
+      "domain": "lumius-imaging.com",
       "score": 65,
       "band": "polish",
       "logo": true
@@ -3417,37 +3885,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Napkin Math",
-      "slug": "napkin-math",
+      "name": "PerfectBit, Inc.",
+      "slug": "perfectbit-inc",
       "batch": "Spring 2026",
-      "domain": "napkinmath.club",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Neuron Industries",
-      "slug": "neuron-industries",
-      "batch": "Summer 2026",
-      "domain": "neuronindustries.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Nori",
-      "slug": "noril1",
-      "batch": "Summer 2026",
-      "domain": "norirobotics.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Pennant",
-      "slug": "pennant",
-      "batch": "Summer 2026",
-      "domain": "getpennant.ai",
+      "domain": "perfectbit.ai",
       "score": 65,
       "band": "polish",
       "logo": true
@@ -3462,46 +3903,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Reason Machines",
-      "slug": "reason-machines",
+      "name": "Synphony",
+      "slug": "synphony",
       "batch": "Spring 2026",
-      "domain": "reasonmachines.ai",
+      "domain": "synphony.co",
       "score": 65,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Regbase",
-      "slug": "regbase",
-      "batch": "Spring 2026",
-      "domain": "regbase.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Rote",
-      "slug": "rote",
-      "batch": "Winter 2027",
-      "domain": "tryrote.com",
-      "score": 65,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Touchy",
-      "slug": "touchy",
+      "name": "TryNearby",
+      "slug": "trynearby",
       "batch": "Summer 2026",
-      "domain": "touchyapp.com",
+      "domain": "trynearby.com",
       "score": 65,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "ANORIA",
-      "slug": "anoria",
+      "name": "Verdict Machine",
+      "slug": "verdict-machine",
+      "batch": "Summer 2026",
+      "domain": "verdictmachine.com",
+      "score": 65,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Aster",
+      "slug": "asterlab",
       "batch": "Spring 2026",
-      "domain": "anoria.com",
+      "domain": "asterlab.ai",
       "score": 64,
       "band": "polish",
       "logo": true
@@ -3516,10 +3948,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Daqstra",
-      "slug": "daqstra",
+      "name": "Chromie",
+      "slug": "chromie",
       "batch": "Summer 2026",
-      "domain": "daqstra.com",
+      "domain": "chromie.dev",
       "score": 64,
       "band": "polish",
       "logo": true
@@ -3534,19 +3966,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "ED1TH",
-      "slug": "ed1th",
-      "batch": "Spring 2026",
-      "domain": "ed1th.com",
+      "name": "DeepReach Inc.",
+      "slug": "deepreach-inc",
+      "batch": "Summer 2026",
+      "domain": "deepreach.ai",
       "score": 64,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Evergrove",
-      "slug": "evergrove",
+      "name": "Enact",
+      "slug": "enact",
       "batch": "Summer 2026",
-      "domain": "evergrovelabs.com",
+      "domain": "enact.company",
       "score": 64,
       "band": "polish",
       "logo": true
@@ -3561,37 +3993,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Gamgee",
-      "slug": "gamgee",
-      "batch": "Summer 2026",
-      "domain": "gamgee.io",
-      "score": 64,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Kara",
-      "slug": "kara",
-      "batch": "Summer 2026",
-      "domain": "karalabs.ai",
-      "score": 64,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Light Anchor",
-      "slug": "light-anchor",
-      "batch": "Spring 2026",
-      "domain": "lightanchor.ai",
-      "score": 64,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Pentagon",
-      "slug": "pentagon",
-      "batch": "Spring 2026",
-      "domain": "pentagon.run",
+      "name": "Hopper",
+      "slug": "hopper",
+      "batch": "Fall 2026",
+      "domain": "withhopper.com",
       "score": 64,
       "band": "polish",
       "logo": true
@@ -3606,19 +4011,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Simantic",
-      "slug": "simantic",
-      "batch": "Fall 2026",
-      "domain": "simantic.dev",
+      "name": "Soria",
+      "slug": "soria",
+      "batch": "Spring 2026",
+      "domain": "soriaanalytics.com",
       "score": 64,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Verdict Machine",
-      "slug": "verdict-machine",
+      "name": "TovenAI",
+      "slug": "tovenai",
       "batch": "Summer 2026",
-      "domain": "verdictmachine.com",
+      "domain": "toven.ai",
+      "score": 64,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Travo",
+      "slug": "travo",
+      "batch": "Winter 2026",
+      "domain": "travoai.com",
+      "score": 64,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Verdant",
+      "slug": "verdant",
+      "batch": "Summer 2026",
+      "domain": "verdantapp.com",
       "score": 64,
       "band": "polish",
       "logo": true
@@ -3642,31 +4065,31 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "83 Sciences",
-      "slug": "83-sciences",
+      "name": "AbInitio Bio",
+      "slug": "abinitio-bio",
+      "batch": "Spring 2026",
+      "domain": "abinitio-bio.com",
+      "score": 63,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Auxos",
+      "slug": "auxos",
+      "batch": "Spring 2026",
+      "domain": "useauxos.com",
+      "score": 63,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Belvedir",
+      "slug": "belvedir",
       "batch": "Summer 2026",
-      "domain": "83sciences.ai",
+      "domain": "belvedir.ai",
       "score": 63,
       "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Adialante",
-      "slug": "adialante",
-      "batch": "Spring 2026",
-      "domain": "adialante.com",
-      "score": 63,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Atrisa",
-      "slug": "atrisa",
-      "batch": "Spring 2026",
-      "domain": "atrisa.ai",
-      "score": 63,
-      "band": "polish",
-      "logo": true
+      "logo": false
     },
     {
       "name": "Bizmark",
@@ -3675,22 +4098,13 @@ export const YC_STUDY = {
       "domain": "bizmark.ai",
       "score": 63,
       "band": "polish",
-      "logo": true
+      "logo": false
     },
     {
-      "name": "Most Robotic",
-      "slug": "most-robotic",
-      "batch": "Summer 2026",
-      "domain": "mostrobotic.com",
-      "score": 63,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Palisade",
-      "slug": "palisade-2",
-      "batch": "Summer 2026",
-      "domain": "palisade-ai.com",
+      "name": "Rote",
+      "slug": "rote",
+      "batch": "Winter 2027",
+      "domain": "tryrote.com",
       "score": 63,
       "band": "polish",
       "logo": true
@@ -3714,100 +4128,46 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Tenet Industries",
-      "slug": "tenet-industries",
-      "batch": "Spring 2026",
-      "domain": "tenetindustries.com",
-      "score": 63,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Thomas",
-      "slug": "thomas",
-      "batch": "Spring 2026",
-      "domain": "madebythomas.ai",
-      "score": 63,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Twolabs",
-      "slug": "twolabs",
-      "batch": "Spring 2026",
-      "domain": "twolabs.ai",
-      "score": 63,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Ultrasonium",
-      "slug": "ultrasonium",
+      "name": "Tensr",
+      "slug": "tensr",
       "batch": "Summer 2026",
-      "domain": "ultrasonium.com",
+      "domain": "tensr.com",
       "score": 63,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Valgo",
-      "slug": "valgo",
-      "batch": "Winter 2026",
-      "domain": "valgo.ai",
-      "score": 63,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "YouArt",
-      "slug": "youart",
-      "batch": "Spring 2026",
-      "domain": "youart.ai",
-      "score": 63,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Aerogen Systems",
-      "slug": "aerogen-systems",
+      "name": "Cova",
+      "slug": "cova",
       "batch": "Summer 2026",
-      "domain": "aerogensystems.com",
+      "domain": "cova.care",
       "score": 62,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Apollo Atomics, Inc.",
-      "slug": "apollo-atomics-inc",
-      "batch": "Spring 2026",
-      "domain": "apolloatomics.com",
-      "score": 62,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Audun",
-      "slug": "audun",
+      "name": "Dialogus",
+      "slug": "dialogus",
       "batch": "Summer 2026",
-      "domain": "audun.co",
+      "domain": "dialoguslabs.com",
       "score": 62,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Capveon",
-      "slug": "capveon",
-      "batch": "Fall 2026",
-      "domain": "capveon.ai",
+      "name": "Induction Labs",
+      "slug": "induction-labs",
+      "batch": "Summer 2026",
+      "domain": "inductionlabs.com",
       "score": 62,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "GodHands",
-      "slug": "godhands",
-      "batch": "Fall 2026",
-      "domain": "godhands.dev",
+      "name": "InLoop Robotics",
+      "slug": "inloop-robotics",
+      "batch": "Spring 2026",
+      "domain": "inloop-robotics.com",
       "score": 62,
       "band": "polish",
       "logo": true
@@ -3822,19 +4182,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "PerfectBit, Inc.",
-      "slug": "perfectbit-inc",
+      "name": "PLAN0 AI",
+      "slug": "plan0-ai",
       "batch": "Spring 2026",
-      "domain": "perfectbit.ai",
-      "score": 62,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Rise Reforming",
-      "slug": "rise-reforming",
-      "batch": "Summer 2026",
-      "domain": "rise-reforming.com",
+      "domain": "plan0.ai",
       "score": 62,
       "band": "polish",
       "logo": true
@@ -3849,73 +4200,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Synphony",
-      "slug": "synphony",
+      "name": "AquaShield",
+      "slug": "aquashield",
       "batch": "Spring 2026",
-      "domain": "synphony.co",
-      "score": 62,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "TryNearby",
-      "slug": "trynearby",
-      "batch": "Summer 2026",
-      "domain": "trynearby.com",
-      "score": 62,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Verdant",
-      "slug": "verdant",
-      "batch": "Summer 2026",
-      "domain": "verdantapp.com",
-      "score": 62,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Whitespace",
-      "slug": "whitespace",
-      "batch": "Summer 2026",
-      "domain": "whitespacehq.ai",
-      "score": 62,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "AbInitio Bio",
-      "slug": "abinitio-bio",
-      "batch": "Spring 2026",
-      "domain": "abinitio-bio.com",
-      "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Belvedir",
-      "slug": "belvedir",
-      "batch": "Summer 2026",
-      "domain": "belvedir.ai",
-      "score": 61,
-      "band": "polish",
-      "logo": false
-    },
-    {
-      "name": "Chromie",
-      "slug": "chromie",
-      "batch": "Summer 2026",
-      "domain": "chromie.dev",
-      "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "DeepReach Inc.",
-      "slug": "deepreach-inc",
-      "batch": "Summer 2026",
-      "domain": "deepreach.ai",
+      "domain": "aquashieldai.com",
       "score": 61,
       "band": "polish",
       "logo": true
@@ -3930,51 +4218,6 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "General Instinct",
-      "slug": "general-instinct",
-      "batch": "Spring 2026",
-      "domain": "general-instinct.com",
-      "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Isengard Industries Inc",
-      "slug": "isengard-industries-inc",
-      "batch": "Summer 2026",
-      "domain": "isengardindustries.com",
-      "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Lumius",
-      "slug": "lumius",
-      "batch": "Spring 2026",
-      "domain": "lumius-imaging.com",
-      "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Maingen",
-      "slug": "maingen",
-      "batch": "Summer 2026",
-      "domain": "maingen.ai",
-      "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Ornadyne",
-      "slug": "ornadyne",
-      "batch": "Spring 2026",
-      "domain": "ornadyne.com",
-      "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
       "name": "Salem Robotics Inc",
       "slug": "salem-robotics-inc",
       "batch": "Summer 2026",
@@ -3984,38 +4227,11 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Vernius Systems, Inc.",
-      "slug": "vernius-systems-inc",
+      "name": "Synapse Semiconductor",
+      "slug": "synapse-semiconductor",
       "batch": "Summer 2026",
-      "domain": "vernius.systems",
+      "domain": "synapsesemi.org",
       "score": 61,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Asakana",
-      "slug": "asakana",
-      "batch": "Fall 2026",
-      "domain": "asakana.co",
-      "score": 60,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Aseon Labs",
-      "slug": "aseon-labs",
-      "batch": "Spring 2026",
-      "domain": "aseonlabs.com",
-      "score": 60,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Covera",
-      "slug": "covera",
-      "batch": "Fall 2026",
-      "domain": "covera-agents.com",
-      "score": 60,
       "band": "polish",
       "logo": true
     },
@@ -4024,6 +4240,15 @@ export const YC_STUDY = {
       "slug": "cuebench",
       "batch": "Summer 2026",
       "domain": "cuebench.dev",
+      "score": 60,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Deep Interactions",
+      "slug": "deep-interactions",
+      "batch": "Spring 2026",
+      "domain": "deepinteractions.ai",
       "score": 60,
       "band": "polish",
       "logo": true
@@ -4038,46 +4263,46 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Enact",
-      "slug": "enact",
-      "batch": "Summer 2026",
-      "domain": "enact.company",
+      "name": "GodHands",
+      "slug": "godhands",
+      "batch": "Fall 2026",
+      "domain": "godhands.dev",
       "score": 60,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "Grip",
-      "slug": "grip",
-      "batch": "Summer 2026",
-      "domain": "griprobotics.ai",
+      "name": "Mantis",
+      "slug": "mantis",
+      "batch": "Winter 2026",
+      "domain": "mantisbiotech.com",
       "score": 60,
       "band": "polish",
       "logo": true
     },
     {
-      "name": "HyperProbe",
-      "slug": "hyperprobe",
-      "batch": "Summer 2026",
-      "domain": "hyperprobe.co",
-      "score": 60,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Molagri",
-      "slug": "molagri",
-      "batch": "Summer 2026",
-      "domain": "molagri.com",
-      "score": 60,
-      "band": "polish",
-      "logo": true
-    },
-    {
-      "name": "Walter",
-      "slug": "walter",
+      "name": "Netter",
+      "slug": "netter",
       "batch": "Spring 2026",
-      "domain": "walter.one",
+      "domain": "netter.ai",
+      "score": 60,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Spectre Intelligence",
+      "slug": "spectre-intelligence",
+      "batch": "Summer 2026",
+      "domain": "spectreintelligence.ai",
+      "score": 60,
+      "band": "polish",
+      "logo": true
+    },
+    {
+      "name": "Vestris",
+      "slug": "vestris",
+      "batch": "Summer 2026",
+      "domain": "vestris.ai",
       "score": 60,
       "band": "polish",
       "logo": true
@@ -4092,64 +4317,55 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "AquaShield",
-      "slug": "aquashield",
-      "batch": "Spring 2026",
-      "domain": "aquashieldai.com",
-      "score": 59,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Aster",
-      "slug": "asterlab",
-      "batch": "Spring 2026",
-      "domain": "asterlab.ai",
-      "score": 59,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Care GP",
-      "slug": "care-gp",
+      "name": "Atlas Discovery",
+      "slug": "atlas-discovery",
       "batch": "Summer 2026",
-      "domain": "caregp.com.au",
+      "domain": "atlasdiscovery.bio",
       "score": 59,
       "band": "rough",
       "logo": true
     },
     {
-      "name": "CatchBack Cards",
-      "slug": "catchback-cards",
-      "batch": "Winter 2026",
-      "domain": "catchbackcards.com",
-      "score": 59,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Korso",
-      "slug": "korso",
+      "name": "General Instinct",
+      "slug": "general-instinct",
       "batch": "Spring 2026",
-      "domain": "korsoai.com",
+      "domain": "general-instinct.com",
       "score": 59,
       "band": "rough",
       "logo": true
     },
     {
-      "name": "PLAN0 AI",
-      "slug": "plan0-ai",
-      "batch": "Spring 2026",
-      "domain": "plan0.ai",
+      "name": "Hilstart",
+      "slug": "hilstart",
+      "batch": "Summer 2026",
+      "domain": "hilstart.io",
       "score": 59,
       "band": "rough",
       "logo": true
     },
     {
-      "name": "Standout",
-      "slug": "standout",
+      "name": "Manifold",
+      "slug": "manifold-2",
+      "batch": "Summer 2026",
+      "domain": "manifoldindustries.ai",
+      "score": 59,
+      "band": "rough",
+      "logo": true
+    },
+    {
+      "name": "Ornadyne",
+      "slug": "ornadyne",
       "batch": "Spring 2026",
-      "domain": "standout.work",
+      "domain": "ornadyne.com",
+      "score": 59,
+      "band": "rough",
+      "logo": true
+    },
+    {
+      "name": "PokerClubHub",
+      "slug": "pokerclubhub",
+      "batch": "Summer 2026",
+      "domain": "pokerclubhub.com",
       "score": 59,
       "band": "rough",
       "logo": true
@@ -4164,47 +4380,11 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Synapse Semiconductor",
-      "slug": "synapse-semiconductor",
-      "batch": "Summer 2026",
-      "domain": "synapsesemi.org",
-      "score": 59,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "The Subvocal Company",
-      "slug": "the-subvocal-company",
-      "batch": "Fall 2026",
-      "domain": "subvocal.company",
-      "score": 59,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "TovenAI",
-      "slug": "tovenai",
-      "batch": "Summer 2026",
-      "domain": "toven.ai",
-      "score": 59,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "ValCtrl",
-      "slug": "valctrl",
+      "name": "Tolmo",
+      "slug": "tolmo",
       "batch": "Spring 2026",
-      "domain": "valctrl.com",
+      "domain": "tolmo.com",
       "score": 59,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Auxos",
-      "slug": "auxos",
-      "batch": "Spring 2026",
-      "domain": "useauxos.com",
-      "score": 58,
       "band": "rough",
       "logo": true
     },
@@ -4218,19 +4398,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Cova",
-      "slug": "cova",
-      "batch": "Summer 2026",
-      "domain": "cova.care",
+      "name": "Crosslayer Labs",
+      "slug": "crosslayer-labs",
+      "batch": "Winter 2026",
+      "domain": "crosslayerlabs.com",
       "score": 58,
       "band": "rough",
       "logo": true
     },
     {
-      "name": "Crosslayer Labs",
-      "slug": "crosslayer-labs",
-      "batch": "Winter 2026",
-      "domain": "crosslayerlabs.com",
+      "name": "Walter",
+      "slug": "walter",
+      "batch": "Spring 2026",
+      "domain": "walter.one",
       "score": 58,
       "band": "rough",
       "logo": true
@@ -4254,55 +4434,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Dialogus",
-      "slug": "dialogus",
-      "batch": "Summer 2026",
-      "domain": "dialoguslabs.com",
+      "name": "Korso",
+      "slug": "korso",
+      "batch": "Spring 2026",
+      "domain": "korsoai.com",
       "score": 57,
       "band": "rough",
       "logo": true
     },
     {
-      "name": "Erinys",
-      "slug": "erinys",
-      "batch": "Summer 2026",
-      "domain": "erinys.ai",
-      "score": 57,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Ethos Space Resources",
-      "slug": "ethos-space-resources",
-      "batch": "Summer 2026",
-      "domain": "ethos-space.com",
-      "score": 57,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Frontier Computing",
-      "slug": "frontier-computing",
-      "batch": "Summer 2026",
-      "domain": "frontier.site",
-      "score": 57,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Hilstart",
-      "slug": "hilstart",
-      "batch": "Summer 2026",
-      "domain": "hilstart.io",
-      "score": 57,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Moving Atoms",
-      "slug": "moving-atoms",
-      "batch": "Summer 2026",
-      "domain": "movingatoms.ai",
+      "name": "Ndea",
+      "slug": "ndea-com",
+      "batch": "Winter 2026",
+      "domain": "ndea.com",
       "score": 57,
       "band": "rough",
       "logo": true
@@ -4317,11 +4461,11 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Advanced Metal Research",
-      "slug": "advanced-metal-research",
+      "name": "Surtr Defense Systems",
+      "slug": "surtr-defense-systems",
       "batch": "Spring 2026",
-      "domain": "advancedmetalresearch.com",
-      "score": 56,
+      "domain": "surtrdefense.com",
+      "score": 57,
       "band": "rough",
       "logo": true
     },
@@ -4335,37 +4479,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Hyper",
-      "slug": "hyper-4",
-      "batch": "Spring 2026",
-      "domain": "heyhyper.ai",
-      "score": 56,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Mantis",
-      "slug": "mantis",
-      "batch": "Winter 2026",
-      "domain": "mantisbiotech.com",
-      "score": 56,
-      "band": "rough",
-      "logo": true
-    },
-    {
       "name": "Memoir",
       "slug": "memoir",
       "batch": "Spring 2026",
       "domain": "trymemoir.ai",
-      "score": 56,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Netter",
-      "slug": "netter",
-      "batch": "Spring 2026",
-      "domain": "netter.ai",
       "score": 56,
       "band": "rough",
       "logo": true
@@ -4389,46 +4506,37 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Atlas Discovery",
-      "slug": "atlas-discovery",
-      "batch": "Summer 2026",
-      "domain": "atlasdiscovery.bio",
-      "score": 55,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "General Astronautics",
-      "slug": "generalastro",
-      "batch": "Winter 2026",
-      "domain": "generalastro.com",
-      "score": 55,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Hopper",
-      "slug": "hopper",
-      "batch": "Fall 2026",
-      "domain": "withhopper.com",
-      "score": 55,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Induction Labs",
-      "slug": "induction-labs",
-      "batch": "Summer 2026",
-      "domain": "inductionlabs.com",
-      "score": 55,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "InLoop Robotics",
-      "slug": "inloop-robotics",
+      "name": "Dispatch",
+      "slug": "dispatch",
       "batch": "Spring 2026",
-      "domain": "inloop-robotics.com",
+      "domain": "dispatch.space",
+      "score": 55,
+      "band": "rough",
+      "logo": true
+    },
+    {
+      "name": "Dreamscale Labs",
+      "slug": "dreamscale-labs",
+      "batch": "Fall 2026",
+      "domain": "dreamscalelabs.com",
+      "score": 55,
+      "band": "rough",
+      "logo": true
+    },
+    {
+      "name": "Frontier Computing",
+      "slug": "frontier-computing",
+      "batch": "Summer 2026",
+      "domain": "frontier.site",
+      "score": 55,
+      "band": "rough",
+      "logo": true
+    },
+    {
+      "name": "General Aviation",
+      "slug": "general-aviation",
+      "batch": "Spring 2026",
+      "domain": "generalaviation.com",
       "score": 55,
       "band": "rough",
       "logo": true
@@ -4443,19 +4551,10 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Maquoketa Research",
-      "slug": "maquoketa-research",
-      "batch": "Spring 2026",
-      "domain": "maquoketa.net",
-      "score": 55,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Ndea",
-      "slug": "ndea-com",
-      "batch": "Winter 2026",
-      "domain": "ndea.com",
+      "name": "PRINCEPS",
+      "slug": "princeps",
+      "batch": "Summer 2026",
+      "domain": "princeps.dev",
       "score": 55,
       "band": "rough",
       "logo": true
@@ -4479,29 +4578,11 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Surtr Defense Systems",
-      "slug": "surtr-defense-systems",
+      "name": "Advanced Metal Research",
+      "slug": "advanced-metal-research",
       "batch": "Spring 2026",
-      "domain": "surtrdefense.com",
-      "score": 55,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Tensr",
-      "slug": "tensr",
-      "batch": "Summer 2026",
-      "domain": "tensr.com",
-      "score": 55,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Vestris",
-      "slug": "vestris",
-      "batch": "Summer 2026",
-      "domain": "vestris.ai",
-      "score": 55,
+      "domain": "advancedmetalresearch.com",
+      "score": 54,
       "band": "rough",
       "logo": true
     },
@@ -4515,47 +4596,29 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "KelAI",
-      "slug": "kelai",
+      "name": "Hyper",
+      "slug": "hyper-4",
       "batch": "Spring 2026",
-      "domain": "kelaitech.com",
+      "domain": "heyhyper.ai",
       "score": 54,
       "band": "rough",
       "logo": true
     },
     {
-      "name": "PokerClubHub",
-      "slug": "pokerclubhub",
-      "batch": "Summer 2026",
-      "domain": "pokerclubhub.com",
+      "name": "Intelligence Factory",
+      "slug": "intelligence-factory",
+      "batch": "Spring 2026",
+      "domain": "intelligence-factory.com",
       "score": 54,
       "band": "rough",
       "logo": true
     },
     {
-      "name": "Spectre Intelligence",
-      "slug": "spectre-intelligence",
-      "batch": "Summer 2026",
-      "domain": "spectreintelligence.ai",
+      "name": "Plena Health",
+      "slug": "plena-health",
+      "batch": "Spring 2026",
+      "domain": "plena.health",
       "score": 54,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Cohesion",
-      "slug": "cohesion",
-      "batch": "Spring 2026",
-      "domain": "cohesionplatform.com",
-      "score": 53,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Deep Interactions",
-      "slug": "deep-interactions",
-      "batch": "Spring 2026",
-      "domain": "deepinteractions.ai",
-      "score": 53,
       "band": "rough",
       "logo": true
     },
@@ -4569,11 +4632,20 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Manifold",
-      "slug": "manifold-2",
-      "batch": "Summer 2026",
-      "domain": "manifoldindustries.ai",
+      "name": "Rudus",
+      "slug": "rudus",
+      "batch": "Spring 2026",
+      "domain": "rudus.ai",
       "score": 53,
+      "band": "rough",
+      "logo": true
+    },
+    {
+      "name": "Baud",
+      "slug": "baud",
+      "batch": "Summer 2026",
+      "domain": "baudlabs.ai",
+      "score": 52,
       "band": "rough",
       "logo": true
     },
@@ -4582,6 +4654,15 @@ export const YC_STUDY = {
       "slug": "dawn-industries",
       "batch": "Summer 2026",
       "domain": "dawnxr.com",
+      "score": 52,
+      "band": "rough",
+      "logo": true
+    },
+    {
+      "name": "Florin",
+      "slug": "florin",
+      "batch": "Summer 2026",
+      "domain": "florin.inc",
       "score": 52,
       "band": "rough",
       "logo": true
@@ -4596,28 +4677,19 @@ export const YC_STUDY = {
       "logo": true
     },
     {
+      "name": "Cohesion",
+      "slug": "cohesion",
+      "batch": "Spring 2026",
+      "domain": "cohesionplatform.com",
+      "score": 51,
+      "band": "rough",
+      "logo": true
+    },
+    {
       "name": "EdotEnv",
       "slug": "edotenv",
       "batch": "Summer 2026",
       "domain": "edotenv.com",
-      "score": 51,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Mentlio",
-      "slug": "mentlio",
-      "batch": "Summer 2026",
-      "domain": "mentlio.com",
-      "score": 51,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Plena Health",
-      "slug": "plena-health",
-      "batch": "Spring 2026",
-      "domain": "plena.health",
       "score": 51,
       "band": "rough",
       "logo": true
@@ -4632,83 +4704,11 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "PRINCEPS",
-      "slug": "princeps",
-      "batch": "Summer 2026",
-      "domain": "princeps.dev",
-      "score": 51,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "General Aviation",
-      "slug": "general-aviation",
-      "batch": "Spring 2026",
-      "domain": "generalaviation.com",
-      "score": 50,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Tolmo",
-      "slug": "tolmo",
-      "batch": "Spring 2026",
-      "domain": "tolmo.com",
-      "score": 50,
-      "band": "rough",
-      "logo": true
-    },
-    {
-      "name": "Illume Labs",
-      "slug": "illume-labs",
-      "batch": "Summer 2026",
-      "domain": "illumelabs.ai",
+      "name": "Alt-X",
+      "slug": "alt-x",
+      "batch": "Winter 2026",
+      "domain": "alt-x.co",
       "score": 49,
-      "band": "vibe",
-      "logo": true
-    },
-    {
-      "name": "Intelligence Factory",
-      "slug": "intelligence-factory",
-      "batch": "Spring 2026",
-      "domain": "intelligence-factory.com",
-      "score": 49,
-      "band": "vibe",
-      "logo": true
-    },
-    {
-      "name": "ReasonBlocks",
-      "slug": "reasonblocks",
-      "batch": "Spring 2026",
-      "domain": "reasonblocks.com",
-      "score": 49,
-      "band": "vibe",
-      "logo": true
-    },
-    {
-      "name": "Riften",
-      "slug": "riften",
-      "batch": "Summer 2026",
-      "domain": "riften.ai",
-      "score": 49,
-      "band": "vibe",
-      "logo": true
-    },
-    {
-      "name": "HERA",
-      "slug": "manufacturingintelligence",
-      "batch": "Summer 2026",
-      "domain": "manufacturingintelligence.org",
-      "score": 48,
-      "band": "vibe",
-      "logo": true
-    },
-    {
-      "name": "Rudus",
-      "slug": "rudus",
-      "batch": "Spring 2026",
-      "domain": "rudus.ai",
-      "score": 48,
       "band": "vibe",
       "logo": true
     },
@@ -4722,47 +4722,29 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Florin",
-      "slug": "florin",
+      "name": "Illume Labs",
+      "slug": "illume-labs",
       "batch": "Summer 2026",
-      "domain": "florin.inc",
+      "domain": "illumelabs.ai",
       "score": 47,
       "band": "vibe",
       "logo": true
     },
     {
-      "name": "Alt-X",
-      "slug": "alt-x",
-      "batch": "Winter 2026",
-      "domain": "alt-x.co",
-      "score": 46,
-      "band": "vibe",
-      "logo": true
-    },
-    {
-      "name": "Andustry",
-      "slug": "andustry",
+      "name": "KelAI",
+      "slug": "kelai",
       "batch": "Spring 2026",
-      "domain": "andustry.com",
-      "score": 46,
+      "domain": "kelaitech.com",
+      "score": 47,
       "band": "vibe",
       "logo": true
     },
     {
-      "name": "Baud",
-      "slug": "baud",
-      "batch": "Summer 2026",
-      "domain": "baudlabs.ai",
-      "score": 46,
-      "band": "vibe",
-      "logo": true
-    },
-    {
-      "name": "Dreamscale Labs",
-      "slug": "dreamscale-labs",
-      "batch": "Fall 2026",
-      "domain": "dreamscalelabs.com",
-      "score": 46,
+      "name": "ReasonBlocks",
+      "slug": "reasonblocks",
+      "batch": "Spring 2026",
+      "domain": "reasonblocks.com",
+      "score": 47,
       "band": "vibe",
       "logo": true
     },
@@ -4776,20 +4758,20 @@ export const YC_STUDY = {
       "logo": true
     },
     {
-      "name": "Dispatch",
-      "slug": "dispatch",
-      "batch": "Spring 2026",
-      "domain": "dispatch.space",
-      "score": 44,
-      "band": "vibe",
-      "logo": true
-    },
-    {
       "name": "Hop Aero",
       "slug": "hop-aero",
       "batch": "Summer 2026",
       "domain": "hopaero.com",
       "score": 44,
+      "band": "vibe",
+      "logo": true
+    },
+    {
+      "name": "Andustry",
+      "slug": "andustry",
+      "batch": "Spring 2026",
+      "domain": "andustry.com",
+      "score": 43,
       "band": "vibe",
       "logo": true
     }

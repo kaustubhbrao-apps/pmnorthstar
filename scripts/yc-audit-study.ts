@@ -90,6 +90,35 @@ async function loadCompanies(): Promise<Company[]> {
   return all;
 }
 
+// The TTFB check measures time-to-first-byte from this machine, which on a
+// cold run includes a DNS lookup and a TLS handshake that have nothing to do
+// with the site's server. The cost is not small: the same 69 sites, the same
+// unmodified engine, run twice back to back, moved the ttfb pass rate from
+// 37.7% to 79.7% and the median score by five points purely on run order.
+//
+// So every host gets one throwaway HEAD first, purely to populate the DNS and
+// TLS caches, and the scored pass then measures the server rather than the
+// network's memory. Outcomes are ignored entirely — a host that refuses HEAD
+// still completes the handshake, which is the part we're warming. Two requests
+// per host over the whole study is still a rounding error on any origin.
+async function warmUp(pool: Company[]): Promise<void> {
+  console.log(`Warming DNS/TLS for ${pool.length} hosts...`);
+  const queue = [...pool];
+  await Promise.all(
+    Array.from({ length: 12 }, async () => {
+      for (;;) {
+        const c = queue.shift();
+        if (!c) return;
+        try {
+          await fetch(c.website, { method: "HEAD", signal: AbortSignal.timeout(6000) });
+        } catch {
+          /* the handshake is the point; the response is not */
+        }
+      }
+    }),
+  );
+}
+
 async function main() {
   const all = await loadCompanies();
 
@@ -104,6 +133,8 @@ async function main() {
 
   fs.rmSync(RAW_LOGOS, { recursive: true, force: true });
   fs.mkdirSync(RAW_LOGOS, { recursive: true });
+
+  await warmUp(pool);
 
   console.log(`Auditing ${pool.length} companies at concurrency ${CONCURRENCY}...`);
 

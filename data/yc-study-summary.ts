@@ -2,9 +2,9 @@
 // Client-safe subset: scalars only, no per-company rows.
 
 export const YC_STUDY_SUMMARY = {
-  "ranAt": "2026-09-07",
-  "audited": 496,
-  "median": 71,
-  "topName": "Didit",
-  "topScore": 94
+  "ranAt": "2026-09-12",
+  "audited": 494,
+  "median": 75,
+  "topName": "Avoca Systems",
+  "topScore": 98
 } as const;
