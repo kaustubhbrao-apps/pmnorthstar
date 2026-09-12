@@ -4,9 +4,10 @@ import { cacheKey, getCached, setCached } from "@/lib/checkit/cache";
 import { normalizeUrl } from "@/lib/checkit/util";
 import { prisma } from "@/lib/prisma";
 
-// Vercel's default 10s timeout isn't enough — PSI alone can take 20s+.
-// 60 is the max on Hobby. If the audit ever creeps near that, move
-// PSI off-path and stream results.
+// Vercel's default 10s timeout isn't enough. A full audit is one HTML fetch
+// plus a dozen bounded sub-fetches (robots, sitemap, favicon, og:image,
+// stylesheets, manifest, 404 probe), which lands around 4-8s on a typical
+// site but can stack up on a slow origin. Headroom, not an expectation.
 export const maxDuration = 60;
 export const dynamic = "force-dynamic";
 

@@ -131,3 +131,63 @@ export async function readCapped(
   }
   return new TextDecoder().decode(buf);
 }
+
+// Attribute values in HTML are entity-encoded, so an href like
+// "…/favicon.png?w=180&amp;h=180" reaches us with a literal "&amp;" in it.
+// Feeding that straight to fetch() sends a bogus "amp;h" query param, and
+// image CDNs (Contentful, imgix) answer 400. Decode before building URLs.
+// Covers the five XML predefined entities plus numeric escapes, which is
+// everything a well-formed attribute can legally contain.
+export function decodeEntities(s: string): string {
+  return s
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => safeCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => safeCodePoint(parseInt(dec, 10)))
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&quot;/gi, '"')
+    .replace(/&apos;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&amp;/gi, "&");
+}
+
+function safeCodePoint(n: number): string {
+  if (!Number.isFinite(n) || n < 0 || n > 0x10ffff) return "";
+  try {
+    return String.fromCodePoint(n);
+  } catch {
+    return "";
+  }
+}
+
+// Resolve an href pulled out of the HTML against the page URL. Returns null
+// for anything we can't fetch over the network: unparseable, or a non-http(s)
+// scheme. data: URIs are the interesting case and are handled by
+// dataUriPayloadBytes below, since there is nothing to request.
+export function resolveUrl(href: string, base: URL): URL | null {
+  const decoded = decodeEntities(href).trim();
+  if (!decoded) return null;
+  try {
+    const u = new URL(decoded, base);
+    return u.protocol === "http:" || u.protocol === "https:" ? u : null;
+  } catch {
+    return null;
+  }
+}
+
+// An inlined data: URI is a real asset if it carries a payload, and nothing
+// at all if it doesn't. example.com ships <link rel="icon" href="data:,">
+// precisely to suppress the favicon request — counting that as "has a
+// favicon" is exactly backwards. Returns -1 when the href isn't a data: URI.
+export function dataUriPayloadBytes(href: string): number {
+  const decoded = decodeEntities(href).trim();
+  if (!/^data:/i.test(decoded)) return -1;
+  const comma = decoded.indexOf(",");
+  return comma === -1 ? 0 : decoded.length - comma - 1;
+}
+
+// How a resource URL is shown back to the user. Same-origin resources read
+// better as a bare path; a CDN-hosted one needs its host for the line to
+// make sense.
+export function displayUrl(u: URL, base: URL): string {
+  return u.host === base.host ? u.pathname : `${u.host}${u.pathname}`;
+}

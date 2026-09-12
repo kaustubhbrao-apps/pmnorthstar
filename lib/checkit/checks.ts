@@ -7,7 +7,15 @@
 // (we don't ship cheerio) and the misses we'd catch with a real parser
 //, malformed tags, weird quoting, also tell us a site is broken.
 
-import { fetchWithTimeout, stripTags, truncate } from "./util";
+import {
+  dataUriPayloadBytes,
+  displayUrl,
+  fetchWithTimeout,
+  readCapped,
+  resolveUrl,
+  stripTags,
+  truncate,
+} from "./util";
 import type { RawCheckResult } from "./types";
 
 // Check functions return RawCheckResult; audit.ts stamps the `points`
@@ -96,22 +104,43 @@ export async function customDomain(ctx: FetchCtx): Promise<CheckResult> {
 export async function realFavicon(ctx: FetchCtx): Promise<CheckResult> {
   // Look for any <link rel="icon" ...> (also matches "shortcut icon").
   let faviconUrl: URL | null = null;
+  let inlineBytes = -1;
   const linkRe = /<link\b[^>]*rel=["'][^"']*\bicon\b[^"']*["'][^>]*>/gi;
   let m: RegExpExecArray | null;
   while ((m = linkRe.exec(ctx.html))) {
     const href = m[0].match(/href=["']([^"']+)["']/i)?.[1];
-    if (href) {
-      try {
-        faviconUrl = new URL(href, ctx.finalUrl);
-        break;
-      } catch {
-        /* keep looking */
-      }
+    if (!href) continue;
+    const bytes = dataUriPayloadBytes(href);
+    if (bytes >= 0) {
+      // An inlined icon never hits the network, so there's nothing to verify.
+      // A payload means a real icon; "data:," means the site is deliberately
+      // suppressing the favicon request and has none.
+      inlineBytes = bytes;
+      break;
+    }
+    const resolved = resolveUrl(href, ctx.finalUrl);
+    if (resolved) {
+      faviconUrl = resolved;
+      break;
     }
   }
+
+  if (inlineBytes >= 0) {
+    return {
+      id: "real-favicon",
+      label: "Favicon present",
+      pass: inlineBytes > 0,
+      detail:
+        inlineBytes > 0
+          ? `Favicon is inlined as a data URI (${inlineBytes} bytes).`
+          : `Favicon href is "data:," — an empty placeholder that suppresses the icon. Browsers and tabs show a blank page glyph.`,
+    };
+  }
+
   if (!faviconUrl) {
     faviconUrl = new URL("/favicon.ico", ctx.finalUrl);
   }
+  const shown = displayUrl(faviconUrl, ctx.finalUrl);
 
   try {
     const res = await fetchWithTimeout(faviconUrl.toString(), { method: "HEAD" }, 5000);
@@ -120,21 +149,21 @@ export async function realFavicon(ctx: FetchCtx): Promise<CheckResult> {
         id: "real-favicon",
         label: "Favicon present",
         pass: true,
-        detail: `Favicon loads from ${faviconUrl.pathname}.`,
+        detail: `Favicon loads from ${shown}.`,
       };
     }
     return {
       id: "real-favicon",
       label: "Favicon present",
       pass: false,
-      detail: `Favicon at ${faviconUrl.pathname} returned ${res.status}.`,
+      detail: `Favicon at ${shown} returned ${res.status}.`,
     };
   } catch {
     return {
       id: "real-favicon",
       label: "Favicon present",
       pass: false,
-      detail: `Could not load favicon from ${faviconUrl.pathname}.`,
+      detail: `Could not load favicon from ${shown}.`,
     };
   }
 }
@@ -171,12 +200,14 @@ export async function ogCompleteness(ctx: FetchCtx): Promise<CheckResult> {
   // Image still needs to actually load — render as blank box otherwise.
   let imageReachable = false;
   if (ogImg) {
-    try {
-      const imgUrl = new URL(ogImg, ctx.finalUrl);
-      const res = await fetchWithTimeout(imgUrl.toString(), { method: "HEAD" }, 5000);
-      imageReachable = res.ok;
-    } catch {
-      /* leave false */
+    const imgUrl = resolveUrl(ogImg, ctx.finalUrl);
+    if (imgUrl) {
+      try {
+        const res = await fetchWithTimeout(imgUrl.toString(), { method: "HEAD" }, 5000);
+        imageReachable = res.ok;
+      } catch {
+        /* leave false */
+      }
     }
   }
 
@@ -279,29 +310,88 @@ export async function htmlPayload(ctx: FetchCtx): Promise<CheckResult> {
 // CLS proxy without field data. Images with explicit width+height
 // reserve space (no shift). font-display strategy prevents text
 // reflow when web fonts swap in.
+// "declared"    — a font-display strategy is set, so text paints in a
+//                 fallback and swaps without blocking.
+// "no-webfonts" — no @font-face and no font CDN, so there is no swap to
+//                 guard against in the first place.
+// "missing"     — web fonts load with no strategy: the FOIT/reflow case.
+//
+// Bounded on purpose: at most four stylesheets, 4s each, 400KB each, all in
+// parallel. That is enough to catch the real declaration without turning a
+// 4s audit into a crawl of every asset on the page.
+type FontStrategy = "declared" | "no-webfonts" | "missing";
+
+const FONT_DISPLAY_RE = /font-display\s*:\s*(swap|optional|fallback)/i;
+const FONT_FACE_RE = /@font-face/i;
+const FONT_HOST_RE = /fonts\.googleapis\.com|fonts\.gstatic\.com|use\.typekit\.net|fonts\.bunny\.net/i;
+
+async function webFontStrategy(ctx: FetchCtx): Promise<FontStrategy> {
+  const html = ctx.html;
+  if (FONT_DISPLAY_RE.test(html)) return "declared";
+  // Google Fonts serves font-display via the &display= param on the
+  // stylesheet URL rather than anything visible in the markup.
+  if (/fonts\.googleapis\.com[^"']*[?&]display=(swap|optional|fallback)/i.test(html)) {
+    return "declared";
+  }
+
+  const hrefs: URL[] = [];
+  const linkRe = /<link\b[^>]*\brel=["'][^"']*\bstylesheet\b[^"']*["'][^>]*>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = linkRe.exec(html)) && hrefs.length < 4) {
+    const href = m[0].match(/href=["']([^"']+)["']/i)?.[1];
+    const url = href ? resolveUrl(href, ctx.finalUrl) : null;
+    if (url) hrefs.push(url);
+  }
+
+  const sheets = await Promise.all(
+    hrefs.map(async (url) => {
+      try {
+        const res = await fetchWithTimeout(url.toString(), {}, 4000);
+        if (!res.ok) return "";
+        return await readCapped(res, 400_000);
+      } catch {
+        return "";
+      }
+    }),
+  );
+
+  if (sheets.some((css) => FONT_DISPLAY_RE.test(css))) return "declared";
+  const usesWebFonts =
+    FONT_HOST_RE.test(html) ||
+    FONT_FACE_RE.test(html) ||
+    sheets.some((css) => FONT_FACE_RE.test(css));
+  return usesWebFonts ? "missing" : "no-webfonts";
+}
+
 export async function layoutShiftPrevention(ctx: FetchCtx): Promise<CheckResult> {
   const html = ctx.html;
   const imgs = Array.from(html.matchAll(/<img\b[^>]*>/gi)).map((m) => m[0]);
   const sized = imgs.filter(
     (tag) => /\bwidth\s*=\s*["']?\d/i.test(tag) && /\bheight\s*=\s*["']?\d/i.test(tag),
   ).length;
-  const hasFontDisplay = /font-display\s*:\s*(swap|optional|fallback)/i.test(html);
   const hasAspectRatio = /aspect-ratio\s*:/i.test(html);
   const imgRatio = imgs.length === 0 ? 1 : sized / imgs.length;
   const imgsOk = imgRatio >= 0.8;
-  const fontsOk = hasFontDisplay || hasAspectRatio || imgs.length === 0;
+  // @font-face almost never lives in the HTML — it lives in the stylesheet the
+  // HTML links to. Scanning only the markup failed every site that does fonts
+  // properly, next/font included: vercel.com ships font-display: swap in a
+  // linked chunk and was being told it had no strategy at all.
+  const fonts = await webFontStrategy(ctx);
+  const fontsOk = fonts !== "missing" || hasAspectRatio || imgs.length === 0;
   const pass = imgsOk && fontsOk;
   let detail: string;
-  if (imgs.length === 0 && hasFontDisplay) {
+  if (imgs.length === 0 && fonts === "declared") {
     detail = `No images and font-display is configured. Layout will stay stable.`;
   } else if (imgs.length === 0) {
     detail = `No images on the page. Minimal layout shift risk.`;
+  } else if (pass && fonts === "no-webfonts") {
+    detail = `${sized} of ${imgs.length} images have width+height, and the page uses system fonts — no font swap to shift text.`;
   } else if (pass) {
     detail = `${sized} of ${imgs.length} images have width+height and font loading is configured.`;
   } else if (!imgsOk) {
     detail = `Only ${sized} of ${imgs.length} images have width+height. Missing dimensions cause content to jump as images load.`;
   } else {
-    detail = `Images have dimensions but no font-display strategy. Web fonts will cause text to reflow.`;
+    detail = `Images have dimensions but web fonts load without font-display. Text reflows when the font arrives.`;
   }
   return {
     id: "layout-shift-prevention",
@@ -327,9 +417,34 @@ export async function renderBlockingScripts(ctx: FetchCtx): Promise<CheckResult>
     label: "Render-blocking scripts ≤ 2",
     pass,
     detail: pass
-      ? `${blocking} render-blocking script(s) in <head>. First paint isn't delayed by JS.`
+      ? blocking === 0
+        ? `No render-blocking scripts in <head>. First paint isn't delayed by JS.`
+        : `${blocking} render-blocking script${blocking === 1 ? "" : "s"} in <head>. Few enough that first paint stays quick.`
       : `${blocking} render-blocking scripts in <head>. Each one delays first paint. Add async/defer or move before </body>.`,
   };
+}
+
+// A file extension is the least common way a modern image actually gets
+// served. Image CDNs negotiate the format from the Accept header behind an
+// opaque URL — /_next/image?url=… returns AVIF to a browser that asks for it
+// and keeps the .png in the query string. Matching only /\.(webp|avif)$/
+// marked every Next.js site as unoptimized, which is most of the sites this
+// tool audits.
+const MODERN_IMAGE_SRC_RE = new RegExp(
+  [
+    "\\.(webp|avif|svg)(\\?|#|$)", // plain extension; SVG is already vector
+    "/_next/image\\?", // Next.js image optimizer
+    "/_vercel/image\\?", // Vercel image optimizer
+    "/cdn-cgi/image/", // Cloudflare Images
+    "[?&](format|fm|output)=(webp|avif|auto)", // imgix, Contentful, Sanity, Shopify
+    "[?&]auto=[^&]*format", // imgix auto=format
+    "/f_auto|,f_auto|f_auto,", // Cloudinary
+  ].join("|"),
+  "i",
+);
+
+function isModernImageSrc(src: string): boolean {
+  return src.length > 0 && MODERN_IMAGE_SRC_RE.test(src);
 }
 
 export async function modernImages(ctx: FetchCtx): Promise<CheckResult> {
@@ -342,13 +457,26 @@ export async function modernImages(ctx: FetchCtx): Promise<CheckResult> {
       detail: `No <img> tags on the page. Nothing to optimize.`,
     };
   }
+  // A <picture> with a modern <source> upgrades the <img> it wraps — but only
+  // that one. Collect the fallback tags inside such blocks so a single
+  // <picture> on the page doesn't vouch for 50 unrelated <img> tags.
+  const upgraded = new Set<string>();
+  const pictures = Array.from(ctx.html.matchAll(/<picture\b[^>]*>([\s\S]*?)<\/picture>/gi));
+  for (const [block] of pictures) {
+    if (!/<source\b[^>]*\btype=["']image\/(webp|avif)["']/i.test(block)) continue;
+    for (const img of Array.from(block.matchAll(/<img\b[^>]*>/gi))) upgraded.add(img[0]);
+  }
+
   let good = 0;
   for (const tag of tags) {
     const src = tag.match(/src=["']([^"']+)["']/i)?.[1] ?? "";
-    const isModern = /\.(webp|avif)(\?|#|$)/i.test(src);
     const isLazy = /loading=["']?lazy["']?/i.test(tag);
     const isInline = /^data:/i.test(src);
-    if (isModern || isLazy || isInline) good++;
+    // A srcset with no src is a responsive image, not a missing one — the
+    // browser picks a candidate. Judge it on the candidates.
+    const srcset = tag.match(/srcset=["']([^"']+)["']/i)?.[1] ?? "";
+    const responsive = !src && srcset.length > 0 && isModernImageSrc(srcset);
+    if (isModernImageSrc(src) || isLazy || isInline || responsive || upgraded.has(tag)) good++;
   }
   const ratio = good / tags.length;
   const pass = ratio >= 0.8;
@@ -472,6 +600,31 @@ export async function sitemapXml(ctx: FetchCtx): Promise<CheckResult> {
 // JSON-LD structured data is what Google uses for rich results and what
 // LLM-powered search (Perplexity, ChatGPT, Google AI Overviews) leans on
 // most heavily. A site without any schema is invisible to Answer Engines.
+// Walk a parsed JSON-LD value and collect every @type it declares.
+//
+// The shape that matters here is @graph: Yoast, Rank Math and most CMS SEO
+// plugins emit one script holding {"@context":…, "@graph":[ …entities… ]},
+// where the outer object has no @type of its own. Reading @type only off the
+// top level found nothing and reported the markup as invalid — stripe.com
+// has a perfectly good 6.8KB @graph and was scored as having no schema at all.
+// Nested entities (publisher, author, mainEntity) are worth collecting for
+// the same reason.
+function collectTypes(node: unknown, out: string[], depth = 0): void {
+  if (depth > 6 || node === null || typeof node !== "object") return;
+  if (Array.isArray(node)) {
+    for (const item of node) collectTypes(item, out, depth + 1);
+    return;
+  }
+  const obj = node as Record<string, unknown>;
+  const t = obj["@type"];
+  if (typeof t === "string") out.push(t);
+  else if (Array.isArray(t)) out.push(...t.filter((x): x is string => typeof x === "string"));
+  for (const [key, value] of Object.entries(obj)) {
+    if (key === "@type" || key === "@context") continue;
+    if (value !== null && typeof value === "object") collectTypes(value, out, depth + 1);
+  }
+}
+
 export async function structuredData(ctx: FetchCtx): Promise<CheckResult> {
   const blocks = Array.from(
     // Match <script> with type="application/ld+json" regardless of where
@@ -494,15 +647,12 @@ export async function structuredData(ctx: FetchCtx): Promise<CheckResult> {
   }
 
   const types: string[] = [];
+  let parsedOk = 0;
   for (const [, json] of blocks) {
     try {
       const parsed = JSON.parse(json.trim());
-      const items = Array.isArray(parsed) ? parsed : [parsed];
-      for (const item of items) {
-        const t = item?.["@type"];
-        if (typeof t === "string") types.push(t);
-        else if (Array.isArray(t)) types.push(...t.filter((x) => typeof x === "string"));
-      }
+      parsedOk++;
+      collectTypes(parsed, types);
     } catch {
       /* malformed, skip */
     }
@@ -513,7 +663,10 @@ export async function structuredData(ctx: FetchCtx): Promise<CheckResult> {
       id: "structured-data",
       label: "Structured data (JSON-LD)",
       pass: false,
-      detail: `Found ${blocks.length} JSON-LD block(s) but none parse to valid schema.`,
+      detail:
+        parsedOk === 0
+          ? `Found ${blocks.length} JSON-LD block(s) but none are valid JSON.`
+          : `JSON-LD parses but declares no @type. Google can't tell what the markup describes.`,
     };
   }
 
@@ -535,7 +688,13 @@ export async function viewportMeta(ctx: FetchCtx): Promise<CheckResult> {
     ctx.html.match(/<meta\b[^>]*\bname=["']viewport["'][^>]*\bcontent=["']([^"']+)["']/i) ||
     ctx.html.match(/<meta\b[^>]*\bcontent=["']([^"']+)["'][^>]*\bname=["']viewport["']/i);
   const content = match ? match[1] : "";
-  const pass = /width=device-width/i.test(content);
+  // width=device-width is the conventional spelling, but initial-scale=1 sizes
+  // the layout viewport to the device on its own and Lighthouse treats the two
+  // as equivalent. Demanding the literal string failed wikipedia.org, which
+  // ships "initial-scale=1,user-scalable=yes" and renders fine on a phone.
+  const hasWidth = /width\s*=\s*device-width/i.test(content);
+  const hasScale = /initial-scale\s*=\s*1(\.0+)?\b/i.test(content);
+  const pass = hasWidth || hasScale;
   return {
     id: "viewport-meta",
     label: "Mobile viewport configured",
@@ -544,7 +703,7 @@ export async function viewportMeta(ctx: FetchCtx): Promise<CheckResult> {
       ? `No <meta name="viewport">. Page renders zoomed-out on phones.`
       : pass
       ? `Viewport tag set for mobile.`
-      : `Viewport tag exists but is missing width=device-width.`,
+      : `Viewport tag is set to "${truncate(content, 60)}" — no width or initial-scale, so phones render it zoomed out.`,
   };
 }
 
@@ -607,7 +766,10 @@ const PLACEHOLDER_PATTERNS: RegExp[] = [
   /\bdeploy succeeded\b/i, // Vercel default placeholder
   /\bplaceholder text\b/i,
   /\bcoming soon\.{0,3}$/im, // standalone "coming soon" line, not a future-tense mention
-  /\btodo:?\s/i,
+  // Requires the colon. "Todo" on its own is a real product word — it's a
+  // column header in every issue tracker, and matching it bare failed
+  // linear.app for shipping its own workflow states.
+  /\bTODO:/,
 ];
 
 export async function placeholderText(ctx: FetchCtx): Promise<CheckResult> {
@@ -695,13 +857,17 @@ export async function custom404(ctx: FetchCtx): Promise<CheckResult> {
   const url = new URL(randomPath, ctx.finalUrl).toString();
   try {
     const res = await fetchWithTimeout(url, {}, 6000);
-    // 200 → SPA serving a catch-all shell (Next.js, Vite SPA, etc.)
+    // 200 on a path that doesn't exist is a soft 404, not a feature. Google
+    // crawls the URL, sees a success status on a page with no real content,
+    // and files it under "Soft 404" — which suppresses the URL and drags on
+    // the site's crawl budget. A catch-all SPA shell is the usual cause and
+    // it is still the bug, not an excuse: the server has to answer 404.
     if (res.status === 200) {
       return {
         id: "custom-404",
         label: "Custom 404 handling",
-        pass: true,
-        detail: `Unknown path returns 200. Handled by your client-side router.`,
+        pass: false,
+        detail: `Unknown paths return HTTP 200 instead of 404. Google files these as soft 404s, which wastes crawl budget and can suppress real pages.`,
       };
     }
     if (res.status === 404) {
@@ -715,6 +881,15 @@ export async function custom404(ctx: FetchCtx): Promise<CheckResult> {
         detail: pass
           ? `404 page returns ${visible.length} chars of content. Looks custom.`
           : `404 returns ${visible.length} chars. Looks like the framework default.`,
+      };
+    }
+    // 410 Gone is a stronger signal than 404 and Google honours it the same way.
+    if (res.status === 410) {
+      return {
+        id: "custom-404",
+        label: "Custom 404 handling",
+        pass: true,
+        detail: `Unknown paths return HTTP 410 Gone. Crawlers drop them cleanly.`,
       };
     }
     return {
@@ -749,24 +924,27 @@ export async function appleTouchIcon(ctx: FetchCtx): Promise<CheckResult> {
     };
   }
   const href = match[0].match(/href=["']([^"']+)["']/i)?.[1];
-  if (!href) {
+  const url = href ? resolveUrl(href, ctx.finalUrl) : null;
+  if (!url) {
     return {
       id: "apple-touch-icon",
       label: "Apple touch icon present",
       pass: false,
-      detail: `apple-touch-icon link tag found but has no href.`,
+      detail: href
+        ? `apple-touch-icon href "${truncate(href, 60)}" isn't a fetchable URL.`
+        : `apple-touch-icon link tag found but has no href.`,
     };
   }
+  const shown = displayUrl(url, ctx.finalUrl);
   // Verify the file actually loads.
   try {
-    const url = new URL(href, ctx.finalUrl).toString();
-    const res = await fetchWithTimeout(url, { method: "HEAD" }, 5000);
+    const res = await fetchWithTimeout(url.toString(), { method: "HEAD" }, 5000);
     return {
       id: "apple-touch-icon",
       label: "Apple touch icon present",
       pass: res.ok,
       detail: res.ok
-        ? `apple-touch-icon loads from ${new URL(url).pathname}.`
+        ? `apple-touch-icon loads from ${shown}.`
         : `apple-touch-icon URL returned ${res.status}.`,
     };
   } catch {
@@ -774,7 +952,7 @@ export async function appleTouchIcon(ctx: FetchCtx): Promise<CheckResult> {
       id: "apple-touch-icon",
       label: "Apple touch icon present",
       pass: false,
-      detail: `Could not load apple-touch-icon at ${href}.`,
+      detail: `Could not load apple-touch-icon at ${shown}.`,
     };
   }
 }
@@ -1074,16 +1252,19 @@ export async function manifestJson(ctx: FetchCtx): Promise<CheckResult> {
     };
   }
   const href = match[0].match(/href=["']([^"']+)["']/i)?.[1];
-  if (!href) {
+  const manifestUrl = href ? resolveUrl(href, ctx.finalUrl) : null;
+  if (!manifestUrl) {
     return {
       id: "manifest-json",
       label: "Web App Manifest present",
       pass: false,
-      detail: `manifest link tag has no href.`,
+      detail: href
+        ? `manifest href "${truncate(href, 60)}" isn't a fetchable URL.`
+        : `manifest link tag has no href.`,
     };
   }
   try {
-    const url = new URL(href, ctx.finalUrl).toString();
+    const url = manifestUrl.toString();
     const res = await fetchWithTimeout(url, {}, 5000);
     if (!res.ok) {
       return {
@@ -1119,7 +1300,7 @@ export async function manifestJson(ctx: FetchCtx): Promise<CheckResult> {
       id: "manifest-json",
       label: "Web App Manifest present",
       pass: false,
-      detail: `Could not load manifest from ${href}.`,
+      detail: `Could not load manifest from ${displayUrl(manifestUrl, ctx.finalUrl)}.`,
     };
   }
 }
