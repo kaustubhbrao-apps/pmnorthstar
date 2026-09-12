@@ -1034,6 +1034,22 @@ export default function HomeClient() {
               interactivity, not page structure. */}
           {!isFiltered ? (
             <div className="pb-12">
+              {/* The homepage's primary heading. The design opens straight
+                  into the hero carousel with no room for a marketing
+                  headline, so the only h1 in the markup used to be the
+                  carousel's lead slide — whichever drill shipped most
+                  recently. Google reads the h1 as what the page is about,
+                  and it was being told the homepage was about Lego.
+
+                  Visually hidden, not hidden from crawlers: this is the
+                  honest heading for the page and it matches the <title>
+                  and the wordmark in the nav. Counts come from the same
+                  published* arrays the page renders, so it can't drift. */}
+              <h1 className="sr-only">
+                northstar — a free product management library of {caseStudies.length} case
+                studies, {books.length} book reviews, {answers.length} answers and{" "}
+                {playlists.length} playlists
+              </h1>
               {heroBook && <HeroBanner onNavChange={setActiveNav} />}
 
               {/* Stats ticker. Solid-color magazine grid — each tile its

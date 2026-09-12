@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { aiDecodedManifest } from "@/data/aiDecodedManifest";
 import { publishedDrills } from "@/data/drills";
+import { drillTitle } from "@/lib/drills";
 import {
   CASE_STUDY_COUNT,
   BOOK_COUNT,
@@ -19,13 +20,6 @@ interface HeroBannerProps {
 const latestAI = aiDecodedManifest[0];
 const latestDrill = publishedDrills()[0];
 const CHECKIT_TOTAL = 35;
-
-function drillTitle(slug: string): string {
-  return slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", {
@@ -110,15 +104,19 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
               </span>
             </div>
 
-            <h1
+            {/* h2, like every other slide in this carousel. It was an h1,
+                which made the newest drill the homepage's primary heading —
+                Google read the whole site as being about whatever scenario
+                shipped last. The page's real h1 lives in HomeClient. */}
+            <h2
               className="text-3xl sm:text-5xl lg:text-[4rem] font-bold leading-[1.05] mb-4 sm:mb-6 tracking-tight"
               style={{
                 color: "var(--text-primary)",
                 letterSpacing: "-0.03em",
               }}
             >
-              {drillTitle(latestDrill.slug)}
-            </h1>
+              {drillTitle(latestDrill)}
+            </h2>
             <p
               className="text-lg sm:text-xl leading-relaxed mb-6 sm:mb-10 max-w-xl hidden sm:block"
               style={{ color: "var(--text-muted)" }}
