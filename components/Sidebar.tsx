@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, Trophy, ArrowUpRight, Users, HelpCircle } from "lucide-react";
+import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, Trophy, ArrowUpRight, HelpCircle } from "lucide-react";
 import {
   CASE_STUDY_COUNT,
   BOOK_COUNT,
@@ -204,19 +204,6 @@ export function Sidebar({
             >
               <Sparkles size={15} strokeWidth={1.6} />
               <span style={{ letterSpacing: "-0.005em" }}>AI Decoded</span>
-            </Link>
-          </div>
-
-          <div className="pt-4">
-            <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Collections</p>
-
-            <Link href="/for/product-managers" onClick={onClose} className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "product-managers" ? "active" : ""}`}>
-              <Users size={15} strokeWidth={1.6} />
-              <span style={{ letterSpacing: "-0.005em" }}>Product Managers</span>
-            </Link>
-            <Link href="/for/founders" onClick={onClose} className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "founders" ? "active" : ""}`}>
-              <Users size={15} strokeWidth={1.6} />
-              <span style={{ letterSpacing: "-0.005em" }}>Founders</span>
             </Link>
           </div>
 
