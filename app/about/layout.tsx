@@ -4,13 +4,14 @@ import { SITE_INFO } from "@/lib/site";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
 export const metadata: Metadata = {
-  title: "About northstar",
-  description: `${SITE_INFO.shortDescription} An honest look at the editorial process, what's deliberately excluded, and how to reach us.`,
+  title: "About",
+  description:
+    "northstar is a free, opinionated library for product managers and builders — case studies, book reviews, and simulations. No paywall, no fluff.",
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     type: "website",
     url: `${SITE_URL}/about`,
-    title: "About northstar",
+    title: "About — northstar",
     description: SITE_INFO.shortDescription,
     siteName: "northstar",
   },

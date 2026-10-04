@@ -17,7 +17,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: "AI Decoded — northstar",
+  title: "AI Decoded — Practical AI for Product People",
   description:
     "What is actually happening in AI and what PMs, founders and operators should do about it. Commentary on launches and tools. No hype, no fluff.",
   alternates: { canonical: `${SITE_URL}/ai-decoded` },

@@ -9,7 +9,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 const LAST_UPDATED = "2026-05-24";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy, northstar",
+  title: "Privacy Policy",
   description:
     "How northstar handles data. We collect almost none, share less, and never sell anything. Plain-language privacy policy.",
   alternates: { canonical: `${SITE_URL}/privacy` },

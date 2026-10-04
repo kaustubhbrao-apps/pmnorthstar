@@ -106,8 +106,8 @@ export function Sidebar({
           <X size={18} />
         </button>
 
-        {/* Logo */}
-        <div className="px-3 mb-8">
+        {/* Logo — links to homepage (standard UX expectation) */}
+        <Link href="/" onClick={onClose} className="block px-3 mb-8">
           <div className="flex items-center gap-2.5">
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center"
@@ -121,17 +121,16 @@ export function Sidebar({
             </div>
           </div>
           <p className="text-sm mt-2 ml-0.5" style={{ color: "var(--text-faint)" }}>PM resources, curated</p>
-        </div>
+        </Link>
 
-        {/* Nav */}
+        {/* Nav — grouped by function to stay within Miller's number */}
         <nav className="flex-1 space-y-0.5 overflow-y-auto scroll-container">
-          <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Navigate</p>
+          <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Browse</p>
 
           {primaryNav.map((item) => (
             <NavLink key={item.id} {...item} />
           ))}
 
-          {/* India — separate Link because it's a different route (not a tab) */}
           <Link
             href="/india"
             onClick={onClose}
@@ -141,102 +140,76 @@ export function Sidebar({
             <span style={{ letterSpacing: "-0.005em" }}>India</span>
           </Link>
 
-          {/* Answers — question-shaped reference pages. Its own nav entry
-              rather than a home-page tab because every one of them is a
-              landing page for a specific search, not a browse surface. */}
-          <Link
-            href="/answers"
-            onClick={onClose}
-            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "answers" ? "active" : ""}`}
-          >
-            <HelpCircle size={15} strokeWidth={1.6} />
-            <span style={{ letterSpacing: "-0.005em" }}>Answers</span>
-          </Link>
+          <div className="pt-4">
+            <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Tools</p>
 
-          {/* AI Decoded — editorial section on AI launches + tools */}
-          <Link
-            href="/ai-decoded"
-            onClick={onClose}
-            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "ai-decoded" ? "active" : ""}`}
-          >
-            <Sparkles size={15} strokeWidth={1.6} />
-            <span style={{ letterSpacing: "-0.005em" }}>AI Decoded</span>
-          </Link>
+            <Link
+              href="/checkit"
+              onClick={onClose}
+              className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "checkit" ? "active" : ""}`}
+            >
+              <Gauge size={15} strokeWidth={1.6} />
+              <span style={{ letterSpacing: "-0.005em" }}>CheckIt</span>
+            </Link>
 
-          {/* CheckIt — site readiness scorecard. Its own destination
-              since it's a tool, not a library section. */}
-          <Link
-            href="/checkit"
-            onClick={onClose}
-            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "checkit" ? "active" : ""}`}
-          >
-            <Gauge size={15} strokeWidth={1.6} />
-            <span style={{ letterSpacing: "-0.005em" }}>CheckIt</span>
-          </Link>
+            <Link
+              href="/simulate"
+              onClick={onClose}
+              className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "simulate" ? "active" : ""}`}
+            >
+              <Brain size={15} strokeWidth={1.6} />
+              <span style={{ letterSpacing: "-0.005em" }}>SimulateIt</span>
+              <span
+                className="ml-auto text-xs font-semibold px-1.5 py-0.5 rounded"
+                style={{
+                  background: activeNav === "simulate" ? "rgba(255, 255, 255, 0.25)" : "rgba(219, 39, 119, 0.18)",
+                  color: activeNav === "simulate" ? "#ffffff" : "#DB2777",
+                }}
+              >
+                NEW
+              </span>
+            </Link>
 
-          {/* SimulateIt — decision-practice drills. NEW badge while it's
-              the newest tool in the family. */}
-          <Link
-            href="/simulate"
-            onClick={onClose}
-            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "simulate" ? "active" : ""}`}
-          >
-            <Brain size={15} strokeWidth={1.6} />
-            <span style={{ letterSpacing: "-0.005em" }}>SimulateIt</span>
-            <span
-              className="ml-auto text-xs font-semibold px-1.5 py-0.5 rounded"
+            <Link
+              href="/league"
+              onClick={onClose}
+              className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "league" ? "active" : ""}`}
               style={{
-                background: activeNav === "simulate" ? "rgba(255, 255, 255, 0.25)" : "rgba(219, 39, 119, 0.18)",
-                color: activeNav === "simulate" ? "#ffffff" : "#DB2777",
+                background: activeNav === "league" ? "rgba(250, 204, 21, 0.1)" : "transparent",
               }}
             >
-              NEW
-            </span>
-          </Link>
+              <Trophy size={15} strokeWidth={1.8} style={{ color: "#FACC15" }} />
+              <span style={{ letterSpacing: "-0.005em", color: activeNav === "league" ? "#FACC15" : "inherit" }}>
+                Simulation League
+              </span>
+            </Link>
+          </div>
 
-          {/* Simulation League — The Hype Page */}
-          <Link
-            href="/league"
-            onClick={onClose}
-            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "league" ? "active" : ""}`}
-            style={{
-              background: activeNav === "league" ? "rgba(250, 204, 21, 0.1)" : "transparent",
-            }}
-          >
-            <Trophy size={15} strokeWidth={1.8} style={{ color: "#FACC15" }} />
-            <span style={{ letterSpacing: "-0.005em", color: activeNav === "league" ? "#FACC15" : "inherit" }}>
-              Simulation League
-            </span>
-          </Link>
+          <div className="pt-4">
+            <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Editorial</p>
 
-          {/* Builder Draft — temporarily hidden
-          <Link
-            href="/draft"
-            onClick={onClose}
-            className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "draft" ? "active" : ""}`}
-            style={{
-              background: activeNav === "draft" ? "rgba(212, 16, 47, 0.1)" : "transparent",
-            }}
-          >
-            <Users size={15} strokeWidth={1.8} style={{ color: activeNav === "draft" ? "#D4102F" : "inherit" }} />
-            <span style={{ letterSpacing: "-0.005em", color: activeNav === "draft" ? "#D4102F" : "inherit" }}>
-              Builder Draft
-            </span>
-            <span
-              className="ml-auto text-xs font-semibold px-1.5 py-0.5 rounded"
-              style={{
-                background: activeNav === "draft" ? "rgba(212, 16, 47, 0.25)" : "rgba(212, 16, 47, 0.18)",
-                color: activeNav === "draft" ? "#ffffff" : "#D4102F",
-              }}
+            <Link
+              href="/answers"
+              onClick={onClose}
+              className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "answers" ? "active" : ""}`}
             >
-              NEW
-            </span>
-          </Link>
-          */}
+              <HelpCircle size={15} strokeWidth={1.6} />
+              <span style={{ letterSpacing: "-0.005em" }}>Answers</span>
+            </Link>
 
-          <div className="pt-5">
+            <Link
+              href="/ai-decoded"
+              onClick={onClose}
+              className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "ai-decoded" ? "active" : ""}`}
+            >
+              <Sparkles size={15} strokeWidth={1.6} />
+              <span style={{ letterSpacing: "-0.005em" }}>AI Decoded</span>
+            </Link>
+          </div>
+
+          <div className="pt-4">
             <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Collections</p>
-            
+
             <Link href="/for/product-managers" onClick={onClose} className={`nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${activeNav === "product-managers" ? "active" : ""}`}>
               <Users size={15} strokeWidth={1.6} />
               <span style={{ letterSpacing: "-0.005em" }}>Product Managers</span>
@@ -247,7 +220,7 @@ export function Sidebar({
             </Link>
           </div>
 
-          <div className="pt-5">
+          <div className="pt-4">
             <p className="text-sm font-medium px-3 mb-2 uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>Library</p>
 
             <NavLink

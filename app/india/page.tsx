@@ -21,7 +21,6 @@ import {
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: "Product Management in India — northstar",
   description: "A curated library for Indian product managers, founders, and operators. Long-form Indian case studies, in the same depth as the global ones.",
 };
 

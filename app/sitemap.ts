@@ -93,6 +93,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/privacy`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
       url: `${SITE_URL}/simulate`,
       lastModified: now,
       changeFrequency: "weekly",
@@ -103,6 +109,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/simulate/rules`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
     // /draft temporarily hidden
     // { url: `${SITE_URL}/draft`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

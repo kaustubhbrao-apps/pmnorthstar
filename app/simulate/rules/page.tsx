@@ -4,7 +4,7 @@ import { Clock, Shield, Target, Users, Zap, ChevronLeft } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 
 export const metadata: Metadata = {
-  title: "Rules | Simulation League | Northstar",
+  title: "Rules — Simulation League",
   description: "Official rules and scoring for the Simulation League: how drills score across product, strategy, business and crisis, and how weekly ranking works.",
   alternates: { canonical: "/simulate/rules" },
 };

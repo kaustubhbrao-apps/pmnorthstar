@@ -1024,7 +1024,18 @@ export default function HomeClient() {
                 <span className="hidden sm:inline">Log out</span>
               </button>
             </div>
-          ) : null}
+          ) : (
+            <a
+              href="https://www.producthunt.com/products/northstar-3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-opacity hover:opacity-80"
+              style={{ background: "#DA552F", color: "#ffffff" }}
+            >
+              Featured on Product Hunt
+              <ArrowUpRight size={11} strokeWidth={2.5} />
+            </a>
+          )}
         </div>
 
         <main className="flex-1 overflow-y-auto scroll-container">
