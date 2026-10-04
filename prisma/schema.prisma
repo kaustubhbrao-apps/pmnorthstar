@@ -31,7 +31,6 @@ model User {
   leagueReferrals     LeagueReferral[]     @relation("Referrer")
   leagueReferred      LeagueReferral[]     @relation("Referred")
   inAppNotifications  InAppNotification[]
-  builderDraftAttempts BuilderDraftAttempt[]
 
   @@map("users")
 }
@@ -145,18 +144,6 @@ model DrillAttempt {
   @@map("drill_attempts")
 }
 
-model BuilderDraftAttempt {
-  id          String   @id @default(uuid())
-  userId      String   @map("user_id")
-  archetypeId String   @map("archetype_id")
-  stats       Json
-  attemptedAt DateTime @default(now()) @map("attempted_at")
-
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
-  @@map("builder_draft_attempts")
-}
 
 model LeagueReferral {
   id         String   @id @default(uuid())
