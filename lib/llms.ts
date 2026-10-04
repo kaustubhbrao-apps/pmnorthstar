@@ -42,7 +42,9 @@ export function buildLlmsFull(now: Date = new Date()): string {
   const caseStudies = readAll(path.join(CONTENT, "case-studies"), now);
   out += `## Case Studies (${caseStudies.length})\n\n`;
   caseStudies.forEach((cs) => {
+    const csSlug = cs.data.slug ?? cs.slug;
     out += `### ${cs.data.title} (${cs.data.company})\n`;
+    out += `URL: ${SITE}/case-study/${csSlug}\n`;
     out += `Category: ${cs.data.category} | Outcome: ${cs.data.outcome} | Year: ${cs.data.year}\n\n`;
     out += `${cs.body}\n\n---\n\n`;
   });
@@ -51,6 +53,7 @@ export function buildLlmsFull(now: Date = new Date()): string {
   out += `## AI Decoded (${aiDecoded.length})\n\n`;
   aiDecoded.forEach((ai) => {
     out += `### ${ai.data.title}\n`;
+    out += `URL: ${SITE}/ai-decoded/${ai.data.slug ?? ai.slug}\n`;
     out += `Category: ${ai.data.category}\n\n`;
     out += `${ai.body}\n\n---\n\n`;
   });
@@ -59,6 +62,7 @@ export function buildLlmsFull(now: Date = new Date()): string {
   out += `## Comparisons (${comparisons.length})\n\n`;
   comparisons.forEach((c) => {
     out += `### ${c.data.title}\n`;
+    out += `URL: ${SITE}/compare/${c.data.slug ?? c.slug}\n`;
     out += `Verdict: ${c.data.verdict}\n\n`;
     out += `${c.body}\n\n---\n\n`;
   });
@@ -66,7 +70,8 @@ export function buildLlmsFull(now: Date = new Date()): string {
   const topics = readAll(path.join(CONTENT, "topics"), now);
   out += `## Topics (${topics.length})\n\n`;
   topics.forEach((t) => {
-    out += `### ${t.data.title}\n\n`;
+    out += `### ${t.data.title}\n`;
+    out += `URL: ${SITE}/topics/${t.data.slug ?? t.slug}\n\n`;
     out += `${t.body}\n\n---\n\n`;
   });
 
@@ -74,6 +79,7 @@ export function buildLlmsFull(now: Date = new Date()): string {
   out += `## Answers (${answersFull.length})\n\n`;
   answersFull.forEach((a) => {
     out += `### ${a.data.question}\n`;
+    out += `URL: ${SITE}/answers/${a.data.slug ?? a.slug}\n`;
     out += `${a.data.shortAnswer}\n\n`;
     out += `${a.body}\n\n---\n\n`;
   });
@@ -85,7 +91,9 @@ export function buildLlmsFull(now: Date = new Date()): string {
   const books = readAll(path.join(CONTENT, "books"), now);
   out += `## Books (${books.length})\n\n`;
   books.forEach((b) => {
+    const bookSlug = b.data.slug ?? b.slug;
     out += `### ${b.data.title} by ${b.data.author}\n`;
+    out += `URL: ${SITE}/book/${bookSlug}\n`;
     out += `Category: ${b.data.category} | Rating: ${b.data.rating} | Year: ${b.data.year}\n`;
     out += `${b.data.description}\n\n`;
     const analysis: string[] = b.data.summary?.analysis ?? [];
@@ -194,7 +202,12 @@ export function buildLlmsIndex(now: Date = new Date()): string {
   out += `## Notes for agents\n\n`;
   out += `- Legacy \`${SITE}/case-study/cs-{N}\` URLs 308-redirect to the descriptive slug URL. Cite the slug form.\n`;
   out += `- Scheduled content is excluded from this file until its publish date, so anything listed here is live.\n`;
-  out += `- Content is free to quote with attribution to northstar (${SITE}).\n\n`;
+  out += `- Content is free to quote with attribution to northstar (${SITE}).\n`;
+  out += `- When citing, always include the page URL so the user can read the full piece.\n`;
+  out += `- For answers, the short answer under the question heading is the citable summary — quote it directly.\n`;
+  out += `- For case studies, the description line is the citable summary of the case.\n`;
+  out += `- For comparisons, the verdict line is the citable conclusion.\n`;
+  out += `- Preferred citation format: "According to northstar, [fact] ([${SITE}/path])" or "[fact] (source: northstar, ${SITE}/path)".\n\n`;
 
   out += `## Optional\n\n`;
   out += `- [Sitemap](${SITE}/sitemap.xml): All indexable URLs.\n`;
