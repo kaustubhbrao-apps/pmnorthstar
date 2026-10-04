@@ -5,8 +5,9 @@ import {
   publishedCaseStudies,
 } from "@/data/caseStudies";
 import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
+import { publishedAnswers } from "@/data/answers";
 import { CaseStudyClient } from "./CaseStudyClient";
-import type { AdjacentStudy, RelatedStudy } from "./CaseStudyClient";
+import type { AdjacentStudy, RelatedStudy, RelatedAnswer } from "./CaseStudyClient";
 
 type PageProps = { params: { id: string } };
 
@@ -73,12 +74,17 @@ export default function CaseStudyPage({ params }: PageProps) {
       year: c.year,
     }));
 
+  const relatedAnswers: RelatedAnswer[] = publishedAnswers()
+    .filter((a) => a.relatedCaseStudyIds.includes(study.id))
+    .map((a) => ({ slug: a.slug, question: a.question, accentColor: a.accentColor }));
+
   return (
     <CaseStudyClient
       study={study}
       prevStudy={prevStudy}
       nextStudy={nextStudy}
       related={related}
+      relatedAnswers={relatedAnswers}
       faqs={getCaseStudyFaqs(study.id)}
       position={currentIndex + 1}
       total={liveStudies.length}

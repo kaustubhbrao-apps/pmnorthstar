@@ -1421,6 +1421,44 @@ export const answers: Answer[] = [
     ],
   },
   {
+    slug: "what-is-a-pivot",
+    question: "What is a pivot in product management?",
+    shortAnswer: "A pivot is a structured change in strategy — keeping what you have learned but changing the product, market, or business model to pursue a better opportunity. It is not a restart; it is a course correction informed by evidence. Slack pivoted from a failed game to a messaging tool. Instagram pivoted from a location check-in app to a photo-sharing app.",
+    bodyHtml: "<h2>Types of pivots</h2>\n<p>Eric Ries catalogued several pivot types, but three account for most successful pivots in practice.</p>\n<p><strong>Zoom-in pivot</strong> — a single feature of the existing product becomes the entire product. Instagram was Burbn, a location check-in app with photo sharing. The check-ins were forgettable; the photo filters were addictive. The founders dropped everything except photos and launched Instagram.</p>\n<p><strong>Customer segment pivot</strong> — the product works, but for a different audience than intended. Slack was built as an internal tool for a game studio. The game failed, but the team noticed that the chat tool they had built was better than anything on the market. They pivoted from game development to enterprise messaging.</p>\n<p><strong>Platform pivot</strong> — the product shifts from an application to a platform, or vice versa. Shopify started as an online snowboard store. The founders realised that the store-building software they had created was more valuable than the store itself, and pivoted from e-commerce retailer to e-commerce platform.</p>\n<h2>The signal to pivot</h2>\n<p>The clearest signal is when a subset of users is getting extraordinary value from the product for a reason you did not design for. Pinterest started as Tote, a mobile shopping app. The founders noticed that users were saving products to look at later but never buying. The saving behaviour — collecting and organising visual inspiration — was the real product. They pivoted from shopping to visual bookmarking.</p>\n<p>The second signal is when retention curves never flatten. If every cohort decays toward zero regardless of improvements, the product is not solving a problem that matters enough. At that point, the question is not &quot;how do we improve retention&quot; but &quot;are we solving the right problem.&quot;</p>\n<h2>What you keep</h2>\n<p>The hardest part of a pivot is deciding what to keep and what to discard. The answer is: keep the learning, discard the attachment. Evernote&#39;s trajectory illustrates what happens when a company refuses to pivot — the note-taking market evolved toward collaboration and Evernote stayed stubbornly individual, watching Notion absorb the use case they had defined. The learning was there (users wanted to organise knowledge), but the team held on to a product shape that the market had outgrown.</p>\n<p>A successful pivot requires the discipline to let go of sunk cost — the code you wrote, the brand you built, the positioning you crafted — and redirect all of that energy toward the opportunity that the data is showing you.</p>\n",
+    category: "Strategy",
+    metaTitle: "Product Pivots Explained — When and How to Change Direction",
+    metaDescription: "What a pivot is, the difference between a pivot and a failure, when to pivot versus persevere, and how Slack, Instagram, and Pinterest found their real product.",
+    keywords: [
+      "product pivot",
+      "startup pivot",
+      "when to pivot",
+      "pivot vs persevere",
+      "pivot strategy"
+    ],
+    accentColor: "#059669",
+    relatedCaseStudyIds: [
+      "cs-10",
+      "cs-1d2e3f4g",
+      "cs-47",
+      "cs-142"
+    ],
+    updatedAt: "2026-10-04",
+    faqs: [
+      {
+        question: "What is the difference between a pivot and a failure?",
+        answer: "A pivot preserves the insight. The team learned something from the failed approach and applies that learning to a new direction. A failure without a pivot is when the team either gives up or repeats the same approach hoping for different results. Slack's game failed, but the team chat tool they built internally was the insight they preserved."
+      },
+      {
+        question: "How do you know when to pivot?",
+        answer: "When the data says the current approach is not working and you have a credible hypothesis for why a different approach would. The signals are: consistently low retention despite iteration, a subset of users using the product for something you did not intend, or a market shift that invalidates your original thesis."
+      },
+      {
+        question: "Is every startup pivot successful?",
+        answer: "No. Most pivots fail too. The advantage of a pivot over a restart is that you keep your team, your remaining capital, and whatever you learned. But the new direction still needs to find product-market fit, and there is no guarantee it will."
+      }
+    ],
+  },
+  {
     slug: "what-is-a-prd",
     question: "What is a PRD and what goes in one?",
     shortAnswer: "A product requirements document states the problem, who has it, what success looks like, and what's in and out of scope. Its purpose is alignment before building, not documentation after. A PRD nobody argues with in review is usually too vague to be useful.",
@@ -1456,6 +1494,45 @@ export const answers: Answer[] = [
     ],
   },
   {
+    slug: "what-is-a-product-moat",
+    question: "What is a product moat?",
+    shortAnswer: "A product moat is a structural advantage that makes a product increasingly difficult to displace over time. Unlike brand or regulation, a product moat is built into how the product works — network effects, switching costs, data advantages, or embedding into a customer's workflow so deeply that ripping it out is more painful than living with it.",
+    bodyHtml: "<h2>The four structural moats</h2>\n<p><strong>Network effects</strong> — the product becomes more valuable as more people use it. Discord is more useful when your friends are on it. Figma is more useful when your collaborators are on it. The strength of a network effect depends on how local or global it is: Discord&#39;s network effects are per-community (local and replicable), while a marketplace&#39;s are per-geography (harder to replicate).</p>\n<p><strong>Switching costs</strong> — leaving is harder than staying. Shopify merchants have their inventory, themes, apps, and payment processing wired through the platform. Moving to a competitor means rebuilding everything, retraining staff, and risking downtime during the migration. The switching cost is not the software price; it is the operational disruption.</p>\n<p><strong>Data advantages</strong> — the product improves from usage data that competitors cannot access. Every search on Google improves Google&#39;s ranking algorithm. Every transaction on Stripe improves Stripe&#39;s fraud detection. The moat is not having data; it is having data that compounds into better product decisions.</p>\n<p><strong>Embedding</strong> — the product becomes infrastructure that other products depend on. Stripe is embedded in the payment flow of millions of businesses. Ripping it out requires rewriting billing code, migrating payment methods, and re-certifying PCI compliance. The deeper the integration, the wider the moat.</p>\n<h2>Why moats erode</h2>\n<p>Every moat has a decay function. Network effects weaken when the network fragments — Myspace had network effects until Facebook proved that a better product could pull users across. Switching costs decrease when an ecosystem standardises on open formats. Data advantages shrink when the underlying models become commoditised. Embedding erodes when platforms offer native alternatives. The question is never whether a moat will erode, but whether it compounds faster than it decays.</p>\n<h2>Building versus borrowing a moat</h2>\n<p>The most durable moats are earned through product decisions, not purchased through acquisitions. Apple&#39;s ecosystem moat — where iMessage, AirDrop, iCloud, and hardware interlock — was built over fifteen years of deliberate integration choices. Each product decision made the next one easier and the ecosystem harder to leave. A moat that emerges from how the product is used is harder to replicate than one that exists because of a contractual lock-in or an artificial restriction.</p>\n",
+    category: "Strategy",
+    metaTitle: "Product Moats Explained — The Structural Advantages That Compound",
+    metaDescription: "What product moats are, how network effects and switching costs work in practice, and why Apple, Shopify, and Stripe have moats that competitors cannot easily copy.",
+    keywords: [
+      "product moat",
+      "competitive moat",
+      "network effects",
+      "switching costs",
+      "defensibility",
+      "product strategy"
+    ],
+    accentColor: "#7C3AED",
+    relatedCaseStudyIds: [
+      "cs-1",
+      "cs-25",
+      "cs-76",
+      "cs-64"
+    ],
+    updatedAt: "2026-10-04",
+    faqs: [
+      {
+        question: "What is the strongest type of product moat?",
+        answer: "Network effects that grow with usage are generally the strongest because they create a self-reinforcing loop — more users make the product better, which attracts more users. But the strongest moat for a specific company depends on context. Stripe's moat is integration depth, not network effects."
+      },
+      {
+        question: "Can startups have moats?",
+        answer: "Not usually at the start. Moats are built, not launched with. What a startup can have is a moat thesis — a clear plan for which structural advantage will develop as the product scales. Investors evaluate whether the thesis is credible, not whether the moat exists yet."
+      },
+      {
+        question: "Is brand a moat?",
+        answer: "Brand is a moat in consumer products where purchase decisions are emotional and frequent — beverages, fashion, luxury goods. In software, brand creates preference but rarely prevents switching. A developer who prefers GitHub will still move to GitLab if their company mandates it."
+      }
+    ],
+  },
+  {
     slug: "what-is-a-product-roadmap",
     question: "What is a product roadmap and how detailed should it be?",
     shortAnswer: "A product roadmap communicates what you intend to build and why, over time. The useful version states problems and outcomes rather than dated features — because dated feature lists become promises, and promises made twelve months out are wrong in ways that damage trust when they change.",
@@ -1487,6 +1564,44 @@ export const answers: Answer[] = [
       {
         question: "What's the difference between a roadmap and a backlog?",
         answer: "A roadmap is a communication artefact about direction, aimed at stakeholders. A backlog is an execution artefact about the next units of work, aimed at the team. Presenting a backlog as a roadmap is how stakeholders end up tracking ticket titles."
+      }
+    ],
+  },
+  {
+    slug: "what-is-a-product-wedge",
+    question: "What is a product wedge?",
+    shortAnswer: "A product wedge is a deliberately narrow initial product that gets a startup into a market it intends to expand within. The wedge solves one specific problem well enough to earn trust and distribution, then the company uses that foothold to launch adjacent products. Stripe started with a payments API; Shopify started with an online store builder.",
+    bodyHtml: "<h2>Why start narrow</h2>\n<p>The instinct in product development is to build the platform first — the complete solution that handles everything. The instinct is usually wrong. A broad product competes on every front simultaneously, which means it is mediocre on every front simultaneously. A narrow wedge competes on one front, which means it can be excellent at one thing. Excellence at one thing earns trust. Trust earns the right to expand.</p>\n<p>Stripe launched with seven lines of code that let a developer accept a payment. They did not launch with billing, invoicing, fraud detection, tax compliance, or treasury. Each of those came later, after the developer who integrated Stripe for payments discovered they also needed billing, and Stripe was already in their codebase.</p>\n<h2>The expansion logic</h2>\n<p>A good wedge creates a natural expansion path. Shopify started by helping merchants build an online store. Once the store was live, merchants needed payments (Shopify Payments), shipping (Shopify Shipping), capital (Shopify Capital), and point-of-sale for physical retail. Each expansion was a response to a problem the merchant already had, not a new product looking for a customer. Razorpay followed a similar arc in India — payment gateway first, then payroll, then banking, each following the money flow of the same business customer.</p>\n<p>The expansion logic has to be demand-side, not supply-side. &quot;We could build this because we have the engineering team&quot; is supply-side reasoning and usually produces products nobody asked for. &quot;Our customers keep asking us for this, and they trust us because of the wedge&quot; is demand-side reasoning and usually produces products that sell on day one.</p>\n<h2>Choosing the right wedge</h2>\n<p>The wedge must sit at a chokepoint in the customer&#39;s workflow — a place where you handle something frequently and see enough of the customer&#39;s context to know what else they need. LinkedIn&#39;s wedge was professional profiles; from there they expanded into recruiting, advertising, and learning. Canva&#39;s wedge was social media graphics; from there they expanded into presentations, documents, and enterprise design. Both wedges were high-frequency, visible, and naturally adjacent to larger markets.</p>\n<p>A wedge that solves a one-time problem — say, company registration — gives you a customer for a day. A wedge that solves a recurring problem gives you a customer for years, and years of usage give you the data and trust to expand.</p>\n",
+    category: "Strategy",
+    metaTitle: "Product Wedge Strategy — How Startups Enter Markets They Plan to Own",
+    metaDescription: "What a product wedge is, how Stripe and Shopify used narrow entry points to build platforms, and how to choose a wedge that leads to expansion rather than a dead end.",
+    keywords: [
+      "product wedge",
+      "wedge strategy",
+      "startup market entry",
+      "land and expand",
+      "go-to-market strategy"
+    ],
+    accentColor: "#0891B2",
+    relatedCaseStudyIds: [
+      "cs-25",
+      "cs-52",
+      "cs-14",
+      "cs-30"
+    ],
+    updatedAt: "2026-10-04",
+    faqs: [
+      {
+        question: "How is a product wedge different from an MVP?",
+        answer: "An MVP tests whether a problem is worth solving. A wedge tests whether a specific entry point leads to a larger market. The MVP question is 'do people want this?'. The wedge question is 'does owning this give us the right to build what comes next?'."
+      },
+      {
+        question: "Can a wedge become a trap?",
+        answer: "Yes. If the wedge product attracts a customer base that does not want or need the expansion products, the company gets stuck. Evernote's note-taking wedge attracted casual users who had no need for enterprise collaboration, making expansion painful."
+      },
+      {
+        question: "What makes a good product wedge?",
+        answer: "Three things: it solves a real problem (not a stepping stone people tolerate), it puts you in the customer's workflow regularly (not a one-time use), and the data or relationship you build from it creates a natural bridge to the next product."
       }
     ],
   },
@@ -1562,6 +1677,44 @@ export const answers: Answer[] = [
     ],
   },
   {
+    slug: "what-is-a-two-sided-marketplace",
+    question: "What is a two-sided marketplace?",
+    shortAnswer: "A two-sided marketplace is a platform that connects two interdependent groups — typically buyers and sellers, or supply and demand — where each side's value depends on the other side's participation. The core challenge is the cold-start problem: neither side joins without the other. Airbnb, Uber, and DoorDash are canonical examples.",
+    bodyHtml: "<h2>The bootstrap problem</h2>\n<p>Every marketplace starts with nothing on both sides. The standard solution is to subsidise one side — usually supply — until there is enough for the demand side to have a useful experience. Uber gave early drivers guaranteed hourly minimums so they would stay online even when ride requests were sparse. Airbnb&#39;s founders famously went door-to-door in New York photographing apartments to build initial supply.</p>\n<p>The alternative is to start with a use case where one side is already aggregated. DoorDash started in Palo Alto, where Stanford students (demand) were concentrated in a small area and local restaurants (supply) were within a few square miles. The geographic density meant that a small number of participants on each side could create a liquid experience.</p>\n<h2>Why geography matters</h2>\n<p>Most marketplace network effects are local, not global. A rider in Mumbai does not benefit from Uber having drivers in London. This means every new city is a cold start from scratch — but it also means a competitor cannot displace you in a city where you are already liquid just by being bigger globally. Marketplace competition is usually a city-by-city land grab, not a global winner-take-all.</p>\n<h2>The take rate</h2>\n<p>A marketplace&#39;s business model is the take rate — the percentage of each transaction that the platform keeps. Take rates vary from 5% (real estate) to 30% (food delivery) depending on how much value the platform adds. The more the platform does (matching, payments, logistics, insurance, dispute resolution), the higher the justifiable take rate. But take rates that are too high push participants to transact off-platform, which is the constant threat to every marketplace.</p>\n<h2>Disintermediation</h2>\n<p>The existential risk for a marketplace is disintermediation — buyers and sellers meeting through the platform, then transacting directly to avoid fees. Marketplaces defend against this by embedding themselves into the transaction: handling payments, providing insurance, managing reviews, or offering logistics that neither side wants to handle themselves. Airbnb&#39;s protection guarantee and Uber&#39;s real-time pricing are not just features; they are disintermediation defences.</p>\n",
+    category: "Growth",
+    metaTitle: "Two-Sided Marketplaces Explained — Cold Start, Liquidity, and Network Effects",
+    metaDescription: "What two-sided marketplaces are, how to solve the cold-start problem, why liquidity matters more than user count, and how Airbnb and Uber bootstrapped supply.",
+    keywords: [
+      "two-sided marketplace",
+      "marketplace strategy",
+      "cold start problem",
+      "network effects marketplace",
+      "supply and demand platform"
+    ],
+    accentColor: "#8B5CF6",
+    relatedCaseStudyIds: [
+      "cs-3",
+      "cs-80",
+      "cs-uber-2011-843",
+      "cs-10"
+    ],
+    updatedAt: "2026-10-04",
+    faqs: [
+      {
+        question: "What is the cold-start problem?",
+        answer: "The cold-start problem is the chicken-and-egg dilemma of a new marketplace: buyers will not come without sellers, and sellers will not come without buyers. Every successful marketplace had to find a creative way to bootstrap one side first — usually supply — before the other side had a reason to show up."
+      },
+      {
+        question: "What is marketplace liquidity?",
+        answer: "Liquidity is the probability that a participant on one side will find what they are looking for from the other side within a reasonable time. A marketplace with high liquidity feels effortless: riders get a car in three minutes, guests find an available listing in their city. Low liquidity feels broken, even if the marketplace has millions of users."
+      },
+      {
+        question: "Can a marketplace have more than two sides?",
+        answer: "Yes. Advertising-supported platforms are often three-sided: users, content creators, and advertisers. Each side depends on the others. But complexity scales faster than linearly with sides, so most marketplace builders focus on getting two sides right before adding a third."
+      }
+    ],
+  },
+  {
     slug: "what-is-a-viral-loop",
     question: "What is a viral loop?",
     shortAnswer: "A viral loop is a cycle where using the product causes existing users to bring new ones, who then repeat the cycle. It's measured by the viral coefficient (K) — new users generated per existing user per cycle. K above 1 compounds; below 1, it usefully lowers acquisition cost but doesn't grow on its own.",
@@ -1594,6 +1747,44 @@ export const answers: Answer[] = [
       {
         question: "What's the difference between a viral loop and word of mouth?",
         answer: "A viral loop is built into product usage — sharing is how the product works. Word of mouth is people choosing to recommend you separately. Both are valuable; only the loop can be engineered and measured directly."
+      }
+    ],
+  },
+  {
+    slug: "what-is-an-activation-metric",
+    question: "What is an activation metric?",
+    shortAnswer: "An activation metric measures whether a new user has reached the moment where they first experience the product's core value. It is the strongest leading indicator of retention — users who activate retain at dramatically higher rates than those who do not. Slack's activation metric was sending 2,000 messages as a team; Facebook's was adding 7 friends in 10 days.",
+    bodyHtml: "<h2>Why activation matters more than acquisition</h2>\n<p>Most growth teams spend the majority of their energy on acquisition — getting more people to sign up. But the gap between a signup and an active user is where most products lose. If 1,000 people sign up and 100 activate, improving activation from 10% to 20% doubles your effective user base without spending a dollar on acquisition. Activation is the multiplier that makes every other growth investment worthwhile.</p>\n<p>Facebook&#39;s growth team discovered this in 2008. The insight was not that people needed to sign up — signups were growing. The insight was that users who added 7 friends within their first 10 days retained at fundamentally higher rates. The entire growth team reoriented around that single metric. Every feature, every notification, every onboarding flow was evaluated against one question: does this help new users add 7 friends in 10 days?</p>\n<h2>Defining the metric</h2>\n<p>The activation metric must be specific, measurable, and causally connected to retention. &quot;Used the product&quot; is too vague. &quot;Completed a lesson&quot; (Duolingo) or &quot;sent 2,000 messages as a team&quot; (Slack) are specific enough to build around. The specificity matters because it tells the product team exactly what to optimise.</p>\n<p>The metric should also be achievable within a reasonable window. If activation requires weeks of effort, most users will churn before they get there. Netflix&#39;s activation is arguably finishing one show — something achievable in a single session. Notion&#39;s is creating a page and sharing it with someone — achievable within minutes. The faster the activation, the steeper the retention curve.</p>\n<h2>The trap of false activation</h2>\n<p>A common mistake is defining activation as a vanity action — something easy to measure that does not actually predict retention. &quot;Created an account&quot; is not activation. &quot;Visited the dashboard&quot; is not activation. These actions are necessary precursors but do not represent value delivery. The test is always: do users who take this action retain at significantly higher rates than those who do not? If the difference is marginal, you have not found your activation metric.</p>\n<h2>Optimising for activation</h2>\n<p>Once you have the metric, the product roadmap writes itself. Every friction point between signup and activation is a candidate for removal. Every feature that accelerates activation is a candidate for promotion. Duolingo&#39;s entire onboarding — the placement test, the streak mechanic, the first lesson — is engineered to get users to complete their first lesson within five minutes of downloading the app. Nothing in the onboarding exists that does not serve activation.</p>\n",
+    category: "Metrics",
+    metaTitle: "Activation Metrics Explained — The Moment That Predicts Retention",
+    metaDescription: "What activation metrics are, why they predict retention better than any other signal, and how Slack, Facebook, and Duolingo defined theirs.",
+    keywords: [
+      "activation metric",
+      "user activation",
+      "aha moment",
+      "time to value",
+      "activation rate"
+    ],
+    accentColor: "#F59E0B",
+    relatedCaseStudyIds: [
+      "cs-42",
+      "cs-9",
+      "cs-4",
+      "cs-7"
+    ],
+    updatedAt: "2026-10-04",
+    faqs: [
+      {
+        question: "How do you find your activation metric?",
+        answer: "Compare the behaviours of users who retained at 30 or 60 days against those who churned. The actions that differ most — where retained users did something and churned users did not — are your activation candidates. Then test whether causing more users to take that action actually improves retention. Correlation is the hypothesis; causation is the test."
+      },
+      {
+        question: "Is the activation metric the same as the aha moment?",
+        answer: "They overlap but are not identical. The aha moment is a subjective experience — when the user understands the value. The activation metric is the measurable proxy for that experience. They are the same when the metric is well-chosen and different when the metric tracks a vanity action that does not actually correlate with understanding."
+      },
+      {
+        question: "Can a product have more than one activation metric?",
+        answer: "Yes, if the product serves different use cases or personas. A collaboration tool might have one activation metric for the admin who sets up the workspace and another for the team member who joins it. What matters is that each metric predicts retention for its segment."
       }
     ],
   },
@@ -1911,6 +2102,44 @@ export const answers: Answer[] = [
       {
         question: "Isn't this a lot of overhead for a small team?",
         answer: "One thirty-minute conversation a week is less overhead than a quarter spent building the wrong thing. Small teams usually find it cheaper than research phases, because there's no ramp-up cost each time."
+      }
+    ],
+  },
+  {
+    slug: "what-is-feature-creep",
+    question: "What is feature creep?",
+    shortAnswer: "Feature creep is the gradual, uncontrolled expansion of a product's feature set beyond its original scope — typically driven by customer requests, competitor pressure, or internal enthusiasm rather than a coherent strategy. Each individual feature seems reasonable; the cumulative result is a bloated product that is hard to use, slow to ship, and expensive to maintain.",
+    bodyHtml: "<h2>How it happens</h2>\n<p>Feature creep rarely arrives as a single bad decision. It accumulates through hundreds of small, defensible ones. A customer asks for a feature. A competitor ships one. A stakeholder has a vision for an adjacent use case. Each request is individually reasonable, and saying yes to any single one costs little. But the compound cost is enormous: more surface area to maintain, more complexity in the interface, more edge cases in testing, and a slower release cycle.</p>\n<p>Snapchat&#39;s Discover tab, Spectacles hardware, map features, mini-apps, and original shows each made strategic sense in isolation. Together they turned a simple messaging app into a confusing platform that new users struggled to navigate. The redesign that followed was effectively an admission that feature creep had damaged the core experience.</p>\n<h2>The maintenance tax</h2>\n<p>Every feature has an ongoing cost. It needs to work with every other feature. It needs to be tested when the platform changes. It generates support tickets. It appears in the interface and adds cognitive load for every user, not just the users who wanted it. Yahoo learned this at scale — by the mid-2000s, Yahoo&#39;s portal had accumulated so many features (mail, news, finance, weather, games, shopping, answers, groups) that no team could maintain the whole, and the experience fragmented into disconnected verticals that Google&#39;s focused search page easily displaced.</p>\n<p>The maintenance tax is invisible because it is distributed. No single feature&#39;s maintenance cost seems high. But the total tax — across hundreds of features, multiplied by years — is often the reason engineering teams feel slow despite growing headcount.</p>\n<h2>Saying no is a feature</h2>\n<p>The products that endure tend to be the ones that say no the most. Linear&#39;s issue tracker explicitly chose to restrict custom fields and complex workflows, even though enterprise customers requested them, because the team understood that configurability was the thing that had made Jira slow and hated. The restriction was not a limitation; it was the product.</p>\n<p>Microsoft learned the inverse lesson with Windows. Each version added features to satisfy enterprise checklists and consumer trends, until the system was so laden with legacy that a clean rewrite became necessary. The hardest product discipline is removing features that real users actually use, because some users are always worse off. But if the feature undermines the core experience for the majority, removing it is the right call.</p>\n",
+    category: "Prioritisation",
+    metaTitle: "Feature Creep Explained — How Products Become Bloated",
+    metaDescription: "What feature creep is, why it happens even to disciplined teams, how Evernote and Snapchat suffered from it, and frameworks for preventing it without saying no to everything.",
+    keywords: [
+      "feature creep",
+      "scope creep",
+      "feature bloat",
+      "product bloat",
+      "feature prioritisation"
+    ],
+    accentColor: "#EF4444",
+    relatedCaseStudyIds: [
+      "cs-142",
+      "cs-47",
+      "cs-45",
+      "cs-41"
+    ],
+    updatedAt: "2026-10-04",
+    faqs: [
+      {
+        question: "What is the difference between feature creep and scope creep?",
+        answer: "Scope creep happens within a project — the requirements grow while you are building. Feature creep happens across a product's lifetime — the product accumulates features over months and years until the original simplicity is gone. Scope creep is a project management problem; feature creep is a product strategy problem."
+      },
+      {
+        question: "How do you prevent feature creep?",
+        answer: "By having a clear product thesis that every feature must serve, by tracking the cost of complexity (support tickets, onboarding drop-off, engineering maintenance), and by building a culture where removing features is as celebrated as adding them. The hardest part is saying no to features that are individually good but collectively harmful."
+      },
+      {
+        question: "Can feature creep kill a product?",
+        answer: "Yes. Evernote added food tracking, chat, and a hardware stylus while its core note-taking experience stagnated. The complexity confused users and burned engineering resources on features that did not reinforce the product's value. By the time Notion arrived with a cleaner, more opinionated approach, Evernote's users were ready to leave."
       }
     ],
   },

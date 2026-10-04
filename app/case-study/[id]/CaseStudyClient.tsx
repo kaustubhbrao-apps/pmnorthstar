@@ -44,11 +44,18 @@ export type RelatedStudy = Pick<
   "id" | "title" | "category" | "company" | "logo" | "year"
 >;
 
+export type RelatedAnswer = {
+  slug: string;
+  question: string;
+  accentColor: string;
+};
+
 interface CaseStudyClientProps {
   study: CaseStudy | null;
   prevStudy: AdjacentStudy | null;
   nextStudy: AdjacentStudy | null;
   related: RelatedStudy[];
+  relatedAnswers: RelatedAnswer[];
   faqs: FAQ[];
   /** 1-based position of this study among published ones, for the "N of M" label. */
   position: number;
@@ -61,6 +68,7 @@ export function CaseStudyClient({
   prevStudy,
   nextStudy,
   related,
+  relatedAnswers,
   faqs,
   position,
   total,
@@ -485,6 +493,35 @@ export function CaseStudyClient({
                         </Link>
                       );
                     })}
+                  </div>
+                </div>
+              )}
+
+              {relatedAnswers.length > 0 && (
+                <div
+                  className="py-10"
+                  style={{ borderTop: "1.5px solid var(--card-border)" }}
+                >
+                  <h2
+                    className="text-xl sm:text-2xl font-semibold mb-1"
+                    style={{ color, letterSpacing: "-0.02em" }}
+                  >
+                    Concepts explained
+                  </h2>
+                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
+                    Answers that reference this case study.
+                  </p>
+                  <div className="flex flex-col gap-2">
+                    {relatedAnswers.map((a) => (
+                      <Link
+                        key={a.slug}
+                        href={`/answers/${a.slug}`}
+                        className="text-sm font-medium hover:underline"
+                        style={{ color: a.accentColor }}
+                      >
+                        {a.question} →
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}

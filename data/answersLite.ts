@@ -286,6 +286,13 @@ export const answersLite: AnswerLite[] = [
     accentColor: "#EA580C",
   },
   {
+    slug: "what-is-a-pivot",
+    question: "What is a pivot in product management?",
+    shortAnswer: "A pivot is a structured change in strategy — keeping what you have learned but changing the product, market, or business model to pursue a better opportunity. It is not a restart; it is a course correction informed by evidence. Slack pivoted from a failed game to a messaging tool. Instagram pivoted from a location check-in app to a photo-sharing app.",
+    category: "Strategy",
+    accentColor: "#059669",
+  },
+  {
     slug: "what-is-a-prd",
     question: "What is a PRD and what goes in one?",
     shortAnswer: "A product requirements document states the problem, who has it, what success looks like, and what's in and out of scope. Its purpose is alignment before building, not documentation after. A PRD nobody argues with in review is usually too vague to be useful.",
@@ -293,11 +300,25 @@ export const answersLite: AnswerLite[] = [
     accentColor: "#9B8FFF",
   },
   {
+    slug: "what-is-a-product-moat",
+    question: "What is a product moat?",
+    shortAnswer: "A product moat is a structural advantage that makes a product increasingly difficult to displace over time. Unlike brand or regulation, a product moat is built into how the product works — network effects, switching costs, data advantages, or embedding into a customer's workflow so deeply that ripping it out is more painful than living with it.",
+    category: "Strategy",
+    accentColor: "#7C3AED",
+  },
+  {
     slug: "what-is-a-product-roadmap",
     question: "What is a product roadmap and how detailed should it be?",
     shortAnswer: "A product roadmap communicates what you intend to build and why, over time. The useful version states problems and outcomes rather than dated features — because dated feature lists become promises, and promises made twelve months out are wrong in ways that damage trust when they change.",
     category: "Prioritisation",
     accentColor: "#26A69A",
+  },
+  {
+    slug: "what-is-a-product-wedge",
+    question: "What is a product wedge?",
+    shortAnswer: "A product wedge is a deliberately narrow initial product that gets a startup into a market it intends to expand within. The wedge solves one specific problem well enough to earn trust and distribution, then the company uses that foothold to launch adjacent products. Stripe started with a payments API; Shopify started with an online store builder.",
+    category: "Strategy",
+    accentColor: "#0891B2",
   },
   {
     slug: "what-is-a-retention-curve",
@@ -314,11 +335,25 @@ export const answersLite: AnswerLite[] = [
     accentColor: "#DB2777",
   },
   {
+    slug: "what-is-a-two-sided-marketplace",
+    question: "What is a two-sided marketplace?",
+    shortAnswer: "A two-sided marketplace is a platform that connects two interdependent groups — typically buyers and sellers, or supply and demand — where each side's value depends on the other side's participation. The core challenge is the cold-start problem: neither side joins without the other. Airbnb, Uber, and DoorDash are canonical examples.",
+    category: "Growth",
+    accentColor: "#8B5CF6",
+  },
+  {
     slug: "what-is-a-viral-loop",
     question: "What is a viral loop?",
     shortAnswer: "A viral loop is a cycle where using the product causes existing users to bring new ones, who then repeat the cycle. It's measured by the viral coefficient (K) — new users generated per existing user per cycle. K above 1 compounds; below 1, it usefully lowers acquisition cost but doesn't grow on its own.",
     category: "Growth",
     accentColor: "#0F9D58",
+  },
+  {
+    slug: "what-is-an-activation-metric",
+    question: "What is an activation metric?",
+    shortAnswer: "An activation metric measures whether a new user has reached the moment where they first experience the product's core value. It is the strongest leading indicator of retention — users who activate retain at dramatically higher rates than those who do not. Slack's activation metric was sending 2,000 messages as a team; Facebook's was adding 7 friends in 10 days.",
+    category: "Metrics",
+    accentColor: "#F59E0B",
   },
   {
     slug: "what-is-an-ai-agent",
@@ -382,6 +417,13 @@ export const answersLite: AnswerLite[] = [
     shortAnswer: "Continuous discovery is the practice of talking to customers every week, as an ongoing habit, rather than in project-shaped research phases. The premise is that a small weekly touchpoint compounds into judgment, while a research sprint every six months produces a report that ages before it's used.",
     category: "Discovery",
     accentColor: "#9B8FFF",
+  },
+  {
+    slug: "what-is-feature-creep",
+    question: "What is feature creep?",
+    shortAnswer: "Feature creep is the gradual, uncontrolled expansion of a product's feature set beyond its original scope — typically driven by customer requests, competitor pressure, or internal enthusiasm rather than a coherent strategy. Each individual feature seems reasonable; the cumulative result is a bloated product that is hard to use, slow to ship, and expensive to maintain.",
+    category: "Prioritisation",
+    accentColor: "#EF4444",
   },
   {
     slug: "what-is-generative-engine-optimization",

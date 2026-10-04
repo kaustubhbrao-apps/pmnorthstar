@@ -15,7 +15,7 @@ export { getCaseStudySlug, isLegacyId } from "./caseStudySlugs";
 // content/case-studies/, so it advances on its own as scheduled studies go
 // live instead of being hand-bumped and silently going stale. Sitemap reads
 // this so Google sees a lastModified date that is actually true.
-export const CASE_STUDIES_LAST_UPDATED = "2026-09-09";
+export const CASE_STUDIES_LAST_UPDATED = "2026-09-27";
 
 export interface CaseStudy {
   id: string;
