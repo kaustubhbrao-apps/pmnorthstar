@@ -74,6 +74,19 @@ export default function StartupWebsiteAuditReport() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Research", item: `${SITE_URL}${URL_PATH}` },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "Report",
             headline: `We audited ${S.audited} YC startup websites`,
             datePublished: S.ranAt,

@@ -24,6 +24,19 @@ export default function PrivacyPage() {
       backLabelDesktop="Back to the library"
       backLabelMobile="Back"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Privacy Policy", item: `${SITE_URL}/privacy` },
+            ],
+          }),
+        }}
+      />
       <div className="flex flex-col min-w-0">
         <section
           className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"

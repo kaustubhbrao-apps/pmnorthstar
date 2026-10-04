@@ -49,11 +49,19 @@ export default function BooksIndexPage() {
       shareTitle="Book reviews on northstar"
       shareText="Original long-form reviews of essential product, startup and management books."
     >
-      {/* CollectionPage + ItemList.
-          These three hubs exist so the detail pages have a crawl entry
-          point; without an ItemList an assistant still has to fetch the
-          hub and parse markup to learn what it contains. The list is the
-          page's whole substance, so it belongs in the structured data. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Books", item: `${SITE_URL}/book` },
+            ],
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

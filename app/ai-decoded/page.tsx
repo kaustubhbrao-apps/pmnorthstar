@@ -42,8 +42,19 @@ export default function AIDecodedIndexPage() {
       shareTitle="AI Decoded by northstar"
       shareText="What's actually happening in AI, and what PMs / marketers / founders should do about it."
     >
-      {/* Hero — neutral background, green eyebrow accent ties back to
-          the AI Decoded card on the home page without overwhelming. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "AI Decoded", item: `${SITE_URL}/ai-decoded` },
+            ],
+          }),
+        }}
+      />
       <section
         className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
         style={{ borderBottom: "1.5px solid var(--card-border)" }}

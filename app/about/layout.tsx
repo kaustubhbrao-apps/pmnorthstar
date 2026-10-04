@@ -34,6 +34,19 @@ export default function AboutLayout({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "About", item: `${SITE_URL}/about` },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "AboutPage",
             url: `${SITE_URL}/about`,
             mainEntity: {

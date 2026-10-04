@@ -37,11 +37,19 @@ export default function CompareIndexPage() {
       shareTitle="Comparisons on northstar"
       shareText="Head-to-head product breakdowns: two companies, the same market, opposite bets."
     >
-      {/* CollectionPage + ItemList.
-          These three hubs exist so the detail pages have a crawl entry
-          point; without an ItemList an assistant still has to fetch the
-          hub and parse markup to learn what it contains. The list is the
-          page's whole substance, so it belongs in the structured data. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE_URL}/compare` },
+            ],
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
