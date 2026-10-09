@@ -109,34 +109,19 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ─── Simulation League Logic ─────────────────────────────────────────
+    // The Simulation League was removed — attempts still save a logged-in
+    // user's score and per-dimension breakdown, but no competitive league
+    // points are awarded. The leaguePoints / referral plumbing below is left
+    // inert (never triggers) rather than migrated away.
 
-    // 1. Is this the first attempt?
+    // Is this the first attempt? (still recorded on the attempt row)
     const previousAttempt = await prisma.drillAttempt.findFirst({
       where: { userId: session.id, drillSlug },
     });
     const isFirstAttempt = !previousAttempt;
 
-    // 2. Is this an active League Match within its scoring window?
-    let isActiveLeagueMatch = false;
-    
-    if (drill.isLeagueMatch) {
-      const now = new Date();
-      if (drill.leagueEndsAt) {
-        if (now <= new Date(drill.leagueEndsAt)) {
-          isActiveLeagueMatch = true;
-        }
-      } else {
-        // If no end date is specified, it's always active
-        isActiveLeagueMatch = true;
-      }
-    }
-
-    // 3. Points assignment
-    let leaguePointsEarned = 0;
-    if (isFirstAttempt && isActiveLeagueMatch) {
-      leaguePointsEarned = score;
-    }
+    const isActiveLeagueMatch = false;
+    const leaguePointsEarned = 0;
 
     // 4. Record the attempt in a transaction to ensure points sync
     const attempt = await prisma.$transaction(async (tx) => {

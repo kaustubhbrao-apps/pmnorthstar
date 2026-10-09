@@ -7,8 +7,6 @@ category: Strategy
 year: 2011
 estimatedMinutes: 15
 publishedAt: '2026-10-04T15:00:00+00:00'
-isLeagueMatch: true
-leagueEndsAt: '2026-10-11T15:00:00+00:00'
 principle: |
   Choosing an exclusive partnership with a distant third-place ecosystem over an open standard is a fatal error. Ecosystem network effects are nearly impossible to overcome once a duopoly is established, no matter how much capital is spent.
 intro: |

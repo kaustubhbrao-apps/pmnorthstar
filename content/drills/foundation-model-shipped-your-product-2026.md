@@ -5,8 +5,6 @@ caseStudySlug: foundation-model-shipped-your-product-2026
 type: current
 category: strategic
 publishedAt: '2026-08-19T15:00:00+00:00'
-isLeagueMatch: true
-leagueEndsAt: '2026-08-26T15:00:00+00:00'
 estimatedMinutes: 6
 principle: |
   When a foundation-model lab absorbs your category as a feature, the

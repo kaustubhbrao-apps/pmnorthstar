@@ -5,8 +5,6 @@ caseStudySlug: amazon-fire-phone-flop-2014
 type: historical
 category: product
 publishedAt: '2026-07-05T15:00:00+00:00'
-isLeagueMatch: true
-leagueEndsAt: '2026-07-12T15:00:00+00:00'
 year: 2014
 estimatedMinutes: 10
 principle: Hardware is unforgiving. Feature bloat and chasing top-tier competitors

@@ -5,8 +5,6 @@ caseStudySlug: series-a-mid-pivot-2026
 type: current
 category: founding-funding
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-11-08T15:00:00+00:00'
 estimatedMinutes: 6
 principle: |
   The worst time to pivot is mid-fundraise. The second-worst time

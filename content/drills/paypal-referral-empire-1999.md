@@ -7,8 +7,6 @@ category: Growth
 year: 1999
 estimatedMinutes: 14
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-10-18T15:00:00+00:00'
 principle: |
   In a network effect business, acquiring the network is more valuable than preserving the capital. "Blitzscaling" requires buying distribution before the incumbents realize what you are doing. The cost of user acquisition in the early days of a network is an investment in a moat, not an operational expense.
 intro: |

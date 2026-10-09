@@ -113,25 +113,10 @@ export default async function SimulateMePage() {
 
   const userFull = await prisma.user.findUnique({
     where: { id: session.id },
-    select: { username: true, usernameChangedAt: true, leaguePoints: true, isAdmin: true }
+    select: { username: true, usernameChangedAt: true, isAdmin: true }
   });
 
-  let rankInfo = null;
-  let refInfo = null;
-  if (userFull && userFull.leaguePoints > 0) {
-    const rank = await prisma.user.count({ where: { leaguePoints: { gt: userFull.leaguePoints } } }) + 1;
-    const total = await prisma.user.count({ where: { leaguePoints: { gt: 0 } } });
-    rankInfo = { rank, total };
-
-    const refs = await prisma.leagueReferral.aggregate({
-      where: { referrerId: session.id },
-      _count: true,
-      _sum: { points: true }
-    });
-    refInfo = { count: refs._count, points: refs._sum.points || 0 };
-  }
-
-  const daysSinceUsernameChange = userFull?.usernameChangedAt 
+  const daysSinceUsernameChange = userFull?.usernameChangedAt
     ? (Date.now() - userFull.usernameChangedAt.getTime()) / (1000 * 60 * 60 * 24)
     : 30;
   const canChangeUsername = daysSinceUsernameChange >= 30;
@@ -270,39 +255,6 @@ export default async function SimulateMePage() {
             <span style={{ color: "var(--text-primary)" }}>{session.email}</span>.
           </p>
         </div>
-
-        {/* League Stats Card */}
-        {userFull && userFull.leaguePoints > 0 && rankInfo && (
-          <div className="mb-8 p-6 sm:p-8 rounded-2xl border" style={{ background: "var(--card-bg)", borderColor: "var(--brand-primary)" }}>
-            <div className="flex items-center gap-3 mb-6">
-              <Trophy className="w-6 h-6" style={{ color: "var(--brand-primary)" }} />
-              <h2 className="text-xl font-display font-bold text-white">League Stats</h2>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-              <div>
-                <p className="text-sm font-mono uppercase mb-2" style={{ color: "var(--text-faint)", letterSpacing: "0.12em" }}>Season 1 Rank</p>
-                <p className="text-3xl font-display font-bold text-white">
-                  #{rankInfo.rank} <span className="text-xl" style={{ color: "var(--text-muted)" }}>of {rankInfo.total}</span>
-                </p>
-              </div>
-              
-              <div>
-                <p className="text-sm font-mono uppercase mb-2" style={{ color: "var(--text-faint)", letterSpacing: "0.12em" }}>League Points</p>
-                <p className="text-3xl font-display font-bold" style={{ color: "var(--brand-primary)" }}>
-                  {userFull.leaguePoints.toLocaleString()}
-                </p>
-              </div>
-              
-              <div>
-                <p className="text-sm font-mono uppercase mb-2" style={{ color: "var(--text-faint)", letterSpacing: "0.12em" }}>Referral Bonuses</p>
-                <p className="text-3xl font-display font-bold text-white">
-                  +{refInfo?.points || 0} <span className="text-xl" style={{ color: "var(--text-muted)" }}>({refInfo?.count || 0} buddies)</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
 
         {totalAttempts === 0 ? (
           <EmptyState />

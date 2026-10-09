@@ -4,8 +4,6 @@ caseStudySlug: meta-vr-pivot-2021
 title: "The Reality Labs Pivot"
 type: historical
 category: strategic
-isLeagueMatch: true
-leagueEndsAt: '2026-09-23T15:00:00+00:00'
 publishedAt: '2026-09-16T15:00:00+00:00'
 estimatedMinutes: 12
 principle: |

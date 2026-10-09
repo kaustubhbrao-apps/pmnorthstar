@@ -5,8 +5,6 @@ caseStudySlug: zomato-blinkit-bet
 type: historical
 category: strategic
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-12-16T15:00:00+00:00'
 year: 2022
 estimatedMinutes: 5
 principle: |

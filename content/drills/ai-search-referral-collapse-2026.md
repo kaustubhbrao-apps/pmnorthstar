@@ -5,8 +5,6 @@ caseStudySlug: ai-search-referral-collapse-2026
 type: current
 category: growth
 publishedAt: '2026-07-01T15:00:00+00:00'
-isLeagueMatch: true
-leagueEndsAt: '2026-07-08T15:00:00+00:00'
 estimatedMinutes: 6
 principle: |
   When the distribution channel that built you starts shrinking, the

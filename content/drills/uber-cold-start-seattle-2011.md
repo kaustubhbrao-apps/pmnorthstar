@@ -7,8 +7,6 @@ category: Strategy
 year: 2011
 estimatedMinutes: 16
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-12-02T15:00:00+00:00'
 principle: In a two-sided marketplace, liquidity is the only metric that matters.
 intro: |
   It is March 2011. You are the Launch Lead for Uber. After a successful but small launch in San Francisco, you are tasked with opening your first expansion city: Seattle.

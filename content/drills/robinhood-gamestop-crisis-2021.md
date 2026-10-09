@@ -7,8 +7,6 @@ title: "The 3AM Margin Call: Clearinghouse Crisis"
 summary: "Navigate a massive clearinghouse liquidity crisis driven by an unprecedented retail trading frenzy. A masterclass in crisis management, PR disasters, and the arcane plumbing of the financial system."
 duration: "15 min"
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-11-04T15:00:00+00:00'
 nodes:
   start:
     dimension: business

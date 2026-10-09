@@ -38,10 +38,8 @@ import type {
 } from "@/data/drills";
 import { track } from "@/lib/track";
 import { SubscribeForm } from "@/components/SubscribeForm";
-import { LiveLeaderboard } from "@/components/LiveLeaderboard";
 import { useUserState } from "@/lib/use-user-state";
 import { AuthModal } from "@/components/AuthModal";
-import { CountdownTimer } from "@/components/CountdownTimer";
 
 type Phase = "intro" | "decision" | "reveal" | "outcome";
 
@@ -102,10 +100,9 @@ export function SimulatePlayer({
   drill: Drill;
   onComplete?: () => void;
 }) {
-  const isLeagueActive = !!drill.isLeagueMatch;
-
   const { isLoggedIn, loading: authLoading, username } = useUserState();
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
   const searchParams = useSearchParams();
   const referrerId = searchParams?.get("ref") || undefined;
 
@@ -150,8 +147,6 @@ export function SimulatePlayer({
   // attempts into the usage counter.
   const loggedCompletionRef = useRef(false);
 
-  const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
-
   const startDrillLogic = useCallback(() => {
     track({ name: "simulateit_drill_started", drill_slug: drill.slug });
     loggedCompletionRef.current = false;
@@ -177,12 +172,10 @@ export function SimulatePlayer({
     });
   }, [drill.slug]);
 
+  // SimulateIt is free, but we prompt a (free) sign-in so a player's score
+  // saves to their account. Not logged in? Offer sign-in, with an anonymous
+  // "play without saving" fallback. No league gating anymore.
   const begin = useCallback(() => {
-    if (!isLeagueActive) {
-      startDrillLogic();
-      return;
-    }
-
     if (authLoading) return;
     if (!isLoggedIn) {
       setPendingAction(() => startDrillLogic);
@@ -190,7 +183,7 @@ export function SimulatePlayer({
       return;
     }
     startDrillLogic();
-  }, [authLoading, isLoggedIn, startDrillLogic, isLeagueActive]);
+  }, [authLoading, isLoggedIn, startDrillLogic]);
 
   const selectOption = useCallback(
     (optionIndex: number) => {
@@ -313,14 +306,14 @@ export function SimulatePlayer({
       {/* Top breadcrumb */}
       <div className="flex items-center gap-2 mb-6 flex-wrap">
         <Link
-          href={isLeagueActive ? "/league" : "/simulate"}
+          href="/simulate"
           className="text-sm font-mono uppercase hover:opacity-70"
           style={{
             color: "var(--text-faint)",
             letterSpacing: "0.14em",
           }}
         >
-          ← {isLeagueActive ? "league" : "simulateit"}
+          ← simulateit
         </Link>
         <span
           className="text-sm font-mono"
@@ -372,10 +365,8 @@ export function SimulatePlayer({
       {state.phase === "intro" && (
         <IntroView 
           drill={drill} 
-          onBegin={begin} 
-          isLoggedIn={isLoggedIn} 
-          authLoading={authLoading} 
-          isLeagueActive={isLeagueActive} 
+          onBegin={begin}
+          authLoading={authLoading}
         />
       )}
       {state.phase === "decision" && currentNode && (
@@ -415,15 +406,15 @@ export function SimulatePlayer({
             setShowAuthModal(false);
             setPendingAction(null);
           }}
-          headline={isLeagueActive ? "Log in for the League" : "Sign in for points"}
-          subhead={isLeagueActive ? "This is an active League Match. To prevent cheating, you must log in to play. You only get one shot." : "Sign in with Google to get your score on the leaderboard. Or, you can play anonymously without earning points."}
-          secondaryAction={!isLeagueActive ? {
-            label: "Play without points",
+          headline="Sign in to save your score"
+          subhead="SimulateIt is free. Sign in with Google so your score and progress save to your account — or play anonymously without saving."
+          secondaryAction={{
+            label: "Play without saving",
             onClick: () => {
               setShowAuthModal(false);
               startDrillLogic();
             }
-          } : undefined}
+          }}
           onSuccess={() => {
             setShowAuthModal(false);
             if (pendingAction) {
@@ -446,15 +437,11 @@ export function SimulatePlayer({
 function IntroView({
   drill,
   onBegin,
-  isLoggedIn,
   authLoading,
-  isLeagueActive,
 }: {
   drill: Drill;
   onBegin: () => void;
-  isLoggedIn: boolean;
   authLoading: boolean;
-  isLeagueActive: boolean;
 }) {
   // Per-drill play count for social proof at the point of attempt —
   // the SimulateIt analog to CheckIt's "X sites scored" hero line.
@@ -472,12 +459,11 @@ function IntroView({
 
   // The title, the run-length/category line and the scenario prose are all
   // rendered on the server in page.tsx now, so they reach a crawler. What is
-  // left here is only what genuinely cannot be: the live play count and the
-  // League countdown, both of which need the browser.
+  // left here is only what genuinely cannot be: the live play count, which
+  // needs the browser.
   return (
     <div>
-      {(plays !== null && plays > 0) ||
-      (drill.isLeagueMatch && drill.leagueEndsAt) ? (
+      {plays !== null && plays > 0 ? (
         <div
           className="text-sm font-mono uppercase mb-5 inline-flex items-center gap-2 flex-wrap"
           style={{
@@ -485,38 +471,23 @@ function IntroView({
             letterSpacing: "0.14em",
           }}
         >
-          {plays !== null && plays > 0 && (
-            <span style={{ color: "var(--brand-primary)" }}>
-              {plays.toLocaleString()} {plays === 1 ? "play" : "plays"}
-            </span>
-          )}
-          {drill.isLeagueMatch && drill.leagueEndsAt && (
-            <span className="flex items-center gap-2">
-              {plays !== null && plays > 0 && <span>•</span>}
-              <span className="opacity-70">Points close in:</span>
-              <CountdownTimer targetDate={drill.leagueEndsAt} />
-            </span>
-          )}
+          <span style={{ color: "var(--brand-primary)" }}>
+            {plays.toLocaleString()} {plays === 1 ? "play" : "plays"}
+          </span>
         </div>
       ) : null}
 
       <button
         onClick={onBegin}
-        disabled={isLeagueActive && authLoading}
-        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${isLeagueActive && authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
+        disabled={authLoading}
+        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
         style={{
           background: "var(--brand-primary)",
           color: "#ffffff",
         }}
       >
         <Sparkles size={16} strokeWidth={2} />
-        {!isLeagueActive
-          ? "Begin the drill"
-          : authLoading
-          ? "Loading..."
-          : isLoggedIn
-          ? "Begin the drill"
-          : "Log in to play for the League"}
+        {authLoading ? "Loading..." : "Begin the drill"}
         <ArrowRight size={16} strokeWidth={2} />
       </button>
     </div>
@@ -853,7 +824,6 @@ function OutcomeView({
 
   const totalScore = history.reduce((sum, h) => sum + h.points, 0);
   const totalMax = DIMS.reduce((sum, d) => sum + scoreByDim[d].max, 0);
-  const isLeagueActive = !!drill.isLeagueMatch;
 
   const dominantDim = useMemo(() => {
     let best: DrillDimension = "product";
@@ -1224,13 +1194,6 @@ function OutcomeView({
         </details>
       )}
 
-      {/* Live Leaderboard for League Matches */}
-      {isLeagueActive && (
-        <div className="mb-8">
-          <LiveLeaderboard />
-        </div>
-      )}
-
       {/* Actions */}
       <div className="flex flex-wrap items-center gap-2.5">
         <button
@@ -1268,7 +1231,7 @@ function OutcomeView({
           Try a different path
         </button>
         <Link
-          href={isLeagueActive ? "/league" : "/simulate"}
+          href="/simulate"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors"
           style={{
             background: "var(--card-bg)",
@@ -1276,7 +1239,7 @@ function OutcomeView({
             border: "1.5px solid var(--card-border)",
           }}
         >
-          {isLeagueActive ? "Back to League" : "More drills"}
+          More drills
           <ArrowUpRight size={14} strokeWidth={2} />
         </Link>
       </div>

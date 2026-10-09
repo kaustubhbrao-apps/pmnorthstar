@@ -123,7 +123,7 @@ function PickUsernameContent() {
             Pick your username
           </h1>
           <p className="text-[var(--text-muted)] text-center mb-8 text-sm">
-            This will be your identity on the Simulation League leaderboard.
+            This is how your saved SimulateIt scores are labeled.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">

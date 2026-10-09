@@ -7,8 +7,6 @@ category: Strategy
 year: 1975
 estimatedMinutes: 15
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-11-15T15:00:00+00:00'
 principle: |
   In network effect markets, open standards and widespread adoption beat proprietary technical superiority.
   Owning 100% of a dead format is worth less than owning 10% of the industry standard. Product decisions

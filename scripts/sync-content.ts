@@ -914,8 +914,6 @@ function syncDrills() {
       fields.push(`    category: ${ts(d.category)}`);
       fields.push(`    publishedAt: ${ts(d.publishedAt)}`);
       if (d.year !== undefined) fields.push(`    year: ${d.year}`);
-      if (d.isLeagueMatch !== undefined) fields.push(`    isLeagueMatch: ${d.isLeagueMatch}`);
-      if (d.leagueEndsAt) fields.push(`    leagueEndsAt: ${ts(d.leagueEndsAt)}`);
       fields.push(`    estimatedMinutes: ${d.estimatedMinutes ?? 8}`);
       fields.push(`    principle: ${ts(d.principle || "")}`);
       fields.push(`    intro: ${ts(d.intro || "")}`);
@@ -958,8 +956,6 @@ export interface Drill {
   category: string;
   publishedAt: string;
   year?: number;
-  isLeagueMatch?: boolean;
-  leagueEndsAt?: string;
   estimatedMinutes: number;
   principle: string;
   intro: string;

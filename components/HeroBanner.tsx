@@ -82,25 +82,18 @@ export function HeroBanner({ onNavChange }: HeroBannerProps) {
               <span
                 className="inline-flex items-center gap-1.5 text-xs font-bold uppercase px-2.5 py-1 rounded-md"
                 style={{
-                  background: latestDrill.isLeagueMatch ? "var(--brand-primary)" : "#DB2777",
+                  background: "#DB2777",
                   color: "#ffffff",
                   letterSpacing: "0.12em",
                 }}
               >
-                {latestDrill.isLeagueMatch ? "Simulation League" : "SimulateIt"}
+                SimulateIt
               </span>
               <span
                 className="font-mono text-xs uppercase tracking-wider"
                 style={{ color: "var(--text-faint)" }}
               >
-                {latestDrill.isLeagueMatch ? (
-                  <span className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[var(--brand-primary)] animate-pulse shadow-[0_0_8px_var(--brand-primary)]" />
-                    Matchday {publishedDrills().filter(d => d.isLeagueMatch).length} is Live
-                  </span>
-                ) : (
-                  "Latest Scenario"
-                )}
+                Latest Scenario
               </span>
             </div>
 

@@ -7,8 +7,6 @@ category: Product
 year: 2016
 estimatedMinutes: 15
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-11-11T15:00:00+00:00'
 principle: |
   Artificial scarcity and guerilla marketing drive incredible initial hype, but mistaking that hype for sustainable product-market fit is a fatal hardware error. Hype doesn't equal retention. Failing to transition from viral distribution to scalable, demand-matched inventory destroys cash and hardware ambitions.
 intro: |

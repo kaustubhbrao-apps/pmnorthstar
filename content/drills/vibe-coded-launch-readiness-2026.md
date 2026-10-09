@@ -5,8 +5,6 @@ caseStudySlug: vibe-coded-launch-readiness-2026
 type: current
 category: scope
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-12-06T15:00:00+00:00'
 estimatedMinutes: 5
 principle: |
   Speed of building is now uncoupled from quality of shipping.

@@ -5,8 +5,6 @@ caseStudySlug: openai-consumer-device-launches-2026
 type: current
 category: strategic
 publishedAt: '2026-10-07T15:00:00+00:00'
-isLeagueMatch: true
-leagueEndsAt: '2026-10-14T15:00:00+00:00'
 estimatedMinutes: 6
 principle: |
   When a foundation-model lab ships hardware, every AI app builder

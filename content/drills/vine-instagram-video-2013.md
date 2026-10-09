@@ -7,8 +7,6 @@ category: Strategy
 year: 2013
 estimatedMinutes: 15
 publishedAt: "2026-10-09"
-isLeagueMatch: true
-leagueEndsAt: '2026-12-09T15:00:00+00:00'
 principle: |
   Product velocity and creator monetization trump pure product differentiation when fighting a platform war.
   If you own the culture but don't own the economics, someone else will eventually buy the culture from you.

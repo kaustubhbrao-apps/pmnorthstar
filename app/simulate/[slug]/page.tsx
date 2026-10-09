@@ -50,13 +50,11 @@ export default function DrillPage({ params }: PageProps) {
   if (!drill) notFound();
   if (new Date(drill.publishedAt) > new Date()) notFound();
 
-  const isLeagueActive = drill.isLeagueMatch;
-
   return (
     <SidebarShell
-      activeNav={isLeagueActive ? "league" : "simulate"}
-      backHref={isLeagueActive ? "/league" : "/"}
-      backLabelDesktop={isLeagueActive ? "Back to League" : "Back to the library"}
+      activeNav="simulate"
+      backHref="/"
+      backLabelDesktop="Back to the library"
       backLabelMobile="Back"
       shareTitle={`SimulateIt Drill: ${drillTitle(drill)}`}
       shareText={drill.principle}

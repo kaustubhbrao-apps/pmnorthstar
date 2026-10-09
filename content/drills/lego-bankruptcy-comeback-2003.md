@@ -7,8 +7,6 @@ category: strategy
 year: 2003
 estimatedMinutes: 18
 publishedAt: '2026-09-09T15:00:00+00:00'
-isLeagueMatch: true
-leagueEndsAt: '2026-09-16T15:00:00+00:00'
 principle: |
   Complexity is the silent killer of iconic brands. When an organization loses its core
   identity and tries to be everything to everyone, it dies under the weight of its own

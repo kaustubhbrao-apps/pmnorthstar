@@ -10,7 +10,6 @@ import {
   Sparkles,
   Gauge,
   Brain,
-  Trophy,
 } from "lucide-react";
 // Counts only — never import the full content datasets here. MobileNav is a
 // client component rendered by SidebarShell on nearly every page, so a data
@@ -88,28 +87,6 @@ export function MobileNav({ activeNav, onNavChange }: MobileNavProps) {
       {/* SimulateIt — newest tool, pinned at chip position 3 with the
           NEW badge so it gets the discovery moment. Pink #DB2777
           matches the home banner card + sidebar treatment. */}
-      {/* Simulation League — Hype page link in mobile nav */}
-      <Link
-        href="/league"
-        className="chip flex-shrink-0 inline-flex items-center gap-1.5"
-        style={{
-          borderColor: "rgba(243, 18, 60, 0.4)",
-          background: "rgba(243, 18, 60, 0.08)",
-        }}
-      >
-        <Trophy size={11} strokeWidth={1.6} style={{ color: "#F3123C" }} />
-        <span style={{ color: "var(--text-primary)" }}>League</span>
-        <span
-          className="text-[9px] font-semibold px-1 rounded"
-          style={{
-            background: "#F3123C",
-            color: "#fff",
-          }}
-        >
-          NEW
-        </span>
-      </Link>
-
       {/* SimulateIt */}
       <Link
         href="/simulate"
