@@ -3,13 +3,13 @@
 Single source of truth for what's been written and what's planned.
 Read this before drafting anything new to avoid duplicates.
 
-**Last regenerated:** 2026-09-08 from `content/`. Run `node scripts/build-content-tracker.mjs` to refresh.
+**Last regenerated:** 2026-10-09 from `content/`. Run `node scripts/build-content-tracker.mjs` to refresh.
 
 ---
 
-## Case Studies (143)
+## Case Studies (193)
 
-143 hand-written case studies. Indian region tagged separately at the bottom.
+193 hand-written case studies. Indian region tagged separately at the bottom.
 
 | # | Slug | Company | Category | Region |
 |---|---|---|---|---|
@@ -19,6 +19,7 @@ Read this before drafting anything new to avoid duplicates.
 | cs-ai-search-referral-2026 | `ai-search-referral-collapse-2026` | Global Tech Industry | Growth |  |
 | cs-3 | `airbnb-cereal-survival` | Airbnb | Product |  |
 | cs-71 | `airbnb-programmatic-seo` | Airbnb | Growth |  |
+| cs-181 | `allbirds-sustainable-d2c-footwear` | Allbirds | Design |  |
 | cs-amazon-fire-phone-2014 | `amazon-fire-phone-flop-2014` | Amazon | Product |  |
 | cs-amazon-prime-2005 | `amazon-prime-shipping-gamble-2005` | Amazon | Growth |  |
 | cs-21 | `amazon-working-backwards` | Amazon | Strategy |  |
@@ -30,25 +31,37 @@ Read this before drafting anything new to avoid duplicates.
 | cs-29 | `chatgpt-consumer-launch` | OpenAI | Strategy |  |
 | cs-30 | `canva-freemium-design` | Canva | Strategy |  |
 | cs-50 | `atlassian-no-sales-team` | Atlassian | Growth |  |
+| cs-51 | `cred-design-fintech` | Cred | Design | India |
 | cs-54 | `byjus-downfall` | Byju's | Failure | India |
+| cs-59 | `cult-fit-super-app` | Cult.fit | Strategy | India |
 | cs-64 | `discord-community-pivot` | Discord | Strategy |  |
 | cs-74 | `cloudflare-security-defaults` | Cloudflare | Strategy |  |
+| cs-80 | `doordash-suburban-logistics` | DoorDash | Growth |  |
 | cs-81 | `coinbase-compliance-moat` | Coinbase | Strategy |  |
 | cs-82 | `calendly-product-led-growth` | Calendly | Growth |  |
 | cs-101 | `coca-cola-hello-happiness` | Coca-Cola | Marketing |  |
 | cs-137 | `baca-systems-salesforce` | BACA Systems | Operations |  |
+| cs-149 | `datadog-unified-observability` | Datadog | Strategy |  |
+| cs-151 | `crowdstrike-falcon-cloud-agent` | CrowdStrike | Product |  |
+| cs-164 | `carta-cap-table-monopoly` | Carta | Product |  |
+| cs-170 | `delhivery-data-driven-logistics` | Delhivery | Product | India |
+| cs-173 | `dream11-fantasy-sports-legal-moat` | Dream11 | Strategy | India |
+| cs-175 | `classplus-b2b-creator-economy` | Classplus | Product | India |
+| cs-176 | `cleartax-tax-filing-simplification` | ClearTax | Product | India |
+| cs-177 | `coursera-freemium-degree-stacking` | Coursera | Strategy |  |
+| cs-184 | `casper-mattress-in-a-box-paradox` | Casper | Failure |  |
+| cs-185 | `bereal-unfiltered-ephemeral-fatigue` | BeReal | Failure |  |
+| cs-192 | `better-place-battery-swapping-collapse` | Better Place | Failure |  |
 | cs-bb-touch-4821 | `blackberry-touchscreen-delay-2008` | BlackBerry (RIM) | Strategy |  |
 | cs-37 | `blackberry-touchscreen-refusal` | Blackberry | Failure |  |
 | cs-69 | `boat-d2c-audio` | Boat | Growth | India |
 | cs-72 | `booking-cta-testing` | Booking.com | Growth |  |
+| cs-157 | `brex-corporate-cards-for-startups` | Brex | Product |  |
 | cs-claude-5-26 | `claude-5-ships-2026` | Anthropic | Strategic |  |
 | cs-club-fomo-9921 | `clubhouse-fomo-scaling-2020` | Clubhouse | Growth |  |
 | cs-competitor-roadmap-26 | `competitor-shipped-your-roadmap-2026` | SyncSpace | Strategic |  |
-| cs-51 | `cred-design-fintech` | Cred | Design | India |
-| cs-59 | `cult-fit-super-app` | Cult.fit | Strategy | India |
 | cs-cursor-ws-1102 | `cursor-vs-windsurf-2026` | Cursor & Codeium | Strategic |  |
 | cs-digg-v4-3392 | `digg-v4-redesign-2010` | Digg | Product |  |
-| cs-80 | `doordash-suburban-logistics` | DoorDash | Growth |  |
 | cs-dbx-ref-8921 | `dropbox-referral-engine-2008` | Dropbox | Growth |  |
 | cs-6 | `figma-browser-design` | Figma | Product |  |
 | cs-9 | `duolingo-gamification` | Duolingo | Product |  |
@@ -68,62 +81,89 @@ Read this before drafting anything new to avoid duplicates.
 | cs-46 | `intercom-jobs-to-be-done` | Intercom | Product |  |
 | cs-60 | `meesho-social-commerce` | Meesho | Growth | India |
 | cs-62 | `groww-zerodha-challenger` | Groww | Product | India |
+| cs-63 | `loom-async-video` | Loom | Product |  |
+| cs-73 | `linear-brand-from-day-one` | Linear | Product |  |
 | cs-75 | `github-polish-as-marketing` | GitHub | Growth |  |
+| cs-76 | `figma-pwa-bet` | Figma | Strategy |  |
 | cs-85 | `dunzo-hyperlocal-collapse` | Dunzo | Failure |  |
 | cs-142 | `evernote-filing-cabinet` | Evernote | Failure |  |
+| cs-161 | `klaviyo-ecommerce-owned-data` | Klaviyo | Product |  |
+| cs-172 | `khatabook-digital-ledger-bharat` | Khatabook | Product | India |
+| cs-188 | `essential-phone-modular-failure` | Essential Phone | Failure |  |
 | cs-fb-mobile-12 | `facebook-mobile-bet-2012` | Facebook (Meta) | Strategy |  |
 | cs-figma-web-15 | `figma-browser-gamble-2015` | Figma | Strategy |  |
-| cs-76 | `figma-pwa-bet` | Figma | Strategy |  |
 | cs-fm-shipped-26 | `foundation-model-shipped-your-product-2026` | Jasper & Copy.ai | Strategic |  |
 | cs-fsq-swarm-14 | `foursquare-swarm-split-2014` | Foursquare | Strategy |  |
+| cs-152 | `gitlab-single-application-devops` | GitLab | Strategy |  |
+| cs-154 | `hashicorp-open-source-infrastructure` | HashiCorp | Strategy |  |
+| cs-167 | `freshworks-seo-challenger-zendesk` | Freshworks | Growth | India |
 | cs-geo-aeo-2026 | `geo-aeo-strategy-2026` | Global Publishers & Tech Brands | Growth |  |
 | cs-google-plus-names-2011 | `google-plus-real-names-2011` | Google | Strategy |  |
 | cs-google-reader-sunset-2013 | `google-reader-sunset-2013` | Google | Strategic |  |
+| cs-162 | `gusto-delightful-payroll` | Gusto | Design |  |
+| cs-169 | `lenskart-omnichannel-eyewear` | Lenskart | Strategy | India |
+| cs-174 | `inmobi-global-adtech-from-india` | InMobi | Strategy | India |
+| cs-178 | `instacart-asset-light-grocery` | Instacart | Strategy |  |
+| cs-182 | `gymshark-community-led-influencer-growth` | Gymshark | Growth |  |
+| cs-189 | `juicero-overengineered-silicon-valley-hubris` | Juicero | Failure |  |
+| cs-191 | `jawbone-wearable-quality-spiral` | Jawbone | Failure |  |
+| cs-194 | `hq-trivia-appointment-gaming-collapse` | HQ Trivia | Failure |  |
 | cs-instagram-stories-2016 | `instagram-stories-clone-2016` | Instagram | Product |  |
 | cs-lego-turnaround-2003 | `lego-bankruptcy-comeback-2003` | LEGO | Strategy |  |
-| cs-63 | `loom-async-video` | Loom | Product |  |
-| cs-73 | `linear-brand-from-day-one` | Linear | Product |  |
 | cs-mcp-decision-2026 | `mcp-build-or-skip-2026` | Tech Industry | Strategic |  |
 | cs-meta-vr-21 | `meta-vr-pivot-2021` | Meta | Strategic |  |
 | cs-1d2e3f4g | `pinterest-waitlist-illusion-2010` | Pinterest | Growth |  |
+| cs-22 | `microsoft-cloud-turnaround` | Microsoft | Strategy |  |
+| cs-34 | `monzo-hot-coral-card` | Monzo | Design |  |
+| cs-41 | `microsoft-zune-failure` | Microsoft | Failure |  |
+| cs-zune-06 | `microsoft-zune-launch-2006` | Microsoft | Strategy |  |
 | cs-3c4e5f6a | `robinhood-gamestop-crisis-2021` | Robinhood | Strategic |  |
 | cs-4 | `netflix-dvd-to-streaming` | Netflix | Product |  |
 | cs-5h6j7k8l | `peloton-tread-recall-2021` | Peloton | Crisis |  |
 | cs-7 | `notion-all-in-one-workspace` | Notion | Product |  |
-| cs-8f7a2b9d | `series-a-mid-pivot-2026` | OmniAI | Founding-funding |  |
 | cs-9m0n1p2q | `paypal-referral-empire-1999` | PayPal | Growth |  |
 | cs-15 | `pinterest-waitlist` | Pinterest | Growth |  |
 | cs-20 | `paypal-referral-bonus` | PayPal | Growth |  |
-| cs-22 | `microsoft-cloud-turnaround` | Microsoft | Strategy |  |
 | cs-24 | `nintendo-blue-ocean-wii` | Nintendo | Strategy |  |
-| cs-25 | `shopify-merchants-first` | Shopify | Strategy |  |
-| cs-41 | `microsoft-zune-failure` | Microsoft | Failure |  |
-| cs-zune-06 | `microsoft-zune-launch-2006` | Microsoft | Strategy |  |
-| cs-34 | `monzo-hot-coral-card` | Monzo | Design |  |
-| cs-52 | `razorpay-pivot-fintech` | Razorpay | Strategy | India |
-| cs-83 | `miro-infinite-canvas` | Miro | Product |  |
-| cs-moviepass-17 | `moviepass-unlimited-pricing-2017` | MoviePass | Business |  |
 | cs-40 | `quibi-shutdown` | Quibi | Failure |  |
 | cs-44 | `myspace-facebook-loss` | Myspace | Failure |  |
-| cs-nokia-wp-11 | `nokia-windows-phone-bet-2011` | Nokia | Strategy |  |
-| cs-2 | `slack-gaming-pivot` | Slack | Product |  |
 | cs-48 | `robinhood-democratized-trading` | Robinhood | Product |  |
-| cs-55 | `paytm-super-app-comeback` | Paytm | Strategy | India |
+| cs-52 | `razorpay-pivot-fintech` | Razorpay | Strategy | India |
+| cs-57 | `phonepe-upi-strategy` | PhonePe | Strategy | India |
 | cs-58 | `nykaa-ipo-journey` | Nykaa | Strategy | India |
 | cs-67 | `ola-electric-pivot` | Ola | Strategy | India |
+| cs-83 | `miro-infinite-canvas` | Miro | Product |  |
+| cs-moviepass-17 | `moviepass-unlimited-pricing-2017` | MoviePass | Business |  |
+| cs-nokia-wp-11 | `nokia-windows-phone-bet-2011` | Nokia | Strategy |  |
 | cs-openai-dev-26 | `openai-consumer-device-launches-2026` | OpenAI | Strategic |  |
-| cs-57 | `phonepe-upi-strategy` | PhonePe | Strategy | India |
+| cs-2 | `slack-gaming-pivot` | Slack | Product |  |
+| cs-8f7a2b9d | `series-a-mid-pivot-2026` | OmniAI | Founding-funding |  |
+| cs-25 | `shopify-merchants-first` | Shopify | Strategy |  |
+| cs-55 | `paytm-super-app-comeback` | Paytm | Strategy | India |
 | cs-61 | `slice-credit-pivot` | Slice | Strategy | India |
-| cs-79 | `peloton-pandemic-overreach` | Peloton | Failure |  |
-| cs-88 | `razorpay-magic-checkout` | Razorpay | Product | India |
-| cs-reckitt-vocabulary-26 | `reckitt-vocabulary-of-care-2026` | Reckitt | Marketing |  |
 | cs-78 | `roblox-user-generated-platform` | Roblox | Product |  |
+| cs-79 | `peloton-pandemic-overreach` | Peloton | Failure |  |
 | cs-86 | `reddit-community-moderation` | Reddit | Strategy |  |
+| cs-88 | `razorpay-magic-checkout` | Razorpay | Product | India |
 | cs-136 | `salesforce-no-software` | Salesforce | Strategy |  |
 | cs-143 | `retool-internal-tools` | Retool | Product |  |
 | cs-144 | `rippling-compound-startup` | Rippling | Strategy |  |
+| cs-148 | `postman-api-tool-to-platform` | Postman | Product | India |
+| cs-155 | `pagerduty-on-call-incident-alerting` | PagerDuty | Product |  |
+| cs-156 | `segment-analytics-js-open-source` | Segment | Strategy |  |
+| cs-158 | `ramp-spend-management-counter-position` | Ramp | Strategy |  |
+| cs-159 | `plaid-fintech-data-pipeline` | Plaid | Infrastructure |  |
+| cs-166 | `posthog-open-source-product-analytics` | PostHog | Product |  |
+| cs-171 | `policybazaar-insurance-transparency` | PolicyBazaar | Strategy | India |
+| cs-179 | `oura-ring-sleep-tracking-form-factor` | Oura | Design |  |
+| cs-187 | `pebble-kickstarter-smartwatch-rise-and-fall` | Pebble | Failure |  |
+| cs-190 | `segway-the-invention-nobody-wanted` | Segway | Failure |  |
+| cs-196 | `path-the-50-friend-social-network` | Path | Failure |  |
+| cs-reckitt-vocabulary-26 | `reckitt-vocabulary-of-care-2026` | Reckitt | Marketing |  |
 | cs-snap16-5561 | `snap-spectacles-launch-2016` | Snap Inc. | Product |  |
 | cs-47 | `snapchat-ephemeral-content` | Snapchat | Product |  |
+| cs-150 | `snowflake-separation-storage-compute` | Snowflake | Product |  |
+| cs-193 | `solyndra-cylindrical-solar-cost-collapse` | Solyndra | Failure |  |
 | cs-sony75-1122 | `sony-betamax-format-war-1975` | Sony | Strategy |  |
 | cs-spot22-9921 | `spotify-joe-rogan-crisis-2022` | Spotify | Strategic |  |
 | cs-5 | `spotify-streaming-war` | Spotify | Product |  |
@@ -136,25 +176,35 @@ Read this before drafting anything new to avoid duplicates.
 | cs-35 | `superhuman-product-market-fit` | Superhuman | Design |  |
 | cs-39 | `wework-ipo-collapse` | WeWork | Failure |  |
 | cs-43 | `theranos-fraud` | Theranos | Failure |  |
+| cs-45 | `yahoo-missed-deals` | Yahoo | Failure |  |
+| cs-49 | `whatsapp-no-ads-growth` | Whatsapp | Product |  |
 | cs-53 | `zerodha-bootstrap-broker` | Zerodha | Strategy | India |
 | cs-56 | `swiggy-instamart-bet` | Swiggy | Strategy | India |
 | cs-65 | `vercel-developer-first` | Vercel | Growth |  |
-| cs-77 | `substack-paid-newsletters` | Substack | Strategy |  |
-| cs-tsla18-4423 | `tesla-model-3-automation-2018` | Tesla | Strategy |  |
-| cs-tk17-8891 | `tiktok-musically-licensing-2017` | ByteDance (TikTok) | Strategy |  |
-| cs-uber-2011-843 | `uber-cold-start-seattle-2011` | Uber | Strategy |  |
-| cs-45 | `yahoo-missed-deals` | Yahoo | Failure |  |
 | cs-66 | `zomato-blinkit-bet` | Zomato | Strategy | India |
 | cs-68 | `zoho-bootstrap-billions` | Zoho | Strategy | India |
+| cs-77 | `substack-paid-newsletters` | Substack | Strategy |  |
 | cs-84 | `zepto-ten-minute-grocery` | Zepto | Growth |  |
 | cs-87 | `zee-fifa-world-cup-bet` | Zee | Strategy | India |
+| cs-145 | `zapier-programmatic-seo` | Zapier | Marketing |  |
 | cs-146 | `vanta-compliance-category` | Vanta | Strategy |  |
+| cs-147 | `twilio-developer-api-first` | Twilio | Strategy |  |
+| cs-153 | `supabase-open-source-firebase` | Supabase | Product |  |
+| cs-160 | `wise-peer-to-peer-fx` | Wise | Strategy |  |
+| cs-168 | `urban-company-full-stack-services` | Urban Company | Product | India |
+| cs-180 | `strava-social-network-for-athletes` | Strava | Product |  |
+| cs-tsla18-4423 | `tesla-model-3-automation-2018` | Tesla | Strategy |  |
+| cs-tk17-8891 | `tiktok-musically-licensing-2017` | ByteDance (TikTok) | Strategy |  |
+| cs-163 | `toast-restaurant-vertical-saas` | Toast | Strategy |  |
+| cs-186 | `turntable-fm-real-time-social-listening` | Turntable.fm | Failure |  |
+| cs-uber-2011-843 | `uber-cold-start-seattle-2011` | Uber | Strategy |  |
 | cs-vibe-2026-442 | `vibe-coded-launch-readiness-2026` | Acme AI | Scope |  |
 | cs-vine-2013-104 | `vine-instagram-video-2013` | Vine | Strategy |  |
 | cs-70 | `walmart-performance-conversion` | Walmart | Growth |  |
+| cs-165 | `webflow-visual-code-generation` | Webflow | Product |  |
+| cs-183 | `warby-parker-home-try-on` | Warby Parker | Product |  |
 | cs-ww-2017-901 | `wework-hypergrowth-2017` | WeWork | Founder |  |
-| cs-49 | `whatsapp-no-ads-growth` | Whatsapp | Product |  |
-| cs-145 | `zapier-programmatic-seo` | Zapier | Marketing |  |
+| cs-195 | `yik-yak-hyperlocal-anonymity-spiral` | Yik Yak | Failure |  |
 | cs-zoom-2018-842 | `zoom-friction-obsession-2018` | Zoom | Strategy |  |
 
 ## AI Decoded Articles (29)
@@ -335,7 +385,7 @@ X-vs-Y SEO pages. Each captures a head-to-head search query and ends in a verdic
 | `zerodha-vs-groww` | Zerodha vs Groww — Two Paths to Indian Investing | Zerodha wins if you trade actively or care about pricing discipline. Groww wins if you're starting o... |
 | `zoho-vs-salesforce` | Zoho vs Salesforce — The $35B Giant vs the Bootstrapped Indian Giant Nobody Talks About | Salesforce is the loudest enterprise software company on earth — Dreamforce, Marc Benioff, $35B in r... |
 
-## Answers (72)
+## Answers (78)
 
 Question-shaped reference pages. Each opens with a self-contained short answer, then where the idea breaks down.
 
@@ -380,11 +430,16 @@ Question-shaped reference pages. Each opens with a self-contained short answer, 
 | `what-is-a-growth-loop` | What is a growth loop and how is it different from a funnel? | Growth |
 | `what-is-a-moat` | What is a competitive moat? | Strategy |
 | `what-is-a-north-star-metric` | What is a north star metric? | Metrics |
+| `what-is-a-pivot` | What is a pivot in product management? | Strategy |
 | `what-is-a-prd` | What is a PRD and what goes in one? | Discovery |
+| `what-is-a-product-moat` | What is a product moat? | Strategy |
 | `what-is-a-product-roadmap` | What is a product roadmap and how detailed should it be? | Prioritisation |
+| `what-is-a-product-wedge` | What is a product wedge? | Strategy |
 | `what-is-a-retention-curve` | What is a retention curve and what does it mean when it flattens? | Metrics |
 | `what-is-a-technical-product-manager` | What is a technical product manager? | Role |
+| `what-is-a-two-sided-marketplace` | What is a two-sided marketplace? | Growth |
 | `what-is-a-viral-loop` | What is a viral loop? | Growth |
+| `what-is-an-activation-metric` | What is an activation metric? | Metrics |
 | `what-is-an-ai-agent` | What is an AI agent? | AI |
 | `what-is-an-mvp` | What is an MVP (minimum viable product)? | Discovery |
 | `what-is-an-opportunity-solution-tree` | What is an opportunity solution tree? | Prioritisation |
@@ -394,6 +449,7 @@ Question-shaped reference pages. Each opens with a self-contained short answer, 
 | `what-is-cohort-analysis` | What is cohort analysis? | Metrics |
 | `what-is-concept-testing` | What is concept testing? | Discovery |
 | `what-is-continuous-discovery` | What is continuous discovery? | Discovery |
+| `what-is-feature-creep` | What is feature creep? | Prioritisation |
 | `what-is-generative-engine-optimization` | What is generative engine optimisation (GEO)? | AI |
 | `what-is-k-factor` | What is the k-factor in viral growth? | Growth |
 | `what-is-mcp` | What is MCP (Model Context Protocol)? | AI |
