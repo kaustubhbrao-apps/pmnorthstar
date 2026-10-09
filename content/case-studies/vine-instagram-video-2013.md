@@ -17,7 +17,7 @@ faqs:
     answer: The severe constraint forced extreme creativity. Six seconds was just long enough to tell a joke or show a stunt, creating a punchy, fast-paced rhythm that pioneered the modern short-form video aesthetic and spawned internet culture icons.
   - question: Why did Instagram's 15-second format win?
     answer: Instagram integrated video seamlessly into an app users already opened daily. The 15-second limit, combined with filters and editing tools, lowered the barrier to entry for average users, while Vine remained a high-friction, creator-centric tool that struggled with mainstream adoption.
-publishedAt: '2026-12-02T15:00:00+00:00'
+publishedAt: "2026-10-09"
 ---
 
 In the early days of 2013, a strange, frenetic energy captured the internet. Twitter had recently acquired Vine, an app that restricted users to creating six-second, looping videos. This severe artificial constraint bred unprecedented creativity, birthing a new class of internet celebrity and establishing a bizarre, fast-paced comedic language that would define a generation. Vine was not just an app; it was a cultural crucible. Its design—touch the screen to record, release to stop—was a masterclass in frictionless mobile creation. The six-second loop became the digital equivalent of a perfect pop song: instantly consumable, endlessly repeatable, and highly shareable. For a brief, shining moment, Vine was the unquestioned king of mobile video, seemingly poised to dominate the future of social entertainment.

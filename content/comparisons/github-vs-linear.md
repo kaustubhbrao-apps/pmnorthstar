@@ -15,7 +15,7 @@ keywords:
   - "Linear business model"
   - "GitHub vs Jira vs Linear"
   - "engineering workflow tools"
-publishedAt: "2026-10-16"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2008"

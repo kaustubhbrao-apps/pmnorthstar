@@ -93,7 +93,7 @@ export const comparisons: Comparison[] = [
         b: "Price comparison, instant booking, breadth"
       }
     ],
-    publishedAt: "2026-10-19",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "Are Airbnb and Booking.com actually competing?",
@@ -179,7 +179,7 @@ export const comparisons: Comparison[] = [
         b: "~$80B (Sony Group total)"
       }
     ],
-    publishedAt: "2026-11-03",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "How did boAt capture 30% of India's audio market?",
@@ -417,7 +417,7 @@ export const comparisons: Comparison[] = [
         b: "Food delivery profitable, overall reinvesting"
       }
     ],
-    publishedAt: "2026-10-25",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "How do DoorDash and Swiggy make money?",
@@ -584,7 +584,7 @@ export const comparisons: Comparison[] = [
         b: "Notion AI, Notion Calendar, Notion Sites"
       }
     ],
-    publishedAt: "2026-10-28",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "Can Notion replace Dropbox?",
@@ -923,7 +923,7 @@ export const comparisons: Comparison[] = [
         b: "Best-in-class UX for engineering teams"
       }
     ],
-    publishedAt: "2026-10-16",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "Do teams have to choose between GitHub and Linear?",
@@ -1009,7 +1009,7 @@ export const comparisons: Comparison[] = [
         b: "SaaS products needing user engagement and support"
       }
     ],
-    publishedAt: "2026-10-31",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "Do companies typically use both HubSpot and Intercom?",
@@ -1552,7 +1552,7 @@ export const comparisons: Comparison[] = [
         b: "FigJam whiteboard, Figma AI, dev tools"
       }
     ],
-    publishedAt: "2026-10-10",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "Do Miro and Figma actually compete?",
@@ -2090,7 +2090,7 @@ export const comparisons: Comparison[] = [
         b: "Rarely — trust gap for premium brands"
       }
     ],
-    publishedAt: "2026-10-13",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "Why do premium beauty brands prefer Nykaa over Amazon India?",
@@ -3739,7 +3739,7 @@ export const comparisons: Comparison[] = [
         b: "Swiggy Genie, Porter"
       }
     ],
-    publishedAt: "2026-10-22",
+    publishedAt: "2026-10-09",
     faqs: [
       {
         question: "What killed Dunzo?",

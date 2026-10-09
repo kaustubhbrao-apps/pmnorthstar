@@ -4,7 +4,7 @@ title: "Razorpay: Pivot Inside Regulation"
 caseStudySlug: razorpay-pivot-fintech
 type: historical
 category: pivots
-publishedAt: '2026-10-25T15:00:00+00:00'
+publishedAt: "2026-10-09"
 isLeagueMatch: true
 leagueEndsAt: '2026-11-01T15:00:00+00:00'
 year: 2014

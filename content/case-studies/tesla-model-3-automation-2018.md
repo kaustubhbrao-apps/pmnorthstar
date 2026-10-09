@@ -17,7 +17,7 @@ faqs:
     answer: It was Elon Musk's vision for a factory so automated it would look like an alien spaceship, with raw materials going in and finished cars coming out at blistering speeds with zero human intervention.
   - question: Why did the hyper-automation fail?
     answer: They tried to automate complex, unstructured tasks (like routing wire harnesses) that humans do easily but robots struggle with. The robots ended up slowing down the line and causing massive bottlenecks.
-publishedAt: '2026-11-15T15:00:00+00:00'
+publishedAt: "2026-10-09"
 ---
 
 In early 2018, Tesla was staring into the abyss. The company had bet its entire future on the Model 3, a mass-market electric vehicle intended to transition Tesla from a niche luxury brand to a dominant global automaker. To achieve the aggressive production targets of 5,000 cars per week, CEO Elon Musk envisioned an "alien dreadnought"—a manufacturing facility so hyper-automated that it would operate at speeds incomprehensible to traditional automakers. He ordered a factory floor practically devoid of humans, relying instead on a complex ballet of robotic arms, automated guided vehicles (AGVs), and intricate conveyor systems. 

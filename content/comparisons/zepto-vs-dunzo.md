@@ -15,7 +15,7 @@ keywords:
   - "Zepto growth"
   - "10 minute delivery India"
   - "hyperlocal delivery"
-publishedAt: "2026-10-22"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2021"

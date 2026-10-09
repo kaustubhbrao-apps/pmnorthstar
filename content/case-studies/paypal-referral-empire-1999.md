@@ -17,7 +17,7 @@ faqs:
     answer: They couldn't, profitably. They were deliberately operating at a massive loss, using venture capital to buy users because they understood that in digital payments, the network effect is the only moat that matters.
   - question: Did they stop the promotion once they grew?
     answer: Yes, as their user base expanded, the customer acquisition cost naturally dropped due to organic growth, allowing them to phase out the $20 incentive to $10, then $5, and eventually zero.
-publishedAt: '2026-10-11T15:00:00+00:00'
+publishedAt: "2026-10-09"
 ---
 
 In the late 1990s, the internet was a wild frontier, and e-commerce was severely handicapped by a fundamental problem: how do ordinary people send money to each other online securely and instantly? Traditional banks were slow and complicated, and mailing checks was archaic. A startup named Confinity, co-founded by Peter Thiel and Max Levchin, launched a product called PayPal to solve this. Originally designed to beam money between Palm Pilots via infrared ports, they quickly pivoted to focus on email-based payments on the World Wide Web. However, they faced a massive "cold start" problem. A payment network is useless if no one else is on it. They needed a massive user base, and they needed it yesterday, before well-funded banking incumbents could wake up and crush them.

@@ -1687,7 +1687,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Consumer Tech",
       "Exclusivity"
     ],
-    publishedAt: "2026-10-18T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-22",
@@ -1767,7 +1767,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "FinTech",
       "Liquidity"
     ],
-    publishedAt: "2026-10-28T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-4",
@@ -1799,7 +1799,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Crisis Management",
       "Brand Trust"
     ],
-    publishedAt: "2026-10-14T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-7",
@@ -1832,7 +1832,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "FinTech",
       "Network Effects"
     ],
-    publishedAt: "2026-10-11T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-15",
@@ -2092,7 +2092,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Agentic AI",
       "Fundraising"
     ],
-    publishedAt: "2026-11-01T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-25",
@@ -2490,7 +2490,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Marketing",
       "Failure"
     ],
-    publishedAt: "2026-11-04T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-47",
@@ -2558,7 +2558,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Ecosystem",
       "Hardware"
     ],
-    publishedAt: "2026-11-08T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-spot22-9921",
@@ -2574,7 +2574,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Strategy",
       "Media"
     ],
-    publishedAt: "2026-11-11T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-5",
@@ -3040,7 +3040,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Hardware",
       "Crisis"
     ],
-    publishedAt: "2026-11-15T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-tk17-8891",
@@ -3056,7 +3056,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Growth",
       "Social"
     ],
-    publishedAt: "2026-11-22T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-163",
@@ -3108,7 +3108,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Growth",
       "Operations"
     ],
-    publishedAt: "2026-11-25T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-vibe-2026-442",
@@ -3124,7 +3124,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "API Design",
       "Future of Work"
     ],
-    publishedAt: "2026-11-29T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-vine-2013-104",
@@ -3140,7 +3140,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Competition",
       "Creator Economy"
     ],
-    publishedAt: "2026-12-02T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-70",
@@ -3208,7 +3208,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "Real Estate",
       "Economics"
     ],
-    publishedAt: "2026-12-06T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
   {
     id: "cs-195",
@@ -3242,7 +3242,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
       "UX",
       "Infrastructure"
     ],
-    publishedAt: "2026-12-13T15:00:00+00:00",
+    publishedAt: "2026-10-09",
   },
 ];
 

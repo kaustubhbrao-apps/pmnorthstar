@@ -15,7 +15,7 @@ keywords:
   - "Dropbox Paper vs Notion"
   - "productivity software comparison"
   - "knowledge management tools"
-publishedAt: "2026-10-28"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2007"

@@ -15,7 +15,7 @@ keywords:
   - "delivery economics"
   - "three-sided marketplace"
   - "food delivery profitability"
-publishedAt: "2026-10-25"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2013 (US)"

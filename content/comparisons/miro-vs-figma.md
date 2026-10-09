@@ -15,7 +15,7 @@ keywords:
   - "online collaboration tools"
   - "Miro business model"
   - "Figma vs Miro"
-publishedAt: "2026-10-10"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2011"

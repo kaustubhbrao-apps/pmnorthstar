@@ -15,7 +15,7 @@ keywords:
   - "B2B customer lifecycle"
   - "CRM vs customer support"
   - "inbound marketing tools"
-publishedAt: "2026-10-31"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2006 (Cambridge, MA)"

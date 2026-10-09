@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import {
   publishedCaseStudies,
+  getCaseStudyById,
   getCaseStudySlug,
   CASE_STUDIES_LAST_UPDATED,
 } from "@/data/caseStudies";
@@ -150,7 +151,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Comparison pages — capture "X vs Y" search queries.
+  // A comparison page 404s unless BOTH referenced case studies are live —
+  // the page calls notFound() when getCaseStudyById (which gates on
+  // publishedAt) returns undefined for either company. A comparison can be
+  // published on its own date while one of its companies is still
+  // future-dated, so mirror the page's gate here: otherwise the sitemap
+  // advertises a URL that 404s (e.g. vine-vs-tiktok, whose Vine study is
+  // scheduled months out), which erodes crawl trust.
   for (const cmp of publishedComparisons(now)) {
+    if (!getCaseStudyById(cmp.companyA) || !getCaseStudyById(cmp.companyB)) {
+      continue;
+    }
     routes.push({
       url: `${SITE_URL}/compare/${cmp.slug}`,
       lastModified: now,

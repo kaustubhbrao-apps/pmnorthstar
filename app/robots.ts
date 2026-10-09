@@ -2,7 +2,15 @@ import type { MetadataRoute } from "next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
-const DISALLOW = ["/api/", "/reset-password"];
+// `/*?q=` blocks the homepage tag/search filter URLs (e.g. /?q=marketing).
+// These are client-side filtered views of the library with no standalone SEO
+// value — the real landing pages for that intent are the curated /topics/*
+// hubs, which are indexed. Google was crawling every /?q=<tag> permutation and
+// scattering them across Soft 404 (a tag with few results renders an empty
+// state, which overrides the canonical), Duplicate, and Alternate-canonical
+// buckets — ~120 "not indexed" URLs from one source. The homepage self-canonical
+// alone didn't stop it; blocking the crawl does. `/` itself is unaffected.
+const DISALLOW = ["/api/", "/reset-password", "/*?q="];
 
 // The assistant crawlers that attribute what they read. middleware.ts already
 // exempts these from rate limiting; naming them here changes no behaviour but

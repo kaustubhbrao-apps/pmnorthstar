@@ -4,7 +4,7 @@ title: "Quibi: Charge a Premium Price?"
 caseStudySlug: quibi-shutdown
 type: historical
 category: pricing
-publishedAt: '2026-10-21T15:00:00+00:00'
+publishedAt: "2026-10-09"
 isLeagueMatch: true
 leagueEndsAt: '2026-10-28T15:00:00+00:00'
 year: 2020

@@ -6,7 +6,7 @@ type: historical
 category: Strategy
 year: 1975
 estimatedMinutes: 15
-publishedAt: '2026-11-08T15:00:00+00:00'
+publishedAt: "2026-10-09"
 isLeagueMatch: true
 leagueEndsAt: '2026-11-15T15:00:00+00:00'
 principle: |

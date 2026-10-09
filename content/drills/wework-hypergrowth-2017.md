@@ -6,7 +6,7 @@ type: historical
 category: Founder
 year: 2017
 estimatedMinutes: 15
-publishedAt: '2026-12-06T15:00:00+00:00'
+publishedAt: "2026-10-09"
 isLeagueMatch: true
 leagueEndsAt: '2026-12-13T15:00:00+00:00'
 principle: |

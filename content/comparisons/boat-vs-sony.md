@@ -15,7 +15,7 @@ keywords:
   - "boAt headphones"
   - "D2C electronics India"
   - "challenger brand strategy"
-publishedAt: "2026-11-03"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2016 (India)"

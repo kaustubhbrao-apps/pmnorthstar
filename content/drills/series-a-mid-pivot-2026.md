@@ -4,7 +4,7 @@ title: "Pivot in the Middle of a Series A?"
 caseStudySlug: series-a-mid-pivot-2026
 type: current
 category: founding-funding
-publishedAt: '2026-11-01T15:00:00+00:00'
+publishedAt: "2026-10-09"
 isLeagueMatch: true
 leagueEndsAt: '2026-11-08T15:00:00+00:00'
 estimatedMinutes: 6

@@ -17,7 +17,7 @@ faqs:
     answer: Initially to manage server load, but they quickly realized it created a powerful psychological effect of scarcity and exclusivity, making people want access even more.
   - question: How did the invite system affect user behavior?
     answer: Users who finally gained access felt they had earned something valuable, leading them to be significantly more active, engaged, and willing to curate high-quality content.
-publishedAt: '2026-10-18T15:00:00+00:00'
+publishedAt: "2026-10-09"
 ---
 
 In the hyper-competitive landscape of early 2010s consumer social media, standing out was nearly impossible. Platforms were fighting tooth and nail for user attention, throwing millions of dollars into aggressive user acquisition campaigns. Amidst this noise, a small startup named Pinterest, founded by Ben Silbermann, Evan Sharp, and Paul Sciarra, was quietly struggling. The core concept—a digital pinboard for collecting and organizing visual inspiration—was elegant, but growth was painfully slow. After months of grinding, they had only a few thousand users, and the platform felt like a ghost town. They needed a catalyst, not just for raw numbers, but for engaged, high-quality users who would understand and build the platform's culture.

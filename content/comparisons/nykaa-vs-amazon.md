@@ -15,7 +15,7 @@ keywords:
   - "beauty ecommerce India"
   - "niche vs horizontal marketplace"
   - "Nykaa vs Myntra"
-publishedAt: "2026-10-13"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2012 (India)"

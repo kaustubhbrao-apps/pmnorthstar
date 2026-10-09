@@ -4,7 +4,7 @@ title: "Theranos: Do You Walk Away?"
 caseStudySlug: theranos-fraud
 type: historical
 category: crisis
-publishedAt: '2026-11-18T15:00:00+00:00'
+publishedAt: "2026-10-09"
 isLeagueMatch: true
 leagueEndsAt: '2026-11-25T15:00:00+00:00'
 year: 2013

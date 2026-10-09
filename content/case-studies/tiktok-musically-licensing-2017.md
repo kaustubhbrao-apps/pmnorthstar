@@ -17,7 +17,7 @@ faqs:
     answer: ByteDance had a powerful recommendation algorithm (Douyin) but lacked a western user base. Musical.ly had 60 million US teens but a stagnant product. It was a perfect marriage of tech and distribution.
   - question: How did this impact the social media landscape?
     answer: It forced every major platform to pivot to short-form video (Reels, Shorts). By 2026, the 'TikTokification' of the internet is complete, fundamentally changing how content is discovered without relying on social graphs.
-publishedAt: '2026-11-22T15:00:00+00:00'
+publishedAt: "2026-10-09"
 ---
 
 In 2017, Zhang Yiming’s ByteDance was already a titan in China with its news aggregator Toutiao and short-video app Douyin. However, their global ambitions were stalled. Building a consumer social network from scratch in the United States—a market heavily guarded by the Facebook-Instagram-Snapchat oligopoly—seemed impossible. A direct assault would require billions in user acquisition with no guarantee of success. ByteDance needed a bridge into the western teenage consciousness, and they found it in an unexpected place: a Shanghai-based app called Musical.ly.

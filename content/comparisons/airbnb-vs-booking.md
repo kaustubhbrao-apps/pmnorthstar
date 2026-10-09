@@ -15,7 +15,7 @@ keywords:
   - "Airbnb business model"
   - "Booking.com strategy"
   - "travel booking platforms"
-publishedAt: "2026-10-19"
+publishedAt: "2026-10-09"
 rows:
   - label: "Founded"
     a: "2008 (US)"
