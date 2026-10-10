@@ -50,12 +50,20 @@ export type RelatedAnswer = {
   accentColor: string;
 };
 
+export type RelatedComparison = {
+  slug: string;
+  title: string;
+  eyebrow: string;
+  accentColor: string;
+};
+
 interface CaseStudyClientProps {
   study: CaseStudy | null;
   prevStudy: AdjacentStudy | null;
   nextStudy: AdjacentStudy | null;
   related: RelatedStudy[];
   relatedAnswers: RelatedAnswer[];
+  relatedComparisons: RelatedComparison[];
   faqs: FAQ[];
   /** 1-based position of this study among published ones, for the "N of M" label. */
   position: number;
@@ -69,6 +77,7 @@ export function CaseStudyClient({
   nextStudy,
   related,
   relatedAnswers,
+  relatedComparisons,
   faqs,
   position,
   total,
@@ -520,6 +529,46 @@ export function CaseStudyClient({
                         style={{ color: a.accentColor }}
                       >
                         {a.question} →
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {relatedComparisons.length > 0 && (
+                <div
+                  className="py-10"
+                  style={{ borderTop: "1.5px solid var(--card-border)" }}
+                >
+                  <h2
+                    className="text-xl sm:text-2xl font-semibold mb-1"
+                    style={{ color, letterSpacing: "-0.02em" }}
+                  >
+                    Head-to-head
+                  </h2>
+                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
+                    Comparisons featuring {study.company}.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {relatedComparisons.map((c) => (
+                      <Link
+                        key={c.slug}
+                        href={`/compare/${c.slug}`}
+                        className="playlist-card surface p-4 group"
+                        style={{ ["--accent-color" as any]: c.accentColor } as React.CSSProperties}
+                      >
+                        <p
+                          className="text-sm font-semibold leading-snug line-clamp-2 mb-1"
+                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+                        >
+                          {c.title}
+                        </p>
+                        <p
+                          className="text-xs leading-snug line-clamp-2"
+                          style={{ color: "var(--text-muted)" }}
+                        >
+                          {c.eyebrow}
+                        </p>
                       </Link>
                     ))}
                   </div>

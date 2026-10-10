@@ -6,8 +6,14 @@ import {
 } from "@/data/caseStudies";
 import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
 import { publishedAnswers } from "@/data/answers";
+import { publishedComparisons } from "@/data/comparisons";
 import { CaseStudyClient } from "./CaseStudyClient";
-import type { AdjacentStudy, RelatedStudy, RelatedAnswer } from "./CaseStudyClient";
+import type {
+  AdjacentStudy,
+  RelatedStudy,
+  RelatedAnswer,
+  RelatedComparison,
+} from "./CaseStudyClient";
 
 type PageProps = { params: { id: string } };
 
@@ -78,6 +84,18 @@ export default function CaseStudyPage({ params }: PageProps) {
     .filter((a) => a.relatedCaseStudyIds.includes(study.id))
     .map((a) => ({ slug: a.slug, question: a.question, accentColor: a.accentColor }));
 
+  // Head-to-head comparisons that feature this company (as either side).
+  // These links pass internal authority from the case-study corpus (heavily
+  // indexed) down to the comparison pages (which Google is slow to index).
+  const relatedComparisons: RelatedComparison[] = publishedComparisons()
+    .filter((c) => c.companyA === study.id || c.companyB === study.id)
+    .map((c) => ({
+      slug: c.slug,
+      title: c.title,
+      eyebrow: c.eyebrow,
+      accentColor: c.accentColor,
+    }));
+
   return (
     <CaseStudyClient
       study={study}
@@ -85,6 +103,7 @@ export default function CaseStudyPage({ params }: PageProps) {
       nextStudy={nextStudy}
       related={related}
       relatedAnswers={relatedAnswers}
+      relatedComparisons={relatedComparisons}
       faqs={getCaseStudyFaqs(study.id)}
       position={currentIndex + 1}
       total={liveStudies.length}
