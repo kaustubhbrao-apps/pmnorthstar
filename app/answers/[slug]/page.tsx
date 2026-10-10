@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { answers, getAnswerBySlug, publishedAnswers } from "@/data/answers";
 import { getCaseStudyById, getCaseStudySlug } from "@/data/caseStudies";
+import { publishedComparisons } from "@/data/comparisons";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -60,6 +61,16 @@ export default function AnswerPage({ params }: PageProps) {
   const siblings = publishedAnswers()
     .filter((a) => a.category === answer.category && a.slug !== answer.slug)
     .slice(0, 5);
+
+  // Comparisons featuring any company this answer points to — another
+  // crawl path into the comparison corpus.
+  const relatedCompare = publishedComparisons()
+    .filter(
+      (c) =>
+        answer.relatedCaseStudyIds.includes(c.companyA) ||
+        answer.relatedCaseStudyIds.includes(c.companyB)
+    )
+    .slice(0, 4);
 
   return (
     <SidebarShell
@@ -262,6 +273,29 @@ export default function AnswerPage({ params }: PageProps) {
                     style={{ color: s.accentColor }}
                   >
                     {s.question} →
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {relatedCompare.length > 0 && (
+            <section className="mt-12 pt-8" style={{ borderTop: "1.5px solid var(--card-border)" }}>
+              <h2
+                className="text-xl font-semibold mb-5"
+                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+              >
+                Head-to-head
+              </h2>
+              <div className="flex flex-col gap-2">
+                {relatedCompare.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/compare/${c.slug}`}
+                    className="text-sm hover:underline"
+                    style={{ color: c.accentColor }}
+                  >
+                    {c.title} →
                   </Link>
                 ))}
               </div>

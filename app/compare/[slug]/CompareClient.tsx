@@ -23,6 +23,12 @@ export type OtherComparison = Pick<
   "slug" | "title" | "eyebrow" | "accentColor"
 >;
 
+export type CompareAnswer = {
+  slug: string;
+  question: string;
+  accentColor: string;
+};
+
 interface CompareClientProps {
   cmp: Comparison;
   a: ComparedCompany;
@@ -30,6 +36,7 @@ interface CompareClientProps {
   aLogo: string | null;
   bLogo: string | null;
   otherComps: OtherComparison[];
+  relatedAnswers: CompareAnswer[];
 }
 
 export function CompareClient({
@@ -39,6 +46,7 @@ export function CompareClient({
   aLogo,
   bLogo,
   otherComps,
+  relatedAnswers,
 }: CompareClientProps) {
   const [aLogoFailed, setALogoFailed] = useState(false);
   const [bLogoFailed, setBLogoFailed] = useState(false);
@@ -326,6 +334,38 @@ export function CompareClient({
                       {faq.answer}
                     </p>
                   </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Concepts behind this — links into the answer corpus */}
+        {relatedAnswers.length > 0 && (
+          <section
+            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
+            style={{ borderTop: "1.5px solid var(--card-border)" }}
+          >
+            <div className="w-full max-w-5xl">
+              <h2
+                className="text-xl sm:text-2xl font-semibold mb-1"
+                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+              >
+                The concepts behind this
+              </h2>
+              <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
+                Direct answers to the ideas these two companies illustrate.
+              </p>
+              <div className="flex flex-col gap-2.5">
+                {relatedAnswers.map((ans) => (
+                  <Link
+                    key={ans.slug}
+                    href={`/answers/${ans.slug}`}
+                    className="text-sm font-medium hover:underline"
+                    style={{ color: ans.accentColor }}
+                  >
+                    {ans.question} →
+                  </Link>
                 ))}
               </div>
             </div>

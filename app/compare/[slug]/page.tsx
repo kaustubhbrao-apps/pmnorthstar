@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import { getComparisonBySlug, publishedComparisons } from "@/data/comparisons";
 import { getCaseStudyById } from "@/data/caseStudies";
+import { publishedAnswers } from "@/data/answers";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { CompareClient } from "./CompareClient";
-import type { OtherComparison } from "./CompareClient";
+import type { OtherComparison, CompareAnswer } from "./CompareClient";
 
 type PageProps = { params: { slug: string } };
 
@@ -37,6 +38,21 @@ export default function ComparePage({ params }: PageProps) {
       accentColor: c.accentColor,
     }));
 
+  // Answers that reference either company — internal links into the answer
+  // corpus, and more crawl paths out of this (slow-to-index) comparison page.
+  const relatedAnswers: CompareAnswer[] = publishedAnswers()
+    .filter(
+      (ans) =>
+        ans.relatedCaseStudyIds.includes(cmp.companyA) ||
+        ans.relatedCaseStudyIds.includes(cmp.companyB)
+    )
+    .slice(0, 6)
+    .map((ans) => ({
+      slug: ans.slug,
+      question: ans.question,
+      accentColor: ans.accentColor,
+    }));
+
   return (
     <CompareClient
       cmp={cmp}
@@ -45,6 +61,7 @@ export default function ComparePage({ params }: PageProps) {
       aLogo={getCompanyLogoUrl(a.company)}
       bLogo={getCompanyLogoUrl(b.company)}
       otherComps={otherComps}
+      relatedAnswers={relatedAnswers}
     />
   );
 }
