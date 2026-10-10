@@ -5,6 +5,8 @@ import { SidebarShell } from "@/components/SidebarShell";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { caseStudies, publishedCaseStudies } from "@/data/caseStudies";
 import { getTopicBySlug, topics, publishedTopics } from "@/data/topics";
+import { publishedComparisons } from "@/data/comparisons";
+import { publishedAnswers } from "@/data/answers";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { Footer } from "@/components/Footer";
@@ -44,6 +46,17 @@ export default function TopicPage({ params }: PageProps) {
     .filter(Boolean) as typeof caseStudies;
 
   const otherTopics = publishedTopics().filter((t) => t.slug !== topic.slug);
+
+  // Reverse links: comparisons and answers that involve any of this topic's
+  // case studies. Passes internal authority from topic hubs down to the
+  // comparison/answer pages Google is slow to index.
+  const topicCaseIds = new Set(topic.caseStudyIds);
+  const relatedComparisons = publishedComparisons()
+    .filter((c) => topicCaseIds.has(c.companyA) || topicCaseIds.has(c.companyB))
+    .slice(0, 6);
+  const relatedAnswers = publishedAnswers()
+    .filter((a) => a.relatedCaseStudyIds.some((id) => topicCaseIds.has(id)))
+    .slice(0, 8);
 
   return (
     <SidebarShell
@@ -132,6 +145,74 @@ export default function TopicPage({ params }: PageProps) {
             ))}
           </div>
         </section>
+
+        {/* Related comparisons + answers — internal links to the deeper
+            content that references these same companies. */}
+        {(relatedComparisons.length > 0 || relatedAnswers.length > 0) && (
+          <section
+            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-12"
+            style={{ borderBottom: "1.5px solid var(--card-border)" }}
+          >
+            <div className="w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {relatedComparisons.length > 0 && (
+                <div>
+                  <h2
+                    className="text-xl sm:text-2xl font-semibold mb-1"
+                    style={{ color: topic.accentColor, letterSpacing: "-0.02em" }}
+                  >
+                    Head-to-head
+                  </h2>
+                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
+                    Comparisons featuring these companies.
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    {relatedComparisons.map((c) => (
+                      <Link
+                        key={c.slug}
+                        href={`/compare/${c.slug}`}
+                        className="playlist-card surface p-4 group"
+                        style={{ ["--accent-color" as never]: c.accentColor } as React.CSSProperties}
+                      >
+                        <p
+                          className="text-sm font-semibold leading-snug line-clamp-2"
+                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+                        >
+                          {c.title}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {relatedAnswers.length > 0 && (
+                <div>
+                  <h2
+                    className="text-xl sm:text-2xl font-semibold mb-1"
+                    style={{ color: topic.accentColor, letterSpacing: "-0.02em" }}
+                  >
+                    Related answers
+                  </h2>
+                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
+                    Concepts behind these case studies.
+                  </p>
+                  <div className="flex flex-col gap-2.5">
+                    {relatedAnswers.map((a) => (
+                      <Link
+                        key={a.slug}
+                        href={`/answers/${a.slug}`}
+                        className="text-sm font-medium hover:underline"
+                        style={{ color: a.accentColor }}
+                      >
+                        {a.question} →
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         {/* Newsletter */}
         <section
