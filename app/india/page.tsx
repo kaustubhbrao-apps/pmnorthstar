@@ -165,10 +165,10 @@ export default function IndiaPage() {
         {publishedIndia.length > 0 && (
           <section
             id="india-published"
-            className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 scroll-mt-4"
+            className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 scroll-mt-4 flex justify-center"
             style={{ borderBottom: "1.5px solid var(--card-border)" }}
           >
-            <div className="max-w-5xl">
+            <div className="w-full max-w-4xl">
               <p className="eyebrow mb-3" style={{ color: "#FF6B35" }}>
                 Live now
               </p>
@@ -266,10 +266,10 @@ export default function IndiaPage() {
 
         {/* Globally relevant for India */}
         <section
-          className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16"
+          className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
           style={{ borderBottom: "1.5px solid var(--card-border)" }}
         >
-          <div className="max-w-5xl">
+          <div className="w-full max-w-4xl">
             <p className="eyebrow mb-3" style={{ color: "#9B8FFF" }}>
               Read these first
             </p>

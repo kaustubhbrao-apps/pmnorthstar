@@ -4,10 +4,11 @@
 // out by publishedDrills() at request time.
 
 import Link from "next/link";
-import { drillTitle } from "@/lib/drills";
+import { drillTitle, normalizeDrillCategory } from "@/lib/drills";
 import { Sparkles, Brain, Clock, ChevronRight, ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { publishedDrills, type Drill } from "@/data/drills";
+import { DrillGrid, type DrillCard } from "./DrillGrid";
 import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
 
@@ -46,6 +47,17 @@ export default async function SimulatePage() {
   const all = publishedDrills(cutoff);
   const featured = all[0];
   const plays = await totalPlays();
+
+  // Lite, category-normalized data for the client-side filterable grid.
+  // Deliberately narrow — the heavy `nodes` tree never reaches the browser.
+  const drillCards: DrillCard[] = all.map((d) => ({
+    slug: d.slug,
+    title: drillTitle(d),
+    type: d.type,
+    estimatedMinutes: d.estimatedMinutes ?? 8,
+    excerpt: (d.intro || "").split("\n\n")[0],
+    category: normalizeDrillCategory(d.category),
+  }));
 
   return (
     <SidebarShell activeNav="simulate">
@@ -131,22 +143,8 @@ export default async function SimulatePage() {
           />
         </div>
 
-        {/* Archive — all published drills */}
-        {all.length > 1 && (
-          <section className="mt-12">
-            <h2
-              className="font-display text-xl font-semibold mb-4"
-              style={{ color: "var(--text-primary)" }}
-            >
-              Past drills
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {all.slice(1).map((d) => (
-                <ArchiveCard key={d.slug} drill={d} />
-              ))}
-            </div>
-          </section>
-        )}
+        {/* Full library, filterable by category */}
+        {all.length > 1 && <DrillGrid drills={drillCards} />}
       </div>
     </SidebarShell>
   );
@@ -280,51 +278,6 @@ function FeaturedDrillCard({ drill }: { drill: Drill }) {
   );
 }
 
-function ArchiveCard({ drill }: { drill: Drill }) {
-  const badge = TYPE_BADGE[drill.type];
-  return (
-    <Link
-      href={`/simulate/${drill.slug}`}
-      className="block rounded-xl px-5 py-5 transition-colors group"
-      style={{
-        background: "var(--card-bg)",
-        border: "1.5px solid var(--card-border)",
-      }}
-    >
-      <div className="flex items-center gap-2 mb-2">
-        <span
-          className="text-sm font-mono uppercase px-1.5 py-0.5 rounded"
-          style={{
-            background: `color-mix(in srgb, ${badge.color} 18%, transparent)`,
-            color: "var(--text-primary)",
-            border: `1px solid ${badge.color}`,
-            letterSpacing: "0.12em",
-          }}
-        >
-          {badge.label}
-        </span>
-        <span
-          className="text-sm font-mono"
-          style={{ color: "var(--text-faint)" }}
-        >
-          ~{drill.estimatedMinutes} min
-        </span>
-      </div>
-      <h3
-        className="font-display text-base font-semibold mb-1 group-hover:underline"
-        style={{ color: "var(--text-primary)" }}
-      >
-        {drillTitle(drill)}
-      </h3>
-      <p
-        className="text-sm leading-relaxed line-clamp-2"
-        style={{ color: "var(--text-muted)" }}
-      >
-        {drill.intro.split("\n\n")[0]}
-      </p>
-    </Link>
-  );
-}
 
 function ExplainerTile({
   icon: Icon,

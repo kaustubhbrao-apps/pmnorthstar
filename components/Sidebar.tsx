@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, ArrowUpRight, HelpCircle } from "lucide-react";
+import { Home, BookMarked, Star, FlameIcon, GraduationCap, MapPin, Layers, X, Sparkles, Gauge, Brain, ArrowUpRight, HelpCircle, Youtube } from "lucide-react";
 import {
   CASE_STUDY_COUNT,
   BOOK_COUNT,
@@ -226,6 +226,22 @@ export function Sidebar({
               <span className="text-[13px] font-bold leading-none tracking-tight">Product Hunt</span>
             </div>
             <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center flex-shrink-0" style={{ color: "#DA552F" }}>
+              <ArrowUpRight size={12} strokeWidth={3} />
+            </div>
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCtay3FnBDWvUgVVWe7V1eKQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 mb-3 px-2.5 py-2 rounded-lg transition-transform hover:-translate-y-0.5 shadow-sm"
+            style={{ background: "#FF0000", color: "#ffffff" }}
+          >
+            <Youtube size={18} strokeWidth={2} className="flex-shrink-0" />
+            <div className="flex flex-col flex-1">
+              <span className="text-[9px] font-bold uppercase tracking-widest opacity-90 leading-none mb-1">Follow us on</span>
+              <span className="text-[13px] font-bold leading-none tracking-tight">YouTube</span>
+            </div>
+            <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center flex-shrink-0" style={{ color: "#FF0000" }}>
               <ArrowUpRight size={12} strokeWidth={3} />
             </div>
           </a>

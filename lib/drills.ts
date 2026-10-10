@@ -1,5 +1,51 @@
 import type { Drill } from "@/data/drills";
 
+// ── Drill categories ──────────────────────────────────────────────────────
+// Drill frontmatter carries a free-text `category` that drifted into ~18
+// inconsistent values ("Strategy" / "strategic" / "strategy", "Growth" /
+// "growth", etc.). This normalizes them into a small, clean set so SimulateIt
+// can offer category chips the way the case-study library does.
+export const DRILL_CATEGORIES = [
+  "All",
+  "Strategy",
+  "Growth",
+  "Product",
+  "Crisis",
+  "Pricing",
+  "Founder",
+] as const;
+
+const DRILL_CATEGORY_MAP: Record<string, string> = {
+  strategy: "Strategy",
+  strategic: "Strategy",
+  positioning: "Strategy",
+  scope: "Strategy",
+  scaling: "Strategy",
+  pivots: "Strategy",
+  growth: "Growth",
+  product: "Product",
+  crisis: "Crisis",
+  pricing: "Pricing",
+  founder: "Founder",
+  "founding-funding": "Founder",
+  hiring: "Founder",
+  business: "Founder",
+};
+
+export function normalizeDrillCategory(raw: string | undefined): string {
+  if (!raw) return "Strategy";
+  return DRILL_CATEGORY_MAP[raw.trim().toLowerCase()] ?? "Strategy";
+}
+
+export const DRILL_CATEGORY_COLORS: Record<string, string> = {
+  Strategy: "#2563EB",
+  Growth: "#16A34A",
+  Product: "#DB2777",
+  Crisis: "#EA580C",
+  Pricing: "#9333EA",
+  Founder: "#0891B2",
+};
+
 // Words the naive slug title-caser gets wrong. It uppercased the first letter
 // of every hyphen-separated token, which shipped "Ai Hiring Assessment",
 // "Apple Opens Siri To Llms", "Byjus Overexpansion" and "Cursor Vs Windsurf"
