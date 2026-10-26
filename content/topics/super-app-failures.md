@@ -29,3 +29,5 @@ faqs:
 ---
 
 WeChat made super-apps look easy in China; every other market has discovered they aren't. Indian super-app bets — Paytm, Cult.fit, the broader Tata Neu story — each broke for the same structural reason: adjacent verticals have different unit economics, and bundling them creates more management complexity than customer value. These are the deep dives.
+
+The super-app dream — one app for payments, commerce, lending, tickets, everything — is seductive and mostly fatal outside a few markets. The common failure is premature breadth: chasing every vertical before winning one high-frequency habit completely. See [Paytm's super-app comeback](/case-study/paytm-super-app-comeback) and the focus-versus-breadth contrast in [PhonePe vs Paytm](/compare/phonepe-vs-paytm). It connects directly to the broader [Indian fintech](/topics/indian-fintech) story and the wider pattern of [spectacular flameouts](/topics/spectacular-flameouts).

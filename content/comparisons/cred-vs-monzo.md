@@ -50,3 +50,11 @@ faqs:
 ---
 
 Cred and Monzo took opposite approaches to building a premium consumer fintech brand. Cred gated users by credit score and made design the product. Monzo opened up to everyone and made a single design choice — the hot coral card — its viral wedge. Both worked. Both are now studying each other.
+
+## Design as the product, not the decoration
+
+Both Cred and Monzo treated design as strategy, not polish — but aimed it differently. Monzo used design to make banking *feel* human and transparent (the hot coral card became a status object you'd show off). Cred used design and exclusivity to make a rewards app *feel* premium and aspirational, gating entry by credit score. In both cases the brand and experience are the moat competitors can't cheaply copy. See [Cred's design-led fintech play](/case-study/cred-design-fintech) and [Monzo's hot coral card](/case-study/monzo-hot-coral-card).
+
+This is the same "design as moat" thesis explored across [product design case studies](/topics/product-design), and it sits inside the broader story of [Indian fintech](/topics/indian-fintech) where differentiation on trust and brand is everything.
+
+**The takeaway:** when the underlying product (a card, a rewards feed) is easy to replicate, the durable advantage is the *identity and feeling* you build around it — design becomes the strategy, not the garnish.

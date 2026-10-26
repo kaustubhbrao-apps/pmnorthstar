@@ -58,3 +58,11 @@ faqs:
 ---
 
 India's two largest retail investing platforms are built on opposite philosophies. Zerodha bootstrapped its way to ₹4,700 crore profit by refusing VC money and serving serious traders. Groww raised aggressively to build the easiest first-time investor app, then took Zerodha's lead by user count. Same market, completely different product strategies — and arguably both winning.
+
+## The incumbent that spent nothing vs the challenger that spent on growth
+
+Zerodha built India's largest broker with **zero ad spend** — profitable, bootstrapped, growing on product and word of mouth. Groww came later with a cleaner, simpler mobile-first experience aimed at first-time investors, and grew fast by investing in acquisition and UX. It's a textbook incumbent-versus-challenger story. See [how Zerodha bootstrapped a broker](/case-study/zerodha-bootstrap-broker) and [Groww's challenge to Zerodha](/case-study/groww-zerodha-challenger).
+
+Zerodha's path is the canonical example in [bootstrapped companies](/topics/bootstrapped-companies), and the discount-brokerage disruption echoes globally — compare [Robinhood vs Zerodha](/compare/robinhood-vs-zerodha) and the wider [Indian fintech](/topics/indian-fintech) landscape.
+
+**The takeaway:** you can win by spending nothing (Zerodha's product-as-marketing) *or* by spending smartly on a better experience for an underserved segment (Groww's first-timers) — but the incumbent's capital efficiency is a moat challengers burn cash to overcome.

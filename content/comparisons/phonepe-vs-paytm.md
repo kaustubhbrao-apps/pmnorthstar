@@ -55,3 +55,11 @@ faqs:
 ---
 
 In 2015, Paytm was India's payments giant with 200M users. PhonePe was a new company betting that UPI would replace wallets. A decade later, PhonePe processes more than half of all UPI transactions in India and Paytm Payments Bank was shut down by RBI. The contrast is a textbook lesson in betting on technology shifts.
+
+## Focus versus the super-app
+
+Paytm tried to be everything — payments, commerce, lending, tickets, games — betting a "super-app" would win by owning the whole stack. PhonePe stayed comparatively focused on nailing UPI payments and distribution first, then expanding deliberately. The contrast is a case study in the risks of premature breadth. See [PhonePe's UPI strategy](/case-study/phonepe-upi-strategy) and [Paytm's super-app comeback](/case-study/paytm-super-app-comeback).
+
+The super-app dream has a graveyard attached — see [super-app failures](/topics/super-app-failures) — and the whole battle sits inside the larger story of [Indian fintech](/topics/indian-fintech), where even the payment itself earns almost nothing (see [super.money's credit-first UPI bet](/case-study/super-money-credit-first-upi)).
+
+**The takeaway:** breadth feels like a moat but often becomes a focus tax. Winning one high-frequency habit (payments) completely, then expanding, usually beats trying to be everything at once.

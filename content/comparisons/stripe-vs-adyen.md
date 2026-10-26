@@ -37,3 +37,11 @@ When Stripe launched, their thesis was simple: developers should not have to und
 Adyen took the opposite approach. They realized that for massive global enterprises (like Netflix, Uber, or Spotify), abstraction was actually a liability. Enterprises needed to optimize authorization rates by fractions of a percent, and you can only do that if you own the entire banking stack. Adyen did the grueling, unsexy work of acquiring local banking licenses across the globe to become the gateway, processor, and acquirer all in one. 
 
 Stripe sold speed to developers. Adyen sold basis-point optimizations to CFOs. Both strategies worked flawlessly, proving that in a market as massive as global payments, you can build a titan by polarizing your feature set toward a highly specific ideal customer profile.
+
+## Two ways to win payments
+
+Stripe and Adyen prove there's more than one path through the same market. Stripe won **bottom-up**, obsessing over developers — seven lines of code, beautiful docs, self-serve — so startups built on it by default and grew into big customers. Adyen won **top-down**, going straight for the largest enterprises with a single global platform and deep, consultative sales. See [how Stripe went developer-first](/case-study/stripe-developer-first) and [Adyen's enterprise acquiring](/case-study/adyen-enterprise-acquiring).
+
+Neither is "right" — they're different motions for different buyers, the same split explored in [bottom-up vs top-down sales](/answers/bottom-up-vs-top-down-sales) and [developer-first GTM](/topics/developer-first-gtm). For how this plays out in other markets, compare [PayPal vs Stripe](/compare/paypal-vs-stripe) and [Razorpay vs Stripe](/compare/razorpay-vs-stripe).
+
+**The takeaway:** in the same category, a developer-first self-serve motion and an enterprise-first sales motion can both build huge businesses — what matters is that the product, pricing, and go-to-market all line up behind one chosen buyer.

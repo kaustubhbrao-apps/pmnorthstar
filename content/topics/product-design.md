@@ -29,3 +29,5 @@ faqs:
 ---
 
 Most companies treat design as decoration. The companies in this collection treated it as product strategy — building moats that competitors couldn't replicate even with bigger budgets. From Cred's exclusivity-as-design to Figma's browser-first bet, Headspace's approachable meditation interface to Monzo's hot coral card, these are the deep dives where design itself was the wedge.
+
+Design becomes a moat in two distinct ways. First, when it solves a problem the category accepted as unsolvable — [Figma's browser-first multiplayer bet](/case-study/figma-browser-design) is the clearest example. Second, when design *is* the brand — [Cred's exclusivity-as-design](/case-study/cred-design-fintech), [Monzo's hot coral card](/case-study/monzo-hot-coral-card), and [Linear's craft from day one](/case-study/linear-brand-from-day-one). In both cases the advantage compounds into [network-effects and switching-cost moats](/topics/network-effects-moats) competitors can't buy their way past. See the head-to-heads in [Figma vs Canva](/compare/figma-vs-canva) and [Miro vs Figma](/compare/miro-vs-figma).

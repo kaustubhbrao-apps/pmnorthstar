@@ -55,3 +55,11 @@ faqs:
 ---
 
 Stripe defined the developer-first payments category in the US. Razorpay built the same playbook for India — but had to expand much further to win, becoming a neo-banking infrastructure stack rather than just a payment gateway. Same starting thesis, very different end states because the market constraints were different.
+
+## Same playbook, different market
+
+Razorpay is often called "the Stripe of India," and the developer-first DNA is real — clean APIs, fast integration, winning engineers first. But Razorpay had to solve problems Stripe never faced: India's fragmented payment methods, UPI, regulatory complexity, and razor-thin margins. So it became a broader financial-operations platform, not just a payments API. See [Razorpay's pivot into fintech](/case-study/razorpay-pivot-fintech) and [how Stripe went developer-first](/case-study/stripe-developer-first).
+
+The shared thread is [developer-first GTM](/topics/developer-first-gtm); the divergence is driven by the realities of [Indian fintech](/topics/indian-fintech). Compare the enterprise-vs-developer split in [Stripe vs Adyen](/compare/stripe-vs-adyen) and [PayPal vs Stripe](/compare/paypal-vs-stripe).
+
+**The takeaway:** a proven playbook (win developers first) transfers across markets, but the *product scope* must adapt to local constraints — in India, that meant expanding from a payments API into a full financial-operations suite.

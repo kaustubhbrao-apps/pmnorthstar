@@ -34,3 +34,5 @@ faqs:
 ---
 
 From Razorpay's API-first wedge to Paytm's super-app collapse and recovery, Indian fintech has produced more product strategy lessons in the last decade than almost any other category globally. These are the long-form deep dives on the companies that built it.
+
+Indian fintech is its own strategic universe: UPI made payments essentially free, so the payment itself earns almost nothing and the real business is credit, distribution, and trust. See [PhonePe's UPI strategy](/case-study/phonepe-upi-strategy), [Razorpay's pivot into financial operations](/case-study/razorpay-pivot-fintech), [Cred's design-led play](/case-study/cred-design-fintech), and [super.money's credit-first UPI bet](/case-study/super-money-credit-first-upi). The defining battles — focus versus the super-app, developer-first versus enterprise — show up in [PhonePe vs Paytm](/compare/phonepe-vs-paytm) and [Razorpay vs Stripe](/compare/razorpay-vs-stripe), with the cautionary arc collected in [super-app failures](/topics/super-app-failures).

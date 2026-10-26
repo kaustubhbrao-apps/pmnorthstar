@@ -37,3 +37,11 @@ Jira's success was built on allowing large enterprises to mold the software to t
 Linear launched with the exact opposite thesis. They restricted configurability to force best practices and ensure blazingly fast performance. By using a local-first sync engine, Linear achieved sub-100ms latency on every click. They didn't let users build custom spaghetti workflows, and as a result, the tool remained incredibly focused. 
 
 Linear successfully bypassed the traditional economic buyer (the Project Manager) and won through bottom-up adoption from frustrated engineers who demanded consumer-grade UX in their enterprise tools.
+
+## The deeper lesson: who the product is *for*
+
+The real divide here isn't features, it's **who holds the pen**. Jira optimizes for the buyer — the manager or CIO who wants the tool to mirror the org's existing process, however baroque. Linear optimizes for the *user* — the engineer who has to live in the tool all day. That's the same bottom-up-versus-top-down split you see across modern software, and it decides everything from pricing to onboarding to churn. For more on that dynamic, see [bottom-up vs top-down sales](/answers/bottom-up-vs-top-down-sales) and how [Linear built a brand from day one](/case-study/linear-brand-from-day-one).
+
+Linear's bet — that delight and speed could pull adoption up through the org without ever pitching the CIO — is the same play that reshaped developer tools broadly. It's why opinionated, developer-first products keep eating configurable incumbents. Compare the same tension in [GitHub vs Linear](/compare/github-vs-linear) and [Notion vs Slack](/compare/notion-vs-slack), and the broader pattern in [developer-first go-to-market](/topics/developer-first-gtm).
+
+**The takeaway:** infinite configurability is a moat *and* a liability — it locks in the enterprise while repelling the people who actually use the tool. When a category's power users are miserable, there's room for an opinionated challenger to win from the bottom up.

@@ -31,3 +31,5 @@ faqs:
 ---
 
 Every company in this collection was, at some point, written off. Airbnb was burning cash with listings nobody wanted until its founders flew out to reshoot the photos themselves. Lego was weeks from bankruptcy, drowning in product lines that had nothing to do with the brick. Microsoft was the lumbering giant everyone assumed had missed mobile and cloud both. Zomato cratered 75% after its IPO. Paytm collapsed and clawed its way back. What turned each of them around wasn't a flashy new bet — it was a brutal diagnosis, a return to the core, and a culture willing to admit what wasn't working. These are the deep dives on the companies that came back from the brink.
+
+The best comebacks share a pattern: a company hits the wall, admits the old approach is dead, and reinvents around a sharper focus. [Paytm's super-app comeback](/case-study/paytm-super-app-comeback) is one such arc. The flip side — the stumbles that didn't recover — is collected in [spectacular flameouts](/topics/spectacular-flameouts), and the strategic signal underneath both is knowing when to [pivot](/answers/what-is-a-pivot) before decline forces your hand.

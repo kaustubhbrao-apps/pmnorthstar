@@ -50,3 +50,11 @@ faqs:
 ---
 
 Both Discord and Clubhouse were betting on a similar consumer behavior: people wanted to gather online around shared interests. Discord built for persistence — servers, channels, history. Clubhouse built for ephemerality — live rooms that disappeared when they ended. Five years later, Discord is at $15B and growing. Clubhouse pivoted, then faded. The architectural decision determined everything.
+
+## Persistence beat the hype
+
+Clubhouse and Discord both rode social-audio and community momentum — but one built a retention layer and one didn't. Discord's persistent servers meant communities could leave and come back, compounding over time. Clubhouse's ephemeral live rooms had no home to return to, so when the novelty faded, there was nothing to retain. See [Discord's community pivot](/case-study/discord-community-pivot) and [Clubhouse's FOMO-driven launch](/case-study/clubhouse-fomo-launch).
+
+The difference is really about [network-effects moats](/topics/network-effects-moats) and whether you have a real [growth loop](/answers/what-is-a-growth-loop) versus a one-time viral spike. Clubhouse's arc is a classic of [spectacular flameouts](/topics/spectacular-flameouts); compare the same dynamic in [Quibi vs Clubhouse](/compare/quibi-vs-clubhouse).
+
+**The takeaway:** virality gets you users; *persistence and compounding communities* keep them. A product with no reason to return turns a hype spike into a cliff.

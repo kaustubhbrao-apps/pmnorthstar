@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { marked } from "marked";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Footer } from "@/components/Footer";
 // Type-only — erased at compile time.
@@ -58,7 +59,7 @@ export function CompareClient({
       backLabelDesktop="Back to the library"
       backLabelMobile="Home"
       shareTitle={`${cmp.title} on northstar`}
-      shareText={`${cmp.title}: ${cmp.intro}`}
+      shareText={`${cmp.title}: ${cmp.metaDescription}`}
     >
       <div className="flex flex-col min-w-0">
         {/* Hero — neutral with comparison-color eyebrow accent */}
@@ -106,12 +107,13 @@ export function CompareClient({
             >
               {cmp.title}
             </h1>
-            <p
-              className="text-base sm:text-lg lg:text-xl leading-relaxed"
+            <div
+              className="text-base sm:text-lg lg:text-xl leading-relaxed prose-links"
               style={{ color: "var(--text-muted)" }}
-            >
-              {cmp.intro}
-            </p>
+              dangerouslySetInnerHTML={{
+                __html: marked.parse(cmp.intro) as string,
+              }}
+            />
           </div>
         </section>
 

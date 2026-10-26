@@ -661,3 +661,17 @@ html { transition: none; }
 .drill-shell:has([data-phase]:not([data-phase="intro"])) .drill-briefing {
   display: none;
 }
+
+/* Comparison + topic intros now render markdown (paragraphs, bold, and inline
+   internal links) instead of plain text, matching the case-study/answer prose.
+   Fixes literal ** asterisks and enables contextual cross-links for SEO. */
+.prose-links p { margin: 0 0 1em; }
+.prose-links p:last-child { margin-bottom: 0; }
+.prose-links strong { color: var(--text-primary); font-weight: 700; }
+.prose-links a {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.prose-links a:hover { background: var(--brand-soft); }

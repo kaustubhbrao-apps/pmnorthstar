@@ -26,3 +26,5 @@ faqs:
 ---
 
 Most billion-dollar companies are built on hundreds of millions in VC funding. A small set ignored the playbook entirely: Zerodha never took outside capital and made ₹4,700 crore profit in FY24. Atlassian skipped the enterprise sales team and built a $50B+ business on product-led growth. These are the deep dives on the companies that built durable scale without the venture machine.
+
+The sharpest example is [Zerodha, which built India's largest broker with zero ad spend](/case-study/zerodha-bootstrap-broker) — profitable, founder-owned, growing on product and word of mouth instead of venture capital. Bootstrapping forces a different discipline: capital efficiency becomes the moat, and product-as-marketing replaces paid growth. See how that holds up against a well-funded challenger in [Zerodha vs Groww](/compare/zerodha-vs-groww), and how capital-light strategy plays out across [distribution wins](/topics/distribution-wins) and [Indian fintech](/topics/indian-fintech).

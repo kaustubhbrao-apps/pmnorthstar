@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { marked } from "marked";
 import { ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
@@ -65,7 +66,7 @@ export default function TopicPage({ params }: PageProps) {
       backLabelDesktop="Back to the library"
       backLabelMobile="Home"
       shareTitle={`${topic.title} on northstar`}
-      shareText={`${topic.title}: ${topic.intro}`}
+      shareText={`${topic.title}: ${topic.metaDescription}`}
     >
       <div className="flex flex-col min-w-0">
         {/* Hero */}
@@ -113,12 +114,13 @@ export default function TopicPage({ params }: PageProps) {
             >
               {topic.title}
             </h1>
-            <p
-              className="text-base sm:text-lg lg:text-xl leading-relaxed"
+            <div
+              className="text-base sm:text-lg lg:text-xl leading-relaxed prose-links"
               style={{ color: "var(--text-muted)" }}
-            >
-              {topic.intro}
-            </p>
+              dangerouslySetInnerHTML={{
+                __html: marked.parse(topic.intro) as string,
+              }}
+            />
           </div>
         </section>
 
