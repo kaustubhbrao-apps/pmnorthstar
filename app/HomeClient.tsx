@@ -13,6 +13,7 @@ import {
 import type { CaseStudyCategory } from "@/data/caseStudies";
 import {
   playlists,
+  northstarPlaylists,
   learnCategories,
   getPlaylistsByCategory,
   learnCategoryColors,
@@ -713,6 +714,48 @@ export default function HomeClient() {
                     Design, product, data, marketing, branding, startups, finance — one shelf, hand-picked.
                   </p>
                 </div>
+
+                {/* ── Powered by northstar — our own interview-prep series ──── */}
+                <div className="px-4 sm:px-6 pt-7 sm:pt-9 pb-2">
+                  <div className="flex items-center gap-2.5 mb-2 flex-wrap">
+                    <span
+                      className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
+                      style={{
+                        background: "var(--brand-primary)",
+                        color: "#ffffff",
+                        letterSpacing: "0.12em",
+                      }}
+                    >
+                      Powered by northstar
+                    </span>
+                    <span className="font-mono text-sm" style={{ color: "var(--text-faint)" }}>
+                      {northstarPlaylists.length} {northstarPlaylists.length === 1 ? "series" : "series"}
+                    </span>
+                  </div>
+                  <p className="text-sm mb-5 max-w-xl" style={{ color: "var(--text-muted)" }}>
+                    Original series we make ourselves, on the pmnorthstar YouTube channel — not curated outside playlists.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                    {northstarPlaylists.map((playlist, idx) => (
+                      <PlaylistCard
+                        key={playlist.id}
+                        playlist={playlist}
+                        index={idx}
+                        isLoggedIn={!!user}
+                        initialSaved={savedIds.has(playlist.id)}
+                        initialLiked={likedIds.has(playlist.id)}
+                        onAuthRequired={() => setShowAuthModal(true)}
+                        onSavedChange={handleSavedChange}
+                        onLikedChange={handleLikedChange}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <div
+                  className="mx-4 sm:mx-6 mt-6 mb-1"
+                  style={{ borderTop: "1.5px solid var(--card-border)" }}
+                />
 
                 <div className="px-4 sm:px-6 py-6">
                   {/* Filter chips */}

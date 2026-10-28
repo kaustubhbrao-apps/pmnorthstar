@@ -22,6 +22,10 @@ export interface Playlist {
   videos?: number;
   level?: "Beginner" | "Intermediate" | "Advanced";
   tags?: string[];
+  // Original pmnorthstar-made series (not an externally curated playlist).
+  // Rendered in its own "Powered by northstar" section, kept out of the
+  // curated grid and the category counts so it reads as something special.
+  poweredByNorthstar?: boolean;
 }
 
 export const learnCategories: LearnCategory[] = [
@@ -252,6 +256,55 @@ export const playlists: Playlist[] = [
     url: "https://youtube.com/playlist?list=PLUl4u3cNGP63B2lDhyKOsImI7FjCf6eDW",
     imageUrl: "https://i.ytimg.com/vi/HdHlfiOAJyE/hqdefault.jpg",
     thumbnail: "💰",
+  },
+];
+
+// ── Powered by northstar ────────────────────────────────────────────────
+// Original series we make ourselves, hosted on the pmnorthstar YouTube
+// channel. Kept in a separate array (not in `playlists`) so it renders as
+// its own highlighted section and never dilutes the curated-shelf counts.
+export const northstarPlaylists: Playlist[] = [
+  {
+    id: "ns-guesstimates",
+    title: "Guesstimates for PM & Consulting Interviews",
+    channel: "pmnorthstar",
+    category: "Product Management",
+    description:
+      "Learn to crack guesstimates and market-sizing questions: the bottom-up approach, top-down funneling, and fully worked examples you can use in product management and consulting interviews.",
+    url: "https://www.youtube.com/playlist?list=PLAczfQk-qTnw",
+    thumbnail: "🎯",
+    videos: 8,
+    level: "Beginner",
+    tags: ["Guesstimates", "Market Sizing", "PM Interview", "Consulting"],
+    poweredByNorthstar: true,
+  },
+  {
+    id: "ns-product-stories",
+    title: "Product Stories",
+    channel: "pmnorthstar",
+    category: "Product Management",
+    description:
+      "Short, punchy breakdowns of how the world's best products were built and grew — Figma, Stripe, Slack, Netflix, Spotify, Canva and more — and the product bets behind each one.",
+    url: "https://www.youtube.com/playlist?list=PLCvVLxNZYeTw",
+    thumbnail: "📖",
+    videos: 19,
+    level: "Beginner",
+    tags: ["Product Strategy", "Case Studies", "Growth", "Product Stories"],
+    poweredByNorthstar: true,
+  },
+  {
+    id: "ns-product-sense",
+    title: "Product Sense & Design",
+    channel: "pmnorthstar",
+    category: "Product Management",
+    description:
+      "Build product sense the way interviews test it: find the real user need, pick one user instead of designing for everyone, and apply a simple framework to any product-design question.",
+    url: "https://www.youtube.com/playlist?list=PLM5ffEoa7CTk",
+    thumbnail: "🧭",
+    videos: 4,
+    level: "Beginner",
+    tags: ["Product Sense", "Product Design", "PM Interview", "Frameworks"],
+    poweredByNorthstar: true,
   },
 ];
 
