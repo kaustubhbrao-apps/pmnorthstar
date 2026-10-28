@@ -47,23 +47,38 @@ export interface AIDecodedArticle {
 // AIDecodedArticle back from here.
 import { aiDecodedArticles } from "@/data/aiDecodedArticles";
 
+// A missing or future publishedAt means the article is scheduled, not live.
+// This is the single gate shared by the index list, the sitemap, llms.txt
+// AND the direct [slug] route, so an article hidden from those surfaces also
+// 404s on a direct hit — rather than being readable weeks before its date.
+export function isAIDecodedPublished(
+  article: AIDecodedArticle,
+  now: Date = new Date()
+): boolean {
+  const { publishedAt } = article.frontmatter;
+  return !!publishedAt && new Date(publishedAt) <= now;
+}
+
 export function getAllAIDecodedSlugs(): string[] {
   return aiDecodedArticles.map((a) => a.frontmatter.slug);
 }
 
+// Resolves by slug but hides not-yet-published articles, mirroring
+// getCaseStudyById. Every caller (page, layout metadata/JSON-LD, OG image)
+// inherits the schedule for free, so a future-dated article can't be read,
+// previewed, or crawled ahead of its publish date.
 export function getAIDecodedArticleBySlug(
   slug: string
 ): AIDecodedArticle | null {
-  return aiDecodedArticles.find((a) => a.frontmatter.slug === slug) ?? null;
+  const article =
+    aiDecodedArticles.find((a) => a.frontmatter.slug === slug) ?? null;
+  return article && isAIDecodedPublished(article) ? article : null;
 }
 
 export function getAllAIDecodedArticles(): AIDecodedArticle[] {
   const now = new Date();
   return aiDecodedArticles
-    .filter(
-      (a) =>
-        !!a.frontmatter.publishedAt && new Date(a.frontmatter.publishedAt) <= now
-    )
+    .filter((a) => isAIDecodedPublished(a, now))
     .sort((a, b) => {
       // Most recent first.
       return (
