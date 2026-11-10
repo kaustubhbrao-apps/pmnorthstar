@@ -11,11 +11,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getDrillBySlug } from "@/data/drills";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
   try {
+    // Unauthenticated usage counter — rate-limit per IP so a bot or script
+    // can't flood the table. (It happened: ~477 rows landed in a single day
+    // historically, which is why this guard exists.)
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const { ok } = checkRateLimit(`sim-log-${ip}`, 15, 60_000);
+    if (!ok) {
+      return NextResponse.json({ ok: false }, { status: 429 });
+    }
+
     const body = await req.json().catch(() => ({}));
     const { drillSlug, score, maxPossible } = body as {
       drillSlug?: string;
