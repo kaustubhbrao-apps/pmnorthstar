@@ -15,7 +15,6 @@
 
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { drillTitle } from "@/lib/drills";
 import {
   ArrowRight,
@@ -39,7 +38,6 @@ import type {
 import { track } from "@/lib/track";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { useUserState } from "@/lib/use-user-state";
-import { AuthModal } from "@/components/AuthModal";
 
 type Phase = "intro" | "decision" | "reveal" | "outcome";
 
@@ -100,11 +98,7 @@ export function SimulatePlayer({
   drill: Drill;
   onComplete?: () => void;
 }) {
-  const { isLoggedIn, loading: authLoading, username } = useUserState();
-  const [showAuthModal, setShowAuthModal] = useState(false);
-  const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
-  const searchParams = useSearchParams();
-  const referrerId = searchParams?.get("ref") || undefined;
+  const { loading: authLoading, username } = useUserState();
 
 
   const [state, setState] = useState<PlayState>(() => ({
@@ -172,18 +166,11 @@ export function SimulatePlayer({
     });
   }, [drill.slug]);
 
-  // SimulateIt is free, but we prompt a (free) sign-in so a player's score
-  // saves to their account. Not logged in? Offer sign-in, with an anonymous
-  // "play without saving" fallback. No league gating anymore.
+  // SimulateIt is free and sign-in-free — anyone can play, no wall.
   const begin = useCallback(() => {
     if (authLoading) return;
-    if (!isLoggedIn) {
-      setPendingAction(() => startDrillLogic);
-      setShowAuthModal(true);
-      return;
-    }
     startDrillLogic();
-  }, [authLoading, isLoggedIn, startDrillLogic]);
+  }, [authLoading, startDrillLogic]);
 
   const selectOption = useCallback(
     (optionIndex: number) => {
@@ -237,35 +224,15 @@ export function SimulatePlayer({
           node_id: nextId,
           decisions: state.history.length,
         });
-        // Log an anonymous completion for the usage counter (mirrors
-        // CheckIt). Fire-and-forget — the browser keeps the request alive
-        // and a logging failure must never interrupt the outcome screen.
-        const finalScore = state.history.reduce((sum, h) => sum + h.points, 0);
-        const finalMax = state.history.reduce((sum, h) => {
-          const node = drill.nodes[h.nodeId];
-          if (!node?.options) return sum;
-          return sum + Math.max(...node.options.map((o) => o.points));
-        }, 0);
-        fetch("/api/simulate/save-attempt", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            drillSlug: drill.slug,
-            pathTaken: state.history,
-            ref: referrerId,
-          }),
-          keepalive: true,
-        }).catch(() => {
-          /* swallow */
-        });
-
-      // The attempt has already been anonymously logged at the start of the drill to track clicks.
+        // The anonymous play was logged at drill start. The account-based
+        // save (DrillAttempt + league/referral writes) was removed when
+        // SimulateIt became sign-in-free.
       }
       setState((s) => (s.phase !== "reveal" ? s : { ...s, phase: "outcome", currentNodeId: nextId }));
     } else {
       setState((s) => (s.phase !== "reveal" ? s : { ...s, phase: "decision", currentNodeId: nextId }));
     }
-  }, [currentNode, state.history, state.phase, drill.nodes, drill.slug, referrerId]);
+  }, [currentNode, state.history, state.phase, drill.nodes, drill.slug]);
 
   const restart = useCallback(() => {
     track({ name: "simulateit_drill_restarted", drill_slug: drill.slug });
@@ -400,34 +367,6 @@ export function SimulatePlayer({
         />
       )}
 
-      {showAuthModal && (
-        <AuthModal 
-          onClose={() => {
-            setShowAuthModal(false);
-            setPendingAction(null);
-          }}
-          headline="Sign in to save your score"
-          subhead="SimulateIt is free. Sign in with Google so your score and progress save to your account — or play anonymously without saving."
-          secondaryAction={{
-            label: "Play without saving",
-            onClick: () => {
-              setShowAuthModal(false);
-              startDrillLogic();
-            }
-          }}
-          onSuccess={() => {
-            setShowAuthModal(false);
-            if (pendingAction) {
-              pendingAction();
-              setPendingAction(null);
-            } else {
-              // Trigger a window reload so the user state hook refreshes
-              // across the whole application, including the header.
-              window.location.reload();
-            }
-          }}
-        />
-      )}
     </div>
   );
 }
@@ -767,11 +706,9 @@ function RevealView({
 
 // ── Phase: Outcome ────────────────────────────────────────────────────
 //
-// The auto-save / stats-tracking flow was reverted. The save-attempt
-// endpoint, /simulate/me page, and DrillAttempt model are still in
-// the codebase but not wired into the outcome view. Re-enable by
-// adding back a useEffect that POSTs to /api/simulate/save-attempt
-// when /api/auth/me confirms a session.
+// SimulateIt is sign-in-free: the account layer (save-attempt endpoint,
+// /simulate/me page, league/referral writes) was removed so drills play
+// as pure anonymous content. Mid-run progress persists via localStorage.
 
 function OutcomeView({
   drill,

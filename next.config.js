@@ -39,6 +39,16 @@ const nextConfig = {
     ];
   },
 
+  // /simulate/me (the per-user stats page) was removed when SimulateIt
+  // became sign-in-free. Redirect stale links/bookmarks to the hub rather
+  // than 404. Temporary (307) in case the rebuilt sims re-introduce a
+  // profile surface.
+  async redirects() {
+    return [
+      { source: "/simulate/me", destination: "/simulate", permanent: false },
+    ];
+  },
+
   // /llms.txt and /llms-full.txt build their output from content/ at request
   // time so scheduled posts appear the moment they go live, without a deploy.
   // That read is dynamic, so tracing cannot infer it — these globs are what
