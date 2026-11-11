@@ -21,6 +21,7 @@ import {
 } from "@/data/learn";
 import { Sidebar } from "@/components/Sidebar";
 import { TopNav } from "@/components/TopNav";
+import { TopBar } from "@/components/TopBar";
 import { SaveButton } from "@/components/SaveButton";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionRow } from "@/components/SectionRow";
@@ -979,49 +980,17 @@ export default function HomeClient() {
 
   // ── Main Home View ─────────────────────────────────────────────────────
   return (
-    <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
-      <Sidebar activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        {/* Mobile header with hamburger */}
-        <div
-          className="flex items-center justify-between px-4 py-3 lg:hidden flex-shrink-0"
-          style={{ background: "var(--nav-bg)", borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setSidebarOpen(true)}
-              className="p-1.5 rounded-lg"
-              style={{ color: "var(--text-primary)" }}
-            >
-              <Menu size={20} />
-            </button>
-            <div className="flex items-center gap-1.5">
-              <div
-                className="w-6 h-6 rounded-md flex items-center justify-center"
-                style={{ background: "var(--brand-primary)" }}
-              >
-                <Star size={11} className="text-white fill-white" strokeWidth={1.5} />
-              </div>
-              <span className="font-display font-bold text-[15px]" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>north</span>
-              <span className="font-display font-bold text-[15px]" style={{ color: "var(--brand-primary)", letterSpacing: "-0.02em" }}>star</span>
-            </div>
-          </div>
-          <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-        </div>
-
-        <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
-
-        <TopNav
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          isDark={isDark}
-          onThemeToggle={() => setIsDark(!isDark)}
-          isLoggedIn={!!user}
-          userName={user?.name}
-          onLogout={handleLogout}
-          onAuthRequired={() => setShowAuthModal(true)}
-        />
+    <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
+      <TopBar
+        activeNav={activeNav}
+        isDark={isDark}
+        onToggleTheme={() => setIsDark(!isDark)}
+        onNavChange={setActiveNav}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        onLogin={() => setShowAuthModal(true)}
+        isLoggedIn={!!user}
+      />
 
         {/* User bar — hidden on mobile when not logged in (microcopy
             adds a clutter row on small screens for no real value).
@@ -1075,7 +1044,7 @@ export default function HomeClient() {
           )}
         </div>
 
-        <main className="flex-1 overflow-y-auto scroll-container">
+        <main className="scroll-container mx-auto w-full max-w-[1500px]">
           {/* Render the library view immediately so the H1 + content reach
               SSR HTML (good for SEO crawlers and CheckIt) — auth state
               still resolves async but only changes save/like button
@@ -1494,7 +1463,6 @@ export default function HomeClient() {
           )}
           <Footer />
         </main>
-      </div>
 
       {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
     </div>

@@ -9,7 +9,7 @@ import type { FAQ } from "@/data/caseStudyFaqs";
 // Importing it from @/data/caseStudies would pull in the whole corpus.
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { CaseStudyFaqs } from "@/components/CaseStudyFaqs";
-import { Sidebar } from "@/components/Sidebar";
+import { TopBar } from "@/components/TopBar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ShareButton } from "@/components/ShareButton";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -178,51 +178,16 @@ export function CaseStudyClient({
 
 
   return (
-    <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
+    <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
       {/* SEO / AI Metadata */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
+      <TopBar activeNav="casestudies" isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} />
 
-      <Sidebar
-        activeNav="casestudies"
-        onNavChange={handleNavChange}
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
-
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <header
-          className="flex-shrink-0 px-4 sm:px-6 py-3 flex items-center justify-between gap-3"
-          style={{ background: "var(--nav-bg)", borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setSidebarOpen(true)}
-              className="p-1.5 rounded-lg lg:hidden"
-              style={{ color: "var(--text-primary)" }}
-            >
-              <Menu size={20} />
-            </button>
-            <Link href="/" className="inline-flex items-center gap-2 text-sm font-medium"
-              style={{ color: "var(--text-muted)" }}>
-              <ArrowLeft size={14} strokeWidth={1.6} />
-              <span className="hidden sm:inline">Back to the library</span>
-              <span className="sm:hidden">Back</span>
-            </Link>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="hidden sm:inline text-xs" style={{ color: "var(--text-faint)" }}>
-              {position} of {total}
-            </span>
-            <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} className="hidden sm:inline-flex" />
-          </div>
-        </header>
-
-        <main className="flex-1 overflow-y-auto scroll-container">
+      <main className="scroll-container">
           {/* Hero */}
           <div
             className="dot-grid px-4 sm:px-8 lg:px-12 py-8 sm:py-12 flex justify-center"
@@ -586,7 +551,6 @@ export function CaseStudyClient({
           </div>
           <Footer />
         </main>
-      </div>
     </div>
   );
 }
