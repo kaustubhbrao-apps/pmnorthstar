@@ -24,10 +24,10 @@
   --font-mono:    var(--font-jetbrains-mono), "Courier New", Courier, monospace;
 
   /* Paper and Ink Palette */
-  --page-bg:        #FDFCF8; /* Physical paper color */
-  --surface-bg:     #F7F6F0;
+  --page-bg:        #FFFFFF; /* Pure white — no warm/cream tint (durable user pref) */
+  --surface-bg:     #FFFFFF;
   --card-bg:        #FFFFFF;
-  --tag-bg:         #EBEBE6;
+  --tag-bg:         #F2F2EF;
 
   --card-border:    #111111; /* Hard, physical borders */
   --divider:        #111111;
@@ -40,9 +40,9 @@
   --text-muted:     #111111; /* Brutalist: no grey */
   --text-faint:     #111111; /* Brutalist: no grey */
 
-  --sidebar-bg:     #FDFCF8;
+  --sidebar-bg:     #FFFFFF;
   --sidebar-border: #111111;
-  --nav-bg:         #FDFCF8;
+  --nav-bg:         #FFFFFF;
 
   /* No glowing or floating shadows. Just hard physical depth. */
   --shadow-solid:   4px 4px 0 rgba(17, 17, 17, 0.1);
