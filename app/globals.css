@@ -121,6 +121,18 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  /* Catch-all against stray horizontal overflow at any width. Verified the
+     sticky top nav still pins and vertical scroll is unaffected. */
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Let long words / URLs in article prose wrap instead of forcing a wide line. */
+.markdown-prose,
+.case-para,
+.markdown-prose * {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Add a very subtle noise texture to simulate paper grain */
