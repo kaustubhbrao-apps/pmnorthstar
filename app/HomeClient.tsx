@@ -24,7 +24,7 @@ import { TopNav } from "@/components/TopNav";
 import { SaveButton } from "@/components/SaveButton";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionRow } from "@/components/SectionRow";
-import { HeroBanner } from "@/components/HeroBanner";
+import { EditorialHome } from "@/components/EditorialHome";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PlaylistCard } from "@/components/PlaylistCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -239,7 +239,8 @@ export default function HomeClient() {
     return counts;
   }, []);
 
-  const heroBook = featured[0];
+  // heroBook/HeroBanner removed — the editorial magazine front replaced the
+  // hero carousel (publication reskin).
   const isFiltered = searchQuery.trim() !== "";
 
   const csStats = useMemo(() => {
@@ -1097,39 +1098,14 @@ export default function HomeClient() {
                 studies, {books.length} book reviews, {answers.length} answers and{" "}
                 {playlists.length} playlists
               </h1>
-              {heroBook && <HeroBanner onNavChange={setActiveNav} />}
-
-              {/* ── Featured: Case Studies ─────────────────────────── */}
-              <SectionRow title="Case Studies" subtitle="Featured deep dives across all categories" accentColor="#F3123C">
-                {homeFeaturedCaseStudies.map((study, idx) => (
-                  <div
-                    key={study.id}
-                    className="flex-shrink-0 w-[280px] sm:w-[320px]"
-                  >
-                    <CaseStudyCard
-                      study={study}
-                      index={idx}
-                      isLoggedIn={!!user}
-                      initialSaved={savedIds.has(study.id)}
-                      initialLiked={likedIds.has(study.id)}
-                      onAuthRequired={() => setShowAuthModal(true)}
-                      onSavedChange={handleSavedChange}
-                      onLikedChange={handleLikedChange}
-                      hideCategory={false}
-                    />
-                  </div>
-                ))}
-              </SectionRow>
-
-              <div className="px-4 sm:px-6 mt-2 mb-10">
-                <button
-                  onClick={() => setActiveNav("casestudies")}
-                  className="btn-ghost inline-flex text-sm"
-                >
-                  See all {caseStudies.length} case studies
-                  <ArrowUpRight size={14} strokeWidth={1.8} className="ml-1" />
-                </button>
-              </div>
+              {/* ── Editorial magazine front (publication reskin) ──── */}
+              <EditorialHome
+                caseStudies={caseStudies}
+                featured={homeFeaturedCaseStudies}
+                comparisons={comparisons}
+                aiDecoded={aiDecodedManifest}
+                onSeeAllCases={() => setActiveNav("casestudies")}
+              />
 
               {/* ── Explore the Library — compact grid of everything ── */}
               <div className="px-4 sm:px-6 mb-10">
