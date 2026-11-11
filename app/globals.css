@@ -110,8 +110,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* Kills the AI startup "everything is a rounded rectangle" trope */
-  border-radius: 0 !important; 
 }
 
 html, body {

@@ -10,6 +10,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { solidColorFor } from "@/lib/category-colors";
+import { getCompanyLogoUrl } from "@/data/companyDomains";
 
 const ARCHIVO = "var(--font-archivo), 'Archivo', system-ui, sans-serif";
 const NEWS = "var(--font-newsreader), 'Newsreader', Georgia, serif";
@@ -45,6 +46,32 @@ function LightPill({ children }: { children: React.ReactNode }) {
     >
       <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#fff" }} />
       {children}
+    </span>
+  );
+}
+
+// Relevant image per card: the company's logo (from the domain map), shown on
+// a white tile over the colored block. Hides itself if the logo 404s.
+function LogoTile({ company, size = 44 }: { company: string; size?: number }) {
+  const url = getCompanyLogoUrl(company);
+  if (!url) return null;
+  return (
+    <span
+      className="inline-flex items-center justify-center bg-white overflow-hidden flex-shrink-0"
+      style={{ width: size, height: size, borderRadius: Math.round(size / 4), border: "1px solid rgba(0,0,0,0.08)" }}
+    >
+      <img
+        src={url}
+        alt={`${company} logo`}
+        width={size}
+        height={size}
+        className="max-w-full max-h-full object-contain"
+        style={{ padding: Math.round(size / 7) }}
+        onError={(e) => {
+          const p = e.currentTarget.parentElement as HTMLElement | null;
+          if (p) p.style.display = "none";
+        }}
+      />
     </span>
   );
 }
@@ -98,6 +125,10 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
             className="block rounded-[22px] p-6 sm:p-9 lg:p-11 transition-transform hover:-translate-y-0.5"
             style={{ background: "var(--brand-primary)" }}
           >
+            <div className="flex items-center justify-between mb-4">
+              <LogoTile company={lead.company} size={56} />
+              <ArrowUpRight size={20} strokeWidth={2} style={{ color: "#fff" }} />
+            </div>
             <LightPill>
               {lead.category} · {lead.company}
             </LightPill>
@@ -129,18 +160,21 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
               style={{ background: color }}
             >
               <div className="flex items-start justify-between mb-2">
-                <LightPill>{s.category}</LightPill>
+                <LogoTile company={s.company} size={44} />
                 <ArrowUpRight size={18} strokeWidth={2} style={{ color: "#fff" }} />
               </div>
-              <h3
-                className="text-white font-bold tracking-tight leading-[1.05] mt-auto text-2xl"
-                style={{ fontFamily: ARCHIVO, maxWidth: "16ch", letterSpacing: "-0.02em" }}
-              >
-                {s.title}
-              </h3>
-              <p className="text-xs mt-2 font-semibold" style={{ fontFamily: ARCHIVO, color: "rgba(255,255,255,0.78)" }}>
-                {s.company} · {s.year}
-              </p>
+              <div className="mt-auto">
+                <LightPill>{s.category}</LightPill>
+                <h3
+                  className="text-white font-bold tracking-tight leading-[1.05] mt-3 text-2xl"
+                  style={{ fontFamily: ARCHIVO, maxWidth: "16ch", letterSpacing: "-0.02em" }}
+                >
+                  {s.title}
+                </h3>
+                <p className="text-xs mt-2 font-semibold" style={{ fontFamily: ARCHIVO, color: "rgba(255,255,255,0.78)" }}>
+                  {s.company} · {s.year}
+                </p>
+              </div>
             </Link>
           );
         })}

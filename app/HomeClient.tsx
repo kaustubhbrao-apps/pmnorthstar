@@ -274,33 +274,10 @@ export default function HomeClient() {
   // ── Saved for Later View ───────────────────────────────────────────────
   if (activeNav === "saved") {
     return (
-      <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
-        <Sidebar activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          <header
-            className="flex-shrink-0 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3"
-            style={{ background: "var(--nav-bg)", borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className="p-1.5 rounded-lg lg:hidden"
-                style={{ color: "var(--text-primary)" }}
-              >
-                <Menu size={20} />
-              </button>
-              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
-                <ArrowLeft size={14} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Back to the library</span>
-                <span className="sm:hidden">Back</span>
-              </button>
-            </div>
-            <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          </header>
+      <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
+        <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
-
-          <main className="flex-1 overflow-y-auto scroll-container p-4 sm:p-6 pb-12">
+          <main className="scroll-container mx-auto w-full max-w-[1500px] p-4 sm:p-6 pb-12">
             {!user ? (
               <div className="flex flex-col items-center justify-center py-20">
                 <p className="eyebrow mb-3">Sign in required</p>
@@ -396,7 +373,6 @@ export default function HomeClient() {
               </>
             )}
           </main>
-        </div>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
@@ -405,33 +381,10 @@ export default function HomeClient() {
   // ── Favourites View ────────────────────────────────────────────────────
   if (activeNav === "favourites") {
     return (
-      <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
-        <Sidebar activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          <header
-            className="flex-shrink-0 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3"
-            style={{ background: "var(--nav-bg)", borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className="p-1.5 rounded-lg lg:hidden"
-                style={{ color: "var(--text-primary)" }}
-              >
-                <Menu size={20} />
-              </button>
-              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
-                <ArrowLeft size={14} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Back to the library</span>
-                <span className="sm:hidden">Back</span>
-              </button>
-            </div>
-            <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          </header>
+      <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
+        <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
-
-          <main className="flex-1 overflow-y-auto scroll-container p-4 sm:p-6 pb-12">
+          <main className="scroll-container mx-auto w-full max-w-[1500px] p-4 sm:p-6 pb-12">
             {!user ? (
               <div className="flex flex-col items-center justify-center py-20">
                 <p className="eyebrow mb-3">Sign in required</p>
@@ -524,7 +477,6 @@ export default function HomeClient() {
               </>
             )}
           </main>
-        </div>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
@@ -535,29 +487,10 @@ export default function HomeClient() {
     const wins = filteredCaseStudies.filter((c) => c.category !== "Failure").length;
     const fails = filteredCaseStudies.filter((c) => c.category === "Failure").length;
     return (
-      <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
-        <Sidebar activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          <header
-            className="flex-shrink-0 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3"
-            style={{ background: "var(--nav-bg)", borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="flex items-center gap-3">
-              <button onClick={() => setSidebarOpen(true)} className="p-1.5 rounded-lg lg:hidden" style={{ color: "var(--text-primary)" }}>
-                <Menu size={20} />
-              </button>
-              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
-                <ArrowLeft size={14} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Back to the library</span>
-                <span className="sm:hidden">Back</span>
-              </button>
-            </div>
-            <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          </header>
+      <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
+        <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
-
-          <main className="flex-1 overflow-y-auto scroll-container">
+          <main className="scroll-container mx-auto w-full max-w-[1500px]">
               <>
                 {/* Hero strip */}
                 <div className="dot-grid px-4 sm:px-8 py-10 sm:py-14 flex justify-center" style={{ borderBottom: "1.5px solid var(--card-border)" }}>
@@ -655,7 +588,6 @@ export default function HomeClient() {
                 </div>
               </>
           </main>
-        </div>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
@@ -664,33 +596,10 @@ export default function HomeClient() {
   // ── Learn View ─────────────────────────────────────────────────────────
   if (activeNav === "learn") {
     return (
-      <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
-        <Sidebar activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          <header
-            className="flex-shrink-0 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3"
-            style={{ background: "var(--nav-bg)", borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setSidebarOpen(true)}
-                className="p-1.5 rounded-lg lg:hidden"
-                style={{ color: "var(--text-primary)" }}
-              >
-                <Menu size={20} />
-              </button>
-              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
-                <ArrowLeft size={14} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Back to the library</span>
-                <span className="sm:hidden">Back</span>
-              </button>
-            </div>
-            <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          </header>
+      <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
+        <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
-
-          <main className="flex-1 overflow-y-auto scroll-container">
+          <main className="scroll-container mx-auto w-full max-w-[1500px]">
               <>
                 {/* Hero strip */}
                 <div
@@ -837,7 +746,6 @@ export default function HomeClient() {
                 </div>
               </>
           </main>
-        </div>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
@@ -846,29 +754,10 @@ export default function HomeClient() {
   // ── Explore View — topics + comparisons aggregator ────────────────────
   if (activeNav === "explore") {
     return (
-      <div className="flex h-screen overflow-hidden" style={{ background: "var(--page-bg)" }}>
-        <Sidebar activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-          <header
-            className="flex-shrink-0 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3"
-            style={{ background: "var(--nav-bg)", borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="flex items-center gap-3 min-w-0">
-              <button onClick={() => setSidebarOpen(true)} className="p-1.5 rounded-lg lg:hidden flex-shrink-0" style={{ color: "var(--text-primary)" }}>
-                <Menu size={20} />
-              </button>
-              <button onClick={() => { setActiveNav("home"); window.scrollTo(0,0); }} className="inline-flex items-center gap-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
-                <ArrowLeft size={14} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Back to the library</span>
-                <span className="sm:hidden">Back</span>
-              </button>
-            </div>
-            <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          </header>
+      <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
+        <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <MobileNav activeNav={activeNav} onNavChange={setActiveNav} savedCount={savedCount} favouriteCount={favouriteCount} />
-
-          <main className="flex-1 overflow-y-auto scroll-container">
+          <main className="scroll-container mx-auto w-full max-w-[1500px]">
             {/* Hero */}
             <section
               className="dot-grid px-4 sm:px-8 lg:px-12 py-10 sm:py-16 flex justify-center"
@@ -972,7 +861,6 @@ export default function HomeClient() {
               </div>
             </section>
           </main>
-        </div>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
     );
