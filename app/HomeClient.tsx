@@ -84,15 +84,24 @@ export default function HomeClient() {
   // typeof check returns false on the server (initial HTML is light),
   // and the inline script in app/layout.tsx already sets data-theme on
   // the <html> tag before React hydrates, so there's no visible flash.
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
-    return localStorage.getItem("theme") === "dark";
-  });
+  // Init false so server and client first render match — reading localStorage
+  // in the initializer makes the theme-toggle icon differ across the hydration
+  // boundary (a <circle> in the Sun SVG), which throws a hydration error. The
+  // inline script in app/layout.tsx already set data-theme pre-paint, so we
+  // read the saved value after mount and only then start writing it back.
+  const [isDark, setIsDark] = useState(false);
+  const [themeReady, setThemeReady] = useState(false);
 
   useEffect(() => {
+    setIsDark(localStorage.getItem("theme") === "dark");
+    setThemeReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!themeReady) return;
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-  }, [isDark]);
+  }, [isDark, themeReady]);
   // Auth + saved/liked come from the shared UserStateProvider (app/layout.tsx).
   // This component used to fetch /api/auth/me, /api/saved and /api/liked
   // itself, duplicating what all 53 SmartSaveButtons on this page were each

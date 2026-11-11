@@ -21,17 +21,24 @@ interface SidebarShellProps {
 // artifact-style TopBar (publication reskin): a sticky top nav over a
 // normally-scrolling document.
 export function SidebarShell({ children, activeNav = "" }: SidebarShellProps) {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false;
-    return localStorage.getItem("theme") === "dark";
-  });
+  // Init false so server and client first render match (avoids a hydration
+  // mismatch on the theme-toggle icon); read the saved theme after mount and
+  // only then start writing data-theme (the inline script set it pre-paint).
+  const [isDark, setIsDark] = useState(false);
+  const [themeReady, setThemeReady] = useState(false);
 
   useEffect(() => {
+    setIsDark(localStorage.getItem("theme") === "dark");
+    setThemeReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!themeReady) return;
     if (typeof document !== "undefined") {
       document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
       localStorage.setItem("theme", isDark ? "dark" : "light");
     }
-  }, [isDark]);
+  }, [isDark, themeReady]);
 
   return (
     <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
