@@ -7,6 +7,7 @@
 // and low-risk. UI chrome (sidebar, top nav, search) is owned by HomeClient.
 
 import Link from "next/link";
+import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { solidColorFor } from "@/lib/category-colors";
@@ -50,28 +51,69 @@ function LightPill({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Relevant image per card: the company's logo (from the domain map), shown on
-// a white tile over the colored block. Hides itself if the logo 404s.
-function LogoTile({ company, size = 44 }: { company: string; size?: number }) {
+function brandMonogram(company: string) {
+  const parts = company.replace(/[^A-Za-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
+  const m = parts.length >= 2 ? parts[0][0] + parts[1][0] : (parts[0] || "?").slice(0, 2);
+  return m.toUpperCase();
+}
+
+// The per-card image: the company's logo on a white panel, or a bold monogram
+// fallback so a card is never blank. `tile` = small corner mark; `lead` = a
+// full panel that fills the lead card's right side.
+function BrandImage({
+  company,
+  accent,
+  variant = "tile",
+}: {
+  company: string;
+  accent: string;
+  variant?: "tile" | "lead";
+}) {
   const url = getCompanyLogoUrl(company);
-  if (!url) return null;
+  const [broken, setBroken] = useState(false);
+  const showLogo = !!url && !broken;
+
+  if (variant === "lead") {
+    return (
+      <div
+        className="w-full h-full rounded-2xl bg-white flex items-center justify-center overflow-hidden"
+        style={{ minHeight: 200 }}
+      >
+        {showLogo ? (
+          <img
+            src={url!}
+            alt={`${company} logo`}
+            className="object-contain"
+            style={{ width: 132, height: 132 }}
+            onError={() => setBroken(true)}
+          />
+        ) : (
+          <span style={{ fontFamily: ARCHIVO, color: accent, fontWeight: 800, fontSize: 84, lineHeight: 1, letterSpacing: "-0.03em" }}>
+            {brandMonogram(company)}
+          </span>
+        )}
+      </div>
+    );
+  }
+
   return (
     <span
-      className="inline-flex items-center justify-center bg-white overflow-hidden flex-shrink-0"
-      style={{ width: size, height: size, borderRadius: Math.round(size / 4), border: "1px solid rgba(0,0,0,0.08)" }}
+      className="inline-flex items-center justify-center bg-white overflow-hidden flex-shrink-0 rounded-xl"
+      style={{ width: 44, height: 44, border: "1px solid rgba(0,0,0,0.08)" }}
     >
-      <img
-        src={url}
-        alt={`${company} logo`}
-        width={size}
-        height={size}
-        className="max-w-full max-h-full object-contain"
-        style={{ padding: Math.round(size / 7) }}
-        onError={(e) => {
-          const p = e.currentTarget.parentElement as HTMLElement | null;
-          if (p) p.style.display = "none";
-        }}
-      />
+      {showLogo ? (
+        <img
+          src={url!}
+          alt={`${company} logo`}
+          className="object-contain"
+          style={{ width: 30, height: 30 }}
+          onError={() => setBroken(true)}
+        />
+      ) : (
+        <span style={{ fontFamily: ARCHIVO, color: accent, fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em" }}>
+          {brandMonogram(company)}
+        </span>
+      )}
     </span>
   );
 }
@@ -122,28 +164,34 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
           </div>
           <Link
             href={`/case-study/${getCaseStudySlug(lead.id)}`}
-            className="block rounded-[22px] p-6 sm:p-9 lg:p-11 transition-transform hover:-translate-y-0.5"
+            className="block rounded-[22px] overflow-hidden transition-transform hover:-translate-y-0.5"
             style={{ background: "var(--brand-primary)" }}
           >
-            <div className="flex items-center justify-between mb-4">
-              <LogoTile company={lead.company} size={56} />
-              <ArrowUpRight size={20} strokeWidth={2} style={{ color: "#fff" }} />
+            <div className="grid md:grid-cols-[1.15fr_0.85fr] items-stretch">
+              <div className="p-6 sm:p-9 lg:p-11 flex flex-col">
+                <div className="flex items-center justify-between mb-4">
+                  <LightPill>
+                    {lead.category} · {lead.company}
+                  </LightPill>
+                  <ArrowUpRight size={20} strokeWidth={2} style={{ color: "#fff" }} />
+                </div>
+                <h3
+                  className="text-white font-extrabold tracking-tight leading-[0.95] mt-2 text-3xl sm:text-5xl lg:text-6xl"
+                  style={{ fontFamily: ARCHIVO, maxWidth: "14ch", letterSpacing: "-0.03em" }}
+                >
+                  {lead.title}
+                </h3>
+                <p className="mt-4 text-lg leading-relaxed" style={{ fontFamily: NEWS, color: "rgba(255,255,255,0.92)", maxWidth: "46ch" }}>
+                  {lead.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 mt-6 text-white font-semibold" style={{ fontFamily: ARCHIVO }}>
+                  Read the teardown <ArrowUpRight size={18} strokeWidth={2} />
+                </span>
+              </div>
+              <div className="hidden md:flex p-6 lg:p-8">
+                <BrandImage company={lead.company} accent="var(--brand-primary)" variant="lead" />
+              </div>
             </div>
-            <LightPill>
-              {lead.category} · {lead.company}
-            </LightPill>
-            <h3
-              className="text-white font-extrabold tracking-tight leading-[0.95] mt-4 text-3xl sm:text-5xl lg:text-6xl"
-              style={{ fontFamily: ARCHIVO, maxWidth: "14ch", letterSpacing: "-0.03em" }}
-            >
-              {lead.title}
-            </h3>
-            <p className="mt-4 text-lg leading-relaxed" style={{ fontFamily: NEWS, color: "rgba(255,255,255,0.92)", maxWidth: "46ch" }}>
-              {lead.description}
-            </p>
-            <span className="inline-flex items-center gap-1.5 mt-6 text-white font-semibold" style={{ fontFamily: ARCHIVO }}>
-              Read the teardown <ArrowUpRight size={18} strokeWidth={2} />
-            </span>
           </Link>
         </section>
       )}
@@ -160,7 +208,7 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
               style={{ background: color }}
             >
               <div className="flex items-start justify-between mb-2">
-                <LogoTile company={s.company} size={44} />
+                <BrandImage company={s.company} accent={color} variant="tile" />
                 <ArrowUpRight size={18} strokeWidth={2} style={{ color: "#fff" }} />
               </div>
               <div className="mt-auto">
