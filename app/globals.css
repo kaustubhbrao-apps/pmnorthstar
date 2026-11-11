@@ -521,6 +521,25 @@ html { transition: none; }
 .markdown-prose em {
   font-style: italic;
 }
+
+/* ── EDITORIAL READING FACES (publication reskin) ───────────────────────── */
+/* Scoped to the long-form reading experience: Newsreader serif for article
+   body, Archivo for in-article headings and the hero headline. UI chrome
+   (nav, sidebar, cards) keeps the Avenir/Nunito stack. */
+.case-para {
+  font-family: var(--font-newsreader), "Newsreader", Georgia, "Times New Roman", serif;
+}
+.markdown-prose h2,
+.markdown-prose h3 {
+  font-family: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  font-weight: 800;
+}
+.case-hero-title {
+  font-family: var(--font-archivo), "Archivo", system-ui, sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
 .markdown-prose a {
   color: var(--brand-primary);
   text-decoration: underline;

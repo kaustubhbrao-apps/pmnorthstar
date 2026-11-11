@@ -286,7 +286,7 @@ export function CaseStudyClient({
                   )}
                 </span>
                 <h1
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]"
+                  className="case-hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]"
                   style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}
                 >
                   {study.title}

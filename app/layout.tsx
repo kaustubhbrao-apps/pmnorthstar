@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito_Sans, JetBrains_Mono } from "next/font/google";
+import { Nunito_Sans, JetBrains_Mono, Archivo, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
@@ -38,6 +38,24 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
   display: "swap",
   variable: "--font-jetbrains-mono",
+});
+
+// Editorial display + reading faces for the publication reskin. Archivo
+// (grotesque, with italic) sets headlines; Newsreader (serif) sets long-form
+// article body. Scoped via CSS to headings and article prose, not UI chrome.
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-newsreader",
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
@@ -144,7 +162,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${avenirFallback.variable} ${jetbrainsMono.variable}`}
+      className={`${avenirFallback.variable} ${jetbrainsMono.variable} ${archivo.variable} ${newsreader.variable}`}
     >
       <head>
         <script
