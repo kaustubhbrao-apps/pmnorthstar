@@ -45,7 +45,7 @@ const jetbrainsMono = JetBrains_Mono({
 // article body. Scoped via CSS to headings and article prose, not UI chrome.
 const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-archivo",

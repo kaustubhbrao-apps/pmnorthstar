@@ -19,8 +19,11 @@
   --font-avenir:  "Avenir Next", "Avenir", var(--font-avenir-fallback),
                   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                   "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-avenir);
-  --font-body:    var(--font-avenir);
+  /* Publication reskin: Archivo is the site-wide UI face (matches the
+     editorial direction). Avenir stack kept below as a legacy fallback.
+     Long-form reading flips to Newsreader serif via .case-para. */
+  --font-display: var(--font-archivo), "Archivo", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-body:    var(--font-archivo), "Archivo", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --font-mono:    var(--font-jetbrains-mono), "Courier New", Courier, monospace;
 
   /* Paper and Ink Palette */
