@@ -1,35 +1,32 @@
 "use client";
 
-// Artifact-style top navigation (publication reskin): a sticky white bar with
-// the pmnorthstar wordmark, horizontal nav, search + theme + mobile menu.
-// Replaces the left Sidebar across the site. onNavChange lets the homepage
-// switch its in-page views; everywhere else the links just route.
+// Artifact-style top navigation (publication reskin): sticky bar with the
+// pmnorthstar wordmark, nav with superscript counts, a solid circle search,
+// the theme toggle and a Menu pill. Replaces the left sidebar site-wide.
+// onNavChange lets the homepage switch its in-page views; elsewhere links route.
 
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { CASE_STUDY_COUNT, COMPARISON_COUNT, DRILL_COUNT, BOOK_COUNT } from "@/data/inventory-counts";
 
-const NAV = [
-  { id: "casestudies", label: "Cases", href: "/" },
+const NAV: { id: string; label: string; href: string; count?: number }[] = [
+  { id: "casestudies", label: "Cases", href: "/", count: CASE_STUDY_COUNT },
   { id: "india", label: "India", href: "/india" },
-  { id: "explore", label: "Head-to-Head", href: "/compare" },
-  { id: "ai-decoded", label: "AI Decoded", href: "/ai-decoded" },
-  { id: "simulate", label: "SimulateIt", href: "/simulate" },
+  { id: "explore", label: "Head-to-Head", href: "/compare", count: COMPARISON_COUNT },
+  { id: "simulate", label: "SimulateIt", href: "/simulate", count: DRILL_COUNT },
   { id: "checkit", label: "CheckIt", href: "/checkit" },
-  { id: "learn", label: "Books", href: "/book" },
+  { id: "learn", label: "Books", href: "/book", count: BOOK_COUNT },
 ];
 
 interface TopBarProps {
   activeNav?: string;
   isDark: boolean;
   onToggleTheme: () => void;
-  /** Homepage passes its view setter so nav clicks switch in-page views. */
   onNavChange?: (id: string) => void;
-  /** When provided, renders a live search box (homepage). */
   searchQuery?: string;
   onSearchChange?: (v: string) => void;
-  /** When provided and signed-out, renders a Log in button. */
   onLogin?: () => void;
   isLoggedIn?: boolean;
 }
@@ -44,13 +41,12 @@ export function TopBar({
   onLogin,
   isLoggedIn,
 }: TopBarProps) {
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const linkStyle = (id: string): React.CSSProperties => ({
     fontFamily: "var(--font-display)",
     color: activeNav === id ? "var(--brand-primary)" : "var(--text-primary)",
-    borderBottom: `2px solid ${activeNav === id ? "var(--brand-primary)" : "transparent"}`,
-    paddingBottom: 2,
   });
 
   return (
@@ -58,101 +54,115 @@ export function TopBar({
       className="sticky top-0 z-40"
       style={{ background: "var(--nav-bg)", borderBottom: "2px solid var(--card-border)" }}
     >
-      <div className="mx-auto max-w-[1500px] flex items-center gap-4 px-4 sm:px-6 py-3">
-        <Link href="/" className="flex-shrink-0" onClick={() => onNavChange?.("home")}>
+      <div className="mx-auto max-w-[1500px] flex items-center gap-4 px-4 sm:px-6 py-3.5">
+        <Link href="/" onClick={() => onNavChange?.("home")} className="flex-shrink-0">
           <span
-            className="text-xl font-extrabold italic tracking-tight"
-            style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+            className="text-2xl font-extrabold italic tracking-tight"
+            style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)", letterSpacing: "-0.03em" }}
           >
             pm<span style={{ color: "var(--brand-primary)" }}>northstar</span>.
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-5 ml-2">
+        <nav className="hidden lg:flex items-center gap-6 ml-4">
           {NAV.map((n) => (
             <Link
               key={n.id}
               href={n.href}
               onClick={() => onNavChange?.(n.id)}
-              className="text-sm font-semibold whitespace-nowrap hover:opacity-70"
+              className="relative text-[0.95rem] font-semibold whitespace-nowrap hover:opacity-70"
               style={linkStyle(n.id)}
             >
               {n.label}
+              {typeof n.count === "number" && (
+                <sup className="ml-0.5 text-[0.62em] font-semibold" style={{ color: "var(--text-muted)" }}>
+                  ({n.count})
+                </sup>
+              )}
+              {activeNav === n.id && (
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px]" style={{ background: "var(--brand-primary)" }} />
+              )}
             </Link>
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-2 flex-shrink-0">
-          {onSearchChange ? (
-            <div
-              className="hidden sm:flex items-center gap-2 rounded-full px-3 h-9"
-              style={{ border: "1.5px solid var(--card-border)" }}
-            >
-              <Search size={15} strokeWidth={1.8} style={{ color: "var(--text-muted)" }} />
-              <input
-                value={searchQuery ?? ""}
-                onChange={(e) => onSearchChange(e.target.value)}
-                placeholder="Search"
-                aria-label="Search the library"
-                className="bg-transparent outline-none text-sm w-28 lg:w-40"
-                style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}
-              />
-            </div>
-          ) : (
-            <Link
-              href="/"
-              aria-label="Search"
-              onClick={() => onNavChange?.("home")}
-              className="w-9 h-9 rounded-full grid place-items-center"
-              style={{ border: "1.5px solid var(--card-border)", color: "var(--text-primary)" }}
-            >
-              <Search size={16} strokeWidth={1.8} />
-            </Link>
-          )}
-          <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
-          {onLogin && !isLoggedIn && (
-            <button
-              onClick={onLogin}
-              className="hidden sm:inline-flex items-center rounded-full px-3.5 h-9 text-sm font-bold"
-              style={{ border: "1.5px solid var(--card-border)", color: "var(--text-primary)", fontFamily: "var(--font-display)" }}
-            >
-              Log in
-            </button>
-          )}
+        <div className="ml-auto flex items-center gap-2.5 flex-shrink-0">
           <button
-            onClick={() => setOpen((o) => !o)}
-            className="lg:hidden w-9 h-9 rounded-full grid place-items-center"
+            onClick={() => {
+              if (onSearchChange) setSearchOpen((o) => !o);
+              else window.location.href = "/";
+            }}
+            aria-label="Search"
+            className="w-11 h-11 rounded-full grid place-items-center"
+            style={{ background: "var(--text-primary)", color: "var(--nav-bg)" }}
+          >
+            <Search size={17} strokeWidth={2} />
+          </button>
+          <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
+          <button
+            onClick={() => setMenuOpen((o) => !o)}
+            className="rounded-full px-4 h-11 text-sm font-semibold hidden sm:inline-flex items-center"
+            style={{ border: "1.5px solid var(--card-border)", color: "var(--text-primary)", fontFamily: "var(--font-display)" }}
+            aria-expanded={menuOpen}
+          >
+            Menu
+          </button>
+          <button
+            onClick={() => setMenuOpen((o) => !o)}
+            className="sm:hidden w-11 h-11 rounded-full grid place-items-center"
             style={{ border: "1.5px solid var(--card-border)", color: "var(--text-primary)" }}
             aria-label="Menu"
-            aria-expanded={open}
           >
-            {open ? <X size={16} /> : <Menu size={16} />}
+            {menuOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
         </div>
       </div>
 
-      {open && (
-        <nav
-          className="lg:hidden px-4 sm:px-6 pb-3 flex flex-col"
-          style={{ borderTop: "1.5px solid var(--card-border)" }}
-        >
+      {searchOpen && onSearchChange && (
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 pb-3">
+          <input
+            autoFocus
+            value={searchQuery ?? ""}
+            onChange={(e) => onSearchChange(e.target.value)}
+            placeholder="Search books, authors, topics…"
+            aria-label="Search the library"
+            className="w-full rounded-full px-5 py-2.5 text-base outline-none"
+            style={{ border: "1.5px solid var(--card-border)", background: "var(--card-bg)", color: "var(--text-primary)", fontFamily: "var(--font-display)" }}
+          />
+        </div>
+      )}
+
+      {menuOpen && (
+        <nav className="px-4 sm:px-6 pb-3 flex flex-col" style={{ borderTop: "1.5px solid var(--card-border)" }}>
           {NAV.map((n) => (
             <Link
               key={n.id}
               href={n.href}
               onClick={() => {
                 onNavChange?.(n.id);
-                setOpen(false);
+                setMenuOpen(false);
               }}
               className="py-2.5 text-sm font-semibold"
-              style={{
-                fontFamily: "var(--font-display)",
-                color: activeNav === n.id ? "var(--brand-primary)" : "var(--text-primary)",
-              }}
+              style={linkStyle(n.id)}
             >
               {n.label}
+              {typeof n.count === "number" && (
+                <sup className="ml-0.5 text-[0.62em]" style={{ color: "var(--text-muted)" }}>({n.count})</sup>
+              )}
             </Link>
           ))}
+          {onLogin && !isLoggedIn && (
+            <button
+              onClick={() => {
+                onLogin();
+                setMenuOpen(false);
+              }}
+              className="py-2.5 text-sm font-semibold text-left"
+              style={{ fontFamily: "var(--font-display)", color: "var(--brand-primary)" }}
+            >
+              Log in
+            </button>
+          )}
         </nav>
       )}
     </header>
