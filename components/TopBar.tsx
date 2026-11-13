@@ -1,23 +1,41 @@
 "use client";
 
-// Artifact-style top navigation (publication reskin): sticky bar with the
-// pmnorthstar wordmark, nav with superscript counts, a solid circle search,
-// the theme toggle and a Menu pill. Replaces the left sidebar site-wide.
+// Artifact-style top navigation: wordmark, nav links with superscript counts
+// (India in brand red), then a solid circle search, the theme circle and a
+// Menu pill. Sticky over the white panel, no border. On the homepage the
+// search circle toggles an inline search row; elsewhere it routes to /.
 // onNavChange lets the homepage switch its in-page views; elsewhere links route.
 
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { CASE_STUDY_COUNT, COMPARISON_COUNT, DRILL_COUNT, BOOK_COUNT } from "@/data/inventory-counts";
+import {
+  CASE_STUDY_COUNT,
+  COMPARISON_COUNT,
+  DRILL_COUNT,
+  BOOK_COUNT,
+  INDIA_CASE_STUDY_COUNT,
+} from "@/data/inventory-counts";
 
 const NAV: { id: string; label: string; href: string; count?: number }[] = [
-  { id: "casestudies", label: "Cases", href: "/", count: CASE_STUDY_COUNT },
-  { id: "india", label: "India", href: "/india" },
+  { id: "casestudies", label: "Cases", href: "/#casestudies", count: CASE_STUDY_COUNT },
+  { id: "india", label: "India", href: "/india", count: INDIA_CASE_STUDY_COUNT },
   { id: "explore", label: "Head-to-Head", href: "/compare", count: COMPARISON_COUNT },
   { id: "simulate", label: "SimulateIt", href: "/simulate", count: DRILL_COUNT },
   { id: "checkit", label: "CheckIt", href: "/checkit" },
-  { id: "learn", label: "Books", href: "/book", count: BOOK_COUNT },
+  { id: "books", label: "Books", href: "/book", count: BOOK_COUNT },
+];
+
+// Surfaces that live behind the Menu pill rather than in the primary row.
+const MENU_EXTRA: { label: string; href: string; external?: boolean }[] = [
+  { label: "Topics", href: "/topics" },
+  { label: "Answers", href: "/answers" },
+  { label: "AI Decoded", href: "/ai-decoded" },
+  { label: "Playlists", href: "/#learn" },
+  { label: "Research · 496 YC homepages audited", href: "/reports/startup-website-audit-2026" },
+  { label: "About", href: "/about" },
+  { label: "Featured on Product Hunt ↗", href: "https://www.producthunt.com/products/northstar-3", external: true },
 ];
 
 interface TopBarProps {
@@ -44,74 +62,63 @@ export function TopBar({
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  const linkStyle = (id: string): React.CSSProperties => ({
-    fontFamily: "var(--font-display)",
-    color: activeNav === id ? "var(--brand-primary)" : "var(--text-primary)",
-  });
+  const go = (id: string) => {
+    onNavChange?.(id);
+    setMenuOpen(false);
+  };
+
+  const navLink = (n: (typeof NAV)[number]) => (
+    <Link
+      key={n.id}
+      href={n.href}
+      onClick={() => go(n.id)}
+      aria-current={activeNav === n.id ? "true" : undefined}
+      className={n.id === "india" ? "india" : undefined}
+    >
+      {n.label}
+      {typeof n.count === "number" && <sup>({n.count})</sup>}
+    </Link>
+  );
 
   return (
-    <header
-      className="sticky top-0 z-40"
-      style={{ background: "var(--nav-bg)", borderBottom: "2px solid var(--card-border)" }}
-    >
-      <div className="mx-auto max-w-[1500px] flex items-center gap-4 px-4 sm:px-6 py-3.5">
-        <Link href="/" onClick={() => onNavChange?.("home")} className="flex-shrink-0">
-          <span
-            className="text-2xl font-extrabold italic tracking-tight"
-            style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)", letterSpacing: "-0.03em" }}
-          >
-            pm<span style={{ color: "var(--brand-primary)" }}>northstar</span>.
-          </span>
+    <header className="sticky top-0 z-40" style={{ background: "var(--surface-bg)" }}>
+      <div className="site-inner nav">
+        <Link href="/" onClick={() => go("home")} className="brand" aria-label="pmnorthstar home">
+          pm<b>northstar</b>.
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6 ml-4">
-          {NAV.map((n) => (
-            <Link
-              key={n.id}
-              href={n.href}
-              onClick={() => onNavChange?.(n.id)}
-              className="relative text-[0.95rem] font-semibold whitespace-nowrap hover:opacity-70"
-              style={linkStyle(n.id)}
-            >
-              {n.label}
-              {typeof n.count === "number" && (
-                <sup className="ml-0.5 text-[0.62em] font-semibold" style={{ color: "var(--text-muted)" }}>
-                  ({n.count})
-                </sup>
-              )}
-              {activeNav === n.id && (
-                <span className="absolute -bottom-1 left-0 right-0 h-[2px]" style={{ background: "var(--brand-primary)" }} />
-              )}
-            </Link>
-          ))}
+        <nav className="navlinks hidden lg:flex items-center flex-wrap" aria-label="Primary">
+          {NAV.map(navLink)}
         </nav>
 
-        <div className="ml-auto flex items-center gap-2.5 flex-shrink-0">
+        <div className="ctrls">
           <button
+            type="button"
             onClick={() => {
               if (onSearchChange) setSearchOpen((o) => !o);
               else window.location.href = "/";
             }}
             aria-label="Search"
-            className="w-11 h-11 rounded-full grid place-items-center"
-            style={{ background: "var(--text-primary)", color: "var(--nav-bg)" }}
+            aria-expanded={onSearchChange ? searchOpen : undefined}
+            className="circ solid grid place-items-center"
           >
-            <Search size={17} strokeWidth={2} />
+            <Search size={16} strokeWidth={2} />
           </button>
           <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
           <button
+            type="button"
             onClick={() => setMenuOpen((o) => !o)}
-            className="rounded-full px-4 h-11 text-sm font-semibold hidden sm:inline-flex items-center"
-            style={{ border: "1.5px solid var(--card-border)", color: "var(--text-primary)", fontFamily: "var(--font-display)" }}
+            className="pillbtn hidden sm:inline-flex"
             aria-expanded={menuOpen}
           >
             Menu
           </button>
           <button
+            type="button"
             onClick={() => setMenuOpen((o) => !o)}
-            className="sm:hidden w-11 h-11 rounded-full grid place-items-center"
-            style={{ border: "1.5px solid var(--card-border)", color: "var(--text-primary)" }}
+            className="circ grid place-items-center sm:hidden"
             aria-label="Menu"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
@@ -119,46 +126,41 @@ export function TopBar({
       </div>
 
       {searchOpen && onSearchChange && (
-        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 pb-3">
+        <div className="site-inner pb-4">
           <input
             autoFocus
             value={searchQuery ?? ""}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search books, authors, topics…"
+            placeholder="Search cases, books, drills, topics…"
             aria-label="Search the library"
-            className="w-full rounded-full px-5 py-2.5 text-base outline-none"
-            style={{ border: "1.5px solid var(--card-border)", background: "var(--card-bg)", color: "var(--text-primary)", fontFamily: "var(--font-display)" }}
+            className="w-full"
           />
         </div>
       )}
 
       {menuOpen && (
-        <nav className="px-4 sm:px-6 pb-3 flex flex-col" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-          {NAV.map((n) => (
-            <Link
-              key={n.id}
-              href={n.href}
-              onClick={() => {
-                onNavChange?.(n.id);
-                setMenuOpen(false);
-              }}
-              className="py-2.5 text-sm font-semibold"
-              style={linkStyle(n.id)}
-            >
-              {n.label}
-              {typeof n.count === "number" && (
-                <sup className="ml-0.5 text-[0.62em]" style={{ color: "var(--text-muted)" }}>({n.count})</sup>
-              )}
-            </Link>
-          ))}
+        <nav className="site-inner menu-drop" aria-label="More">
+          {/* Primary links repeat here below the lg breakpoint, where the row is hidden. */}
+          <div className="lg:hidden flex flex-col">{NAV.map(navLink)}</div>
+          {MENU_EXTRA.map((m) =>
+            m.external ? (
+              <a key={m.href} href={m.href} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
+                {m.label}
+              </a>
+            ) : (
+              <Link key={m.href} href={m.href} onClick={() => setMenuOpen(false)}>
+                {m.label}
+              </Link>
+            )
+          )}
           {onLogin && !isLoggedIn && (
             <button
+              type="button"
               onClick={() => {
                 onLogin();
                 setMenuOpen(false);
               }}
-              className="py-2.5 text-sm font-semibold text-left"
-              style={{ fontFamily: "var(--font-display)", color: "var(--brand-primary)" }}
+              style={{ color: "var(--brand-primary)" }}
             >
               Log in
             </button>

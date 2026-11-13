@@ -31,6 +31,7 @@ const INVENTORY = {
   drills: 0,
   playlists: 0,
   answers: 0,
+  indiaCaseStudies: 0,
   caseStudiesLastUpdated: "",
   comparisonsLastUpdated: "",
 };
@@ -511,6 +512,11 @@ function syncCaseStudies() {
   const entries = readAll(path.join(CONTENT, "case-studies"));
   const now = new Date();
   INVENTORY.caseStudies = entries.filter((e) => !e.data.publishedAt || new Date(e.data.publishedAt) <= now).length;
+  // Live Indian studies — the nav shows this count next to "India" and must
+  // not import the corpus to get it.
+  INVENTORY.indiaCaseStudies = entries.filter(
+    (e) => e.data.region === "India" && (!e.data.publishedAt || new Date(e.data.publishedAt) <= now)
+  ).length;
 
   // Preserve cs-N order — numeric, not alphabetical.
   entries.sort((a, b) => {
@@ -1003,6 +1009,7 @@ function writeInventoryCounts() {
 // Regenerated via scripts/sync-content.ts.
 
 export const CASE_STUDY_COUNT = ${INVENTORY.caseStudies};
+export const INDIA_CASE_STUDY_COUNT = ${INVENTORY.indiaCaseStudies};
 export const BOOK_COUNT = ${INVENTORY.books};
 export const PLAYLIST_COUNT = ${INVENTORY.playlists};
 export const TOPIC_COUNT = ${INVENTORY.topics};

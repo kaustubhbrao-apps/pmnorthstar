@@ -26,6 +26,8 @@ import { SaveButton } from "@/components/SaveButton";
 import { ResourceCard } from "@/components/ResourceCard";
 import { SectionRow } from "@/components/SectionRow";
 import { EditorialHome } from "@/components/EditorialHome";
+import { EdCard, Tile, Cap, SectionHead, VsBox, fmtDate, clip, tintAt, splitVs } from "@/components/Editorial";
+import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PlaylistCard } from "@/components/PlaylistCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -493,35 +495,20 @@ export default function HomeClient() {
 
   // ── Case Studies View ──────────────────────────────────────────────────
   if (activeNav === "casestudies") {
-    const wins = filteredCaseStudies.filter((c) => c.category !== "Failure").length;
-    const fails = filteredCaseStudies.filter((c) => c.category === "Failure").length;
     return (
       <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
         <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <main className="scroll-container mx-auto w-full max-w-[1500px]">
+          <main className="scroll-container">
               <>
-                {/* Hero strip */}
-                <div className="dot-grid px-4 sm:px-8 py-10 sm:py-14 flex justify-center" style={{ borderBottom: "1.5px solid var(--card-border)" }}>
-                  <div className="w-full max-w-4xl">
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
-                      <span className="eyebrow">{caseStudies.length} studies</span>
-                      <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
-                      <span className="eyebrow">5 categories</span>
-                    </div>
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em", lineHeight: 1.1 }}>
-                      Real product wins,<br className="hidden sm:block" />
-                      <span className="gradient-warm">and the failures behind them.</span>
-                    </h1>
-                    <p className="text-base sm:text-lg lg:text-xl max-w-xl" style={{ color: "var(--text-muted)" }}>
-                      {caseStudies.length} deep-dives — pivots, growth loops, design bets, hard lessons.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="px-4 sm:px-6 py-6">
+                <div className="site-inner pb-16">
+                  <SectionHead as="h1" title="All cases" count={filteredCaseStudies.length} />
+                  <p className="shead-sub">
+                    {caseStudies.length} deep-dives — pivots, growth loops, design bets, hard lessons. Real product wins,
+                    and the failures behind them.
+                  </p>
                   {/* Filter chips */}
-                  <div className="flex items-center gap-2 mb-6 overflow-x-auto scroll-container -mx-4 sm:-mx-6 px-4 sm:px-6 pb-1">
+                  <div className="filters">
                     <button onClick={() => setActiveCsFilter("All")} className={`chip ${activeCsFilter === "All" ? "active" : ""}`}>
                       All <span className="chip-count">{caseStudies.length}</span>
                     </button>
@@ -536,65 +523,25 @@ export default function HomeClient() {
                     ))}
                   </div>
 
-                  {/* Section heading. Category becomes a solid colored chip
-                      (same idiom as section row eyebrows), with the count
-                      sitting next to it. */}
-                  {(() => {
-                    const csColor =
-                      activeCsFilter === "All"
-                        ? "var(--brand-primary)"
-                        : caseStudyCategoryColors[activeCsFilter];
-                    const csLabel =
-                      activeCsFilter === "All" ? "All Categories" : activeCsFilter;
-                    return (
-                      <div className="flex items-center justify-between mb-5 gap-3">
-                        <div className="flex items-center gap-2.5 flex-wrap">
-                          <span
-                            className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
-                            style={{
-                              background: csColor,
-                              color: "#ffffff",
-                              letterSpacing: "0.12em",
-                            }}
-                          >
-                            {csLabel}
-                          </span>
-                          <span
-                            className="font-mono text-sm"
-                            style={{ color: "var(--text-faint)" }}
-                          >
-                            {filteredCaseStudies.length} {filteredCaseStudies.length === 1 ? "study" : "studies"}
-                          </span>
-                        </div>
-                        <div className="hidden sm:flex items-center gap-4 text-[12px] flex-shrink-0">
-                          <span className="inline-flex items-center gap-1.5" style={{ color: "#50C878" }}>
-                            <TrendingUp size={11} strokeWidth={1.6} /> {wins} wins
-                          </span>
-                          <span className="inline-flex items-center gap-1.5" style={{ color: "#FF4B4B" }}>
-                            <TrendingDown size={11} strokeWidth={1.6} /> {fails} fails
-                          </span>
-                        </div>
-                      </div>
-                    );
-                  })()}
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                  <div className="grid3">
                     {filteredCaseStudies.map((study, idx) => (
-                      <CaseStudyCard
-                        key={study.id}
-                        study={study}
-                        index={idx}
-                        isLoggedIn={!!user}
-                        initialSaved={savedIds.has(study.id)}
-                        initialLiked={likedIds.has(study.id)}
-                        onAuthRequired={() => setShowAuthModal(true)}
-                        onSavedChange={handleSavedChange}
-                        onLikedChange={handleLikedChange}
-                        hideCategory={activeCsFilter !== "All"}
-                      />
+                      <EdCard key={study.id} href={`/case-study/${getCaseStudySlug(study.id)}`}>
+                        <Tile
+                          tint={tintAt(idx)}
+                          minH={300}
+                          chip={fmtDate(study.publishedAt, study.year)}
+                          title={study.title}
+                          size="m"
+                        />
+                        <Cap
+                          k={`${study.category} · ${study.region === "India" ? "India" : study.company}`}
+                          title={clip(study.outcome, 80)}
+                        />
+                      </EdCard>
                     ))}
                   </div>
                 </div>
+                <Footer />
               </>
           </main>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
@@ -608,35 +555,18 @@ export default function HomeClient() {
       <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
         <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <main className="scroll-container mx-auto w-full max-w-[1500px]">
+          <main className="scroll-container">
               <>
-                {/* Hero strip */}
-                <div
-                  className="dot-grid px-4 sm:px-8 py-10 sm:py-14"
-                  style={{ borderBottom: "1.5px solid var(--card-border)" }}
-                >
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="eyebrow">{playlists.length} playlists</span>
-                    <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
-                    <span className="eyebrow">{learnCategories.length} topics</span>
-                  </div>
-                  <h1
-                    className="text-2xl sm:text-4xl font-bold mb-3"
-                    style={{ color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1.1 }}
-                  >
-                    Curated YouTube playlists,<br className="hidden sm:block" />
-                    <span className="gradient-cool">for builders who learn out loud.</span>
-                  </h1>
-                  <p
-                    className="text-sm max-w-xl"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Design, product, data, marketing, branding, startups, finance — one shelf, hand-picked.
+                <div className="site-inner">
+                  <SectionHead as="h1" title="Playlists" count={playlists.length} />
+                  <p className="shead-sub">
+                    Curated YouTube playlists for builders who learn out loud — design, product, data, marketing,
+                    branding, startups, finance. One shelf, hand-picked.
                   </p>
                 </div>
 
                 {/* ── Powered by northstar — our own interview-prep series ──── */}
-                <div className="px-4 sm:px-6 pt-7 sm:pt-9 pb-2">
+                <div className="site-inner pt-2 pb-2">
                   <div className="flex items-center gap-2.5 mb-2 flex-wrap">
                     <span
                       className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
@@ -672,14 +602,13 @@ export default function HomeClient() {
                   </div>
                 </div>
 
-                <div
-                  className="mx-4 sm:mx-6 mt-6 mb-1"
-                  style={{ borderTop: "1.5px solid var(--card-border)" }}
-                />
+                <div className="site-inner">
+                  <div className="mt-6 mb-1" style={{ borderTop: "1.5px solid var(--hair)" }} />
+                </div>
 
-                <div className="px-4 sm:px-6 py-6">
+                <div className="site-inner py-6">
                   {/* Filter chips */}
-                  <div className="flex items-center gap-2 mb-6 overflow-x-auto scroll-container -mx-4 sm:-mx-6 px-4 sm:px-6 pb-1">
+                  <div className="filters">
                     <button
                       onClick={() => setActiveLearnFilter("All")}
                       className={`chip ${activeLearnFilter === "All" ? "active" : ""}`}
@@ -766,109 +695,37 @@ export default function HomeClient() {
       <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
         <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <main className="scroll-container mx-auto w-full max-w-[1500px]">
-            {/* Hero */}
-            <section
-              className="dot-grid px-4 sm:px-8 lg:px-12 py-10 sm:py-16 flex justify-center"
-              style={{ borderBottom: "1.5px solid var(--card-border)" }}
-            >
-              <div className="w-full max-w-4xl">
-                <p className="eyebrow mb-4" style={{ color: "#26A69A" }}>
-                  Curated paths through the library
-                </p>
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-5 sm:mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.04em" }}>
-                  <span className="gradient-warm">Different ways</span> to navigate the case studies.
-                </h1>
-                <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl" style={{ color: "var(--text-muted)" }}>
-                  <strong style={{ color: "var(--text-primary)" }}>Topics</strong> group case studies by theme (Indian fintech, super-app failures). <strong style={{ color: "var(--text-primary)" }}>Comparisons</strong> put two companies head-to-head when they share a market.
-                </p>
-              </div>
-            </section>
+          <main className="scroll-container">
+            <div className="site-inner pb-16">
+              <SectionHead as="h1" title="Explore" />
+              <p className="shead-sub">
+                <strong style={{ color: "var(--text-primary)" }}>Topics</strong> group case studies by theme (Indian
+                fintech, super-app failures). <strong style={{ color: "var(--text-primary)" }}>Head-to-heads</strong>{" "}
+                put two companies against each other when they share a market.
+              </p>
 
-            {/* Topics */}
-            <section className="px-4 sm:px-6 lg:px-12 py-8 sm:py-12" style={{ borderBottom: "1.5px solid var(--card-border)" }}>
-              <div className="flex items-baseline gap-3 mb-5 sm:mb-6">
-                <h2 className="text-xl sm:text-2xl font-semibold" style={{ color: "#26A69A", letterSpacing: "-0.02em" }}>
-                  Topics
-                </h2>
-                <span className="text-xs" style={{ color: "var(--text-faint)" }}>
-                  {topics.length} curated themes
-                </span>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4">
+              <SectionHead title="Topics" count={topics.length} more="See all →" moreHref="/topics" />
+              <div className="heads">
                 {topics.map((t) => (
-                  <div key={t.slug} className="playlist-card surface flex flex-col overflow-hidden" style={{ ["--accent-color" as any]: t.accentColor } as React.CSSProperties}>
-                    <Link
-                      href={`/topics/${t.slug}`}
-                      className="p-4 sm:p-5 group flex-1"
-                    >
-                      <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: t.accentColor, opacity: 0.85 }}>
-                        {t.eyebrow}
-                      </p>
-                      <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                        {t.title}
-                      </p>
-                      <p className="text-sm font-medium" style={{ color: t.accentColor }}>
-                        {t.caseStudyIds.length} case studies →
-                      </p>
-                    </Link>
-                    <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Explore topic</span>
-                      <SaveButton
-                        resource={{ id: t.slug, title: t.title, author: "northstar", category: "Topic", link: `/topics/${t.slug}` }}
-                        isLoggedIn={!!user}
-                        initialSaved={savedIds.has(t.slug)}
-                        initialLiked={likedIds.has(t.slug)}
-                        onAuthRequired={() => setShowAuthModal(true)}
-                        onSavedChange={handleSavedChange}
-                        onLikedChange={handleLikedChange}
-                      />
-                    </div>
-                  </div>
+                  <VsBox
+                    key={t.slug}
+                    a={t.title}
+                    b=""
+                    m={`${t.eyebrow} · ${t.caseStudyIds.length} case studies`}
+                    href={`/topics/${t.slug}`}
+                  />
                 ))}
               </div>
-            </section>
 
-            {/* Comparisons */}
-            <section className="px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
-              <div className="flex items-baseline gap-3 mb-5 sm:mb-6">
-                <h2 className="text-xl sm:text-2xl font-semibold" style={{ color: "#FF6B35", letterSpacing: "-0.02em" }}>
-                  Comparisons
-                </h2>
-                <span className="text-xs" style={{ color: "var(--text-faint)" }}>
-                  {comparisons.length} head-to-heads
-                </span>
+              <SectionHead title="Head-to-Head" count={comparisons.length} more="See all →" moreHref="/compare" />
+              <div className="heads">
+                {comparisons.map((c) => {
+                  const { a, b } = splitVs(c.title, c.companyA, c.companyB);
+                  return <VsBox key={c.slug} a={a} b={b} m={c.eyebrow} href={`/compare/${c.slug}`} />;
+                })}
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
-                {comparisons.map((c) => (
-                  <div key={c.slug} className="playlist-card surface flex flex-col overflow-hidden" style={{ ["--accent-color" as any]: c.accentColor } as React.CSSProperties}>
-                    <Link
-                      href={`/compare/${c.slug}`}
-                      className="p-4 sm:p-5 group flex-1"
-                    >
-                      <p className="text-sm sm:text-base font-medium uppercase tracking-wider mb-2" style={{ color: c.accentColor, opacity: 0.85 }}>
-                        {c.eyebrow}
-                      </p>
-                      <p className="text-base sm:text-lg font-semibold leading-snug mb-3 group-hover:underline" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                        {c.title}
-                      </p>
-                    </Link>
-                    <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-                      <span className="text-xs" style={{ color: "var(--text-muted)" }}>Read comparison</span>
-                      <SaveButton
-                        resource={{ id: c.slug, title: c.title, author: "northstar", category: "Comparison", link: `/compare/${c.slug}` }}
-                        isLoggedIn={!!user}
-                        initialSaved={savedIds.has(c.slug)}
-                        initialLiked={likedIds.has(c.slug)}
-                        onAuthRequired={() => setShowAuthModal(true)}
-                        onSavedChange={handleSavedChange}
-                        onLikedChange={handleLikedChange}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+            </div>
+            <Footer />
           </main>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
@@ -894,8 +751,8 @@ export default function HomeClient() {
             Stays visible on mobile when logged in (saved/fav shortcuts
             are useful). */}
         <div
-          className={`${user ? "flex" : "hidden sm:flex"} flex-wrap items-center justify-between gap-2 px-4 sm:px-6 py-2`}
-          style={{ borderBottom: "1.5px solid var(--card-border)", background: "var(--nav-bg)" }}
+          className={`${user ? "flex" : "hidden"} site-inner flex-wrap items-center justify-between gap-2 py-2`}
+          style={{ borderBottom: "1.5px solid var(--hair)" }}
         >
           <p className="text-sm sm:text-xs truncate flex-shrink min-w-0" style={{ color: "var(--text-muted)" }}>
             {user ? `Welcome back, ${user.name}` : "Browse freely. Sign in only if you want to save."}
@@ -973,15 +830,10 @@ export default function HomeClient() {
                 onSeeAllCases={() => setActiveNav("casestudies")}
               />
 
-              {/* ── Explore the Library — compact grid of everything ── */}
-              <div className="px-4 sm:px-6 mb-10">
-                <div className="mb-5">
-                  <p className="eyebrow mb-1">Explore the library</p>
-                  <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                    Everything we offer — each a click away.
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+              {/* ── Explore the Library — every surface as a vsbox ──── */}
+              <div className="site-inner mt-2 mb-10">
+                <SectionHead title="Explore the library" />
+                <div className="heads">
                   {([
                     { label: "Books",       value: String(books.length),       hook: "Opinionated reviews for PM readers",         color: "#EA580C", href: "/book" },
                     { label: "Answers",     value: String(answers.length),     hook: "Direct answers to PM questions",             color: "#2563EB", href: "/answers" },
@@ -993,43 +845,24 @@ export default function HomeClient() {
                     { label: "Learn",       value: String(playlists.length),   hook: "Curated YouTube playlists",                  color: "#9B8FFF", href: undefined as string | undefined, action: () => setActiveNav("learn") },
                     { label: "India",       value: "",                         hook: "Indian company deep dives",                  color: "#FF6B35", href: "/india" },
                     { label: "Research",    value: String(YC.audited),         hook: "YC startup homepages audited",               color: "#0F9D58", href: "/reports/startup-website-audit-2026" },
-                  ] as Array<{ label: string; value: string; hook: string; color: string; href?: string; action?: () => void }>).map(({ label, value, hook, color, href, action }) => {
-                    const tileClass = "text-left p-4 rounded-2xl transition-all group hover:opacity-95 hover:-translate-y-0.5";
+                  ] as Array<{ label: string; value: string; hook: string; color: string; href?: string; action?: () => void }>).map(({ label, value, hook, href, action }) => {
                     const inner = (
                       <>
-                        <div className="flex items-center justify-between mb-1">
-                          <span
-                            className="text-sm font-bold uppercase tracking-wider"
-                            style={{ color: "rgba(255, 255, 255, 0.9)" }}
-                          >
-                            {label}
-                          </span>
-                          <ArrowUpRight
-                            size={12}
-                            strokeWidth={2}
-                            style={{ color: "rgba(255, 255, 255, 0.8)" }}
-                            className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                          />
+                        <div className="vs">
+                          {label}
+                          {value && (
+                            <em style={{ fontStyle: "normal", fontSize: "0.72em", marginLeft: "0.3em" }}>{value}</em>
+                          )}
                         </div>
-                        {value && (
-                          <div
-                            className="font-display text-2xl font-bold mb-1"
-                            style={{ color: "#ffffff", letterSpacing: "-0.02em" }}
-                          >
-                            {value}
-                          </div>
-                        )}
-                        <p className="text-xs leading-snug" style={{ color: "rgba(255, 255, 255, 0.75)" }}>
-                          {hook}
-                        </p>
+                        <div className="m">{hook}</div>
                       </>
                     );
                     return href ? (
-                      <Link key={label} href={href} className={tileClass} style={{ background: color }}>
+                      <Link key={label} href={href} className="vsbox">
                         {inner}
                       </Link>
                     ) : (
-                      <button key={label} type="button" className={tileClass} style={{ background: color }} onClick={action}>
+                      <button key={label} type="button" className="vsbox text-left w-full" onClick={action}>
                         {inner}
                       </button>
                     );
@@ -1037,51 +870,29 @@ export default function HomeClient() {
                 </div>
               </div>
 
-              {/* ── Original research banner ──────────────────────── */}
-              <div className="px-4 sm:px-6 mb-10">
-                <Link
-                  href="/reports/startup-website-audit-2026"
-                  className="block rounded-xl p-5 sm:p-7 group transition-transform hover:-translate-y-0.5"
-                  style={{ background: "#0F9D58" }}
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p
-                        className="font-mono text-sm font-bold uppercase mb-2"
-                        style={{ color: "#fff", opacity: 0.75, letterSpacing: "0.16em" }}
-                      >
-                        Original research
-                      </p>
-                      <p
-                        className="text-xl sm:text-2xl font-semibold leading-snug mb-1.5"
-                        style={{ color: "#fff", letterSpacing: "-0.02em" }}
-                      >
-                        We audited {YC.audited} YC startup homepages
-                      </p>
-                      <p className="text-sm" style={{ color: "#fff", opacity: 0.85 }}>
-                        35 technical checks each. Median {YC.median}/100, top score {YC.topScore}.
-                        Every company named and ranked.
-                      </p>
-                    </div>
-                    <ArrowUpRight
-                      size={24}
-                      strokeWidth={1.8}
-                      className="shrink-0 transition-transform group-hover:translate-x-1"
-                      style={{ color: "#fff" }}
-                    />
-                  </div>
-                </Link>
+              {/* ── Original research ─────────────────────────────── */}
+              <div className="site-inner mb-10">
+                <EdCard href="/reports/startup-website-audit-2026">
+                  <Tile
+                    tint="ink"
+                    minH={220}
+                    pill="Original research"
+                    title={`We audited ${YC.audited} YC startup homepages`}
+                    dek={`35 technical checks each. Median ${YC.median}/100, top score ${YC.topScore}. Every company named and ranked.`}
+                    size="2xl"
+                  />
+                </EdCard>
               </div>
 
               {/* Newsletter signup */}
-              <div className="px-4 sm:px-6 mb-12">
+              <div className="site-inner mb-12">
                 <div className="max-w-2xl mx-auto">
                   <SubscribeForm variant="card" />
                 </div>
               </div>
             </div>
           ) : (
-            <div className="p-4 sm:p-6 pb-12">
+            <div className="site-inner py-6 pb-12">
               {searchQuery.trim() ? (
                 <>
                   {/* Search header */}

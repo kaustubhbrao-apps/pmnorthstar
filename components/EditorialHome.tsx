@@ -1,16 +1,25 @@
 "use client";
 
-// Editorial magazine front page (publication reskin) — matches the artifact:
-// a tall lead card beside a 2-card stack, then a "New posts" grid, Head-to-Head
-// and AI Decoded. Date chips, circular arrows, outlined pills, refined palette.
+// Editorial magazine front page — the artifact's Home view: a tall red lead
+// beside an ink/mint 2-card stack, "New posts" (opening on the Physics Wallah
+// exhibit card), Head-to-Head vsboxes, then AI Decoded as a link list.
 // Presentational only; save/like lives on the reading pages.
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
-
-const ARCHIVO = "var(--font-archivo), 'Archivo', system-ui, sans-serif";
-const NEWS = "var(--font-newsreader), 'Newsreader', Georgia, serif";
+import {
+  EdCard,
+  Tile,
+  Cap,
+  SectionHead,
+  VsBox,
+  PwExhibit,
+  PW_ID,
+  fmtDate,
+  clip,
+  splitVs,
+  tintAt,
+} from "@/components/Editorial";
 
 type MiniCase = {
   id: string;
@@ -19,132 +28,23 @@ type MiniCase = {
   category: string;
   year: number;
   description: string;
+  outcome?: string;
+  region?: string;
   publishedAt?: string;
 };
+
+type MiniCompare = { slug: string; title: string; eyebrow?: string; companyA?: string; companyB?: string };
 
 interface Props {
   caseStudies: MiniCase[];
   featured: MiniCase[];
-  comparisons: { slug: string; title: string }[];
+  comparisons: MiniCompare[];
   aiDecoded: { slug: string; title: string }[];
   onSeeAllCases: () => void;
 }
 
-// Refined, muted card palette (lead stays brand red). Deterministic per company.
-const CARD_BG = ["#111114", "#14362B", "#3A1320", "#172338", "#2A2410", "#241633"];
-function hashStr(s: string) {
-  let h = 2166136261;
-  for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
-  return h >>> 0;
-}
-const cardColor = (seed: string) => CARD_BG[hashStr(seed) % CARD_BG.length];
-
-function fmtDate(d?: string, year?: number) {
-  if (d) {
-    const dt = new Date(d);
-    if (!isNaN(dt.getTime())) return dt.toLocaleDateString("en-US", { month: "short", year: "numeric" });
-  }
-  return String(year ?? "");
-}
-
-function Chip({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold"
-      style={{ fontFamily: ARCHIVO, background: "rgba(0,0,0,0.38)", color: "#fff" }}
-    >
-      {children}
-    </span>
-  );
-}
-
-function Pill({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold"
-      style={{ fontFamily: ARCHIVO, border: "1.5px solid rgba(255,255,255,0.5)", color: "#fff" }}
-    >
-      <span className="w-1.5 h-1.5 rounded-full" style={{ background: "var(--brand-primary)" }} />
-      {children}
-    </span>
-  );
-}
-
-function CircleArrow() {
-  return (
-    <span
-      className="inline-flex items-center justify-center rounded-full flex-shrink-0"
-      style={{ width: 46, height: 46, background: "rgba(0,0,0,0.4)" }}
-    >
-      <ArrowUpRight size={20} strokeWidth={2} style={{ color: "#fff" }} />
-    </span>
-  );
-}
-
-function LeadCard({ s }: { s: MiniCase }) {
-  return (
-    <Link
-      href={`/case-study/${getCaseStudySlug(s.id)}`}
-      className="relative rounded-[22px] p-6 sm:p-9 lg:p-10 flex flex-col overflow-hidden transition-transform hover:-translate-y-0.5 h-full min-h-[420px]"
-      style={{ background: "var(--brand-primary)" }}
-    >
-      <div className="flex items-start justify-between">
-        <Chip>{fmtDate(s.publishedAt, s.year)}</Chip>
-        <CircleArrow />
-      </div>
-      <div className="mt-auto pt-10">
-        <Pill>{s.category} · {s.company}</Pill>
-        <h3
-          className="text-white font-extrabold tracking-tight leading-[0.95] mt-4 text-4xl sm:text-5xl lg:text-6xl"
-          style={{ fontFamily: ARCHIVO, maxWidth: "13ch", letterSpacing: "-0.03em" }}
-        >
-          {s.title}
-        </h3>
-        <p className="mt-4 text-lg leading-relaxed" style={{ fontFamily: NEWS, color: "rgba(255,255,255,0.92)", maxWidth: "44ch" }}>
-          {s.description}
-        </p>
-      </div>
-    </Link>
-  );
-}
-
-function Card({ s }: { s: MiniCase }) {
-  return (
-    <Link
-      href={`/case-study/${getCaseStudySlug(s.id)}`}
-      className="relative rounded-[20px] p-5 sm:p-6 flex flex-col overflow-hidden transition-transform hover:-translate-y-0.5 min-h-[210px] h-full"
-      style={{ background: cardColor(s.company) }}
-    >
-      <div className="flex items-start justify-between">
-        <Chip>{fmtDate(s.publishedAt, s.year)}</Chip>
-        <CircleArrow />
-      </div>
-      <div className="mt-auto pt-8">
-        <Pill>{s.category}</Pill>
-        <h3
-          className="text-white font-bold tracking-tight leading-[1.05] mt-3 text-2xl sm:text-3xl"
-          style={{ fontFamily: ARCHIVO, maxWidth: "18ch", letterSpacing: "-0.02em" }}
-        >
-          {s.title}
-        </h3>
-      </div>
-    </Link>
-  );
-}
-
-function SectionHead({ title, right }: { title: string; right?: React.ReactNode }) {
-  return (
-    <div className="flex items-baseline justify-between gap-4 mb-6 flex-wrap">
-      <h2
-        className="text-4xl sm:text-5xl lg:text-[3.6rem] font-extrabold tracking-tight leading-[0.9]"
-        style={{ fontFamily: ARCHIVO, fontStyle: "italic", color: "var(--text-primary)", letterSpacing: "-0.03em" }}
-      >
-        {title}
-      </h2>
-      {right}
-    </div>
-  );
-}
+const href = (s: MiniCase) => `/case-study/${getCaseStudySlug(s.id)}`;
+const kicker = (s: MiniCase) => `${s.category} · ${s.region === "India" ? "India" : s.company}`;
 
 export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, onSeeAllCases }: Props) {
   const lead =
@@ -152,99 +52,89 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
   const rest = featured.filter((s) => s.id !== lead?.id);
   const side = rest.slice(0, 2);
   const grid = rest.slice(2, 8);
+  const pw = caseStudies.find((s) => s.id === PW_ID);
   const heads = comparisons.slice(0, 4);
-  const decoded = aiDecoded.slice(0, 3);
-  const shortVs = (t: string) => t.split("—")[0].split("–")[0].trim();
+  const decoded = aiDecoded.slice(0, 5);
 
   return (
-    <div className="pt-2">
-      {/* ── Hero: lead + 2-card stack ───────────────────────────── */}
-      <section className="px-4 sm:px-6 mb-12">
-        <SectionHead
-          title="Latest cases"
-          right={
-            <button onClick={onSeeAllCases} className="text-base italic" style={{ fontFamily: NEWS, color: "var(--text-primary)" }}>
-              See all posts →
-            </button>
-          }
-        />
-        {lead && (
-          <div className="grid lg:grid-cols-2 gap-4 items-stretch">
-            <LeadCard s={lead} />
-            <div className="grid grid-rows-2 gap-4">
-              {side.map((s) => (
-                <Card key={s.id} s={s} />
-              ))}
-            </div>
-          </div>
-        )}
-      </section>
-
-      {/* ── New posts grid ──────────────────────────────────────── */}
-      {grid.length > 0 && (
-        <section className="px-4 sm:px-6 mb-12">
-          <SectionHead
-            title="New posts"
-            right={
-              <button onClick={onSeeAllCases} className="text-base italic underline" style={{ fontFamily: NEWS, color: "var(--text-primary)", textUnderlineOffset: 3 }}>
-                view more
-              </button>
-            }
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {grid.map((s) => (
-              <Card key={s.id} s={s} />
+    <div className="site-inner pt-1">
+      {/* ── Latest cases: lead + side stack ─────────────────────────────── */}
+      <SectionHead title="Latest cases" more="See all posts →" onMore={onSeeAllCases} />
+      {lead && (
+        <div className="hero">
+          <EdCard href={href(lead)}>
+            <Tile
+              tint="feature"
+              chip={fmtDate(lead.publishedAt, lead.year)}
+              pill={kicker(lead)}
+              title={lead.title}
+              dek={lead.description}
+            />
+          </EdCard>
+          <div className="side">
+            {side.map((s, i) => (
+              <EdCard key={s.id} href={href(s)}>
+                <Tile
+                  tint={i === 0 ? "ink" : "mint"}
+                  chip={fmtDate(s.publishedAt, s.year)}
+                  pill={kicker(s)}
+                  title={s.title}
+                  size="xl"
+                />
+              </EdCard>
             ))}
           </div>
-        </section>
+        </div>
       )}
 
-      {/* ── Head-to-Head ────────────────────────────────────────── */}
+      {/* ── New posts ───────────────────────────────────────────────────── */}
+      {(grid.length > 0 || pw) && (
+        <>
+          <SectionHead title="New posts" more="view more" right onMore={onSeeAllCases} />
+          <div className="grid3">
+            {pw && (
+              <EdCard href={href(pw)}>
+                <Tile tint="blush" className="exhost" chip="Featured">
+                  <PwExhibit />
+                </Tile>
+                <Cap k="Strategy · Edtech" title="Physics Wallah: revenue up, losses down" />
+              </EdCard>
+            )}
+            {grid.map((s, i) => (
+              <EdCard key={s.id} href={href(s)}>
+                <Tile tint={tintAt(i + 1)} minH={360} chip={fmtDate(s.publishedAt, s.year)} title={s.title} size="l" />
+                <Cap k={kicker(s)} title={clip(s.outcome, 80)} />
+              </EdCard>
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* ── Head-to-Head ────────────────────────────────────────────────── */}
       {heads.length > 0 && (
-        <section className="px-4 sm:px-6 mb-12">
-          <SectionHead title="Head-to-Head" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {heads.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/compare/${c.slug}`}
-                className="rounded-[18px] p-4 transition-transform hover:-translate-y-0.5"
-                style={{ border: "1.5px solid var(--card-border)" }}
-              >
-                <p
-                  className="text-xl font-extrabold tracking-tight leading-none"
-                  style={{ fontFamily: ARCHIVO, color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-                >
-                  {shortVs(c.title)}
-                </p>
-              </Link>
-            ))}
+        <>
+          <SectionHead title="Head-to-Head" more="See all →" moreHref="/compare" />
+          <div className="heads">
+            {heads.map((c) => {
+              const { a, b } = splitVs(c.title, c.companyA, c.companyB);
+              return <VsBox key={c.slug} a={a} b={b} m={c.eyebrow} href={`/compare/${c.slug}`} />;
+            })}
           </div>
-        </section>
+        </>
       )}
 
-      {/* ── AI Decoded ──────────────────────────────────────────── */}
+      {/* ── AI Decoded ──────────────────────────────────────────────────── */}
       {decoded.length > 0 && (
-        <section className="px-4 sm:px-6 mb-10">
-          <SectionHead title="AI Decoded" />
-          <div>
+        <>
+          <SectionHead title="AI Decoded" more="See all →" moreHref="/ai-decoded" />
+          <div className="max-w-3xl">
             {decoded.map((a) => (
-              <Link
-                key={a.slug}
-                href={`/ai-decoded/${a.slug}`}
-                className="block py-3.5 group"
-                style={{ borderTop: "1.5px solid var(--card-border)" }}
-              >
-                <p
-                  className="text-lg sm:text-xl font-bold tracking-tight leading-tight group-hover:opacity-70"
-                  style={{ fontFamily: ARCHIVO, color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                >
-                  {a.title}
-                </p>
+              <Link key={a.slug} href={`/ai-decoded/${a.slug}`} className="rellink">
+                {a.title} →
               </Link>
             ))}
           </div>
-        </section>
+        </>
       )}
     </div>
   );

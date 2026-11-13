@@ -1,17 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUpRight, TrendingUp, TrendingDown } from "lucide-react";
+// Case-study card in the editorial vocabulary: tinted tile (date chip, circle
+// arrow, headline) with the kicker + outcome caption below, and the save
+// control on a quiet row under that. Used by saved/favourites, search results
+// and topic pages; the big listings compose Tile/Cap directly.
+
+import Link from "next/link";
 // Type-only import: erased at compile time, so it costs the client nothing.
 import type { CaseStudy } from "@/data/caseStudies";
 // Value import comes from the slug leaf module, not the dataset — importing
 // getCaseStudySlug from @/data/caseStudies would pull the whole ~800 KB
 // array into every bundle that renders a card.
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
-import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
-import { solidColorFor } from "@/lib/category-colors";
-import Link from "next/link";
+import { Tile, Cap, fmtDate, clip, tintAt } from "@/components/Editorial";
 
 interface CaseStudyCardProps {
   study: Omit<CaseStudy, "content">;
@@ -25,172 +27,19 @@ interface CaseStudyCardProps {
   hideCategory?: boolean;
 }
 
-const categoryColors: Record<string, string> = {
-  Product: "#9B8FFF",
-  Growth: "#FF6B35",
-  Strategy: "#F5C842",
-  Design: "#50C878",
-  Failure: "#FF4B4B",
-};
-
-export function CaseStudyCard({
-  study,
-  index,
-  isLoggedIn = false,
-  initialSaved = false,
-  initialLiked = false,
-  onAuthRequired = () => {},
-  onSavedChange,
-  onLikedChange,
-  hideCategory = false,
-}: CaseStudyCardProps) {
-  const isFailure = study.category === "Failure";
-  const color = categoryColors[study.category] ?? "var(--brand-primary)";
-  const logoUrl = getCompanyLogoUrl(study.company);
-  const [logoFailed, setLogoFailed] = useState(false);
+export function CaseStudyCard({ study, index = 0, initialSaved = false, initialLiked = false }: CaseStudyCardProps) {
+  const href = `/case-study/${getCaseStudySlug(study.id)}`;
+  const kicker = `${study.category} · ${study.region === "India" ? "India" : study.company}`;
+  const chip = initialLiked ? "♥ Liked" : initialSaved ? "Saved" : fmtDate(study.publishedAt, study.year);
 
   return (
-    <div
-      className="playlist-card surface overflow-hidden relative flex flex-col h-full"
-      style={
-        {
-          ["--accent-color" as any]: color,
-          background: initialLiked || initialSaved ? `${color}08` : "var(--card-bg)",
-          borderColor: initialLiked || initialSaved ? color : "var(--card-border)",
-        } as React.CSSProperties
-      }
-    >
-      {(initialLiked || initialSaved) && (
-        <div className="absolute top-3 right-3 flex items-center gap-1 z-10">
-          {initialLiked && (
-            <span
-              className="inline-flex items-center justify-center w-5 h-5 rounded-full"
-              style={{ background: color }}
-              title="Liked"
-            >
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </span>
-          )}
-          {initialSaved && (
-            <span
-              className="inline-flex items-center justify-center w-5 h-5 rounded-full"
-              style={{ background: color }}
-              title="Saved"
-            >
-              <svg width="9" height="11" viewBox="0 0 24 24" fill="white"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
-            </span>
-          )}
-        </div>
-      )}
-      <Link href={`/case-study/${getCaseStudySlug(study.id)}`} className="flex-1 flex flex-col px-5 pt-5 pb-4 group">
-        {!hideCategory && (
-          <div className="flex items-center justify-between mb-5">
-            <span
-              className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md truncate"
-              style={{
-                background: color,
-                color: "#ffffff",
-                letterSpacing: "0.12em",
-              }}
-            >
-              {study.category}
-            </span>
-            <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
-              style={{ border: "1.5px solid var(--card-border)", color }}>
-              <ArrowUpRight size={14} strokeWidth={1.6} />
-            </div>
-          </div>
-        )}
-
-        <div className={`flex items-center justify-between ${hideCategory ? 'mb-4' : 'mb-3'}`}>
-          <div className="flex items-center gap-2">
-            <span
-              className="inline-flex items-center justify-center w-7 h-7 rounded-md flex-shrink-0 overflow-hidden"
-              style={{
-                aspectRatio: "1 / 1",
-                background: logoUrl && !logoFailed ? "#fff" : "transparent",
-                border:
-                  logoUrl && !logoFailed
-                    ? "1.5px solid var(--card-border)"
-                    : "none",
-              }}
-            >
-              {logoUrl && !logoFailed ? (
-                <img
-                  src={logoUrl}
-                  alt={`${study.company} logo — ${study.category} case study on northstar`}
-                  loading="lazy"
-                  width={28}
-                  height={28}
-                  onError={() => setLogoFailed(true)}
-                  className="max-w-full max-h-full object-contain"
-                  style={{ padding: "3px" }}
-                />
-              ) : (
-                <span className="text-lg leading-none">{study.logo}</span>
-              )}
-            </span>
-            <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-              {study.company} · {study.year}
-            </p>
-          </div>
-          {hideCategory && (
-            <div className="card-arrow flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0"
-              style={{ border: "1.5px solid var(--card-border)", color }}>
-              <ArrowUpRight size={14} strokeWidth={1.6} />
-            </div>
-          )}
-        </div>
-
-        <h3
-          className="text-lg sm:text-xl font-semibold leading-tight mb-4 line-clamp-2"
-          style={{ color: "var(--text-primary)", letterSpacing: "-0.02em", minHeight: '3.5rem' }}
-        >
-          {study.title}
-        </h3>
-
-        {/* Outcome strip */}
-        <div
-          className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg mb-4 mt-auto"
-          style={{
-            background: "transparent",
-            border: `1.5px solid ${isFailure ? "rgba(255,75,75,0.25)" : "rgba(80,200,120,0.25)"}`,
-            color: isFailure ? "#FF4B4B" : "#50C878",
-          }}
-        >
-          {isFailure ? (
-            <TrendingDown size={12} strokeWidth={1.6} />
-          ) : (
-            <TrendingUp size={12} strokeWidth={1.6} />
-          )}
-          <span className="line-clamp-1 text-sm">
-            {study.outcome}
-          </span>
-        </div>
-
-        {study.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mt-2">
-            {study.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="text-sm px-2 py-0.5 rounded-md"
-                style={{
-                  background: solidColorFor(tag),
-                  color: "#ffffff",
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+    <div className="flex flex-col h-full">
+      <Link href={href} className="card flex-1">
+        <Tile tint={tintAt(index)} minH={300} chip={chip} title={study.title} size="m" />
+        <Cap k={kicker} title={clip(study.outcome, 80)} />
       </Link>
-
-      <div
-        className="px-5 py-3 flex items-center justify-between"
-        style={{ borderTop: "1.5px solid var(--card-border)" }}
-      >
-        <span className="text-xs" style={{ color: "var(--text-muted)" }}>
+      <div className="flex items-center justify-between pt-3 px-0.5">
+        <span className="text-xs font-semibold" style={{ color: "var(--text-muted)", fontFamily: "var(--font-display)" }}>
           Read case study
         </span>
         <SmartSaveButton
@@ -199,7 +48,7 @@ export function CaseStudyCard({
             title: study.title,
             author: study.company,
             category: study.category,
-            link: `/case-study/${getCaseStudySlug(study.id)}`,
+            link: href,
           }}
         />
       </div>

@@ -29,29 +29,17 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer
-      className="px-4 sm:px-8 lg:px-12 pt-10 sm:pt-14 pb-8"
-      style={{
-        borderTop: "1.5px solid var(--card-border)",
-        background: "var(--page-bg)",
-      }}
+      className="pt-10 sm:pt-14 pb-8 mt-10"
+      style={{ borderTop: "1.5px solid var(--hair)" }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="site-inner">
         {/* Top row: wordmark + nav */}
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8 mb-8">
           {/* Brand */}
           <div className="flex flex-col gap-3 max-w-sm">
-            <div className="flex items-center gap-2">
-              <span
-                className="w-2 h-2 rounded-full"
-                style={{ background: "var(--brand-primary)" }}
-              />
-              <span
-                className="text-base font-bold tracking-tight"
-                style={{ color: "var(--text-primary)" }}
-              >
-                northstar
-              </span>
-            </div>
+            <span className="brand" style={{ fontSize: "1.25rem" }}>
+              pm<b>northstar</b>.
+            </span>
             <p
               className="text-sm leading-relaxed"
               style={{ color: "var(--text-muted)" }}

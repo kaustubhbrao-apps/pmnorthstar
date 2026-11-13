@@ -7,8 +7,10 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getDrillBySlug, publishedDrills } from "@/data/drills";
-import { drillTitle, drillDescription } from "@/lib/drills";
+import { drillTitle, drillDescription, normalizeDrillCategory } from "@/lib/drills";
 import { SidebarShell } from "@/components/SidebarShell";
+import { Footer } from "@/components/Footer";
+import { BigDiv, Pill } from "@/components/Editorial";
 import { SimulatePlayer } from "./SimulatePlayer";
 
 // ISR: pre-render published drills as static HTML and revalidate hourly.
@@ -70,57 +72,39 @@ export default function DrillPage({ params }: PageProps) {
           play starts (see .drill-briefing in globals.css, keyed off the
           data-phase the player sets). Hiding it in React instead would put
           it back inside the boundary and undo the point of the change. */}
-      <div className="drill-shell">
-        <header className="drill-briefing px-4 sm:px-6 pt-8 sm:pt-12 max-w-4xl mx-auto">
-          <h1
-            className="font-display font-bold leading-[1.05] mb-5"
-            style={{
-              color: "var(--text-primary)",
-              letterSpacing: "-0.025em",
-              fontSize: "clamp(28px, 4.5vw, 44px)",
-            }}
-          >
-            {drillTitle(drill)}
-          </h1>
-          <div
-            className="text-sm font-mono uppercase mb-5 inline-flex items-center gap-2 flex-wrap"
-            style={{ color: "var(--text-faint)", letterSpacing: "0.14em" }}
-          >
-            <span>~{drill.estimatedMinutes} minutes</span>
-            <span>•</span>
-            <span>{drill.category}</span>
-            {drill.year && (
-              <>
-                <span>•</span>
-                <span>{drill.year}</span>
-              </>
-            )}
-          </div>
-          {drill.intro
-            .split("\n\n")
-            .map((para) => para.trim())
-            .filter(Boolean)
-            .map((para, i) => (
-              <p
-                key={i}
-                className="text-base sm:text-lg leading-relaxed mb-4"
-                style={{ color: "var(--text-muted)" }}
-              >
-                {para}
+      <div className="drill-shell site-inner pb-16">
+        <header className="drill-briefing max-w-4xl">
+          <BigDiv>SimulateIt · {normalizeDrillCategory(drill.category)}</BigDiv>
+          <div className="drillcard">
+            <div className="flex items-center justify-between gap-3 mb-4 flex-wrap">
+              <Pill>{drill.type}</Pill>
+              <span className="progress">
+                ~{drill.estimatedMinutes} min{drill.year ? ` · ${drill.year}` : ""}
+              </span>
+            </div>
+            <h1 className="drill-q">{drillTitle(drill)}</h1>
+            <div className="serif mt-4 text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
+              {drill.intro
+                .split("\n\n")
+                .map((para) => para.trim())
+                .filter(Boolean)
+                .map((para, i) => (
+                  <p key={i} className="mb-3">
+                    {para}
+                  </p>
+                ))}
+              <p>
+                <strong style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)" }}>The principle:</strong>{" "}
+                {drill.principle}
               </p>
-            ))}
-          <p
-            className="text-base sm:text-lg leading-relaxed mb-4"
-            style={{ color: "var(--text-muted)" }}
-          >
-            <strong style={{ color: "var(--text-primary)" }}>The principle:</strong>{" "}
-            {drill.principle}
-          </p>
+            </div>
+          </div>
         </header>
         <Suspense fallback={<div className="p-12 text-center opacity-50">Loading simulation...</div>}>
           <SimulatePlayer drill={drill} />
         </Suspense>
       </div>
+      <Footer />
     </SidebarShell>
   );
 }

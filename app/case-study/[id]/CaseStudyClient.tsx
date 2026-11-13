@@ -1,5 +1,10 @@
 "use client";
 
+// Case study reading page in the editorial vocabulary (artifact "Story"
+// view): a "Case study" divider, then a two-column story grid — the article
+// (pill, big italic title, serif lede, red "The result" block, prose) beside
+// a sticky rail with at-a-glance stats, "More like this" and head-to-heads.
+
 import { useState, useEffect } from "react";
 import { marked } from "marked";
 // Type-only — erased at compile time.
@@ -10,31 +15,20 @@ import type { FAQ } from "@/data/caseStudyFaqs";
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { CaseStudyFaqs } from "@/components/CaseStudyFaqs";
 import { TopBar } from "@/components/TopBar";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { ShareButton } from "@/components/ShareButton";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Byline } from "@/components/Byline";
 // From the counts leaf module, not data/caseStudies.ts: this is a client
 // component and that module is ~830 KB. Same value, emitted by sync into both.
 import { CASE_STUDIES_LAST_UPDATED } from "@/data/inventory-counts";
-import { SubscribeForm } from "@/components/SubscribeForm";
 import { SmartEngagementBlock } from "@/components/SmartEngagementBlock";
 import { Footer } from "@/components/Footer";
 import { getCompanyLogoUrl } from "@/data/companyDomains";
-import { solidColorFor } from "@/lib/category-colors";
-import { ArrowLeft, ArrowUpRight, TrendingUp, TrendingDown, Clock, Menu } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { ViewCounter } from "@/components/ViewCounter";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
-
-const categoryColors: Record<string, string> = {
-  Product: "#9B8FFF",
-  Growth: "#FF6B35",
-  Strategy: "#F5C842",
-  Design: "#50C878",
-  Failure: "#FF4B4B",
-};
+import { BigDiv, Pill, VsBox, SectionHead, splitVs } from "@/components/Editorial";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 // Narrowed shapes for the surrounding-navigation entries. The page resolves
 // these server-side; only the fields rendered below travel to the browser.
@@ -82,34 +76,29 @@ export function CaseStudyClient({
   position,
   total,
 }: CaseStudyClientProps) {
-  const router = useRouter();
-
+  // Init false so server and client first render match (avoids a hydration
+  // mismatch on the theme-toggle icon); read the saved theme after mount and
+  // only then start writing data-theme (the inline script set it pre-paint).
   const [isDark, setIsDark] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  // Kept with the other hooks: this used to sit below the `if (!study)`
-  // early return, which made it a conditional hook call.
-  const [logoFailed, setLogoFailed] = useState(false);
+  const [themeReady, setThemeReady] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") setIsDark(true);
+    setIsDark(localStorage.getItem("theme") === "dark");
+    setThemeReady(true);
   }, []);
 
   useEffect(() => {
+    if (!themeReady) return;
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-  }, [isDark]);
-
-  const handleNavChange = () => router.push("/");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }, [isDark, themeReady]);
 
   if (!study) {
     return (
-      <div
-        className="h-screen flex items-center justify-center p-4"
-        style={{ background: "var(--page-bg)" }}
-      >
+      <div className="h-screen flex items-center justify-center p-4">
         <div className="text-center">
           <p className="eyebrow mb-2">404</p>
-          <p className="text-lg font-bold mb-3" style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}>
+          <p className="text-lg font-bold mb-3" style={{ letterSpacing: "-0.02em" }}>
             Case study not found
           </p>
           <Link href="/" className="btn-ghost">
@@ -121,64 +110,61 @@ export function CaseStudyClient({
   }
 
   const isFailure = study.category === "Failure";
-  const color = categoryColors[study.category] ?? "var(--brand-primary)";
   const paragraphs = study.content.split("\n\n").filter(Boolean);
   const readTime = Math.max(3, Math.ceil(study.content.split(" ").length / 200));
   const indexLabel = String(position).padStart(2, "0");
   const logoUrl = getCompanyLogoUrl(study.company);
-
-  // `related` and `faqs` now arrive as props — see page.tsx.
+  const slug = getCaseStudySlug(study.id);
 
   // ─── Structured Data (JSON-LD) ──────────────────────────────────────────
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
-  const studyUrl = `${SITE_URL}/case-study/${getCaseStudySlug(study.id)}`;
-  
+  const studyUrl = `${SITE_URL}/case-study/${slug}`;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": study.title,
-    "description": study.description,
-    "image": logoUrl && !logoFailed ? logoUrl : `${SITE_URL}/logo-icon.svg`,
-    "author": {
+    headline: study.title,
+    description: study.description,
+    image: logoUrl ?? `${SITE_URL}/logo-icon.svg`,
+    author: {
       "@type": "Organization",
-      "name": "northstar editorial",
-      "url": SITE_URL
+      name: "northstar editorial",
+      url: SITE_URL,
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "northstar",
-      "logo": {
+      name: "northstar",
+      logo: {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/logo-icon.svg`
-      }
+        url: `${SITE_URL}/logo-icon.svg`,
+      },
     },
     // Both derive from the study's own date, falling back to the corpus date
     // sync computes. dateModified deliberately mirrors datePublished rather
     // than reporting a site-wide "last reviewed" constant: we do not track
-    // per-study edits, and claiming every one of 143 studies was revised on
-    // the same day is a freshness signal that is simply not true.
-    "datePublished": study.publishedAt || CASE_STUDIES_LAST_UPDATED,
-    "dateModified": study.publishedAt || CASE_STUDIES_LAST_UPDATED,
+    // per-study edits, and claiming every study was revised on the same day
+    // is a freshness signal that is simply not true.
+    datePublished: study.publishedAt || CASE_STUDIES_LAST_UPDATED,
+    dateModified: study.publishedAt || CASE_STUDIES_LAST_UPDATED,
     // The entity the study is about, stated as a thing rather than left for a
-    // reader to infer from prose. This is what lets an assistant resolve
-    // "the Adyen case study" to Adyen.
-    "about": {
+    // reader to infer from prose.
+    about: {
       "@type": "Organization",
-      "name": study.company,
+      name: study.company,
     },
-    "abstract": study.description,
-    "keywords": study.tags.join(", "),
-    "articleSection": study.category,
-    "mainEntityOfPage": {
+    abstract: study.description,
+    keywords: study.tags.join(", "),
+    articleSection: study.category,
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": studyUrl
-    }
+      "@id": studyUrl,
+    },
   };
 
-
+  const injectAfter = Math.max(2, Math.floor(paragraphs.length * 0.4));
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
+    <div className="min-h-screen">
       {/* SEO / AI Metadata */}
       <script
         type="application/ld+json"
@@ -187,94 +173,50 @@ export function CaseStudyClient({
 
       <TopBar activeNav="casestudies" isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} />
 
-      <main className="scroll-container">
-          {/* Hero */}
-          <div
-            className="dot-grid px-4 sm:px-8 lg:px-12 py-8 sm:py-12 flex justify-center"
-            style={{ borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="w-full max-w-4xl">
-              <Breadcrumbs
-                className="mb-6"
-                items={[
-                  { label: "northstar", href: "/" },
-                  { label: "Case studies", href: "/#casestudies" },
-                  { label: study.category },
-                  { label: study.title },
-                ]}
-              />
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span
-                  className="inline-flex items-center gap-1.5 text-sm font-medium px-2.5 py-0.5 rounded-full"
-                  style={{ background: `${color}14`, color }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} />
-                  {study.category}
+      <main>
+        <div className="site-inner pb-16">
+          <Breadcrumbs
+            className="pt-6"
+            items={[
+              { label: "northstar", href: "/" },
+              { label: "Case studies", href: "/#casestudies" },
+              { label: study.category },
+              { label: study.title },
+            ]}
+          />
+          <BigDiv>
+            Case study · {indexLabel} of {total}
+          </BigDiv>
+
+          <div className="story-grid">
+            {/* ── Article ─────────────────────────────────────────────── */}
+            <article className="read-wrap">
+              <div className="flex flex-wrap items-center gap-3">
+                <Pill>
+                  {study.category} · {study.company}
+                  {study.region === "India" ? " · India" : ""}
+                </Pill>
+                <span className="progress">
+                  {readTime} min · {study.year}
                 </span>
-                <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
-                <span className="meta-mono inline-flex items-center gap-1 text-sm">
-                  <Clock size={12} strokeWidth={1.6} />
-                  {readTime} min
-                </span>
-                <span className="w-px h-3" style={{ background: "var(--card-border)" }} />
-                <span className="meta-mono text-sm">{study.company} · {study.year}</span>
-                <span className="w-px h-3 hidden sm:inline-block" style={{ background: "var(--card-border)" }} />
-                <ViewCounter path={`/case-study/${study.id}`} className="meta-mono text-sm text-[var(--text-faint)]" />
+                <ViewCounter path={`/case-study/${study.id}`} className="progress" />
               </div>
 
-              <div className="flex items-start gap-5 mb-6">
-                <span
-                  className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl flex-shrink-0 mt-1 overflow-hidden"
-                  style={{
-                    aspectRatio: "1 / 1",
-                    background: logoUrl && !logoFailed ? "#fff" : "transparent",
-                    border:
-                      logoUrl && !logoFailed
-                        ? "1.5px solid var(--card-border)"
-                        : "none",
-                  }}
-                >
-                  {logoUrl && !logoFailed ? (
-                    <img
-                      src={logoUrl}
-                      alt={`${study.company} logo — ${study.category} product case study`}
-                      width={80}
-                      height={80}
-                      onError={() => setLogoFailed(true)}
-                      className="max-w-full max-h-full object-contain"
-                      style={{ padding: "10px" }}
-                    />
-                  ) : (
-                    <span className="text-4xl sm:text-5xl lg:text-6xl leading-none">
-                      {study.logo}
-                    </span>
-                  )}
-                </span>
-                <h1
-                  className="case-hero-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]"
-                  style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}
-                >
-                  {study.title}
-                </h1>
-              </div>
+              <h1 className="t">{study.title}</h1>
+              <p className="lede">{study.description}</p>
 
-              <p
-                className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mb-6"
-                style={{ color: "var(--text-muted)" }}
-              >
-                {study.description}
-              </p>
-
-              <div className="flex items-center justify-between flex-wrap gap-4 mt-8">
+              <div className="flex items-center justify-between flex-wrap gap-4 mt-6">
                 <Byline label="Written" date={study.publishedAt || CASE_STUDIES_LAST_UPDATED} />
                 <div className="flex items-center gap-3">
-                  <SmartSaveButton resource={{
-                    id: study.id,
-                    title: study.title,
-                    author: study.company,
-                    category: study.category,
-                    link: `/case-study/${getCaseStudySlug(study.id)}`
-                  }} />
+                  <SmartSaveButton
+                    resource={{
+                      id: study.id,
+                      title: study.title,
+                      author: study.company,
+                      category: study.category,
+                      link: `/case-study/${slug}`,
+                    }}
+                  />
                   <ShareButton
                     title={`${study.title} — northstar case study`}
                     text={`${study.title}: ${study.description} — via @pmnorthstar`}
@@ -283,274 +225,182 @@ export function CaseStudyClient({
                   />
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Content */}
-          <div className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center">
-            <div className="w-full max-w-4xl">
-              {/* Outcome callout */}
-              <div
-                className="text-base px-6 py-5 rounded-xl mb-10 flex items-start gap-4"
-                style={{
-                  background: isFailure ? "rgba(255,75,75,0.05)" : "rgba(80,200,120,0.05)",
-                  border: `1.5px solid ${isFailure ? "rgba(255,75,75,0.25)" : "rgba(80,200,120,0.25)"}`,
-                  color: isFailure ? "#FF4B4B" : "#50C878",
-                }}
-              >
-                {isFailure ? (
-                  <TrendingDown size={20} strokeWidth={1.6} className="mt-0.5 flex-shrink-0" />
-                ) : (
-                  <TrendingUp size={20} strokeWidth={1.6} className="mt-0.5 flex-shrink-0" />
-                )}
-                <div>
-                  <span
-                    className="text-sm font-bold uppercase tracking-wider block mb-1.5"
-                    style={{ opacity: 0.8 }}
-                  >
-                    {isFailure ? "Outcome" : "Impact"}
-                  </span>
-                  <span style={{ color: "var(--text-primary)", lineHeight: 1.6 }}>{study.outcome}</span>
-                </div>
+              {/* The outcome, up front — the artifact's red "play" block. */}
+              <div className="play">
+                <div className="lab">{isFailure ? "The outcome" : "The result"}</div>
+                <p>{study.outcome}</p>
               </div>
 
               {/* Article body — engagement block injected after ~40% of
                   paragraphs so the reader hits it when invested but not
                   done. Anonymous users see newsletter; engaged logged-in
                   users see related-content recommendations instead. */}
-              <article>
-                {paragraphs.map((p, i) => {
-                  const injectAfter = Math.max(2, Math.floor(paragraphs.length * 0.4));
-                  
-                  // Check if this paragraph is just a markdown image
-                  const imgMatch = p.trim().match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
-
-                  return (
-                    <div key={i}>
-                      {imgMatch ? (
-                        <img 
-                          src={imgMatch[2]} 
-                          alt={imgMatch[1]} 
-                          className="w-full rounded-2xl my-10 object-cover"
-                          style={{ border: "1.5px solid var(--card-border)" }}
+              {paragraphs.map((p, i) => {
+                // A paragraph that is just a markdown image renders as a figure.
+                const imgMatch = p.trim().match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+                return (
+                  <div key={i}>
+                    {imgMatch ? (
+                      <img
+                        src={imgMatch[2]}
+                        alt={imgMatch[1]}
+                        className="w-full rounded-[18px] my-10 object-cover"
+                        style={{ border: "1.5px solid var(--hair)" }}
+                      />
+                    ) : (
+                      <div
+                        className="markdown-prose case-para"
+                        style={{ fontSize: "1.18rem", lineHeight: 1.72, color: "var(--text-primary)" }}
+                        dangerouslySetInnerHTML={{ __html: marked.parse(p) as string }}
+                      />
+                    )}
+                    {i === injectAfter && (
+                      <div className="my-8">
+                        <SmartEngagementBlock
+                          fromType="case-study"
+                          fromSlug={slug}
+                          newsletterHeadline="Reading northstar? Get the next case study in your inbox."
+                          newsletterSubhead="One product deep dive every few days — Apple, Cred, Razorpay, Slack, Zerodha and more. Free."
+                          recommendations={related.slice(0, 3).map((c) => ({
+                            type: "case-study",
+                            slug: getCaseStudySlug(c.id),
+                            title: c.title,
+                            eyebrow: `${c.category} · ${c.company}`,
+                            href: `/case-study/${getCaseStudySlug(c.id)}`,
+                          }))}
                         />
-                      ) : (
-                        <div
-                          className="markdown-prose case-para text-base sm:text-lg lg:text-xl leading-[1.85]"
-                          style={{ color: "var(--text-primary)", opacity: 0.9 }}
-                          dangerouslySetInnerHTML={{ __html: marked.parse(p) as string }}
-                        />
-                      )}
-                      {i === injectAfter && (
-                        <div className="my-8">
-                          <SmartEngagementBlock
-                            fromType="case-study"
-                            fromSlug={getCaseStudySlug(study.id)}
-                            newsletterHeadline="Reading northstar? Get the next case study in your inbox."
-                            newsletterSubhead="One product deep dive every few days — Apple, Cred, Razorpay, Slack, Zerodha and more. Free."
-                            recommendations={related.slice(0, 3).map((c) => ({
-                              type: "case-study",
-                              slug: getCaseStudySlug(c.id),
-                              title: c.title,
-                              eyebrow: `${c.category} · ${c.company}`,
-                              href: `/case-study/${getCaseStudySlug(c.id)}`,
-                            }))}
-                          />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </article>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
 
               {/* Tags */}
-              <div
-                className="flex flex-wrap items-center gap-2 py-6 mt-4"
-                style={{ borderTop: "1.5px solid var(--card-border)" }}
-              >
-                <span className="eyebrow mr-2">Tags</span>
+              <div className="flex flex-wrap items-center gap-2 pt-6 mt-6" style={{ borderTop: "1.5px solid var(--hair)" }}>
+                <span className="progress mr-1">Tags</span>
                 {study.tags.map((tag) => (
-                  <Link
-                    key={tag}
-                    href={`/?q=${encodeURIComponent(tag)}`}
-                    className="text-xs px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
-                    style={{
-                      background: solidColorFor(tag),
-                      color: "#ffffff",
-                    }}
-                  >
-                    #{tag}
+                  <Link key={tag} href={`/?q=${encodeURIComponent(tag)}`} className="pill hover:opacity-70">
+                    {tag}
                   </Link>
                 ))}
               </div>
 
               {/* Prev / Next */}
-              <div
-                className="grid grid-cols-1 sm:grid-cols-2 gap-3 py-8"
-                style={{ borderTop: "1.5px solid var(--card-border)" }}
-              >
-                {prevStudy ? (
-                  <Link
-                    href={`/case-study/${getCaseStudySlug(prevStudy.id)}`}
-                    className="playlist-card surface p-4 group"
-                    style={{ ["--accent-color" as any]: "var(--text-muted)" } as React.CSSProperties}
-                  >
-                    <p className="eyebrow mb-2">← Prev</p>
-                    <p className="text-sm font-semibold line-clamp-2" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                      {prevStudy.title}
-                    </p>
-                  </Link>
-                ) : (
-                  <div />
-                )}
-                {nextStudy ? (
-                  <Link
-                    href={`/case-study/${getCaseStudySlug(nextStudy.id)}`}
-                    className="playlist-card surface p-4 text-right group"
-                    style={{ ["--accent-color" as any]: "var(--text-muted)" } as React.CSSProperties}
-                  >
-                    <p className="eyebrow mb-2">Next →</p>
-                    <p className="text-sm font-semibold line-clamp-2" style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}>
-                      {nextStudy.title}
-                    </p>
-                  </Link>
-                ) : (
-                  <div />
-                )}
-              </div>
+              {(prevStudy || nextStudy) && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+                  {prevStudy ? (
+                    <Link href={`/case-study/${getCaseStudySlug(prevStudy.id)}`} className="vsbox">
+                      <div className="m" style={{ marginTop: 0, marginBottom: 6 }}>
+                        ← Previous
+                      </div>
+                      <div className="vs" style={{ fontSize: "1.15rem" }}>
+                        {prevStudy.title}
+                      </div>
+                    </Link>
+                  ) : (
+                    <div />
+                  )}
+                  {nextStudy ? (
+                    <Link href={`/case-study/${getCaseStudySlug(nextStudy.id)}`} className="vsbox sm:text-right">
+                      <div className="m" style={{ marginTop: 0, marginBottom: 6 }}>
+                        Next →
+                      </div>
+                      <div className="vs" style={{ fontSize: "1.15rem" }}>
+                        {nextStudy.title}
+                      </div>
+                    </Link>
+                  ) : (
+                    <div />
+                  )}
+                </div>
+              )}
 
               {/* Frequently asked — long-tail SEO + reader engagement */}
               <CaseStudyFaqs faqs={faqs} />
 
-              {/* Related case studies */}
-              {related.length > 0 && (
-                <div
-                  className="py-10"
-                  style={{ borderTop: "1.5px solid var(--card-border)" }}
-                >
-                  <div className="flex items-baseline gap-3 mb-6">
-                    <h2
-                      className="text-xl sm:text-2xl font-semibold"
-                      style={{ color, letterSpacing: "-0.02em" }}
-                    >
-                      Related {study.category} case studies
-                    </h2>
-                    <span className="text-xs" style={{ color: "var(--text-faint)" }}>
-                      {related.length}
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {related.map((r) => {
-                      const rColor = categoryColors[r.category] ?? "var(--brand-primary)";
-                      return (
-                        <Link
-                          key={r.id}
-                          href={`/case-study/${getCaseStudySlug(r.id)}`}
-                          className="playlist-card surface p-4 group"
-                          style={{ ["--accent-color" as any]: rColor } as React.CSSProperties}
-                        >
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="text-base">{r.logo}</span>
-                            <span
-                              className="text-sm font-medium uppercase tracking-wider"
-                              style={{ color: rColor }}
-                            >
-                              {r.company} · {r.year}
-                            </span>
-                          </div>
-                          <p
-                            className="text-sm font-semibold leading-snug line-clamp-2"
-                            style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                          >
-                            {r.title}
-                          </p>
-                        </Link>
-                      );
+              {relatedComparisons.length > 0 && (
+                <>
+                  <SectionHead title="Head-to-Head" />
+                  <p className="shead-sub">Comparisons featuring {study.company}.</p>
+                  <div className="heads">
+                    {relatedComparisons.map((c) => {
+                      const { a, b } = splitVs(c.title);
+                      return <VsBox key={c.slug} a={a} b={b} m={c.eyebrow} href={`/compare/${c.slug}`} />;
                     })}
                   </div>
-                </div>
+                </>
               )}
 
               {relatedAnswers.length > 0 && (
-                <div
-                  className="py-10"
-                  style={{ borderTop: "1.5px solid var(--card-border)" }}
-                >
-                  <h2
-                    className="text-xl sm:text-2xl font-semibold mb-1"
-                    style={{ color, letterSpacing: "-0.02em" }}
-                  >
-                    Concepts explained
-                  </h2>
-                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
-                    Answers that reference this case study.
-                  </p>
-                  <div className="flex flex-col gap-2">
+                <>
+                  <SectionHead title="Concepts explained" />
+                  <p className="shead-sub">Answers that reference this case study.</p>
+                  <div className="max-w-3xl">
                     {relatedAnswers.map((a) => (
-                      <Link
-                        key={a.slug}
-                        href={`/answers/${a.slug}`}
-                        className="text-sm font-medium hover:underline"
-                        style={{ color: a.accentColor }}
-                      >
+                      <Link key={a.slug} href={`/answers/${a.slug}`} className="rellink">
                         {a.question} →
                       </Link>
                     ))}
                   </div>
+                </>
+              )}
+
+              <div className="mt-12">
+                <Link href="/#casestudies" className="btn-ghost">
+                  Browse all cases ↗
+                </Link>
+              </div>
+            </article>
+
+            {/* ── Rail ────────────────────────────────────────────────── */}
+            <aside className="rail">
+              <div className="railcard">
+                <div className="railhead">At a glance</div>
+                <div className="statrow">
+                  <span className="sn">{study.year}</span>
+                  <span className="sl">{study.company}</span>
+                </div>
+                <div className="statrow">
+                  <span className="sn">{readTime} min</span>
+                  <span className="sl">Read time</span>
+                </div>
+                <div className="statrow">
+                  <span className="sn">{study.category}</span>
+                  <span className="sl">Lens</span>
+                </div>
+                <div className="statrow">
+                  <span className="sn">{indexLabel}</span>
+                  <span className="sl">of {total} case studies</span>
+                </div>
+              </div>
+
+              {related.length > 0 && (
+                <div className="railcard">
+                  <div className="railhead">More like this</div>
+                  {related.slice(0, 5).map((r) => (
+                    <Link key={r.id} href={`/case-study/${getCaseStudySlug(r.id)}`} className="rellink">
+                      {r.title} →
+                    </Link>
+                  ))}
                 </div>
               )}
 
               {relatedComparisons.length > 0 && (
-                <div
-                  className="py-10"
-                  style={{ borderTop: "1.5px solid var(--card-border)" }}
-                >
-                  <h2
-                    className="text-xl sm:text-2xl font-semibold mb-1"
-                    style={{ color, letterSpacing: "-0.02em" }}
-                  >
-                    Head-to-head
-                  </h2>
-                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
-                    Comparisons featuring {study.company}.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {relatedComparisons.map((c) => (
-                      <Link
-                        key={c.slug}
-                        href={`/compare/${c.slug}`}
-                        className="playlist-card surface p-4 group"
-                        style={{ ["--accent-color" as any]: c.accentColor } as React.CSSProperties}
-                      >
-                        <p
-                          className="text-sm font-semibold leading-snug line-clamp-2 mb-1"
-                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                        >
-                          {c.title}
-                        </p>
-                        <p
-                          className="text-xs leading-snug line-clamp-2"
-                          style={{ color: "var(--text-muted)" }}
-                        >
-                          {c.eyebrow}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
+                <div className="railcard">
+                  <div className="railhead">Head-to-head</div>
+                  {relatedComparisons.slice(0, 4).map((c) => (
+                    <Link key={c.slug} href={`/compare/${c.slug}`} className="rellink">
+                      {splitVs(c.title).b ? `${splitVs(c.title).a} vs ${splitVs(c.title).b}` : c.title} →
+                    </Link>
+                  ))}
                 </div>
               )}
-
-              {/* Back to all */}
-              <div className="text-center pb-12">
-                <Link href="/" className="btn-ghost inline-flex">
-                  Browse all
-                  <ArrowUpRight size={12} strokeWidth={1.6} />
-                </Link>
-              </div>
-            </div>
+            </aside>
           </div>
-          <Footer />
-        </main>
+        </div>
+        <Footer />
+      </main>
     </div>
   );
 }

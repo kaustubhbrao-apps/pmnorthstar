@@ -169,7 +169,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
         />
       </head>
-      <body className="noise">
+      <body>
         {/* Site-wide JSON-LD: WebSite schema for search */}
         <script
           type="application/ld+json"
@@ -192,7 +192,9 @@ export default function RootLayout({
           }}
         />
         <UserStateProvider>
-          {children}
+          {/* The white rounded panel on the dark frame (body). Every route
+              renders inside it; see .site-panel in globals.css. */}
+          <div className="site-panel">{children}</div>
           <NotificationToaster />
         </UserStateProvider>
         <ConsentBanner />

@@ -1,24 +1,23 @@
 "use client";
 
+// CheckIt in the editorial vocabulary (artifact "CheckIt" view): tool hero,
+// pill URL input + red "Grade it" button, a scorecard with the big numeral,
+// band grade and per-dimension bars, a "Top fixes" tile row, then the full
+// per-check breakdown. All audit logic is unchanged.
+
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
-import {
-  Sparkles,
-  ArrowRight,
-  Loader2,
-  Check,
-  X,
-  ChevronDown,
-  Share2,
-} from "lucide-react";
+import { Loader2, Check, X, ChevronDown, Share2 } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { Footer } from "@/components/Footer";
+import { EdCard, Tile, Cap, SectionHead, ToolHero, clip, tintAt } from "@/components/Editorial";
 import { CASE_STUDY_COUNT } from "@/data/inventory-counts";
 import { CHECKIT_WAR_LEADERBOARD, type LeaderboardEntry } from "@/data/checkit-leaderboard";
 import { YC_STUDY_SUMMARY as YC } from "@/data/yc-study-summary";
 import { DIMENSIONS } from "@/lib/checkit/dimensions";
 import { BAND_COPY } from "@/lib/checkit/types";
-import type { AuditResult, DimensionResult, Band } from "@/lib/checkit/types";
+import type { AuditResult, DimensionResult } from "@/lib/checkit/types";
 import { track } from "@/lib/track";
 
 type ViewState =
@@ -26,27 +25,6 @@ type ViewState =
   | { kind: "loading"; url: string }
   | { kind: "error"; message: string }
   | { kind: "ready"; result: AuditResult };
-
-const BAND_COLOR: Record<Band, string> = {
-  stellar: "#0F9D58",
-  ready: "#22C55E",
-  almost: "#84CC16",
-  polish: "#EAB308",
-  rough: "#F59E0B",
-  vibe: "#F97316",
-  draft: "#EF4444",
-  skeleton: "#DC2626",
-  raw: "#B91C1C",
-  missing: "#7F1D1D",
-};
-
-const DIMENSION_ACCENT: Record<string, string> = {
-  brand: "#9B8FFF",
-  performance: "#FF6B35",
-  seo: "#26A69A",
-  ux: "#F5C842",
-  trust: "#F3123C",
-};
 
 const EXAMPLE_URLS = ["stripe.com", "linear.app", "vercel.com"];
 
@@ -136,189 +114,78 @@ export default function CheckItClient() {
     window.history.replaceState(null, "", "/checkit");
   };
 
+  const pick = (url: string) => {
+    setInput(url);
+    runAudit(url);
+  };
+
+  const isLoading = view.kind === "loading";
+
   return (
-    <SidebarShell
-      activeNav="checkit"
-      backHref="/"
-      backLabelDesktop="Back to library"
-      backLabelMobile="Back"
-    >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <Hero
-          input={input}
-          setInput={setInput}
-          onSubmit={handleSubmit}
-          isLoading={view.kind === "loading"}
-          stats={stats}
-          onPickExample={(url) => {
-            setInput(url);
-            runAudit(url);
-          }}
-        />
+    <SidebarShell activeNav="checkit">
+      <div className="site-inner pt-8 pb-16">
+        <ToolHero pill="Free tool" title="CheckIt">
+          Paste a product or landing page. Get a brutal, instant grade across the 35 things that actually decide
+          whether users treat you as a product or a project — performance, SEO, UX, brand, trust, polish, standards.
+        </ToolHero>
 
-        {view.kind === "loading" && <LoadingState url={view.url} />}
-        {view.kind === "error" && (
-          <ErrorState message={view.message} onReset={handleReset} />
-        )}
-        {view.kind === "ready" && <ResultView result={view.result} />}
-        {view.kind === "idle" && (
-          <IdleProof 
-            onPickExample={(url) => {
-              setInput(url);
-              runAudit(url);
-            }} 
-          />
-        )}
-      </div>
-    </SidebarShell>
-  );
-}
-
-function Hero({
-  input,
-  setInput,
-  onSubmit,
-  isLoading,
-  onPickExample,
-  stats,
-}: {
-  input: string;
-  setInput: (s: string) => void;
-  onSubmit: (e: React.FormEvent) => void;
-  isLoading: boolean;
-  onPickExample: (url: string) => void;
-  stats: CheckitStats | null;
-}) {
-  return (
-    <div className="text-center mb-10 sm:mb-12">
-      <div
-        className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-5"
-        style={{
-          background: "var(--brand-soft)",
-          border: "1.5px solid rgba(243, 18, 60, 0.2)",
-        }}
-      >
-        <Sparkles size={12} style={{ color: "var(--brand-primary)" }} />
-        <span
-          className="text-sm font-medium"
-          style={{ color: "var(--brand-primary)", letterSpacing: "0.02em" }}
-        >
-          CheckIt, by northstar
-        </span>
-      </div>
-
-      <h1
-        className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold mb-4"
-        style={{
-          color: "var(--text-primary)",
-          letterSpacing: "-0.03em",
-          lineHeight: 1.05,
-        }}
-      >
-        Is your vibe-coded site
-        <br />
-        <span style={{ color: "var(--brand-primary)" }}>
-          ready for the business world?
-        </span>
-      </h1>
-
-      <p
-        className="text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed"
-        style={{ color: "var(--text-muted)" }}
-      >
-        We check 35 things across performance, SEO, UX, brand, trust, polish,
-        and modern web standards — the basics that decide whether users treat
-        you as a product or a project.
-      </p>
-
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
-        <div
-          className="flex flex-col sm:flex-row sm:rounded-xl gap-2 sm:gap-0 sm:overflow-hidden"
-          style={{
-            background: "var(--card-bg)",
-          }}
-        >
+        <form onSubmit={handleSubmit} className="toolbar-in">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="yourproduct.com"
+            placeholder="https://yourproduct.com"
             disabled={isLoading}
             autoFocus
             spellCheck={false}
             autoCorrect="off"
             autoCapitalize="off"
-            className="flex-1 px-4 py-3.5 text-base bg-transparent outline-none rounded-xl sm:rounded-none"
-            style={{
-              color: "var(--text-primary)",
-              border: "1.5px solid var(--card-border)",
-            }}
+            aria-label="Page URL"
           />
-          <button
-            type="submit"
-            disabled={isLoading || !input.trim()}
-            className="px-6 py-3.5 inline-flex items-center justify-center gap-2 font-semibold text-sm transition-opacity disabled:opacity-50 rounded-xl sm:rounded-none"
-            style={{
-              background: "var(--brand-primary)",
-              color: "#ffffff",
-            }}
-          >
+          <button type="submit" disabled={isLoading || !input.trim()} className="btn-red disabled:opacity-50">
             {isLoading ? (
               <>
                 <Loader2 size={16} className="animate-spin" /> Checking
               </>
             ) : (
-              <>
-                Check it <ArrowRight size={16} />
-              </>
+              "Grade it →"
             )}
           </button>
-        </div>
-        <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 mt-4">
-          <span
-            className="text-xs"
-            style={{ color: "var(--text-faint)" }}
-          >
-            Try:
-          </span>
-          {EXAMPLE_URLS.map((url, i) => (
-            <span key={url} className="inline-flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => onPickExample(url)}
-                disabled={isLoading}
-                className="text-sm font-mono transition-opacity hover:opacity-80 disabled:opacity-40"
-                style={{ color: "var(--brand-primary)" }}
-              >
-                {url}
-              </button>
-              {i < EXAMPLE_URLS.length - 1 && (
-                <span
-                  className="text-xs"
-                  style={{ color: "var(--text-faint)" }}
-                >
-                  ·
-                </span>
-              )}
-            </span>
+        </form>
+
+        <p className="progress -mt-4 mb-10 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span>Try:</span>
+          {EXAMPLE_URLS.map((url) => (
+            <button
+              key={url}
+              type="button"
+              onClick={() => pick(url)}
+              disabled={isLoading}
+              className="underline underline-offset-2 disabled:opacity-40"
+              style={{ color: "var(--brand-primary)", textTransform: "none", letterSpacing: 0 }}
+            >
+              {url}
+            </button>
           ))}
-        </div>
-        <p className="text-xs mt-3" style={{ color: "var(--text-faint)" }}>
-          Free. No signup. The result URL is shareable.
+          <span>· Free · no signup · the result URL is shareable</span>
           {stats && stats.week > 0 && (
-            <>
-              {" · "}
-              <span style={{ color: "var(--text-muted)" }}>
-                {stats.week.toLocaleString()}{" "}
-                {stats.week === 1 ? "site" : "sites"} scored this week
-              </span>
-            </>
+            <span>
+              · {stats.week.toLocaleString()} {stats.week === 1 ? "site" : "sites"} scored this week
+            </span>
           )}
         </p>
-      </form>
-    </div>
+
+        {view.kind === "loading" && <LoadingState url={view.url} />}
+        {view.kind === "error" && <ErrorState message={view.message} onReset={handleReset} />}
+        {view.kind === "ready" && <ResultView result={view.result} />}
+        {view.kind === "idle" && <IdleProof onPickExample={pick} />}
+      </div>
+      <Footer />
+    </SidebarShell>
   );
 }
+
+// ── Idle: proof points, the research, the leaderboard ─────────────────────
 
 function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) {
   const [liveLeaderboard, setLiveLeaderboard] = useState<LeaderboardEntry[]>([]);
@@ -346,204 +213,102 @@ function IdleProof({ onPickExample }: { onPickExample: (url: string) => void }) 
     { num: "<30s", label: "to a full audit" },
     { num: "0", label: "signups, paywalls, accounts" },
   ];
+
   return (
-    <div className="mt-8 space-y-10 sm:space-y-12">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        {items.map((p, i) => (
-          <div
-            key={i}
-            className="text-center px-4 py-5 rounded-xl"
-            style={{
-              background: "var(--card-bg)",
-              border: "1.5px solid var(--card-border)",
-            }}
-          >
-            <p
-              className="font-display text-2xl font-bold mb-1"
-              style={{
-                color: "var(--brand-primary)",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              {p.num}
-            </p>
-            <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-              {p.label}
-            </p>
+    <div>
+      <div className="heads">
+        {items.map((p) => (
+          <div key={p.label} className="vsbox" style={{ cursor: "default" }}>
+            <div className="vs">{p.num}</div>
+            <div className="m">{p.label}</div>
           </div>
         ))}
       </div>
 
-      {/* The study ran these same 35 checks over 496 YC homepages. The
-          leaderboard below shows five sites; the report shows every one of
-          them, ranked — and it was reachable only from the footer and the
-          sitemap before this, despite being the one page here carrying data
-          that exists nowhere else. */}
-      <div className="max-w-3xl mx-auto">
-        <Link
-          href="/reports/startup-website-audit-2026"
-          className="block rounded-xl p-5 sm:p-6 group transition-transform hover:-translate-y-0.5"
-          style={{ background: "var(--brand-primary)" }}
-        >
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p
-                className="font-mono text-xs font-bold uppercase mb-2"
-                style={{ color: "#fff", opacity: 0.75, letterSpacing: "0.16em" }}
-              >
-                Original research
-              </p>
-              <p
-                className="font-display text-xl sm:text-2xl font-bold leading-snug mb-1.5"
-                style={{ color: "#fff", letterSpacing: "-0.02em" }}
-              >
-                We ran {YC.audited} YC startup homepages through CheckIt
-              </p>
-              <p className="text-sm" style={{ color: "#fff", opacity: 0.85 }}>
-                Median {YC.median}/100. Every company named and ranked, plus
-                per-check pass rates and the full method.
-              </p>
-            </div>
-            <ArrowRight
-              size={22}
-              className="shrink-0 transition-transform group-hover:translate-x-1"
-              style={{ color: "#fff" }}
-            />
-          </div>
-        </Link>
+      {/* The study ran these same 35 checks over the YC homepages — the one
+          page here carrying data that exists nowhere else. */}
+      <SectionHead title="Original research" more="Read the report →" moreHref="/reports/startup-website-audit-2026" />
+      <EdCard href="/reports/startup-website-audit-2026">
+        <Tile
+          tint="ink"
+          minH={230}
+          pill="Research"
+          title={`We ran ${YC.audited} YC startup homepages through CheckIt`}
+          dek={`Median ${YC.median}/100. Every company named and ranked, plus per-check pass rates and the full method.`}
+          size="xl"
+        />
+      </EdCard>
+
+      <SectionHead title="Highest scores yet" />
+      <div className="max-w-3xl">
+        {displayBoard.map((entry, i) => (
+          <button
+            key={`${entry.url}-${i}`}
+            type="button"
+            onClick={() => onPickExample(entry.url)}
+            className="rellink row w-full text-left"
+          >
+            <span className="min-w-0 truncate">
+              <span style={{ color: "var(--text-muted)" }}>{i + 1}. </span>
+              {entry.company}
+              <span className="ml-2 text-sm font-medium" style={{ color: "var(--text-muted)" }}>
+                {entry.url}
+              </span>
+            </span>
+            <span className="font-extrabold tabular-nums flex-shrink-0" style={{ color: "var(--brand-primary)" }}>
+              {entry.score}
+            </span>
+          </button>
+        ))}
       </div>
-
-      <div className="max-w-3xl mx-auto">
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--brand-primary)" }} />
-            <h2 className="text-sm font-bold uppercase tracking-wider" style={{ color: "var(--text-primary)" }}>
-              Live Audit Feed
-            </h2>
-          </div>
-          <span className="text-sm font-mono text-muted" style={{ color: "var(--text-faint)" }}>
-            HIGHEST RATED SITES YET
-          </span>
-        </div>
-
-        <div className="space-y-2">
-          {displayBoard.map((entry, i) => (
-            <button
-              key={`${entry.url}-${i}`}
-              onClick={() => onPickExample(entry.url)}
-              className="w-full flex items-center justify-between p-3.5 sm:px-5 rounded-xl group transition-all"
-              style={{
-                background: "var(--card-bg)",
-                border: "1.5px solid var(--card-border)",
-              }}
-            >
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-xs opacity-40 w-4">{i + 1}</span>
-                <div className="text-left">
-                  <p className="text-sm font-bold group-hover:text-[var(--brand-primary)] transition-colors">
-                    {entry.company}
-                  </p>
-                  <p className="text-sm font-mono opacity-50">{entry.url}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div 
-                  className="px-2.5 py-1 rounded-lg font-display font-bold text-sm"
-                  style={{
-                    background: `${BAND_COLOR[entry.band]}15`,
-                    color: BAND_COLOR[entry.band]
-                  }}
-                >
-                  {entry.score}
-                </div>
-                <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[var(--brand-primary)]" />
-              </div>
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-6 p-4 rounded-xl text-center" style={{ background: "var(--brand-soft)", border: "1.5px dashed rgba(243, 18, 60, 0.3)" }}>
-          <p className="text-sm font-medium mb-1" style={{ color: "var(--brand-primary)" }}>
-            Think your landing page can beat these scores?
-          </p>
-          <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-            Paste your URL above to join the leaderboard. No signup required.
-          </p>
-        </div>
-      </div>
+      <p className="serif text-lg mt-6" style={{ color: "var(--text-muted)" }}>
+        Think your landing page can beat these? Paste your URL above — no signup required.
+      </p>
     </div>
   );
 }
+
 function LoadingState({ url }: { url: string }) {
   return (
-    <div
-      className="text-center py-12 px-6 rounded-xl"
-      style={{
-        background: "var(--card-bg)",
-        border: "1.5px solid var(--card-border)",
-      }}
-    >
-      <Loader2
-        className="animate-spin mx-auto mb-4"
-        size={32}
-        style={{ color: "var(--brand-primary)" }}
-      />
-      <p
-        className="text-sm font-medium mb-1"
-        style={{ color: "var(--text-primary)" }}
-      >
-        Running 35 checks across your site
-      </p>
-      <p className="text-xs" style={{ color: "var(--text-faint)" }}>
-        Fetching {safeHost(url)} and probing its surface, can take up to 30 seconds.
-      </p>
+    <div className="drillcard">
+      <div className="flex items-center gap-3">
+        <Loader2 className="animate-spin" size={24} style={{ color: "var(--brand-primary)" }} />
+        <div>
+          <p className="font-bold" style={{ fontFamily: "var(--font-display)" }}>
+            Running 35 checks on {safeHost(url)}
+          </p>
+          <p className="serif" style={{ color: "var(--text-muted)" }}>
+            Fetching the page and probing its surface — can take up to 30 seconds.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
 
-function ErrorState({
-  message,
-  onReset,
-}: {
-  message: string;
-  onReset: () => void;
-}) {
+function ErrorState({ message, onReset }: { message: string; onReset: () => void }) {
   return (
-    <div
-      className="text-center py-10 px-6 rounded-xl"
-      style={{
-        background: "var(--card-bg)",
-        border: "1.5px solid var(--card-border)",
-      }}
-    >
-      <X
-        className="mx-auto mb-3"
-        size={28}
-        style={{ color: "var(--danger)" }}
-      />
-      <p
-        className="text-base font-medium mb-2"
-        style={{ color: "var(--text-primary)" }}
-      >
-        Couldn&apos;t audit this URL
-      </p>
-      <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
+    <div className="drillcard">
+      <div className="flex items-center gap-2 mb-2">
+        <X size={20} style={{ color: "var(--brand-primary)" }} />
+        <p className="font-bold" style={{ fontFamily: "var(--font-display)" }}>
+          Couldn&apos;t audit this URL
+        </p>
+      </div>
+      <p className="serif mb-5" style={{ color: "var(--text-muted)" }}>
         {message}
       </p>
-      <button
-        onClick={onReset}
-        className="text-sm font-medium px-4 py-2 rounded-lg"
-        style={{ background: "var(--brand-primary)", color: "#ffffff" }}
-      >
+      <button onClick={onReset} className="btn-red">
         Try a different URL
       </button>
     </div>
   );
 }
 
+// ── Result: scorecard + bars, top fixes, every check ──────────────────────
+
 function ResultView({ result }: { result: AuditResult }) {
   const band = BAND_COPY[result.band];
-  const bandColor = BAND_COLOR[result.band];
   const host = safeHost(result.finalUrl || result.url);
 
   const handleShare = async () => {
@@ -572,173 +337,86 @@ function ResultView({ result }: { result: AuditResult }) {
     }
   };
 
-  return (
-    <div className="space-y-6 mt-2">
-      <ScoreHeader
-        score={result.totalScore}
-        bandLabel={band.label}
-        bandTagline={band.tagline}
-        bandColor={bandColor}
-        host={host}
-        onShare={handleShare}
-      />
+  // The three failed checks worth the most points, across all dimensions.
+  const fixes = result.dimensions
+    .flatMap((d) => d.checks.filter((c) => !c.pass).map((c) => ({ ...c, dim: d.label })))
+    .sort((a, b) => b.points - a.points)
+    .slice(0, 3);
 
+  return (
+    <div>
+      <div className="resultcard">
+        <div>
+          <div className="score">
+            {result.totalScore}
+            <small>out of 100</small>
+          </div>
+          <span className="grade">{band.label}</span>
+          <p className="serif mt-4 text-lg leading-snug" style={{ color: "var(--text-muted)" }}>
+            {band.tagline}
+          </p>
+          <p className="progress mt-3" style={{ textTransform: "none", letterSpacing: 0 }}>
+            {host}
+          </p>
+          <button onClick={handleShare} className="btn-ghost mt-4" style={{ padding: "0.6rem 1.1rem", fontSize: "0.9rem" }}>
+            <Share2 size={14} /> Share result
+          </button>
+        </div>
+        <div className="bars">
+          {result.dimensions.map((d) => {
+            const pct = d.maxScore > 0 ? Math.round((d.score / d.maxScore) * 100) : 0;
+            return (
+              <div key={d.id} className="brow">
+                <span className="bl">{d.label}</span>
+                <div className="track">
+                  <div className="fill" style={{ width: `${pct}%` }} />
+                </div>
+                <span className="bv">{pct}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {fixes.length > 0 && (
+        <>
+          <SectionHead title="Top fixes" className="mt-10" />
+          <div className="grid3">
+            {fixes.map((f, i) => (
+              <div key={f.id} className="card">
+                <Tile tint={tintAt(i)} minH={160} bare title={f.label} size="s" />
+                <Cap k={`${f.dim} · ${f.points} ${f.points === 1 ? "pt" : "pts"} · high impact`} title={clip(f.detail, 90)} />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      <SectionHead title="Every check" className="mt-10" />
       <div className="space-y-3">
         {result.dimensions.map((d) => (
           <DimensionCard key={d.id} dimension={d} />
         ))}
       </div>
 
-      <FooterCta />
-
-      <SubscribeForm
-        variant="card"
-        surface="checkit_result"
-        headline="Get a teardown like this every week."
-        subhead="Product deep dives on how the best sites get the basics right. Free. No paywall."
-      />
-    </div>
-  );
-}
-
-function ScoreHeader({
-  score,
-  bandLabel,
-  bandTagline,
-  bandColor,
-  host,
-  onShare,
-}: {
-  score: number;
-  bandLabel: string;
-  bandTagline: string;
-  bandColor: string;
-  host: string;
-  onShare: () => void;
-}) {
-  return (
-    <div
-      className="rounded-2xl px-5 sm:px-8 py-6 sm:py-7 flex flex-col sm:flex-row items-start sm:items-center gap-5"
-      style={{
-        background: bandColor,
-        color: "#ffffff",
-      }}
-    >
-      <div className="flex items-center gap-4 sm:gap-5">
-        <ScoreRing score={score} color="#ffffff" onColor />
-        <div className="min-w-0">
-          <p
-            className="text-sm uppercase tracking-wider mb-1 font-semibold"
-            style={{ color: "rgba(255, 255, 255, 0.85)" }}
-          >
-            CheckIt score
-          </p>
-          <p
-            className="font-display text-xl sm:text-2xl font-bold mb-0.5 leading-tight"
-            style={{
-              color: "#ffffff",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            {bandLabel}
-          </p>
-          <p
-            className="text-sm sm:text-base leading-snug"
-            style={{ color: "rgba(255, 255, 255, 0.85)" }}
-          >
-            {bandTagline}
-          </p>
-        </div>
-      </div>
-
-      <div className="sm:ml-auto flex flex-col sm:items-end gap-2 w-full sm:w-auto">
-        <p
-          className="text-sm font-mono truncate max-w-full"
-          style={{ color: "rgba(255, 255, 255, 0.75)" }}
-        >
-          {host}
+      <div className="play mt-10 max-w-3xl">
+        <div className="lab">Next</div>
+        <p>
+          Want to see how the best products got the basics right? northstar has {CASE_STUDY_COUNT}+ case studies on how
+          Razorpay, Stripe, Notion and others built products that converted from day one.{" "}
+          <Link href="/" className="underline underline-offset-2 font-semibold">
+            Browse the library →
+          </Link>
         </p>
-        <button
-          onClick={onShare}
-          className="inline-flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-          style={{
-            background: "rgba(255, 255, 255, 0.15)",
-            color: "#ffffff",
-            border: "1.5px solid rgba(255, 255, 255, 0.25)",
-          }}
-        >
-          <Share2 size={14} /> Share result
-        </button>
       </div>
-    </div>
-  );
-}
 
-function ScoreRing({
-  score,
-  color,
-  onColor = false,
-}: {
-  score: number;
-  color: string;
-  onColor?: boolean;
-}) {
-  const SIZE = 116;
-  const STROKE = 8;
-  const radius = (SIZE - STROKE) / 2;
-  const circ = 2 * Math.PI * radius;
-  const progress = (Math.max(0, Math.min(100, score)) / 100) * circ;
-  const trackColor = onColor ? "rgba(255, 255, 255, 0.25)" : "var(--divider)";
-  const textColor = onColor ? "#ffffff" : "var(--text-primary)";
-  const subTextColor = onColor ? "rgba(255, 255, 255, 0.75)" : "var(--text-faint)";
-  return (
-    <div
-      className="relative flex-shrink-0"
-      style={{ width: SIZE, height: SIZE }}
-    >
-      <svg
-        width={SIZE}
-        height={SIZE}
-        viewBox={`0 0 ${SIZE} ${SIZE}`}
-        style={{ transform: "rotate(-90deg)" }}
-      >
-        <circle
-          cx={SIZE / 2}
-          cy={SIZE / 2}
-          r={radius}
-          stroke={trackColor}
-          strokeWidth={STROKE}
-          fill="none"
+      <div className="mt-8 max-w-2xl">
+        <SubscribeForm
+          variant="card"
+          surface="checkit_result"
+          headline="Get a teardown like this every week."
+          subhead="Product deep dives on how the best sites get the basics right. Free. No paywall."
         />
-        <circle
-          cx={SIZE / 2}
-          cy={SIZE / 2}
-          r={radius}
-          stroke={color}
-          strokeWidth={STROKE}
-          fill="none"
-          strokeDasharray={circ}
-          strokeDashoffset={circ - progress}
-          strokeLinecap="round"
-          style={{
-            transition: "stroke-dashoffset 0.9s ease-out",
-            filter: onColor
-              ? undefined
-              : `drop-shadow(0 0 6px ${color}55)`,
-          }}
-        />
-      </svg>
-      <div
-        className="absolute inset-0 flex flex-col items-center justify-center font-display leading-none"
-        style={{ color: textColor }}
-      >
-        <span className="text-[34px] font-bold">{score}</span>
-        <span
-          className="text-xs mt-1.5 font-mono uppercase tracking-wider"
-          style={{ color: subTextColor }}
-        >
-          /100
-        </span>
       </div>
     </div>
   );
@@ -747,14 +425,6 @@ function ScoreRing({
 function DimensionCard({ dimension }: { dimension: DimensionResult }) {
   const [open, setOpen] = useState(false);
   const config = DIMENSIONS.find((d) => d.id === dimension.id)!;
-  const ratio = dimension.maxScore > 0 ? dimension.score / dimension.maxScore : 0;
-  const color =
-    ratio === 1
-      ? "#22C55E"
-      : ratio >= 0.5
-      ? "#F59E0B"
-      : "var(--brand-primary)";
-  const accent = DIMENSION_ACCENT[dimension.id] ?? "var(--brand-primary)";
   const passed = dimension.checks.filter((c) => c.pass).length;
   const total = dimension.checks.length;
 
@@ -767,81 +437,38 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
   };
 
   return (
-    <div
-      className="rounded-xl overflow-hidden relative"
-      style={{
-        background: "var(--card-bg)",
-        border: "1.5px solid var(--card-border)",
-        borderLeft: `3px solid ${accent}`,
-      }}
-    >
-      <button
-        onClick={handleToggle}
-        className="w-full px-4 py-4 sm:px-6 sm:py-5 flex items-center gap-3 sm:gap-4 text-left"
-      >
-        <div className="flex-shrink-0">
-          <div
-            className="inline-flex items-baseline gap-0.5 px-3 py-1.5 rounded-lg"
-            style={{
-              background: `color-mix(in srgb, ${color} 12%, transparent)`,
-              color,
-            }}
-          >
-            <span className="font-display text-lg sm:text-xl font-bold">
-              {dimension.score}
-            </span>
-            <span className="text-xs opacity-70 font-mono">/{dimension.maxScore}</span>
-          </div>
-        </div>
-        <div className="flex-1 min-w-0">
-          <h3
-            className="text-base sm:text-lg font-semibold mb-0.5"
-            style={{
-              color: "var(--text-primary)",
-              letterSpacing: "-0.01em",
-            }}
-          >
+    <div className="vsbox" style={{ cursor: "default", padding: 0 }}>
+      <button onClick={handleToggle} className="w-full px-5 py-4 sm:px-6 flex items-center gap-4 text-left" aria-expanded={open}>
+        <span className="vs tabular-nums flex-shrink-0" style={{ fontSize: "1.6rem" }}>
+          {dimension.score}
+          <span style={{ fontSize: "0.55em", color: "var(--text-muted)", fontWeight: 600 }}>/{dimension.maxScore}</span>
+        </span>
+        <span className="flex-1 min-w-0">
+          <span className="block font-bold" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.01em" }}>
             {dimension.label}
-          </h3>
-          <p
-            className="text-sm sm:text-base"
-            style={{ color: "var(--text-muted)" }}
-          >
-            {config.oneLiner}
-          </p>
-        </div>
-        <div className="flex items-center gap-2.5 flex-shrink-0">
-          <span
-            className="hidden sm:inline-flex items-center gap-1 text-sm font-mono px-2 py-0.5 rounded"
-            style={{
-              color: "var(--text-faint)",
-              background: "var(--tag-bg)",
-            }}
-            title="Passed / total checks"
-          >
-            {passed}/{total}
           </span>
-          <ChevronDown
-            size={18}
-            style={{
-              color: "var(--text-faint)",
-              transform: open ? "rotate(180deg)" : "none",
-              transition: "transform 0.2s",
-            }}
-          />
-        </div>
+          <span className="m block" style={{ marginTop: 2 }}>
+            {config.oneLiner}
+          </span>
+        </span>
+        <span className="progress hidden sm:inline" title="Passed / total checks">
+          {passed}/{total}
+        </span>
+        <ChevronDown
+          size={18}
+          style={{
+            color: "var(--text-muted)",
+            transform: open ? "rotate(180deg)" : "none",
+            transition: "transform 0.2s",
+            flexShrink: 0,
+          }}
+        />
       </button>
 
       {open && (
-        <div
-          className="px-4 pb-5 sm:px-6 sm:pb-6"
-          style={{ borderTop: "1.5px solid var(--divider)" }}
-        >
+        <div className="px-5 pb-5 sm:px-6 sm:pb-6" style={{ borderTop: "1.5px solid var(--hair)" }}>
           <Section title="Why this matters">
-            <p
-              className="text-sm leading-relaxed"
-              style={{ color: "var(--text-muted)" }}
-            >
+            <p className="serif leading-relaxed" style={{ color: "var(--text-muted)" }}>
               {config.whyItMatters}
             </p>
           </Section>
@@ -850,61 +477,36 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
             <ul className="space-y-3">
               {dimension.checks.map((c) => (
                 <li key={c.id} className="flex gap-3">
-                  <div
-                    className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center"
-                    style={{
-                      background: c.pass
-                        ? "rgba(34,197,94,0.15)"
-                        : "rgba(243,18,60,0.12)",
-                    }}
+                  <span
+                    className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full grid place-items-center"
+                    style={{ background: c.pass ? "var(--tint-mint)" : "var(--brand-soft)" }}
                   >
                     {c.pass ? (
-                      <Check
-                        size={12}
-                        style={{ color: "#22C55E" }}
-                        strokeWidth={3}
-                      />
+                      <Check size={12} strokeWidth={3} style={{ color: "var(--text-primary)" }} />
                     ) : (
-                      <X
-                        size={12}
-                        style={{ color: "var(--brand-primary)" }}
-                        strokeWidth={3}
-                      />
+                      <X size={12} strokeWidth={3} style={{ color: "var(--brand-primary)" }} />
                     )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-baseline gap-2 flex-wrap">
-                      <p
-                        className="text-sm font-medium"
-                        style={{ color: "var(--text-primary)" }}
-                      >
+                  </span>
+                  <span className="flex-1 min-w-0">
+                    <span className="flex items-baseline gap-2 flex-wrap">
+                      <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-display)" }}>
                         {c.label}
-                      </p>
-                      <span
-                        className="text-sm font-mono px-1.5 py-0.5 rounded"
-                        style={{
-                          color: "var(--text-faint)",
-                          background: "var(--tag-bg)",
-                        }}
-                        title="Points this check is worth"
-                      >
+                      </span>
+                      <span className="progress" title="Points this check is worth">
                         {c.points} {c.points === 1 ? "pt" : "pts"}
                       </span>
-                    </div>
-                    <p
-                      className="text-xs mt-0.5 leading-relaxed"
-                      style={{ color: "var(--text-muted)" }}
-                    >
+                    </span>
+                    <span className="serif block text-sm mt-0.5 leading-relaxed" style={{ color: "var(--text-muted)" }}>
                       {c.detail}
-                    </p>
-                  </div>
+                    </span>
+                  </span>
                 </li>
               ))}
             </ul>
           </Section>
 
           <Section title="Learn how to fix this">
-            <div className="space-y-2">
+            <div>
               {config.linkedResources.map((r) => (
                 <Link
                   key={r.slug}
@@ -917,28 +519,12 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
                       resource_slug: r.slug,
                     })
                   }
-                  className="block p-3 rounded-lg transition-colors"
-                  style={{
-                    background: "var(--tag-bg)",
-                    border: "1.5px solid var(--card-border)",
-                  }}
+                  className="rellink"
                 >
-                  <p
-                    className="text-sm font-medium mb-0.5"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    {r.title}{" "}
-                    <ArrowRight
-                      size={12}
-                      className="inline ml-0.5 opacity-60"
-                    />
-                  </p>
-                  <p
-                    className="text-xs"
-                    style={{ color: "var(--text-muted)" }}
-                  >
+                  {r.title} →
+                  <span className="block text-sm font-medium mt-0.5" style={{ color: "var(--text-muted)" }}>
                     {r.hook}
-                  </p>
+                  </span>
                 </Link>
               ))}
             </div>
@@ -949,52 +535,11 @@ function DimensionCard({ dimension }: { dimension: DimensionResult }) {
   );
 }
 
-function Section({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="pt-5">
-      <p
-        className="text-sm uppercase tracking-wider mb-3 font-medium"
-        style={{ color: "var(--text-faint)" }}
-      >
-        {title}
-      </p>
+      <p className="railhead">{title}</p>
       {children}
-    </div>
-  );
-}
-
-function FooterCta() {
-  return (
-    <div
-      className="rounded-xl px-5 sm:px-6 py-5 mt-8"
-      style={{
-        background: "var(--brand-soft)",
-        border: "1.5px solid rgba(243, 18, 60, 0.2)",
-      }}
-    >
-      <p
-        className="text-sm font-medium mb-1"
-        style={{ color: "var(--text-primary)" }}
-      >
-        Want to see how the best products got the basics right?
-      </p>
-      <p className="text-xs mb-3" style={{ color: "var(--text-muted)" }}>
-        northstar has {CASE_STUDY_COUNT}+ case studies on how Razorpay, Stripe, Notion, and
-        others built products that converted from day one.
-      </p>
-      <Link
-        href="/"
-        className="inline-flex items-center gap-1.5 text-sm font-medium"
-        style={{ color: "var(--brand-primary)" }}
-      >
-        Browse the library <ArrowRight size={14} />
-      </Link>
     </div>
   );
 }

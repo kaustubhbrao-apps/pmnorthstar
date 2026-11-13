@@ -5,6 +5,7 @@
 // Regenerated via scripts/sync-content.ts.
 
 export const CASE_STUDY_COUNT = 206;
+export const INDIA_CASE_STUDY_COUNT = 32;
 export const BOOK_COUNT = 30;
 export const PLAYLIST_COUNT = 21;
 export const TOPIC_COUNT = 14;

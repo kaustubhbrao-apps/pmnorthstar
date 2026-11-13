@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { books, getBookSlug, type Category } from "@/data/books";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { EdCard, Tile, Cap, SectionHead, clip, tintAt } from "@/components/Editorial";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -42,13 +42,7 @@ export default function BooksIndexPage() {
   })).filter((group) => group.items.length > 0);
 
   return (
-    <SidebarShell
-      activeNav="home"
-      backHref="/"
-      backLabelDesktop="Back to the library"
-      shareTitle="Book reviews on northstar"
-      shareText="Original long-form reviews of essential product, startup and management books."
-    >
+    <SidebarShell activeNav="books">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -86,100 +80,30 @@ export default function BooksIndexPage() {
         }}
       />
 
-      <section
-        className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
-        style={{ borderBottom: "1.5px solid var(--card-border)" }}
-      >
-        <div className="w-full max-w-5xl">
-          <Breadcrumbs
-            className="mb-6"
-            items={[{ label: "northstar", href: "/" }, { label: "Books" }]}
-          />
-          <div className="flex items-center gap-2.5 mb-5">
-            <span className="w-5 h-px" style={{ background: "#9B8FFF" }} />
-            <span
-              className="text-sm font-mono uppercase"
-              style={{ color: "#9B8FFF", letterSpacing: "0.16em" }}
-            >
-              {books.length} books reviewed
-            </span>
-          </div>
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.04] mb-6"
-            style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}
-          >
-            Read the review before
-            <br />
-            you buy the book.
-          </h1>
-          <p
-            className="text-base sm:text-lg leading-relaxed max-w-2xl"
-            style={{ color: "var(--text-muted)" }}
-          >
-            Every book here has a full review, not a blurb: what it argues, the
-            concepts worth keeping, who it&apos;s genuinely for, and what to read
-            alongside it. Some of these are canon. A few are overrated, and the
-            reviews say so.
-          </p>
-        </div>
-      </section>
+      <div className="site-inner pb-16">
+        <Breadcrumbs className="pt-6" items={[{ label: "northstar", href: "/" }, { label: "Books" }]} />
+        <SectionHead as="h1" title="Books" count={books.length} />
+        <p className="shead-sub">
+          Read the review before you buy the book. Every book here has a full review, not a blurb: what it argues,
+          the concepts worth keeping, who it&apos;s genuinely for, and what to read alongside it. Some of these are
+          canon. A few are overrated, and the reviews say so.
+        </p>
 
-      {byCategory.map(({ category, items }) => (
-        <section
-          key={category}
-          className="px-4 sm:px-8 lg:px-12 py-9 sm:py-12 flex justify-center"
-          style={{ borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="w-full max-w-5xl">
-            <div className="flex items-baseline gap-3 mb-1.5">
-              <h2
-                className="text-xl sm:text-2xl font-semibold"
-                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-              >
-                {category}
-              </h2>
-              <span className="text-xs font-mono" style={{ color: "var(--text-faint)" }}>
-                {String(items.length).padStart(2, "0")}
-              </span>
-            </div>
-            <p className="text-sm mb-6" style={{ color: "var(--text-muted)" }}>
-              {CATEGORY_BLURB[category]}
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              {items.map((b) => (
-                <Link
-                  key={b.id}
-                  href={`/book/${getBookSlug(b)}`}
-                  className="playlist-card surface flex flex-col p-5 group"
-                >
-                  <h3
-                    className="text-base sm:text-lg font-semibold leading-snug mb-1 group-hover:underline"
-                    style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                  >
-                    {b.title}
-                  </h3>
-                  <p className="text-sm mb-3" style={{ color: "var(--text-muted)" }}>
-                    {b.author} · {b.year} · {b.pages} pages
-                  </p>
-                  <p
-                    className="text-sm leading-relaxed flex-1"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {b.description.length > 165
-                      ? `${b.description.slice(0, 165).trimEnd()}…`
-                      : b.description}
-                  </p>
-                  <p className="text-sm font-medium mt-4" style={{ color: "#9B8FFF" }}>
-                    Read the review →
-                  </p>
-                </Link>
+        {byCategory.map(({ category, items }) => (
+          <section key={category}>
+            <SectionHead title={category} count={items.length} />
+            <p className="shead-sub">{CATEGORY_BLURB[category]}</p>
+            <div className="grid3">
+              {items.map((b, i) => (
+                <EdCard key={b.id} href={`/book/${getBookSlug(b)}`}>
+                  <Tile tint={tintAt(i)} minH={300} chip={String(b.year)} title={b.title} size="m" />
+                  <Cap k={`${b.author} · ${b.pages} pages`} title={clip(b.description, 80)} />
+                </EdCard>
               ))}
             </div>
-          </div>
-        </section>
-      ))}
-
+          </section>
+        ))}
+      </div>
       <Footer />
     </SidebarShell>
   );

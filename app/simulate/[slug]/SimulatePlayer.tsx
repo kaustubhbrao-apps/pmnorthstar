@@ -37,6 +37,7 @@ import type {
 } from "@/data/drills";
 import { track } from "@/lib/track";
 import { SubscribeForm } from "@/components/SubscribeForm";
+import { Pill } from "@/components/Editorial";
 import { useUserState } from "@/lib/use-user-state";
 
 type Phase = "intro" | "decision" | "reveal" | "outcome";
@@ -269,7 +270,7 @@ export function SimulatePlayer({
     runningTotals.max > 0;
 
   return (
-    <div className="px-4 sm:px-6 py-8 sm:py-12 max-w-4xl mx-auto" data-phase={state.phase}>
+    <div className="py-6 max-w-4xl" data-phase={state.phase}>
       {/* Top breadcrumb */}
       <div className="flex items-center gap-2 mb-6 flex-wrap">
         <Link
@@ -419,11 +420,7 @@ function IntroView({
       <button
         onClick={onBegin}
         disabled={authLoading}
-        className={`mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-base transition-transform hover:scale-[1.02] ${authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
-        style={{
-          background: "var(--brand-primary)",
-          color: "#ffffff",
-        }}
+        className={`btn-red mt-2 ${authLoading ? "opacity-50 cursor-not-allowed" : ""}`}
       >
         <Sparkles size={16} strokeWidth={2} />
         {authLoading ? "Loading..." : "Begin the drill"}
@@ -448,76 +445,36 @@ function DecisionView({
   step: number;
   onSelect: (index: number) => void;
 }) {
-  const Icon = node.dimension ? DIMENSION_ICON[node.dimension] : Brain;
-  const dimColor = node.dimension
-    ? DIMENSION_COLOR[node.dimension]
-    : "var(--brand-primary)";
+  // The artifact's drill card: pill + "Decision N" progress, the scenario
+  // context in serif, the question itself as the big bold line, then A/B/C
+  // options as outlined rows. Prompts are multi-paragraph; the last paragraph
+  // is the question.
+  const paras = node.prompt!.split("\n\n").map((p) => p.trim()).filter(Boolean);
+  const question = paras[paras.length - 1];
+  const context = paras.slice(0, -1);
   return (
-    <div>
-      {/* Step indicator */}
-      <div className="flex items-center gap-2 mb-3">
-        <span
-          className="text-sm font-mono uppercase px-2 py-1 rounded inline-flex items-center gap-1.5"
-          style={{
-            background: `color-mix(in srgb, ${dimColor} 14%, transparent)`,
-            color: dimColor,
-            letterSpacing: "0.14em",
-          }}
-        >
-          <Icon size={11} strokeWidth={2.2} />
-          Decision {step} · {node.dimension ? DIMENSION_LABEL[node.dimension] : ""}
-        </span>
+    <div className="drillcard">
+      <div className="flex items-center justify-between gap-3 mb-4 flex-wrap">
+        <Pill>{node.dimension ? DIMENSION_LABEL[node.dimension] : drillTitle(drill)}</Pill>
+        <span className="progress">Decision {step}</span>
       </div>
 
-      {/* Prompt */}
-      <div
-        className="rounded-2xl px-5 py-6 sm:px-7 sm:py-7 mb-6"
-        style={{
-          background: "var(--card-bg)",
-          border: "1.5px solid var(--card-border)",
-          borderLeft: `4px solid ${dimColor}`,
-        }}
-      >
-        {node.prompt!.split("\n\n").map((para, i) => (
-          <p
-            key={i}
-            className="text-base sm:text-lg leading-relaxed mb-3 last:mb-0"
-            style={{ color: "var(--text-primary)" }}
-          >
-            {para}
-          </p>
-        ))}
-      </div>
+      {context.length > 0 && (
+        <div className="serif text-lg leading-relaxed mb-4" style={{ color: "var(--text-muted)" }}>
+          {context.map((para, i) => (
+            <p key={i} className="mb-3 last:mb-0">
+              {para}
+            </p>
+          ))}
+        </div>
+      )}
+      <h3 className="drill-q">{question}</h3>
 
-      {/* Options */}
-      <div className="space-y-2.5">
+      <div className="mt-2">
         {node.options!.map((opt, i) => (
-          <button
-            key={i}
-            onClick={() => onSelect(i)}
-            className="block w-full text-left rounded-xl px-5 py-4 transition-all hover:scale-[1.005] group"
-            style={{
-              background: "var(--card-bg)",
-              border: "1.5px solid var(--card-border)",
-            }}
-          >
-            <div className="flex items-start gap-3">
-              <span
-                className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[12px] font-mono font-semibold mt-0.5"
-                style={{
-                  background: "color-mix(in srgb, var(--brand-primary) 10%, transparent)",
-                  color: "var(--brand-primary)",
-                }}
-              >
-                {String.fromCharCode(65 + i)}
-              </span>
-              <span
-                className="text-sm sm:text-base leading-relaxed font-medium group-hover:underline"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {opt.text}
-              </span>
-            </div>
+          <button key={i} onClick={() => onSelect(i)} className="opt">
+            <b>{String.fromCharCode(65 + i)}</b>
+            {opt.text}
           </button>
         ))}
       </div>
@@ -689,14 +646,7 @@ function RevealView({
         })}
       </div>
 
-      <button
-        onClick={onAdvance}
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-transform hover:scale-[1.02]"
-        style={{
-          background: "var(--brand-primary)",
-          color: "#ffffff",
-        }}
-      >
+      <button onClick={onAdvance} className="btn-red">
         Continue
         <ArrowRight size={16} strokeWidth={2} />
       </button>

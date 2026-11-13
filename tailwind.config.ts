@@ -22,12 +22,17 @@ const config: Config = {
           "text-muted": "#7A7A9A",
         },
       },
+      // Editorial UI: Archivo for display/UI, Newsreader for running prose.
+      // `mono` maps to the display face on purpose — the artifact has no mono
+      // labels anywhere, and the legacy `font-mono` eyebrows/metadata were the
+      // last trace of the old brutalist skin. Real code (.answer-prose code)
+      // reads var(--font-mono) directly and is unaffected.
       fontFamily: {
         sans: ["var(--font-display)", "sans-serif"],
-        serif: ["var(--font-display)", "sans-serif"],
+        serif: ["var(--font-body)", "serif"],
         display: ["var(--font-display)", "sans-serif"],
-        body: ["var(--font-display)", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        body: ["var(--font-body)", "serif"],
+        mono: ["var(--font-display)", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.4s ease forwards",
