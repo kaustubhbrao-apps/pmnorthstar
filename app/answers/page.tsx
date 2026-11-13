@@ -4,6 +4,7 @@ import { AnswersClient, type AnswerCard } from "./AnswersClient";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { SectionHead } from "@/components/Editorial";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -41,13 +42,7 @@ export default function AnswersIndexPage() {
   }));
 
   return (
-    <SidebarShell
-      activeNav="answers"
-      backHref="/"
-      backLabelDesktop="Back to the library"
-      shareTitle="Answers on northstar"
-      shareText="Straight answers to product questions, each backed by real case studies."
-    >
+    <SidebarShell activeNav="answers">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -81,46 +76,17 @@ export default function AnswersIndexPage() {
         }}
       />
 
-      <section
-        className="px-4 sm:px-8 lg:px-12 py-12 sm:py-16 flex justify-center"
-        style={{ borderBottom: "1.5px solid var(--card-border)" }}
-      >
-        <div className="w-full max-w-5xl">
-          <Breadcrumbs
-            className="mb-6"
-            items={[{ label: "northstar", href: "/" }, { label: "Answers" }]}
-          />
-          <div className="flex items-center gap-2.5 mb-5">
-            <span className="w-5 h-px" style={{ background: "#EA580C" }} />
-            <span
-              className="text-sm font-mono uppercase"
-              style={{ color: "#EA580C", letterSpacing: "0.16em" }}
-            >
-              {all.length} answers
-            </span>
-          </div>
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.04] mb-6"
-            style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}
-          >
-            The answer first.
-            <br />
-            Then the argument.
-          </h1>
-          <p
-            className="text-base sm:text-lg leading-relaxed max-w-2xl"
-            style={{ color: "var(--text-muted)" }}
-          >
-            Most explanations of product concepts spend four paragraphs warming up.
-            These start with a straight answer in the first three lines, then get
-            into where the idea breaks down, what people get wrong about it, and
-            which companies got it right or badly wrong — with the case study to
-            prove it.
-          </p>
-        </div>
-      </section>
-
-      <AnswersClient answers={cards} />
+      <div className="site-inner pb-16">
+        <Breadcrumbs className="pt-6" items={[{ label: "northstar", href: "/" }, { label: "Answers" }]} />
+        <SectionHead as="h1" title="Answers" count={all.length} />
+        <p className="shead-sub">
+          The answer first, then the argument. Most explanations of product concepts spend four paragraphs warming
+          up. These start with a straight answer in the first three lines, then get into where the idea breaks down,
+          what people get wrong about it, and which companies got it right or badly wrong — with the case study to
+          prove it.
+        </p>
+        <AnswersClient answers={cards} />
+      </div>
 
       <Footer />
     </SidebarShell>

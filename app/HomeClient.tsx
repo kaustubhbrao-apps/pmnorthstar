@@ -28,6 +28,7 @@ import { SectionRow } from "@/components/SectionRow";
 import { EditorialHome } from "@/components/EditorialHome";
 import { EdCard, Tile, Cap, SectionHead, VsBox, fmtDate, clip, tintAt, splitVs } from "@/components/Editorial";
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
+import { photoFor } from "@/data/cardImages";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PlaylistCard } from "@/components/PlaylistCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -288,7 +289,8 @@ export default function HomeClient() {
       <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
         <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <main className="scroll-container mx-auto w-full max-w-[1500px] p-4 sm:p-6 pb-12">
+          <main className="scroll-container">
+            <div className="site-inner py-8 pb-16">
             {!user ? (
               <div className="flex flex-col items-center justify-center py-20">
                 <p className="eyebrow mb-3">Sign in required</p>
@@ -303,7 +305,7 @@ export default function HomeClient() {
             ) : (
               <>
                 <div className="mb-8">
-                  <h1 className="text-3xl font-bold mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}>Saved Items</h1>
+                  <SectionHead as="h1" title="Saved" count={savedCount} />
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Books</p>
                     <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(savedBooks.length)}</span>
@@ -383,6 +385,7 @@ export default function HomeClient() {
                 </div>
               </>
             )}
+            </div>
           </main>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
@@ -395,7 +398,8 @@ export default function HomeClient() {
       <div className="min-h-screen" style={{ background: "var(--page-bg)" }}>
         <TopBar activeNav={activeNav} isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} onNavChange={setActiveNav} />
 
-          <main className="scroll-container mx-auto w-full max-w-[1500px] p-4 sm:p-6 pb-12">
+          <main className="scroll-container">
+            <div className="site-inner py-8 pb-16">
             {!user ? (
               <div className="flex flex-col items-center justify-center py-20">
                 <p className="eyebrow mb-3">Sign in required</p>
@@ -407,7 +411,7 @@ export default function HomeClient() {
             ) : (
               <>
                 <div className="mb-8">
-                  <h1 className="text-3xl font-bold mb-6" style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}>Favourite Items</h1>
+                  <SectionHead as="h1" title="Favourites" count={favouriteCount} />
                   <div className="flex items-baseline gap-3 mb-4">
                     <p className="eyebrow">Books</p>
                     <span className="text-sm" style={{ color: "var(--text-faint)" }}>{String(favouriteBooks.length)}</span>
@@ -487,6 +491,7 @@ export default function HomeClient() {
                 </div>
               </>
             )}
+            </div>
           </main>
         {showAuthModal && <AuthModal onClose={() => setShowAuthModal(false)} onSuccess={() => refreshUserState()} />}
       </div>
@@ -529,9 +534,10 @@ export default function HomeClient() {
                         <Tile
                           tint={tintAt(idx)}
                           minH={300}
-                          chip={fmtDate(study.publishedAt, study.year)}
+                          chip={String(study.year)}
                           title={study.title}
                           size="m"
+                          img={photoFor([...study.tags, study.title, study.category, study.region, study.company], study.id)}
                         />
                         <Cap
                           k={`${study.category} · ${study.region === "India" ? "India" : study.company}`}
@@ -743,60 +749,9 @@ export default function HomeClient() {
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onLogin={() => setShowAuthModal(true)}
+        onLogout={handleLogout}
         isLoggedIn={!!user}
       />
-
-        {/* User bar — hidden on mobile when not logged in (microcopy
-            adds a clutter row on small screens for no real value).
-            Stays visible on mobile when logged in (saved/fav shortcuts
-            are useful). */}
-        <div
-          className={`${user ? "flex" : "hidden"} site-inner flex-wrap items-center justify-between gap-2 py-2`}
-          style={{ borderBottom: "1.5px solid var(--hair)" }}
-        >
-          <p className="text-sm sm:text-xs truncate flex-shrink min-w-0" style={{ color: "var(--text-muted)" }}>
-            {user ? `Welcome back, ${user.name}` : "Browse freely. Sign in only if you want to save."}
-          </p>
-          {user ? (
-            <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-              <button
-                onClick={() => setActiveNav("saved")}
-                className="text-sm font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
-                style={{ background: "transparent", border: "1.5px solid var(--card-border)", color: "var(--text-muted)" }}
-              >
-                <Bookmark size={10} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Saved </span><span style={{ color: "var(--text-faint)" }}>{savedCount}</span>
-              </button>
-              <button
-                onClick={() => setActiveNav("favourites")}
-                className="text-sm font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
-                style={{ background: "transparent", border: "1.5px solid var(--card-border)", color: "var(--text-muted)" }}
-              >
-                <Heart size={10} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Fav </span><span style={{ color: "var(--text-faint)" }}>{favouriteCount}</span>
-              </button>
-              <button
-                onClick={handleLogout}
-                className="text-sm font-medium inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg"
-                style={{ background: "transparent", border: "1.5px solid var(--card-border)", color: "var(--text-muted)" }}
-              >
-                <LogOut size={10} strokeWidth={1.6} />
-                <span className="hidden sm:inline">Log out</span>
-              </button>
-            </div>
-          ) : (
-            <a
-              href="https://www.producthunt.com/products/northstar-3"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition-opacity hover:opacity-80"
-              style={{ background: "#DA552F", color: "#ffffff" }}
-            >
-              Featured on Product Hunt
-              <ArrowUpRight size={11} strokeWidth={2.5} />
-            </a>
-          )}
-        </div>
 
         <main className="scroll-container mx-auto w-full max-w-[1500px]">
           {/* Render the library view immediately so the H1 + content reach
@@ -816,11 +771,38 @@ export default function HomeClient() {
                   honest heading for the page and it matches the <title>
                   and the wordmark in the nav. Counts come from the same
                   published* arrays the page renders, so it can't drift. */}
-              <h1 className="sr-only">
-                northstar — a free product management library of {caseStudies.length} case
-                studies, {books.length} book reviews, {answers.length} answers and{" "}
-                {playlists.length} playlists
-              </h1>
+              {/* Masthead: what northstar is and the three product actions a
+                  new visitor can take, before the content starts. */}
+              <div className="site-inner pt-7 pb-3">
+                <span className="pill">Free PM library · no paywall</span>
+                <h1
+                  className="font-extrabold mt-3"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(1.7rem, 3.4vw, 2.6rem)",
+                    letterSpacing: "-0.03em",
+                    lineHeight: 1.02,
+                    maxWidth: "24ch",
+                  }}
+                >
+                  Product lessons from the companies that shipped — and the ones that didn&apos;t.
+                </h1>
+                <p className="serif mt-3 text-lg leading-snug" style={{ color: "var(--text-muted)", maxWidth: "62ch" }}>
+                  {caseStudies.length} long-form case studies, {comparisons.length} head-to-heads, {DRILL_COUNT} decision
+                  drills, {books.length} book reviews and {answers.length} straight answers. Hand-picked and opinionated.
+                </p>
+                <div className="flex flex-wrap gap-2.5 mt-5">
+                  <button type="button" onClick={() => setActiveNav("casestudies")} className="btn-primary">
+                    Explore case studies →
+                  </button>
+                  <Link href="/simulate" className="btn-ghost">
+                    Try a product simulation
+                  </Link>
+                  <Link href="/checkit" className="btn-ghost">
+                    Audit a website
+                  </Link>
+                </div>
+              </div>
               {/* ── Editorial magazine front (publication reskin) ──── */}
               <EditorialHome
                 caseStudies={caseStudies}
@@ -993,37 +975,15 @@ export default function HomeClient() {
                               {String(searchedAIDecoded.length)}
                             </span>
                           </div>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                          <div className="heads wide">
                             {searchedAIDecoded.map((a) => (
-                              <Link
+                              <VsBox
                                 key={a.slug}
+                                a={a.title}
+                                b=""
+                                m={`${a.category} · ${clip(a.excerpt, 110)}`}
                                 href={`/ai-decoded/${a.slug}`}
-                                className="surface p-4 group transition-colors"
-                                style={{
-                                  borderRadius: 12,
-                                  borderColor: "rgba(243, 18, 60, 0.30)",
-                                }}
-                              >
-                                <p
-                                  className="text-sm font-medium uppercase tracking-wider mb-1.5 inline-flex items-center gap-1"
-                                  style={{ color: "var(--brand-primary)" }}
-                                >
-                                  <Sparkles size={10} strokeWidth={1.8} />
-                                  {a.category}
-                                </p>
-                                <p
-                                  className="text-sm font-semibold leading-snug mb-1.5 line-clamp-2"
-                                  style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                                >
-                                  {a.title}
-                                </p>
-                                <p
-                                  className="text-sm leading-relaxed line-clamp-2"
-                                  style={{ color: "var(--text-muted)" }}
-                                >
-                                  {a.excerpt}
-                                </p>
-                              </Link>
+                              />
                             ))}
                           </div>
                         </div>
@@ -1065,27 +1025,9 @@ export default function HomeClient() {
                               {String(searchedTopics.length)}
                             </span>
                           </div>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                          <div className="heads">
                             {searchedTopics.map((t) => (
-                              <Link
-                                key={t.slug}
-                                href={`/topics/${t.slug}`}
-                                className="surface p-4 group transition-colors"
-                                style={{ borderRadius: 12 }}
-                              >
-                                <p
-                                  className="text-sm font-medium uppercase tracking-wider mb-1.5"
-                                  style={{ color: t.accentColor }}
-                                >
-                                  Topic
-                                </p>
-                                <p
-                                  className="text-sm font-semibold leading-snug group-hover:underline"
-                                  style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                                >
-                                  {t.title}
-                                </p>
-                              </Link>
+                              <VsBox key={t.slug} a={t.title} b="" m="Topic" href={`/topics/${t.slug}`} />
                             ))}
                           </div>
                         </div>
@@ -1100,28 +1042,11 @@ export default function HomeClient() {
                               {String(searchedComparisons.length)}
                             </span>
                           </div>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                            {searchedComparisons.map((c) => (
-                              <Link
-                                key={c.slug}
-                                href={`/compare/${c.slug}`}
-                                className="surface p-4 group transition-colors"
-                                style={{ borderRadius: 12 }}
-                              >
-                                <p
-                                  className="text-sm font-medium uppercase tracking-wider mb-1.5"
-                                  style={{ color: c.accentColor }}
-                                >
-                                  Comparison
-                                </p>
-                                <p
-                                  className="text-sm font-semibold leading-snug group-hover:underline"
-                                  style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                                >
-                                  {c.title}
-                                </p>
-                              </Link>
-                            ))}
+                          <div className="heads">
+                            {searchedComparisons.map((c) => {
+                              const { a, b } = splitVs(c.title);
+                              return <VsBox key={c.slug} a={a} b={b} m="Head-to-head" href={`/compare/${c.slug}`} />;
+                            })}
                           </div>
                         </div>
                       )}

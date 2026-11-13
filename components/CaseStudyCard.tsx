@@ -13,7 +13,8 @@ import type { CaseStudy } from "@/data/caseStudies";
 // array into every bundle that renders a card.
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
-import { Tile, Cap, fmtDate, clip, tintAt } from "@/components/Editorial";
+import { Tile, Cap, clip, tintAt } from "@/components/Editorial";
+import { photoFor } from "@/data/cardImages";
 
 interface CaseStudyCardProps {
   study: Omit<CaseStudy, "content">;
@@ -30,12 +31,19 @@ interface CaseStudyCardProps {
 export function CaseStudyCard({ study, index = 0, initialSaved = false, initialLiked = false }: CaseStudyCardProps) {
   const href = `/case-study/${getCaseStudySlug(study.id)}`;
   const kicker = `${study.category} · ${study.region === "India" ? "India" : study.company}`;
-  const chip = initialLiked ? "♥ Liked" : initialSaved ? "Saved" : fmtDate(study.publishedAt, study.year);
+  const chip = initialLiked ? "♥ Liked" : initialSaved ? "Saved" : String(study.year);
 
   return (
     <div className="flex flex-col h-full">
       <Link href={href} className="card flex-1">
-        <Tile tint={tintAt(index)} minH={300} chip={chip} title={study.title} size="m" />
+        <Tile
+          tint={tintAt(index)}
+          minH={300}
+          chip={chip}
+          title={study.title}
+          size="m"
+          img={photoFor([...study.tags, study.title, study.category, study.region, study.company], study.id)}
+        />
         <Cap k={kicker} title={clip(study.outcome, 80)} />
       </Link>
       <div className="flex items-center justify-between pt-3 px-0.5">

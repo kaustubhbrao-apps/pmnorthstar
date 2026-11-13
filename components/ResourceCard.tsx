@@ -1,11 +1,13 @@
 "use client";
 
-import { ArrowUpRight, Star } from "lucide-react";
+// Book card in the editorial vocabulary: a tinted tile carrying the cover as
+// a duotone, the year chip, the title; author + rating and the one-line
+// description below; save control on a quiet row. The `default`/`featured`
+// variants keep a fixed width for horizontal shelves.
+
 import { Book, getBookSlug } from "@/data/books";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
-import { getCategoryColor } from "@/lib/category-colors";
-import { useAuthorPhoto } from "@/lib/author-photo";
-
+import { EdCard, Tile, Cap, tintAt, clip, bookCover } from "@/components/Editorial";
 
 interface ResourceCardProps {
   book: Book;
@@ -20,217 +22,26 @@ interface ResourceCardProps {
   hideCategory?: boolean;
 }
 
-function StarRating({ rating, size = 9 }: { rating: number; size?: number }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          size={size}
-          strokeWidth={1.5}
-          style={{
-            color:
-              i < Math.round(rating)
-                ? "var(--text-primary)"
-                : "var(--text-faint)",
-            fill:
-              i < Math.round(rating) ? "var(--text-primary)" : "transparent",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-function authorInitials(author: string): string {
-  return author
-    .split(" ")
-    .map((p) => p[0])
-    .filter(Boolean)
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
-
-export function ResourceCard({
-  book,
-  index = 0,
-  variant = "default",
-  isLoggedIn = false,
-  initialSaved = false,
-  initialLiked = false,
-  onAuthRequired = () => {},
-  onSavedChange,
-  onLikedChange,
-  hideCategory = false,
-}: ResourceCardProps) {
-  const authorPhoto = useAuthorPhoto(book.author);
-  const cat = getCategoryColor(book.category);
-
-  // Width sizing per variant. Tighter than previous version to fit more
-  // cards per row — PMs scan, they don't dwell on individual cards.
+export function ResourceCard({ book, index = 0, variant = "default", initialSaved = false, initialLiked = false }: ResourceCardProps) {
   const widthClass =
     variant === "featured"
-      ? "flex-shrink-0 w-[200px] sm:w-[220px]"
+      ? "flex-shrink-0 w-[240px] sm:w-[260px]"
       : variant === "default"
-      ? "flex-shrink-0 w-[190px] sm:w-[210px]"
+      ? "flex-shrink-0 w-[220px] sm:w-[240px]"
       : "";
-
-  const isSavedOrLiked = initialLiked || initialSaved;
+  const chip = initialLiked ? "♥ Liked" : initialSaved ? "Saved" : String(book.year);
 
   return (
-    <div
-      className={`playlist-card surface overflow-hidden relative group ${widthClass}`}
-      style={
-        {
-          ["--accent-color" as any]: "var(--brand-primary)",
-          background: isSavedOrLiked ? "var(--brand-soft)" : "var(--card-bg)",
-          borderColor: isSavedOrLiked
-            ? "var(--brand-primary)"
-            : "var(--card-border)",
-        } as React.CSSProperties
-      }
-    >
-      {isSavedOrLiked && (
-        <div className="absolute top-2.5 right-2.5 flex items-center gap-1 z-10">
-          {initialLiked && (
-            <span
-              className="inline-flex items-center justify-center w-4 h-4 rounded-full"
-              style={{ background: "var(--brand-primary)" }}
-              title="Liked"
-            >
-              <svg width="8" height="8" viewBox="0 0 24 24" fill="white">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-            </span>
-          )}
-          {initialSaved && (
-            <span
-              className="inline-flex items-center justify-center w-4 h-4 rounded-full"
-              style={{ background: "var(--brand-primary)" }}
-              title="Saved"
-            >
-              <svg width="7" height="9" viewBox="0 0 24 24" fill="white">
-                <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" />
-              </svg>
-            </span>
-          )}
-        </div>
-      )}
-
-      <a href={`/book/${getBookSlug(book)}`} className="block">
-        {/* Compact author band — Wikipedia thumbnail when available,
-            initials avatar as fallback. Same size and position either way
-            so the layout doesn't shift when the photo loads. */}
-        <div
-          className="flex items-center gap-3 px-4 pt-3.5 pb-2.5"
-          style={{ borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          {/* Avatar slot — always reserves a fixed 40x40 box via explicit
-              dimensions + aspect-ratio. Prevents CLS when the Wikipedia
-              photo loads asynchronously and replaces the initials fallback. */}
-          <div
-            className="relative w-10 h-10 rounded-full flex-shrink-0 overflow-hidden"
-            style={{
-              aspectRatio: "1 / 1",
-              boxShadow: "0 0 0 1px var(--card-border)",
-              background:
-                "linear-gradient(135deg, var(--brand-primary), #8B0000)",
-            }}
-          >
-            {/* Initials always render — acts as the visual background until
-                the photo (if any) overlays via absolute positioning. No
-                conditional swap = no layout shift. */}
-            <span
-              className="absolute inset-0 flex items-center justify-center text-xs font-bold text-white"
-              style={{ letterSpacing: "-0.01em" }}
-            >
-              {authorInitials(book.author)}
-            </span>
-            {authorPhoto && (
-              <img
-                src={authorPhoto}
-                alt={book.author}
-                loading="lazy"
-                decoding="async"
-                width={40}
-                height={40}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            )}
-          </div>
-
-          <div className="min-w-0 flex-1">
-            <p
-              className="text-sm font-medium uppercase tracking-wider"
-              style={{ color: "var(--text-faint)" }}
-            >
-              Author
-            </p>
-            <p
-              className="text-xs font-semibold leading-tight truncate"
-              style={{ color: "var(--text-primary)" }}
-            >
-              {book.author}
-            </p>
-          </div>
-          <div
-            className="card-arrow flex items-center justify-center w-6 h-6 rounded-full flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            style={{
-              border: "1.5px solid var(--card-border)",
-              color: "var(--brand-primary)",
-            }}
-          >
-            <ArrowUpRight size={12} strokeWidth={1.8} />
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="px-4 pt-3 pb-2.5">
-          {!hideCategory && (
-            <span
-              className="inline-flex items-center text-sm font-bold uppercase px-2.5 py-1 rounded-md mb-2.5"
-              style={{
-                background: cat.color,
-                color: "#ffffff",
-                letterSpacing: "0.12em",
-              }}
-            >
-              {book.category}
-            </span>
-          )}
-
-          <h3
-            className="text-base font-semibold leading-tight mb-2.5 line-clamp-2"
-            style={{
-              color: "var(--text-primary)",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            {book.title}
-          </h3>
-
-          <div className="flex items-center justify-between">
-            <StarRating rating={book.rating} />
-            <span
-              className="text-sm font-mono"
-              style={{ color: "var(--text-faint)" }}
-            >
-              {book.rating.toFixed(1)}
-            </span>
-          </div>
-        </div>
-      </a>
-
-      {/* Footer: just the save/like actions. The whole card is already
-          a link to the book, so a separate 'Open book' label was redundant. */}
-      <div
-        className="px-4 py-2.5 flex items-center justify-end"
-        style={{ borderTop: "1.5px solid var(--card-border)" }}
-      >
-        <SmartSaveButton
-          resource={book}
-        />
+    <div className={`flex flex-col h-full ${widthClass}`.trim()}>
+      <EdCard href={`/book/${getBookSlug(book)}`} className="flex-1">
+        <Tile tint={tintAt(index)} minH={280} chip={chip} title={book.title} size="m" img={bookCover(book.thumbnailURL)} />
+        <Cap k={`${book.author} · ${book.rating.toFixed(1)} ★ · ${book.category}`} title={clip(book.description, 80)} />
+      </EdCard>
+      <div className="flex items-center justify-between pt-3 px-0.5">
+        <span className="text-xs font-semibold" style={{ color: "var(--text-muted)", fontFamily: "var(--font-display)" }}>
+          Read the review
+        </span>
+        <SmartSaveButton resource={book} />
       </div>
     </div>
   );

@@ -6,7 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { caseStudies, getIndianCaseStudies } from "@/data/caseStudies";
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
 import { publishedComparisons } from "@/data/comparisons";
-import { EdCard, Tile, Cap, SectionHead, VsBox, PW_ID, fmtDate, clip, tintAt, splitVs } from "@/components/Editorial";
+import { EdCard, Tile, Cap, SectionHead, VsBox, PW_ID, clip, tintAt, splitVs } from "@/components/Editorial";
+import { photoFor } from "@/data/cardImages";
 
 // 6h. Scheduled content normally goes live via /api/cron/revalidate just
 // after UTC midnight, so this window is a fallback, not the mechanism.
@@ -112,9 +113,10 @@ export default function IndiaPage() {
                 <Tile
                   tint={lead ? "feature" : tintAt(i - 1)}
                   minH={360}
-                  chip={lead ? (s.id === PW_ID ? "New · IPO" : "New") : fmtDate(s.publishedAt, s.year)}
+                  chip={lead ? (s.id === PW_ID ? "New · IPO" : "New") : String(s.year)}
                   title={s.title}
                   size={lead ? "2xl" : "l"}
+                  img={photoFor([...s.tags, s.title, s.category, "india", s.company], s.id)}
                 />
                 <Cap k={`${s.category} · ${s.company}`} title={clip(s.outcome, 80)} />
               </EdCard>
@@ -157,7 +159,14 @@ export default function IndiaPage() {
             <div className="grid3">
               {globalRelevant.map((s, i) => (
                 <EdCard key={s.id} href={`/case-study/${getCaseStudySlug(s.id)}`}>
-                  <Tile tint={tintAt(i)} minH={300} chip={fmtDate(s.publishedAt, s.year)} title={s.title} size="m" />
+                  <Tile
+                    tint={tintAt(i)}
+                    minH={300}
+                    chip={String(s.year)}
+                    title={s.title}
+                    size="m"
+                    img={photoFor([...s.tags, s.title, s.category, s.company], s.id)}
+                  />
                   <Cap k={`${s.category} · ${s.company}`} title={clip(s.outcome, 80)} />
                 </EdCard>
               ))}

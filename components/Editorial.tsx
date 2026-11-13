@@ -6,6 +6,7 @@
 
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import { TileImg } from "@/components/TileImg";
 
 export type Tint = "feature" | "ink" | "mint" | "blush";
 
@@ -35,6 +36,11 @@ export function clip(s: string | undefined, n = 90): string {
   const at = cut.lastIndexOf(" ");
   return `${(at > n * 0.6 ? cut.slice(0, at) : cut).replace(/[,;:\s]+$/, "")}…`;
 }
+
+// Open Library serves -S/-M/-L renditions; the data stores -M (180px). Tiles
+// are wider than that, so ask for the large one.
+export const bookCover = (url?: string | null): string | null =>
+  url ? url.replace(/-M\.jpg(\?.*)?$/, "-L.jpg") : null;
 
 // "PhonePe vs Paytm — who won UPI" → { a: "PhonePe", b: "Paytm" }.
 // Comparisons carry companyA/companyB, but those hold case-study ids
@@ -79,19 +85,25 @@ interface TileProps {
   size?: "s" | "m" | "l" | "xl" | "2xl";
   // No top row (chip + arrow) — the artifact's "Top fixes" tiles are bare.
   bare?: boolean;
+  // Optional image, blended into the tint as a duotone (see .vis-img).
+  // "cover" fills the tile (photos, covers, thumbnails); "mark" sets a big
+  // brand mark bleeding off the right edge.
+  img?: string | null;
+  imgMode?: "cover" | "mark";
   className?: string;
   style?: CSSProperties;
   children?: ReactNode;
 }
 
-export function Tile({ tint, minH, chip, glyph, pill, title, dek, size, bare, className = "", style, children }: TileProps) {
+export function Tile({ tint, minH, chip, glyph, pill, title, dek, size, bare, img, imgMode = "cover", className = "", style, children }: TileProps) {
   const merged: CSSProperties = {
     ...(minH ? { minHeight: minH } : {}),
     ...(bare ? { paddingTop: 16 } : {}),
     ...style,
   };
   return (
-    <div className={`vis ${tint} ${size ? `sz-${size}` : ""} ${className}`.trim()} style={merged}>
+    <div className={`vis ${tint} ${size ? `sz-${size}` : ""} ${img ? "has-img" : ""} ${className}`.trim()} style={merged}>
+      {img && <TileImg src={img} mode={imgMode} />}
       {!bare && (
         <div className="toprow">
           {chip ? <DateChip>{chip}</DateChip> : <span />}

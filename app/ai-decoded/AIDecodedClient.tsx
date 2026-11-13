@@ -1,17 +1,22 @@
 "use client";
 
+// AI Decoded index in the editorial vocabulary: pill filters, then a grid of
+// tinted tiles (themed duotone photo, "N min · date" chip, headline) with the
+// category below.
+
 import { useState } from "react";
-import Link from "next/link";
-import { ArrowUpRight, Clock } from "lucide-react";
-import { getCategoryColor } from "@/lib/category-colors";
-import { SmartSaveButton } from "@/components/SmartSaveButton";
 import type { AIDecodedArticle } from "@/lib/ai-decoded";
+import { EdCard, Tile, Cap, SectionHead, tintAt } from "@/components/Editorial";
+import { photoFor } from "@/data/cardImages";
+
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
 
 export function AIDecodedClient({ articles }: { articles: AIDecodedArticle[] }) {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const categories = Array.from(new Set(articles.map((a) => a.frontmatter.category))).sort();
-  
+
   const filtered =
     activeFilter === "All"
       ? articles
@@ -19,106 +24,42 @@ export function AIDecodedClient({ articles }: { articles: AIDecodedArticle[] }) 
 
   return (
     <>
-      <div className="px-4 sm:px-8 lg:px-12 py-6 flex justify-center">
-        <div className="w-full max-w-4xl">
-          <div className="flex items-center gap-2 mb-6 overflow-x-auto scroll-container pb-1">
-            <button
-              onClick={() => setActiveFilter("All")}
-              className={`chip ${activeFilter === "All" ? "active" : ""}`}
-            >
-              All <span className="chip-count">{articles.length}</span>
-            </button>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className={`chip ${activeFilter === cat ? "active" : ""}`}
-                style={{ 
-                  ["--active-bg" as any]: getCategoryColor(cat).color,
-                  ["--active-border" as any]: getCategoryColor(cat).color 
-                } as React.CSSProperties}
-              >
-                {cat}{" "}
-                <span className="chip-count">
-                  {articles.filter((a) => a.frontmatter.category === cat).length}
-                </span>
-              </button>
-            ))}
-          </div>
-
-          {filtered.length === 0 ? (
-            <div className="surface p-8 text-center" style={{ borderRadius: 12 }}>
-              <p className="text-base font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
-                No articles found.
-              </p>
-            </div>
-          ) : (
-            <ul className="space-y-4">
-              {filtered.map((a) => (
-                <li key={a.frontmatter.slug}>
-                  <div className="surface flex flex-col overflow-hidden" style={{ borderRadius: 12 }}>
-                    <Link
-                      href={`/ai-decoded/${a.frontmatter.slug}`}
-                      className="p-5 sm:p-6 block group transition-colors flex-1"
-                    >
-                      <div className="flex items-center gap-2.5 mb-3 flex-wrap">
-                        {activeFilter === "All" && (
-                          <span
-                            className="inline-block text-sm font-bold uppercase px-2.5 py-1 rounded-md"
-                            style={{
-                              background: getCategoryColor(a.frontmatter.category).color,
-                              color: "#ffffff",
-                              letterSpacing: "0.12em",
-                            }}
-                          >
-                            {a.frontmatter.category}
-                          </span>
-                        )}
-                        <span className="meta-mono inline-flex items-center gap-1">
-                          <Clock size={13} strokeWidth={1.6} />
-                          {a.readTime} min
-                        </span>
-                        <span className="meta-mono" style={{ color: "var(--text-faint)" }}>
-                          {new Date(a.frontmatter.publishedAt).toLocaleDateString("en-IN", {
-                            day: "numeric",
-                            month: "short",
-                            year: "numeric",
-                          })}
-                        </span>
-                      </div>
-                      <h2
-                        className="text-xl sm:text-2xl font-semibold mb-2 leading-tight group-hover:underline"
-                        style={{
-                          color: "var(--text-primary)",
-                          letterSpacing: "-0.02em",
-                        }}
-                      >
-                        {a.frontmatter.title}
-                      </h2>
-                    </Link>
-                    <div className="px-5 sm:px-6 py-4 flex items-center justify-between" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-                      <span
-                        className="inline-flex items-center gap-1 text-sm font-semibold"
-                        style={{ color: "var(--brand-primary)" }}
-                      >
-                        Read the decoded take
-                        <ArrowUpRight size={14} strokeWidth={1.8} />
-                      </span>
-                      <SmartSaveButton resource={{
-                        id: a.frontmatter.slug,
-                        title: a.frontmatter.title,
-                        author: "northstar editorial",
-                        category: a.frontmatter.category,
-                        link: `/ai-decoded/${a.frontmatter.slug}`
-                      }} />
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+      <SectionHead title="Latest takes" count={filtered.length} />
+      <div className="filters">
+        <button onClick={() => setActiveFilter("All")} className={`chip ${activeFilter === "All" ? "active" : ""}`}>
+          All <span className="chip-count">{articles.length}</span>
+        </button>
+        {categories.map((cat) => (
+          <button key={cat} onClick={() => setActiveFilter(cat)} className={`chip ${activeFilter === cat ? "active" : ""}`}>
+            {cat}{" "}
+            <span className="chip-count">{articles.filter((a) => a.frontmatter.category === cat).length}</span>
+          </button>
+        ))}
       </div>
+
+      {filtered.length === 0 ? (
+        <div className="drillcard">
+          <p className="serif text-lg" style={{ color: "var(--text-muted)" }}>
+            No articles in this category yet.
+          </p>
+        </div>
+      ) : (
+        <div className="grid3">
+          {filtered.map((a, i) => (
+            <EdCard key={a.frontmatter.slug} href={`/ai-decoded/${a.frontmatter.slug}`}>
+              <Tile
+                tint={tintAt(i)}
+                minH={280}
+                chip={`${a.readTime} min · ${fmt(a.frontmatter.publishedAt)}`}
+                title={a.frontmatter.title}
+                size="m"
+                img={photoFor([a.frontmatter.category, a.frontmatter.title, "ai"], a.frontmatter.slug)}
+              />
+              <Cap k={`AI Decoded · ${a.frontmatter.category}`} />
+            </EdCard>
+          ))}
+        </div>
+      )}
     </>
   );
 }

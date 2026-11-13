@@ -15,11 +15,11 @@ import {
   VsBox,
   PwExhibit,
   PW_ID,
-  fmtDate,
   clip,
   splitVs,
   tintAt,
 } from "@/components/Editorial";
+import { photoFor } from "@/data/cardImages";
 
 type MiniCase = {
   id: string;
@@ -30,6 +30,7 @@ type MiniCase = {
   description: string;
   outcome?: string;
   region?: string;
+  tags?: string[];
   publishedAt?: string;
 };
 
@@ -45,6 +46,7 @@ interface Props {
 
 const href = (s: MiniCase) => `/case-study/${getCaseStudySlug(s.id)}`;
 const kicker = (s: MiniCase) => `${s.category} · ${s.region === "India" ? "India" : s.company}`;
+const pic = (s: MiniCase) => photoFor([...(s.tags ?? []), s.title, s.category, s.region, s.company], s.id);
 
 export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, onSeeAllCases }: Props) {
   const lead =
@@ -65,10 +67,11 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
           <EdCard href={href(lead)}>
             <Tile
               tint="feature"
-              chip={fmtDate(lead.publishedAt, lead.year)}
+              chip={String(lead.year)}
               pill={kicker(lead)}
               title={lead.title}
               dek={lead.description}
+              img={pic(lead)}
             />
           </EdCard>
           <div className="side">
@@ -76,10 +79,12 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
               <EdCard key={s.id} href={href(s)}>
                 <Tile
                   tint={i === 0 ? "ink" : "mint"}
-                  chip={fmtDate(s.publishedAt, s.year)}
+                  chip={String(s.year)}
                   pill={kicker(s)}
                   title={s.title}
+                  dek={clip(s.description, 110)}
                   size="xl"
+                  img={pic(s)}
                 />
               </EdCard>
             ))}
@@ -90,7 +95,7 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
       {/* ── New posts ───────────────────────────────────────────────────── */}
       {(grid.length > 0 || pw) && (
         <>
-          <SectionHead title="New posts" more="view more" right onMore={onSeeAllCases} />
+          <SectionHead title="More cases" more="view all" right onMore={onSeeAllCases} />
           <div className="grid3">
             {pw && (
               <EdCard href={href(pw)}>
@@ -102,7 +107,7 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
             )}
             {grid.map((s, i) => (
               <EdCard key={s.id} href={href(s)}>
-                <Tile tint={tintAt(i + 1)} minH={360} chip={fmtDate(s.publishedAt, s.year)} title={s.title} size="l" />
+                <Tile tint={tintAt(i + 1)} minH={360} chip={String(s.year)} title={s.title} size="l" img={pic(s)} />
                 <Cap k={kicker(s)} title={clip(s.outcome, 80)} />
               </EdCard>
             ))}

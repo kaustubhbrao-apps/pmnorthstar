@@ -1,10 +1,12 @@
 "use client";
 
-// Artifact-style top navigation: wordmark, nav links with superscript counts
-// (India in brand red), then a solid circle search, the theme circle and a
-// Menu pill. Sticky over the white panel, no border. On the homepage the
-// search circle toggles an inline search row; elsewhere it routes to /.
-// onNavChange lets the homepage switch its in-page views; elsewhere links route.
+// Top navigation: wordmark, primary links (India in brand red, clear active
+// underline), a labelled Search pill (circle on small screens), the theme
+// circle and a Menu pill holding the secondary surfaces, the library counts
+// and — when signed in — Saved / Favourites / Log out. Sticky over the white
+// panel, no border. On the homepage the search toggles an inline search row;
+// elsewhere it routes to /. onNavChange lets the homepage switch its in-page
+// views; elsewhere links route.
 
 import Link from "next/link";
 import { useState } from "react";
@@ -46,6 +48,7 @@ interface TopBarProps {
   searchQuery?: string;
   onSearchChange?: (v: string) => void;
   onLogin?: () => void;
+  onLogout?: () => void;
   isLoggedIn?: boolean;
 }
 
@@ -57,26 +60,36 @@ export function TopBar({
   searchQuery,
   onSearchChange,
   onLogin,
+  onLogout,
   isLoggedIn,
 }: TopBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+
+  // The homepage's default view is the cases front, so "Cases" reads as
+  // current there too.
+  const current = activeNav === "home" ? "casestudies" : activeNav;
 
   const go = (id: string) => {
     onNavChange?.(id);
     setMenuOpen(false);
   };
 
-  const navLink = (n: (typeof NAV)[number]) => (
+  const openSearch = () => {
+    if (onSearchChange) setSearchOpen((o) => !o);
+    else window.location.href = "/";
+  };
+
+  const navLink = (n: (typeof NAV)[number], withCount = false) => (
     <Link
       key={n.id}
       href={n.href}
       onClick={() => go(n.id)}
-      aria-current={activeNav === n.id ? "true" : undefined}
+      aria-current={current === n.id ? "true" : undefined}
       className={n.id === "india" ? "india" : undefined}
     >
       {n.label}
-      {typeof n.count === "number" && <sup>({n.count})</sup>}
+      {withCount && typeof n.count === "number" && <sup>({n.count})</sup>}
     </Link>
   );
 
@@ -88,19 +101,25 @@ export function TopBar({
         </Link>
 
         <nav className="navlinks hidden lg:flex items-center flex-wrap" aria-label="Primary">
-          {NAV.map(navLink)}
+          {NAV.map((n) => navLink(n))}
         </nav>
 
         <div className="ctrls">
           <button
             type="button"
-            onClick={() => {
-              if (onSearchChange) setSearchOpen((o) => !o);
-              else window.location.href = "/";
-            }}
-            aria-label="Search"
+            onClick={openSearch}
+            aria-label="Search the library"
             aria-expanded={onSearchChange ? searchOpen : undefined}
-            className="circ solid grid place-items-center"
+            className="pillbtn solid hidden md:inline-flex items-center gap-2"
+          >
+            <Search size={15} strokeWidth={2.2} />
+            Search
+          </button>
+          <button
+            type="button"
+            onClick={openSearch}
+            aria-label="Search the library"
+            className="circ solid grid place-items-center md:hidden"
           >
             <Search size={16} strokeWidth={2} />
           </button>
@@ -140,8 +159,8 @@ export function TopBar({
 
       {menuOpen && (
         <nav className="site-inner menu-drop" aria-label="More">
-          {/* Primary links repeat here below the lg breakpoint, where the row is hidden. */}
-          <div className="lg:hidden flex flex-col">{NAV.map(navLink)}</div>
+          {/* Primary links with their counts; the row above keeps labels only. */}
+          <div className="flex flex-col">{NAV.map((n) => navLink(n, true))}</div>
           {MENU_EXTRA.map((m) =>
             m.external ? (
               <a key={m.href} href={m.href} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
@@ -153,17 +172,40 @@ export function TopBar({
               </Link>
             )
           )}
-          {onLogin && !isLoggedIn && (
-            <button
-              type="button"
-              onClick={() => {
-                onLogin();
-                setMenuOpen(false);
-              }}
-              style={{ color: "var(--brand-primary)" }}
-            >
-              Log in
-            </button>
+          {isLoggedIn ? (
+            <>
+              <Link href="/#saved" onClick={() => go("saved")}>
+                Saved
+              </Link>
+              <Link href="/#favourites" onClick={() => go("favourites")}>
+                Favourites
+              </Link>
+              {onLogout && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    onLogout();
+                    setMenuOpen(false);
+                  }}
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  Log out
+                </button>
+              )}
+            </>
+          ) : (
+            onLogin && (
+              <button
+                type="button"
+                onClick={() => {
+                  onLogin();
+                  setMenuOpen(false);
+                }}
+                style={{ color: "var(--brand-primary)" }}
+              >
+                Log in — only needed to save things
+              </button>
+            )
           )}
         </nav>
       )}

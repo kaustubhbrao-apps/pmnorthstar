@@ -3,7 +3,7 @@ import { books, getBookSlug, type Category } from "@/data/books";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
-import { EdCard, Tile, Cap, SectionHead, clip, tintAt } from "@/components/Editorial";
+import { EdCard, Tile, Cap, SectionHead, clip, tintAt, bookCover } from "@/components/Editorial";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -96,7 +96,7 @@ export default function BooksIndexPage() {
             <div className="grid3">
               {items.map((b, i) => (
                 <EdCard key={b.id} href={`/book/${getBookSlug(b)}`}>
-                  <Tile tint={tintAt(i)} minH={300} chip={String(b.year)} title={b.title} size="m" />
+                  <Tile tint={tintAt(i)} minH={300} chip={String(b.year)} title={b.title} size="m" img={bookCover(b.thumbnailURL)} />
                   <Cap k={`${b.author} · ${b.pages} pages`} title={clip(b.description, 80)} />
                 </EdCard>
               ))}

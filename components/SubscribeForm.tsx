@@ -46,7 +46,7 @@ export function SubscribeForm({
       className={`${variant === "card" ? "surface" : ""} ${className}`}
       style={{
         padding: variant === "card" ? "24px" : 0,
-        borderRadius: variant === "card" ? 12 : 0,
+        borderRadius: variant === "card" ? 18 : 0,
       }}
     >
       <p

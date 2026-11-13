@@ -7,6 +7,7 @@
 import { useMemo, useState } from "react";
 import { DRILL_CATEGORIES } from "@/lib/drills";
 import { EdCard, Tile, Cap, SectionHead, clip, tintAt } from "@/components/Editorial";
+import { photoFor } from "@/data/cardImages";
 
 export type DrillCard = {
   slug: string;
@@ -69,6 +70,7 @@ export function DrillGrid({ drills }: { drills: DrillCard[] }) {
                   glyph="▶"
                   title={d.title}
                   size={featured ? "xl" : "m"}
+                  img={photoFor([d.title, d.excerpt, d.category, d.type], d.slug)}
                 />
                 <Cap k={`${d.category}${d.year ? ` · ${d.year}` : ""}`} title={clip(d.excerpt, 72)} />
               </EdCard>
