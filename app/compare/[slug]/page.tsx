@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { getComparisonBySlug, publishedComparisons } from "@/data/comparisons";
 import { getCaseStudyById } from "@/data/caseStudies";
 import { publishedAnswers } from "@/data/answers";
-import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { CompareClient } from "./CompareClient";
 import type { OtherComparison, CompareAnswer } from "./CompareClient";
 
@@ -56,10 +55,8 @@ export default function ComparePage({ params }: PageProps) {
   return (
     <CompareClient
       cmp={cmp}
-      a={{ id: a.id, company: a.company, logo: a.logo }}
-      b={{ id: b.id, company: b.company, logo: b.logo }}
-      aLogo={getCompanyLogoUrl(a.company)}
-      bLogo={getCompanyLogoUrl(b.company)}
+      a={{ id: a.id, company: a.company, logo: a.logo, year: a.year, category: a.category }}
+      b={{ id: b.id, company: b.company, logo: b.logo, year: b.year, category: b.category }}
       otherComps={otherComps}
       relatedAnswers={relatedAnswers}
     />

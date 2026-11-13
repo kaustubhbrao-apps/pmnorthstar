@@ -84,6 +84,6 @@ export function getCompanyLogoUrl(company: string): string | null {
 
   const domain = companyDomains[company];
   return domain
-    ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+    ? `https://www.google.com/s2/favicons?domain=${domain}&sz=256`
     : null;
 }

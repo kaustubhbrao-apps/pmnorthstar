@@ -538,6 +538,7 @@ export default function HomeClient() {
                           title={study.title}
                           size="m"
                           img={photoFor([...study.tags, study.title, study.category, study.region, study.company], study.id)}
+                          brand={study.company}
                         />
                         <Cap
                           k={`${study.category} · ${study.region === "India" ? "India" : study.company}`}
@@ -779,15 +780,15 @@ export default function HomeClient() {
                   className="font-extrabold mt-3"
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "clamp(1.7rem, 3.4vw, 2.6rem)",
-                    letterSpacing: "-0.03em",
-                    lineHeight: 1.02,
-                    maxWidth: "24ch",
+                    fontSize: "clamp(2rem, 5.2vw, 4.4rem)",
+                    letterSpacing: "-0.035em",
+                    lineHeight: 0.98,
+                    textWrap: "balance",
                   }}
                 >
                   Product lessons from the companies that shipped — and the ones that didn&apos;t.
                 </h1>
-                <p className="serif mt-3 text-lg leading-snug" style={{ color: "var(--text-muted)", maxWidth: "62ch" }}>
+                <p className="serif mt-4 text-xl leading-snug" style={{ color: "var(--text-muted)", maxWidth: "92ch" }}>
                   {caseStudies.length} long-form case studies, {comparisons.length} head-to-heads, {DRILL_COUNT} decision
                   drills, {books.length} book reviews and {answers.length} straight answers. Hand-picked and opinionated.
                 </p>

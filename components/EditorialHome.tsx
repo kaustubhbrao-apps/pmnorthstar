@@ -72,6 +72,7 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
               title={lead.title}
               dek={lead.description}
               img={pic(lead)}
+              brand={lead.company}
             />
           </EdCard>
           <div className="side">
@@ -85,6 +86,7 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
                   dek={clip(s.description, 110)}
                   size="xl"
                   img={pic(s)}
+                  brand={s.company}
                 />
               </EdCard>
             ))}
@@ -107,7 +109,7 @@ export function EditorialHome({ caseStudies, featured, comparisons, aiDecoded, o
             )}
             {grid.map((s, i) => (
               <EdCard key={s.id} href={href(s)}>
-                <Tile tint={tintAt(i + 1)} minH={360} chip={String(s.year)} title={s.title} size="l" img={pic(s)} />
+                <Tile tint={tintAt(i + 1)} minH={360} chip={String(s.year)} title={s.title} size="l" img={pic(s)} brand={s.company} />
                 <Cap k={kicker(s)} title={clip(s.outcome, 80)} />
               </EdCard>
             ))}

@@ -117,6 +117,7 @@ export default function IndiaPage() {
                   title={s.title}
                   size={lead ? "2xl" : "l"}
                   img={photoFor([...s.tags, s.title, s.category, "india", s.company], s.id)}
+                  brand={s.company}
                 />
                 <Cap k={`${s.category} · ${s.company}`} title={clip(s.outcome, 80)} />
               </EdCard>
@@ -166,6 +167,7 @@ export default function IndiaPage() {
                     title={s.title}
                     size="m"
                     img={photoFor([...s.tags, s.title, s.category, s.company], s.id)}
+                    brand={s.company}
                   />
                   <Cap k={`${s.category} · ${s.company}`} title={clip(s.outcome, 80)} />
                 </EdCard>

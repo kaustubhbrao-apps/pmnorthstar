@@ -43,6 +43,7 @@ export function CaseStudyCard({ study, index = 0, initialSaved = false, initialL
           title={study.title}
           size="m"
           img={photoFor([...study.tags, study.title, study.category, study.region, study.company], study.id)}
+          brand={study.company}
         />
         <Cap k={kicker} title={clip(study.outcome, 80)} />
       </Link>
