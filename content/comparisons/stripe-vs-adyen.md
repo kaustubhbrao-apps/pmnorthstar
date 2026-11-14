@@ -30,18 +30,24 @@ rows:
     b: "Full-Stack Global Banking Licenses"
 ---
 
-Stripe and Adyen are the two most important companies in modern payments, yet their strategies are completely inverted. 
+**Stripe and Adyen are the two most important companies in modern payments, and their strategies are exact inversions of each other — built on opposite answers to one question: should you hide complexity from the customer, or embrace it on their behalf? Stripe abstracted banking away behind a beautiful API so developers never had to understand it. Adyen did the grueling work of becoming the banking stack so enterprises could optimize every layer of it. Stripe sold simplicity to developers; Adyen sold basis points to CFOs. Both built payment titans, which proves that in a market this large you win by polarizing the product toward one specific buyer, not by splitting the difference.**
 
-When Stripe launched, their thesis was simple: developers should not have to understand banking. They built a beautiful, seven-line API that abstracted away the nightmarish complexity of payment processors, gateways, and merchant accounts. If you were a Y Combinator startup, you used Stripe. They won via extreme developer love and a bottom-up PLG motion.
+The lesson is not that one approach is correct. It is that each company aligned its entire product, pricing, and go-to-market behind a single buyer, and the coherence is what made each unbeatable in its lane.
 
-Adyen took the opposite approach. They realized that for massive global enterprises (like Netflix, Uber, or Spotify), abstraction was actually a liability. Enterprises needed to optimize authorization rates by fractions of a percent, and you can only do that if you own the entire banking stack. Adyen did the grueling, unsexy work of acquiring local banking licenses across the globe to become the gateway, processor, and acquirer all in one. 
+## Hide the complexity, or embrace it
 
-Stripe sold speed to developers. Adyen sold basis-point optimizations to CFOs. Both strategies worked flawlessly, proving that in a market as massive as global payments, you can build a titan by polarizing your feature set toward a highly specific ideal customer profile.
+Stripe's thesis was that developers should not have to understand banking. It wrapped the nightmare of processors, gateways, and merchant accounts in a seven-line API, and if you were a Y Combinator startup you used Stripe by default. It won through developer love and a bottom-up, self-serve motion. Adyen saw that for global enterprises — Netflix, Uber, Spotify — abstraction was a liability, not a gift, because squeezing authorization rates by fractions of a percent is only possible if you own every layer being optimized. So Adyen did the unsexy work of acquiring local banking licenses worldwide to be gateway, processor, and acquirer in one. The same complexity Stripe hid, Adyen absorbed and turned into a product. See [how Stripe went developer-first](/case-study/stripe-developer-first) and [Adyen's enterprise acquiring](/case-study/adyen-enterprise-acquiring).
 
-## Two ways to win payments
+## The buyer dictates the motion
 
-Stripe and Adyen prove there's more than one path through the same market. Stripe won **bottom-up**, obsessing over developers — seven lines of code, beautiful docs, self-serve — so startups built on it by default and grew into big customers. Adyen won **top-down**, going straight for the largest enterprises with a single global platform and deep, consultative sales. See [how Stripe went developer-first](/case-study/stripe-developer-first) and [Adyen's enterprise acquiring](/case-study/adyen-enterprise-acquiring).
+Opposite buyers demanded opposite go-to-market. Stripe won bottom-up: seven lines of code, beautiful docs, self-serve onboarding, so startups adopted it without a sales call and grew into large customers over time. Adyen won top-down: a single global platform sold through deep, consultative relationships straight to the largest enterprises. These are not just different sales tactics; they are different companies all the way down — different pricing, different product surface, different definition of "better." This is the same split explored in [bottom-up vs top-down sales](/answers/bottom-up-vs-top-down-sales) and [developer-first GTM](/topics/developer-first-gtm), and it plays out across payments in [PayPal vs Stripe](/compare/paypal-vs-stripe) and [Razorpay vs Stripe](/compare/razorpay-vs-stripe).
 
-Neither is "right" — they're different motions for different buyers, the same split explored in [bottom-up vs top-down sales](/answers/bottom-up-vs-top-down-sales) and [developer-first GTM](/topics/developer-first-gtm). For how this plays out in other markets, compare [PayPal vs Stripe](/compare/paypal-vs-stripe) and [Razorpay vs Stripe](/compare/razorpay-vs-stripe).
+## Why polarizing beats splitting the difference
 
-**The takeaway:** in the same category, a developer-first self-serve motion and an enterprise-first sales motion can both build huge businesses — what matters is that the product, pricing, and go-to-market all line up behind one chosen buyer.
+The reason both titans exist is that each refused to serve the other's buyer, and that refusal is the strategy. A developer wants abstraction and self-serve speed; a CFO wants control and optimization and will sit through a long sales cycle to get it. A product that tried to deliver both would give the developer too much complexity and the enterprise too little control — losing both. Stripe optimized ruthlessly for simplicity, Adyen for depth, and each became the obvious choice for its ideal customer precisely because it was a poor choice for the other's. In a huge market, being perfect for one buyer beats being adequate for all.
+
+## What this means for operators
+
+- **Decide whether your value is hiding complexity or mastering it.** Abstraction wins developers who want to move fast; owning the full stack wins enterprises who need to optimize. These are different products, and you cannot be the best at both.
+- **Align the whole company behind one buyer.** Product, pricing, and go-to-market must all point at the same customer. Stripe's self-serve API and Adyen's consultative platform work because nothing inside either contradicts the chosen buyer.
+- **Polarize on purpose; the middle is where you lose.** Being adequate for everyone loses to being perfect for someone. In a large market, the titan is usually the company that was willing to be a bad fit for the customers it chose not to serve.
