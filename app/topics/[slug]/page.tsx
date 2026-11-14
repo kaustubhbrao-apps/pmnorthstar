@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { marked } from "marked";
-import { ArrowUpRight } from "lucide-react";
 import { SidebarShell } from "@/components/SidebarShell";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { caseStudies, publishedCaseStudies } from "@/data/caseStudies";
-import { getTopicBySlug, topics, publishedTopics } from "@/data/topics";
+import { getTopicBySlug, publishedTopics } from "@/data/topics";
 import { publishedComparisons } from "@/data/comparisons";
 import { publishedAnswers } from "@/data/answers";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -13,9 +12,9 @@ import { SubscribeForm } from "@/components/SubscribeForm";
 import { Footer } from "@/components/Footer";
 import { ViewCounter } from "@/components/ViewCounter";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
-import {
-  CASE_STUDY_COUNT,
-} from "@/data/inventory-counts";
+import { CASE_STUDY_COUNT } from "@/data/inventory-counts";
+import { BigDiv, Pill, EdCard, Tile, Cap, SectionHead, VsBox, FaqList, clip, splitVs, tintAt } from "@/components/Editorial";
+import { photoFor } from "@/data/cardImages";
 
 // 6h. Scheduled content normally goes live via /api/cron/revalidate just
 // after UTC midnight, so this window is a fallback, not the mechanism.
@@ -60,288 +59,126 @@ export default function TopicPage({ params }: PageProps) {
     .slice(0, 8);
 
   return (
-    <SidebarShell
-      activeNav="explore"
-      backHref="/"
-      backLabelDesktop="Back to the library"
-      backLabelMobile="Home"
-      shareTitle={`${topic.title} on northstar`}
-      shareText={`${topic.title}: ${topic.metaDescription}`}
-    >
-      <div className="flex flex-col min-w-0">
-        {/* Hero */}
-        <section
-          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-16 flex justify-center"
-          style={{ borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="w-full max-w-4xl">
-            <Breadcrumbs
-              className="mb-6"
-              items={[
-                { label: "northstar", href: "/" },
-                { label: "Topics", href: "/topics" },
-                { label: topic.title },
-              ]}
-            />
-            <div className="flex items-center gap-4 mb-4 sm:mb-5">
-              <span
-                className="inline-block text-sm sm:text-base font-bold uppercase px-2.5 py-1 rounded-md"
-                style={{
-                  background: topic.accentColor,
-                  color: "#ffffff",
-                  letterSpacing: "0.12em",
-                }}
-              >
-                {topic.eyebrow}
-              </span>
-              <div className="flex items-center gap-3">
-                <ViewCounter path={`/topics/${topic.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
-                <SmartSaveButton resource={{
-                  id: topic.slug,
-                  title: topic.title,
-                  author: "northstar collections",
-                  category: "Topic",
-                  link: `/topics/${topic.slug}`
-                }} />
-              </div>
-            </div>
-            <h1
-              className="text-4xl sm:text-5xl lg:text-8xl font-bold leading-[1.05] mb-5 sm:mb-6"
-              style={{
-                color: "var(--text-primary)",
-                letterSpacing: "-0.04em",
-              }}
-            >
-              {topic.title}
-            </h1>
-            <div
-              className="text-base sm:text-lg lg:text-xl leading-relaxed prose-links"
-              style={{ color: "var(--text-muted)" }}
-              dangerouslySetInnerHTML={{
-                __html: marked.parse(topic.intro) as string,
+    <SidebarShell activeNav="explore">
+      <div className="site-inner pb-16">
+        <Breadcrumbs
+          className="pt-6"
+          items={[
+            { label: "northstar", href: "/" },
+            { label: "Topics", href: "/topics" },
+            { label: topic.title },
+          ]}
+        />
+        <BigDiv>
+          Topic · {cases.length} case {cases.length === 1 ? "study" : "studies"}
+        </BigDiv>
+
+        {/* Header — reading-page title treatment, full width. */}
+        <div className="read-wrap">
+          <div className="flex flex-wrap items-center gap-3">
+            <Pill>{topic.eyebrow}</Pill>
+            <ViewCounter path={`/topics/${topic.slug}`} className="progress" />
+          </div>
+          <h1 className="t" style={{ maxWidth: "20ch" }}>
+            {topic.title}
+          </h1>
+          <div
+            className="lede prose-links"
+            style={{ maxWidth: "70ch" }}
+            dangerouslySetInnerHTML={{ __html: marked.parse(topic.intro) as string }}
+          />
+          <div className="flex items-center gap-3 mt-5">
+            <SmartSaveButton
+              resource={{
+                id: topic.slug,
+                title: topic.title,
+                author: "northstar collections",
+                category: "Topic",
+                link: `/topics/${topic.slug}`,
               }}
             />
           </div>
-        </section>
+        </div>
 
-        {/* Case studies grid */}
-        <section
-          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
-          style={{ borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="flex items-baseline gap-3 mb-6 sm:mb-8">
-            <h2
-              className="text-xl sm:text-2xl font-semibold"
-              style={{
-                color: topic.accentColor,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              {cases.length} case studies
-            </h2>
-          </div>
+        {/* Case studies */}
+        <SectionHead title="The cases" count={cases.length} className="mt-10" />
+        <div className="grid3">
+          {cases.map((study, idx) => (
+            <CaseStudyCard key={study.id} study={study} index={idx} hideCategory />
+          ))}
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {cases.map((study, idx) => (
-              <CaseStudyCard key={study.id} study={study} index={idx} hideCategory={true} />
-            ))}
-          </div>
-        </section>
-
-        {/* Related comparisons + answers — internal links to the deeper
-            content that references these same companies. */}
-        {(relatedComparisons.length > 0 || relatedAnswers.length > 0) && (
-          <section
-            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-12"
-            style={{ borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {relatedComparisons.length > 0 && (
-                <div>
-                  <h2
-                    className="text-xl sm:text-2xl font-semibold mb-1"
-                    style={{ color: topic.accentColor, letterSpacing: "-0.02em" }}
-                  >
-                    Head-to-head
-                  </h2>
-                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
-                    Comparisons featuring these companies.
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    {relatedComparisons.map((c) => (
-                      <Link
-                        key={c.slug}
-                        href={`/compare/${c.slug}`}
-                        className="playlist-card surface p-4 group"
-                        style={{ ["--accent-color" as never]: c.accentColor } as React.CSSProperties}
-                      >
-                        <p
-                          className="text-sm font-semibold leading-snug line-clamp-2"
-                          style={{ color: "var(--text-primary)", letterSpacing: "-0.01em" }}
-                        >
-                          {c.title}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {relatedAnswers.length > 0 && (
-                <div>
-                  <h2
-                    className="text-xl sm:text-2xl font-semibold mb-1"
-                    style={{ color: topic.accentColor, letterSpacing: "-0.02em" }}
-                  >
-                    Related answers
-                  </h2>
-                  <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
-                    Concepts behind these case studies.
-                  </p>
-                  <div className="flex flex-col gap-2.5">
-                    {relatedAnswers.map((a) => (
-                      <Link
-                        key={a.slug}
-                        href={`/answers/${a.slug}`}
-                        className="text-sm font-medium hover:underline"
-                        style={{ color: a.accentColor }}
-                      >
-                        {a.question} →
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
+        {/* Related comparisons + answers */}
+        {relatedComparisons.length > 0 && (
+          <>
+            <SectionHead title="Head-to-Head" count={relatedComparisons.length} />
+            <p className="shead-sub">Comparisons featuring these companies.</p>
+            <div className="heads">
+              {relatedComparisons.map((c) => {
+                const { a, b } = splitVs(c.title);
+                return <VsBox key={c.slug} a={a} b={b} m={c.eyebrow} href={`/compare/${c.slug}`} />;
+              })}
             </div>
-          </section>
+          </>
         )}
 
-        {/* Newsletter */}
-        <section
-          className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10"
-          style={{ borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="max-w-2xl mx-auto">
-            <SubscribeForm
-              variant="card"
-              surface="topic"
-              headline={`More case studies on ${topic.title.toLowerCase()}, in your inbox.`}
-              subhead="One product deep dive every few days. Free. No paywall."
-            />
-          </div>
-        </section>
-
-        {/* FAQ */}
-        {topic.faqs && topic.faqs.length > 0 && (
-          <section
-            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
-            style={{ borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="w-full max-w-4xl">
-              <h2
-                className="text-2xl sm:text-3xl font-semibold mb-6"
-                style={{
-                  color: "var(--text-primary)",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Frequently asked
-              </h2>
-              <div className="space-y-5">
-                {topic.faqs.map((faq, i) => (
-                  <div key={i}>
-                    <h3
-                      className="text-base sm:text-lg font-semibold mb-2"
-                      style={{
-                        color: "var(--text-primary)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {faq.question}
-                    </h3>
-                    <p
-                      className="text-base sm:text-lg leading-relaxed"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {faq.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Other topics */}
-        <section className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-          <div className="max-w-5xl">
-            <p
-              className="eyebrow mb-3"
-              style={{ color: "var(--text-muted)" }}
-            >
-              Other topics
-            </p>
-            <h2
-              className="text-xl sm:text-2xl font-semibold mb-5 sm:mb-6"
-              style={{
-                color: "var(--text-primary)",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Explore more
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {otherTopics.map((t) => (
-                <Link
-                  key={t.slug}
-                  href={`/topics/${t.slug}`}
-                  className="playlist-card surface p-4 group"
-                  style={
-                    {
-                      ["--accent-color" as any]: t.accentColor,
-                    } as React.CSSProperties
-                  }
-                >
-                  <span
-                    className="inline-block text-sm font-bold uppercase px-2 py-0.5 rounded-md mb-2"
-                    style={{
-                      background: t.accentColor,
-                      color: "#ffffff",
-                      letterSpacing: "0.12em",
-                    }}
-                  >
-                    {t.eyebrow}
-                  </span>
-                  <p
-                    className="text-base font-semibold leading-snug mb-3"
-                    style={{
-                      color: "var(--text-primary)",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    {t.title}
-                  </p>
-                  <p
-                    className="text-sm"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {t.caseStudyIds.length} case studies
-                  </p>
+        {relatedAnswers.length > 0 && (
+          <>
+            <SectionHead title="Concepts explained" />
+            <p className="shead-sub">The ideas behind these case studies, answered straight.</p>
+            <div className="max-w-3xl">
+              {relatedAnswers.map((a) => (
+                <Link key={a.slug} href={`/answers/${a.slug}`} className="rellink">
+                  {a.question} →
                 </Link>
               ))}
             </div>
+          </>
+        )}
 
-            <div className="mt-8 text-center">
-              <Link href="/" className="btn-ghost inline-flex">
-                Browse all {CASE_STUDY_COUNT} case studies
-                <ArrowUpRight size={12} strokeWidth={1.6} />
-              </Link>
+        <div className="my-12 max-w-2xl">
+          <SubscribeForm
+            variant="card"
+            surface="topic"
+            headline={`More case studies on ${topic.title.toLowerCase()}, in your inbox.`}
+            subhead="One product deep dive every few days. Free. No paywall."
+          />
+        </div>
+
+        {topic.faqs && topic.faqs.length > 0 && <FaqList faqs={topic.faqs} />}
+
+        {/* Other topics */}
+        {otherTopics.length > 0 && (
+          <>
+            <SectionHead title="Other topics" count={otherTopics.length} more="All topics →" moreHref="/topics" right />
+            <div className="grid3">
+              {otherTopics.map((t, i) => (
+                <EdCard key={t.slug} href={`/topics/${t.slug}`}>
+                  <Tile
+                    tint={tintAt(i)}
+                    minH={260}
+                    chip={`${t.caseStudyIds.length} ${t.caseStudyIds.length === 1 ? "case" : "cases"}`}
+                    title={t.title}
+                    size="m"
+                    img={photoFor([t.eyebrow, t.title], t.slug)}
+                  />
+                  <Cap k={t.eyebrow} title={clip(t.intro, 90)} />
+                </EdCard>
+              ))}
             </div>
-          </div>
-        </section>
-        <Footer />
+          </>
+        )}
+
+        <div className="mt-12 flex flex-wrap gap-2.5">
+          <Link href="/#casestudies" className="btn-primary">
+            Browse all {CASE_STUDY_COUNT} case studies →
+          </Link>
+          <Link href="/topics" className="btn-ghost">
+            All topics
+          </Link>
+        </div>
       </div>
+      <Footer />
     </SidebarShell>
   );
 }

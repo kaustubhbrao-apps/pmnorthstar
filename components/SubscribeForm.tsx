@@ -43,28 +43,21 @@ export function SubscribeForm({
   return (
     <div
       ref={wrapperRef}
-      className={`${variant === "card" ? "surface" : ""} ${className}`}
-      style={{
-        padding: variant === "card" ? "24px" : 0,
-        borderRadius: variant === "card" ? 18 : 0,
-      }}
+      className={className}
+      style={
+        variant === "card"
+          ? { padding: 24, borderRadius: 18, border: "1.5px solid var(--hair)", background: "var(--card-bg)" }
+          : undefined
+      }
     >
-      <p
-        className="eyebrow mb-2"
-        style={{ color: "var(--brand-primary)", opacity: 0.85 }}
-      >
-        Newsletter
-      </p>
+      <span className="pill">Newsletter</span>
       <h3
-        className="text-lg sm:text-xl font-semibold mb-1.5"
-        style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
+        className="text-xl sm:text-2xl font-extrabold mt-3 mb-1.5"
+        style={{ color: "var(--text-primary)", letterSpacing: "-0.025em", lineHeight: 1.05, fontFamily: "var(--font-display)" }}
       >
         {headline}
       </h3>
-      <p
-        className="text-sm mb-5 leading-relaxed"
-        style={{ color: "var(--text-muted)" }}
-      >
+      <p className="serif mb-5" style={{ color: "var(--text-muted)", fontSize: "1.05rem", lineHeight: 1.45 }}>
         {subhead}
       </p>
 
@@ -74,9 +67,9 @@ export function SubscribeForm({
           (light background) but it sits inside our branded card. */}
       <div
         style={{
-          borderRadius: 8,
+          borderRadius: 14,
           overflow: "hidden",
-          border: "1.5px solid var(--card-border)",
+          border: "1.5px solid var(--hair)",
           background: "#ffffff",
         }}
       >

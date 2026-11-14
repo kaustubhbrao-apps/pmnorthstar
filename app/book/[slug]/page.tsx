@@ -1,33 +1,24 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
-import { Sidebar } from "@/components/Sidebar";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { MobileNav } from "@/components/MobileNav";
-import { SubscribeForm } from "@/components/SubscribeForm";
+import { SidebarShell } from "@/components/SidebarShell";
 import { SmartEngagementBlock } from "@/components/SmartEngagementBlock";
 import { ShareButton } from "@/components/ShareButton";
 import { Footer } from "@/components/Footer";
-import { getCategoryColor, solidColorFor } from "@/lib/category-colors";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BookFaqs } from "@/components/BookFaqs";
 import { getBookFaqs } from "@/data/bookFaqs";
 import { Byline } from "@/components/Byline";
 import { ViewCounter } from "@/components/ViewCounter";
+import { SmartSaveButton } from "@/components/SmartSaveButton";
 import { SITE_LAST_REVIEWED } from "@/lib/site";
-import {
-  books,
-  getBookSlug,
-  getBookBySlug,
-  getAmazonAffiliateUrl,
-} from "@/data/books";
+import { books, getBookSlug, getBookBySlug, getAmazonAffiliateUrl } from "@/data/books";
 import { caseStudiesLite as caseStudies } from "@/data/caseStudiesLite";
 import { getCaseStudySlug } from "@/data/caseStudies";
-import { ArrowLeft, ArrowUpRight, BookOpen, Menu, Star, ShoppingCart } from "lucide-react";
+import { ArrowUpRight, ShoppingCart, Star } from "lucide-react";
+import { BigDiv, Pill, EdCard, Tile, Cap, SectionHead, clip, tintAt, bookCover } from "@/components/Editorial";
 
 interface AuthorPhotoState {
   url: string | null;
@@ -36,21 +27,7 @@ interface AuthorPhotoState {
 
 export default function BookPage({ params }: { params: { slug: string } }) {
   const book = getBookBySlug(params.slug, books);
-  const router = useRouter();
-  const [isDark, setIsDark] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [coverFailed, setCoverFailed] = useState(false);
   const [authorPhoto, setAuthorPhoto] = useState<AuthorPhotoState>({ url: null, failed: false });
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") setIsDark(true);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  }, [isDark]);
 
   // Wikipedia author photo fallback (same hook idea as ResourceCard, inlined)
   useEffect(() => {
@@ -95,583 +72,228 @@ export default function BookPage({ params }: { params: { slug: string } }) {
 
   if (!book) notFound();
 
-  const handleNavChange = (nav: string) => {
-    if (nav === "home" || nav === "library") router.push("/");
-    else router.push(`/#${nav}`);
-  };
-
   const amazonUrl = getAmazonAffiliateUrl(book);
-  const cat = getCategoryColor(book.category);
   const faqs = getBookFaqs(book);
 
   // Related books (same category, different book)
-  const relatedBooks = books
-    .filter((b) => b.id !== book.id && b.category === book.category)
-    .slice(0, 4);
+  const relatedBooks = books.filter((b) => b.id !== book.id && b.category === book.category).slice(0, 4);
 
   // Pull related case studies if specified in the summary
   const relatedCaseStudies = (book.summary?.relatedCaseStudies || [])
     .map((id) => caseStudies.find((c) => c.id === id))
     .filter(Boolean) as typeof caseStudies;
 
+  const cover = bookCover(book.thumbnailURL);
+  const injectAfter = book.summary ? Math.max(2, Math.floor(book.summary.analysis.length * 0.4)) : 0;
+
   return (
-    <div
-      className="flex h-screen overflow-hidden"
-      style={{ background: "var(--page-bg)" }}
-    >
-      <Sidebar
-        activeNav="home"
-        onNavChange={handleNavChange}
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+    <SidebarShell activeNav="books">
+      <div className="site-inner pb-16">
+        <Breadcrumbs
+          className="pt-6"
+          items={[
+            { label: "northstar", href: "/" },
+            { label: "Books", href: "/book" },
+            { label: book.category, href: "/book" },
+            { label: book.title },
+          ]}
+        />
+        <BigDiv>
+          Book review · {book.year} · {book.pages} pages
+        </BigDiv>
 
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <header
-          className="flex-shrink-0 px-4 sm:px-6 py-3 flex items-center justify-between gap-3"
-          style={{
-            background: "var(--nav-bg)",
-            borderBottom: "1.5px solid var(--card-border)",
-          }}
-        >
-          <div className="flex items-center gap-3 min-w-0">
-            <button
-              onClick={() => setSidebarOpen(true)}
-              className="p-1.5 rounded-lg lg:hidden flex-shrink-0"
-              style={{ color: "var(--text-primary)" }}
-            >
-              <Menu size={20} />
-            </button>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium flex-shrink-0"
-              style={{ color: "var(--text-muted)" }}
-            >
-              <ArrowLeft size={14} strokeWidth={1.6} />
-              <span className="hidden sm:inline">Back to the library</span>
-              <span className="sm:hidden">Back</span>
-            </Link>
-          </div>
-          <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-        </header>
+        <div className="story-grid">
+          <article className="read-wrap">
+            <div className="flex flex-wrap items-center gap-3">
+              <Pill>{book.category}</Pill>
+              <span className="progress inline-flex items-center gap-1">
+                <Star size={12} strokeWidth={2} style={{ color: "var(--brand-primary)", fill: "var(--brand-primary)" }} />
+                {book.rating.toFixed(1)}
+              </span>
+              <ViewCounter path={`/book/${params.slug}`} className="progress" />
+            </div>
 
-        <MobileNav activeNav="" onNavChange={handleNavChange} />
+            <h1 className="t">{book.title}</h1>
+            <p className="lede">{book.description}</p>
 
-        <main className="flex-1 overflow-y-auto scroll-container">
-          {/* Hero */}
-          <section
-            className="dot-grid px-4 sm:px-8 lg:px-12 py-8 sm:py-12 flex justify-center"
-            style={{ borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="w-full max-w-4xl">
-              <Breadcrumbs
-                className="mb-5"
-                items={[
-                  { label: "northstar", href: "/" },
-                  { label: "Books", href: "/book" },
-                  { label: book.category, href: "/book" },
-                  { label: book.title },
-                ]}
-              />
-              <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span
-                  className="inline-flex items-center gap-1.5 text-sm font-medium px-2.5 py-0.5 rounded-full"
-                  style={{
-                    background: cat.bg,
-                    color: cat.color,
-                    border: `1.5px solid ${cat.border}`,
-                  }}
-                >
-                  <span
-                    className="w-1.5 h-1.5 rounded-full"
-                    style={{ background: cat.color }}
-                  />
-                  {book.category}
-                </span>
-                <span className="text-xs" style={{ color: "var(--text-faint)" }}>
-                  {book.year} · {book.pages} pages
-                </span>
-                <span className="w-px h-3 hidden sm:inline-block" style={{ background: "var(--card-border)" }} />
-                <ViewCounter path={`/book/${params.slug}`} className="text-xs text-[var(--text-faint)]" />
-              </div>
-<h1
-  className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-4"
-  style={{
-    color: "var(--text-primary)",
-    letterSpacing: "-0.03em",
-  }}
->
-  {book.title}
-</h1>
-
-<p
-  className="text-base sm:text-lg lg:text-xl leading-relaxed mb-6"
-  style={{ color: "var(--text-muted)" }}
->
-  {book.description}
-</p>
-
-
-              {/* Rating */}
-              <div className="flex items-center gap-1.5 mb-6">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    size={14}
-                    strokeWidth={1.6}
-                    style={{
-                      color: i < Math.floor(book.rating) ? "var(--brand-primary)" : "var(--text-faint)",
-                      fill: i < Math.floor(book.rating) ? "var(--brand-primary)" : "transparent",
-                    }}
-                  />
-                ))}
-                <span
-                  className="text-xs ml-1"
-                  style={{ color: "var(--text-faint)" }}
-                >
-                  {book.rating.toFixed(1)}
-                </span>
-              </div>
-
-              <p
-                className="text-base sm:text-lg leading-relaxed mb-7 max-w-xl"
-                style={{ color: "var(--text-primary)", opacity: 0.9 }}
-              >
-                {book.description}
-              </p>
-
-              {/* Primary CTAs — two routes: short (our analysis) or long (buy the book) */}
-              <div className="flex flex-wrap items-center gap-2.5">
-                {book.summary && (
-                  <a href="#short-route" className="btn-primary group">
-                    The short route
-                    <ArrowUpRight
-                      size={12}
-                      strokeWidth={1.8}
-                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    />
-                  </a>
-                )}
-                <a
-                  href={amazonUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={book.summary ? "btn-accent-soft group" : "btn-accent group"}
-                >
-                  <ShoppingCart size={14} strokeWidth={1.8} />
-                  The long route — Buy on Amazon
-                  <ArrowUpRight
-                    size={12}
-                    strokeWidth={1.8}
-                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </a>
+            <div className="flex items-center justify-between flex-wrap gap-4 mt-6">
+              <Byline label="Reviewed" date={SITE_LAST_REVIEWED} />
+              <div className="flex items-center gap-3">
+                <SmartSaveButton
+                  resource={{ id: book.id, title: book.title, author: book.author, category: book.category, link: `/book/${getBookSlug(book)}` }}
+                />
                 <ShareButton
                   title={`${book.title} by ${book.author} — northstar review`}
                   text={`${book.title} by ${book.author}: ${book.description} — northstar's review`}
+                  label="Share"
                   variant="prominent"
                 />
               </div>
-
-              <p className="text-sm mt-3" style={{ color: "var(--text-faint)" }}>
-                The short route — our review and key takeaways, 5 min read. The long route — buy the book on Amazon if you want to go deeper. Both routes work.
-              </p>
             </div>
-          </section>
 
-          {/* Two-column: author photo + tags */}
-          <section
-            className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 flex justify-center"
-            style={{ borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-5 sm:gap-7 items-start">
-              <div className="flex-shrink-0">
-                {/* Author avatar slot — fixed-size box that always reserves
-                    space. Initials gradient renders as a base; Wikipedia
-                    photo overlays absolutely when (and if) it loads, so
-                    there's no CLS from the swap. */}
-                <div
-                  className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden"
-                  style={{
-                    aspectRatio: "1 / 1",
-                    background:
-                      "linear-gradient(135deg, var(--brand-primary), #8B0000)",
-                    border: "2px solid var(--card-bg)",
-                    boxShadow: "0 0 0 1px var(--card-border)",
-                  }}
-                >
-                  <span className="absolute inset-0 flex items-center justify-center text-2xl sm:text-3xl font-bold text-white">
-                    {book.author
-                      .split(" ")
-                      .map((p) => p[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </span>
-                  {authorPhoto.url && !authorPhoto.failed && (
-                    <Image
-                      src={authorPhoto.url}
-                      alt={`${book.author} — author of ${book.title}`}
-                      priority
-                      width={112}
-                      height={112}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-              </div>
-
+            {/* Cover tile + buy routes */}
+            <div className="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-6 mt-8 items-start">
+              <EdCard href={amazonUrl} external ariaLabel={`${book.title} on Amazon`}>
+                <Tile tint={tintAt(0)} minH={260} chip={String(book.year)} title={book.title} size="s" img={cover} />
+              </EdCard>
               <div>
-                <p
-                  className="eyebrow mb-2"
-                  style={{ color: "var(--brand-primary)" }}
-                >
-                  About the author
+                <p className="progress mb-2">By {book.author}</p>
+                <div className="flex flex-wrap items-center gap-2.5">
+                  {book.summary && (
+                    <a href="#short-route" className="btn-primary">
+                      The short route
+                    </a>
+                  )}
+                  <a href={amazonUrl} target="_blank" rel="noopener noreferrer" className="btn-accent">
+                    <ShoppingCart size={14} strokeWidth={1.8} />
+                    Buy on Amazon
+                    <ArrowUpRight size={12} strokeWidth={1.8} />
+                  </a>
+                </div>
+                <p className="serif mt-3" style={{ color: "var(--text-muted)", fontSize: "1rem", lineHeight: 1.45 }}>
+                  The short route — our review and takeaways, 5 min. The long route — buy the book if you want to go deeper. Both work.
                 </p>
-                <p
-                  className="text-lg sm:text-xl font-semibold mb-3"
-                  style={{
-                    color: "var(--text-primary)",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {book.author}
-                </p>
-                {/* Tags */}
-                <div
-                  className="flex flex-wrap items-center gap-2 py-6 mt-4"
-                  style={{ borderTop: "1.5px solid var(--card-border)" }}
-                >
-                  <span className="eyebrow mr-2">Tags</span>
-                  {book.tags.map((tag) => (
-                    <Link
-                      key={tag}
-                      href={`/?q=${encodeURIComponent(tag)}`}
-                      className="text-xs px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
-                      style={{
-                        background: solidColorFor(tag),
-                        color: "#ffffff",
-                      }}
-                    >
-                      #{tag}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Summary section — "The short route" */}
-          <section
-            id="short-route"
-            className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
-            style={{ borderBottom: "1.5px solid var(--card-border)" }}
-          >
-            <div className="w-full max-w-4xl">
-              <p
-                className="eyebrow mb-3"
-                style={{ color: "var(--brand-primary)", opacity: 0.85 }}
-              >
-                The short route
-              </p>
-              <h2
-                className="text-2xl sm:text-3xl font-semibold mb-3"
-                style={{
-                  color: "var(--text-primary)",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                northstar&apos;s take on this book
-              </h2>
-              <div className="mb-7">
-                <Byline label="Reviewed" date={SITE_LAST_REVIEWED} />
-              </div>
-
-              {book.summary ? (
-                <div className="space-y-6 sm:space-y-7">
-                  {/* Analysis — multi-paragraph original commentary.
-                      Engagement block injected at ~40% so anonymous readers
-                      see newsletter; engaged users see related-book recs. */}
-                  <div className="space-y-4">
-                    {book.summary.analysis.map((para, i) => {
-                      const injectAfter = Math.max(2, Math.floor(book.summary!.analysis.length * 0.4));
-                      return (
-                        <div key={i}>
-                          <p
-                            className="text-base sm:text-lg lg:text-xl leading-[1.85] mb-8"
-                            style={{ color: "var(--text-primary)", opacity: 0.9 }}
-                          >
-                            {para}
-                          </p>
-                          {i === injectAfter && (
-                            <div className="my-6">
-                              <SmartEngagementBlock
-                                fromType="book"
-                                fromSlug={getBookSlug(book)}
-                                newsletterHeadline="Like this review? Get the next book breakdown in your inbox."
-                                newsletterSubhead="One book or case study every few days — the short route, with the takeaways and our honest read. Free."
-                                recommendations={relatedBooks.slice(0, 3).map((b) => ({
-                                  type: "book",
-                                  slug: getBookSlug(b),
-                                  title: b.title,
-                                  eyebrow: `${b.category} · ${b.author}`,
-                                  href: `/book/${getBookSlug(b)}`,
-                                }))}
-                              />
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  {/* Key concepts */}
-                  <div>
-                    <h3
-                      className="text-base sm:text-lg font-semibold mb-3"
-                      style={{
-                        color: "var(--text-primary)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      Key concepts
-                    </h3>
-                    <ul className="space-y-3">
-                      {book.summary.keyConcepts.map((c, i) => (
-                        <li
-                          key={i}
-                          className="flex gap-3 text-sm sm:text-base leading-relaxed"
-                        >
-                          <span
-                            className="flex-shrink-0 mt-2 w-1 h-1 rounded-full"
-                            style={{ background: "var(--brand-primary)" }}
-                          />
-                          <span>
-                            <span
-                              className="font-semibold"
-                              style={{ color: "var(--text-primary)" }}
-                            >
-                              {c.name}
-                            </span>
-                            <span style={{ color: "var(--text-muted)" }}>
-                              {" — "}
-                              {c.explanation}
-                            </span>
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Who should read it */}
-                  <div>
-                    <h3
-                      className="text-base sm:text-lg font-semibold mb-2"
-                      style={{
-                        color: "var(--text-primary)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      Who should read it
-                    </h3>
-                    <p
-                      className="text-sm sm:text-base leading-relaxed"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {book.summary.whoShouldRead}
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div
-                  className="surface p-6 sm:p-7"
-                  style={{ borderRadius: 12 }}
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <BookOpen
-                      size={18}
-                      strokeWidth={1.6}
-                      style={{ color: "var(--brand-primary)" }}
-                    />
-                    <p
-                      className="text-sm font-semibold"
-                      style={{
-                        color: "var(--text-primary)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      Summary coming soon
-                    </p>
-                  </div>
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    We&apos;re writing northstar&apos;s take on this one — what makes it
-                    worth reading, the key concepts it introduces, and who
-                    should add it to their shelf. Subscribe to the newsletter
-                    to get notified when it&apos;s live.
-                  </p>
-                </div>
-              )}
-
-              <div className="mt-8">
-                <a
-                  href={amazonUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-accent group"
-                >
-                  <ShoppingCart size={14} strokeWidth={1.8} />
-                  Get the book on Amazon
-                  <ArrowUpRight
-                    size={12}
-                    strokeWidth={1.8}
-                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                {authorPhoto.url && !authorPhoto.failed && (
+                  <img
+                    src={authorPhoto.url}
+                    alt={`${book.author}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className="mt-4 rounded-full object-cover"
+                    style={{ width: 64, height: 64, border: "1.5px solid var(--hair)" }}
                   />
-                </a>
+                )}
               </div>
             </div>
-          </section>
 
+            {/* The short route — northstar's take */}
+            <SectionHead title="The short route" className="mt-10" />
+            <p className="shead-sub">northstar&apos;s take on this book — what it argues, and who it&apos;s really for.</p>
 
-          {/* FAQ — captures 'Is X worth reading?' / 'Who should read X?'
-              People-Also-Ask surfaces. Generated from the review text. */}
-          {faqs.length > 0 && (
-            <section
-              className="px-4 sm:px-8 lg:px-12"
-              style={{ borderBottom: "1.5px solid var(--card-border)" }}
-            >
-              <div className="max-w-3xl">
-                <BookFaqs faqs={faqs} />
-              </div>
-            </section>
-          )}
+            {book.summary ? (
+              <>
+                {book.summary.analysis.map((para, i) => (
+                  <div key={i}>
+                    <p className="markdown-prose case-para" style={{ fontSize: "1.18rem", lineHeight: 1.72, color: "var(--text-primary)", marginBottom: "1.4rem" }}>
+                      {para}
+                    </p>
+                    {i === injectAfter && (
+                      <div className="my-8">
+                        <SmartEngagementBlock
+                          fromType="book"
+                          fromSlug={getBookSlug(book)}
+                          newsletterHeadline="Like this review? Get the next book breakdown in your inbox."
+                          newsletterSubhead="One book or case study every few days — the short route, with the takeaways and our honest read. Free."
+                          recommendations={relatedBooks.slice(0, 3).map((b) => ({
+                            type: "book",
+                            slug: getBookSlug(b),
+                            title: b.title,
+                            eyebrow: `${b.category} · ${b.author}`,
+                            href: `/book/${getBookSlug(b)}`,
+                          }))}
+                        />
+                      </div>
+                    )}
+                  </div>
+                ))}
 
-          {/* Related case studies (only if summary explicitly links them) */}
-          {relatedCaseStudies.length > 0 && (
-            <section
-              className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14"
-              style={{ borderBottom: "1.5px solid var(--card-border)" }}
-            >
-              <div className="max-w-5xl">
-                <p
-                  className="eyebrow mb-3"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  See it in practice
+                <div className="drillcard mt-8" style={{ maxWidth: "100%" }}>
+                  <div className="railhead">Key concepts</div>
+                  <ul className="space-y-3 mt-1">
+                    {book.summary.keyConcepts.map((c, i) => (
+                      <li key={i} className="serif" style={{ fontSize: "1.08rem", lineHeight: 1.55, color: "var(--text-muted)" }}>
+                        <strong style={{ color: "var(--text-primary)" }}>{c.name}</strong> — {c.explanation}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <SectionHead title="Who should read it" />
+                <p className="serif" style={{ fontSize: "1.18rem", lineHeight: 1.6, color: "var(--text-muted)" }}>
+                  {book.summary.whoShouldRead}
                 </p>
-                <h2
-                  className="text-xl sm:text-2xl font-semibold mb-5 sm:mb-6"
-                  style={{
-                    color: "var(--text-primary)",
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  Case studies that demonstrate the ideas
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                  {relatedCaseStudies.map((cs) => (
-                    <Link
-                      key={cs.id}
-                      href={`/case-study/${getCaseStudySlug(cs.id)}`}
-                      className="playlist-card surface p-4 group"
-                      style={
-                        {
-                          ["--accent-color" as any]: "var(--brand-primary)",
-                        } as React.CSSProperties
-                      }
-                    >
-                      <p
-                        className="text-sm font-medium uppercase tracking-wider mb-1.5"
-                        style={{ color: "var(--text-muted)" }}
-                      >
-                        {cs.category}
-                      </p>
-                      <p
-                        className="text-sm font-semibold leading-snug line-clamp-2"
-                        style={{
-                          color: "var(--text-primary)",
-                          letterSpacing: "-0.01em",
-                        }}
-                      >
-                        {cs.title}
-                      </p>
-                    </Link>
+              </>
+            ) : (
+              <div className="drillcard" style={{ maxWidth: "100%" }}>
+                <div className="railhead">Summary coming soon</div>
+                <p className="serif" style={{ color: "var(--text-muted)", fontSize: "1.08rem", lineHeight: 1.5 }}>
+                  We&apos;re writing northstar&apos;s take on this one. Subscribe to the newsletter to get notified when it&apos;s live.
+                </p>
+              </div>
+            )}
+
+            <div className="play mt-10">
+              <div className="lab">The long route</div>
+              <p>
+                Want the full argument? Read the book.{" "}
+                <a href={amazonUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#fff", textDecoration: "underline" }}>
+                  Get it on Amazon →
+                </a>
+              </p>
+            </div>
+
+            {faqs.length > 0 && <BookFaqs faqs={faqs} />}
+
+            {relatedCaseStudies.length > 0 && (
+              <>
+                <SectionHead title="See it in practice" count={relatedCaseStudies.length} />
+                <p className="shead-sub">Case studies that demonstrate these ideas.</p>
+                <div className="grid3">
+                  {relatedCaseStudies.map((cs, i) => (
+                    <EdCard key={cs.id} href={`/case-study/${getCaseStudySlug(cs.id)}`}>
+                      <Tile tint={tintAt(i)} minH={240} chip={cs.category} title={cs.title} size="m" brand={cs.company} />
+                      <Cap k={`${cs.category} · ${cs.company}`} />
+                    </EdCard>
                   ))}
                 </div>
-              </div>
-            </section>
-          )}
+              </>
+            )}
 
-          {/* Related books */}
-          <section className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14">
-            <div className="max-w-5xl">
-              <p
-                className="eyebrow mb-3"
-                style={{ color: "var(--text-muted)" }}
-              >
-                More in {book.category}
-              </p>
-              <h2
-                className="text-xl sm:text-2xl font-semibold mb-5 sm:mb-6"
-                style={{
-                  color: "var(--text-primary)",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Other books in this category
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="mt-12 flex flex-wrap gap-2.5">
+              <Link href="/book" className="btn-primary">
+                All book reviews →
+              </Link>
+              <Link href="/#casestudies" className="btn-ghost">
+                Browse case studies
+              </Link>
+            </div>
+          </article>
+
+          <aside className="rail">
+            <div className="railcard">
+              <div className="railhead">At a glance</div>
+              <div className="statrow">
+                <span className="sn">{book.rating.toFixed(1)}</span>
+                <span className="sl">northstar rating</span>
+              </div>
+              <div className="statrow">
+                <span className="sn">{book.pages}</span>
+                <span className="sl">Pages</span>
+              </div>
+              <div className="statrow">
+                <span className="sn">{book.year}</span>
+                <span className="sl">Published</span>
+              </div>
+              <div className="statrow">
+                <span className="sn">{book.category}</span>
+                <span className="sl">Shelf</span>
+              </div>
+            </div>
+
+            {relatedBooks.length > 0 && (
+              <div className="railcard">
+                <div className="railhead">More in {book.category}</div>
                 {relatedBooks.map((b) => (
-                  <Link
-                    key={b.id}
-                    href={`/book/${getBookSlug(b)}`}
-                    className="playlist-card surface p-4 sm:p-5 group"
-                    style={
-                      {
-                        ["--accent-color" as any]: "var(--brand-primary)",
-                      } as React.CSSProperties
-                    }
-                  >
-                    <p
-                      className="text-sm font-medium uppercase tracking-wider mb-2"
-                      style={{
-                        color: "var(--brand-primary)",
-                        opacity: 0.85,
-                      }}
-                    >
-                      {b.category}
-                    </p>
-                    <p
-                      className="text-sm font-semibold leading-snug mb-1"
-                      style={{
-                        color: "var(--text-primary)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {b.title}
-                    </p>
-                    <p
-                      className="text-xs"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      by {b.author}
-                    </p>
+                  <Link key={b.id} href={`/book/${getBookSlug(b)}`} className="rellink">
+                    {b.title} →
                   </Link>
                 ))}
               </div>
-
-              <div className="mt-8">
-                <Link href="/" className="btn-ghost inline-flex">
-                  Browse all books
-                  <ArrowUpRight size={12} strokeWidth={1.6} />
-                </Link>
-              </div>
-            </div>
-          </section>
-          <Footer />
-        </main>
+            )}
+          </aside>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </SidebarShell>
   );
 }

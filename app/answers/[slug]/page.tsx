@@ -8,6 +8,7 @@ import { publishedComparisons } from "@/data/comparisons";
 import { SidebarShell } from "@/components/SidebarShell";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
+import { BigDiv, Pill, EdCard, Tile, Cap, SectionHead, VsBox, FaqList, clip, splitVs, tintAt, fmtDate } from "@/components/Editorial";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -73,14 +74,7 @@ export default function AnswerPage({ params }: PageProps) {
     .slice(0, 4);
 
   return (
-    <SidebarShell
-      activeNav="answers"
-      backHref="/answers"
-      backLabelDesktop="All answers"
-      backLabelMobile="Answers"
-      shareTitle={answer.question}
-      shareText={answer.shortAnswer}
-    >
+    <SidebarShell activeNav="answers">
       {/* Structured data.
           This was QAPage, which is the wrong type: Google defines it as a
           page carrying one question with *user-submitted* answers — a
@@ -145,168 +139,118 @@ export default function AnswerPage({ params }: PageProps) {
         }}
       />
 
-      <article className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center">
-        <div className="w-full max-w-3xl">
-          <Breadcrumbs
-            className="mb-6"
-            items={[
-              { label: "northstar", href: "/" },
-              { label: "Answers", href: "/answers" },
-              { label: answer.question },
-            ]}
-          />
+      <div className="site-inner pb-16">
+        <Breadcrumbs
+          className="pt-6"
+          items={[
+            { label: "northstar", href: "/" },
+            { label: "Answers", href: "/answers" },
+            { label: answer.question },
+          ]}
+        />
+        <BigDiv>Straight answer · {answer.category}</BigDiv>
 
-          <div className="flex items-center gap-2.5 mb-4">
-            <span className="w-5 h-px" style={{ background: answer.accentColor }} />
-            <span
-              className="text-sm font-mono uppercase"
-              style={{ color: answer.accentColor, letterSpacing: "0.16em" }}
-            >
-              {answer.category}
-            </span>
-          </div>
+        <div className="story-grid">
+          <article className="read-wrap">
+            <div className="flex flex-wrap items-center gap-3">
+              <Pill>{answer.category}</Pill>
+              <span className="progress">Reviewed {fmtDate(answer.updatedAt)}</span>
+            </div>
 
-          <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.06] mb-7"
-            style={{ color: "var(--text-primary)", letterSpacing: "-0.03em" }}
-          >
-            {answer.question}
-          </h1>
+            <h1 className="t">{answer.question}</h1>
 
-          {/* The citable unit. Visually distinct and first in the DOM after
-              the H1, so it's the passage a model lifts. */}
-          <div
-            className="p-5 sm:p-6 rounded-lg mb-9"
-            style={{
-              background: "var(--card-bg)",
-              border: "1.5px solid var(--card-border)",
-              borderLeftWidth: "3px",
-              borderLeftColor: answer.accentColor,
-            }}
-          >
-            <p
-              className="text-base sm:text-lg leading-relaxed"
-              style={{ color: "var(--text-primary)" }}
-            >
-              {answer.shortAnswer}
-            </p>
-          </div>
+            {/* The citable unit. Visually distinct and first in the DOM after
+                the H1, so it's the passage a model lifts. */}
+            <div className="play">
+              <div className="lab">Short answer</div>
+              <p>{answer.shortAnswer}</p>
+            </div>
 
-          <div
-            className="answer-prose text-base leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: answer.bodyHtml }}
-          />
+            <div className="answer-prose text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: answer.bodyHtml }} />
 
-          {related.length > 0 && (
-            <section className="mt-12 pt-8" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-              <h2
-                className="text-xl font-semibold mb-1"
-                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-              >
-                Seen in practice
-              </h2>
-              <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
-                Case studies where this shows up as a real decision, not a definition.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {related.map((c) => (
-                  <Link
-                    key={c.id}
-                    href={`/case-study/${getCaseStudySlug(c.id)}`}
-                    className="playlist-card surface p-4 group"
-                  >
-                    <p
-                      className="text-xs font-mono uppercase tracking-wider mb-1.5"
-                      style={{ color: "var(--text-faint)" }}
-                    >
-                      {c.company}
-                    </p>
-                    <p
-                      className="text-sm font-semibold leading-snug group-hover:underline"
-                      style={{ color: "var(--text-primary)" }}
-                    >
-                      {c.title}
-                    </p>
-                  </Link>
-                ))}
+            {related.length > 0 && (
+              <>
+                <SectionHead title="Seen in practice" count={related.length} />
+                <p className="shead-sub">Case studies where this shows up as a real decision, not a definition.</p>
+                <div className="grid3">
+                  {related.map((c, i) => (
+                    <EdCard key={c.id} href={`/case-study/${getCaseStudySlug(c.id)}`}>
+                      <Tile tint={tintAt(i)} minH={240} chip={String(c.year)} title={c.title} size="m" brand={c.company} />
+                      <Cap k={`${c.category} · ${c.company}`} title={clip(c.outcome, 80)} />
+                    </EdCard>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {answer.faqs && answer.faqs.length > 0 && <FaqList faqs={answer.faqs} title="Related questions" />}
+
+            {relatedCompare.length > 0 && (
+              <>
+                <SectionHead title="Head-to-Head" />
+                <div className="heads">
+                  {relatedCompare.map((c) => {
+                    const { a, b } = splitVs(c.title);
+                    return <VsBox key={c.slug} a={a} b={b} m={c.eyebrow} href={`/compare/${c.slug}`} />;
+                  })}
+                </div>
+              </>
+            )}
+
+            <div className="mt-12 flex flex-wrap gap-2.5">
+              <Link href="/answers" className="btn-primary">
+                All answers →
+              </Link>
+              <Link href="/#casestudies" className="btn-ghost">
+                Browse case studies
+              </Link>
+            </div>
+          </article>
+
+          <aside className="rail">
+            <div className="railcard">
+              <div className="railhead">At a glance</div>
+              <div className="statrow">
+                <span className="sn">{answer.category}</span>
+                <span className="sl">Category</span>
               </div>
-            </section>
-          )}
-
-          {answer.faqs && answer.faqs.length > 0 && (
-            <section className="mt-12 pt-8" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-              <h2
-                className="text-xl font-semibold mb-5"
-                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-              >
-                Related questions
-              </h2>
-              <div className="flex flex-col gap-4">
-                {answer.faqs.map((f) => (
-                  <div key={f.question}>
-                    <h3 className="text-base font-semibold mb-1.5" style={{ color: "var(--text-primary)" }}>
-                      {f.question}
-                    </h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                      {f.answer}
-                    </p>
-                  </div>
-                ))}
+              <div className="statrow">
+                <span className="sn">{related.length}</span>
+                <span className="sl">Case studies cited</span>
               </div>
-            </section>
-          )}
+              <div className="statrow">
+                <span className="sn">{fmtDate(answer.updatedAt)}</span>
+                <span className="sl">Last reviewed</span>
+              </div>
+            </div>
 
-          {siblings.length > 0 && (
-            <section className="mt-12 pt-8" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-              <h2
-                className="text-xl font-semibold mb-5"
-                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-              >
-                More on {answer.category.toLowerCase()}
-              </h2>
-              <div className="flex flex-col gap-2">
+            {siblings.length > 0 && (
+              <div className="railcard">
+                <div className="railhead">More on {answer.category.toLowerCase()}</div>
                 {siblings.map((s) => (
-                  <Link
-                    key={s.slug}
-                    href={`/answers/${s.slug}`}
-                    className="text-sm hover:underline"
-                    style={{ color: s.accentColor }}
-                  >
+                  <Link key={s.slug} href={`/answers/${s.slug}`} className="rellink">
                     {s.question} →
                   </Link>
                 ))}
               </div>
-            </section>
-          )}
+            )}
 
-          {relatedCompare.length > 0 && (
-            <section className="mt-12 pt-8" style={{ borderTop: "1.5px solid var(--card-border)" }}>
-              <h2
-                className="text-xl font-semibold mb-5"
-                style={{ color: "var(--text-primary)", letterSpacing: "-0.02em" }}
-              >
-                Head-to-head
-              </h2>
-              <div className="flex flex-col gap-2">
-                {relatedCompare.map((c) => (
-                  <Link
-                    key={c.slug}
-                    href={`/compare/${c.slug}`}
-                    className="text-sm hover:underline"
-                    style={{ color: c.accentColor }}
-                  >
-                    {c.title} →
-                  </Link>
-                ))}
+            {relatedCompare.length > 0 && (
+              <div className="railcard">
+                <div className="railhead">Head-to-head</div>
+                {relatedCompare.map((c) => {
+                  const { a, b } = splitVs(c.title);
+                  return (
+                    <Link key={c.slug} href={`/compare/${c.slug}`} className="rellink">
+                      {b ? `${a} vs ${b}` : a} →
+                    </Link>
+                  );
+                })}
               </div>
-            </section>
-          )}
-
-          <p className="mt-10 text-xs font-mono" style={{ color: "var(--text-faint)" }}>
-            Last reviewed {answer.updatedAt}
-          </p>
+            )}
+          </aside>
         </div>
-      </article>
+      </div>
 
       <Footer />
     </SidebarShell>

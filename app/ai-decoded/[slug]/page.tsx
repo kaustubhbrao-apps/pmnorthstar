@@ -1,15 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock } from "lucide-react";
-import { getAIDecodedArticleBySlug } from "@/lib/ai-decoded";
+import { getAIDecodedArticleBySlug, getAllAIDecodedArticles } from "@/lib/ai-decoded";
 import { Footer } from "@/components/Footer";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Byline } from "@/components/Byline";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { SidebarShell } from "@/components/SidebarShell";
-import { solidColorFor } from "@/lib/category-colors";
 import { ViewCounter } from "@/components/ViewCounter";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
+import { BigDiv, Pill, FaqList, fmtDate } from "@/components/Editorial";
 
 // ISR: re-render hourly so a scheduled (future-dated) article goes live on
 // its publishedAt date without a redeploy.
@@ -26,10 +26,7 @@ export const revalidate = 21600;
 
 // Split rendered HTML at the </p> tag closest to `ratio` through the
 // article so we can inject a CTA mid-read. Keeps both halves valid HTML.
-function splitHtmlAtParagraph(
-  html: string,
-  ratio: number,
-): [string, string] {
+function splitHtmlAtParagraph(html: string, ratio: number): [string, string] {
   const positions: number[] = [];
   const closeTag = "</p>";
   let idx = html.indexOf(closeTag);
@@ -38,215 +35,137 @@ function splitHtmlAtParagraph(
     idx = html.indexOf(closeTag, idx + closeTag.length);
   }
   if (positions.length < 3) return [html, ""];
-  const splitIdx =
-    positions[Math.max(1, Math.floor(positions.length * ratio))];
+  const splitIdx = positions[Math.max(1, Math.floor(positions.length * ratio))];
   return [html.slice(0, splitIdx), html.slice(splitIdx)];
 }
 
-export default function AIDecodedArticlePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function AIDecodedArticlePage({ params }: { params: { slug: string } }) {
   const article = getAIDecodedArticleBySlug(params.slug);
   if (!article) notFound();
   const fm = article.frontmatter;
 
+  // Neighbours for the rail: other published pieces, newest first.
+  const more = getAllAIDecodedArticles()
+    .filter((a) => a.frontmatter.slug !== fm.slug)
+    .slice(0, 6);
+
+  const [firstHalf, secondHalf] = splitHtmlAtParagraph(article.htmlContent, 0.4);
+
   return (
-    <SidebarShell
-      backHref="/"
-      backLabelDesktop="Back to the library"
-      shareTitle={fm.title}
-      shareText={`${fm.title} (northstar's take)`}
-    >
-      {/* Hero */}
-      <section
-        className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 flex justify-center"
-        style={{ borderBottom: "1.5px solid var(--card-border)" }}
-      >
-        <div className="w-full max-w-4xl">
-          <Breadcrumbs
-            className="mb-6"
-            items={[
-              { label: "northstar", href: "/" },
-              { label: "AI Decoded", href: "/ai-decoded" },
-              { label: fm.title },
-            ]}
-          />
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <span
-              className="inline-block text-sm font-bold uppercase px-2.5 py-1 rounded-md"
-              style={{
-                background: solidColorFor(fm.category),
-                color: "#ffffff",
-                letterSpacing: "0.12em",
-              }}
-            >
-              {fm.category}
-            </span>
-            <span className="meta-mono inline-flex items-center gap-1 text-sm">
-              <Clock size={12} strokeWidth={1.6} />
-              {article.readTime} min read
-            </span>
-            <span className="meta-mono text-sm">
-              {new Date(fm.publishedAt).toLocaleDateString("en-IN", {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              })}
-            </span>
-            <span className="w-px h-3 hidden sm:inline-block" style={{ background: "var(--card-border)" }} />
-            <ViewCounter path={`/ai-decoded/${params.slug}`} className="meta-mono text-sm text-[var(--text-faint)]" />
-          </div>
+    <SidebarShell>
+      <div className="site-inner pb-16">
+        <Breadcrumbs
+          className="pt-6"
+          items={[
+            { label: "northstar", href: "/" },
+            { label: "AI Decoded", href: "/ai-decoded" },
+            { label: fm.title },
+          ]}
+        />
+        <BigDiv>AI Decoded · {article.readTime} min read</BigDiv>
 
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6"
-            style={{
-              color: "var(--text-primary)",
-              letterSpacing: "-0.03em",
-            }}
-          >
-            {fm.title}
-          </h1>
+        <div className="story-grid">
+          <article className="read-wrap">
+            <div className="flex flex-wrap items-center gap-3">
+              <Pill>AI Decoded · {fm.category}</Pill>
+              <span className="progress">
+                {article.readTime} min · {fmtDate(fm.publishedAt)}
+              </span>
+              <ViewCounter path={`/ai-decoded/${params.slug}`} className="progress" />
+            </div>
 
-          <p
-            className="text-base sm:text-lg lg:text-xl leading-relaxed mb-6 max-w-3xl"
-            style={{ color: "var(--text-muted)" }}
-          >
-            {fm.excerpt}
-          </p>
+            <h1 className="t">{fm.title}</h1>
+            <p className="lede">{fm.excerpt}</p>
 
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <Byline label="Written" date={fm.updatedAt ?? fm.publishedAt} />
-            <SmartSaveButton resource={{
-              id: fm.slug,
-              title: fm.title,
-              author: "northstar editorial",
-              category: fm.category,
-              link: `/ai-decoded/${fm.slug}`
-            }} />
-          </div>
-        </div>
-      </section>
-
-      {/* Hero image */}
-      {fm.heroImage && (
-        <section
-          className="px-4 sm:px-8 lg:px-12 py-8 flex justify-center"
-          style={{ borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="w-full max-w-4xl">
-            <figure>
-              <Image
-                src={fm.heroImage.src}
-                alt={fm.heroImage.alt}
-                width={1200}
-                height={675}
-                priority
-                className="w-full h-auto rounded-xl"
-                style={{ aspectRatio: "16 / 9", objectFit: "cover" }}
+            <div className="flex items-center justify-between flex-wrap gap-4 mt-6">
+              <Byline label="Written" date={fm.updatedAt ?? fm.publishedAt} />
+              <SmartSaveButton
+                resource={{
+                  id: fm.slug,
+                  title: fm.title,
+                  author: "northstar editorial",
+                  category: fm.category,
+                  link: `/ai-decoded/${fm.slug}`,
+                }}
               />
-              {fm.heroImage.credit && (
-                <figcaption
-                  className="text-xs mt-2"
-                  style={{ color: "var(--text-faint)" }}
-                >
-                  {fm.heroImage.credit}
-                </figcaption>
-              )}
-            </figure>
-          </div>
-        </section>
-      )}
+            </div>
 
-      {/* Article body — split at ~40% to inject a newsletter CTA mid-read */}
-      {(() => {
-        const [firstHalf, secondHalf] = splitHtmlAtParagraph(
-          article.htmlContent,
-          0.4,
-        );
-        return (
-          <>
-            <section
-              className="px-4 sm:px-8 lg:px-12 pt-10 sm:pt-14 flex justify-center"
-              style={
-                secondHalf
-                  ? undefined
-                  : { borderBottom: "1.5px solid var(--card-border)", paddingBottom: "2.5rem" }
-              }
-            >
-              <div
-                className="w-full max-w-4xl article-prose"
-                dangerouslySetInnerHTML={{ __html: firstHalf }}
-              />
-            </section>
+            {fm.heroImage && (
+              <figure className="mt-8">
+                <Image
+                  src={fm.heroImage.src}
+                  alt={fm.heroImage.alt}
+                  width={1200}
+                  height={675}
+                  priority
+                  className="w-full h-auto"
+                  style={{ aspectRatio: "16 / 9", objectFit: "cover", borderRadius: 18, border: "1.5px solid var(--hair)" }}
+                />
+                {fm.heroImage.credit && (
+                  <figcaption className="progress mt-2" style={{ textTransform: "none", letterSpacing: 0 }}>
+                    {fm.heroImage.credit}
+                  </figcaption>
+                )}
+              </figure>
+            )}
+
+            <div className="article-prose mt-8" dangerouslySetInnerHTML={{ __html: firstHalf }} />
             {secondHalf && (
               <>
-                <section className="px-4 sm:px-8 lg:px-12 py-8 flex justify-center">
-                  <div className="w-full max-w-4xl">
-                    <SubscribeForm
-                      variant="card"
-                      surface="ai-decoded-article"
-                      headline="Like this decoded read? Get the next one in your inbox."
-                      subhead="One sharp take on the latest in AI for PMs, founders and operators. Every few days. Free."
-                    />
-                  </div>
-                </section>
-                <section
-                  className="px-4 sm:px-8 lg:px-12 pb-10 sm:pb-14 flex justify-center"
-                  style={{ borderBottom: "1.5px solid var(--card-border)" }}
-                >
-                  <div
-                    className="w-full max-w-4xl article-prose"
-                    dangerouslySetInnerHTML={{ __html: secondHalf }}
+                <div className="my-10 max-w-2xl">
+                  <SubscribeForm
+                    variant="card"
+                    surface="ai-decoded-article"
+                    headline="Like this decoded read? Get the next one in your inbox."
+                    subhead="One sharp take on the latest in AI for PMs, founders and operators. Every few days. Free."
                   />
-                </section>
+                </div>
+                <div className="article-prose" dangerouslySetInnerHTML={{ __html: secondHalf }} />
               </>
             )}
-          </>
-        );
-      })()}
 
-      {/* FAQ — AEO surface */}
-      {fm.faqs && fm.faqs.length > 0 && (
-        <section
-          className="px-4 sm:px-8 lg:px-12 py-10 sm:py-14 flex justify-center"
-          style={{ borderBottom: "1.5px solid var(--card-border)" }}
-        >
-          <div className="w-full max-w-4xl">
-            <h2
-              className="text-2xl sm:text-3xl font-semibold mb-6"
-              style={{
-                color: "var(--text-primary)",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Frequently asked
-            </h2>
-            <div className="space-y-5">
-              {fm.faqs.map((faq, i) => (
-                <div key={i}>
-                  <h3
-                    className="text-base sm:text-lg font-semibold mb-2"
-                    style={{
-                      color: "var(--text-primary)",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    {faq.question}
-                  </h3>
-                  <p
-                    className="text-sm sm:text-base leading-relaxed"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
+            {fm.faqs && fm.faqs.length > 0 && <FaqList faqs={fm.faqs} className="mt-6" />}
+
+            <div className="mt-12 flex flex-wrap gap-2.5">
+              <Link href="/ai-decoded" className="btn-primary">
+                More AI Decoded →
+              </Link>
+              <Link href="/#casestudies" className="btn-ghost">
+                Browse case studies
+              </Link>
             </div>
-          </div>
-        </section>
-      )}
+          </article>
+
+          <aside className="rail">
+            <div className="railcard">
+              <div className="railhead">At a glance</div>
+              <div className="statrow">
+                <span className="sn">{article.readTime} min</span>
+                <span className="sl">Read time</span>
+              </div>
+              <div className="statrow">
+                <span className="sn">{fmtDate(fm.publishedAt)}</span>
+                <span className="sl">Published</span>
+              </div>
+              <div className="statrow">
+                <span className="sn">{fm.category}</span>
+                <span className="sl">Lens</span>
+              </div>
+            </div>
+
+            {more.length > 0 && (
+              <div className="railcard">
+                <div className="railhead">More decoded</div>
+                {more.map((a) => (
+                  <Link key={a.frontmatter.slug} href={`/ai-decoded/${a.frontmatter.slug}`} className="rellink">
+                    {a.frontmatter.title} →
+                  </Link>
+                ))}
+              </div>
+            )}
+          </aside>
+        </div>
+      </div>
 
       <Footer />
     </SidebarShell>
