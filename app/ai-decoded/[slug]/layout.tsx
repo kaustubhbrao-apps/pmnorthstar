@@ -98,9 +98,16 @@ export default function AIDecodedArticleLayout({
             articleSection: fm.category,
             keywords: [fm.primaryKeyword, ...fm.longTailKeywords].join(", "),
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
-            ...(fm.heroImage ? { image: fm.heroImage.src } : {}),
+            // The hero image when the piece has one, else the 1200×630 OG card.
+            image: [fm.heroImage ? fm.heroImage.src : `${url}/opengraph-image`],
             wordCount: article.wordCount,
             timeRequired: `PT${article.readTime}M`,
+            isAccessibleForFree: true,
+            inLanguage: "en",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: [".t", ".lede"],
+            },
           }),
         }}
       />

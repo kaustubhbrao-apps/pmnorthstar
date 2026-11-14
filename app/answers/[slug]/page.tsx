@@ -93,6 +93,7 @@ export default function AnswerPage({ params }: PageProps) {
             headline: answer.question,
             description: answer.shortAnswer,
             url,
+            image: [`${url}/opengraph-image`],
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             datePublished: answer.publishedAt ?? answer.updatedAt,
             dateModified: answer.updatedAt,
@@ -100,6 +101,13 @@ export default function AnswerPage({ params }: PageProps) {
             publisher: { "@type": "Organization", name: "northstar", url: SITE_URL },
             articleSection: answer.category,
             inLanguage: "en",
+            isAccessibleForFree: true,
+            // The citable unit: the question and the self-contained short
+            // answer are what a voice assistant or AI engine should lift.
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: [".t", ".play p"],
+            },
             isPartOf: {
               "@type": "CollectionPage",
               name: "Answers",

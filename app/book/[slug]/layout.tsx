@@ -3,6 +3,7 @@ import { clampDescription } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { books, getBookSlug, getBookBySlug } from "@/data/books";
 import { getBookFaqs } from "@/data/bookFaqs";
+import { SITE_LAST_REVIEWED } from "@/lib/site";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://pmnorthstar.in";
 
@@ -90,7 +91,11 @@ export default function BookLayout({
 
   return (
     <>
-      {/* Book schema — Cagan / Inspired itself as an entity */}
+      {/* Book schema — the book itself as an entity. No aggregateRating:
+          these pages carry a single editorial score, and an AggregateRating
+          with ratingCount:1 misrepresents one reviewer as a crowd (and risks
+          a rich-results manual action). The editorial rating lives on the
+          Review node below, which is the honest type for it. */}
       <script
         key="book-schema"
         type="application/ld+json"
@@ -106,12 +111,38 @@ export default function BookLayout({
             genre: book.category,
             description: book.description,
             url,
-            aggregateRating: {
-              "@type": "AggregateRating",
+          }),
+        }}
+      />
+      {/* Review schema — northstar's editorial review of the book, with the
+          single editorial rating as a reviewRating (not a crowd aggregate).
+          Eligible for the review-snippet treatment, and the honest type for
+          a one-author opinion piece. */}
+      <script
+        key="review-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Review",
+            itemReviewed: {
+              "@type": "Book",
+              name: book.title,
+              author: authorEntity,
+              url,
+            },
+            reviewRating: {
+              "@type": "Rating",
               ratingValue: book.rating,
               bestRating: 5,
-              ratingCount: 1, // placeholder until you have real ratings
+              worstRating: 1,
             },
+            author: { "@type": "Organization", name: "northstar", url: SITE_URL },
+            publisher: { "@type": "Organization", name: "northstar", url: SITE_URL },
+            datePublished: SITE_LAST_REVIEWED,
+            reviewBody: book.metaDescription ?? book.description,
+            isAccessibleForFree: true,
+            url,
           }),
         }}
       />

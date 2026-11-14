@@ -23,7 +23,6 @@ import { Byline } from "@/components/Byline";
 import { CASE_STUDIES_LAST_UPDATED } from "@/data/inventory-counts";
 import { SmartEngagementBlock } from "@/components/SmartEngagementBlock";
 import { Footer } from "@/components/Footer";
-import { getCompanyLogoUrl } from "@/data/companyDomains";
 import { ViewCounter } from "@/components/ViewCounter";
 import { SmartSaveButton } from "@/components/SmartSaveButton";
 import { BigDiv, Pill, VsBox, SectionHead, splitVs } from "@/components/Editorial";
@@ -113,7 +112,6 @@ export function CaseStudyClient({
   const paragraphs = study.content.split("\n\n").filter(Boolean);
   const readTime = Math.max(3, Math.ceil(study.content.split(" ").length / 200));
   const indexLabel = String(position).padStart(2, "0");
-  const logoUrl = getCompanyLogoUrl(study.company);
   const slug = getCaseStudySlug(study.id);
 
   // ─── Structured Data (JSON-LD) ──────────────────────────────────────────
@@ -125,7 +123,10 @@ export function CaseStudyClient({
     "@type": "Article",
     headline: study.title,
     description: study.description,
-    image: logoUrl ?? `${SITE_URL}/logo-icon.svg`,
+    // The 1200×630 OG card, not the 128px company favicon — Google rich
+    // results and Discover want a large image. The hashless path resolves to
+    // the same generated PNG.
+    image: [`${studyUrl}/opengraph-image`],
     author: {
       "@type": "Organization",
       name: "northstar editorial",
@@ -155,6 +156,18 @@ export function CaseStudyClient({
     abstract: study.description,
     keywords: study.tags.join(", "),
     articleSection: study.category,
+    wordCount: study.content.split(/\s+/).filter(Boolean).length,
+    timeRequired: `PT${readTime}M`,
+    // The whole site is free and paywall-less — a recognized trust/GEO signal
+    // and simply true for every page here.
+    isAccessibleForFree: true,
+    inLanguage: "en",
+    // The answer-ready passages: the headline, the one-line summary, and the
+    // red result block — what a voice assistant or AI engine should lift.
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".t", ".lede", ".play p"],
+    },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": studyUrl,
