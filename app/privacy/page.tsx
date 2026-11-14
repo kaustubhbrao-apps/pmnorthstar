@@ -67,10 +67,7 @@ export default function PrivacyPage() {
             >
               Privacy Policy
             </h1>
-            <p
-              className="text-sm font-mono"
-              style={{ color: "var(--text-faint)" }}
-            >
+            <p className="progress" style={{ textTransform: "none", letterSpacing: 0 }}>
               Last updated {LAST_UPDATED}
             </p>
           </div>

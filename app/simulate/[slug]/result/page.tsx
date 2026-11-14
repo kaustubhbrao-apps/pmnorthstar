@@ -88,11 +88,8 @@ export default function ResultSharePage({ params, searchParams }: PageProps) {
   return (
     <SidebarShell>
       <div className="px-4 sm:px-6 py-16 sm:py-24 max-w-2xl mx-auto text-center">
-        <p
-          className="text-sm font-mono uppercase mb-5"
-          style={{ color: "var(--brand-primary)", letterSpacing: "0.16em" }}
-        >
-          simulateit · result
+        <p className="progress mb-5" style={{ color: "var(--brand-primary)" }}>
+          SimulateIt · result
         </p>
         <p
           className="font-display font-bold mb-3"

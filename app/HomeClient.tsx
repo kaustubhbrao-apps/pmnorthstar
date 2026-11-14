@@ -19,12 +19,9 @@ import {
   learnCategoryColors,
   LearnFilter,
 } from "@/data/learn";
-import { Sidebar } from "@/components/Sidebar";
-import { TopNav } from "@/components/TopNav";
 import { TopBar } from "@/components/TopBar";
 import { SaveButton } from "@/components/SaveButton";
 import { ResourceCard } from "@/components/ResourceCard";
-import { SectionRow } from "@/components/SectionRow";
 import { EditorialHome } from "@/components/EditorialHome";
 import { EdCard, Tile, Cap, SectionHead, VsBox, fmtDate, clip, tintAt, splitVs } from "@/components/Editorial";
 import { getCaseStudySlug } from "@/data/caseStudySlugs";
@@ -32,7 +29,6 @@ import { photoFor } from "@/data/cardImages";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PlaylistCard } from "@/components/PlaylistCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { MobileNav } from "@/components/MobileNav";
 import { SubscribeForm } from "@/components/SubscribeForm";
 import { AuthModal } from "@/components/AuthModal";
 import { useUserStateContext } from "@/components/UserStateProvider";
