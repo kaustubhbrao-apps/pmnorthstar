@@ -52,6 +52,45 @@ export default function DrillPage({ params }: PageProps) {
   if (!drill) notFound();
   if (new Date(drill.publishedAt) > new Date()) notFound();
 
+  const url = `${SITE_URL}/simulate/${drill.slug}`;
+  const title = drillTitle(drill);
+  const category = normalizeDrillCategory(drill.category);
+
+  // LearningResource is the honest type for these: an interactive,
+  // branching decision simulation you work through, not an article you
+  // read. `teaches` carries the principle the drill is built to land, which
+  // is the citable takeaway an AI engine can surface.
+  const learningSchema = {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: title,
+    description: drillDescription(drill),
+    url,
+    learningResourceType: "Interactive decision simulation",
+    educationalUse: "self-directed practice",
+    educationalLevel: "Professional",
+    teaches: drill.principle,
+    about: { "@type": "Thing", name: category },
+    timeRequired: `PT${drill.estimatedMinutes}M`,
+    image: [`${url}/opengraph-image`],
+    inLanguage: "en",
+    isAccessibleForFree: true,
+    datePublished: drill.publishedAt,
+    author: { "@type": "Organization", name: "northstar", url: SITE_URL },
+    publisher: { "@type": "Organization", name: "northstar", url: SITE_URL },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "northstar", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "SimulateIt", item: `${SITE_URL}/simulate` },
+      { "@type": "ListItem", position: 3, name: title, item: url },
+    ],
+  };
+
   return (
     <SidebarShell
       activeNav="simulate"
@@ -61,6 +100,14 @@ export default function DrillPage({ params }: PageProps) {
       shareTitle={`SimulateIt Drill: ${drillTitle(drill)}`}
       shareText={drill.principle}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(learningSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* SimulatePlayer calls useSearchParams, which opts its whole Suspense
           boundary out of server rendering. The result was that every drill
           page served crawlers ~418 characters — site chrome plus the string
