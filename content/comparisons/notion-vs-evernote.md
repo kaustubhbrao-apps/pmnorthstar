@@ -30,16 +30,24 @@ rows:
     b: "Cross-platform sync (commoditized)"
 ---
 
-Evernote was the original unicorn of productivity software, built on a simple premise: a digital filing cabinet that synced across all your devices. In 2008, before iCloud existed, this was magic. But Evernote failed to realize that as cloud storage became a free commodity provided by Apple and Google, syncing text was no longer a defensible moat. They clung to the static "notebook and note" metaphor, leaving their product isolated as a single-player storage locker.
+**Evernote and Notion were built on opposite ideas about what a productivity tool is, and the gap between them is the gap between a filing cabinet and a building material. Evernote digitized the filing cabinet — notebooks and notes, a place to store what you had already made — and when cloud storage became free, it had no moat left. Notion killed the document entirely and replaced it with the block: a modular primitive that users could assemble into anything. The lesson is that a product users can reshape fits more use cases than any fixed tool ever will, and the structures they build become a switching cost no storage locker can match.**
 
-Notion looked at productivity and realized the fundamental flaw was the format itself. They killed the concept of a "document" and replaced it with a "block." A block could be text, a kanban board, or a row in a relational database. 
+Both started as places to put your stuff. Only one let the stuff become a system.
 
-By making the primitives modular, Notion didn't just build a note-taking app; they built a no-code visual programming language. While Evernote users were struggling to organize tags in a static list, Notion users were building dynamic, multiplayer CRM systems and sprint trackers out of blocks. Notion's architecture allowed it to evolve from a personal utility into the default operating system for entire startups.
+## Storage was a moat until it wasn't
 
-## Why the flexible tool won
+Evernote was the original productivity unicorn, built in 2008 on a premise that felt like magic before iCloud existed: a digital filing cabinet synced across every device. But syncing text stopped being defensible the moment Apple and Google gave cloud storage away for free, and Evernote never escaped the static "notebook and note" metaphor. It remained, in effect, a single-player storage locker — excellent at capture, stuck at everything after. A product whose entire value is holding files is a product waiting for a platform to commoditize it.
 
-Evernote nailed one job — capture — and then struggled to become more than a filing cabinet. Notion made the opposite bet: ship flexible *building blocks* and let users assemble whatever tool they needed, so the product expanded with its users instead of boxing them in. That flexibility is also a switching-cost moat — leaving Notion means migrating structured, interlinked knowledge, not just files. See [how Notion built the all-in-one workspace](/case-study/notion-all-in-one-workspace) and [Evernote's filing-cabinet trap](/case-study/evernote-filing-cabinet).
+## Blocks turned a note-taker into a building material
 
-It's worth noting Notion itself nearly died and rebuilt from scratch — a reminder that a [pivot](/answers/what-is-a-pivot) or hard reset is sometimes the only way forward. The same "flexible platform beats fixed app" dynamic shows up in [Dropbox vs Notion](/compare/dropbox-vs-notion) and [Notion vs Slack](/compare/notion-vs-slack), and connects to [design as a moat](/topics/product-design).
+Notion looked at the same category and decided the flaw was the format itself. It replaced the document with the block — a unit that could be text, a kanban card, or a row in a relational database — and in doing so built something closer to a no-code visual programming language than a note app. While Evernote users organized tags in a static list, Notion users assembled multiplayer CRMs and sprint trackers out of blocks, and the product grew from a personal utility into the default operating system for entire startups. The difference is between shipping a finished tool and shipping the pieces from which users build their own. See [how Notion built the all-in-one workspace](/case-study/notion-all-in-one-workspace) and [Evernote's filing-cabinet trap](/case-study/evernote-filing-cabinet).
 
-**The takeaway:** a product that lets users shape it fits more use cases than any fixed tool — but only if you pair that power with templates and onboarding so the freedom doesn't paralyze new users.
+## Flexibility is also the switching cost
+
+The modular bet pays a second dividend that matters more over time. Leaving Evernote meant moving files, which is trivial. Leaving Notion means migrating structured, interlinked knowledge — relational databases, cross-references, the accumulated architecture of how a team works — which degrades in the move. The flexibility that let the product expand with its users is the same thing that makes it painful to abandon, so engagement and lock-in grow together. The same "flexible platform beats fixed app" dynamic runs through [Dropbox vs Notion](/compare/dropbox-vs-notion) and [Notion vs Slack](/compare/notion-vs-slack), and connects to [design as a moat](/topics/product-design). It is worth noting Notion itself nearly died and rebuilt from scratch — proof that a [pivot](/answers/what-is-a-pivot) or hard reset is sometimes the only road to the right architecture.
+
+## What this means for operators
+
+- **A product that only stores is a commoditization target.** When the core job is holding files, the platform owners will eventually do it for free. Build something users do with the data, not just a place to keep it.
+- **Ship primitives, not just finished tools, to expand with your users.** Blocks let Notion serve use cases its founders never imagined. A product users can reshape outgrows the roadmap; a fixed tool is capped at what you anticipated.
+- **Pair flexibility with templates and onboarding.** An infinitely flexible canvas paralyzes newcomers. The freedom is the moat only if you scaffold the first use with templates so users reach value before they hit the blank page.
