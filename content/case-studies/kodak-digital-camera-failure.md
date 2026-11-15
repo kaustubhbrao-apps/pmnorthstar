@@ -27,22 +27,25 @@ faqs:
 publishedAt: '2026-05-18'
 ---
 
-Eastman Kodak Company didn't fail because they hid the digital camera in a vault. They failed because they couldn't break free from their own business model.
+**Kodak did not fail because it missed digital photography or hid it in a vault. It failed because it could not escape its own business model — and that is a more uncomfortable lesson than the myth, because Kodak did almost everything the myth says it didn't. It invented the technology, invested billions in it, and led the early market. None of that saved it, because the problem was never invention. It was that digital destroyed the profit engine (film and processing) that made Kodak Kodak, and a company cannot build the thing that kills its own margins with any urgency. Business model inertia, not technological blindness, is what bankrupts incumbents.**
 
-The popular internet narrative claims Kodak invented the digital camera in 1975 and suppressed it to protect film. The real history is far more nuanced. In fact, digital imaging pioneers like Virginia Norwood were designing digital scanner cameras for NASA - National Aeronautics and Space Administration's Landsat as early as 1968.
+The popular story — Kodak suppressed the digital camera to protect film — is both flattering and wrong. The true story is scarier, because Kodak saw the future clearly and still could not live in it.
 
-When Kodak engineer Steve Sasson built his prototype in 1975, Kodak didn't bury it. They actually invested billions into digital R&D over the following decades, launched the first digital SLR in 1991, co-created Apple’s first consumer digital camera in 1994, and led the market with their EasyShare line in the early 2000s.
+## The myth versus the record
 
-Their downfall wasn't a lack of innovation. It was business model inertia.
+The internet narrative claims Kodak invented the digital camera in 1975 and buried it. The record says otherwise. Digital imaging pioneers were building digital scanner cameras for NASA's Landsat as early as 1968, and when Kodak engineer Steve Sasson built his prototype in 1975, Kodak did not hide it. The company poured billions into digital R&D for decades, launched the first digital SLR in 1991, co-created Apple's first consumer digital camera in 1994, and led the market with its EasyShare line in the early 2000s. By every measure of invention, Kodak was ahead. Which means invention was never the thing that failed.
 
-Eastman Kodak Company was a master of the "razor and blade" model, making massive margins on film, chemicals, and paper print processing. Digital cameras stripped the "blade" away entirely. Kodak could build the tech, but they couldn't replicate the insane profitability of physical film in a world where capturing a photo suddenly became free.
+## The real killer: the razor-and-blade model
 
-### Four lessons every PM should remember:
+Kodak was a master of the razor-and-blade business, earning enormous margins not on cameras but on the recurring sale of film, chemicals, and paper processing — the "blades" a photographer bought forever. Digital stripped the blade away entirely. Capturing a photo became free, with no film to buy, no roll to develop, no print to order. Kodak could build the digital camera; what it could not do was replicate the obscene profitability of physical film in a world where the recurring revenue had vanished. The technology was not the threat. The disappearance of the recurring margin was, and no amount of R&D could manufacture a blade where the format no longer needed one.
 
-**→ Invention isn’t Innovation.** Owning the IP or building the prototype doesn’t matter if you can’t navigate the commercial shift.
+## Why seeing it clearly wasn't enough
 
-**→ The Peak Trap.** Kodak peaked in 1996 with a $30B market cap. Success can blind you to how fast the ground beneath you is shifting.
+This is the part that should unsettle every incumbent. Kodak's leadership understood digital, funded it, and shipped competitive products — and still lost, because every digital sale cannibalized a film customer worth far more. An organization optimized around a high-margin recurring product cannot pursue a low-margin replacement with real conviction, since doing so means voluntarily shrinking its own most profitable business while the profit still exists. Kodak peaked in 1996 at roughly a $30 billion market cap, and that success made the ground feel solid exactly as it was shifting. The company filed for Chapter 11 in 2012, not from missing the future but from being financially unable to want it.
 
-**→ Cannibalize Yourself.** If you don’t willingly disrupt your own profitable business when the timing is right, the market will eventually do it for you.
+## What this means for operators
 
-**→ Core Inertia.** The hardest part of a pivot isn't building the new technology—it's letting go of the old profit engine that made you famous.
+- **Invention is not innovation.** Owning the IP or building the first prototype means nothing if you cannot navigate the commercial shift around it. Kodak had the technology and lost anyway; the hard part is the business model, not the lab.
+- **The profit engine is the trap.** The hardest part of a pivot is not building the new technology — it is letting go of the old, high-margin product that made you famous. Identify which of your margins the future destroys, because that is the one your organization will defend to the death.
+- **Cannibalize yourself before the market does it for you.** If a replacement technology is coming, the only question is who kills your cash cow first. Doing it yourself is painful and survivable; waiting for the market to do it is neither.
+- **Peak valuation is a blindfold.** Kodak's dominance in 1996 obscured how fast the ground was moving. Treat your moment of greatest success as the moment to interrogate what could make your core worthless, not as proof that it won't.
