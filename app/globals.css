@@ -121,7 +121,10 @@
 html {
   height: 100%;
   background: var(--frame);
-  overflow-x: hidden;
+  /* clip (not hidden) stops horizontal scroll without making html/body a
+     scroll container — hidden forces overflow-y to `auto`, which un-sticks
+     every position:sticky descendant (the story-layout rail). */
+  overflow-x: clip;
   max-width: 100%;
   scroll-padding-top: 96px;
 }
@@ -136,7 +139,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
   padding: var(--frame-pad);
   padding-left:   max(var(--frame-pad), env(safe-area-inset-left, 0px));
@@ -166,6 +169,10 @@ body {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
+/* Reading pages (story layout: article + narrow rail) get a tighter,
+   centered container so the sticky rail sits beside the text instead of
+   floating far right with a dead gap between them. */
+.site-inner.read-page { max-width: 1180px; }
 
 /* Long words / URLs in article prose wrap instead of forcing a wide line. */
 .markdown-prose,

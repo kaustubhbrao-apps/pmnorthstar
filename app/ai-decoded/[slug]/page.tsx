@@ -53,7 +53,7 @@ export default function AIDecodedArticlePage({ params }: { params: { slug: strin
 
   return (
     <SidebarShell>
-      <div className="site-inner pb-16">
+      <div className="site-inner read-page pb-16">
         <Breadcrumbs
           className="pt-6"
           items={[

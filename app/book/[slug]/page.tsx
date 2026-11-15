@@ -88,7 +88,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
 
   return (
     <SidebarShell activeNav="books">
-      <div className="site-inner pb-16">
+      <div className="site-inner read-page pb-16">
         <Breadcrumbs
           className="pt-6"
           items={[
