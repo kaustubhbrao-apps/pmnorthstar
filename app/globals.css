@@ -856,7 +856,7 @@ html { transition: none; }
   margin-top: 1rem;
   max-width: 60ch;
 }
-.play { background: var(--brand-primary); color: #FFFFFF; padding: 1.2rem 1.3rem; border-radius: 18px; margin: 1.5rem 0; }
+.play { background: var(--brand-hover); color: #FFFFFF; padding: 1.2rem 1.3rem; border-radius: 18px; margin: 1.5rem 0; }
 .play .lab { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.76rem; margin-bottom: 0.45rem; }
 .play p { margin: 0; font-family: var(--font-body); font-size: 1.08rem; line-height: 1.5; color: #FFFFFF; }
 .rail { position: sticky; top: 88px; display: grid; gap: 16px; align-self: start; }
