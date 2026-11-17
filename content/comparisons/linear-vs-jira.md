@@ -28,6 +28,35 @@ rows:
   - label: "Performance Focus"
     a: "Local-first cache, sub-100ms latency"
     b: "Server-side rendering, complex validations"
+  - label: "Go-to-market"
+    a: "Bottom-up, product-led (viral among eng teams)"
+    b: "Top-down enterprise sales; the incumbent default"
+  - label: "Customization"
+    a: "Deliberately limited; strong opinionated defaults"
+    b: "Virtually unlimited custom workflows and fields"
+  - label: "Ownership"
+    a: "Independent, venture-backed (a16z-led rounds)"
+    b: "Part of Atlassian (NASDAQ: TEAM)"
+  - label: "Extensibility"
+    a: "Curated integrations and a clean API"
+    b: "Thousands of Marketplace apps and plugins"
+  - label: "Pricing"
+    a: "Free tier; paid roughly $8–14 / user / mo"
+    b: "Free up to 10 users; paid from roughly $8 / user / mo"
+  - label: "Best for"
+    a: "Fast-moving engineering teams who live in the tool"
+    b: "Large orgs needing compliance, audit, and process control"
+faqs:
+  - question: "Why do developers prefer Linear over Jira?"
+    answer: "Speed and focus. Linear's local-first sync engine makes nearly every action feel instant — sub-100-millisecond — while Jira's server-side, heavily configured workflows often feel slow and cluttered. Developers also value Linear's opinionated defaults: there is one good way to do most things, instead of a bespoke 14-step workflow a project manager designed. Jira optimizes for the buyer who configures the process; Linear optimizes for the engineer who lives in the tool all day."
+  - question: "Is Linear better than Jira?"
+    answer: "It depends on who is asking. For a small-to-mid engineering team that wants speed and a clean default workflow, Linear is usually better. For a large enterprise that needs deep customization, compliance controls, audit trails, and integration with a sprawling toolchain, Jira's configurability is hard to replace. The honest framing: Linear wins the individual contributor, Jira wins the CIO — and which matters more depends on whether adoption in your org flows bottom-up or top-down."
+  - question: "Can Linear replace Jira for a large company?"
+    answer: "Increasingly yes for engineering-led orgs, but with caveats. Linear has moved upmarket with more admin controls, SSO, and integrations, and many scale-ups run entirely on it. Where Jira still holds is in highly regulated or process-heavy environments that depend on granular custom workflows, mandatory fields, and cross-department governance. The migration question is usually less about features and more about how much bespoke process a company has encoded into Jira over the years."
+  - question: "Why is Jira still dominant if people dislike it?"
+    answer: "Because the person who dislikes Jira is rarely the person who chooses it. Jira is bought top-down by managers and CIOs who value its ability to model complex processes, and once an organization has encoded its workflows, compliance rules, and reporting into Jira, the switching cost is enormous. Developer resentment is real but it is not the buying signal — which is exactly the gap Linear exploited by winning adoption from the bottom up."
+  - question: "How much do Linear and Jira cost?"
+    answer: "Both offer free tiers for small teams. Jira is free for up to 10 users and then charges roughly $8 per user per month on its standard plan, with higher premium and enterprise tiers. Linear also has a free tier and charges roughly $8–14 per user per month depending on plan. Pricing is rarely the deciding factor; the real cost difference shows up in speed, onboarding time, and how much process overhead each tool imposes on the team."
 ---
 
 **Linear versus Jira is the cleanest case study in a single product-philosophy question: should software bend to the customer's process, or impose its own? Jira chose infinite configurability and built an unkillable enterprise moat by letting companies encode their bureaucracies into the tool. Linear chose opinionated speed and proved that the people who actually use the tool all day will abandon that bureaucracy the moment someone offers them a fast, consumer-grade alternative. Jira wins the CIO. Linear wins the engineer. The contest is really about who holds the pen — the buyer or the user — and which of them ultimately decides what software a company runs.**
@@ -36,7 +65,7 @@ The surprise of the last decade is how often the user won a fight the buyer was 
 
 ## Configurability as both moat and liability
 
-Jira's dominance was built on malleability. If a bank needed a 14-step bug workflow with eight mandatory compliance fields, Jira could model it, which made Jira indispensable to the manager who owned the process. But that same flexibility became architectural debt: the product grew slow, bloated, and, among the developers forced to live in it, widely resented. Configurability locked in the enterprise and repelled the maker — a moat and a liability in the same feature. The crucial insight is that these are not separate problems; the thing that secured the buyer is exactly the thing that alienated the user.
+Jira's dominance was built on malleability. Launched in 2002 and now the backbone of Atlassian's multi-billion-dollar business across hundreds of thousands of customers, it became the default issue tracker for agile software teams worldwide. If a bank needed a 14-step bug workflow with eight mandatory compliance fields, Jira could model it, which made Jira indispensable to the manager who owned the process. But that same flexibility became architectural debt: the product grew slow, bloated, and, among the developers forced to live in it, widely resented. Configurability locked in the enterprise and repelled the maker — a moat and a liability in the same feature. The crucial insight is that these are not separate problems; the thing that secured the buyer is exactly the thing that alienated the user.
 
 ## Opinionation as a performance strategy
 

@@ -28,6 +28,32 @@ rows:
   - label: "Growth Engine"
     a: "Viral Template Ecosystem"
     b: "Cross-platform sync (commoditized)"
+  - label: "Peak scale"
+    a: "30M+ users and climbing"
+    b: "~225M registered users at peak, then decline"
+  - label: "Status"
+    a: "Independent; valued ~$10B (2021)"
+    b: "Acquired by Bending Spoons (2022–23)"
+  - label: "Core job"
+    a: "Build systems — docs, databases, wikis"
+    b: "Capture and store notes"
+  - label: "Switching cost"
+    a: "High — relational structure degrades on export"
+    b: "Low — notes export as plain files"
+  - label: "Best for"
+    a: "Teams building a shared operating system"
+    b: "Individuals capturing and archiving notes"
+faqs:
+  - question: "Is Notion better than Evernote?"
+    answer: "For most teams and power users in 2026, yes — but they are built for different jobs. Notion is a flexible workspace where everything is a modular 'block' you can assemble into docs, wikis, and relational databases, which makes it far more capable for building systems and collaborating. Evernote is simpler and still excellent at fast, single-player capture and archiving. If you mainly jot and store notes, Evernote's simplicity can win; if you want to build a shared system, Notion is the stronger tool."
+  - question: "Why did Evernote decline?"
+    answer: "Its core value — syncing notes across devices — stopped being defensible once Apple and Google made cloud storage essentially free. Evernote never escaped its 'notebook and note' filing-cabinet metaphor, struggled with bloat and reliability complaints, and cycled through layoffs and leadership changes. By 2022–23 it had been acquired by the Italian app company Bending Spoons, which cut staff and moved operations to Europe. A product whose whole value is holding files is always one platform update away from commoditization."
+  - question: "Can Notion replace Evernote?"
+    answer: "Yes for most use cases, and Notion even offers an Evernote importer. The adjustment is conceptual: Evernote users think in notebooks and notes, while Notion asks you to think in pages, blocks, and databases. For simple capture that transition can feel like overhead, which is why some individuals still prefer Evernote's lighter model. For anyone who wants their notes to become a structured, linked system, Notion is the upgrade."
+  - question: "Is Evernote still around?"
+    answer: "Yes. After roughly 225 million registered users at its peak and a stretch of decline, Evernote was acquired by Bending Spoons in 2022, which restructured it and continues to operate it as a paid product. It is no longer the category-defining unicorn it was in the early 2010s, but the app still exists and has an active user base."
+  - question: "What makes Notion sticky?"
+    answer: "Structure. Leaving Evernote means moving files — trivial. Leaving Notion means migrating interlinked databases, cross-references, and the accumulated architecture of how a team works, which degrades in the move. The same block-based flexibility that lets Notion expand into CRMs, wikis, and sprint trackers is what makes it painful to abandon, so engagement and lock-in grow together."
 ---
 
 **Evernote and Notion were built on opposite ideas about what a productivity tool is, and the gap between them is the gap between a filing cabinet and a building material. Evernote digitized the filing cabinet — notebooks and notes, a place to store what you had already made — and when cloud storage became free, it had no moat left. Notion killed the document entirely and replaced it with the block: a modular primitive that users could assemble into anything. The lesson is that a product users can reshape fits more use cases than any fixed tool ever will, and the structures they build become a switching cost no storage locker can match.**
@@ -36,7 +62,7 @@ Both started as places to put your stuff. Only one let the stuff become a system
 
 ## Storage was a moat until it wasn't
 
-Evernote was the original productivity unicorn, built in 2008 on a premise that felt like magic before iCloud existed: a digital filing cabinet synced across every device. But syncing text stopped being defensible the moment Apple and Google gave cloud storage away for free, and Evernote never escaped the static "notebook and note" metaphor. It remained, in effect, a single-player storage locker — excellent at capture, stuck at everything after. A product whose entire value is holding files is a product waiting for a platform to commoditize it.
+Evernote was the original productivity unicorn, built in 2008 on a premise that felt like magic before iCloud existed: a digital filing cabinet synced across every device. It crossed a billion-dollar valuation and roughly 225 million registered users at its peak. But syncing text stopped being defensible the moment Apple and Google gave cloud storage away for free, and Evernote never escaped the static "notebook and note" metaphor — by 2022–23 it had been sold to Bending Spoons amid layoffs and years of stagnation. It remained, in effect, a single-player storage locker — excellent at capture, stuck at everything after. A product whose entire value is holding files is a product waiting for a platform to commoditize it.
 
 ## Blocks turned a note-taker into a building material
 
