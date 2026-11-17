@@ -47,7 +47,7 @@ The lesson lands harder because MySpace held every advantage that is supposed to
 
 ## Every structural advantage, and it didn't matter
 
-In 2006 MySpace was the most visited site in the US, outpacing Google in page views, with over 100 million users. It was where bands launched careers and a generation first met social media, and News Corp had paid $580 million for it in 2005. Facebook was a college-only network with a fraction of the users and no obvious path to catching up. On paper the contest was over. That it wasn't is the entire point: the advantages everyone treated as a durable lead turned out to be worth very little against a better-run platform.
+In 2006 MySpace was the most visited site in the US, outpacing Google in page views, with over 100 million users. It was where bands launched careers and a generation first met social media, and News Corp had paid $580 million for it in 2005. Facebook was a college-only network with a fraction of the users and no obvious path to catching up — and MySpace's dominance was such that, by widely reported accounts, it had an early chance to buy Facebook for a sum in the tens of millions and passed, unable to see why it would pay for a smaller rival. On paper the contest was over. That it wasn't is the entire point: the advantages everyone treated as a durable lead turned out to be worth very little against a better-run platform.
 
 ## Extracting value faster than it created any
 
