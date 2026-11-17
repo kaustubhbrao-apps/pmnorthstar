@@ -5,7 +5,7 @@ company: MoviePass
 title: The $9.95 Mirage - How MoviePass Subsidized the Cinema Industry Into Bankruptcy
 category: Business
 description: In 2017, MoviePass dropped its subscription price to an unsustainable $9.95 per month for one movie ticket every day. The goal was to build a massive subscriber base and force theaters into revenue-sharing agreements.
-outcome: The company burned through hundreds of millions of dollars as heavy usage outpaced revenue, resulting in spectacular bankruptcy in 2019.
+outcome: The company burned through hundreds of millions as heavy usage outpaced revenue, collapsing into bankruptcy in 2019.
 year: 2017
 tags:
   - Pricing
@@ -17,15 +17,38 @@ faqs:
     answer: They believed they could amass such a massive user base that theaters (like AMC) would be forced to share ticket and concession revenue, and studios would pay them to promote films.
   - question: Why didn't the theaters cooperate?
     answer: Theaters recognized the model was unsustainable and didn't want a third-party intermediary controlling their customer relationships or devaluing the perception of a ticket's price.
+  - question: How fast did MoviePass grow?
+    answer: Explosively — from about 20,000 subscribers to over 3 million in less than a year after the August 2017 price cut. But because it paid theaters full retail price (often around $15) for every ticket, growth deepened the losses rather than easing them.
+  - question: Who owned MoviePass?
+    answer: The $9.95 strategy was driven by Helios and Matheson Analytics (HMNY), an analytics firm that had taken a majority stake. HMNY burned over $20 million a month at the peak, and its stock collapsed to fractions of a penny before MoviePass shut down in 2019.
+  - question: What is the core lesson of the MoviePass collapse?
+    answer: That buying users at a large negative margin only works if you have a credible path to profitability. MoviePass never secured the theater revenue-sharing its whole model assumed, so every new subscriber just accelerated the burn.
 publishedAt: '2026-09-27T15:00:00+00:00'
 ---
 
-In August 2017, the struggling theater subscription service MoviePass made an announcement that seemed too good to be true, and fundamentally broke the economics of the cinema industry: for a flat fee of $9.95 per month, subscribers could watch one movie per day in theaters. At the time, a single ticket in major US cities cost upwards of $15. MoviePass was paying theaters the full retail price for every ticket its users bought. It was a business model where the cost of goods sold exponentially increased with customer engagement. The tech press was baffled, consumers were ecstatic, and the theater chains were horrified.
+**MoviePass is the definitive lesson that acquiring users at a negative margin is only a strategy if you have a real path to the positive side — and MoviePass never had one. In August 2017 it dropped its price to $9.95 a month for a movie a day, while paying theaters the full ~$15 retail price for every ticket its users bought. Engagement, the thing every subscription business wants, became the thing that bankrupted it: the more customers watched, the more money it lost. The entire plan rested on an assumption of leverage — that millions of subscribers would force theaters into revenue-sharing — that the theaters simply refused to grant. The lesson is that a cost of goods that rises with usage, bet on leverage you do not yet hold, is not blitzscaling; it is a countdown.**
 
-The strategy, driven by the analytics firm Helios and Matheson Analytics (HMNY) which acquired a majority stake in the company, was an extreme variation of Silicon Valley's "blitzscaling" playbook. The hypothesis was that by dropping the price to a near-irresistible level, MoviePass would quickly capture millions of subscribers. Once they controlled a significant percentage of theater foot traffic, they could use that leverage to force theater chains into revenue-sharing agreements on tickets and high-margin concessions. Furthermore, they planned to monetize the massive troves of user viewing data and charge studios promotional fees to drive audiences to specific indie films. 
+Every other subscription business prays for heavy users. MoviePass's heavy users were the ones destroying it.
 
-The user growth was explosive, validating the first half of the thesis. MoviePass grew from 20,000 subscribers to over 3 million in less than a year. The app dominated the cultural conversation, and independent theaters saw a massive surge in attendance as subscribers realized they could watch anything for free. However, the unit economics were a ticking time bomb. The "average" user watched enough movies to put the company deep into the red every month. MoviePass was effectively handing out $20 bills and charging $10 for the privilege.
+## A price that broke the math
 
-The fatal flaw in the strategy was the assumption of leverage. AMC, the largest theater chain, immediately recognized the existential threat. If consumers got used to paying $10 a month for unlimited movies, the perceived value of a $15 single ticket would be destroyed. AMC fiercely resisted any revenue-sharing deals, and instead launched their own sustainable subscription service, AMC Stubs A-List, priced at $20/month for 3 movies a week. Without theater cooperation, MoviePass's leverage evaporated. They were left holding the bag, paying full price for millions of tickets while generating negligible secondary revenue.
+In August 2017 the struggling service announced something that looked too good to be true: $9.95 a month for one movie per day, when a single ticket in major cities ran $15 or more. MoviePass paid theaters full retail for each ticket, so its cost of goods sold rose exponentially with engagement. Consumers were ecstatic, the tech press was baffled, and theater chains were horrified — because the model handed out $20 bills and charged $10 for the privilege.
 
-The collapse was agonizing and highly public. By mid-2018, HMNY was burning over $20 million a month. The company resorted to desperate measures: introducing complex "surge pricing," blacking out popular blockbuster movies, and intentionally causing app outages to prevent users from buying tickets because they had literally run out of cash. The stock price of HMNY plummeted to fractions of a penny. By late 2019, MoviePass shut down entirely, filing for bankruptcy. Looking back from 2026, the $9.95 era of MoviePass is viewed not just as a failure, but as a cautionary tale of reckless customer acquisition—proving that buying users at a massive negative margin only works if you actually have a viable path to profitability on the other side.
+## The leverage bet
+
+The strategy, driven by majority owner Helios and Matheson Analytics (HMNY), was an extreme blitzscaling play. The hypothesis: drop the price to irresistible, capture millions of subscribers fast, then use control of theater foot traffic to force chains into revenue-sharing on tickets and high-margin concessions, while monetizing viewing data and charging studios to promote films. Growth validated the first half — MoviePass went from 20,000 subscribers to over 3 million in under a year, dominating the cultural conversation. The unit economics, meanwhile, were a ticking bomb.
+
+## The leverage that never materialized
+
+The fatal flaw was the assumption of leverage. AMC, the largest chain, immediately recognized the threat: if consumers grew used to $10-a-month unlimited movies, the perceived value of a $15 ticket would collapse. AMC refused any revenue-sharing and instead launched its own sustainable subscription, Stubs A-List, at $20 a month for three movies a week. Without theater cooperation, MoviePass's leverage evaporated — it was left paying full price for millions of tickets while generating negligible secondary revenue.
+
+## The agonizing, public collapse
+
+By mid-2018 HMNY was burning over $20 million a month, and the measures turned desperate: complex "surge pricing," blackouts on popular blockbusters, and deliberately induced app outages to stop users from buying tickets because the company had literally run out of cash. HMNY's stock fell to fractions of a penny, and by late 2019 MoviePass shut down and filed for bankruptcy. The $9.95 era stands as the cautionary tale of reckless acquisition: negative-margin growth is a bridge to nowhere without a viable path to profit on the other side.
+
+## What this means for operators
+
+- **Negative-margin growth needs a credible path to positive margin.** Buying users below cost is only a strategy if something — scale, leverage, a second revenue line — flips the economics. MoviePass had only a hope.
+- **Beware a cost of goods that rises with engagement.** Most subscriptions love heavy users; MoviePass was destroyed by them. Model what your best customers cost you, not just your average.
+- **Don't build a plan on leverage you don't yet hold.** The whole model assumed theaters would capitulate. They had every incentive not to, and they didn't. Pressure-test the counterparty's incentives before betting the company on their cooperation.
+- **Desperation measures signal a broken model, not a fixable one.** Surge pricing, blackouts, and forced outages were symptoms of an economic structure that never worked. No tactic rescues a unit economics that gets worse with success.
