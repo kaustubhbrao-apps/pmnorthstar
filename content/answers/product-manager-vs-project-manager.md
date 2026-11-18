@@ -32,7 +32,7 @@ Those are different failures with different skills attached, and they can occur 
 
 ## Quibi as the illustration
 
-Quibi executed. The app was built, the content slate was produced, the launch happened on time with enormous funding behind it. By project standards it was a success.
+[Quibi](/case-study/quibi-shutdown) executed. The app was built, the content slate was produced, the launch happened on time with enormous funding behind it. By project standards it was a success.
 
 What was missing was the product question — whether anyone wanted premium short-form video on a phone-only app with no sharing. Excellent delivery of an unvalidated bet produces an expensive, well-run failure, and the schedule can look green throughout.
 

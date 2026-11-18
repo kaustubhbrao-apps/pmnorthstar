@@ -28,9 +28,9 @@ faqs:
 
 Take a dataset with two or three dimensions — city × property type, app × app, role × skill — and generate a page per meaningful combination. Each targets a query too specific for anyone to write by hand, and collectively they capture enormous long-tail volume.
 
-Airbnb's version covers destinations, neighbourhoods and property types. Each page is backed by real listings, real prices and real availability, which is what separates it from a template farm: the data is the product, and the page is a view onto it.
+[Airbnb](/case-study/airbnb-programmatic-seo)'s version covers destinations, neighbourhoods and property types. Each page is backed by real listings, real prices and real availability, which is what separates it from a template farm: the data is the product, and the page is a view onto it.
 
-Zapier's integration pages follow the same logic — one page per app pairing, each answering a question somebody genuinely typed, with the actual connection available at the end of it.
+[Zapier](/case-study/zapier-programmatic-seo)'s integration pages follow the same logic — one page per app pairing, each answering a question somebody genuinely typed, with the actual connection available at the end of it.
 
 ## What makes it work
 

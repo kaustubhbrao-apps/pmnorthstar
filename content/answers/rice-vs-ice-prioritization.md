@@ -40,6 +40,6 @@ Effort as a divisor matters most when your list mixes two-day fixes with two-qua
 
 Scoring converts judgment into arithmetic, and arithmetic looks objective. It isn't — Impact and Confidence are guesses, and the person who wants their project prioritised will guess generously. The number's real value is that it forces those guesses to be stated where colleagues can argue with them.
 
-Linear's product decisions are a useful counterexample to score-driven roadmaps: a deliberately opinionated tool that says no to configurability would score poorly on any framework weighting reach and requests. Jira's history shows the other end — years of accommodating every high-scoring customer request, producing a product nobody would design on purpose.
+[Linear](/case-study/linear-brand-from-day-one)'s product decisions are a useful counterexample to score-driven roadmaps: a deliberately opinionated tool that says no to configurability would score poorly on any framework weighting reach and requests. Jira's history shows the other end — years of accommodating every high-scoring customer request, producing a product nobody would design on purpose.
 
 Use the score to surface disagreement about assumptions. Then make the call as a human being, and be willing to override the sheet when the sheet is wrong.

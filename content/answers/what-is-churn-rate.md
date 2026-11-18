@@ -38,6 +38,6 @@ For B2B SaaS with annual contracts, monthly logo churn under 1% is healthy. For 
 
 Segment churn by tenure. Heavy churn in the first 30 days means users never reached value — that's an activation problem, and no win-back campaign will fix it. Churn that's flat across tenure means the product's value genuinely expires for a segment. Churn that rises at month 12 usually means an annual renewal decision, not a product decision.
 
-Peloton is the cautionary case. Churn stayed low through the pandemic, when a locked-down customer base had no alternatives, and the company read a temporary market condition as a durable product truth — building supply chain, staffing and forecasts on it. Cult.fit ran into a version of the same problem in its super-app phase, where breadth diluted the core habit that kept people renewing.
+[Peloton](/case-study/peloton-pandemic-overreach) is the cautionary case. Churn stayed low through the pandemic, when a locked-down customer base had no alternatives, and the company read a temporary market condition as a durable product truth — building supply chain, staffing and forecasts on it. [Cult.fit](/case-study/cult-fit-super-app) ran into a version of the same problem in its super-app phase, where breadth diluted the core habit that kept people renewing.
 
 A churn rate is a lagging indicator of a decision you made months earlier. By the time it moves, the thing that caused it is already shipped.

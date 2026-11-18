@@ -47,11 +47,11 @@ This is why the most common promotion failure is doing more of the previous leve
 
 ## The IC and management split
 
-Linear's product culture is a useful illustration of the principal archetype at company scale — sustained, opinionated product judgment applied over years, which is a different skill from running a team.
+[Linear](/case-study/linear-brand-from-day-one)'s product culture is a useful illustration of the principal archetype at company scale — sustained, opinionated product judgment applied over years, which is a different skill from running a team.
 
 The two tracks diverge more than titles suggest. A group PM's output is their team's output, and their day is spent on hiring, unblocking, coaching and prioritising across people. A principal's output is still their own thinking, applied to problems nobody else can make progress on. People who are excellent at one are often mediocre at the other, and the ladder exists so that neither is forced into the wrong one to keep progressing.
 
-Satya Nadella's turnaround at Microsoft is a leadership-level version: the substantive work was changing what the organisation believed and rewarded, which is not product management in any recognisable form.
+Satya Nadella's turnaround at [Microsoft](/case-study/microsoft-cloud-turnaround) is a leadership-level version: the substantive work was changing what the organisation believed and rewarded, which is not product management in any recognisable form.
 
 ## The uncomfortable part
 

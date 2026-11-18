@@ -30,7 +30,7 @@ faqs:
 
 **Indirect (two-sided)** — more users on one side attract the other. Marketplaces, app stores, payment networks.
 
-**Data** — usage produces data that improves the experience for everyone. Google Maps is the canonical version: reports, corrections and traffic patterns accumulated over years into something no competitor can replicate by spending money.
+**Data** — usage produces data that improves the experience for everyone. [Google](/case-study/google-maps-data-moat) Maps is the canonical version: reports, corrections and traffic patterns accumulated over years into something no competitor can replicate by spending money.
 
 ## Density beats size
 
@@ -40,7 +40,7 @@ This is why local networks get attacked successfully. A ride-hailing incumbent w
 
 ## Roblox and the developer side
 
-Roblox's network is indirect and unusually strong: creators build the games, players attract creators, creators attract players, and the company builds almost none of the content itself. The platform's job is tooling and economics, and the flywheel does the rest.
+[Roblox](/case-study/roblox-user-generated-platform)'s network is indirect and unusually strong: creators build the games, players attract creators, creators attract players, and the company builds almost none of the content itself. The platform's job is tooling and economics, and the flywheel does the rest.
 
 The lesson generalises to the cold start problem — Roblox had to make creation worthwhile before the audience existed, which is the standard sequencing for two-sided networks. Solve the harder side first, usually with subsidy or manual effort.
 

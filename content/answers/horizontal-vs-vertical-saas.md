@@ -32,9 +32,9 @@ Vertical products have a defined ceiling, but within it: less competition, a cus
 
 ## Depth is a moat, size is a ceiling
 
-Retool built a business on the unglamorous internal-tooling layer — a horizontal problem approached with unusual depth, which is a third path. The insight was that the market for boring internal software was much larger than anyone was treating it as.
+[Retool](/case-study/retool-internal-tools) built a business on the unglamorous internal-tooling layer — a horizontal problem approached with unusual depth, which is a third path. The insight was that the market for boring internal software was much larger than anyone was treating it as.
 
-Rippling's compound approach ran the other way: rather than perfecting one function, it built several integrated ones on a shared employee data model, arguing that the integration itself was the product. That bet only works with capital and execution depth most companies don't have, but it illustrates the real question — where does your advantage compound, across functions or across industries?
+[Rippling](/case-study/rippling-compound-startup)'s compound approach ran the other way: rather than perfecting one function, it built several integrated ones on a shared employee data model, arguing that the integration itself was the product. That bet only works with capital and execution depth most companies don't have, but it illustrates the real question — where does your advantage compound, across functions or across industries?
 
 ## Choosing
 

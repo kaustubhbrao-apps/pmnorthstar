@@ -39,7 +39,7 @@ Two decisions, in order.
 
 **The value metric.** What you charge by. The test is whether it rises as the customer gets more value. Seats work when value scales with team size. Transactions work when value scales with volume. A flat monthly fee works when neither varies much, and it caps you at the value of your smallest customer.
 
-Stripe's percentage-of-transaction model is the clean case: a customer processing more money is getting more value, and pays proportionally, with no renegotiation and no tier cliff.
+[Stripe](/case-study/stripe-developer-first)'s percentage-of-transaction model is the clean case: a customer processing more money is getting more value, and pays proportionally, with no renegotiation and no tier cliff.
 
 **The level.** Once the metric is right, the number is a narrower question — and one you can test.
 
@@ -47,7 +47,7 @@ Stripe's percentage-of-transaction model is the clean case: a customer processin
 
 Tiers exist to let different segments self-select. The mistake is building tiers around arbitrary feature groupings rather than around what distinct segments actually need.
 
-Canva's freemium split works because the free tier delivers genuine value to individuals, and the paid tier is organised around things teams and businesses need — brand consistency, collaboration, asset management. The line falls where the segments naturally divide, so upgrading feels like outgrowing rather than being blocked.
+[Canva](/case-study/canva-freemium-design)'s freemium split works because the free tier delivers genuine value to individuals, and the paid tier is organised around things teams and businesses need — brand consistency, collaboration, asset management. The line falls where the segments naturally divide, so upgrading feels like outgrowing rather than being blocked.
 
 The failing version withholds something the free tier obviously ought to have. Users experience that as hostility, and it poisons the upgrade rather than motivating it.
 
@@ -55,7 +55,7 @@ The failing version withholds something the free tier obviously ought to have. U
 
 Founders and PMs anchor on their own willingness to pay, which is systematically lower than that of a business buyer solving an expensive problem. A tool saving a team twenty hours a month is not competing with other tools' prices; it is competing with the cost of twenty hours.
 
-Zerodha ran the opposite play deliberately — a flat, radically low fee that was a strategic weapon rather than an underestimation, aimed at a segment incumbents could not profitably serve. That works when low price is the strategy. It is very different from a low price arrived at through nervousness.
+[Zerodha](/case-study/zerodha-bootstrap-broker) ran the opposite play deliberately — a flat, radically low fee that was a strategic weapon rather than an underestimation, aimed at a segment incumbents could not profitably serve. That works when low price is the strategy. It is very different from a low price arrived at through nervousness.
 
 ## Testing before committing
 

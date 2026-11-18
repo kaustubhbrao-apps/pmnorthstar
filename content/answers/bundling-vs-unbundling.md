@@ -43,7 +43,7 @@ Zoom entered a market with many well-funded conferencing products by being obses
 
 Focus that wins a wedge eventually caps it. Once you have most of the customers who care intensely about that one capability, growth means either raising prices or selling more to the same people.
 
-Rippling's compound-startup approach makes the re-bundling explicit — payroll, devices, identity and benefits sold as one because the same underlying employee record powers all of them. That is the strong form: the pieces share a substrate and each addition makes the others better.
+[Rippling](/case-study/rippling-compound-startup)'s compound-startup approach makes the re-bundling explicit — payroll, devices, identity and benefits sold as one because the same underlying employee record powers all of them. That is the strong form: the pieces share a substrate and each addition makes the others better.
 
 The weak form is a set of products sharing only a brand and a bill. Customers detect this quickly, and the bundle discount becomes the only argument for it.
 
@@ -51,7 +51,7 @@ The weak form is a set of products sharing only a brand and a bill. Customers de
 
 The cycle describes what a **new entrant** does to an **incumbent's** bundle. It is not advice to split your own product.
 
-Foursquare separating check-ins into Swarm is the standard illustration: internally the two use cases were distinct, and to users it meant one habit now required two apps, with the friction landing entirely on the people who liked the product most. The reasoning was sound and the outcome was still bad, because users experience a split as a subtraction.
+[Foursquare](/case-study/foursquare-swarm-split-2014) separating check-ins into Swarm is the standard illustration: internally the two use cases were distinct, and to users it meant one habit now required two apps, with the friction landing entirely on the people who liked the product most. The reasoning was sound and the outcome was still bad, because users experience a split as a subtraction.
 
 Before splitting, ask whether the problem is genuinely that two audiences want different things — or that your own teams want clearer ownership. Only the first is a product reason.
 

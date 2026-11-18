@@ -30,7 +30,7 @@ faqs:
 
 **Switching costs** — leaving is expensive in data, retraining, integration or risk. This is what makes unglamorous enterprise software so durable.
 
-**Proprietary data** — usage generates data that makes the product better, which attracts usage. Google Maps is the definitive version: years of corrections, traffic patterns and Street View imagery that a competitor cannot simply buy.
+**Proprietary data** — usage generates data that makes the product better, which attracts usage. [Google](/case-study/google-maps-data-moat) Maps is the definitive version: years of corrections, traffic patterns and Street View imagery that a competitor cannot simply buy.
 
 **Scale economics** — unit costs fall as you grow, so you can price where entrants can't follow.
 
@@ -38,7 +38,7 @@ faqs:
 
 ## Distribution counts too
 
-Stripe's advantage is often described as developer experience, which is a feature and copyable. The durable part is what that experience produced: default status in a generation of developers' mental toolkit, plus the integration depth that follows once payments run through your code. That's brand and switching cost compounding out of what began as a documentation advantage.
+[Stripe](/case-study/stripe-developer-first)'s advantage is often described as developer experience, which is a feature and copyable. The durable part is what that experience produced: default status in a generation of developers' mental toolkit, plus the integration depth that follows once payments run through your code. That's brand and switching cost compounding out of what began as a documentation advantage.
 
 The pattern generalises. Features aren't moats, but features can be the mechanism that builds one, if you're deliberate about which structural asset they accumulate into.
 

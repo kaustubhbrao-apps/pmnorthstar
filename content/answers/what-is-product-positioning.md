@@ -48,9 +48,9 @@ Fill these in order. The temptation is to start at category, and starting there 
 
 ## Repositioning is often the cheapest fix available
 
-Slack's origin inside a failed game company is well known; the less-told part is that the product was positioned as a replacement for email in the workplace, which set the comparison against something everyone already hated. Positioned instead as another chat app, it would have entered a crowded and unremarkable category.
+[Slack](/case-study/slack-gaming-pivot)'s origin inside a failed game company is well known; the less-told part is that the product was positioned as a replacement for email in the workplace, which set the comparison against something everyone already hated. Positioned instead as another chat app, it would have entered a crowded and unremarkable category.
 
-Loom did something similar — positioned against writing a long explanatory message rather than against video conferencing, which made asynchronous the feature rather than the compromise.
+[Loom](/case-study/loom-async-video) did something similar — positioned against writing a long explanatory message rather than against video conferencing, which made asynchronous the feature rather than the compromise.
 
 Cloudflare made security headers a default rather than an expert configuration, repositioning a category of work from something specialists do to something that is simply on. The technical change was modest; the framing change was the product.
 

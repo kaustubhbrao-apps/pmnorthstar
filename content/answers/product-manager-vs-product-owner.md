@@ -38,7 +38,7 @@ Where both exist, the usual division is: PM owns why and what, PO owns the order
 
 This works when the two are genuinely joined at the hip. It fails when the split becomes a handoff — the PM does research the PO never sees, and the PO manages a backlog whose purpose they can't explain. You get a team executing accurately against requirements nobody can justify.
 
-Jira's history is instructive here: a tool built to serve process compliance, configured centrally, gradually optimising for tracking work rather than understanding why the work exists. Linear's opinionated stance is a direct reaction to that drift.
+Jira's history is instructive here: a tool built to serve process compliance, configured centrally, gradually optimising for tracking work rather than understanding why the work exists. [Linear](/case-study/linear-brand-from-day-one)'s opinionated stance is a direct reaction to that drift.
 
 ## What to ask in an interview
 

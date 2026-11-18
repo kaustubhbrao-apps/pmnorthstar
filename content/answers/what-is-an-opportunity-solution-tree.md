@@ -41,7 +41,7 @@ Most teams jump from a vague goal straight to a feature list, then spend the qua
 
 It also forces a specific discipline: you compare solutions **within** an opportunity, not across the whole backlog. That is a better comparison, because two solutions to the same customer need are genuinely comparable, whereas ranking a billing fix against an onboarding change is mostly guesswork dressed as scoring.
 
-Intercom's jobs-to-be-done practice reaches the same place by a different route — describing what the customer was trying to accomplish before proposing what to build, so the eventual feature is one answer among several rather than the only one anyone considered.
+[Intercom](/case-study/intercom-jobs-to-be-done)'s jobs-to-be-done practice reaches the same place by a different route — describing what the customer was trying to accomplish before proposing what to build, so the eventual feature is one answer among several rather than the only one anyone considered.
 
 ## Three ways teams build a tree that changes nothing
 
@@ -55,4 +55,4 @@ Intercom's jobs-to-be-done practice reaches the same place by a different route 
 
 One outcome. Opportunities phrased as customer needs, each traceable to something a real person said. At least two or three solutions under any opportunity you are actively working. And experiments small enough that being wrong costs a week, not a quarter.
 
-Shopify's long-running orientation toward merchants over consumers works like a permanent root node: it settles which opportunities are even eligible for the tree, which is a question no prioritisation framework can answer for you.
+[Shopify](/case-study/shopify-merchants-first)'s long-running orientation toward merchants over consumers works like a permanent root node: it settles which opportunities are even eligible for the tree, which is a question no prioritisation framework can answer for you.

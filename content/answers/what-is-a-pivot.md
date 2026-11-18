@@ -31,7 +31,7 @@ faqs:
 
 Eric Ries catalogued several pivot types, but three account for most successful pivots in practice.
 
-**Zoom-in pivot** — a single feature of the existing product becomes the entire product. Instagram was Burbn, a location check-in app with photo sharing. The check-ins were forgettable; the photo filters were addictive. The founders dropped everything except photos and launched Instagram.
+**Zoom-in pivot** — a single feature of the existing product becomes the entire product. [Instagram](/case-study/instagram-burbn-pivot) was Burbn, a location check-in app with photo sharing. The check-ins were forgettable; the photo filters were addictive. The founders dropped everything except photos and launched Instagram.
 
 **Customer segment pivot** — the product works, but for a different audience than intended. Slack was built as an internal tool for a game studio. The game failed, but the team noticed that the chat tool they had built was better than anything on the market. They pivoted from game development to enterprise messaging.
 
@@ -39,12 +39,12 @@ Eric Ries catalogued several pivot types, but three account for most successful 
 
 ## The signal to pivot
 
-The clearest signal is when a subset of users is getting extraordinary value from the product for a reason you did not design for. Pinterest started as Tote, a mobile shopping app. The founders noticed that users were saving products to look at later but never buying. The saving behaviour — collecting and organising visual inspiration — was the real product. They pivoted from shopping to visual bookmarking.
+The clearest signal is when a subset of users is getting extraordinary value from the product for a reason you did not design for. [Pinterest](/case-study/pinterest-waitlist-illusion-2010) started as Tote, a mobile shopping app. The founders noticed that users were saving products to look at later but never buying. The saving behaviour — collecting and organising visual inspiration — was the real product. They pivoted from shopping to visual bookmarking.
 
 The second signal is when retention curves never flatten. If every cohort decays toward zero regardless of improvements, the product is not solving a problem that matters enough. At that point, the question is not "how do we improve retention" but "are we solving the right problem."
 
 ## What you keep
 
-The hardest part of a pivot is deciding what to keep and what to discard. The answer is: keep the learning, discard the attachment. Evernote's trajectory illustrates what happens when a company refuses to pivot — the note-taking market evolved toward collaboration and Evernote stayed stubbornly individual, watching Notion absorb the use case they had defined. The learning was there (users wanted to organise knowledge), but the team held on to a product shape that the market had outgrown.
+The hardest part of a pivot is deciding what to keep and what to discard. The answer is: keep the learning, discard the attachment. [Evernote](/case-study/evernote-filing-cabinet)'s trajectory illustrates what happens when a company refuses to pivot — the note-taking market evolved toward collaboration and Evernote stayed stubbornly individual, watching Notion absorb the use case they had defined. The learning was there (users wanted to organise knowledge), but the team held on to a product shape that the market had outgrown.
 
 A successful pivot requires the discipline to let go of sunk cost — the code you wrote, the brand you built, the positioning you crafted — and redirect all of that energy toward the opportunity that the data is showing you.

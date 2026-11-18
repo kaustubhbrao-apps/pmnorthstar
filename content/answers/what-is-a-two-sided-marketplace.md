@@ -29,9 +29,9 @@ faqs:
 
 ## The bootstrap problem
 
-Every marketplace starts with nothing on both sides. The standard solution is to subsidise one side — usually supply — until there is enough for the demand side to have a useful experience. Uber gave early drivers guaranteed hourly minimums so they would stay online even when ride requests were sparse. Airbnb's founders famously went door-to-door in New York photographing apartments to build initial supply.
+Every marketplace starts with nothing on both sides. The standard solution is to subsidise one side — usually supply — until there is enough for the demand side to have a useful experience. [Uber](/case-study/uber-cold-start-seattle-2011) gave early drivers guaranteed hourly minimums so they would stay online even when ride requests were sparse. [Airbnb](/case-study/airbnb-cereal-survival)'s founders famously went door-to-door in New York photographing apartments to build initial supply.
 
-The alternative is to start with a use case where one side is already aggregated. DoorDash started in Palo Alto, where Stanford students (demand) were concentrated in a small area and local restaurants (supply) were within a few square miles. The geographic density meant that a small number of participants on each side could create a liquid experience.
+The alternative is to start with a use case where one side is already aggregated. [DoorDash](/case-study/doordash-suburban-logistics) started in Palo Alto, where Stanford students (demand) were concentrated in a small area and local restaurants (supply) were within a few square miles. The geographic density meant that a small number of participants on each side could create a liquid experience.
 
 ## Why geography matters
 

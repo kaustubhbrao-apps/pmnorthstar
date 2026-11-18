@@ -35,10 +35,10 @@ The reason this matters is that fit is not subtle. Teams debating whether they h
 
 **The retention curve.** Plot each cohort's usage over months. Three shapes exist: decay to zero (no fit), decay then flatten (fit within a segment), and the smile curve where usage climbs back (strong fit and expanding value). A flattening curve means a stable set of people for whom the product is now infrastructure.
 
-**The 40% test.** Ask users how they'd feel if they could no longer use the product. Superhuman built an entire product process around this question — segmenting to the users who said "very disappointed", ignoring the rest, and building exclusively for the segment that already loved it. That is the useful move: fit is found in a segment first, not in an average.
+**The 40% test.** Ask users how they'd feel if they could no longer use the product. [Superhuman](/case-study/superhuman-product-market-fit) built an entire product process around this question — segmenting to the users who said "very disappointed", ignoring the rest, and building exclusively for the segment that already loved it. That is the useful move: fit is found in a segment first, not in an average.
 
 ## Why teams fake it
 
-Because the alternative is admitting a year was wrong. Quibi launched with $1.75 billion, a full content slate and a fully-built product, and no evidence that anyone wanted premium short-form video on a phone-only app. Fit was assumed at the funding stage and tested at the launch stage, which is the most expensive possible ordering.
+Because the alternative is admitting a year was wrong. [Quibi](/case-study/quibi-shutdown) launched with $1.75 billion, a full content slate and a fully-built product, and no evidence that anyone wanted premium short-form video on a phone-only app. Fit was assumed at the funding stage and tested at the launch stage, which is the most expensive possible ordering.
 
-Slack, by contrast, found fit sideways — the internal chat tool built for a failing game company turned out to be the product. That only happens if you're watching what people actually use rather than what you planned to sell.
+[Slack](/case-study/slack-gaming-pivot), by contrast, found fit sideways — the internal chat tool built for a failing game company turned out to be the product. That only happens if you're watching what people actually use rather than what you planned to sell.

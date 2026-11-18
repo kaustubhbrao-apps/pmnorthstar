@@ -29,7 +29,7 @@ faqs:
 
 A one-sided reward asks your user to spend social capital so that you and they benefit and their friend gets nothing. That framing is uncomfortable, and it shows in conversion.
 
-Two-sided changes the message from I get something if you sign up to here is something for both of us. Dropbox gave storage to referrer and referred alike; PayPal paid both. In both cases the invitation became a gift rather than a solicitation.
+Two-sided changes the message from I get something if you sign up to here is something for both of us. [Dropbox](/case-study/dropbox-referral-loop) gave storage to referrer and referred alike; [PayPal](/case-study/paypal-referral-bonus) paid both. In both cases the invitation became a gift rather than a solicitation.
 
 ## Make the reward native to the product
 
@@ -41,7 +41,7 @@ Product-native rewards — more storage, an extra seat, an unlocked capability, 
 
 The single most common design error is asking at signup. The user has not yet decided whether they like the thing you are asking them to recommend.
 
-Place the ask immediately after a success: a project completed, a file shared, a first payment received, a milestone reached. Calendly's growth works partly because the ask is structural rather than prompted — every meeting link sent is an exposure at exactly the moment the tool has just been useful.
+Place the ask immediately after a success: a project completed, a file shared, a first payment received, a milestone reached. [Calendly](/case-study/calendly-product-led-growth)'s growth works partly because the ask is structural rather than prompted — every meeting link sent is an exposure at exactly the moment the tool has just been useful.
 
 ## Reward on activation, not on signup
 

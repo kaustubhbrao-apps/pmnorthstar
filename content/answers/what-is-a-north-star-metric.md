@@ -29,15 +29,15 @@ faqs:
 
 Three tests. It has to measure **value the customer actually received**, not activity they performed. It has to be something your team can **move through product work** rather than through a discount or an ad spend. And it has to be **leading** — if it only moves after the customer has already churned, it can't guide a roadmap.
 
-Spotify's monthly active users would fail the first test. Time spent listening passes: nobody listens for six hours a month by accident, and it rises only when discovery, playlists and catalogue genuinely improve.
+[Spotify](/case-study/spotify-streaming-war)'s monthly active users would fail the first test. Time spent listening passes: nobody listens for six hours a month by accident, and it rises only when discovery, playlists and catalogue genuinely improve.
 
 ## The three ways teams pick the wrong one
 
-**Choosing an activity metric.** Signups, logins and page views all go up when marketing spends more. They tell you about acquisition, not about whether the product works. Duolingo's obsession with daily active learners rather than downloads is the difference between a metric you can buy and one you have to earn.
+**Choosing an activity metric.** Signups, logins and page views all go up when marketing spends more. They tell you about acquisition, not about whether the product works. [Duolingo](/case-study/duolingo-gamification)'s obsession with daily active learners rather than downloads is the difference between a metric you can buy and one you have to earn.
 
 **Choosing a metric nobody can influence.** If the metric only moves when the CEO closes an enterprise deal, the product team will quietly ignore it and optimise something else.
 
-**Choosing a metric that rewards the wrong behaviour.** This is the dangerous one. TikTok's early focus on watch time built an extraordinary recommendation engine and, simultaneously, a product accused of being engineered for compulsion. A north star is an instruction to a hundred people about what to optimise, and they will optimise it literally.
+**Choosing a metric that rewards the wrong behaviour.** This is the dangerous one. [TikTok](/case-study/tiktok-algorithm)'s early focus on watch time built an extraordinary recommendation engine and, simultaneously, a product accused of being engineered for compulsion. A north star is an instruction to a hundred people about what to optimise, and they will optimise it literally.
 
 ## What to do with it once you have one
 

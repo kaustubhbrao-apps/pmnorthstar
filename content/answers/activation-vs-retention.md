@@ -29,13 +29,13 @@ faqs:
 
 A user who signs up, pokes around and leaves never activated. A user who uploaded a file, shared it with a colleague, saw the colleague open it — and then left three weeks later — churned. These are completely different problems with completely different fixes, and blended retention numbers hide which one you have.
 
-Twitter's early growth was stuck on exactly this. New users arrived to an empty feed, saw nothing worth returning for, and left. No retention feature would have helped, because the product had never worked for them once. Suggested Users fixed the activation event — a populated feed on day one — and the retention curve moved as a consequence.
+[Twitter](/case-study/twitter-suggested-users)'s early growth was stuck on exactly this. New users arrived to an empty feed, saw nothing worth returning for, and left. No retention feature would have helped, because the product had never worked for them once. Suggested Users fixed the activation event — a populated feed on day one — and the retention curve moved as a consequence.
 
 ## Activation is designed, retention is earned
 
-Activation is largely an onboarding and product-design problem. You know what the valuable action is; the work is removing everything between the user and it. Dropbox's referral loop is usually filed under growth, but its quiet achievement was activation: installing the desktop client and putting a file in the folder, which is the moment Dropbox becomes obvious.
+Activation is largely an onboarding and product-design problem. You know what the valuable action is; the work is removing everything between the user and it. [Dropbox](/case-study/dropbox-referral-loop)'s referral loop is usually filed under growth, but its quiet achievement was activation: installing the desktop client and putting a file in the folder, which is the moment Dropbox becomes obvious.
 
-Retention is harder because it isn't a moment you can engineer. It's the accumulated verdict on whether the product keeps being worth opening. Superhuman's approach — refusing to onboard users at scale, running a personal setup session for each one — looks absurdly unscalable until you realise they were treating activation as the thing worth spending a founder's hour on.
+Retention is harder because it isn't a moment you can engineer. It's the accumulated verdict on whether the product keeps being worth opening. [Superhuman](/case-study/superhuman-product-market-fit)'s approach — refusing to onboard users at scale, running a personal setup session for each one — looks absurdly unscalable until you realise they were treating activation as the thing worth spending a founder's hour on.
 
 ## How to tell which one you have
 

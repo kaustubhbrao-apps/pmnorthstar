@@ -32,13 +32,13 @@ The justification is market structure. If a market ends with one dominant player
 
 ## Uber's version, and what it required
 
-Uber's city-by-city expansion is the canonical example — enter, subsidise both sides until liquidity is reached, tolerate regulatory conflict, move to the next city before competitors organise. The core insight is that ride-hailing liquidity is local, so the race was a hundred separate races and speed compounded in each one.
+[Uber](/case-study/uber-blitzscaling)'s city-by-city expansion is the canonical example — enter, subsidise both sides until liquidity is reached, tolerate regulatory conflict, move to the next city before competitors organise. The core insight is that ride-hailing liquidity is local, so the race was a hundred separate races and speed compounded in each one.
 
 It also required a functioning underlying product. A rider who got a car in four minutes returned unprompted. Subsidy bought the first ride; the product kept it.
 
 ## Where it goes wrong
 
-Dunzo's trajectory shows the failure pattern: aggressive expansion and category-broadening in a market where unit economics didn't improve with scale and no winner-take-most dynamic materialised. Growth spending bought volume that never converted into a defensible position, and each expansion made the underlying economics harder rather than easier.
+[Dunzo](/case-study/dunzo-hyperlocal-collapse)'s trajectory shows the failure pattern: aggressive expansion and category-broadening in a market where unit economics didn't improve with scale and no winner-take-most dynamic materialised. Growth spending bought volume that never converted into a defensible position, and each expansion made the underlying economics harder rather than easier.
 
 The diagnostic question isn't "can we grow fast" — most companies can, given money. It's whether scale makes your economics better. If each new city, customer or category costs the same or more to serve, speed is just an expensive way to reach the same place.
 

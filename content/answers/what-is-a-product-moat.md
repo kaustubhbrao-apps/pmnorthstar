@@ -30,9 +30,9 @@ faqs:
 
 ## The four structural moats
 
-**Network effects** — the product becomes more valuable as more people use it. Discord is more useful when your friends are on it. Figma is more useful when your collaborators are on it. The strength of a network effect depends on how local or global it is: Discord's network effects are per-community (local and replicable), while a marketplace's are per-geography (harder to replicate).
+**Network effects** — the product becomes more valuable as more people use it. Discord is more useful when your friends are on it. [Figma](/case-study/figma-pwa-bet) is more useful when your collaborators are on it. The strength of a network effect depends on how local or global it is: Discord's network effects are per-community (local and replicable), while a marketplace's are per-geography (harder to replicate).
 
-**Switching costs** — leaving is harder than staying. Shopify merchants have their inventory, themes, apps, and payment processing wired through the platform. Moving to a competitor means rebuilding everything, retraining staff, and risking downtime during the migration. The switching cost is not the software price; it is the operational disruption.
+**Switching costs** — leaving is harder than staying. [Shopify](/case-study/shopify-merchants-first) merchants have their inventory, themes, apps, and payment processing wired through the platform. Moving to a competitor means rebuilding everything, retraining staff, and risking downtime during the migration. The switching cost is not the software price; it is the operational disruption.
 
 **Data advantages** — the product improves from usage data that competitors cannot access. Every search on Google improves Google's ranking algorithm. Every transaction on Stripe improves Stripe's fraud detection. The moat is not having data; it is having data that compounds into better product decisions.
 
@@ -44,4 +44,4 @@ Every moat has a decay function. Network effects weaken when the network fragmen
 
 ## Building versus borrowing a moat
 
-The most durable moats are earned through product decisions, not purchased through acquisitions. Apple's ecosystem moat — where iMessage, AirDrop, iCloud, and hardware interlock — was built over fifteen years of deliberate integration choices. Each product decision made the next one easier and the ecosystem harder to leave. A moat that emerges from how the product is used is harder to replicate than one that exists because of a contractual lock-in or an artificial restriction.
+The most durable moats are earned through product decisions, not purchased through acquisitions. [Apple](/case-study/apple-iphone-launch)'s ecosystem moat — where iMessage, AirDrop, iCloud, and hardware interlock — was built over fifteen years of deliberate integration choices. Each product decision made the next one easier and the ecosystem harder to leave. A moat that emerges from how the product is used is harder to replicate than one that exists because of a contractual lock-in or an artificial restriction.

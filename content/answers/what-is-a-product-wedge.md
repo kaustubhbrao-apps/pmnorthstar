@@ -35,12 +35,12 @@ Stripe launched with seven lines of code that let a developer accept a payment. 
 
 ## The expansion logic
 
-A good wedge creates a natural expansion path. Shopify started by helping merchants build an online store. Once the store was live, merchants needed payments (Shopify Payments), shipping (Shopify Shipping), capital (Shopify Capital), and point-of-sale for physical retail. Each expansion was a response to a problem the merchant already had, not a new product looking for a customer. Razorpay followed a similar arc in India — payment gateway first, then payroll, then banking, each following the money flow of the same business customer.
+A good wedge creates a natural expansion path. [Shopify](/case-study/shopify-merchants-first) started by helping merchants build an online store. Once the store was live, merchants needed payments (Shopify Payments), shipping (Shopify Shipping), capital (Shopify Capital), and point-of-sale for physical retail. Each expansion was a response to a problem the merchant already had, not a new product looking for a customer. [Razorpay](/case-study/razorpay-pivot-fintech) followed a similar arc in India — payment gateway first, then payroll, then banking, each following the money flow of the same business customer.
 
 The expansion logic has to be demand-side, not supply-side. "We could build this because we have the engineering team" is supply-side reasoning and usually produces products nobody asked for. "Our customers keep asking us for this, and they trust us because of the wedge" is demand-side reasoning and usually produces products that sell on day one.
 
 ## Choosing the right wedge
 
-The wedge must sit at a chokepoint in the customer's workflow — a place where you handle something frequently and see enough of the customer's context to know what else they need. LinkedIn's wedge was professional profiles; from there they expanded into recruiting, advertising, and learning. Canva's wedge was social media graphics; from there they expanded into presentations, documents, and enterprise design. Both wedges were high-frequency, visible, and naturally adjacent to larger markets.
+The wedge must sit at a chokepoint in the customer's workflow — a place where you handle something frequently and see enough of the customer's context to know what else they need. [LinkedIn](/case-study/linkedin-profile-completeness)'s wedge was professional profiles; from there they expanded into recruiting, advertising, and learning. Canva's wedge was social media graphics; from there they expanded into presentations, documents, and enterprise design. Both wedges were high-frequency, visible, and naturally adjacent to larger markets.
 
 A wedge that solves a one-time problem — say, company registration — gives you a customer for a day. A wedge that solves a recurring problem gives you a customer for years, and years of usage give you the data and trust to expand.

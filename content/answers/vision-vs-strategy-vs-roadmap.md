@@ -43,7 +43,7 @@ WhatsApp is the sharpest illustration of the opposite. No ads, no games, no gimm
 
 ## Strategy is subtraction
 
-Shopify's orientation toward merchants rather than consumers is a strategy in the strict sense: it makes an entire category of consumer-facing opportunity ineligible, however attractive individual examples look. Microsoft's cloud-first turnaround was a strategy because it demoted the business that had defined the company for two decades.
+[Shopify](/case-study/shopify-merchants-first)'s orientation toward merchants rather than consumers is a strategy in the strict sense: it makes an entire category of consumer-facing opportunity ineligible, however attractive individual examples look. [Microsoft](/case-study/microsoft-cloud-turnaround)'s cloud-first turnaround was a strategy because it demoted the business that had defined the company for two decades.
 
 Both are choices with a cost. That is how you recognise one.
 

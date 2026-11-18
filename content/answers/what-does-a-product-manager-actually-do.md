@@ -46,7 +46,7 @@ Everything on a PM's calendar is downstream of that. Research exists to find the
 
 Not project management, though there's scheduling in it. Not design, though there's judgment about experience. Not a mini-CEO — the phrase does real damage, because it implies authority the job doesn't have and rarely survives contact with an engineering team.
 
-The Amazon working-backwards method captures the actual core: the PM's distinctive contribution is deciding what's worth building and articulating it clearly enough that others can build it well. Linear's team demonstrates the same thing through what they refuse — a coherent product is mostly a record of decisions not taken.
+The [Amazon](/case-study/amazon-working-backwards) working-backwards method captures the actual core: the PM's distinctive contribution is deciding what's worth building and articulating it clearly enough that others can build it well. [Linear](/case-study/linear-brand-from-day-one)'s team demonstrates the same thing through what they refuse — a coherent product is mostly a record of decisions not taken.
 
 ## The uncomfortable truth
 

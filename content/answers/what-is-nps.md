@@ -41,7 +41,7 @@ Cultural response patterns matter too — the same satisfaction level produces s
 
 Track it on a fixed cadence, with a fixed sampling method, on your own product, and read only the trend. That version is genuinely useful: it catches slow deterioration that usage metrics hide, because people often keep using something they have started to resent.
 
-And read the free-text box, not the score. The comment field attached to an NPS survey is usually worth more than the number it is attached to — it is a standing, low-effort channel for the specific complaints that would otherwise never reach you. Monzo's early growth ran heavily on word of mouth precisely because it treated that feedback loop as the product, not as a reporting obligation.
+And read the free-text box, not the score. The comment field attached to an NPS survey is usually worth more than the number it is attached to — it is a standing, low-effort channel for the specific complaints that would otherwise never reach you. [Monzo](/case-study/monzo-hot-coral-card)'s early growth ran heavily on word of mouth precisely because it treated that feedback loop as the product, not as a reporting obligation.
 
 ## Where it actively misleads
 

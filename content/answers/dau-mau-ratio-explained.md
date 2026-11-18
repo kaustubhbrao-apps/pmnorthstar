@@ -28,7 +28,7 @@ faqs:
 
 If 200,000 people used your product yesterday and 1,000,000 used it in the last 30 days, your ratio is 20% — meaning the average monthly user shows up roughly six days a month. It's a rough proxy for habit.
 
-The reference points people quote: 20% is a reasonable consumer baseline, 50%+ puts you in the company of messaging and social products, and the very top of the market sits higher still. TikTok's early ratios were extraordinary precisely because the recommendation feed removed the need to have a reason to open the app.
+The reference points people quote: 20% is a reasonable consumer baseline, 50%+ puts you in the company of messaging and social products, and the very top of the market sits higher still. [TikTok](/case-study/tiktok-algorithm)'s early ratios were extraordinary precisely because the recommendation feed removed the need to have a reason to open the app.
 
 ## Where the metric lies
 
@@ -36,7 +36,7 @@ The reference points people quote: 20% is a reasonable consumer baseline, 50%+ p
 
 **Averages hiding bimodality.** A 20% ratio can mean everyone uses it six days a month, or that 20% use it every day and 80% never return. Those are completely different companies. Always look at the distribution.
 
-**Spikes driven by scarcity.** Clubhouse posted remarkable engagement while invitations were scarce and the format was novel. Both were temporary conditions, and the ratio measured the moment rather than the habit — which is exactly the mistake the metric invites when it's read as a verdict rather than a signal.
+**Spikes driven by scarcity.** [Clubhouse](/case-study/clubhouse-fomo-launch) posted remarkable engagement while invitations were scarce and the format was novel. Both were temporary conditions, and the ratio measured the moment rather than the habit — which is exactly the mistake the metric invites when it's read as a verdict rather than a signal.
 
 ## How to use it well
 

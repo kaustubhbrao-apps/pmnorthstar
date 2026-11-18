@@ -32,13 +32,13 @@ The MVP has to actually do a job for someone. Everything else — scale, polish,
 
 ## Manual beats thin
 
-The best MVPs are frequently not software. Airbnb's founders photographed apartments themselves and handled bookings by hand; the learning they needed was whether strangers would sleep in each other's homes, and no amount of platform engineering would have answered that faster.
+The best MVPs are frequently not software. [Airbnb](/case-study/airbnb-cereal-survival)'s founders photographed apartments themselves and handled bookings by hand; the learning they needed was whether strangers would sleep in each other's homes, and no amount of platform engineering would have answered that faster.
 
 This is the concierge pattern: deliver the outcome manually, learn what the workflow really is, automate afterwards. It feels wrong to engineers and it consistently produces better information than a scaled-down v1.
 
 ## Cut features, not quality
 
-The other common error is treating MVP as licence to ship something broken. Instagram launched with a tiny feature set — photos, filters, a feed — and those few things worked beautifully. The pivot away from Burbn's bloated check-in app worked precisely because the remaining slice was excellent, not because it was small.
+The other common error is treating MVP as licence to ship something broken. [Instagram](/case-study/instagram-burbn-pivot) launched with a tiny feature set — photos, filters, a feed — and those few things worked beautifully. The pivot away from Burbn's bloated check-in app worked precisely because the remaining slice was excellent, not because it was small.
 
 A minimal product that's good tells you whether people want the thing. A minimal product that's buggy tells you nothing except that people don't like bugs.
 

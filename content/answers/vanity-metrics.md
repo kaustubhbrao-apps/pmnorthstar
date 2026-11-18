@@ -50,7 +50,7 @@ The pattern: replace a total with a rate, and an aggregate with a cohort.
 
 Not stupidity — incentives. Vanity metrics are excellent for fundraising, recruiting and press, all of which are real needs. The failure is not reporting a big cumulative number externally; it is letting that number back inside and steering by it.
 
-Clubhouse is the clearest case. Downloads, waitlist size and invite scarcity were spectacular and widely reported, and none of them measured whether people came back after the novelty passed. The metrics that would have shown the problem — cohort retention, session frequency — were available the whole time and told a different story than the one everyone was watching.
+[Clubhouse](/case-study/clubhouse-fomo-launch) is the clearest case. Downloads, waitlist size and invite scarcity were spectacular and widely reported, and none of them measured whether people came back after the novelty passed. The metrics that would have shown the problem — cohort retention, session frequency — were available the whole time and told a different story than the one everyone was watching.
 
 MySpace and Evernote both stayed comfortable on totals while the underlying engagement thinned. Totals were still setting records on the way down.
 

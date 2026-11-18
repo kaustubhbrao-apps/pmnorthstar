@@ -44,7 +44,7 @@ Interviews first tell you what the options are. The survey then tells you how bi
 - You need a **tracked measure** over time, asked identically each period.
 - The population is large and geographically spread and you need coverage, not depth.
 
-Superhuman's product-market-fit survey is a good example of the format used correctly: one question, asked at scale, tracked over time, on a topic the team already understood qualitatively. The number was a thermometer, not a discovery tool.
+[Superhuman](/case-study/superhuman-product-market-fit)'s product-market-fit survey is a good example of the format used correctly: one question, asked at scale, tracked over time, on a topic the team already understood qualitatively. The number was a thermometer, not a discovery tool.
 
 ## Writing a survey that does not lie to you
 

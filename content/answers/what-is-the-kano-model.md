@@ -47,7 +47,7 @@ The iPod's scroll wheel is a delighter in the strict sense. No one requested it.
 
 Every delighter is on a timer. Once a feature is copied widely enough, users stop being pleased by it and start being annoyed by its absence — it has migrated from delighter to basic.
 
-Zoom's frictionless join is the textbook case in both directions. Joining a call without an account or a download was a genuine delighter when every competitor demanded installation and login. Within a few years it was table stakes, and any conferencing tool lacking it now reads as broken.
+[Zoom](/case-study/zoom-frictionless-video)'s frictionless join is the textbook case in both directions. Joining a call without an account or a download was a genuine delighter when every competitor demanded installation and login. Within a few years it was table stakes, and any conferencing tool lacking it now reads as broken.
 
 This is why Kano is a repeated exercise, not a one-time classification. A model built three years ago has features in the wrong buckets today.
 

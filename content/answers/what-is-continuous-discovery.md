@@ -40,7 +40,7 @@ The scale is deliberately small because sustainability is the whole point. Teams
 
 Interviews without a decision structure produce a pile of anecdotes and a team that quotes whichever customer supports their preference. The common pairing is an opportunity solution tree: a desired outcome at the top, discovered opportunities beneath it, candidate solutions beneath those. It makes the reasoning from evidence to bet visible and arguable.
 
-Booking.com's experimentation culture is the quantitative sibling of the same principle — a permanent mechanism for being told you're wrong, running constantly rather than in phases. Intercom's early practice was the qualitative version. Both organisations built a habit rather than a project, which is why the learning compounded.
+[Booking.com](/case-study/booking-cta-testing)'s experimentation culture is the quantitative sibling of the same principle — a permanent mechanism for being told you're wrong, running constantly rather than in phases. [Intercom](/case-study/intercom-jobs-to-be-done)'s early practice was the qualitative version. Both organisations built a habit rather than a project, which is why the learning compounded.
 
 ## The failure to watch for
 

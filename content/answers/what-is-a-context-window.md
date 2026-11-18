@@ -59,6 +59,6 @@ That last one catches people out. A window is shared between input and output, s
 
 ## The trend, and what it does not change
 
-Windows have grown by orders of magnitude, and each jump genuinely enables things that were awkward before — whole codebases, long documents, extended agent runs. Anthropic's and OpenAI's recent assistant platforms both lean on long context to hold multi-step work together.
+Windows have grown by orders of magnitude, and each jump genuinely enables things that were awkward before — whole codebases, long documents, extended agent runs. [Anthropic](/case-study/claude-5-ships-2026)'s and [OpenAI](/case-study/openai-consumer-device-launches-2026)'s recent assistant platforms both lean on long context to hold multi-step work together.
 
 What has not changed is that context is a resource with a price, and that models reason better over well-selected material than over everything you have. Treat the window as a budget to spend carefully, not a container to fill.

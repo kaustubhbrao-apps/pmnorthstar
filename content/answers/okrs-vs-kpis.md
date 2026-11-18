@@ -40,6 +40,6 @@ The second failure is the opposite: objectives so aspirational they can't be evi
 
 ## What good looks like
 
-Satya Nadella's cloud-first turnaround at Microsoft is a useful illustration of scale. The objective was a genuine change of direction, and the key results were unambiguous and countable — Azure revenue, commercial cloud run rate — not "improve cloud perception". People could tell whether it was working.
+Satya Nadella's cloud-first turnaround at [Microsoft](/case-study/microsoft-cloud-turnaround) is a useful illustration of scale. The objective was a genuine change of direction, and the key results were unambiguous and countable — Azure revenue, commercial cloud run rate — not "improve cloud perception". People could tell whether it was working.
 
-Amazon's working-backwards method solves the same problem from the other end: writing the press release first forces you to state the outcome in a way that can later be checked. Whatever the framework, the discipline is identical — commit to a number that can embarrass you.
+[Amazon](/case-study/amazon-working-backwards)'s working-backwards method solves the same problem from the other end: writing the press release first forces you to state the outcome in a way that can later be checked. Whatever the framework, the discipline is identical — commit to a number that can embarrass you.

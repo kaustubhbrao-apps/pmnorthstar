@@ -31,13 +31,13 @@ faqs:
 
 Most growth teams spend the majority of their energy on acquisition — getting more people to sign up. But the gap between a signup and an active user is where most products lose. If 1,000 people sign up and 100 activate, improving activation from 10% to 20% doubles your effective user base without spending a dollar on acquisition. Activation is the multiplier that makes every other growth investment worthwhile.
 
-Facebook's growth team discovered this in 2008. The insight was not that people needed to sign up — signups were growing. The insight was that users who added 7 friends within their first 10 days retained at fundamentally higher rates. The entire growth team reoriented around that single metric. Every feature, every notification, every onboarding flow was evaluated against one question: does this help new users add 7 friends in 10 days?
+[Facebook](/case-study/facebook-home-failure)'s growth team discovered this in 2008. The insight was not that people needed to sign up — signups were growing. The insight was that users who added 7 friends within their first 10 days retained at fundamentally higher rates. The entire growth team reoriented around that single metric. Every feature, every notification, every onboarding flow was evaluated against one question: does this help new users add 7 friends in 10 days?
 
 ## Defining the metric
 
-The activation metric must be specific, measurable, and causally connected to retention. "Used the product" is too vague. "Completed a lesson" (Duolingo) or "sent 2,000 messages as a team" (Slack) are specific enough to build around. The specificity matters because it tells the product team exactly what to optimise.
+The activation metric must be specific, measurable, and causally connected to retention. "Used the product" is too vague. "Completed a lesson" ([Duolingo](/case-study/duolingo-gamification)) or "sent 2,000 messages as a team" (Slack) are specific enough to build around. The specificity matters because it tells the product team exactly what to optimise.
 
-The metric should also be achievable within a reasonable window. If activation requires weeks of effort, most users will churn before they get there. Netflix's activation is arguably finishing one show — something achievable in a single session. Notion's is creating a page and sharing it with someone — achievable within minutes. The faster the activation, the steeper the retention curve.
+The metric should also be achievable within a reasonable window. If activation requires weeks of effort, most users will churn before they get there. [Netflix](/case-study/netflix-dvd-to-streaming)'s activation is arguably finishing one show — something achievable in a single session. Notion's is creating a page and sharing it with someone — achievable within minutes. The faster the activation, the steeper the retention curve.
 
 ## The trap of false activation
 

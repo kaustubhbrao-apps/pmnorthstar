@@ -40,6 +40,6 @@ Most stakeholders, given a real trade-off, choose reasonably. They push hard bec
 
 Record the decision and the reasoning somewhere the person can see it. A written "not now, because X, revisit when Y" does two things: it proves you listened, and it stops the same request arriving every six weeks with fresh urgency.
 
-WhatsApp's decade of refusing ads, games and gimmicks is the extreme version — a product identity maintained by saying no far more often than yes, at real short-term revenue cost. Linear's refusal to become configurable is the same discipline at a smaller scale.
+WhatsApp's decade of refusing ads, games and gimmicks is the extreme version — a product identity maintained by saying no far more often than yes, at real short-term revenue cost. [Linear](/case-study/linear-brand-from-day-one)'s refusal to become configurable is the same discipline at a smaller scale.
 
 The pattern in both: the no was principled and consistent, so it read as strategy rather than obstruction. A no that changes based on who's asking is just politics, and people learn to escalate instead of asking.

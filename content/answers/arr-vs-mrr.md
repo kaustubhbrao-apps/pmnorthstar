@@ -46,10 +46,10 @@ Every one of these gets quietly folded in when a number needs to look larger, an
 
 A single ARR figure tells you size. The decomposition tells you health, and it has four components: **new** from new customers, **expansion** from existing customers buying more, **contraction** from downgrades, and **churn** from departures.
 
-Two companies at 10M ARR can be entirely different businesses. One added 4M new and lost 1M — growing but leaking. The other added 1M new and 2M expansion with almost no churn, which is the profile of a product that gets more valuable the longer it is used. Rippling's compound-startup strategy is essentially a bet on the second shape: sell one product, expand into the rest of the payroll and IT stack inside the same customer.
+Two companies at 10M ARR can be entirely different businesses. One added 4M new and lost 1M — growing but leaking. The other added 1M new and 2M expansion with almost no churn, which is the profile of a product that gets more valuable the longer it is used. [Rippling](/case-study/rippling-compound-startup)'s compound-startup strategy is essentially a bet on the second shape: sell one product, expand into the rest of the payroll and IT stack inside the same customer.
 
 ## Why the run rate misleads at the edges
 
 ARR assumes today's book repeats. That assumption is weakest exactly when it matters most — right after a large deal lands, right before a large renewal, and in any business with concentrated customers. A company at 10M ARR where one customer is 3M of it does not have 10M of predictable revenue; it has a renewal conversation that decides a third of the company.
 
-Zoho's decades of profitable growth without outside capital came from treating recurring revenue as something to be earned every year rather than a number to be maximised for a fundraise.
+[Zoho](/case-study/zoho-bootstrap-billions)'s decades of profitable growth without outside capital came from treating recurring revenue as something to be earned every year rather than a number to be maximised for a fundraise.

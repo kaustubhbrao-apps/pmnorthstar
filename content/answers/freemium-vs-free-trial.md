@@ -28,9 +28,9 @@ faqs:
 
 **Free trial** fits when value is obvious quickly and there's a natural moment of decision. The clock creates urgency, and full access means the evaluation is honest.
 
-**Freemium** fits when value compounds slowly, when free users create value for paid ones, or when the product spreads by being used in public. Canva's free tier is a distribution engine — millions of people making things, sharing them, and pulling in others, with paid conversion arriving whenever a user's needs outgrow the limits.
+**Freemium** fits when value compounds slowly, when free users create value for paid ones, or when the product spreads by being used in public. [Canva](/case-study/canva-freemium-design)'s free tier is a distribution engine — millions of people making things, sharing them, and pulling in others, with paid conversion arriving whenever a user's needs outgrow the limits.
 
-Spotify's free tier does something different again: it undercuts piracy. The strategic job of that tier was never conversion rate alone; it was making the legal option the easiest one, in a market where the alternative was free and illegal.
+[Spotify](/case-study/spotify-streaming-war)'s free tier does something different again: it undercuts piracy. The strategic job of that tier was never conversion rate alone; it was making the legal option the easiest one, in a market where the alternative was free and illegal.
 
 ## The cost question nobody asks early
 

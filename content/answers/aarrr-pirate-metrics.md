@@ -33,13 +33,13 @@ faqs:
 
 **Retention** — whether they come back. The stage that determines whether the other four are worth anything.
 
-**Referral** — whether they bring others. Dropbox's two-sided storage referral and PayPal's $20 signup bonus are the canonical examples, and both worked because the product was already retaining; a referral programme on a leaky product just distributes disappointment faster.
+**Referral** — whether they bring others. [Dropbox](/case-study/dropbox-referral-loop)'s two-sided storage referral and [PayPal](/case-study/paypal-referral-bonus)'s $20 signup bonus are the canonical examples, and both worked because the product was already retaining; a referral programme on a leaky product just distributes disappointment faster.
 
 **Revenue** — whether they pay. Deliberately last, which is the framework's actual argument.
 
 ## The order is the insight
 
-Almost every team that "uses AARRR" reads it as a list and works on the first item, because acquisition is the stage you can buy. Uber's city-by-city playbook is often cited as blitzscaled acquisition, but the reason it worked is that the underlying product retained — a rider who got a car in four minutes came back without persuasion. Blitzscaling a product that doesn't retain, as Dunzo eventually demonstrated, converts funding into churn at speed.
+Almost every team that "uses AARRR" reads it as a list and works on the first item, because acquisition is the stage you can buy. [Uber](/case-study/uber-blitzscaling)'s city-by-city playbook is often cited as blitzscaled acquisition, but the reason it worked is that the underlying product retained — a rider who got a car in four minutes came back without persuasion. Blitzscaling a product that doesn't retain, as Dunzo eventually demonstrated, converts funding into churn at speed.
 
 ## Where it breaks down
 

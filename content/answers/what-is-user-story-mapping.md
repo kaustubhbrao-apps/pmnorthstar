@@ -55,4 +55,4 @@ Gmail's redesign was fundamentally a rearrangement of the mail journey rather th
 
 **Treating the map as permanent.** It is a planning conversation that leaves a residue, not a document to maintain. Use it to cut releases, then let the tracker carry the work.
 
-Linear's opinionated refusal to be endlessly configurable is the same instinct at product level: pick the journey, make it excellent, and decline to support every possible variation of it.
+[Linear](/case-study/linear-brand-from-day-one)'s opinionated refusal to be endlessly configurable is the same instinct at product level: pick the journey, make it excellent, and decline to support every possible variation of it.

@@ -45,7 +45,7 @@ The choice reduces to something quite personal: does it satisfy you when someone
 
 **Management** requires tolerating being one step removed, and the specific discomfort of watching someone solve a problem differently — and often more slowly — than you would have, and not taking it back. The instinct to take it back is what makes strong ICs into weak managers.
 
-**Senior IC** requires influence without authority, permanently. You have no reporting line and must move an organisation by argument, evidence and relationships. Reddit's reliance on volunteer moderators is a structural analogue: enormous influence, no authority, and it works only through credibility.
+**Senior IC** requires influence without authority, permanently. You have no reporting line and must move an organisation by argument, evidence and relationships. [Reddit](/case-study/reddit-community-moderation)'s reliance on volunteer moderators is a structural analogue: enormous influence, no authority, and it works only through credibility.
 
 ## The company question comes first
 

@@ -34,7 +34,7 @@ Building for both simultaneously from day one usually produces something that do
 
 ## Where each wins
 
-Stripe is the reference bottom-up case. Developers integrated it because the documentation and API were better than the alternatives, and by the time anyone senior was asked to approve a payments provider, it was already processing transactions. The decision had been made by the people who'd done the work.
+[Stripe](/case-study/stripe-developer-first) is the reference bottom-up case. Developers integrated it because the documentation and API were better than the alternatives, and by the time anyone senior was asked to approve a payments provider, it was already processing transactions. The decision had been made by the people who'd done the work.
 
 Jira arrived through the opposite door — an organisational decision about process, configured centrally, rolled out to teams. That's why its history is one of accumulating configurability: the buyer was the person who wanted it to model their process, not the person who used it every day.
 

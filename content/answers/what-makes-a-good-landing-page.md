@@ -31,7 +31,7 @@ Show the top of your page to someone unfamiliar with the product for five second
 
 This is where most pages fail, and the cause is nearly always a headline written for insiders. Reimagine your workflow, the operating system for modern teams and unlock your potential are compatible with any product in any category. Replace them with what the product literally does, in the words a customer would use.
 
-Stripe's developer-first positioning worked in part because the page said what the thing was and showed the code that did it. There was nothing to decode.
+[Stripe](/case-study/stripe-developer-first)'s developer-first positioning worked in part because the page said what the thing was and showed the code that did it. There was nothing to decode.
 
 ## Show, do not describe
 
@@ -63,4 +63,4 @@ Across 496 recent YC startup homepages we audited, the pattern was consistent: e
 
 That gap matters more than it used to. A landing page is now read by search crawlers, by AI assistants deciding whether to cite you, and by security scanners in procurement reviews — none of which are impressed by your hero animation. Fast load, a real title and description, structured data, working links and clean HTML are conversion features.
 
-Booking.com's conversion machine and Walmart's performance work both point the same direction: the unglamorous layer is where the measurable money is.
+[Booking.com](/case-study/booking-cta-testing)'s conversion machine and [Walmart](/case-study/walmart-performance-conversion)'s performance work both point the same direction: the unglamorous layer is where the measurable money is.

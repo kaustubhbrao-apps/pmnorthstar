@@ -33,11 +33,11 @@ That inversion has consequences everywhere. Onboarding becomes the sales pitch. 
 
 ## What it requires
 
-**Fast time-to-value.** Figma's decisive advantage was opening a design file from a link, in a browser, with no install and no licence. That removed the entire evaluation apparatus that competitors depended on.
+**Fast time-to-value.** [Figma](/case-study/figma-browser-design)'s decisive advantage was opening a design file from a link, in a browser, with no install and no licence. That removed the entire evaluation apparatus that competitors depended on.
 
-**Individual utility.** The product must be useful to one person before it's useful to a team. Calendly is the pure case — a single user gets full value immediately, and every meeting they book exposes the product to someone new.
+**Individual utility.** The product must be useful to one person before it's useful to a team. [Calendly](/case-study/calendly-product-led-growth) is the pure case — a single user gets full value immediately, and every meeting they book exposes the product to someone new.
 
-**Natural expansion.** Slack spread by being more useful with each colleague added, so growth within an account happened without anyone selling it.
+**Natural expansion.** [Slack](/case-study/slack-gaming-pivot) spread by being more useful with each colleague added, so growth within an account happened without anyone selling it.
 
 ## Where it breaks
 

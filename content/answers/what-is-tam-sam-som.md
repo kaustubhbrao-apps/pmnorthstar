@@ -51,7 +51,7 @@ Three genuine uses:
 
 **Finding the wedge.** The valuable output is usually not the total but the discovery of a specific subsegment that is underserved, reachable and large enough to start in.
 
-Zerodha did not enter a large broking market and take a slice of it. It priced for a segment the incumbents were structurally unable to serve profitably, and grew from there. The sizing that mattered was of the wedge, not of the industry.
+[Zerodha](/case-study/zerodha-bootstrap-broker) did not enter a large broking market and take a slice of it. It priced for a segment the incumbents were structurally unable to serve profitably, and grew from there. The sizing that mattered was of the wedge, not of the industry.
 
 ## Where the number misleads
 

@@ -32,11 +32,11 @@ Buying a commodity frees engineers for the parts that matter. Building a commodi
 
 ## When building the hard thing is the strategy
 
-Figma's decision to render a design tool in the browser using WebGL was a build decision on the highest-difficulty setting. No vendor solution existed, and the browser wasn't obviously capable. It took years before the bet looked sane.
+[Figma](/case-study/figma-browser-gamble-2015)'s decision to render a design tool in the browser using WebGL was a build decision on the highest-difficulty setting. No vendor solution existed, and the browser wasn't obviously capable. It took years before the bet looked sane.
 
 It was correct because the component *was* the product. Browser-native collaborative design wasn't a feature of Figma; it was the entire reason Figma could exist against incumbents. Nobody outsources that.
 
-Vercel's business is the mirror image — it exists because deployment infrastructure is something most teams should buy rather than build, and it made buying dramatically easier than the DIY alternative.
+[Vercel](/case-study/vercel-developer-first)'s business is the mirror image — it exists because deployment infrastructure is something most teams should buy rather than build, and it made buying dramatically easier than the DIY alternative.
 
 ## The questions worth actually asking
 

@@ -27,11 +27,11 @@ faqs:
 
 ## The three canonical shapes
 
-**Incentivised referral.** Dropbox gave storage to both the referrer and the invitee. The incentive was the product itself, which meant it cost Dropbox marginal storage rather than cash, and it selected for people who actually wanted more Dropbox.
+**Incentivised referral.** [Dropbox](/case-study/dropbox-referral-loop) gave storage to both the referrer and the invitee. The incentive was the product itself, which meant it cost Dropbox marginal storage rather than cash, and it selected for people who actually wanted more Dropbox.
 
-**Embedded distribution.** Hotmail appended a signup link to every outgoing message. Nobody chose to refer anyone — using the product broadcast it, which is the cheapest loop that exists.
+**Embedded distribution.** [Hotmail](/case-study/hotmail-viral-growth-hack) appended a signup link to every outgoing message. Nobody chose to refer anyone — using the product broadcast it, which is the cheapest loop that exists.
 
-**Paid referral.** PayPal's $20 for signup and $20 for referring was expensive and blunt, and it bought a payments network in a market where the network was the entire product. It worked because the lifetime value of an early network node justified it; the same tactic bankrupts a business with weaker economics.
+**Paid referral.** [PayPal](/case-study/paypal-referral-bonus)'s $20 for signup and $20 for referring was expensive and blunt, and it bought a payments network in a market where the network was the entire product. It worked because the lifetime value of an early network node justified it; the same tactic bankrupts a business with weaker economics.
 
 ## The maths people skip
 

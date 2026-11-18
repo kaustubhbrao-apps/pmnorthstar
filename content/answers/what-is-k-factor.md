@@ -37,7 +37,7 @@ At k below 1, each generation is smaller than the last. The series converges —
 
 Both terms have to be high simultaneously, and they tend to trade off. Making invitations easier raises the count and usually lowers the conversion rate, because low-effort invitations reach people with weaker interest. Making invitations targeted raises conversion and lowers the count.
 
-The products that sustained k above 1 for long typically had the invitation embedded in the core action rather than bolted alongside it. Hotmail's footer on every outgoing message is the origin story of the whole idea: the invitation was the product being used, so the count was enormous and cost the sender nothing. PayPal's referral bonus paid both sides in cash — expensive, deliberately so, and it bought a network that then defended itself.
+The products that sustained k above 1 for long typically had the invitation embedded in the core action rather than bolted alongside it. [Hotmail](/case-study/hotmail-viral-growth-hack)'s footer on every outgoing message is the origin story of the whole idea: the invitation was the product being used, so the count was enormous and cost the sender nothing. [PayPal](/case-study/paypal-referral-bonus)'s referral bonus paid both sides in cash — expensive, deliberately so, and it bought a network that then defended itself.
 
 ## Cycle time is the underrated variable
 
@@ -55,4 +55,4 @@ This is why viral growth curves bend. The right response is a different loop, no
 
 Attribute properly — a signup that would have happened anyway does not belong in the numerator. Measure over a window long enough to capture delayed invitations. And segment: a blended k hides that one segment has a k of 2 and the rest have almost none, which is a much more actionable picture than the average.
 
-Dropbox's referral loop is often quoted for its headline growth figure; the more transferable lesson is that the reward was storage, so both parties got a better product and the invitation strengthened retention rather than trading it for reach.
+[Dropbox](/case-study/dropbox-referral-loop)'s referral loop is often quoted for its headline growth figure; the more transferable lesson is that the reward was storage, so both parties got a better product and the invitation strengthened retention rather than trading it for reach.

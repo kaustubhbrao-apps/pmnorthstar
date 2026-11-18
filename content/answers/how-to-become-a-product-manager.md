@@ -48,4 +48,4 @@ Name your gap honestly and close it visibly. That's a better interview answer th
 
 You'll be asked how you'd improve some product, and the answer that fails is a list of features. The answer that works establishes who the user is, what problem you're solving, why it matters, how you'd know it worked, and what you'd deliberately not do.
 
-Superhuman's product process is a useful thing to have studied for this reason: it's a public example of someone deciding what evidence would change their mind, then acting on it. That's the mode of thinking the interview is looking for — not familiarity with a framework, but a habit of turning vague questions into answerable ones.
+[Superhuman](/case-study/superhuman-product-market-fit)'s product process is a useful thing to have studied for this reason: it's a public example of someone deciding what evidence would change their mind, then acting on it. That's the mode of thinking the interview is looking for — not familiarity with a framework, but a habit of turning vague questions into answerable ones.

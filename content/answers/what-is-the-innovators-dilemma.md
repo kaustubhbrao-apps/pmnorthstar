@@ -33,7 +33,7 @@ Then the entrant improves along the dimension the incumbent's customers care abo
 
 ## What Kodak and BlackBerry actually show
 
-The popular version of Kodak — the company that missed digital — is wrong. Kodak built one of the first digital cameras and spent heavily on the technology. What it couldn't do was escape a model where film and processing generated the margins, and a retail network organised entirely around that flow. Structure, not foresight, was the trap.
+The popular version of [Kodak](/case-study/kodak-digital-camera-failure) — the company that missed digital — is wrong. Kodak built one of the first digital cameras and spent heavily on the technology. What it couldn't do was escape a model where film and processing generated the margins, and a retail network organised entirely around that flow. Structure, not foresight, was the trap.
 
 BlackBerry is the cleaner case of customer-listening as a failure mode. Its enterprise customers genuinely preferred the physical keyboard, security and battery life. Listening to them was correct by every conventional measure, and it produced a several-year delay in accepting the touchscreen era, by which point the platform advantage had moved to app ecosystems the company couldn't rebuild.
 

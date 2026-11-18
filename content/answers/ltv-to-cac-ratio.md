@@ -35,7 +35,7 @@ faqs:
 
 It is a heuristic, not a law. The logic: at 1:1 you have exactly recovered acquisition cost and funded none of the engineering, overhead or support that made the product exist. Roughly three times gives room for those costs plus margin. Below about 1.5:1 most businesses cannot grow without continuously raising money to fund the gap.
 
-MoviePass is the cautionary version. Ten dollars a month against customers who saw several twenty-dollar films made the ratio permanently negative, and volume made it worse rather than better — every new subscriber deepened the loss. No amount of growth fixes an inverted ratio, because growth is the thing multiplying it.
+[MoviePass](/case-study/moviepass-unlimited-pricing-2017) is the cautionary version. Ten dollars a month against customers who saw several twenty-dollar films made the ratio permanently negative, and volume made it worse rather than better — every new subscriber deepened the loss. No amount of growth fixes an inverted ratio, because growth is the thing multiplying it.
 
 ## Ratios lie in three specific ways
 
@@ -43,7 +43,7 @@ MoviePass is the cautionary version. Ten dollars a month against customers who s
 
 **Cohort effects get averaged away.** Your first customers were enthusiasts who retained well. Later cohorts, acquired through broader channels, often churn faster. A blended LTV built on early cohorts overstates every customer you will acquire next year.
 
-**A pandemic or a spike gets extrapolated.** Peloton read an extraordinary demand surge as the new baseline, which flattered every forward-looking unit economic it had. The ratio was accurate about a moment and wrong about the future.
+**A pandemic or a spike gets extrapolated.** [Peloton](/case-study/peloton-pandemic-overreach) read an extraordinary demand surge as the new baseline, which flattered every forward-looking unit economic it had. The ratio was accurate about a moment and wrong about the future.
 
 ## Using it well
 

@@ -35,9 +35,9 @@ The practical consequence: turn off spend on a funnel business and growth stops 
 
 ## The three common shapes
 
-**Viral loop.** A user's normal use of the product exposes another person to it, who signs up, and repeats. Dropbox's referral programme is the canonical version, though the more important detail is that the reward — storage — made the product better for both parties, so the loop strengthened retention instead of buying signups from people who wanted a gift card.
+**Viral loop.** A user's normal use of the product exposes another person to it, who signs up, and repeats. [Dropbox](/case-study/dropbox-referral-loop)'s referral programme is the canonical version, though the more important detail is that the reward — storage — made the product better for both parties, so the loop strengthened retention instead of buying signups from people who wanted a gift card.
 
-**Content loop.** Usage generates pages, pages attract search or assistant traffic, that traffic produces users, who generate more pages. Airbnb's programmatic location pages and Zapier's integration pages are both this: the catalogue of content grows with the business rather than with a content team's headcount.
+**Content loop.** Usage generates pages, pages attract search or assistant traffic, that traffic produces users, who generate more pages. [Airbnb](/case-study/airbnb-programmatic-seo)'s programmatic location pages and [Zapier](/case-study/zapier-programmatic-seo)'s integration pages are both this: the catalogue of content grows with the business rather than with a content team's headcount.
 
 **Paid loop.** Revenue from acquired customers funds acquiring more. It compounds only if payback is fast relative to your cash cycle — otherwise it is a funnel with a financing problem.
 

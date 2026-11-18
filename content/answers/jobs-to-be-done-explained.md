@@ -28,7 +28,7 @@ faqs:
 
 Products get hired and fired. A customer has a situation, feels a struggle, and reaches for something that will make progress. That thing might be your software, a competitor, a manual workaround, or nothing.
 
-The practical consequence is that your competitive set is defined by the job, not the category. Intercom built its early product thinking explicitly in these terms, which is how a messaging product ended up competing with email, helpdesks and internal tooling simultaneously — all things people had hired for the same job.
+The practical consequence is that your competitive set is defined by the job, not the category. [Intercom](/case-study/intercom-jobs-to-be-done) built its early product thinking explicitly in these terms, which is how a messaging product ended up competing with email, helpdesks and internal tooling simultaneously — all things people had hired for the same job.
 
 ## Why it beats feature requests
 
@@ -40,7 +40,7 @@ The second question is the valuable one. Customers are reliable reporters of the
 
 JTBD frames every adoption decision as four competing pressures: the push of the current situation, the pull of the new solution, the anxiety about switching, and the habit of what exists today. Most product teams over-invest in pull — more features, better demos — and ignore anxiety and habit, which are usually what actually block the switch.
 
-Lego's turnaround has a version of this in it. The company nearly died building products designed around what it thought children should want, and recovered partly by re-examining what building sets were actually hired for: absorbed, sustained, tangible progress that a video game was also competing for.
+[Lego](/case-study/lego-near-bankruptcy-comeback)'s turnaround has a version of this in it. The company nearly died building products designed around what it thought children should want, and recovered partly by re-examining what building sets were actually hired for: absorbed, sustained, tangible progress that a video game was also competing for.
 
 ## Where it gets misused
 

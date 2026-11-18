@@ -28,13 +28,13 @@ faqs:
 
 Most strategy work is additive — match competitors' features, then add a few. Blue ocean strategy insists on subtraction first. Which attributes does everyone in the industry compete on, and which of those could you drop entirely?
 
-Nintendo's Wii is the textbook case. The console industry competed on processing power and graphics; the Wii conceded both, decisively, and added motion control and a price point that put it in living rooms belonging to people who had never bought a console. Against a spec sheet it lost. Against the market it had invented, it had no competitor.
+[Nintendo](/case-study/nintendo-blue-ocean-wii)'s Wii is the textbook case. The console industry competed on processing power and graphics; the Wii conceded both, decisively, and added motion control and a price point that put it in living rooms belonging to people who had never bought a console. Against a spec sheet it lost. Against the market it had invented, it had no competitor.
 
 ## Why it's hard to actually do
 
 Dropping an industry-standard attribute feels like shipping a worse product, because by the incumbent scorecard it is. Every internal incentive pushes back — sales will report losing deals on the missing feature, reviewers will mark it down, and the comparison table will look bad.
 
-Tesla's direct-to-consumer model met exactly this resistance. Dealership networks were treated as a structural requirement of selling cars, and eliminating them looked like a handicap rather than a strategy until the economics and the customer experience proved otherwise.
+[Tesla](/case-study/tesla-direct-to-consumer)'s direct-to-consumer model met exactly this resistance. Dealership networks were treated as a structural requirement of selling cars, and eliminating them looked like a handicap rather than a strategy until the economics and the customer experience proved otherwise.
 
 ## The honest limitations
 

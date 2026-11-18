@@ -68,4 +68,4 @@ Candidates who have clearly not used the product are memorable in the wrong way,
 
 When asked why a number dropped, resist guessing. Segment it: is it all users or one group, one platform, one geography, one channel. Is it a measurement change or a behaviour change. Is it seasonal.
 
-Working through the decomposition audibly is the answer. Intercom's jobs-to-be-done thinking is useful background here — the strongest candidates keep returning to what the user was trying to accomplish rather than to the feature under discussion.
+Working through the decomposition audibly is the answer. [Intercom](/case-study/intercom-jobs-to-be-done)'s jobs-to-be-done thinking is useful background here — the strongest candidates keep returning to what the user was trying to accomplish rather than to the feature under discussion.

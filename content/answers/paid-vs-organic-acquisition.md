@@ -43,7 +43,7 @@ Then take the winning message and build the compounding channel around it.
 
 ## Organic compounds and cannot be rushed
 
-HubSpot's inbound approach is the long-form version: build a library that answers what your buyers are searching for, and each article keeps working indefinitely. Zapier's integration pages and Airbnb's location pages are the programmatic version, where the content grows with the business rather than with a writing team.
+[HubSpot](/case-study/hubspot-inbound-marketing)'s inbound approach is the long-form version: build a library that answers what your buyers are searching for, and each article keeps working indefinitely. [Zapier](/case-study/zapier-programmatic-seo)'s integration pages and [Airbnb](/case-study/airbnb-programmatic-seo)'s location pages are the programmatic version, where the content grows with the business rather than with a writing team.
 
 The catch is timeline. These take months to accumulate authority and traffic, which means the decision to invest has to be made well before the need is urgent. Companies routinely reach for paid precisely at the moment when a channel started a year earlier would be carrying them.
 

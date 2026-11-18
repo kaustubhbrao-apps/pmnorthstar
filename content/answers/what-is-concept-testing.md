@@ -47,7 +47,7 @@ Whether anyone will actually use it.
 
 Enthusiasm in a concept test is close to free. The respondent is not choosing between your idea and their current workflow, not paying, not migrating data, not persuading a colleague. Every one of those frictions is absent from the test and present in reality.
 
-Quibi is the standard illustration: the concept — premium short-form video for phones, with real stars — tested and pitched extremely well. What testing could not surface was whether anyone would add another paid subscription for a format they were already getting free. Google Glass has a similar shape, where the concept was thrilling in a demo and socially impossible in a café.
+[Quibi](/case-study/quibi-shutdown) is the standard illustration: the concept — premium short-form video for phones, with real stars — tested and pitched extremely well. What testing could not surface was whether anyone would add another paid subscription for a format they were already getting free. [Google](/case-study/google-glass-ahead-of-time) Glass has a similar shape, where the concept was thrilling in a demo and socially impossible in a café.
 
 ## Better signals, roughly in order of strength
 

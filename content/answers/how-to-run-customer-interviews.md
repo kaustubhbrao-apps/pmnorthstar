@@ -53,7 +53,7 @@ Tell me about the last time you categorised expenses. Now you get a real story: 
 
 The most common recruiting mistake is screening on job title. What predicts a useful interview is whether the person is currently in the situation your product addresses. Somebody who wrestled with this problem last month is worth ten people with the right title who have never encountered it.
 
-Headspace's early design work targeted a specific struggle — people who wanted to meditate and found existing tools intimidating and faintly embarrassing. That is a situation, and it made a far better screen than any demographic.
+[Headspace](/case-study/headspace-meditation-design)'s early design work targeted a specific struggle — people who wanted to meditate and found existing tools intimidating and faintly embarrassing. That is a situation, and it made a far better screen than any demographic.
 
 ## Handling the urge to pitch
 
@@ -63,4 +63,4 @@ If you must, save it for the last five minutes and mark it in your notes as a se
 
 ## Telling a useful interview from a pleasant one
 
-A useful interview contains at least one thing you did not expect and did not want to hear. If every conversation confirms your plan, you are either asking leading questions or talking to people who like you. Intercom's jobs-to-be-done practice earned its reputation by producing exactly those uncomfortable findings — customers repeatedly described hiring the product for a job the team had not designed for.
+A useful interview contains at least one thing you did not expect and did not want to hear. If every conversation confirms your plan, you are either asking leading questions or talking to people who like you. [Intercom](/case-study/intercom-jobs-to-be-done)'s jobs-to-be-done practice earned its reputation by producing exactly those uncomfortable findings — customers repeatedly described hiring the product for a job the team had not designed for.

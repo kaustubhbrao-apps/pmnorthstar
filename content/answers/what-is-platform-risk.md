@@ -40,7 +40,7 @@ The teams that survived it generally had something the platform didn't: propriet
 
 ## The other direction
 
-Myspace's decline is usually told as a design story, but the platform dimension matters: Facebook opened to developers and let others build on top, accumulating an ecosystem with reasons to stay, while Myspace kept the surface closed. Being the platform is the structural answer to platform risk, and it's available to fewer companies than would like it.
+[Myspace](/case-study/myspace-facebook-loss)'s decline is usually told as a design story, but the platform dimension matters: Facebook opened to developers and let others build on top, accumulating an ecosystem with reasons to stay, while Myspace kept the surface closed. Being the platform is the structural answer to platform risk, and it's available to fewer companies than would like it.
 
 ## What to do about it
 

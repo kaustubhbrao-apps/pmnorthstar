@@ -44,4 +44,4 @@ That also explains why it's a poor roadmap tool. It has no notion of value per e
 
 Everything becomes a Must have. It happens because Should-have reads as "unimportant" to whoever requested it, and nobody wants their feature demoted in a room. Two defences: cap Musts by effort share, and require a named consequence for each — what specifically breaks if this ships without it. Requirements that can't produce a concrete consequence aren't Musts.
 
-Jira's long accumulation of configurability is what a decade of unchecked Must-haves looks like: every one defensible in isolation, and collectively a product that needs a consultant. Linear's constraint is the same lesson run in reverse.
+Jira's long accumulation of configurability is what a decade of unchecked Must-haves looks like: every one defensible in isolation, and collectively a product that needs a consultant. [Linear](/case-study/linear-brand-from-day-one)'s constraint is the same lesson run in reverse.

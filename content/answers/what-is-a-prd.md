@@ -40,7 +40,7 @@ Notably absent: solution detail. The PRD frames the problem; design and engineer
 
 ## Amazon's inversion
 
-Amazon's working-backwards method replaces the requirements doc with a press release and FAQ written as if the product already shipped. It's a forcing function — if the press release is boring, the product is boring, and you've learned that before spending a quarter rather than after.
+[Amazon](/case-study/amazon-working-backwards)'s working-backwards method replaces the requirements doc with a press release and FAQ written as if the product already shipped. It's a forcing function — if the press release is boring, the product is boring, and you've learned that before spending a quarter rather than after.
 
 The mechanism transfers even if the format doesn't: write the outcome first, in language a customer would recognise, and check whether it's worth wanting.
 

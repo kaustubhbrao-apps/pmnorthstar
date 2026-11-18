@@ -41,7 +41,7 @@ The distinction is more important than any single retention percentage, and it i
 
 A curve that flattens at 15% is a real business if the market is large enough. A curve that declines to 40% and keeps declining is not, even though it looks better at every point in the first three months. Teams routinely celebrate the second and worry about the first, because the level is easy to see and the asymptote takes patience.
 
-Duolingo's growth is the flattening version taken seriously: the streak, the reminders and the gamification exist to move users into the flat part of the curve, and the company measures daily active learners rather than downloads precisely because downloads say nothing about whether the curve flattens.
+[Duolingo](/case-study/duolingo-gamification)'s growth is the flattening version taken seriously: the streak, the reminders and the gamification exist to move users into the flat part of the curve, and the company measures daily active learners rather than downloads precisely because downloads say nothing about whether the curve flattens.
 
 ## The three ways teams fool themselves
 
@@ -53,4 +53,4 @@ Duolingo's growth is the flattening version taken seriously: the streak, the rem
 
 ## What to do about a curve that will not flatten
 
-Look at where users fall off, not at the aggregate. Almost always, retention problems are activation problems in disguise — the users who leave in week one never reached the moment the product becomes useful. Twitter's suggested-users fix was exactly this: new accounts that followed nobody had nothing to come back to, so the fix was at the start of the curve, not the end.
+Look at where users fall off, not at the aggregate. Almost always, retention problems are activation problems in disguise — the users who leave in week one never reached the moment the product becomes useful. [Twitter](/case-study/twitter-suggested-users)'s suggested-users fix was exactly this: new accounts that followed nobody had nothing to come back to, so the fix was at the start of the curve, not the end.

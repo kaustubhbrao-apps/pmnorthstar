@@ -42,6 +42,6 @@ Rows are cohorts, columns are periods since joining. Three things to look for:
 
 ## Cohorts as a testing discipline
 
-Booking.com's culture of relentless experimentation is really a cohort discipline — every change is judged on what it does to a group of users over time, not on what it does to a dashboard on the day it ships. Duolingo's streak mechanics are similarly evaluated: the question isn't whether streaks are used, it's whether cohorts exposed to them retain measurably longer.
+[Booking.com](/case-study/booking-cta-testing)'s culture of relentless experimentation is really a cohort discipline — every change is judged on what it does to a group of users over time, not on what it does to a dashboard on the day it ships. [Duolingo](/case-study/duolingo-gamification)'s streak mechanics are similarly evaluated: the question isn't whether streaks are used, it's whether cohorts exposed to them retain measurably longer.
 
 The habit worth building: never report a metric to your team without asking which cohort it came from.

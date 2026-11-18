@@ -28,9 +28,9 @@ faqs:
 
 Developers evaluate products by trying them, not by taking a demo. That inverts the entire go-to-market: documentation is the sales page, the first API call is the pitch, and a confusing error message is a lost customer.
 
-Stripe's advantage came from taking this seriously earlier than anyone else. Docs, error messages and the quality of the first integration experience were treated as core product surface rather than support material, and developers made the buying decision before any salesperson was involved.
+[Stripe](/case-study/stripe-developer-first)'s advantage came from taking this seriously earlier than anyone else. Docs, error messages and the quality of the first integration experience were treated as core product surface rather than support material, and developers made the buying decision before any salesperson was involved.
 
-Vercel's position comes from the same recognition applied to deployment — that the workflow friction engineers tolerated was itself the opportunity.
+[Vercel](/case-study/vercel-developer-first)'s position comes from the same recognition applied to deployment — that the workflow friction engineers tolerated was itself the opportunity.
 
 ## The extra depth required
 

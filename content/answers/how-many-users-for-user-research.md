@@ -36,13 +36,13 @@ Most research arguments are really an unstated disagreement about which question
 
 Five per segment, not five total. If your product serves both a solo practitioner and an enterprise admin, five sessions split across both tells you little about either — you have two-and-a-half users per group, which is anecdote.
 
-Intercom's discovery practice reflects this: the job people were hiring the product for varied sharply between segments, so blending them would have averaged away the very distinction that mattered.
+[Intercom](/case-study/intercom-jobs-to-be-done)'s discovery practice reflects this: the job people were hiring the product for varied sharply between segments, so blending them would have averaged away the very distinction that mattered.
 
 ## Recruit for the situation, not the demographic
 
 The most common recruiting error is screening on job title. What determines behaviour is whether someone is currently in the situation your product addresses — someone who tried to solve this problem in the last month will tell you more than someone with the right title who has never had the problem.
 
-Headspace's early design work leaned heavily on a specific struggle: people who wanted to meditate and found existing tools intimidating. That's a situation, not a demographic, and it's a far better recruiting screen.
+[Headspace](/case-study/headspace-meditation-design)'s early design work leaned heavily on a specific struggle: people who wanted to meditate and found existing tools intimidating. That's a situation, not a demographic, and it's a far better recruiting screen.
 
 ## Small samples, honest claims
 
