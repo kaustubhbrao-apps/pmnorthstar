@@ -117,6 +117,25 @@ export default function AboutPage() {
               </li>
             </ul>
 
+            <SectionHead title="Also from the maker" />
+            <p className="shead-sub">A separate project, same no-paywall ethos.</p>
+            <div className="serif" style={{ fontSize: "1.18rem", lineHeight: 1.72, color: "var(--text-primary)", display: "grid", gap: "1.3rem", maxWidth: "70ch" }}>
+              <p>
+                Kaustubh also builds{" "}
+                <a
+                  href="https://practicearea.co.in"
+                  target="_blank"
+                  rel="noopener"
+                  style={{ color: "var(--brand-primary)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+                >
+                  PracticeArea
+                </a>{" "}
+                — a free site with CBSE Class 10 practice questions, mock tests, and worked
+                step-by-step solutions for Indian students. No sign-up, nothing to install, same
+                no-paywall approach as northstar.
+              </p>
+            </div>
+
             {socials.length > 0 && (
               <>
                 <SectionHead title="Get in touch" />

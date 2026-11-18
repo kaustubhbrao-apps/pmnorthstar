@@ -46,6 +46,16 @@ export function Footer() {
             >
               Free, curated library for product managers, founders, and operators. Hand-picked. No paywall.
             </p>
+            <a
+              href="https://practicearea.co.in"
+              target="_blank"
+              rel="noopener"
+              className="text-sm inline-flex items-center gap-1 transition-colors hover:opacity-80"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Also by the maker: PracticeArea — free CBSE Class 10 practice
+              <ArrowUpRight size={11} strokeWidth={1.8} />
+            </a>
           </div>
 
           {/* Nav columns */}
