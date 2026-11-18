@@ -10,7 +10,7 @@ export const BOOK_COUNT = 30;
 export const PLAYLIST_COUNT = 21;
 export const TOPIC_COUNT = 19;
 export const COMPARISON_COUNT = 53;
-export const AI_DECODED_COUNT = 29;
+export const AI_DECODED_COUNT = 31;
 export const DRILL_COUNT = 59;
 export const ANSWER_COUNT = 83;
 
