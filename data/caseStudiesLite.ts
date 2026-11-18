@@ -39,9 +39,9 @@ export const caseStudiesLite: CaseStudyLite[] = [
     company: "AutoTask AI",
     title: "Unleashing the Agents: The Cost of Premature Autonomy",
     category: "Product",
-    description: "AutoTask gave their workplace agents full system autonomy too early, leading to thousands of dollars in accidental cloud charges and deleted files for enterprise clients. They had to redesign the entire human-in-the-loop approval mechanism without ruining the user experience.",
+    description: "AutoTask gave their workplace agents full system autonomy too early, leading to accidental cloud charges and deleted files for enterprise clients. They had to redesign the human-in-the-loop approval mechanism without ruining the user experience.",
     logo: "⚡",
-    outcome: "Recovered trust and reached $15M ARR, pivoting to a 'supervised autonomy' model.",
+    outcome: "Rebuilt around 'supervised autonomy' — tiered, risk-scored human-in-the-loop approvals — turning oversight from a bottleneck into the product's trust moat.",
     year: 2026,
     tags: [
       "AI",
@@ -55,9 +55,9 @@ export const caseStudiesLite: CaseStudyLite[] = [
     company: "HireBench",
     title: "The AI Interviewer: Replacing Resumes with Agent-Led Assessments",
     category: "Hiring",
-    description: "In early 2026, recruiting startup HireBench realized static AI assessments were being easily gamed by candidate agents. They gambled their remaining runway on a fully autonomous interviewer agent capable of dynamic pair-programming and behavioral pressure testing.",
+    description: "When static AI assessments were easily gamed by candidates' own agents, a recruiting startup bet its runway on a fully autonomous interviewer capable of dynamic pair-programming and real-time probing.",
     logo: "🤖",
-    outcome: "Series B secured; now processing 40% of all YC startup technical screens.",
+    outcome: "Pivoted from static tests to a dynamic, adversarial, context-aware AI interviewer — restoring predictive signal once candidate agents had made static assessments worthless.",
     year: 2026,
     tags: [
       "AI",
@@ -71,9 +71,9 @@ export const caseStudiesLite: CaseStudyLite[] = [
     company: "Global Tech Industry",
     title: "The Great Traffic Drought: Navigating the 2026 AI Search Referral Collapse",
     category: "Growth",
-    description: "As multimodal AI agents like Claude 5 and Gemini 2.0 became the default gateways for online discovery, traditional web search traffic plummeted by 40% overnight. Publishers and e-commerce platforms faced an existential crisis as zero-click interactions obliterated conventional referral economics.",
+    description: "As multimodal AI agents became default gateways for online discovery, traditional web search referral traffic fell sharply. Publishers and e-commerce platforms faced an existential crisis as zero-click interactions reshaped referral economics.",
     logo: "🚀",
-    outcome: "Publishers pivoted to data-licensing consortiums and direct-agent APIs, stabilizing revenues and creating a new internet economy built on semantic data deals.",
+    outcome: "Publishers pivoted from selling pageviews to licensing data directly to AI platforms and exposing agent-ready APIs — rebuilding revenue around wholesale semantic data instead of clicks.",
     year: 2026,
     tags: [
       "AI",
@@ -139,7 +139,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Product",
     description: "Amazon poured hundreds of millions into developing a smartphone with 3D effects and frictionless purchasing capabilities, assuming consumers wanted an Amazon-first device. The product launched to abysmal reviews and catastrophic sales figures, forcing a massive write-down.",
     logo: "🚀",
-    outcome: "The failure killed Amazon's phone ambitions but redirected hardware efforts toward the vastly successful Echo and Alexa ecosystem, a dominant smart home platform in 2026.",
+    outcome: "The failure killed Amazon's phone ambitions and forced a $170M write-down — but its hardware and voice talent was redirected into the Echo and Alexa, which succeeded where the phone failed.",
     year: 2014,
     tags: [
       "Hardware",
@@ -155,7 +155,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Growth",
     description: "Facing stagnant growth, Amazon took a massive financial risk by offering an unlimited two-day shipping subscription for $79. Internal skeptics warned it would bankrupt the company, but Jeff Bezos pushed forward to change consumer psychology forever.",
     logo: "🚀",
-    outcome: "As of 2026, Prime boasts over 250 million members globally, acting as the bedrock of Amazon's sprawling e-commerce and media empire.",
+    outcome: "Prime grew into a membership base of over 250 million, becoming the gravitational center of Amazon's e-commerce and media empire.",
     year: 2005,
     tags: [
       "Subscription",
@@ -237,7 +237,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "At the peak of the iPod's dominance, Steve Jobs recognized that cell phones with built-in music players posed an existential threat. Apple preemptively cannibalized its own cash cow by developing a revolutionary touchscreen device.",
     logo: "🚀",
-    outcome: "The iPhone became the most profitable product in human history, driving Apple to a $3.5 trillion market cap by 2026.",
+    outcome: "The iPhone became the most profitable product in human history and carried Apple to become one of the most valuable companies on earth.",
     year: 2005,
     tags: [
       "Innovation",
@@ -286,7 +286,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Determined to break free from Google's data grip, Apple rushed its own mapping service into iOS 6 with disastrously inaccurate results. The fallout cost executive jobs but ultimately catalyzed a complete rebuild of Apple's spatial data infrastructure.",
     logo: "🚀",
-    outcome: "In 2026, Apple Maps has surpassed Google Maps in US iOS usage, leveraging advanced AR features and privacy-first on-device routing.",
+    outcome: "After the 'Mapgate' humiliation, Apple rebuilt its map data from scratch over years and turned Maps into a credible rival to Google — securing control of a core strategic data asset.",
     year: 2012,
     tags: [
       "Product Failure",
@@ -300,9 +300,9 @@ export const caseStudiesLite: CaseStudyLite[] = [
     company: "Apple",
     title: "The Siri Revival: Opening the Walled Garden to External Intelligence",
     category: "Strategic",
-    description: "After years of Siri falling behind conversational agents, Apple controversially decided to rebuild Siri as an orchestration layer routing queries to third-party models like Claude 5 and Gemini 2. This broke Apple's strict in-house-only AI philosophy but saved their ecosystem.",
+    description: "After years of Siri falling behind conversational agents, Apple moved to rebuild Siri as an orchestration layer routing queries to third-party models. This broke Apple's strict in-house-only AI philosophy to protect its ecosystem.",
     logo: "🍏",
-    outcome: "Siri usage surged 400%, maintaining iOS dominance in the agentic era.",
+    outcome: "Rebuilt Siri as a privacy-preserving orchestration layer over third-party models — conceding the frontier-model race to keep ownership of distribution and user context.",
     year: 2026,
     tags: [
       "Ecosystem",
@@ -505,7 +505,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Dismissing the iPhone as a battery-draining toy for consumers, RIM doubled down on physical keyboards and enterprise security. This miscalculation blinded them to the reality that consumers now dictated enterprise IT.",
     logo: "📱",
-    outcome: "Lost 99% of smartphone market share. Pivoted to enterprise software and automotive security, surviving as a niche firm in 2026.",
+    outcome: "Fell from over 50% of the US smartphone market to under 1%, then abandoned consumer hardware and survived as an enterprise-security and automotive software firm.",
     year: 2008,
     tags: [
       "Hardware",
@@ -586,7 +586,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "In an industry built on evading authorities, Coinbase bet that embracing regulation and compliance would be the durable moat — and became crypto's most trusted brand.",
     logo: "🪙",
-    outcome: "Became the first major crypto company to go public, listed on Nasdaq in 2021.",
+    outcome: "Became the first major crypto company to go public, listing on Nasdaq in 2021, and its compliance-first bet was vindicated when rivals like FTX collapsed.",
     year: 2012,
     tags: [
       "fintech",
@@ -670,7 +670,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Growth",
     description: "Calendly built virality into its core action: every time a user shared a scheduling link, they exposed a new prospect to the product — turning the feature itself into the marketing.",
     logo: "📅",
-    outcome: "Bootstrapped to a $3B valuation with tens of millions of users and strong profitability.",
+    outcome: "Bootstrapped to a roughly $3B valuation with tens of millions of users and strong profitability.",
     year: 2013,
     tags: [
       "product-led growth",
@@ -794,9 +794,9 @@ export const caseStudiesLite: CaseStudyLite[] = [
     company: "Anthropic",
     title: "Claude 5: The Operating System for the Agentic Enterprise",
     category: "Strategic",
-    description: "With the release of Claude 5, Anthropic shifted from offering a conversational model to delivering a full-fledged agentic OS capable of orchestrating multi-agent workflows. The product launch redefined how Fortune 500 companies deploy AI workforces.",
+    description: "With Claude 5, Anthropic pushed a shift from offering a conversational model to delivering an orchestration layer for multi-agent workflows — reframing enterprise AI from a chatbot into infrastructure.",
     logo: "🧠",
-    outcome: "Captured 60% of the enterprise AI orchestration market, reaching a $120B valuation.",
+    outcome: "Reframed enterprise AI around orchestration and governance rather than conversation, selling to CIOs as infrastructure instead of to individuals as an assistant.",
     year: 2026,
     tags: [
       "AI",
@@ -812,7 +812,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Growth",
     description: "Capitalizing on pandemic lockdowns and an invite-only model, Clubhouse engineered unprecedented hype. However, their inability to democratize the product fast enough allowed incumbents to clone their core feature.",
     logo: "🎧",
-    outcome: "Valued at $4B at its peak, the app faded into obscurity as Twitter Spaces dominated, operating as a ghost town by 2026.",
+    outcome: "Peaked near a $4B valuation, then faded as Twitter Spaces and other incumbents cloned live audio and captured the value Clubhouse had proven existed.",
     year: 2020,
     tags: [
       "Social",
@@ -862,7 +862,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategic",
     description: "As LLMs shifted from code-completion to agentic orchestration, Cursor and Codeium's Windsurf engaged in an arms race. The battle redefined the IDE from a text editor into a multi-agent control center.",
     logo: "🤖",
-    outcome: "Both achieved $10B+ valuations by 2026, establishing the 'Contextual Swarm' era and making manual boilerplate coding obsolete.",
+    outcome: "Split the agentic-IDE market into two coherent philosophies — deep single-thread orchestration vs parallel agent swarms — reshaping software economics around tiny, high-leverage teams.",
     year: 2026,
     tags: [
       "AI",
@@ -878,7 +878,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Product",
     description: "In an attempt to secure mainstream advertising dollars, Digg overhauled its core algorithm and UI, stripping power users of their influence. The resulting exodus handed the internet's front page to a scrappy competitor.",
     logo: "📉",
-    outcome: "Lost 26% of traffic instantly. Sold for parts in 2012 for $500k, paving the way for Reddit's complete dominance through 2026.",
+    outcome: "Lost over 26% of its traffic almost overnight and sold for roughly $500k in 2012 — handing the front page of the internet to Reddit.",
     year: 2010,
     tags: [
       "Redesign",
@@ -913,7 +913,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Growth",
     description: "Facing exorbitant customer acquisition costs through traditional ads, Dropbox needed a radical growth strategy. They gamified storage, turning users into advocates and setting the gold standard for product-led growth.",
     logo: "📦",
-    outcome: "Grew from 100k to 4M users in 15 months. IPO'd in 2018; operating as a highly profitable multi-product AI suite in 2026.",
+    outcome: "Grew from 100k to 4M users in 15 months on referrals alone, then IPO'd in 2018 — the model became the template for modern product-led growth.",
     year: 2008,
     tags: [
       "Growth",
@@ -1371,7 +1371,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Before going public, Facebook's mobile app was a sluggish HTML5 wrapper, and mobile revenue was zero. Zuckerberg ordered a complete rewrite to native code to save the company.",
     logo: "🚀",
-    outcome: "Facebook successfully transitioned to a mobile-first behemoth, driving 98%+ of its revenue from mobile today, setting the stage for its modern AI and spatial computing dominance.",
+    outcome: "Facebook rewrote its apps in native code and turned a mobile business worth zero into the majority of its revenue — one of the most consequential engineering pivots in tech history.",
     year: 2012,
     tags: [
       "Engineering",
@@ -1387,7 +1387,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "When Sketch dominated UI design via native Mac apps, Figma bet everything that complex design tools could run in the browser. It took years to build but changed collaboration forever.",
     logo: "🚀",
-    outcome: "Figma dominates the design market, survived the blocked Adobe acquisition, and is highly profitable in 2026 as the standard for spatial and agent-assisted design.",
+    outcome: "Figma became the standard for product design, survived the collapse of Adobe's ~$20B acquisition, and later went public — vindicating the browser bet entirely.",
     year: 2015,
     tags: [
       "Engineering",
@@ -1436,7 +1436,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "In 2014, Foursquare faced a bloated app trying to serve two distinct use cases local discovery and social check-ins. They made the controversial decision to split the app into two.",
     logo: "🚀",
-    outcome: "Foursquare lost consumer mindshare to Instagram and Google Maps but survived as an enterprise location data broker worth hundreds of millions in 2026.",
+    outcome: "Foursquare lost consumer mindshare to Instagram and Google Maps but survived by becoming an enterprise location-data company built on the foot-traffic dataset its apps generated.",
     year: 2014,
     tags: [
       "Product Strategy",
@@ -1783,7 +1783,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategic",
     description: "Facing a decline in core app engagement and existential threats from Apple's privacy changes, Facebook rebranded to Meta in 2021, committing tens of billions of dollars to build a VR/AR \"Metaverse.\"",
     logo: "🥽",
-    outcome: "By 2026, the strategy is viewed as a partial success. While the \"Ready Player One\" metaverse didn't materialize, the Quest line dominates enterprise training and immersive gaming, securing a vital hardware foothold.",
+    outcome: "The sci-fi \"metaverse\" never materialized and Reality Labs lost tens of billions, but Meta's subsidized Quest headsets won the standalone VR market — buying it a hardware foothold off its rivals' platforms.",
     year: 2021,
     tags: [
       "VR",
@@ -1799,7 +1799,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Growth",
     description: "Struggling to gain traction in its early days, Pinterest implemented an invite-only waitlist to manufacture scarcity and exclusivity. This psychological growth hack transformed slow adoption into explosive, highly engaged user growth.",
     logo: "🚀",
-    outcome: "Pinterest became a visual discovery giant, going public in 2019, and surpassing 600 million MAUs by 2026 with deep AI integration.",
+    outcome: "Pinterest grew into a visual-discovery platform with hundreds of millions of monthly users and went public in 2019.",
     year: 2010,
     tags: [
       "Growth Hacking",
@@ -1847,7 +1847,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Crisis",
     description: "Following tragic accidents involving its Tread+ machines, Peloton initially resisted safety warnings before issuing a massive, costly recall. The crisis destroyed brand trust and accelerated the company's catastrophic post-pandemic decline.",
     logo: "🚀",
-    outcome: "The recall cost hundreds of millions and crippled brand trust; by 2026, after multiple executive changes, Peloton pivoted entirely to an AI-coaching software platform, narrowly avoiding bankruptcy.",
+    outcome: "Peloton reversed course to recall 125,000 Tread+ machines at a cost of hundreds of millions — but its defiant initial response shattered brand trust just as the pandemic boom ended.",
     year: 2021,
     tags: [
       "Hardware",
@@ -1880,7 +1880,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Growth",
     description: "In 1999, PayPal offered users $20 to sign up and another $20 to refer a friend, burning through millions to acquire users quickly. This aggressive, unprecedented referral program created an insurmountable network effect that secured their dominance.",
     logo: "🚀",
-    outcome: "PayPal reached 1 million users by March 2000, IPO'd in 2002, and was acquired by eBay; today in 2026, it remains a global payments behemoth processing trillions annually.",
+    outcome: "PayPal reached 1 million users by March 2000, IPO'd in early 2002, and was acquired by eBay for $1.5 billion that year — the acquisition forced by its dominance on eBay's own platform.",
     year: 1999,
     tags: [
       "Growth Hacking",
@@ -1992,7 +1992,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Microsoft launched the Zune portable media player in 2006 to combat Apple's absolute dominance with the iPod. Despite decent hardware and innovative social features, it failed to break Apple's ecosystem lock-in.",
     logo: "🎵",
-    outcome: "The Zune captured a mere single-digit market share and was discontinued in 2011, though its UI heavily influenced Windows Phone.",
+    outcome: "The Zune captured only single-digit market share and was discontinued in 2011, though its Metro-style UI went on to shape Windows Phone.",
     year: 2006,
     tags: [
       "Hardware",
@@ -2124,7 +2124,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Business",
     description: "In 2017, MoviePass dropped its subscription price to an unsustainable $9.95 per month for one movie ticket every day. The goal was to build a massive subscriber base and force theaters into revenue-sharing agreements.",
     logo: "🎟️",
-    outcome: "The company burned through hundreds of millions of dollars as heavy usage outpaced revenue, resulting in spectacular bankruptcy in 2019.",
+    outcome: "The company burned through hundreds of millions as heavy usage outpaced revenue, collapsing into bankruptcy in 2019.",
     year: 2017,
     tags: [
       "Pricing",
@@ -2140,7 +2140,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Faced with plummeting market share in the smartphone era, Nokia CEO Stephen Elop drafted the infamous \"Burning Platform\" memo. Rather than adopting Android, Nokia made an exclusive, high-stakes alliance with Microsoft's Windows Phone OS.",
     logo: "📱",
-    outcome: "The strategy failed catastrophically. Nokia's phone division was sold to Microsoft for $7.2 billion in 2013 and later written off entirely, marking the end of Nokia's consumer hardware dominance.",
+    outcome: "The strategy failed catastrophically. Nokia's phone division was sold to Microsoft for $7.2 billion in 2013 and later written off entirely, ending Nokia's consumer hardware dominance.",
     year: 2011,
     tags: [
       "Mobile",
@@ -2152,11 +2152,11 @@ export const caseStudiesLite: CaseStudyLite[] = [
   {
     id: "cs-openai-dev-26",
     company: "OpenAI",
-    title: "The Omnipresent Assistant - How OpenAI's Halo Wearable Redefined Consumer Hardware",
+    title: "The Omnipresent Assistant - The Strategic Logic of an Agent-First Wearable",
     category: "Strategic",
-    description: "In late 2025, OpenAI decided to bypass the traditional smartphone ecosystem, launching a dedicated, agent-first wearable device. The move aimed to free ChatGPT from the constraints of iOS and Android app stores.",
+    description: "An AI lab building its own agent-first wearable aims to free its assistant from the constraints of iOS and Android app stores. This examines the strategic logic — and the steep risks — of bypassing the smartphone.",
     logo: "🧠",
-    outcome: "Sold 12 million units in its first two quarters, achieving a 15% market share in the new AI companion hardware category by mid-2026.",
+    outcome: "A high-risk bet to escape the mobile-OS sandbox by owning the hardware touchpoint — weighed against the graveyard of earlier AI hardware.",
     year: 2026,
     tags: [
       "Hardware",
@@ -2189,7 +2189,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategic",
     description: "In January 2021, unprecedented retail trading in meme stocks forced Robinhood to halt buying, sparking mass outrage. The company scrambled to raise emergency capital to meet massive clearinghouse deposit requirements.",
     logo: "🚀",
-    outcome: "Robinhood raised $3.4 billion in emergency funds, survived the crisis, IPO'd in 2021, and by 2026 had evolved into a comprehensive AI-powered financial hub.",
+    outcome: "Robinhood raised $3.4 billion in emergency funds over days, survived the crisis, and IPO'd later in 2021 — but the halt inflicted lasting brand damage and a $70M FINRA fine.",
     year: 2021,
     tags: [
       "Crisis Management",
@@ -2203,9 +2203,9 @@ export const caseStudiesLite: CaseStudyLite[] = [
     company: "OmniAI",
     title: "Surviving the Series A Mid-Pivot in the Age of Agentic AI",
     category: "Founding-funding",
-    description: "OmniAI realized their copilot product was obsolete just weeks before their Series A pitch. They aggressively pivoted to a fully autonomous AI agent platform to survive.",
+    description: "OmniAI realized their copilot product was obsolete just weeks before their Series A pitch. They aggressively pivoted to an autonomous agent-orchestration platform to survive.",
     logo: "🚀",
-    outcome: "OmniAI successfully raised a $30M Series A and became a market leader in agent-to-agent orchestration by mid-2026, boasting over $15M ARR.",
+    outcome: "Zeroed out hard-won copilot ARR to pitch an agent-infrastructure vision — betting that when individual agents commoditize, the value moves to orchestration and governance.",
     year: 2026,
     tags: [
       "Pivot",
@@ -2655,7 +2655,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Product",
     description: "Snap launched its first hardware product via mysterious yellow vending machines, creating unprecedented hype. However, poor supply chain management and mismatched product-market fit led to hundreds of thousands of unsold units.",
     logo: "🚀",
-    outcome: "Snap absorbed the $40M write-off as a learning tax, relentlessly iterating to arrive at its 2026 breakthrough AR Spectacles 5, which now lead the lightweight spatial computing market.",
+    outcome: "Snap absorbed a roughly $40M write-off on unsold Spectacles — an expensive lesson in mistaking hype for durable demand — but kept investing in the glasses form factor.",
     year: 2016,
     tags: [
       "Hardware",
@@ -2995,7 +2995,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Following a collapsed merger and a bloodbath over cricket rights, Zee made a highly targeted, heavily discounted bet on the FIFA World Cup to capture India's premium urban demographic.",
     logo: "📺",
-    outcome: "Acquired 39 FIFA events for an estimated $30M, a 70% discount, launching a new sports network just 10 days before kickoff.",
+    outcome: "Acquired 39 FIFA events for an estimated $30M, a roughly 70% discount, launching a new sports network just 10 days before kickoff.",
     year: 2026,
     tags: [
       "streaming",
@@ -3136,7 +3136,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Sony's Betamax was technologically superior to JVC's VHS format, but Sony's proprietary control and shorter recording times doomed it. This format war became the definitive lesson in ecosystem building over raw specs.",
     logo: "🚀",
-    outcome: "Sony learned from this defeat to win the Blu-ray war decades later, and by 2026, continues to apply these open-ecosystem principles to its PlayStation VR and mixed reality spatial computing platforms.",
+    outcome: "Betamax lost the home-video market to VHS despite better specs; Sony absorbed the lesson and applied open-ecosystem thinking decades later to win the Blu-ray format war.",
     year: 1975,
     tags: [
       "Strategy",
@@ -3152,7 +3152,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategic",
     description: "Spotify's exclusive $200M deal with Joe Rogan faced an existential test when artists pulled their music in protest of podcast content. The platform had to choose between its creator investments and its music legacy.",
     logo: "🚀",
-    outcome: "Spotify stood by Rogan, establishing itself as an audio-first platform rather than just a music app, paving the way for its 2026 dominance in AI-translated multi-lingual global podcasting.",
+    outcome: "Spotify stood by Rogan and added advisory labels — choosing the neutral-platform model to protect its podcast strategy, the path out of label-controlled music margins.",
     year: 2022,
     tags: [
       "Content Moderation",
@@ -3275,7 +3275,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "During the Model 3 ramp-up, Elon Musk bet the company's future on an ultra-automated 'alien dreadnought' factory. The resulting chaos nearly bankrupted Tesla before they embraced human-machine collaboration.",
     logo: "🚀",
-    outcome: "Tesla survived to become the world's most valuable automaker, and by 2026, has applied these hard-won lessons to successfully scale production of the CyberCab autonomous fleet.",
+    outcome: "Tesla survived 'production hell' by ripping robots out and rebalancing the line around people, then rearchitected manufacturing (the Giga Press) to design the hard parts away.",
     year: 2018,
     tags: [
       "Operations",
@@ -3291,7 +3291,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "In 2017, ByteDance faced a critical decision to penetrate the US market or remain a Chinese tech giant. Their $1 billion acquisition of Musical.ly became the ultimate trojan horse for global dominance.",
     logo: "🚀",
-    outcome: "By 2026, TikTok remains the dominant global social video platform with over 2 billion MAUs, successfully navigating complex US-China geopolitical decoupling through localized algorithmic governance.",
+    outcome: "The acquisition gave ByteDance a US audience to pair with its recommendation engine, and the merged TikTok grew into one of the largest social platforms in the world.",
     year: 2017,
     tags: [
       "M&A",
@@ -3343,7 +3343,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Expanding outside San Francisco for the first time, Uber faced the classic marketplace cold start problem in Seattle. Their aggressive tactics to guarantee driver liquidity set the playbook for their subsequent global hyper-expansion.",
     logo: "🚀",
-    outcome: "The Seattle playbook enabled Uber to dominate global ride-hailing, surviving the turbulent 2010s to become a profitable dispatch network in 2026, now seamlessly managing fleets of autonomous Level 5 robotaxis alongside human drivers.",
+    outcome: "The Seattle playbook became Uber's template for global expansion — and established the subsidy-driven, growth-at-all-costs culture that fueled both its dominance and its later crises.",
     year: 2011,
     tags: [
       "Marketplaces",
@@ -3376,9 +3376,9 @@ export const caseStudiesLite: CaseStudyLite[] = [
     company: "Acme AI",
     title: "The 2026 Vibe-Coded Launch Crisis: When Autonomous Agents Met Broken APIs",
     category: "Scope",
-    description: "In the rush to capitalize on the agentic economy, a prominent B2B startup launched a \"vibe-coded\" platform that looked great to humans but completely failed machine-to-machine interactions. The resulting cascade of failed autonomous purchases forced a fundamental pivot in how readiness is measured.",
+    description: "In the rush to capitalize on the agentic economy, a B2B startup launched a \"vibe-coded\" platform that looked great to humans but failed machine-to-machine interactions. The cascade of failed autonomous evaluations forced a rethink of how launch readiness is measured.",
     logo: "🚀",
-    outcome: "The company adopted the CheckIt standard for agent-readiness, eventually recovering to process $50M in autonomous agent transactions by late 2026, proving that \"vibes\" aren't enough for machine users.",
+    outcome: "Rebuilt for agent-readiness — structured data, a sandbox API, machine-to-machine auth — unlocking zero-touch, agent-to-agent conversions it had previously blocked.",
     year: 2026,
     tags: [
       "AI Agents",
@@ -3394,7 +3394,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "Vine invented the short-form video loop, cultivating a unique creator culture that defined early mobile video. But when Instagram launched 15-second videos in 2013, Vine's failure to adapt to creator needs and monetization spelled its doom.",
     logo: "🚀",
-    outcome: "Vine was shut down by Twitter in 2017, while its spiritual successor TikTok dominated the 2020s, leading to the 2026 landscape where AI-generated synthetic loops have completely replaced organic short-form video.",
+    outcome: "Vine was shut down by Twitter in 2017 — a cultural pioneer that lost the product war because it treated a format as a moat.",
     year: 2013,
     tags: [
       "Social Media",
@@ -3428,7 +3428,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Founder",
     description: "Armed with Vision Fund capital, WeWork aggressively expanded global footprint while positioning itself as a technology company rather than a real estate provider. The mismatch between unit economics and scaling ambitions set the stage for a spectacular reality check.",
     logo: "🚀",
-    outcome: "Following a failed 2019 IPO and eventual bankruptcy restructuring, WeWork emerged in 2026 as a leaner, profitable AI-managed flexible workspace provider operating at a fraction of its peak valuation.",
+    outcome: "After a failed 2019 IPO, Adam Neumann's ouster, and a 2023 Chapter 11 bankruptcy, WeWork was forced to become a far smaller, more sober flexible-workspace business.",
     year: 2017,
     tags: [
       "Strategy",
@@ -3462,7 +3462,7 @@ export const caseStudiesLite: CaseStudyLite[] = [
     category: "Strategy",
     description: "When WebEx and Skype dominated the enterprise video conferencing space, Zoom faced an uphill battle. By obsessing over reducing time-to-join to milliseconds, they turned friction into a structural moat.",
     logo: "🚀",
-    outcome: "Zoom became the default video infrastructure of the early 2020s and, by 2026, evolved into an AI-first spatial computing platform with over 400M daily active agents and users combined.",
+    outcome: "Zoom's obsessive friction reduction became the moat that let it absorb the 2020 remote-work surge from 10M to 300M daily participants while legacy incumbents buckled.",
     year: 2018,
     tags: [
       "Growth",

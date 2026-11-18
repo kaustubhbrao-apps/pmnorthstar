@@ -21,7 +21,7 @@ faqs:
 
 ## The Digital Paper Metaphor
 
-For thirty years, productivity software was trapped in a physical metaphor. Microsoft Word and Google Docs were essentially digital pieces of paper (8.5x11 inches, complete with margins). Evernote and OneNote were digital filing cabinets with digital folders holding digital notes.
+For thirty years, productivity software was trapped in a physical metaphor. Microsoft Word and Google Docs were essentially digital pieces of paper (8.5x11 inches, complete with margins). [Evernote](/compare/notion-vs-evernote) and OneNote were digital filing cabinets with digital folders holding digital notes.
 
 This metaphor was easy for humans to understand during the transition to computers in the 1990s, but it was deeply limiting for modern knowledge work.
 

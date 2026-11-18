@@ -44,7 +44,7 @@ Hampered by Twitter's broader struggles, Vine's leadership made fatal choices. I
 
 ## The slow, then sudden, end
 
-Instagram, meanwhile, iterated ruthlessly, later launching Stories in 2016 to blunt Snapchat. By the time Twitter shut Vine down in early 2017, the outcome had been clear for years. Vine failed to grasp that the format it invented was not the moat — the moat was the network, the monetization infrastructure, and relentless adaptation to user behavior. Its rigid adherence to its original thesis proved fatal in a market that demanded evolution, and the short-form crown it had forged passed first to Instagram and later to TikTok.
+Instagram, meanwhile, iterated ruthlessly, later launching Stories in 2016 to blunt Snapchat. By the time Twitter shut Vine down in early 2017, the outcome had been clear for years. Vine failed to grasp that the format it invented was not the moat — the moat was the network, the monetization infrastructure, and relentless adaptation to user behavior. Its rigid adherence to its original thesis proved fatal in a market that demanded evolution, and the short-form crown it had forged passed first to Instagram and later to [TikTok](/compare/vine-vs-tiktok).
 
 ## What this means for operators
 

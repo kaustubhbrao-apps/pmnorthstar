@@ -34,7 +34,7 @@ Dunzo began in 2014 as a "get anything delivered" service that started as a What
 
 ## The versatility it loved was hard to monetize
 
-The flaw inside the moat was monetization. The "get anything" model was delightful but operationally chaotic: errands were unpredictable, baskets small, and sending a rider across town for one low-value task had stubbornly poor economics. Meanwhile a shinier category emerged — quick commerce, the ten-minute grocery delivery pioneered by Zepto, Blinkit, and Swiggy Instamart — promising predictable, repeatable, high-frequency orders and the explosive growth narrative investors loved. Watching its differentiated niche look small beside ten-minute grocery, Dunzo faced the choice that decides these stories: double down on what made it unique, or chase the hot category where the money was flowing.
+The flaw inside the moat was monetization. The "get anything" model was delightful but operationally chaotic: errands were unpredictable, baskets small, and sending a rider across town for one low-value task had stubbornly poor economics. Meanwhile a shinier category emerged — quick commerce, the ten-minute grocery delivery pioneered by [Zepto](/compare/zepto-vs-dunzo), Blinkit, and Swiggy Instamart — promising predictable, repeatable, high-frequency orders and the explosive growth narrative investors loved. Watching its differentiated niche look small beside ten-minute grocery, Dunzo faced the choice that decides these stories: double down on what made it unique, or chase the hot category where the money was flowing.
 
 ## The pivot that changed the capital structure
 

@@ -36,7 +36,7 @@ By early 2011 Nokia â€” which had effectively invented the smartphone category â
 
 ## The contrarian bet on Windows Phone
 
-The safe move was Android, where Samsung, HTC, and Motorola were riding to massive growth. Nokia went the other way, partnering exclusively with Microsoft. The rationale was compelling on paper: Elop argued Android would turn Nokia into a low-margin commodity maker indistinguishable from a dozen Asian OEMs, whereas an exclusive Microsoft alliance would bring billions in platform-support payments and make Nokia the undisputed leader of a "third ecosystem" challenging the Apple-Google duopoly. It was a bet on differentiation over distribution.
+The safe move was Android, where Samsung, HTC, and Motorola were riding to massive growth. Nokia went the other way, partnering exclusively with Microsoft. The rationale was compelling on paper: Elop argued Android would turn Nokia into a low-margin commodity maker indistinguishable from a dozen Asian OEMs, whereas an exclusive Microsoft alliance would bring billions in platform-support payments and make Nokia the undisputed leader of a "third ecosystem" challenging the [Apple](/compare/nokia-vs-apple)-Google duopoly. It was a bet on differentiation over distribution.
 
 ## Beautiful phones, empty store
 

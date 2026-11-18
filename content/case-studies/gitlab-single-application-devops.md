@@ -28,7 +28,7 @@ publishedAt: '2026-10-09'
 
 In the mid-2010s, software development teams operated across an increasingly fragmented patchwork of specialized tools. An engineering workflow commonly looked like this:
 1. Product managers tracked feature requirements in Jira.
-2. Developers wrote code and opened pull requests on GitHub.
+2. Developers wrote code and opened pull requests on [GitHub](/compare/gitlab-vs-github).
 3. Automated test builds ran on Jenkins or CircleCI.
 4. Security vulnerabilities were scanned by Veracode or SonarQube.
 5. Docker container images were stored in JFrog Artifactory.

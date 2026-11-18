@@ -39,7 +39,7 @@ Users created "Notebooks" (folders) and filled them with "Notes" (pieces of pape
 
 This metaphor was brilliant for early personal productivity. But as the nature of digital work changed, Evernote refused to abandon the filing cabinet. They believed their core value was *storage*. 
 
-Meanwhile, a new wave of competitors realized that the future of work wasn't about storage; it was about *action* and *collaboration*. Google Docs made documents multiplayer. Notion made documents relational and modular. Roam Research made notes networked and bi-directional.
+Meanwhile, a new wave of competitors realized that the future of work wasn't about storage; it was about *action* and *collaboration*. Google Docs made documents multiplayer. [Notion](/compare/notion-vs-evernote) made documents relational and modular. Roam Research made notes networked and bi-directional.
 
 Evernote notes remained static, isolated silos of text. You couldn't @-mention a colleague seamlessly to assign them a task. You couldn't link notes together to create a dynamic wiki. It was a single-player tool operating in an increasingly multiplayer world.
 

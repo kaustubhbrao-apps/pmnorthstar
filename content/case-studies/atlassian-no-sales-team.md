@@ -30,7 +30,7 @@ Every Fortune 500 company has a different way of doing things. The QA team at Bo
 
 ## The Core Product Strategy: Infinite Plasticity
 
-Instead of enforcing an "opinionated" best practice (like Linear would famously do 15 years later), Jira did the exact opposite. It embraced infinite configurability.
+Instead of enforcing an "opinionated" best practice (like [Linear](/compare/linear-vs-jira) would famously do 15 years later), Jira did the exact opposite. It embraced infinite configurability.
 
 Jira gave project managers, scrum masters, and IT admins the tools to codify their exact corporate bureaucracy into the software itself. 
 

@@ -31,7 +31,7 @@ Enterprises were losing hundreds of millions of dollars annually to "false decli
 
 Adyen (which means "Start Over" in Surinamese) was founded in Amsterdam by Pieter van der Does. They looked at the payment ecosystem and made a heretical strategic decision. 
 
-Unlike Stripe, which launched around the same time and focused on building a beautiful API wrapper on top of existing banks, Adyen decided to build the actual bank. 
+Unlike [Stripe](/compare/stripe-vs-adyen), which launched around the same time and focused on building a beautiful API wrapper on top of existing banks, Adyen decided to build the actual bank. 
 
 Adyen built a full-stack, single-platform infrastructure. They became the gateway, the risk management system, and the acquiring bank all in one. They systematically went to local regulators across the globe and acquired banking licenses. 
 

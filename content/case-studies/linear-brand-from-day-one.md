@@ -21,7 +21,7 @@ faqs:
 
 ## The Incumbent of Infinite Configurability
 
-By 2019, Atlassian's Jira was the undisputed king of issue tracking. It was used by almost every major tech company on Earth. 
+By 2019, [Atlassian](/compare/linear-vs-jira)'s Jira was the undisputed king of issue tracking. It was used by almost every major tech company on Earth. 
 
 But it was also universally despised by the developers who actually had to use it every day. 
 

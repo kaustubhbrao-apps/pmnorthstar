@@ -28,7 +28,7 @@ publishedAt: '2026-10-09'
 
 For over sixty years, the business model of credit card companies has rested on a singular, unyielding imperative: **maximize the amount of money customers spend.**
 
-Whether it was American Express, Chase, or modern venture-backed competitors like Brex, card issuers made money primarily from interchange fees—taking roughly 1.5% to 2.5% of every transaction dollar. To encourage customers to swipe more, card companies built lavish rewards programs: points, airline miles, luxury lounges, and cash-back perks.
+Whether it was American Express, Chase, or modern venture-backed competitors like [Brex](/compare/brex-vs-ramp), card issuers made money primarily from interchange fees—taking roughly 1.5% to 2.5% of every transaction dollar. To encourage customers to swipe more, card companies built lavish rewards programs: points, airline miles, luxury lounges, and cash-back perks.
 
 The dirty secret of corporate finance was that rewards programs created a toxic principal-agent dilemma. Employees swiped company cards enthusiastically to rack up personal points and status, while corporate CFOs and controllers were left drowning in unmanaged SaaS subscriptions, duplicate software licenses, and bloated travel budgets.
 

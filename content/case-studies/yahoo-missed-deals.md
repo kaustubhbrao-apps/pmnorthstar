@@ -41,7 +41,7 @@ faqs:
 publishedAt: '2026-05-18'
 ---
 
-**Yahoo did not die from one catastrophic decision. It died from the accumulation of deferred ones — a company that repeatedly held the future in its hands and could never decide to close its fingers. It turned down Google for $1 million, then Microsoft's $44.6 billion, and sold itself to Verizon for $4.8 billion nine years later. The thread connecting every chapter is the same: strategic indecision, and an anchoring to past valuations that blinded leadership to a collapsing future. Yahoo proves that a company with dominant share, talent, and brand can fail through the compounding cost of decisions it would not make.**
+**Yahoo did not die from one catastrophic decision. It died from the accumulation of deferred ones — a company that repeatedly held the future in its hands and could never decide to close its fingers. It turned down [Google](/compare/yahoo-vs-google) for $1 million, then Microsoft's $44.6 billion, and sold itself to Verizon for $4.8 billion nine years later. The thread connecting every chapter is the same: strategic indecision, and an anchoring to past valuations that blinded leadership to a collapsing future. Yahoo proves that a company with dominant share, talent, and brand can fail through the compounding cost of decisions it would not make.**
 
 The tragedy is that Yahoo was never short of resources or opportunities. It was short of conviction, and in fast markets, indecision is itself a decision — usually the worst one.
 

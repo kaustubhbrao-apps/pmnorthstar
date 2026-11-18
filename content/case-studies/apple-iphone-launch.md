@@ -52,7 +52,7 @@ Apple was an outsider with zero telecom experience, which is precisely why it co
 
 ## The bet: shrink the tablet into a phone
 
-In 2005 the smartphone market belonged to BlackBerry and Nokia, both of which treated the physical keyboard as sacred, while carriers dictated everything from preinstalled software to button placement. The industry saw Apple — a computer and music company — as incapable of navigating carrier relationships, regulation, and component supply chains. Internally, two projects ran in parallel: a tablet and a phone. Steve Jobs made the fateful call to take the multi-touch technology being built for the tablet and shrink it into a phone, a decision that reframed the entire product around a screen instead of a keyboard.
+In 2005 the smartphone market belonged to BlackBerry and [Nokia](/compare/nokia-vs-apple), both of which treated the physical keyboard as sacred, while carriers dictated everything from preinstalled software to button placement. The industry saw Apple — a computer and music company — as incapable of navigating carrier relationships, regulation, and component supply chains. Internally, two projects ran in parallel: a tablet and a phone. Steve Jobs made the fateful call to take the multi-touch technology being built for the tablet and shrink it into a phone, a decision that reframed the entire product around a screen instead of a keyboard.
 
 ## The real problem: no one designed for the user
 

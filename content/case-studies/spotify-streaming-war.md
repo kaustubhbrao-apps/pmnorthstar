@@ -40,7 +40,7 @@ publishedAt: '2026-05-18'
 
 **Spotify won the streaming war on a single reframing that the entire music industry had missed: piracy was not a pricing problem, it was a convenience problem. The labels spent a decade fighting free by suing customers; Spotify beat free by being easier than free. If legal streaming was faster than finding a torrent, people would switch — and they did. Then Spotify widened the win by competing on a different axis than its deep-pocketed rivals: in a market where everyone licenses the same songs, it differentiated on the experience layer — personalization and habit — that a commodity catalog cannot provide. The lesson is to diagnose the real problem, then compete where the catalog isn't.**
 
-Apple Music launched later with a bigger catalog and deeper artist ties and still could not catch Spotify, because the contest was never about who had the songs. Everyone had the songs.
+[Apple Music](/compare/spotify-vs-apple-music) launched later with a bigger catalog and deeper artist ties and still could not catch Spotify, because the contest was never about who had the songs. Everyone had the songs.
 
 ## The industry fought the wrong war
 
