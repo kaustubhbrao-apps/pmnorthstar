@@ -19,7 +19,7 @@ faqs:
 publishedAt: '2026-08-12T15:00:00+00:00'
 ---
 
-**Facebook's mobile pivot is the definitive case on platform transitions: when the ground shifts, porting your old architecture onto it is not a shortcut — it is the trap. In 2012 Facebook had roughly 900 million users and close to zero mobile revenue, because its mobile app was an HTML5 web wrapper chasing "write once, run anywhere" and delivering a slow, crash-prone experience everywhere instead. The fix was not optimization; it was demolition. Facebook halted web development, rewrote its iOS and Android apps in native code, and reorganized the entire company around "mobile first." The lesson is that a new computing platform demands a product built for its constraints, not your old one translated onto it.**
+**[Facebook](/case-study/facebook-home-failure)'s mobile pivot is the definitive case on platform transitions: when the ground shifts, porting your old architecture onto it is not a shortcut — it is the trap. In 2012 Facebook had roughly 900 million users and close to zero mobile revenue, because its mobile app was an HTML5 web wrapper chasing "write once, run anywhere" and delivering a slow, crash-prone experience everywhere instead. The fix was not optimization; it was demolition. Facebook halted web development, rewrote its iOS and Android apps in native code, and reorganized the entire company around "mobile first." The lesson is that a new computing platform demands a product built for its constraints, not your old one translated onto it.**
 
 The bet that nearly sank the IPO was an engineering-efficiency bet; the recovery came from spending that efficiency back to buy a native experience.
 

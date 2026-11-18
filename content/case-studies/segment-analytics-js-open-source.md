@@ -28,7 +28,7 @@ publishedAt: '2026-10-09'
 
 In late 2012, four MIT college friends—Peter Reinhardt, Calvin French-Owen, Ian Storm Taylor, and Ilya Volodarsky—were running out of money. They had been accepted into Y Combinator in 2011 to build **ClassMap**, an ambitious classroom software tool designed to let college students give real-time feedback during university lectures.
 
-It was an utter failure. When professors opened the floor, students used the laptops to browse Facebook instead.
+It was an utter failure. When professors opened the floor, students used the laptops to browse [Facebook](/case-study/facebook-home-failure) instead.
 
 Desperate to survive, the team pivoted to building an analytics tool. They spent six months designing dashboards, building algorithms to predict user metrics, and writing complex charting software. When they showed it to prospective customers, the response was uniform indifference. Nobody wanted another standalone analytics dashboard.
 
@@ -52,7 +52,7 @@ They compromised by building a landing page with an email signup form and posted
 
 The post went instantly viral, surging to the #1 spot on Hacker News and generating thousands of upvotes. 
 
-The repo accumulated thousands of GitHub stars in days. The email inbox flooded with messages from tech leads at major startups begging for more integrations: *"Can you add support for HubSpot? Can you pipe this to Salesforce? Can you send this to our AWS S3 data warehouse?"*
+The repo accumulated thousands of GitHub stars in days. The email inbox flooded with messages from tech leads at major startups begging for more integrations: *"Can you add support for HubSpot? Can you pipe this to [Salesforce](/case-study/salesforce-no-software)? Can you send this to our AWS S3 data warehouse?"*
 
 The founders suddenly realized they had stumbled into a fundamental architectural bottleneck: **the data collection tax of the modern internet**. 
 
@@ -63,7 +63,7 @@ Every marketing department wanted ten different SaaS tools (email marketing, CRM
 Segment quickly evolved from a client-side JavaScript router into a high-throughput cloud infrastructure pipeline:
 1. **Single Point of Ingestion:** Companies instrumented Segment’s SDK across their mobile apps, web clients, and backend server code.
 2. **Enterprise Integrations:** Segment maintained hundreds of battle-tested integrations. If marketing wanted to test a new push notification vendor, they simply enabled it in the Segment web dashboard; zero engineering sprint time was required.
-3. **Data Warehousing on Autopilot:** Segment didn't just route events to marketing tools; it automatically schematized raw JSON tracking events into structured SQL tables inside Amazon Redshift, Snowflake, and BigQuery.
+3. **Data Warehousing on Autopilot:** Segment didn't just route events to marketing tools; it automatically schematized raw JSON tracking events into structured SQL tables inside Amazon Redshift, [Snowflake](/case-study/snowflake-separation-storage-compute), and BigQuery.
 
 Segment essentially invented the **Customer Data Platform (CDP)** category. They moved from charging $10/month for simple routing to commanding seven-figure enterprise contracts from companies like IBM, Intuit, and Levi's.
 

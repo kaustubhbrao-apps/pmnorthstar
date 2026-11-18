@@ -35,7 +35,7 @@ However, BACA was suffering from a classic industrial bottleneck. Their legacy E
 
 Most manufacturers faced with an aging ERP simply bite the bullet, buy a newer, shinier ERP, and pay millions of dollars to implementation consultants to migrate their data. 
 
-BACA Systems took a radical, highly unorthodox approach. They recognized that they were already using Salesforce successfully to manage their front-office sales pipeline. They decided to see how far they could push the platform's underlying relational database. 
+BACA Systems took a radical, highly unorthodox approach. They recognized that they were already using [Salesforce](/case-study/salesforce-no-software) successfully to manage their front-office sales pipeline. They decided to see how far they could push the platform's underlying relational database. 
 
 Instead of undergoing a multi-year ERP migration, they ripped out their legacy ERP entirely. They decided to run their entire factory floor on their CRM.
 

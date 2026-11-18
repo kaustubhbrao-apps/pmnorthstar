@@ -26,7 +26,7 @@ In the early 2000s, software development was chaotic. Agile was still a nascent 
 
 Atlassian, a scrappy Australian startup, launched Jira in 2002 as a simple issue tracker. But as it scaled into larger organizations, it encountered a profound truth about enterprise software: **Large companies don't want software that changes their behavior. They want software that molds to their existing behavior.**
 
-Every Fortune 500 company has a different way of doing things. The QA team at Boeing has different compliance requirements than the QA team at Netflix. 
+Every Fortune 500 company has a different way of doing things. The QA team at Boeing has different compliance requirements than the QA team at [Netflix](/case-study/netflix-dvd-to-streaming). 
 
 ## The Core Product Strategy: Infinite Plasticity
 

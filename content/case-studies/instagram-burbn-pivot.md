@@ -45,7 +45,7 @@ The courage here is underrated. Systrom and Krieger had spent months building fe
 
 ## A feature-rich app no one needed
 
-Kevin Systrom and Mike Krieger first built Burbn, a location check-in app competing with Foursquare, Gowalla, and a dozen others. It was feature-rich — check-ins, plans, points, photo sharing — wrapped in an interface that tried to do everything and did nothing well. It had raised $500,000 from Baseline Ventures and Andreessen Horowitz, but engagement was tepid: the market was saturated and Burbn gave no one a reason to choose it over the incumbents. The problem was not a missing feature; it was too many.
+Kevin Systrom and Mike Krieger first built Burbn, a location check-in app competing with [Foursquare](/case-study/foursquare-swarm-split-2014), Gowalla, and a dozen others. It was feature-rich — check-ins, plans, points, photo sharing — wrapped in an interface that tried to do everything and did nothing well. It had raised $500,000 from Baseline Ventures and Andreessen Horowitz, but engagement was tepid: the market was saturated and Burbn gave no one a reason to choose it over the incumbents. The problem was not a missing feature; it was too many.
 
 ## The data told a story no survey would have
 
@@ -61,7 +61,7 @@ The filters were the secret weapon. In 2010 phone cameras produced flat, mediocr
 
 ## Organic growth and the $1B validation
 
-Instagram launched October 6, 2010, hit 25,000 users on day one, 100,000 within a week, a million within two months — entirely organic, driven by a sharing loop where posts cross-posted to Twitter and Facebook, where followers saw the filtered images and asked what app made them. Eighteen months in, Facebook acquired it for $1 billion, seemingly outrageous for a 13-person company with zero revenue, and one of the greatest acquisitions ever: Instagram now has over 2 billion monthly actives. It went on to create the influencer economy and make "Instagrammable" a word, shaping how restaurants plate food and cities design public space.
+Instagram launched October 6, 2010, hit 25,000 users on day one, 100,000 within a week, a million within two months — entirely organic, driven by a sharing loop where posts cross-posted to [Twitter](/case-study/twitter-suggested-users) and [Facebook](/case-study/facebook-home-failure), where followers saw the filtered images and asked what app made them. Eighteen months in, Facebook acquired it for $1 billion, seemingly outrageous for a 13-person company with zero revenue, and one of the greatest acquisitions ever: Instagram now has over 2 billion monthly actives. It went on to create the influencer economy and make "Instagrammable" a word, shaping how restaurants plate food and cities design public space.
 
 ## What this means for operators
 

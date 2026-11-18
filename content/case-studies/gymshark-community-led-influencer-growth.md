@@ -73,7 +73,7 @@ Francis quit his Pizza Hut delivery job that afternoon.
 Gymshark formalized this community-first creator playbook into the **Gymshark Athletes** program:
 - They signed exclusive long-term sponsorship deals with the most magnetic fitness creators on the internet, treating them not as billboards, but as respected family members and co-designers.
 - Instead of opening expensive permanent retail stores, Gymshark launched **World Pop-Up Tours** in London, New York, Toronto, and Sydney. When Gymshark arrived in a city, thousands of teenagers camped on sidewalks overnight in sleeping bags just to enter the temporary store and workout alongside their fitness heroes.
-- They mastered the TikTok fitness community, launching viral challenges like the "66 Days: Change Your Life" campaign, generating billions of organic views.
+- They mastered the [TikTok](/case-study/tiktok-algorithm) fitness community, launching viral challenges like the "66 Days: Change Your Life" campaign, generating billions of organic views.
 
 ## The General Atlantic Unicorn Milestone
 

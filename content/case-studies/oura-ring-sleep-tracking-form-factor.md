@@ -31,7 +31,7 @@ By the mid-2010s, the consumer wearable technology market was converging around 
 Led by the Apple Watch, Fitbit, and Garmin, the tech industry insisted that the future of personal computing was a touchscreen strapped to the wrist. 
 
 Yet for millions of people, the smartwatch experience was deeply flawed:
-- **Notification Overload:** The watch was constantly buzzing, vibrating with Slack pings, text messages, and calendar alarms, becoming an anxious extension of the smartphone.
+- **Notification Overload:** The watch was constantly buzzing, vibrating with [Slack](/case-study/slack-gaming-pivot) pings, text messages, and calendar alarms, becoming an anxious extension of the smartphone.
 - **Sleep Discomfort:** Wearing a bulky, glass-and-aluminum square to bed felt unnatural and awkward on the wrist.
 - **Terrible Battery Life:** Because smartwatches drove bright OLED screens and radio antennas, their batteries lasted barely 18 to 24 hours. Users had to charge them overnight on the nightstand—the exact time when biometric sleep tracking was supposed to happen.
 - **Biometric Inaccuracy:** Measuring heart rate and Heart Rate Variability (HRV) through the top of the wrist is notoriously noisy due to thick skin, bone interference, and wrist movements.

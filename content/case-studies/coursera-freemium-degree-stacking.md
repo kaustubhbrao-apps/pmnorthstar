@@ -57,7 +57,7 @@ They introduced the **Verified Certificate (Signature Track)**:
 
 The impact was immediate and profound. Students who paid $49 for a certificate achieved **completion rates above 60%**—a 15x increase over free learners. 
 
-The payment introduced psychological skin in the game. More importantly, it aligned Coursera’s product directly with career advancement: students paid because they could link the verified Coursera credential directly to their LinkedIn profiles and resumes to land software engineering and data science jobs.
+The payment introduced psychological skin in the game. More importantly, it aligned Coursera’s product directly with career advancement: students paid because they could link the verified Coursera credential directly to their [LinkedIn](/case-study/linkedin-profile-completeness) profiles and resumes to land software engineering and data science jobs.
 
 ## The Specialization and the Stackable Master's Degree
 

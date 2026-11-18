@@ -27,7 +27,7 @@ publishedAt: '2026-10-09'
 
 ## A Broken TV and a 300% Price Hike
 
-In 2010, Girish Mathrubootham was a senior director at Zoho in Chennai, India. That year, he ordered a new flat-screen television to be shipped from the United States to his home in India. The TV arrived completely shattered. 
+In 2010, Girish Mathrubootham was a senior director at [Zoho](/case-study/zoho-bootstrap-billions) in Chennai, India. That year, he ordered a new flat-screen television to be shipped from the United States to his home in India. The TV arrived completely shattered. 
 
 For five agonizing months, Mathrubootham battled non-responsive customer service phone lines and unanswered emails trying to secure a refund. In frustration, he posted his experience on an online consumer forum called MouthShut. Within twenty-four hours, the shipping company called him, apologized, and delivered a full refund.
 
@@ -62,7 +62,7 @@ Mathrubootham recognized that a standalone customer ticketing tool had a natural
 
 Freshworks methodically executed a multi-product horizontal expansion:
 - **Freshservice (2014):** An IT service management (ITSM) tool for internal employee tickets, directly competing with ServiceNow.
-- **Freshsales (2016):** An intuitive CRM for sales teams, challenging Salesforce.
+- **Freshsales (2016):** An intuitive CRM for sales teams, challenging [Salesforce](/case-study/salesforce-no-software).
 - **Freshchat (2017):** Modern conversational messaging and chatbots.
 
 Renamed **Freshworks**, the company evolved into a unified business platform. Customers who started with Freshdesk for customer support quickly adopted Freshservice and Freshsales, driving massive expansion ARR.

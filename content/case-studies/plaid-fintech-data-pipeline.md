@@ -26,7 +26,7 @@ publishedAt: '2026-10-09'
 
 ## The Micro-Deposit Chasm
 
-In 2013, the consumer financial technology revolution was preparing to explode. Startups like Venmo, Robinhood, Betterment, Acorns, and Coinbase were designing gorgeous mobile applications that promised to reinvent payments, investing, and wealth management for the smartphone generation.
+In 2013, the consumer financial technology revolution was preparing to explode. Startups like Venmo, Robinhood, Betterment, Acorns, and [Coinbase](/case-study/coinbase-compliance-moat) were designing gorgeous mobile applications that promised to reinvent payments, investing, and wealth management for the smartphone generation.
 
 Yet every single one of these startups slammed headfirst into an archaic brick wall the moment a new user tried to fund their account: **the micro-deposit verification process**.
 
@@ -68,7 +68,7 @@ The impact on fintech conversion rates was transformative. App onboarding comple
 - When **Venmo** allowed friends to split dinner bills, Plaid handled account verification.
 - When **Coinbase** onboarded millions of retail cryptocurrency buyers during market bull runs, Plaid kept the onboarding pipe open.
 
-Fintech developers famously joked: *"Don't bother building a backend; just connect Plaid and Stripe and you have a financial institution."*
+Fintech developers famously joked: *"Don't bother building a backend; just connect Plaid and [Stripe](/case-study/stripe-developer-first) and you have a financial institution."*
 
 ## The Visa Anti-Trust Battle
 

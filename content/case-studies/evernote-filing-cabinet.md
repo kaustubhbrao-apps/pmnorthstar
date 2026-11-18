@@ -57,9 +57,9 @@ Phil Libin, the former CEO, famously noted that "users only use 5% of Evernote's
 
 While Evernote was busy launching branded backpacks, their core infrastructure was rotting. 
 
-Because they had built native apps for every conceivable platform (Windows, Mac, iOS, Android, Web, Blackberry) using different codebases, deploying a single new feature took months. Bugs proliferated. Syncing—the very feature that made Evernote famous—became notoriously unreliable. Users began complaining about duplicated notes and lost data.
+Because they had built native apps for every conceivable platform (Windows, Mac, iOS, Android, Web, [Blackberry](/case-study/blackberry-touchscreen-refusal)) using different codebases, deploying a single new feature took months. Bugs proliferated. Syncing—the very feature that made Evernote famous—became notoriously unreliable. Users began complaining about duplicated notes and lost data.
 
-By the time Evernote realized they needed to rewrite their entire architecture from scratch to be cross-platform and reliable, competitors like Notion had already stolen their most lucrative power users.
+By the time Evernote realized they needed to rewrite their entire architecture from scratch to be cross-platform and reliable, competitors like [Notion](/case-study/notion-all-in-one-workspace) had already stolen their most lucrative power users.
 
 ## Deep-Dive Takeaways for Builders
 

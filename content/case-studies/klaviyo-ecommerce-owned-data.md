@@ -59,11 +59,11 @@ Connecting Klaviyo to Shopify took a single click. Within fifteen minutes, a mer
 
 Merchants didn't view Klaviyo as an administrative software expense; they viewed it as an **ATM machine**. If a merchant paid Klaviyo $500 a month and Klaviyo’s dashboard attributed $15,000 of automated revenue directly to its flows, upgrading to higher tiers as the store grew was an effortless economic decision.
 
-During the direct-to-consumer boom of the late 2010s—powered by iconic brands like Gymshark, Allbirds, and ColourPop—Klaviyo became the non-negotiable marketing infrastructure of modern online retail.
+During the direct-to-consumer boom of the late 2010s—powered by iconic brands like [Gymshark](/case-study/gymshark-community-led-influencer-growth), [Allbirds](/case-study/allbirds-sustainable-d2c-footwear), and ColourPop—Klaviyo became the non-negotiable marketing infrastructure of modern online retail.
 
 ## Expanding to the Owned Data Platform
 
-As Apple introduced App Tracking Transparency (ATT) in iOS 14.5, third-party advertising on Facebook and Instagram became radically more expensive and less effective. Customer acquisition costs (CAC) skyrocketed across the e-commerce industry.
+As Apple introduced App Tracking Transparency (ATT) in iOS 14.5, third-party advertising on [Facebook](/case-study/facebook-home-failure) and Instagram became radically more expensive and less effective. Customer acquisition costs (CAC) skyrocketed across the e-commerce industry.
 
 Klaviyo’s strategic value surged. Brands could no longer afford to rely on rented audiences on social media platforms; they desperately needed to cultivate and monetize their **owned customer data**.
 

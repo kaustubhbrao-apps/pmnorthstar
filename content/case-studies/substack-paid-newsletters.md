@@ -40,7 +40,7 @@ The problem was structural, not technological. The tools to send email and charg
 
 ## Deliberately building less
 
-The decisive move was to build less, not more. Substack launched intentionally minimal — a clean editor, a subscriber list, Stripe payments — with no recommendation algorithm, no engagement-maximizing feed, no gamification. That was a strategic stance disguised as a feature set: the founders argued algorithmic distribution corrupts writing by rewarding outrage and volume, and refused to build it despite pressure. Its pricing reinforced the stance — nothing for free newsletters, 10% only of paid revenue — aligning the company's success entirely with writers earning money rather than with traffic or ad impressions.
+The decisive move was to build less, not more. Substack launched intentionally minimal — a clean editor, a subscriber list, [Stripe](/case-study/stripe-developer-first) payments — with no recommendation algorithm, no engagement-maximizing feed, no gamification. That was a strategic stance disguised as a feature set: the founders argued algorithmic distribution corrupts writing by rewarding outrage and volume, and refused to build it despite pressure. Its pricing reinforced the stance — nothing for free newsletters, 10% only of paid revenue — aligning the company's success entirely with writers earning money rather than with traffic or ad impressions.
 
 ## Proof, then the pull of growth
 

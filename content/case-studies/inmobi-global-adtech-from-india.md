@@ -38,13 +38,13 @@ Within six months, the business was in financial ruin:
 
 The founders sat on the floor of their apartment with maxed-out personal credit cards. They realized that SMS search had no future. But during their trials, they noticed a critical technical shift: mobile phone carriers were beginning to roll out **GPRS mobile internet data** across developing nations.
 
-Even on cheap Nokia feature phones running Symbian, users were starting to browse primitive mobile websites.
+Even on cheap [Nokia](/case-study/nokia-windows-phone-bet-2011) feature phones running Symbian, users were starting to browse primitive mobile websites.
 
 ## The Global Emerging Market Arbitrage
 
 In 2008, the founders rebranded mKhoj to **InMobi** and executed a daring pivot: **they set out to build a global mobile advertising network.**
 
-At the time, desktop advertising was completely monopolized by Google and Yahoo. But mobile advertising was a chaotic frontier. In Silicon Valley, startups like AdMob were building mobile ad networks for the emerging iPhone market.
+At the time, desktop advertising was completely monopolized by Google and [Yahoo](/case-study/yahoo-missed-deals). But mobile advertising was a chaotic frontier. In Silicon Valley, startups like AdMob were building mobile ad networks for the emerging iPhone market.
 
 InMobi made a brilliant strategic decision: **they refused to compete in the United States.**
 

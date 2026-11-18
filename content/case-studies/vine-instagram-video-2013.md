@@ -32,7 +32,7 @@ Vine won the cultural battle and lost the product war, because culture is not a 
 
 ## A cultural crucible in six seconds
 
-In early 2013, after Twitter acquired it, Vine captured a strange, frenetic energy: six-second looping videos whose severe constraint bred unprecedented creativity. Touch to record, release to stop — a masterclass in frictionless mobile creation. The loop became the digital equivalent of a perfect pop song: instantly consumable, endlessly repeatable, highly shareable. For a shining moment Vine was the unquestioned king of mobile video, seemingly poised to own the future of social entertainment.
+In early 2013, after [Twitter](/case-study/twitter-suggested-users) acquired it, Vine captured a strange, frenetic energy: six-second looping videos whose severe constraint bred unprecedented creativity. Touch to record, release to stop — a masterclass in frictionless mobile creation. The loop became the digital equivalent of a perfect pop song: instantly consumable, endlessly repeatable, highly shareable. For a shining moment Vine was the unquestioned king of mobile video, seemingly poised to own the future of social entertainment.
 
 ## The incumbent's calculated assault
 
@@ -44,7 +44,7 @@ Hampered by Twitter's broader struggles, Vine's leadership made fatal choices. I
 
 ## The slow, then sudden, end
 
-Instagram, meanwhile, iterated ruthlessly, later launching Stories in 2016 to blunt Snapchat. By the time Twitter shut Vine down in early 2017, the outcome had been clear for years. Vine failed to grasp that the format it invented was not the moat — the moat was the network, the monetization infrastructure, and relentless adaptation to user behavior. Its rigid adherence to its original thesis proved fatal in a market that demanded evolution, and the short-form crown it had forged passed first to Instagram and later to [TikTok](/compare/vine-vs-tiktok).
+Instagram, meanwhile, iterated ruthlessly, later launching Stories in 2016 to blunt [Snapchat](/case-study/snapchat-ephemeral-content). By the time Twitter shut Vine down in early 2017, the outcome had been clear for years. Vine failed to grasp that the format it invented was not the moat — the moat was the network, the monetization infrastructure, and relentless adaptation to user behavior. Its rigid adherence to its original thesis proved fatal in a market that demanded evolution, and the short-form crown it had forged passed first to Instagram and later to [TikTok](/compare/vine-vs-tiktok).
 
 ## What this means for operators
 

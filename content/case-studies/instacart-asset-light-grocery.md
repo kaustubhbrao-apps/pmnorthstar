@@ -73,7 +73,7 @@ Instacart discovered its true high-margin business model inside the digital shop
 
 When a consumer searches for "paper towels" or "sparkling water" on Instacart, Consumer Packaged Goods (CPG) giants like Procter & Gamble, PepsiCo, Unilever, and Nestlé pay billions of dollars in sponsored search ads to ensure their brand appears at the top of the search results.
 
-Unlike Google or Facebook ads, where an ad click might lead to a purchase days later, an Instacart ad click resulted in **immediate, high-intent cart placement and checkout**. Advertising generated over $800 million in annual high-margin revenue, transforming Instacart into a highly profitable digital advertising and enterprise retail technology platform.
+Unlike Google or [Facebook](/case-study/facebook-home-failure) ads, where an ad click might lead to a purchase days later, an Instacart ad click resulted in **immediate, high-intent cart placement and checkout**. Advertising generated over $800 million in annual high-margin revenue, transforming Instacart into a highly profitable digital advertising and enterprise retail technology platform.
 
 Instacart completed its initial public offering on the Nasdaq in September 2023, proving that asset-light software coordination can conquer an industry that crushed billions of dollars of asset-heavy capital.
 

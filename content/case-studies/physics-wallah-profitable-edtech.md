@@ -60,7 +60,7 @@ publishedAt: '2026-11-11'
 
 ## The Teacher Who Beat the Unicorn
 
-In 2022, Indian edtech had a king, and its name was Byju's. The company was valued at $22 billion, plastered its logo on the Indian cricket team's jersey, sponsored the FIFA World Cup, and spent so aggressively on marketing and acquisitions that it became a global symbol of the category. By 2024 it was a symbol of something else: a near-total collapse, its valuation written down to effectively zero, its founder facing insolvency proceedings.
+In 2022, Indian edtech had a king, and its name was [Byju's](/case-study/byjus-downfall). The company was valued at $22 billion, plastered its logo on the Indian cricket team's jersey, sponsored the FIFA World Cup, and spent so aggressively on marketing and acquisitions that it became a global symbol of the category. By 2024 it was a symbol of something else: a near-total collapse, its valuation written down to effectively zero, its founder facing insolvency proceedings.
 
 In the same window, a company most Western observers had never heard of did the opposite. It grew revenue, narrowed its losses, and in November 2025 walked onto the public markets and closed its first day of trading up roughly 44%, worth about $5 billion. Its founder was not a McKinsey-trained operator or a serial entrepreneur. He was a physics teacher from Prayagraj who had spent the better part of a decade giving his lectures away for free on YouTube.
 

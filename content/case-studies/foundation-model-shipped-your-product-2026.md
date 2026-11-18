@@ -37,7 +37,7 @@ The model contained a systemic flaw: it assumed the foundation-model providers w
 
 ## Moving up the value chain
 
-Facing churn and an existential threat, the survivors pivoted. They couldn't compete on commoditized text, so they moved up the stack to workflow orchestration, proprietary data integration, and autonomous execution — from "help me write a blog post" to "run my entire content marketing pipeline." Companies like Jasper and Copy.ai reframed themselves from prompt interfaces into deeply embedded enterprise systems, using the Model Context Protocol to plug directly into a company's Salesforce, HubSpot, and internal databases so their platforms held institutional knowledge that off-the-shelf models lacked.
+Facing churn and an existential threat, the survivors pivoted. They couldn't compete on commoditized text, so they moved up the stack to workflow orchestration, proprietary data integration, and autonomous execution — from "help me write a blog post" to "run my entire content marketing pipeline." Companies like Jasper and Copy.ai reframed themselves from prompt interfaces into deeply embedded enterprise systems, using the Model Context Protocol to plug directly into a company's [Salesforce](/case-study/salesforce-no-software), [HubSpot](/case-study/hubspot-inbound-marketing), and internal databases so their platforms held institutional knowledge that off-the-shelf models lacked.
 
 ## The product is the outcome, not the text
 

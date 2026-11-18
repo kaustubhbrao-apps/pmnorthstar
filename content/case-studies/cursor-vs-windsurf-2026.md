@@ -41,7 +41,7 @@ Cursor's wager was seamless depth. Its agentic mode integrated the Model Context
 
 ## Windsurf's bet: contextual swarms
 
-Windsurf took the opposite structural path. Recognizing that long-context, single-threaded workflows can bottleneck on latency, it deployed "contextual swarms" — specialized, ephemeral micro-agents, one tuned for frontend state, one for schema validation, one for security and CI/CD. Given "implement Stripe checkout for the pro tier," the swarm parallelizes: the frontend agent scaffolds components, the backend agent writes the service, the integration agent wires and validates the webhooks. This is the "developer-as-manager" model, letting an engineer operate like a tech lead directing a fleet across sprawling monorepos — a fit for enterprise scale.
+Windsurf took the opposite structural path. Recognizing that long-context, single-threaded workflows can bottleneck on latency, it deployed "contextual swarms" — specialized, ephemeral micro-agents, one tuned for frontend state, one for schema validation, one for security and CI/CD. Given "implement [Stripe](/case-study/stripe-developer-first) checkout for the pro tier," the swarm parallelizes: the frontend agent scaffolds components, the backend agent writes the service, the integration agent wires and validates the webhooks. This is the "developer-as-manager" model, letting an engineer operate like a tech lead directing a fleet across sprawling monorepos — a fit for enterprise scale.
 
 ## Two winners, one reshaped economy
 

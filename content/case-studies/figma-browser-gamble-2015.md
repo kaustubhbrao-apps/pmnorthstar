@@ -25,7 +25,7 @@ The gamble looked like a bet on technology. It was really a bet on who gets to b
 
 ## The entrenched paradigm: design as a solitary deliverable
 
-In 2015, the consensus was absolute: real design tools needed native desktop power. Sketch was fast, native, and Mac-only, and it forced a fractured workflow in which design was a lonely act. Designers worked locally, saved heavy files to their hard drives, and passed iterations through Dropbox and Slack — producing the infamous sprawl of "Dashboard_v2_Final_ActuallyFinal.sketch." Getting feedback from a PM or engineer meant exporting static PNGs or wrestling clunky prototyping add-ons. The tool was excellent and the workflow around it was broken.
+In 2015, the consensus was absolute: real design tools needed native desktop power. Sketch was fast, native, and Mac-only, and it forced a fractured workflow in which design was a lonely act. Designers worked locally, saved heavy files to their hard drives, and passed iterations through Dropbox and [Slack](/case-study/slack-gaming-pivot) — producing the infamous sprawl of "Dashboard_v2_Final_ActuallyFinal.sketch." Getting feedback from a PM or engineer meant exporting static PNGs or wrestling clunky prototyping add-ons. The tool was excellent and the workflow around it was broken.
 
 ## The absurd technical gamble
 

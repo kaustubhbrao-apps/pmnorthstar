@@ -64,7 +64,7 @@ Because Toast took an interchange take-rate (roughly 0.40% to 0.50% net) on ever
 When the COVID-19 pandemic shuttered dining rooms worldwide in March 2020, restaurants faced an existential crisis. Toast’s transaction volume cratered by 80% overnight.
 
 Instead of retreating, Toast moved with blinding engineering velocity:
-- Within weeks, Toast rolled out **Toast Online Ordering** and flat-fee **Toast Delivery Services**, enabling restaurants to launch pickup and delivery without paying extortionate 30% commissions to third-party delivery apps like DoorDash and Grubhub.
+- Within weeks, Toast rolled out **Toast Online Ordering** and flat-fee **Toast Delivery Services**, enabling restaurants to launch pickup and delivery without paying extortionate 30% commissions to third-party delivery apps like [DoorDash](/case-study/doordash-suburban-logistics) and Grubhub.
 - They launched contactless **Order & Pay at the Table** via QR codes, allowing guests to view menus, order, and pay on their own phones without touching paper menus or plastic cards.
 
 Toast became the lifeline that allowed thousands of restaurants to survive the pandemic. When dining rooms reopened, restaurants were permanently digitized.

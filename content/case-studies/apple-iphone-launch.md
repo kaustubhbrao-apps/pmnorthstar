@@ -56,7 +56,7 @@ In 2005 the smartphone market belonged to BlackBerry and [Nokia](/compare/nokia-
 
 ## The real problem: no one designed for the user
 
-Apple's insight was not that smartphones didn't exist but that they were universally terrible to use. BlackBerry nailed email and was clunky at everything else; Nokia's Symbian was powerful and bewildering; Windows Mobile needed a stylus and crashed. Every device was a compromise between what carriers wanted, what manufacturers could build cheaply, and what enterprise IT demanded — and no one was designing for the person actually holding it. That gap between what mobile technology could deliver and what users experienced was the opportunity, and it existed precisely because the industry's structure pointed every incentive away from the end user.
+Apple's insight was not that smartphones didn't exist but that they were universally terrible to use. BlackBerry nailed email and was clunky at everything else; [Nokia](/case-study/nokia-windows-phone-bet-2011)'s Symbian was powerful and bewildering; Windows Mobile needed a stylus and crashed. Every device was a compromise between what carriers wanted, what manufacturers could build cheaply, and what enterprise IT demanded — and no one was designing for the person actually holding it. That gap between what mobile technology could deliver and what users experienced was the opportunity, and it existed precisely because the industry's structure pointed every incentive away from the end user.
 
 ## Subtraction as the strategy
 

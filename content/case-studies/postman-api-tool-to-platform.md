@@ -37,7 +37,7 @@ Abhinav Asthana, an engineer working in Bangalore, felt this pain acutely while 
 
 Over a weekend, Asthana built a basic graphical user interface as an extension for Google Chrome. It gave developers a clean visual form to select HTTP methods (GET, POST, PUT), attach headers, inject JSON bodies, and inspect color-coded responses.
 
-He named it Postman and published it for free on the Chrome Web Store, primarily so his coworkers could use it. Within weeks, developer forums like Hacker News and Reddit discovered the extension. Postman began gaining thousands of downloads a week without a single dollar spent on marketing.
+He named it Postman and published it for free on the Chrome Web Store, primarily so his coworkers could use it. Within weeks, developer forums like Hacker News and [Reddit](/case-study/reddit-community-moderation) discovered the extension. Postman began gaining thousands of downloads a week without a single dollar spent on marketing.
 
 Asthana teamed up with co-founders Ankit Sobti and Abhijit Kane to take the project full-time, founding Postman as an Indian company with global ambitions from day one.
 

@@ -33,7 +33,7 @@ This shift introduced an acute human pain point: **the on-call rotation**.
 When software broke down in the middle of the night, existing monitoring tools (Nagios, Pingdom) sent an automated email to a shared distribution list like `dev-alerts@company.com`. The failure modes were catastrophic:
 - If everyone is notified, no one feels individually responsible. Engineers assumed someone else was handling the outage and went back to sleep.
 - Automated emails routinely went to spam or were silenced during bedtime hours.
-- Fragile in-house scripts hacked together with Twilio or hardware SIM modems failed silently during network drops.
+- Fragile in-house scripts hacked together with [Twilio](/case-study/twilio-developer-api-first) or hardware SIM modems failed silently during network drops.
 - Production outages routinely dragged on for hours before an executive noticed the website was down.
 
 Three engineers who worked at Amazon—Alex Solomon, Andrew Miklas, and Balaram Ravindi—lived this trauma every week. They knew firsthand that on-call was the most dreaded responsibility in modern software engineering.
@@ -54,9 +54,9 @@ The system gave engineers the peace of mind to live their lives. They no longer 
 Alerting software is useless if it cannot ingest notifications from your monitoring stack. PagerDuty executed a masterclass in integration ubiquity.
 
 Instead of competing with monitoring tools, PagerDuty partnered with all of them. They built out-of-the-box, one-click integrations for:
-- Infrastructure tools: AWS CloudWatch, Datadog, Nagios, New Relic.
+- Infrastructure tools: AWS CloudWatch, [Datadog](/case-study/datadog-unified-observability), Nagios, New Relic.
 - Error tracking tools: Sentry, Rollbar, Bugsnag.
-- Collaboration tools: Slack, Microsoft Teams, Jira.
+- Collaboration tools: [Slack](/case-study/slack-gaming-pivot), Microsoft Teams, Jira.
 
 PagerDuty became the central switchboard of modern tech infrastructure. Regardless of which monitoring tool detected an anomaly, all alerts flowed into PagerDuty to be deduplicated, routed, and resolved.
 

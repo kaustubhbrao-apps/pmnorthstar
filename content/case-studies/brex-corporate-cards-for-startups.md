@@ -42,7 +42,7 @@ Henrique Dubugras and Pedro Franceschi, two Brazilian founders who had previousl
 Dubugras and Franceschi killed their VR project and founded Brex around a simple, radical underwriting insight: **A startup with $5 million in venture backing and zero revenue is far less credit-risky than a five-year-old restaurant with $500,000 in revenue.**
 
 Instead of asking for tax returns or personal FICO scores, Brex engineered modern algorithmic underwriting:
-1. **Direct API Plaid Integration:** Brex plugged directly into the startup's bank account, monitoring real-time cash balances.
+1. **Direct API [Plaid](/case-study/plaid-fintech-data-pipeline) Integration:** Brex plugged directly into the startup's bank account, monitoring real-time cash balances.
 2. **Dynamic 10-20x Credit Limits:** Credit limits were calculated dynamically as a percentage of available liquid cash. A startup with $1 million in the bank received an instant $100,000 corporate credit limit without a personal guarantee.
 3. **Daily/Monthly Auto-Debits:** Rather than revolving consumer-style debt with high interest rates, Brex automatically deducted the full card balance directly from the bank account at the end of each cycle, virtually eliminating default risk.
 

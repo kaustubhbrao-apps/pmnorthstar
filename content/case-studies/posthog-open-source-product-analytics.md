@@ -39,7 +39,7 @@ They decided to open-source the entire stack.
 
 ## The GitHub Sensation: Deploy in a Single Docker Command
 
-In January 2020, Hawkins and Glaser pushed the initial codebase of **PostHog** to GitHub and shared it on Hacker News with a bold, concise proposition: **"PostHog is an open-source alternative to Mixpanel and Amplitude that you can self-host inside your own AWS or GCP infrastructure."**
+In January 2020, Hawkins and Glaser pushed the initial codebase of **PostHog** to [GitHub](/case-study/github-polish-as-marketing) and shared it on Hacker News with a bold, concise proposition: **"PostHog is an open-source alternative to Mixpanel and Amplitude that you can self-host inside your own AWS or GCP infrastructure."**
 
 The response was immediate and overwhelming. The repository surged to thousands of GitHub stars in its first week.
 
@@ -63,7 +63,7 @@ The user experience was seamless: when an engineer noticed a drop-off at Step 3 
 
 ## Extreme Transparency as an Unbeatable Brand
 
-PostHog coupled its open-source product strategy with a cultural transparency model that mirrored and extended GitLab:
+PostHog coupled its open-source product strategy with a cultural transparency model that mirrored and extended [GitLab](/case-study/gitlab-single-application-devops):
 - **Public Handbook:** Everything from employee salaries and equity grants to company revenue numbers and product roadmaps was published live on their website.
 - **Developer-Centric Content:** PostHog avoided generic marketing fluff. Their blog was filled with candid, technical teardowns on ClickHouse performance, database tuning, and brutal honest reflections on startup failures.
 - **Generous Free Tier:** Software teams received 1,000,000 free events, 5,000 free session recordings, and unlimited feature flags every single month forever.

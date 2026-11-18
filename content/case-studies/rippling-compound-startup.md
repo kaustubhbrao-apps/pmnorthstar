@@ -25,7 +25,7 @@ For decades, the undisputed gospel of Silicon Valley was focus.
 
 Investors and advisors preached that early-stage startups must find a tiny, specific niche—a wedge—and execute it flawlessly. "Do one thing better than anyone else." If you built an HR payroll tool, you shouldn't try to build a laptop management tool at the same time. You would spread your engineering resources too thin and get crushed by focused competitors.
 
-This resulted in a massive proliferation of "point solutions." A typical 100-person company in 2016 used Gusto for payroll, Okta for password management, Jamf to manage employee laptops, and Expensify for expenses. 
+This resulted in a massive proliferation of "point solutions." A typical 100-person company in 2016 used [Gusto](/case-study/gusto-delightful-payroll) for payroll, Okta for password management, Jamf to manage employee laptops, and Expensify for expenses. 
 
 The problem? None of these systems talked to each other. When an employee was hired, the HR manager had to manually enter their data into ten different systems. When an employee was fired, IT had to race to manually revoke their access across dozens of apps to prevent a security breach.
 
@@ -46,7 +46,7 @@ Because Rippling was the system of record for the employee's core identity, the 
 When a company hired a new software engineer in Austin, Texas, the HR manager simply clicked "Hire" in Rippling. Automatically:
 1. The employee was added to payroll and their Texas state taxes were calculated.
 2. A new Macbook Pro was automatically ordered, configured with the company's security software, and shipped to their Austin address.
-3. The employee was automatically granted single-sign-on (SSO) access to GitHub, Slack, and AWS, but restricted from accessing Salesforce.
+3. The employee was automatically granted single-sign-on (SSO) access to [GitHub](/case-study/github-polish-as-marketing), Slack, and AWS, but restricted from accessing [Salesforce](/case-study/salesforce-no-software).
 
 If the employee was terminated, one click revoked everything instantly. 
 

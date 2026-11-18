@@ -22,7 +22,7 @@ faqs:
 publishedAt: '2026-08-05T15:00:00+00:00'
 ---
 
-**Digg v4 is the canonical lesson that a community product is owned by its community, not its cap table — and that redesigning against your most passionate users is a way to hand them, and your traffic, to a competitor. Facing investor pressure to monetize, Digg rewrote the social contract of "the front page of the internet": it stripped power users of the tools they used to govern the site and piped in publisher content to look advertiser-friendly. The users didn't just leave; they weaponized Digg's own mechanics to flood its homepage with links to Reddit on the way out. The lesson is that when you wage war on the people who create your value, they can take the value with them overnight.**
+**Digg v4 is the canonical lesson that a community product is owned by its community, not its cap table — and that redesigning against your most passionate users is a way to hand them, and your traffic, to a competitor. Facing investor pressure to monetize, Digg rewrote the social contract of "the front page of the internet": it stripped power users of the tools they used to govern the site and piped in publisher content to look advertiser-friendly. The users didn't just leave; they weaponized Digg's own mechanics to flood its homepage with links to [Reddit](/case-study/reddit-community-moderation) on the way out. The lesson is that when you wage war on the people who create your value, they can take the value with them overnight.**
 
 The redesign was meant to court advertisers and mainstream readers. It achieved the opposite by treating the community as an obstacle rather than the product.
 

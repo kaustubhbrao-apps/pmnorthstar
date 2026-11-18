@@ -40,7 +40,7 @@ The safe move was Android, where Samsung, HTC, and Motorola were riding to massi
 
 ## Beautiful phones, empty store
 
-Nokia poured its legendary hardware engineering into the Lumia line — the striking polycarbonate Lumia 800 and 920, industry-leading PureView cameras — and Windows Phone's typography-driven Live Tiles were a genuine alternative to grids of static icons. For a moment in 2012, with rave reviews and heavy Microsoft marketing, the gamble looked survivable. But the war had already moved from hardware to platforms, and Windows Phone was too late. Developers had no incentive to build for single-digit share, so the apps people wanted — Instagram, YouTube, Snapchat — were missing or second-rate, and consumers stayed away, which further removed any reason for developers to show up.
+Nokia poured its legendary hardware engineering into the Lumia line — the striking polycarbonate Lumia 800 and 920, industry-leading PureView cameras — and Windows Phone's typography-driven Live Tiles were a genuine alternative to grids of static icons. For a moment in 2012, with rave reviews and heavy Microsoft marketing, the gamble looked survivable. But the war had already moved from hardware to platforms, and Windows Phone was too late. Developers had no incentive to build for single-digit share, so the apps people wanted — Instagram, YouTube, [Snapchat](/case-study/snapchat-ephemeral-content) — were missing or second-rate, and consumers stayed away, which further removed any reason for developers to show up.
 
 ## The vicious cycle, and the write-off
 

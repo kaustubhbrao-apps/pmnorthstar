@@ -41,7 +41,7 @@ The mechanisms that drove hyper-growth became its undoing at the hardest moment 
 
 ## A feature, not a platform
 
-More fatally, Clubhouse built no defensible moat. Live audio was not a standalone platform; it was a feature — and the incumbents moved fast. Twitter launched Spaces, integrating live audio directly into its massive existing feed, and Spotify, Facebook, and LinkedIn shipped their own versions. Clubhouse was suddenly competing against platforms where users already had social graphs and frictionless distribution. Its "Creator Fund" failed to monetize hosts the way YouTube or Twitch could, so the best talent churned.
+More fatally, Clubhouse built no defensible moat. Live audio was not a standalone platform; it was a feature — and the incumbents moved fast. [Twitter](/case-study/twitter-suggested-users) launched Spaces, integrating live audio directly into its massive existing feed, and Spotify, [Facebook](/case-study/facebook-home-failure), and [LinkedIn](/case-study/linkedin-profile-completeness) shipped their own versions. Clubhouse was suddenly competing against platforms where users already had social graphs and frictionless distribution. Its "Creator Fund" failed to monetize hosts the way YouTube or Twitch could, so the best talent churned.
 
 ## Who actually captured the value
 

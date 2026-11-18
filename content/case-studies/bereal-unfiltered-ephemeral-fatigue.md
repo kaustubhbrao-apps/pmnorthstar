@@ -58,7 +58,7 @@ BeReal executed an aggressive, grassroots college ambassador campaign:
 Between January and August 2022, BeReal pulled off one of the fastest viral ascents in consumer mobile history:
 - Monthly active users skyrocketed from under 2 million to **over 73 million**.
 - The app seized the **#1 spot on the Apple App Store** across the United States, UK, and Europe, holding the top spot for months.
-- Even Instagram and TikTok panicked, launching blatant copycat features (TikTok Now and Instagram Candid Challenges).
+- Even Instagram and [TikTok](/case-study/tiktok-algorithm) panicked, launching blatant copycat features (TikTok Now and Instagram Candid Challenges).
 
 ## The Inevitable Novelty Wall: Mundanity Fatigue
 

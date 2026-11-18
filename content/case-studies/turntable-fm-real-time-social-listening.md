@@ -38,7 +38,7 @@ The product mechanics were intoxicatingly fun:
 3. **The 'Awesome' vs. 'Lame' Voting Dynamic:** The virtual audience stood on the dance floor. If listeners loved a track, they clicked **"Awesome"**, causing their pixel avatars to dance and head-bob in synchronized rhythm while awarding the DJ reputation points.
 4. **The DJ Bouncer Hook:** If enough listeners clicked **"Lame"**, the song was abruptly aborted in real-time, and the DJ was publicly booted off the stage.
 
-Within weeks, Turntable.fm became the ultimate digital watercooler. Entire tech companies like Foursquare, TechCrunch, and Reddit operated private Turntable rooms where coworkers DJed for each other throughout the workday.
+Within weeks, Turntable.fm became the ultimate digital watercooler. Entire tech companies like [Foursquare](/case-study/foursquare-swarm-split-2014), TechCrunch, and [Reddit](/case-study/reddit-community-moderation) operated private Turntable rooms where coworkers DJed for each other throughout the workday.
 
 Venture capitalists rushed in, and Union Square Ventures led a $7.5 million funding round valuing the young company at $35 million.
 
@@ -52,7 +52,7 @@ In the United States, streaming recorded music on the internet is governed by co
 
 Unlike internet radio stations (Pandora) or on-demand streaming platforms (Spotify), Turntable.fm was an interactive, communal product. Record labels argued that because users chose which songs to play and controlled the queue, Turntable did not qualify for statutory non-interactive radio rates.
 
-Major record labels (Universal, Warner, Sony) demanded millions of dollars in upfront licensing advances, minimum revenue guarantees, and steep royalty rev-shares.
+Major record labels (Universal, Warner, [Sony](/case-study/sony-betamax-format-war-1975)) demanded millions of dollars in upfront licensing advances, minimum revenue guarantees, and steep royalty rev-shares.
 
 ## The Monetization Void
 

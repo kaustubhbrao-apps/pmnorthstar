@@ -19,7 +19,7 @@ faqs:
 publishedAt: '2026-08-23T15:00:00+00:00'
 ---
 
-**Foursquare's Swarm split is a case study in a hard truth: the product that made you famous and the asset that will keep you alive are often not the same thing. In 2014 Foursquare's single app was straining to serve two conflicting jobs — fast social check-ins for power users and Yelp-style discovery for everyone else. The company cleaved it in two, enraged its loyalists, and watched its consumer mindshare bleed to Facebook and Instagram. Yet the same decision quietly repositioned the company around its real moat: a proprietary dataset of where people actually go. The lesson is that sometimes the interface everyone loves is not the business, and clarifying which is which can cost you users while saving the company.**
+**Foursquare's Swarm split is a case study in a hard truth: the product that made you famous and the asset that will keep you alive are often not the same thing. In 2014 Foursquare's single app was straining to serve two conflicting jobs — fast social check-ins for power users and Yelp-style discovery for everyone else. The company cleaved it in two, enraged its loyalists, and watched its consumer mindshare bleed to [Facebook](/case-study/facebook-home-failure) and Instagram. Yet the same decision quietly repositioned the company around its real moat: a proprietary dataset of where people actually go. The lesson is that sometimes the interface everyone loves is not the business, and clarifying which is which can cost you users while saving the company.**
 
 Judged as a consumer-app decision, the split looks like a blunder. Judged as a decision about what Foursquare actually owned, it looks like survival.
 

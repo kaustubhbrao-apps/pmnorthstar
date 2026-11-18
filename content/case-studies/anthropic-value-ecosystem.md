@@ -80,7 +80,7 @@ Optimizing for *value*, quality per cost, targets the real decision people make 
 
 The quieter genius is the Claude Frontier Academy, a commitment to *train thousands of engineers* to actually make AI work inside businesses. On the surface, a nice education program. Strategically, it is brilliant.
 
-Think about what happens: thousands of engineers learn to build AI systems, trained *in Anthropic's world*, on *its* tools and *its* model. Then they go out into companies across the industry and build real products, naturally reaching for the platform they were trained on. It is the same move Nvidia made with its developer platform, the same move Stripe made by winning developers: *arm the people who build the future, and they will build it on top of you*. You are not just selling a model; you are seeding a whole generation of builders whose skills, habits, and defaults point back to you. That is distribution you cannot buy with ads.
+Think about what happens: thousands of engineers learn to build AI systems, trained *in Anthropic's world*, on *its* tools and *its* model. Then they go out into companies across the industry and build real products, naturally reaching for the platform they were trained on. It is the same move Nvidia made with its developer platform, the same move [Stripe](/case-study/stripe-developer-first) made by winning developers: *arm the people who build the future, and they will build it on top of you*. You are not just selling a model; you are seeding a whole generation of builders whose skills, habits, and defaults point back to you. That is distribution you cannot buy with ads.
 
 ## The two moves lock together
 

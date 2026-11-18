@@ -44,7 +44,7 @@ In 2014, HashiCorp launched **Terraform**, introducing the world to **Infrastruc
 HashiCorp made several critical architectural design choices that turned Terraform into an industry standard:
 1. **Declarative Over Procedural:** Instead of writing step-by-step scripts telling the cloud *how* to build something (`create server, then attach drive, then open port`), engineers wrote declarative specifications describing *what* the final state should look like (`resource "aws_instance" "web" { count = 3 }`). Terraform’s engine built a dependency graph and calculated the exact execution plan to reach that state.
 2. **The `plan` Phase:** Before applying changes to live production, Terraform introduced `terraform plan`. It showed engineers the exact diff of what would be created, updated, or destroyed, eliminating the fear of catastrophic infrastructure deployments.
-3. **Pluggable Provider Architecture:** Terraform separated its core execution engine from provider plugins. This allowed any third-party company—from cloud giants like AWS and Google to SaaS vendors like Datadog and Cloudflare—to write a Terraform provider, enabling engineers to manage their entire digital estate through a single language (HCL).
+3. **Pluggable Provider Architecture:** Terraform separated its core execution engine from provider plugins. This allowed any third-party company—from cloud giants like AWS and Google to SaaS vendors like [Datadog](/case-study/datadog-unified-observability) and [Cloudflare](/case-study/cloudflare-security-defaults)—to write a Terraform provider, enabling engineers to manage their entire digital estate through a single language (HCL).
 
 ## Building the Cloud Suite: Vault, Consul, and Nomad
 

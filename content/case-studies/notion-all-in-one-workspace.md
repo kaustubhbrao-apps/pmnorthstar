@@ -51,7 +51,7 @@ Notion successfully tricked non-technical business users into building complex, 
 
 ## The Viral Template Ecosystem
 
-Because Notion workspaces were built with Lego-like blocks, they were inherently shareable and reproducible. 
+Because Notion workspaces were built with [Lego](/case-study/lego-near-bankruptcy-comeback)-like blocks, they were inherently shareable and reproducible. 
 
 Notion leaned heavily into this by allowing users to publish their workspaces as "Templates." A massive cottage industry emerged. Productivity influencers on YouTube began selling custom Notion templates for "Life Tracking," "Startup Fundraising," or "Content Calendars."
 

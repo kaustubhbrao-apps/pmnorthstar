@@ -29,7 +29,7 @@ When the giants commoditize the horizontal layer of intelligence, the only defen
 
 ## The Tuesday the roadmap shipped
 
-The archetype plays out like this. SyncSpace — a red-hot Series A startup building an AI-first collaborative workspace — had a beautiful canvas where teams pulled in data from dozens of tools, summarized it with LLMs, and generated project plans autonomously. It was riding strong usage and preparing a Series B on the strength of a roadmap promising deep agentic integrations across external SaaS. Then, in a single keynote, Microsoft effectively shipped that entire multi-year vision: Loop, embedded in Teams and Office 365, gained native agentic capabilities that pulled live data from Jira, Salesforce, and Figma, synthesized it, and updated external records — faster, with zero onboarding, and bundled free inside existing licenses.
+The archetype plays out like this. SyncSpace — a red-hot Series A startup building an AI-first collaborative workspace — had a beautiful canvas where teams pulled in data from dozens of tools, summarized it with LLMs, and generated project plans autonomously. It was riding strong usage and preparing a Series B on the strength of a roadmap promising deep agentic integrations across external SaaS. Then, in a single keynote, Microsoft effectively shipped that entire multi-year vision: Loop, embedded in Teams and Office 365, gained native agentic capabilities that pulled live data from Jira, [Salesforce](/case-study/salesforce-no-software), and Figma, synthesized it, and updated external records — faster, with zero onboarding, and bundled free inside existing licenses.
 
 ## Why you can't fight a free bundle head-on
 

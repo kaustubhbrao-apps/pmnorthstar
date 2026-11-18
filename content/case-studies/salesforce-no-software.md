@@ -33,7 +33,7 @@ It was a highly lucrative model for vendors (producing massive upfront CapEx rev
 
 ## The Multi-Tenant Epiphany
 
-Marc Benioff, a rising star executive at Oracle, looked at consumer web applications like Amazon and Yahoo and had an epiphany. Why wasn’t enterprise software delivered the same way? Why couldn't business applications be as easy to use and access as buying a book on Amazon?
+Marc Benioff, a rising star executive at Oracle, looked at consumer web applications like Amazon and [Yahoo](/case-study/yahoo-missed-deals) and had an epiphany. Why wasn’t enterprise software delivered the same way? Why couldn't business applications be as easy to use and access as buying a book on Amazon?
 
 Benioff left Oracle to start Salesforce with a radically different vision: software delivered over the internet, accessible via a web browser, and paid for on a monthly subscription basis per user.
 

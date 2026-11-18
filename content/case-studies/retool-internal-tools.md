@@ -21,7 +21,7 @@ faqs:
 
 ## The Dark Matter of Software Engineering
 
-If you look at the codebase of any successful tech company—whether it's DoorDash, Coinbase, or a local logistics startup—you will find a massive, hidden iceberg. 
+If you look at the codebase of any successful tech company—whether it's [DoorDash](/case-study/doordash-suburban-logistics), [Coinbase](/case-study/coinbase-compliance-moat), or a local logistics startup—you will find a massive, hidden iceberg. 
 
 For every beautifully designed consumer-facing app, there are a dozen clunky, ugly internal applications. The customer support team needs a dashboard to issue refunds. The operations team needs a tool to verify driver licenses. The finance team needs a ledger to track payouts. 
 

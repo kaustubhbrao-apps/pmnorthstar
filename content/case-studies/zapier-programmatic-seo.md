@@ -25,7 +25,7 @@ Zapier was founded in 2011 with a simple, powerful value proposition: Connect th
 
 But this flexibility created a massive marketing problem. When your product can do *anything* for *anyone*, how do you explain it? If you market Zapier as a "workflow automation tool," nobody searches for that. Small business owners don't wake up thinking, "I need a workflow automation tool." 
 
-They wake up thinking, "I am so tired of manually copying leads from my Facebook Ads into my Mailchimp account." 
+They wake up thinking, "I am so tired of manually copying leads from my [Facebook](/case-study/facebook-home-failure) Ads into my Mailchimp account." 
 
 Zapier realized that their target audience was searching Google for highly specific, pain-driven queries: *“How to send Facebook leads to Mailchimp.”*
 
@@ -38,7 +38,7 @@ Instead, they built a programmatic SEO engine.
 As Zapier added integrations (apps) to their platform, they structured their database so that their website would automatically generate three types of landing pages:
 
 1.  **App Pages:** A dedicated page for every single app they supported (e.g., "Mailchimp Integrations").
-2.  **App-to-App Pages:** A dedicated page for every possible *combination* of two apps (e.g., "Connect Mailchimp to Salesforce").
+2.  **App-to-App Pages:** A dedicated page for every possible *combination* of two apps (e.g., "Connect Mailchimp to [Salesforce](/case-study/salesforce-no-software)").
 3.  **Workflow Pages:** Dedicated pages for specific triggers and actions (e.g., "Add new Salesforce leads to a Mailchimp list").
 
 By 2020, Zapier supported over 2,000 apps. The mathematical permutations of combining 2,000 apps allowed their engine to automatically generate millions of unique, highly relevant landing pages. 

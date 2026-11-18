@@ -32,7 +32,7 @@ faqs:
 
 To understand the genius of Razorpay Magic Checkout, you first have to understand the fundamental defect in Indian e-commerce. In a market projected to cross $100 billion by 2025, Cash on Delivery (COD) remains the dominant payment method, accounting for over 60% of all e-commerce volume. In Tier-2 and Tier-3 cities, that number jumps to 70-80%.
 
-Why? Because of a deep-seated trust deficit. Indian consumers prefer to physically touch the product before handing over their money, especially when dealing with the thousands of new Direct-to-Consumer (D2C) brands proliferating on platforms like Shopify.
+Why? Because of a deep-seated trust deficit. Indian consumers prefer to physically touch the product before handing over their money, especially when dealing with the thousands of new Direct-to-Consumer (D2C) brands proliferating on platforms like [Shopify](/case-study/shopify-merchants-first).
 
 But COD introduces a fatal vulnerability for merchants: **Return to Origin (RTO)**. 
 

@@ -60,7 +60,7 @@ Every quarter, instead of dribbling out feature updates or holding a traditional
 - **Thursday:** Edge functions and serverless runtime updates.
 - **Friday:** Major database architectural upgrades (read replicas, branching).
 
-Each announcement was accompanied by polished product videos, detailed technical architecture blog posts, and interactive browser demos. Launch Weeks converted product releases into high-energy communal events that consistently took the top spots on Hacker News, GitHub Trending, and tech Twitter.
+Each announcement was accompanied by polished product videos, detailed technical architecture blog posts, and interactive browser demos. Launch Weeks converted product releases into high-energy communal events that consistently took the top spots on Hacker News, [GitHub](/case-study/github-polish-as-marketing) Trending, and tech [Twitter](/case-study/twitter-suggested-users).
 
 ## Riding the Generative AI Wave with `pgvector`
 

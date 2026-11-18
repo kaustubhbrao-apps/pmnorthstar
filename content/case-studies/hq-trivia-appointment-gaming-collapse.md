@@ -32,7 +32,7 @@ Conversations stopped. Dinners paused. Hundreds of thousands of people simultane
 
 The app was **HQ Trivia**, and it was the undisputed cultural sensation of the mobile internet.
 
-Created by **Rus Yusupov and Colin Kroll**—the brilliant, mercurial co-founders of Vine who had been fired by Twitter after an acrimonious acquisition—HQ Trivia promised to reinvent television for the smartphone generation: **Appointment-Viewing Mobile Gaming**.
+Created by **Rus Yusupov and Colin Kroll**—the brilliant, mercurial co-founders of Vine who had been fired by [Twitter](/case-study/twitter-suggested-users) after an acrimonious acquisition—HQ Trivia promised to reinvent television for the smartphone generation: **Appointment-Viewing Mobile Gaming**.
 
 The format was exhilaratingly simple:
 1. **The Live Host:** Twice a day (3:00 PM and 9:00 PM EST), a live, energetic comedian—most notably the magnetic, fast-talking **Scott Rogowsky** ("Quiz Daddy")—appeared on screen broadcasting live from a studio in New York City.

@@ -26,7 +26,7 @@ publishedAt: '2026-10-09'
 
 ## The Broadcast Fatigue of the Facebook Era
 
-By 2010, Facebook had transformed from a college directory into an overwhelming, stressful public utility.
+By 2010, [Facebook](/case-study/facebook-home-failure) had transformed from a college directory into an overwhelming, stressful public utility.
 
 Users accumulated hundreds, sometimes thousands, of "friends": high school classmates they hadn't seen in a decade, professional business contacts, distant aunts, and casual acquaintances from weekend parties. 
 

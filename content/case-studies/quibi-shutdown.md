@@ -53,7 +53,7 @@ Jeffrey Katzenberg — who ran Walt Disney Studios and co-founded DreamWorks —
 
 ## The premise, not the execution, was wrong
 
-Quibi was well-made; it was built on an unvalidated assumption. The belief that people wanted premium short-form content exclusively on mobile was never tested with real users, and the short-form market was already abundantly served by YouTube, TikTok, and Instagram — not with Hollywood polish but with something that mattered far more: social sharing, community, user-generated authenticity, and the ability to participate rather than just watch. Quibi extrapolated from how traditional media was consumed, not from how people actually used their phones. When your premise is wrong, flawless execution just delivers the wrong thing faster.
+Quibi was well-made; it was built on an unvalidated assumption. The belief that people wanted premium short-form content exclusively on mobile was never tested with real users, and the short-form market was already abundantly served by YouTube, [TikTok](/case-study/tiktok-algorithm), and Instagram — not with Hollywood polish but with something that mattered far more: social sharing, community, user-generated authenticity, and the ability to participate rather than just watch. Quibi extrapolated from how traditional media was consumed, not from how people actually used their phones. When your premise is wrong, flawless execution just delivers the wrong thing faster.
 
 ## Every decision reflected belief, not evidence
 
@@ -61,7 +61,7 @@ Insulated by $1.75 billion and a legendary founder, the team built in isolation 
 
 ## Timing exposed the flaw but didn't cause it
 
-The April 2020 launch was catastrophic timing: Quibi was designed for "in-between moments" — the commute, the lunch break, the waiting room — precisely the moments lockdowns erased, leaving everyone home with TVs, laptops, and unlimited time. But timing only accelerated a failure already baked in. Users who tried it found the content forgettable, the interface confusing, and the value unjustifiable against Netflix, YouTube, and TikTok, all of which had the social features Quibi lacked. A product with real fit would have bent to the moment; Quibi had no fit to bend.
+The April 2020 launch was catastrophic timing: Quibi was designed for "in-between moments" — the commute, the lunch break, the waiting room — precisely the moments lockdowns erased, leaving everyone home with TVs, laptops, and unlimited time. But timing only accelerated a failure already baked in. Users who tried it found the content forgettable, the interface confusing, and the value unjustifiable against [Netflix](/case-study/netflix-dvd-to-streaming), YouTube, and TikTok, all of which had the social features Quibi lacked. A product with real fit would have bent to the moment; Quibi had no fit to bend.
 
 ## The fastest big failure in entertainment
 

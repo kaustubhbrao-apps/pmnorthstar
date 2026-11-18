@@ -31,7 +31,7 @@ The result, however, was a bloated, sluggish application. Clicking a button in J
 
 ## Linear's Core Thesis: Opinionated by Default
 
-Linear was founded by three ex-Uber and Coinbase engineers (Karri Saarinen, Tuomas Artman, and Jori Lallo) who were tired of fighting their tools. They built an issue tracker around a single, radical philosophy: **Software should be highly opinionated.**
+Linear was founded by three ex-Uber and [Coinbase](/case-study/coinbase-compliance-moat) engineers (Karri Saarinen, Tuomas Artman, and Jori Lallo) who were tired of fighting their tools. They built an issue tracker around a single, radical philosophy: **Software should be highly opinionated.**
 
 Instead of letting users configure the product into a tangled mess, Linear enforced a specific way of working. 
 

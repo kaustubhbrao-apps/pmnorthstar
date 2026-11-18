@@ -56,7 +56,7 @@ Evans defended the extreme engineering, insisting that crushing raw organic frui
 
 ## The 30-Second Video That Shattered a Startup
 
-For a year, Juicero was a punchline for Silicon Valley decadence, but it managed to survive by selling presses to wealthy tech executives and placing machines in corporate cafeterias at Google and Twitter. To spur sales, they slashed the price to $399.
+For a year, Juicero was a punchline for Silicon Valley decadence, but it managed to survive by selling presses to wealthy tech executives and placing machines in corporate cafeterias at Google and [Twitter](/case-study/twitter-suggested-users). To spur sales, they slashed the price to $399.
 
 Then, on April 19, 2017, Bloomberg reporters Ellen Huet and Olivia Zaleski published an article accompanied by a **thirty-second video** that instantly annihilated the company.
 
@@ -73,7 +73,7 @@ The entire premise of the company was unmasked as an emperor-with-no-clothes far
 
 The backlash was swift and merciless. Late-night television hosts, memes, and tech publications ridiculed Juicero as the definitive symbol of Silicon Valley hubris and detached privilege.
 
-CEO Jeff Dunn (the former president of Coca-Cola North America, who had recently replaced Evans) attempted damage control:
+CEO Jeff Dunn (the former president of [Coca-Cola](/case-study/coca-cola-hello-happiness) North America, who had recently replaced Evans) attempted damage control:
 - He published a blog post claiming that the machine was necessary for *"data collection, supply chain closed-loop safety, and food safety expiration tracking."*
 - He offered a full refund to any customer who felt misled.
 

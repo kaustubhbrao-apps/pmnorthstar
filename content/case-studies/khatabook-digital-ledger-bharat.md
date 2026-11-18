@@ -58,7 +58,7 @@ Khatabook’s ultimate killer feature was **the polite automated debt collection
 
 Historically, asking a neighbor to pay an overdue bill felt aggressive and socially humiliating. Khatabook removed the personal confrontation entirely:
 - The moment a merchant recorded a credit transaction in the app, Khatabook automatically sent an automated SMS or WhatsApp notification to the customer: *"Dear customer, ₹450 has been added to your khata at Gupta General Store. Current balance: ₹1,200."*
-- When payment was overdue, Khatabook sent a polite, automated reminder with an integrated **UPI payment link** (Google Pay, PhonePe, Paytm).
+- When payment was overdue, Khatabook sent a polite, automated reminder with an integrated **UPI payment link** (Google Pay, [PhonePe](/case-study/phonepe-upi-strategy), [Paytm](/case-study/paytm-super-app-comeback)).
 
 The customer tapped the link, authenticated with their UPI PIN, and the money was transferred directly into the merchant's bank account, with the Khatabook ledger updating in real-time.
 

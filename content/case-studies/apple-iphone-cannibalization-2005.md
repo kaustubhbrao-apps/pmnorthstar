@@ -41,7 +41,7 @@ Apple's first, defensive answer was a partnership: the Motorola ROKR E1, which c
 
 ## Project Purple and the predatory bet
 
-That decision launched Project Purple, one of the most secretive development cycles in tech. Apple split its best engineers into rival camps: one morphing the iPod into a phone with a click-wheel dialer, the other shrinking a Mac into a multi-touch pocket device. The touchscreen won, demanding new manufacturing, new materials like toughened glass, and a finger-first OS that became iOS. The risk was staggering — pouring hundreds of millions into an entrenched, carrier-dominated telecom market ruled by Nokia, BlackBerry, and Motorola, while deliberately engineering the obsolescence of the product funding the company.
+That decision launched Project Purple, one of the most secretive development cycles in tech. Apple split its best engineers into rival camps: one morphing the iPod into a phone with a click-wheel dialer, the other shrinking a Mac into a multi-touch pocket device. The touchscreen won, demanding new manufacturing, new materials like toughened glass, and a finger-first OS that became iOS. The risk was staggering — pouring hundreds of millions into an entrenched, carrier-dominated telecom market ruled by [Nokia](/case-study/nokia-windows-phone-bet-2011), BlackBerry, and Motorola, while deliberately engineering the obsolescence of the product funding the company.
 
 ## Internalizing the cannibalization
 

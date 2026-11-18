@@ -34,7 +34,7 @@ Zee wasn't buying scale. It was buying a specific, highly monetizable user — a
 
 ## A cricket bidding war it couldn't win
 
-In early 2026 the Indian streaming wars were a capital-destroying bloodbath, with Disney Star and Viacom18 (JioCinema) paying billions for IPL and ICC cricket. Cricket guarantees billion-person scale, but after Jio conditioned users to free streams, monetization made it the most expensive acquisition channel anywhere. Zee, recovering from the collapse of its Sony merger, needed to revitalize ZEE5 — and competing for cricket was simply off the table for a standalone player. The existential question was how to drive millions of high-intent installs without bankrupting the company on rights.
+In early 2026 the Indian streaming wars were a capital-destroying bloodbath, with Disney Star and Viacom18 (JioCinema) paying billions for IPL and ICC cricket. Cricket guarantees billion-person scale, but after Jio conditioned users to free streams, monetization made it the most expensive acquisition channel anywhere. Zee, recovering from the collapse of its [Sony](/case-study/sony-betamax-format-war-1975) merger, needed to revitalize ZEE5 — and competing for cricket was simply off the table for a standalone player. The existential question was how to drive millions of high-intent installs without bankrupting the company on rights.
 
 ## The undervalued asset the giants ignored
 

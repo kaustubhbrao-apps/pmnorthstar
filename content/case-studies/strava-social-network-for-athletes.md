@@ -42,7 +42,7 @@ In 2009, they founded **Strava** (the Swedish word for "strive") to build the di
 
 ## The Breakthrough Invention: The Segment Leaderboard
 
-Strava’s single greatest product innovation was **The Segment**.
+Strava’s single greatest product innovation was **The [Segment](/case-study/segment-analytics-js-open-source)**.
 
 Before Strava, racing required paying entry fees, pinning a physical paper number bib to your chest, and standing at an official starting line on a specific Sunday morning. 
 
@@ -56,7 +56,7 @@ The psychological impact was explosive. Cyclists who used to ride casually sudde
 
 ## The Positive Social Network: Kudos Over Toxicity
 
-While Facebook, Twitter, and Instagram devolved into polarizing political debates, algorithms optimized for outrage, and performative lifestyle flexing, Strava built a cultural oasis: **The Athletic Social Feed**.
+While [Facebook](/case-study/facebook-home-failure), [Twitter](/case-study/twitter-suggested-users), and Instagram devolved into polarizing political debates, algorithms optimized for outrage, and performative lifestyle flexing, Strava built a cultural oasis: **The Athletic Social Feed**.
 
 Every design decision reinforced positivity and mutual athletic respect:
 - **Kudos:** Strava replaced the generic "Like" button with **Kudos** (represented by a thumbs-up icon). Giving Kudos was a universal digital fist-bump recognizing another human’s sweat and effort, whether they ran a 3-mile jog or completed an Ironman triathlon.

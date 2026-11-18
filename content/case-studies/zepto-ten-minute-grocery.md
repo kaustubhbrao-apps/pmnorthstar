@@ -32,7 +32,7 @@ faqs:
 
 ## A market everyone thought was settled
 
-In 2021 Indian grocery delivery looked like a crowded, mature fight. BigBasket and Grofers ran scheduled delivery — order now, receive in hours or tomorrow — and Swiggy and Zomato dominated food delivery and eyed groceries. The conventional wisdom was that grocery e-commerce was a brutal, low-margin game decided by selection, price, and patience to bleed on logistics. Into it stepped Aadit Palicha and Kaivalya Vohra, Stanford-bound friends who had dropped out to build during the pandemic, carrying a lesson from an earlier delivery venture about how Indians actually shop.
+In 2021 Indian grocery delivery looked like a crowded, mature fight. BigBasket and Grofers ran scheduled delivery — order now, receive in hours or tomorrow — and [Swiggy](/case-study/swiggy-instamart-bet) and [Zomato](/case-study/zomato-blinkit-bet) dominated food delivery and eyed groceries. The conventional wisdom was that grocery e-commerce was a brutal, low-margin game decided by selection, price, and patience to bleed on logistics. Into it stepped Aadit Palicha and Kaivalya Vohra, Stanford-bound friends who had dropped out to build during the pandemic, carrying a lesson from an earlier delivery venture about how Indians actually shop.
 
 ## The occasion incumbents couldn't serve
 

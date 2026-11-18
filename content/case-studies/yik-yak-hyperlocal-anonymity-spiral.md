@@ -31,8 +31,8 @@ In the autumn of 2014, if you stepped onto almost any college campus in the Unit
 Students were compulsively checking a green app featuring a cartoon yak mascot: **Yik Yak**.
 
 Tyler Droll and Brooks Buffington, two recent graduates of Furman University in South Carolina, understood a profound flaw in the dominant social networks:
-- **Facebook** had become boring and parent-infested, requiring real names and permanent public records.
-- **Twitter** was an asymmetrical broadcast network where nobody cared what you had to say unless you had thousands of followers.
+- **[Facebook](/case-study/facebook-home-failure)** had become boring and parent-infested, requiring real names and permanent public records.
+- **[Twitter](/case-study/twitter-suggested-users)** was an asymmetrical broadcast network where nobody cared what you had to say unless you had thousands of followers.
 - On a college campus of 30,000 students, people wanted to know what was happening **right here, right now**: what was being served at the dining hall, who was hosting the party on Fraternity Row, and what funny mistake the chemistry professor just made in lecture.
 
 In late 2013, they launched Yik Yak to act as a **hyperlocal, anonymous digital bathroom stall wall** for colleges.
@@ -73,7 +73,7 @@ In March 2016, Yik Yak made the fatal product decision that killed the company: 
 The founders believed that by forcing users to create persistent pseudonyms, social accountability would return and harassment would decline.
 
 Instead, the product change destroyed the single value proposition that made Yik Yak magical:
-- Users didn't want persistent profiles on Yik Yak. For persistent identity and follower curation, they already had Instagram, Snapchat, and Twitter.
+- Users didn't want persistent profiles on Yik Yak. For persistent identity and follower curation, they already had Instagram, [Snapchat](/case-study/snapchat-ephemeral-content), and Twitter.
 - The spontaneous, uninhibited, egalitarian nature of the anonymous feed vanished. Users were terrified of building a bad reputation on their permanent handle.
 - Power users felt betrayed, and college students revolted.
 

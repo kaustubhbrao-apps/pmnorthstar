@@ -46,7 +46,7 @@ In 2018, they founded **Classplus** to give independent educators the digital we
 
 Classplus rejected the marketplace aggregation model. They did not launch "Classplus.com" where students searched for teachers.
 
-Instead, they executed the **Shopify playbook**: they built white-labeled digital infrastructure that allowed every individual teacher to become their own standalone digital brand.
+Instead, they executed the **[Shopify](/case-study/shopify-merchants-first) playbook**: they built white-labeled digital infrastructure that allowed every individual teacher to become their own standalone digital brand.
 
 For a modest annual SaaS fee, Classplus built the teacher a custom, branded Android mobile app published under the teacher's own name on the Google Play Store (e.g., *"Verma Physics Classes"*):
 1. **Live Interactive Classes:** Teachers streamed live lectures directly to their students with automated attendance tracking.
@@ -76,6 +76,6 @@ Classplus empowered over 100,000 educators across 3,000 Indian towns, proving th
 
 ## Deep-Dive Takeaways for Builders
 
-1. **Arm the Rebels Against the Empire:** When capital-heavy monopolies try to centralize and destroy a fragmented industry (like Byju's trying to eliminate local tutors), building the white-labeled tooling that empowers independent operators to survive creates massive grassroots loyalty.
+1. **Arm the Rebels Against the Empire:** When capital-heavy monopolies try to centralize and destroy a fragmented industry (like [Byju's](/case-study/byjus-downfall) trying to eliminate local tutors), building the white-labeled tooling that empowers independent operators to survive creates massive grassroots loyalty.
 2. **Respect the Power of Hyper-Local Trust:** In high-stakes emotional domains like education or healthcare, consumers will always trust a local practitioner they know personally over an anonymous centralized corporate mega-platform.
 3. **Decentralized Distribution Beats Centralized CAC:** Classplus avoided spending millions on customer acquisition because its 100,000 teachers enthusiastically marketed their own apps to millions of students, creating an organic distribution engine that no centralized competitor could match.

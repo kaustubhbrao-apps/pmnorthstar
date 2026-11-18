@@ -41,7 +41,7 @@ Inspired by PayPal's "give $10, get $10," Dropbox built a two-sided referral —
 
 ## Engineering the loop to near-zero friction
 
-Execution was a masterclass in behavioral design. Instead of burying a referral link in settings, Dropbox wove it into onboarding with a gamified "Get Started" checklist that rewarded the actions that increased a user's own retention — installing the desktop client, dropping in a file, taking the tour — and tied the ultimate reward to inviting friends. One-click integrations with Gmail and Yahoo contacts dropped the friction of sharing to almost nothing. Critically, the 250MB only unlocked when a referred user actually installed the client on a unique machine, so the program generated active, retained users instead of vanity signups.
+Execution was a masterclass in behavioral design. Instead of burying a referral link in settings, Dropbox wove it into onboarding with a gamified "Get Started" checklist that rewarded the actions that increased a user's own retention — installing the desktop client, dropping in a file, taking the tour — and tied the ultimate reward to inviting friends. One-click integrations with Gmail and [Yahoo](/case-study/yahoo-missed-deals) contacts dropped the friction of sharing to almost nothing. Critically, the 250MB only unlocked when a referred user actually installed the client on a unique machine, so the program generated active, retained users instead of vanity signups.
 
 ## The numbers that defined PLG
 

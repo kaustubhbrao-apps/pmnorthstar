@@ -31,7 +31,7 @@ For a scrappy 10-person startup, SOC 2 was a massive, expensive, manual distract
 
 Christina Cacioppo, the founder of Vanta, realized that the entire compliance industry was fundamentally broken. Auditors were humans manually checking configurations that computers could check instantly. 
 
-Vanta built a platform that plugged directly into a startup's infrastructure (AWS, GitHub, Google Workspace, Gusto). Instead of a founder taking a screenshot to prove that all employee laptops had hard drives encrypted, Vanta's software continuously queried the startup's device management API and checked the encryption status automatically.
+Vanta built a platform that plugged directly into a startup's infrastructure (AWS, [GitHub](/case-study/github-polish-as-marketing), Google Workspace, [Gusto](/case-study/gusto-delightful-payroll)). Instead of a founder taking a screenshot to prove that all employee laptops had hard drives encrypted, Vanta's software continuously queried the startup's device management API and checked the encryption status automatically.
 
 Vanta didn't just sell software; they invented a new category: **Continuous Automated Compliance.**
 

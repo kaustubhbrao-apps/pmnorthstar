@@ -32,7 +32,7 @@ In the mid-2010s, software development teams operated across an increasingly fra
 3. Automated test builds ran on Jenkins or CircleCI.
 4. Security vulnerabilities were scanned by Veracode or SonarQube.
 5. Docker container images were stored in JFrog Artifactory.
-6. Deployed applications were monitored in New Relic or Datadog.
+6. Deployed applications were monitored in New Relic or [Datadog](/case-study/datadog-unified-observability).
 
 Silicon Valley venture capitalists championed this as the **"best-of-breed"** approach: every step of the developer lifecycle should be handled by a specialized, standalone market leader.
 
@@ -40,7 +40,7 @@ In practice, this toolchain was an operational tax on engineering productivity. 
 
 ## The Integrated Single-Application Vision
 
-Dmitriy Zaporozhets started GitLab in 2011 from his home in Ukraine as an open-source alternative to GitHub. In 2014, Dutch entrepreneur Sid Sijbrandij joined as co-founder and CEO to commercialize the project.
+Dmitriy Zaporozhets started GitLab in 2011 from his home in Ukraine as an open-source alternative to [GitHub](/case-study/github-polish-as-marketing). In 2014, Dutch entrepreneur Sid Sijbrandij joined as co-founder and CEO to commercialize the project.
 
 Sijbrandij formulated a radical contrarian thesis: **Software development doesn't want best-of-breed tools; it wants a single application that covers the entire software development lifecycle.**
 

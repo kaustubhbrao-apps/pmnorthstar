@@ -55,7 +55,7 @@ Casper launched with a single mattress model for $850. It sold out its initial i
 
 Casper was hailed as the crown jewel of the Direct-to-Consumer (DTC) movement. Backed by top Silicon Valley venture capitalists and celebrity investors like Leonardo DiCaprio and Tobey Maguire, Casper grew at breakneck speed.
 
-They saturated podcasts with promotional discount codes, plastered the New York City subway system with whimsical illustrated cartoon ads, and dominated Google and Facebook search auctions.
+They saturated podcasts with promotional discount codes, plastered the New York City subway system with whimsical illustrated cartoon ads, and dominated Google and [Facebook](/case-study/facebook-home-failure) search auctions.
 
 Revenues skyrocketed past $300 million. But beneath the top-line hypergrowth lay a fatal, ticking financial timebomb: **the brutal unit economics of the one-time purchase**.
 

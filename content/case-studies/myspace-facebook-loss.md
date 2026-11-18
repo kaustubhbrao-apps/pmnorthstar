@@ -41,7 +41,7 @@ faqs:
 publishedAt: '2026-05-18'
 ---
 
-**MySpace lost its 100-million-user lead to a college network for one underlying reason: it extracted more value from its ecosystem than it created, and [Facebook](/compare/myspace-vs-facebook) did the opposite. The most visible symptom was a chaotic, ad-choked product, but the decisive error was strategic — MySpace refused to open a developer platform, guarding its advertising control, while Facebook turned developers into an engine that gave users fresh reasons to return every day. A user base is not a moat. A platform that creates more value than it captures is, and MySpace proved the difference by losing 100 million users in under three years.**
+**MySpace lost its 100-million-user lead to a college network for one underlying reason: it extracted more value from its ecosystem than it created, and [Facebook](/compare/myspace-vs-facebook) did the opposite. The most visible symptom was a chaotic, ad-choked product, but the decisive error was strategic — MySpace refused to open a developer platform, guarding its advertising control, while [Facebook](/case-study/facebook-home-failure) turned developers into an engine that gave users fresh reasons to return every day. A user base is not a moat. A platform that creates more value than it captures is, and MySpace proved the difference by losing 100 million users in under three years.**
 
 The lesson lands harder because MySpace held every advantage that is supposed to be decisive — scale, culture, first-mover status, a deep-pocketed parent — and still lost. The things it lacked were not resources; they were product discipline and platform strategy.
 
@@ -63,7 +63,7 @@ Once Facebook reached parity and passed it, MySpace's audience evaporated fast. 
 
 ## The lesson the industry kept
 
-MySpace reset how the industry thought about social competition. User base alone was exposed as a fragile moat — a network can lose its entire audience if the product deteriorates enough — and developer/creator platforms became understood as a competitive weapon. Instagram, Snapchat, and TikTok all invested in developer and creator tools early, partly because MySpace showed what happens when you don't.
+MySpace reset how the industry thought about social competition. User base alone was exposed as a fragile moat — a network can lose its entire audience if the product deteriorates enough — and developer/creator platforms became understood as a competitive weapon. Instagram, [Snapchat](/case-study/snapchat-ephemeral-content), and [TikTok](/case-study/tiktok-algorithm) all invested in developer and creator tools early, partly because MySpace showed what happens when you don't.
 
 ## What this means for operators
 

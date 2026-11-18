@@ -26,7 +26,7 @@ publishedAt: '2026-10-09'
 
 ## The Crown Prince of Mobile
 
-In 2017, the global smartphone market was an entrenched duopoly. Apple controlled 80% of global smartphone profits, and Samsung dominated the high-volume Android market. Every other legacy manufacturer—HTC, Sony, LG, Motorola—was bleeding cash.
+In 2017, the global smartphone market was an entrenched duopoly. Apple controlled 80% of global smartphone profits, and Samsung dominated the high-volume Android market. Every other legacy manufacturer—HTC, [Sony](/case-study/sony-betamax-format-war-1975), LG, Motorola—was bleeding cash.
 
 Yet investors believed there was one man on Earth who possessed the technical pedigree and industry relationships to build a third titan: **Andy Rubin**.
 
@@ -86,4 +86,4 @@ In February 2020, Essential officially shut down operations, burning through $33
 
 1. **You Cannot Compromise on the Core Dimension:** If you are building in a mature, high-stakes consumer category (like smartphones), you cannot launch with a mediocre camera just because your titanium industrial design is gorgeous. Table-stakes features must match incumbents.
 2. **Modular Hardware Gimmicks Almost Always Fail:** Consumers consistently reject external modular attachments. They add cost, bulk, and complexity. Users demand all functionality integrated seamlessly into a single standalone slab.
-3. **Carrier Distribution Dictates Consumer Hardware Reality:** In retail-dominated industries, signing an exclusive deal with the weakest distributor (Sprint) suffocates top-of-funnel discovery, no matter how much tech Twitter hypes your product.
+3. **Carrier Distribution Dictates Consumer Hardware Reality:** In retail-dominated industries, signing an exclusive deal with the weakest distributor (Sprint) suffocates top-of-funnel discovery, no matter how much tech [Twitter](/case-study/twitter-suggested-users) hypes your product.

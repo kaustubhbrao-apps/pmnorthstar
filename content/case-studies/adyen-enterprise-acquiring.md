@@ -21,7 +21,7 @@ faqs:
 
 ## The Fragmented Global Payments Problem
 
-In the mid-2000s, if you were a massive enterprise operating globally—think Netflix, Uber, or Spotify—accepting payments was an operational nightmare. You had to negotiate with different acquiring banks in every single country. You had to integrate with different payment gateways in Europe, Latin America, and Asia. 
+In the mid-2000s, if you were a massive enterprise operating globally—think [Netflix](/case-study/netflix-dvd-to-streaming), Uber, or Spotify—accepting payments was an operational nightmare. You had to negotiate with different acquiring banks in every single country. You had to integrate with different payment gateways in Europe, Latin America, and Asia. 
 
 Every new market meant integrating with a local bank, adhering to their specific legacy API, and managing multiple different reporting dashboards. If a payment failed in Brazil, tracing it through the labyrinth of processors, gateways, and local acquirers was practically impossible.
 

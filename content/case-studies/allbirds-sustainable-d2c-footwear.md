@@ -61,7 +61,7 @@ Between 2016 and 2019, Allbirds became the mandatory footwear of the technology 
 
 The shoe became the ultimate status symbol of the tech class: it signaled that you were relaxed, progressive, values-driven, and focused on comfort and intellectual work rather than ostentatious corporate flashiness.
 
-Allbirds adopted a pure Direct-to-Consumer (DTC) model, selling exclusively through its sleek Shopify website and experiential retail stores, bypassing traditional wholesale department stores and capturing full retail margins.
+Allbirds adopted a pure Direct-to-Consumer (DTC) model, selling exclusively through its sleek [Shopify](/case-study/shopify-merchants-first) website and experiential retail stores, bypassing traditional wholesale department stores and capturing full retail margins.
 
 ## The Pitfalls of Over-Expansion and the DTC Hangover
 
@@ -70,7 +70,7 @@ Allbirds reached a private valuation of over $1.7 billion and completed a triump
 However, public market scrutiny exposed the structural fragilities of the single-SKU DTC model:
 1. **Premature Product Sprawl:** Under pressure from Wall Street to prove massive addressable market expansion, Allbirds strayed from its core competency. It launched expensive running apparel, puffer jackets, leggings, and underwear. Consumers loved Allbirds for simple shoes; they had zero interest in buying $150 Allbirds activewear to compete with Lululemon and Nike.
 2. **Durability and Quality Compromises:** As the company rushed new styles to market, early versions of its performance running shoes suffered durability complaints: soles wore down quickly and wool uppers tore.
-3. **The DTC Ad Tax:** Apple’s iOS privacy updates destroyed direct-to-consumer advertising attribution. Customer acquisition costs on Facebook and Instagram doubled, turning profitable online customer acquisition into a loss-making channel.
+3. **The DTC Ad Tax:** Apple’s iOS privacy updates destroyed direct-to-consumer advertising attribution. Customer acquisition costs on [Facebook](/case-study/facebook-home-failure) and Instagram doubled, turning profitable online customer acquisition into a loss-making channel.
 
 Allbirds’ stock price cratered by over 90% in subsequent years, forcing the company to close underperforming retail stores, exit apparel, and refocus on its foundational roots: comfortable, minimalist footwear made from sustainable materials.
 

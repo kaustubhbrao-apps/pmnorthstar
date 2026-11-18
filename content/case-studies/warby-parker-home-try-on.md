@@ -71,11 +71,11 @@ The customer journey was effortless:
 
 The Home Try-On box was not just a shipping container; it was an **organic social media engine**.
 
-When the box arrived, customers took selfies wearing all five frames and posted them to Facebook, Twitter, and Instagram with the hashtag **#WarbyHomeTryOn**, asking their friends: *"Which pair looks best on me: 1, 2, 3, 4, or 5?"*
+When the box arrived, customers took selfies wearing all five frames and posted them to [Facebook](/case-study/facebook-home-failure), [Twitter](/case-study/twitter-suggested-users), and Instagram with the hashtag **#WarbyHomeTryOn**, asking their friends: *"Which pair looks best on me: 1, 2, 3, 4, or 5?"*
 
 Without spending millions of dollars on paid television advertising, Warby Parker turned every single customer trial into a distributed public advertisement seen by hundreds of their personal friends.
 
-When GQ Magazine covered the company at launch, calling it *"the Netflix of eyewear,"* the website crashed under unprecedented traffic. Warby Parker hit its entire first-year sales target in **three weeks** and accumulated a waiting list of over 20,000 customers.
+When GQ Magazine covered the company at launch, calling it *"the [Netflix](/case-study/netflix-dvd-to-streaming) of eyewear,"* the website crashed under unprecedented traffic. Warby Parker hit its entire first-year sales target in **three weeks** and accumulated a waiting list of over 20,000 customers.
 
 ## Expanding to Physical Retail and Beyond
 

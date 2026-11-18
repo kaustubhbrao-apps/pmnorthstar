@@ -61,7 +61,7 @@ In December 2011, Jawbone made an unprecedented move: it suspended sales of the 
 
 While praised for transparency, the financial toll was staggering. The recall cost tens of millions of dollars in lost inventory, customer refunds, and reverse-logistics shipping.
 
-Worse, it surrendered the wearable fitness market to **Fitbit**. While Jawbone spent eighteen months completely re-engineering its factory tooling and potting compounds to make the UP band durable, Fitbit swept into retail shelves at Best Buy, Walmart, and Target, capturing millions of consumers and establishing undisputed category dominance.
+Worse, it surrendered the wearable fitness market to **Fitbit**. While Jawbone spent eighteen months completely re-engineering its factory tooling and potting compounds to make the UP band durable, Fitbit swept into retail shelves at Best Buy, [Walmart](/case-study/walmart-performance-conversion), and Target, capturing millions of consumers and establishing undisputed category dominance.
 
 ## The Venture Debt Spiral
 
@@ -84,7 +84,7 @@ Jawbone found itself trapped in an inescapable vice:
 
 In July 2017, Jawbone officially entered liquidation bankruptcy. 
 
-The company had raised **$900 million in equity and debt** over sixteen years, all of which was completely wiped out—making Jawbone the second-largest venture-backed bankruptcy in United States history (behind only solar failure Solyndra).
+The company had raised **$900 million in equity and debt** over sixteen years, all of which was completely wiped out—making Jawbone the second-largest venture-backed bankruptcy in United States history (behind only solar failure [Solyndra](/case-study/solyndra-cylindrical-solar-cost-collapse)).
 
 ## Deep-Dive Takeaways for Builders
 

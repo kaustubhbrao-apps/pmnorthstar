@@ -41,7 +41,7 @@ faqs:
 publishedAt: '2026-05-18'
 ---
 
-**Nintendo won the console generation it was supposed to lose by refusing to play the game everyone else was playing. Sony and Microsoft were locked in an arms race of processing power, graphics, and price — a race Nintendo, broke after the GameCube, could not win. So it changed the axis of competition entirely: instead of building a more powerful console for existing gamers, it built a radically simpler one for people who had never played at all. The Wii outsold both rivals by competing not with the PlayStation but with board games and bowling alleys. The lesson is the most powerful move in strategy — when you cannot win the current game, change the game, and the biggest market is usually the non-consumers everyone else ignores.**
+**Nintendo won the console generation it was supposed to lose by refusing to play the game everyone else was playing. [Sony](/case-study/sony-betamax-format-war-1975) and Microsoft were locked in an arms race of processing power, graphics, and price — a race Nintendo, broke after the GameCube, could not win. So it changed the axis of competition entirely: instead of building a more powerful console for existing gamers, it built a radically simpler one for people who had never played at all. The Wii outsold both rivals by competing not with the PlayStation but with board games and bowling alleys. The lesson is the most powerful move in strategy — when you cannot win the current game, change the game, and the biggest market is usually the non-consumers everyone else ignores.**
 
 This is the textbook Blue Ocean case because it is so clean: the same company that could not win on specs won decisively by making specs irrelevant.
 
