@@ -52,7 +52,7 @@ faqs:
     answer: "Precisely. Both are textbook cases: the rational short-term move — protecting a profitable core — is the fatal long-term move when a disruptive technology arrives. The hardest thing for a successful incumbent to do is destroy its own cash cow before someone else does, and neither Kodak nor BlackBerry could bring itself to."
 ---
 
-**Kodak invented the digital camera. BlackBerry defined the smartphone. Each was then destroyed by the exact shift it was best positioned to lead — and that is the point. The popular story of disruption is one of incumbents failing to see the future. The truer and more useful story is that both of these companies saw it perfectly and could not bring themselves to live in it, because living in it meant killing the profitable business that made them great. Incumbents rarely die of blindness. They die defending the cash cow.**
+**[Kodak](/case-study/kodak-digital-camera-failure) invented the digital camera. BlackBerry defined the smartphone. Each was then destroyed by the exact shift it was best positioned to lead — and that is the point. The popular story of disruption is one of incumbents failing to see the future. The truer and more useful story is that both of these companies saw it perfectly and could not bring themselves to live in it, because living in it meant killing the profitable business that made them great. Incumbents rarely die of blindness. They die defending the cash cow.**
 
 What makes the pair so instructive is that they fail identically across different industries and decades, which means the cause is structural, not circumstantial. It is the innovator's dilemma in its purest form.
 

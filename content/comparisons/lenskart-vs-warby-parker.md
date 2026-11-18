@@ -60,7 +60,7 @@ faqs:
     answer: "Not head-to-head today — they are strongest in different geographies, with Lenskart dominant in India and expanding internationally, and Warby Parker centered on the US. But they are studied together because they are the two canonical modern eyewear disruptors, and as Lenskart expands globally the overlap could grow. The reason to compare them is less about market share and more about strategy: they are the clearest example of how the same category, in two different markets, demands two opposite go-to-market playbooks."
 ---
 
-**Founded the same year to fix the same category, Lenskart and Warby Parker built opposite companies — because the market's dominant friction, not the founders' taste, dictated the playbook. The pairing isolates a variable most case studies cannot: hold the problem constant, change the geography, and watch the correct strategy invert.**
+**Founded the same year to fix the same category, [Lenskart](/case-study/lenskart-omnichannel-eyewear) and [Warby Parker](/case-study/warby-parker-home-try-on) built opposite companies — because the market's dominant friction, not the founders' taste, dictated the playbook. The pairing isolates a variable most case studies cannot: hold the problem constant, change the geography, and watch the correct strategy invert.**
 
 Both launched in 2010 against the same target: eyewear, dominated by a few incumbents selling overpriced frames through sleepy optical shops. Same diagnosis, opposite execution. The reason is the most transferable lesson in the comparison.
 

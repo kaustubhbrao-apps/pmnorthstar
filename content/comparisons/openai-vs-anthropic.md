@@ -60,7 +60,7 @@ faqs:
     answer: "For OpenAI, it is that consumer attention is rented, not owned — a better default or a platform shift (a model baked into the operating system or the browser) could erode the habit. For Anthropic, it is that 'trust' is hard to monetize at consumer scale and that enterprise buyers are slow; if frontier models commoditize, the safety premium has to keep earning its price. Each company's moat is exactly the thing the other finds hardest to copy."
 ---
 
-**Two labs built on the same breakthrough chose different customers, and in doing so built moats that barely touch. OpenAI optimized for consumer default-ness; Anthropic optimized for enterprise trust. The instructive part is not which model benchmarks higher this quarter — it is how a single technology, aimed at two buyers, produced two durable and non-overlapping advantages.**
+**Two labs built on the same breakthrough chose different customers, and in doing so built moats that barely touch. [OpenAI](/case-study/chatgpt-consumer-launch) optimized for consumer default-ness; [Anthropic](/case-study/anthropic-value-ecosystem) optimized for enterprise trust. The instructive part is not which model benchmarks higher this quarter — it is how a single technology, aimed at two buyers, produced two durable and non-overlapping advantages.**
 
 When OpenAI shipped ChatGPT in November 2022, it was making a distribution bet, not a capability bet. Anthropic, founded a year earlier by researchers who left OpenAI, made the opposite wager on trust. Reading the rivalry as a leaderboard misses the actual strategy. The right lens is positioning: each company deliberately conceded the ground the other was strongest on.
 

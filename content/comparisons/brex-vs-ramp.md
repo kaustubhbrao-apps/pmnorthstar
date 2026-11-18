@@ -60,7 +60,7 @@ faqs:
     answer: "In a cost-conscious environment, Ramp's positioning is the easier internal sell — its entire pitch is reducing spend, which is the mandate most finance leaders are under. Brex can absolutely serve a disciplined finance org, but it has to fight its growth-era association to do it. The broader lesson for product people is that positioning is not cosmetic: when the market's mood shifted from growth to efficiency, the product framed around efficiency won the narrative, even in a category where the underlying mechanics are similar."
 ---
 
-**Brex and Ramp started from the same insight — a corporate card for startups — and diverged on one question that defines the category: is the product for spending or for saving? The divergence is a clinic in positioning, and the 2022 downturn graded both bets in public.**
+**[Brex](/case-study/brex-corporate-cards-for-startups) and [Ramp](/case-study/ramp-spend-management-counter-position) started from the same insight — a corporate card for startups — and diverged on one question that defines the category: is the product for spending or for saving? The divergence is a clinic in positioning, and the 2022 downturn graded both bets in public.**
 
 Two companies, nearly identical products, opposite stories. That is what makes Brex and Ramp the cleanest natural experiment in modern product positioning, and why the lesson generalizes far beyond fintech.
 

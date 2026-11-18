@@ -60,7 +60,7 @@ faqs:
     answer: "Significantly. Microsoft's 2018 acquisition gave GitHub enormous resources, enterprise distribution through the Microsoft relationship, and, later, the Copilot advantage that reset expectations for AI-assisted coding. It reinforced GitHub's network moat with a balance sheet and a go-to-market machine GitLab cannot match head-on. GitLab's response is to lean harder into the things independence and integration let it do — one governed toolchain, strong self-hosting, and transparency — rather than fighting the network war it cannot win."
 ---
 
-**Both companies put Git at the center of software, then bet on opposite sources of advantage: GitHub on the network, GitLab on integration. One owns where developers already are; the other owns the argument for consolidating the tools around them. The choice between them is really a choice between two kinds of moat.**
+**Both companies put Git at the center of software, then bet on opposite sources of advantage: [GitHub](/case-study/github-polish-as-marketing) on the network, [GitLab](/case-study/gitlab-single-application-devops) on integration. One owns where developers already are; the other owns the argument for consolidating the tools around them. The choice between them is really a choice between two kinds of moat.**
 
 The surface debate — Actions versus GitLab CI, cloud versus self-host — obscures the real one. GitHub and GitLab answer a single strategic question differently: is the durable advantage in the network or in the toolchain?
 

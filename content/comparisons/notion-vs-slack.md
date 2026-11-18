@@ -52,7 +52,7 @@ faqs:
     answer: "Mostly no. Conversation and documentation are different jobs. Teams typically run both. The strategic question is which one becomes the connective tissue — and that's why both companies keep expanding into each other's space, chasing the same goal of being the single workplace operating system."
 ---
 
-**Notion and Slack both wanted to be the first app a team opens every morning, and they got there by owning opposite things. Slack owns the conversation — the present tense of work, where decisions happen right now. Notion owns the document — the accumulated knowledge that compounds over years. One monetizes urgency, the other permanence, and that single difference explains everything downstream: how they grew, how sticky they are, and why one sold itself while the other stayed independent.**
+**[Notion](/case-study/notion-all-in-one-workspace) and [Slack](/case-study/slack-gaming-pivot) both wanted to be the first app a team opens every morning, and they got there by owning opposite things. Slack owns the conversation — the present tense of work, where decisions happen right now. Notion owns the document — the accumulated knowledge that compounds over years. One monetizes urgency, the other permanence, and that single difference explains everything downstream: how they grew, how sticky they are, and why one sold itself while the other stayed independent.**
 
 The useful frame is not "chat versus docs" but "what kind of value does the product accumulate" — because high-frequency ephemeral value and low-frequency durable value behave differently in every way that matters.
 

@@ -52,7 +52,7 @@ faqs:
     answer: "Uber doubled down on global scale and adjacent marketplaces like Eats and freight. Ola pivoted hard into electric vehicles with Ola Electric and into financial services, trying to build an India-specific mobility-and-money ecosystem rather than win the ride-hailing war outright."
 ---
 
-**Uber vs Ola in India is the cleanest test of a recurring question: can global capital overpower local knowledge on unfamiliar terrain? Uber arrived with an enormous war chest, a proven worldwide playbook, and a brand that already meant ride-hailing. Ola met it with something money cannot quickly buy — a native read of how Indians actually move. The answer, unlike Uber's clean exit from China, was no clear winner: an expensive stalemate that drained both for years. The lesson is that local context is a genuine moat, capable of absorbing a far larger capital advantage when the terrain is unfamiliar and the marketplace is contested.**
+**[Uber](/case-study/uber-blitzscaling) vs [Ola](/case-study/ola-electric-pivot) in India is the cleanest test of a recurring question: can global capital overpower local knowledge on unfamiliar terrain? Uber arrived with an enormous war chest, a proven worldwide playbook, and a brand that already meant ride-hailing. Ola met it with something money cannot quickly buy — a native read of how Indians actually move. The answer, unlike Uber's clean exit from China, was no clear winner: an expensive stalemate that drained both for years. The lesson is that local context is a genuine moat, capable of absorbing a far larger capital advantage when the terrain is unfamiliar and the marketplace is contested.**
 
 The outcome is more instructive than a victory would have been, because it shows exactly where money's power ends.
 

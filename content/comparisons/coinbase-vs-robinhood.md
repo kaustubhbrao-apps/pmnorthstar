@@ -60,7 +60,7 @@ faqs:
     answer: "They increasingly overlap for the retail investor's attention and dollars. Robinhood added crypto; Coinbase has pushed toward a broader financial app. But their centers of gravity still differ: Coinbase is the regulated crypto specialist that institutions trust, and Robinhood is the frictionless multi-asset brokerage that defined commission-free trading. They compete most directly for the young, first-time investor deciding where to start — and they pitch that person opposite things: trust versus effortlessness."
 ---
 
-**Coinbase and Robinhood both pulled a generation into investing, and both chose a moat the other could not copy. In a regulated category, compliance and frictionlessness pull against each other — and each company's greatest strength is the direct cost of the other's choice. That tradeoff, not the feature list, is the whole analysis.**
+**[Coinbase](/case-study/coinbase-compliance-moat) and [Robinhood](/case-study/robinhood-democratized-trading) both pulled a generation into investing, and both chose a moat the other could not copy. In a regulated category, compliance and frictionlessness pull against each other — and each company's greatest strength is the direct cost of the other's choice. That tradeoff, not the feature list, is the whole analysis.**
 
 The two companies look like rivals for the same young investor, but they are better understood as a controlled study in a single strategic tension: how much friction a financial product should remove, and what it pays for removing it.
 

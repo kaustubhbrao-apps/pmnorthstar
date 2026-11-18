@@ -67,7 +67,7 @@ faqs:
     answer: "Yes, because the email list is the key asset and Substack writers own it. If a writer builds 50,000 subscribers on Substack, those email addresses belong to the writer — they can export them and move to any platform. A Twitter subscription product would have the same fundamental risk as a Twitter follower: the platform owns the relationship. Substack's structural advantage is portability, and that advantage holds as long as email remains an open protocol."
 ---
 
-**Twitter and Substack built opposite answers to one question: who owns the relationship between a writer and their audience? Twitter optimized for reach the platform controls; Substack optimized for a subscriber list the writer controls. For anyone building an audience, that ownership question decides almost everything downstream — monetization, risk, and incentive.**
+**[Twitter](/case-study/twitter-suggested-users) and [Substack](/case-study/substack-paid-newsletters) built opposite answers to one question: who owns the relationship between a writer and their audience? Twitter optimized for reach the platform controls; Substack optimized for a subscriber list the writer controls. For anyone building an audience, that ownership question decides almost everything downstream — monetization, risk, and incentive.**
 
 The two platforms are often framed as feed versus newsletter. The more useful frame is a question of ownership and incentive, because that is what determines who builds a durable business on each.
 

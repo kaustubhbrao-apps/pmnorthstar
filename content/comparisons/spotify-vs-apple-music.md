@@ -52,7 +52,7 @@ faqs:
     answer: "Spotify, by consensus. Its algorithmic playlists and personalization set the category standard. Apple Music leans more on human editorial curation and integration with your existing iTunes library, which appeals to a different listener but doesn't match Spotify's discovery loop."
 ---
 
-**Spotify and Apple Music sell the same catalog at nearly the same price, and they are not the same kind of company at all. Spotify is a standalone product that has to be profitable on music alone, against the brutal math of paying labels roughly 70% off the top. Apple Music is a feature of a $3-trillion hardware business that never has to make money by itself. That asymmetry defines the whole contest, and it yields a hard rule for anyone competing with a bundle: a standalone product must out-execute relentlessly, or the bundle wins by default — not by being better, just by being already there.**
+**[Spotify](/case-study/spotify-streaming-war) and [Apple](/case-study/apple-iphone-launch) Music sell the same catalog at nearly the same price, and they are not the same kind of company at all. Spotify is a standalone product that has to be profitable on music alone, against the brutal math of paying labels roughly 70% off the top. Apple Music is a feature of a $3-trillion hardware business that never has to make money by itself. That asymmetry defines the whole contest, and it yields a hard rule for anyone competing with a bundle: a standalone product must out-execute relentlessly, or the bundle wins by default — not by being better, just by being already there.**
 
 The comparison is valuable precisely because the product is nearly identical; what differs is the structure behind each, and structure is destiny here.
 
