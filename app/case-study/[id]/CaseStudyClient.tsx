@@ -50,6 +50,17 @@ export type RelatedComparison = {
   accentColor: string;
 };
 
+export type RelatedTopic = {
+  slug: string;
+  title: string;
+};
+
+export type RelatedBook = {
+  slug: string;
+  title: string;
+  author: string;
+};
+
 interface CaseStudyClientProps {
   study: CaseStudy | null;
   prevStudy: AdjacentStudy | null;
@@ -57,6 +68,8 @@ interface CaseStudyClientProps {
   related: RelatedStudy[];
   relatedAnswers: RelatedAnswer[];
   relatedComparisons: RelatedComparison[];
+  relatedTopics: RelatedTopic[];
+  relatedBooks: RelatedBook[];
   faqs: FAQ[];
   /** 1-based position of this study among published ones, for the "N of M" label. */
   position: number;
@@ -71,6 +84,8 @@ export function CaseStudyClient({
   related,
   relatedAnswers,
   relatedComparisons,
+  relatedTopics,
+  relatedBooks,
   faqs,
   position,
   total,
@@ -353,6 +368,34 @@ export function CaseStudyClient({
                     {relatedAnswers.map((a) => (
                       <Link key={a.slug} href={`/answers/${a.slug}`} className="rellink">
                         {a.question} →
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {relatedTopics.length > 0 && (
+                <>
+                  <SectionHead title="Part of these collections" />
+                  <p className="shead-sub">Curated topic hubs that feature {study.company}.</p>
+                  <div className="max-w-3xl">
+                    {relatedTopics.map((t) => (
+                      <Link key={t.slug} href={`/topics/${t.slug}`} className="rellink">
+                        {t.title} →
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {relatedBooks.length > 0 && (
+                <>
+                  <SectionHead title="Read more in these books" />
+                  <p className="shead-sub">Book breakdowns that reference this case.</p>
+                  <div className="max-w-3xl">
+                    {relatedBooks.map((b) => (
+                      <Link key={b.slug} href={`/book/${b.slug}`} className="rellink">
+                        {b.title} — {b.author} →
                       </Link>
                     ))}
                   </div>

@@ -7,12 +7,16 @@ import {
 import { getCaseStudyFaqs } from "@/data/caseStudyFaqs";
 import { publishedAnswers } from "@/data/answers";
 import { publishedComparisons } from "@/data/comparisons";
+import { publishedTopics } from "@/data/topics";
+import { books, getBookSlug } from "@/data/books";
 import { CaseStudyClient } from "./CaseStudyClient";
 import type {
   AdjacentStudy,
   RelatedStudy,
   RelatedAnswer,
   RelatedComparison,
+  RelatedTopic,
+  RelatedBook,
 } from "./CaseStudyClient";
 
 type PageProps = { params: { id: string } };
@@ -96,6 +100,19 @@ export default function CaseStudyPage({ params }: PageProps) {
       accentColor: c.accentColor,
     }));
 
+  // Topic hubs that curate this study. Reciprocal to the topic page, which
+  // already lists its member studies — this sends authority back UP to the
+  // hub, which is the page type Google ranks for the broad head terms.
+  const relatedTopics: RelatedTopic[] = publishedTopics()
+    .filter((t) => t.caseStudyIds.includes(study.id))
+    .map((t) => ({ slug: t.slug, title: t.title }));
+
+  // Book breakdowns that cite this case. Books link down to studies via
+  // summary.relatedCaseStudies; this is the missing reverse link.
+  const relatedBooks: RelatedBook[] = books
+    .filter((b) => b.summary?.relatedCaseStudies?.includes(study.id))
+    .map((b) => ({ slug: getBookSlug(b), title: b.title, author: b.author }));
+
   return (
     <CaseStudyClient
       study={study}
@@ -104,6 +121,8 @@ export default function CaseStudyPage({ params }: PageProps) {
       related={related}
       relatedAnswers={relatedAnswers}
       relatedComparisons={relatedComparisons}
+      relatedTopics={relatedTopics}
+      relatedBooks={relatedBooks}
       faqs={getCaseStudyFaqs(study.id)}
       position={currentIndex + 1}
       total={liveStudies.length}

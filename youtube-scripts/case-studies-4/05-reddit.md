@@ -1,0 +1,58 @@
+# Video 5 — Reddit: How to Start a Community From Zero | Hosted by EV
+
+## pmnorthstar · Case Studies Series 4 · target length 8–9 min (~1,550 spoken words)
+Spoken lines prefixed EV:. [VISUAL: ...] = on-screen animation. Voice: pmnorthstar house voice — warm, confident mentor, brisk & dense (see host bible).
+
+**Brand visual kit (animation pass) — lean on the brand's iconic elements:** Reddit orange-red (#FF4500), the Snoo alien mascot, upvote/downvote arrows, a feed of posts. The hero move: an empty town square with a single person talking to no one — then the founders quietly place "decoy" characters around it, fake accounts posting, until real people wander in, and suddenly the square is packed and alive. Upvotes raining, threads branching. Scrappy, clever, "fake it till the crowd is real."
+
+---
+
+[VISUAL: Cold open. A brand-new social site: a lonely empty feed, one post, zero comments, tumbleweed. A visitor arrives, sees nothing happening, and leaves. Then the two founders start secretly creating account after account — fake usernames posting links, replying to each other — until the page *looks* busy. Real visitors arrive, see activity, and start posting for real. The fake accounts quietly fade as the crowd takes over. Caption: "an empty room scares people away. so they filled it with ghosts — until the people were real."]
+
+EV: Here's the single hardest problem in building anything social — a community, a marketplace, a network — and a sneaky, brilliant way the founders of Reddit solved it. The problem is this: these products are only valuable when lots of people are *already* using them. A social site with no posts is boring. A marketplace with no sellers is useless. But on day one, you have *nobody* — and nobody wants to join an empty room. It's a chicken-and-egg trap: you need users to attract users. So when Reddit launched to an empty page, its founders did something cheeky and smart — they *faked* a crowd. They created tons of fake accounts and posted as them, making the site look busy and alive, until enough real people showed up that the fakes weren't needed anymore. Let's get into it — because the lesson generalizes far beyond one trick.
+
+[VISUAL: pmnorthstar logo pops. Title card: "REDDIT — the cold-start problem."]
+
+EV: I'm EV, from pmnorthstar. Reddit is "the front page of the internet" — a massive network of communities where people post links, discussions, and memes, and vote the best stuff up. But the lesson is about the very beginning, the moment every community and marketplace product has to survive. Here's the principle: **products that get their value from other users face a brutal "cold-start" problem — they're worthless until they're popular, and empty until they're worthless. To escape it, you often have to *manufacture* the early activity yourself, by any scrappy means necessary, until real network effects take over.** Let me walk through how Reddit did it, and what it teaches.
+
+[VISUAL: Header: "THE COLD-START TRAP." A split: "Value needs users" ↔ "Users need value." An arrow chasing its own tail. A lonely empty feed labeled "Day 1." Caption: "nobody joins a party with nobody at it."]
+
+EV: Let's really sit with the trap, because it kills more products than bad ideas do. Think about what makes Reddit valuable: *other people.* The posts, the comments, the votes, the communities — all created by users. With no users, there's no content; with no content, there's nothing to attract users. It's a perfect vicious circle. And it's not just Reddit — it's every social network (empty feed = boring), every marketplace (no sellers = no buyers, no buyers = no sellers), every community product on earth. Day one, you have an empty room, and the cruel truth of human behavior is that *people don't want to be the only ones somewhere.* We take cues from the crowd — a busy restaurant feels better than an empty one, even with identical food. An empty product signals "nothing happening here," and visitors bounce. So the question is: how do you get the *first* bit of life into a thing that needs life to attract life?
+
+[VISUAL: Header: "THE HACK — FAKE THE CROWD." The two founders at laptops, spinning up dozens of fake usernames, posting interesting links, replying to each other, seeding the exact *tone* they wanted. The feed fills up — all them. Caption: "they WERE the early community."]
+
+EV: And here's Reddit's answer, and it's wonderfully low-tech. The founders just… *faked it.* They created a large number of fake accounts and used them to post content themselves — interesting links, submissions, the kind of stuff they wanted the site to be full of. To any real visitor, the site looked *active* — lots of users, lots of posts, a real community humming along. But in the early days, a big chunk of that "community" was literally the two founders wearing dozens of masks. And this did two crucial things. One: it made the site look *alive*, so real visitors thought "oh, people are here, this is a thing," and stuck around. Two — and this is the underrated part — by choosing *what* to post as those fake users, the founders *set the culture and tone.* They modeled exactly the kind of content and vibe they wanted, so when real users arrived, they imitated it. The fakes weren't just filler. They were the template for the community's character.
+
+[VISUAL: Header: "THE HANDOFF — REAL TAKES OVER." Fake accounts quietly logging off one by one as real usernames flood in, posting, voting, commenting. The orange feed roars to life on its own. Caption: "once it's real, let go."]
+
+EV: And here's the part that makes it work rather than backfire: it was *temporary scaffolding*, and they knew it. The goal was never to run a site of fake users forever — that's not a community, it's a puppet show. The goal was to get *past the cold start* — to create enough of an illusion of activity that *real* people would show up, and then, as real users poured in posting and voting and commenting, the founders could quietly retire the fakes. The scaffolding comes down once the building can stand on its own. That's the discipline: you fake the crowd only long enough to attract a real one, then you let go. Done right, nobody even notices the handoff — they just see a site that was "always" busy. The ghosts were only ever there to make room for the people.
+
+[VISUAL: Quiet lower-third: "Subscribe to pmnorthstar."]
+
+EV: Quick one — if this is landing, subscribe to pmnorthstar so these keep coming. Now — the honest, general version of this move, because you won't always use fake accounts.
+
+[VISUAL: Header: "THE REAL LESSON — SOLVE THE EMPTY ROOM." Three doors: "seed the content yourself," "hand-recruit the first users," "pick one tiny niche to fill first." Caption: "manufacture the first spark, honestly."]
+
+EV: Now, let me be straight: "make a bunch of fake accounts" is a cheeky tactic, and the *tactic* isn't always the right or honest move. But the *principle* underneath is rock-solid and used by nearly every great community and marketplace: **you, the founder, have to manufacture the early activity yourself.** There are honest versions everywhere. Some companies *seed the content themselves* — the team posts the first great stuff, writes the first listings, records the first videos, so the product isn't empty. Some *hand-recruit* the first users one by one, personally, instead of waiting for them. Some *narrow the beachhead* — don't try to fill a huge empty space; pick one tiny niche or one city and concentrate all your early energy there, so at least *that* corner feels alive and busy, and expand from a place that already has momentum. The common thread: don't launch an empty room and *hope* people fill it. Do whatever it ethically takes to put the first life in yourself, until the network effect catches and carries it.
+
+[VISUAL: Header: "WHERE THEY ARE NOW (2025–26)." Reddit a giant — one of the most-visited sites on earth, hundreds of millions of users across tens of thousands of communities, a public company, and now a prime source of training data and real human discussion that AI companies pay for. The empty room became the front page of the internet.]
+
+EV: And today? Reddit is one of the most-visited sites in the world — hundreds of millions of users, tens of thousands of communities about every topic imaginable, a publicly traded company. It even became one of the most valuable sources of *genuine human discussion* on the internet, the kind AI companies now pay to learn from. The lonely empty feed with two founders in a hundred masks became the front page of the internet. And it only exists because, at the very start, they refused to let the empty room kill them — they manufactured the spark, set the tone, and let go once it was real. Every giant network was once an empty room someone had to fill.
+
+[VISUAL: Header: "THE LESSON." Card: "Don't launch an empty room. Manufacture the first spark, then let go."]
+
+EV: So the principle to carry: if your product gets its value from other users — a community, a network, a marketplace — your single biggest early risk isn't a bad feature, it's *emptiness*. Nobody joins a party with nobody at it. So you can't just build it and wait. You have to manufacture the early activity yourself — seed the content, hand-recruit the first users, dominate one tiny niche — to create enough life that real people show up. And treat it as scaffolding: once the network can stand on its own, let your seeding fade. Ask, at launch: "what does a brand-new user see when the room is empty — and what am I doing *myself* to make sure it never looks empty?"
+
+[VISUAL: Header: "IN AN INTERVIEW." Mock prompt: "How would you launch a new marketplace or social product with no users?"]
+
+EV: And in an interview, this is a classic and you should nail it. If they hand you the cold-start problem — a new marketplace or social app with zero users — never say "we'll market it and users will come." Say: "The core challenge is the cold start — it's worthless until it's popular, and empty until then. So I wouldn't rely on an empty launch. I'd manufacture the early activity myself — seed the initial content, hand-recruit the first cohort, or concentrate on one tiny niche so it feels alive there — the way Reddit's founders faked a busy site until real users arrived." Then land it: "I'd treat that seeding as temporary scaffolding, removed once real network effects take hold." That tells an interviewer you deeply understand how networks actually start.
+
+[VISUAL: Recap: the empty feed, the founders in a dozen masks, the fakes setting the tone, real users flooding in, the scaffolding coming down, the front page of the internet.]
+
+EV: So — Reddit. Facing the cruelest problem in product — a social site that's worthless until it's popular — the founders simply manufactured the crowd, faking a busy, lively community until a real one showed up, and setting the culture while they were at it. Then they let the scaffolding fall away. Don't launch an empty room and pray. Put the first spark in yourself, honestly, and let go once it catches. That's how you start a community from zero.
+
+[VISUAL: Outro card. pmnorthstar logo, subscribe prompt, "pmnorthstar.in." Next-up thumbnail: a photo that counts down and vanishes in a puff — a product built on things disappearing.]
+
+EV: That's how you beat the cold start. If it helped, subscribe to pmnorthstar, and the full written breakdowns plus a library of real case studies are free at pmnorthstar.in. Next up — a product built on a feature everyone thought was crazy: messages that *delete themselves*. Why disappearing was the whole point. Snapchat. Catch you in the next one.
+
+[VISUAL: Logo settles to center. End.]

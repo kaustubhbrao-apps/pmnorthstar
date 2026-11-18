@@ -163,6 +163,17 @@ export default function AIDecodedArticlePage({ params }: { params: { slug: strin
                 ))}
               </div>
             )}
+
+            {/* Cross-links out of the AI Decoded cluster into the main content
+                hubs — otherwise these article pages only ever link to each
+                other, trapping crawl equity in the silo. */}
+            <div className="railcard">
+              <div className="railhead">Explore northstar</div>
+              <Link href="/topics" className="rellink">Topic collections →</Link>
+              <Link href="/compare" className="rellink">Head-to-Head comparisons →</Link>
+              <Link href="/answers" className="rellink">PM answers →</Link>
+              <Link href="/book" className="rellink">Book breakdowns →</Link>
+            </div>
           </aside>
         </div>
       </div>
