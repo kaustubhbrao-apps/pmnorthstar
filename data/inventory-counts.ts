@@ -8,11 +8,11 @@ export const CASE_STUDY_COUNT = 206;
 export const INDIA_CASE_STUDY_COUNT = 32;
 export const BOOK_COUNT = 30;
 export const PLAYLIST_COUNT = 21;
-export const TOPIC_COUNT = 14;
+export const TOPIC_COUNT = 19;
 export const COMPARISON_COUNT = 53;
 export const AI_DECODED_COUNT = 29;
 export const DRILL_COUNT = 59;
-export const ANSWER_COUNT = 78;
+export const ANSWER_COUNT = 83;
 
 // Mirror of CASE_STUDIES_LAST_UPDATED in data/caseStudies.ts, emitted here so
 // client components can read the date without importing the ~830 KB dataset.

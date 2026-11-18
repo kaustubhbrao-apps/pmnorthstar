@@ -106,6 +106,42 @@ export const answers: Answer[] = [
     ],
   },
   {
+    slug: "ai-copilot-vs-ai-agent",
+    question: "What's the difference between an AI copilot and an AI agent?",
+    shortAnswer: "A copilot assists a human who stays in control of every step; an agent is given a goal and takes the steps itself. The line is who holds the steering wheel — a copilot suggests and waits for you to act, an agent acts and reports back. That difference in autonomy is also the difference in risk.",
+    bodyHtml: "<h2>The distinction is control, not capability</h2>\n<p>A <strong>copilot</strong> augments a person who remains in the loop: it drafts, suggests, autocompletes, and then waits for a human to accept, edit, or reject. A GitHub Copilot proposes a line; you press Tab. An <strong>agent</strong> is handed an objective and decides its own next steps, calling tools and acting on the world until it judges the job done.</p>\n<p>The common mistake is to treat this as a capability ladder — copilot as &quot;basic,&quot; agent as &quot;advanced.&quot; It isn&#39;t. Both can run on the same model. The real variable is <strong>who holds the steering wheel</strong>, and you choose that based on the cost of a wrong move, not the smartness of the model. See the fuller treatment in <a href=\"/answers/what-is-an-ai-agent\">what is an AI agent</a>.</p>\n<h2>Why autonomy is a risk decision, not a tech decision</h2>\n<p>Every step an autonomous system takes has an error rate, and errors compound across a chain. A copilot caps that risk by inserting a human at each step; an agent removes the human and inherits the full tail risk of the sequence.</p>\n<p>So the question a PM should ask isn&#39;t &quot;can the model do this end to end?&quot; but &quot;what happens the first time it does it wrong?&quot; If the answer is a wasted minute, autonomy is cheap. If the answer is a deleted record or a sent email, the human belongs in the loop — which is why so many &quot;agent&quot; launches are really copilots that haven&#39;t admitted it yet.</p>\n<h2>The spectrum in practice</h2>\n<p>Most real products live between the poles. <a href=\"/case-study/cursor-vs-windsurf-2026\">Cursor won the AI IDE</a> by nailing the copilot experience first — fast, in-workflow suggestions a developer accepts — then adding more autonomous modes as trust accumulated. The pattern repeats across the industry: ship assistance, earn trust, widen autonomy where the evidence supports it. <a href=\"/case-study/anthropic-value-ecosystem\">Anthropic&#39;s enterprise positioning</a> leans on exactly this graduated trust, because enterprises buy autonomy only after they&#39;ve seen reliability.</p>\n<h2>The product takeaway</h2>\n<p>Copilot and agent aren&#39;t two products; they&#39;re two settings on the autonomy dial, and you move the dial as reliability justifies it. Start where a human can catch mistakes cheaply, instrument where the model is actually reliable, and hand over the wheel only on the stretches of road where a crash is survivable.</p>\n",
+    category: "AI",
+    metaTitle: "AI Copilot vs AI Agent: What's the Difference?",
+    metaDescription: "A copilot assists; an agent acts. How the two differ in autonomy, trust, and risk — and why most products should ship a copilot before an agent.",
+    keywords: [
+      "ai copilot vs ai agent",
+      "difference between copilot and agent",
+      "what is an ai copilot",
+      "agentic ai vs copilot"
+    ],
+    accentColor: "#2563EB",
+    relatedCaseStudyIds: [
+      "cs-cursor-ws-1102",
+      "cs-anthropic-value-ecosystem-2026"
+    ],
+    updatedAt: "2026-11-18",
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "Is a copilot just a less capable agent?",
+        answer: "No — it's a different control model, not a weaker one. A copilot can use the exact same frontier model as an agent; the difference is that the human approves each action. You can pair the most capable model in the world with a copilot interface if the cost of a wrong action is high. Capability and autonomy are separate dials."
+      },
+      {
+        question: "Should I build a copilot or an agent first?",
+        answer: "Almost always a copilot first. It lets you ship the model's capability while a human catches its mistakes, so you learn where it's reliable before you remove the human. Teams that jump straight to autonomy usually discover the failure modes in production, which is the expensive place to find them."
+      },
+      {
+        question: "When is an agent clearly the right choice over a copilot?",
+        answer: "When the task is high-volume, low-stakes, and tedious enough that human-in-the-loop defeats the purpose — triaging tickets, monitoring logs, routine research. If a human approving every step would erase the time saved, and a wrong step is cheap to reverse, the economics favor an agent."
+      }
+    ],
+  },
+  {
     slug: "arr-vs-mrr",
     question: "What is the difference between ARR and MRR?",
     shortAnswer: "MRR is monthly recurring revenue — the predictable subscription revenue you bill in a month. ARR is annual recurring revenue, usually just MRR multiplied by twelve. The distinction that matters is not the timeframe but the word recurring: one-off fees, services and usage overages belong in neither, and including them is the most common way these numbers get inflated.",
@@ -563,6 +599,42 @@ export const answers: Answer[] = [
       {
         question: "How do I know if I am underpriced?",
         answer: "Almost nobody objects to price, sales cycles are suspiciously short, and you win deals you expected to lose. A healthy price generates some friction — if no prospect ever pushes back, you are leaving money on the table and probably signalling less value than you deliver."
+      }
+    ],
+  },
+  {
+    slug: "how-to-price-an-ai-feature",
+    question: "How do you price an AI feature?",
+    shortAnswer: "Price against the value the feature creates, but structure the price so it never sells below what inference costs you. The trap unique to AI is that usage drives real variable cost per request, so flat-rate pricing can turn your best customers into your biggest losses. Most durable AI pricing blends a value-based plan with usage guardrails.",
+    bodyHtml: "<h2>Start from value, not from cost</h2>\n<p>The first question is the same as any pricing question: what is this worth to the customer? An AI feature that saves a lawyer three hours a week is worth a fraction of those three hours, regardless of what it costs you to run. Anchor the price to that outcome — time saved, revenue unlocked, headcount avoided — not to a markup on tokens. Cost-plus pricing on AI leaves most of the value on the table. The fundamentals are in <a href=\"/answers/how-to-price-a-product\">how to price a product</a>.</p>\n<h2>The trap that&#39;s unique to AI: usage is a real cost</h2>\n<p>Here&#39;s what makes AI pricing different from pricing an ordinary feature. A normal software feature costs roughly the same whether a customer uses it once or ten thousand times. An AI feature does not — <strong>every request burns inference</strong>, so cost scales with usage.</p>\n<p>That breaks the classic SaaS instinct of &quot;flat price, encourage usage.&quot; Under flat pricing, your heaviest users can cost more than they pay, which means your most engaged, most valuable-looking cohort is quietly your least profitable. Unbounded usage against a fixed price is the single most common way early AI products lose money.</p>\n<h2>Structure the price to protect the floor</h2>\n<p>The fix is to keep value-based pricing but add <strong>usage guardrails</strong> so you never sell below cost:</p>\n<ul>\n<li><strong>Hybrid plans</strong> — a per-seat or tiered price that includes a generous allotment, with overages beyond it. Captures value, caps your downside.</li>\n<li><strong>Usage-based</strong> — price per request, run, or token-equivalent. Aligns price to cost and value, at the cost of bill predictability.</li>\n<li><strong>Credits</strong> — abstract the raw token cost into a unit customers can reason about, which smooths bill anxiety while preserving the usage-cost link.</li>\n</ul>\n<p><a href=\"/case-study/stripe-developer-first\">Stripe&#39;s usage-based billing</a> is the reference point for metering, and the broader shift toward value-and-usage models is why <a href=\"/case-study/anthropic-value-ecosystem\">Anthropic frames pricing as part of its ecosystem strategy</a> rather than a race to the bottom.</p>\n<h2>The takeaway</h2>\n<p>Price to the value you create and structure to the cost you incur. Value sets the number; inference cost sets the floor the number can never fall below. Get both right and usage is a margin lever; get the floor wrong and your best customers sink you.</p>\n",
+    category: "AI",
+    metaTitle: "How to Price an AI Feature (Without Losing Money on Usage)",
+    metaDescription: "AI features have real per-request cost, so pricing has to protect margin as well as capture value. Value-based pricing, usage guardrails, and the flat-rate trap.",
+    keywords: [
+      "how to price an ai feature",
+      "ai pricing strategy",
+      "ai feature pricing model",
+      "usage based pricing ai"
+    ],
+    accentColor: "#0D9488",
+    relatedCaseStudyIds: [
+      "cs-anthropic-value-ecosystem-2026",
+      "cs-27"
+    ],
+    updatedAt: "2026-11-18",
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "Why can't I just add AI to my existing flat subscription?",
+        answer: "Because unlike most software features, every AI request costs you money in inference. With a flat price, a power user who sends thousands of requests can cost more than they pay, so your most engaged customers become your biggest losses — the opposite of a healthy SaaS cohort. Flat-rate AI only works when you cap usage or your margins are fat enough to absorb the heavy tail."
+      },
+      {
+        question: "Should AI features be priced per seat or per usage?",
+        answer: "Per-seat is simpler to sell and budget, but it decouples price from the cost you incur, so you need usage caps to stay safe. Per-usage aligns price with cost and with value, but it creates bill anxiety that suppresses adoption. The common resolution is a hybrid: a per-seat plan that includes a generous usage allotment, with overages beyond it."
+      },
+      {
+        question: "How does falling model cost change pricing?",
+        answer: "Inference costs have fallen fast, which tempts teams to drop prices — but price should track value delivered, not your cost. Falling cost is better banked as margin or reinvested in quality than passed straight through, unless a competitor is using the savings to undercut you. Cost sets your floor; value sets your price."
       }
     ],
   },
@@ -1606,6 +1678,42 @@ export const answers: Answer[] = [
     ],
   },
   {
+    slug: "what-is-a-reasoning-model",
+    question: "What is a reasoning model?",
+    shortAnswer: "A reasoning model is an LLM trained to spend extra computation 'thinking' before it answers — generating intermediate steps — which makes it far better at problems with a verifiable right answer, like math, code, and logic. The trade-off is latency and cost: it's slower and more expensive per answer, so you use it where correctness matters more than speed.",
+    bodyHtml: "<h2>What the &#39;reasoning&#39; actually is</h2>\n<p>A standard language model produces its answer in close to a single forward pass — it predicts the response more or less directly. A <strong>reasoning model</strong> is trained to do something different: generate a chain of intermediate steps first — breaking the problem down, trying approaches, checking itself — and only then produce the final answer. In practice it spends more computation at the moment you ask (often called <strong>test-time compute</strong>) to buy a better result.</p>\n<p>The payoff shows up specifically on problems with a <strong>verifiable structure</strong>: math, code, logic puzzles, multi-constraint planning. On these, letting the model work step by step and catch its own mistakes lifts accuracy substantially over a one-shot answer.</p>\n<h2>The trade-off: correctness for speed and cost</h2>\n<p>Thinking isn&#39;t free. A reasoning model generates far more tokens per answer and takes longer to respond, which means higher cost and higher latency. That reframes the choice as an economic one, not a quality one:</p>\n<ul>\n<li><strong>Use a reasoning model</strong> when a wrong answer is expensive and the user will wait — a coding agent debugging, an analyst running a hard query.</li>\n<li><strong>Skip it</strong> when the task is simple or latency-sensitive — chat, autocomplete, classification — where you&#39;d pay more and wait longer for accuracy you didn&#39;t need.</li>\n</ul>\n<p>This is also why vendors ship both kinds. <a href=\"/case-study/claude-5-ships-2026\">Anthropic&#39;s frontier launches</a> and <a href=\"/case-study/chatgpt-consumer-launch\">OpenAI&#39;s lineup</a> offer fast models and reasoning models side by side, because the right tool depends on the job, and routing cheap tasks to an expensive model is a quiet way to burn margin — see <a href=\"/answers/how-to-price-an-ai-feature\">how to price an AI feature</a>.</p>\n<h2>The product takeaway</h2>\n<p>A reasoning model is a dial, not an upgrade. It trades latency and cost for correctness on problems that can be reasoned toward. Point it at the hard, high-stakes, checkable tasks; route everything else to a cheaper, faster model. Matching model to task is where the economics of an AI product are won or lost.</p>\n",
+    category: "AI",
+    metaTitle: "What Is a Reasoning Model? Definition and When to Use One",
+    metaDescription: "Reasoning models trade speed for correctness by thinking in steps before answering. How they differ from standard LLMs, where they help, and when they're overkill.",
+    keywords: [
+      "what is a reasoning model",
+      "reasoning model vs llm",
+      "ai reasoning models explained",
+      "test time compute"
+    ],
+    accentColor: "#7C3AED",
+    relatedCaseStudyIds: [
+      "cs-claude-5-26",
+      "cs-29"
+    ],
+    updatedAt: "2026-11-18",
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "How is a reasoning model different from a normal LLM?",
+        answer: "A standard LLM answers in roughly one pass; a reasoning model is trained to generate intermediate reasoning — exploring, checking, and revising — before committing to a final answer, spending more compute at inference time. The architecture is similar; the difference is that it's taught to use extra 'thinking' tokens, which raises accuracy on hard, multi-step problems."
+      },
+      {
+        question: "When should a PM choose a reasoning model?",
+        answer: "When the task has a correct answer that's expensive to get wrong and the user will tolerate a slower response — complex coding, data analysis, math, multi-constraint planning. For latency-sensitive or simple tasks (chat, classification, autocomplete), a reasoning model is overkill: you pay more and wait longer for accuracy the task didn't need."
+      },
+      {
+        question: "Do reasoning models eliminate hallucination?",
+        answer: "No. They reduce errors on problems with checkable logic because the model can catch its own missteps mid-chain, but they can still be confidently wrong, especially on questions of fact rather than reasoning. More thinking helps where the answer can be reasoned toward; it doesn't help where the model simply doesn't know."
+      }
+    ],
+  },
+  {
     slug: "what-is-a-retention-curve",
     question: "What is a retention curve and what does it mean when it flattens?",
     shortAnswer: "A retention curve plots what percentage of a cohort is still active at each period after signup. It always falls at first — the question is whether it flattens into a horizontal line, which means you have a group of users who keep coming back indefinitely. A curve that keeps declining toward zero means you have no retained base, only a leaky funnel.",
@@ -2071,6 +2179,42 @@ export const answers: Answer[] = [
     ],
   },
   {
+    slug: "what-is-context-engineering",
+    question: "What is context engineering?",
+    shortAnswer: "Context engineering is the discipline of deciding what information goes into a model's context window for a given task — what to retrieve, include, compress, or leave out — so the model has exactly what it needs and nothing that distracts it. It's the successor to prompt engineering: the leverage moved from wording the instruction to assembling the right context around it.",
+    bodyHtml: "<h2>Why the lever moved</h2>\n<p>Early on, getting good output was largely about wording — <strong>prompt engineering</strong>, finding the phrasing that coaxed the model into the right behavior. As models got dramatically better at following plain instructions, that cleverness stopped being the bottleneck. What determines quality now is whether the model has <strong>the right information in front of it</strong> for the task.</p>\n<p>That&#39;s <strong>context engineering</strong>: the deliberate assembly of what goes into the context window — which documents to retrieve, which examples to include, how much conversation history to keep, what tool results to feed back, and crucially, what to leave out. The question shifted from &quot;how do I phrase this?&quot; to &quot;what does the model need to see to get this right?&quot; It&#39;s the practical reason the <a href=\"/answers/what-is-vibe-coding\">prompt-engineering-as-a-job narrative faded</a> and why <a href=\"/answers/should-you-build-on-a-foundation-model\">building on a foundation model</a> is increasingly about the context you can supply, not the prompt you can craft.</p>\n<h2>More context is not better context</h2>\n<p>The naïve move is to cram everything into a large window and let the model sort it out. It doesn&#39;t work well:</p>\n<ul>\n<li><strong>Dilution</strong> — irrelevant material drowns the signal the model actually needs.</li>\n<li><strong>Lost-in-the-middle</strong> — models reliably attend to the start and end of a long context and can miss what&#39;s buried in the center.</li>\n<li><strong>Cost and latency</strong> — every token you include is paid for on every call.</li>\n</ul>\n<p>So the craft is <strong>curation</strong>: retrieve precisely, compress aggressively, order deliberately, and exclude ruthlessly. The uncheatable edge is often proprietary context — an employer&#39;s actual codebase, a company&#39;s own documents — which is exactly why <a href=\"/case-study/foundation-model-shipped-your-product-2026\">the foundation-model era rewards whoever controls the context</a>, not whoever has the cleverest prompt.</p>\n<h2>Where it shows up in product</h2>\n<p>The best AI products are quietly great at this. <a href=\"/case-study/cursor-vs-windsurf-2026\">Cursor&#39;s advantage</a> is less about which model it calls and more about feeding that model the right slice of your codebase at the right moment — the relevant files, the symbols in scope, the recent edits. The model is a commodity; the context pipeline is the product. Related reading: <a href=\"/answers/what-is-rag\">what is RAG</a> and <a href=\"/answers/what-is-a-context-window\">what is a context window</a>.</p>\n<h2>The product takeaway</h2>\n<p>Stop optimizing the sentence and start engineering the window. The teams winning with AI treat context as a system to design — retrieval, compression, ordering, exclusion — because in 2026 the model is rarely the differentiator, and the information you put in front of it almost always is.</p>\n",
+    category: "AI",
+    metaTitle: "What Is Context Engineering? The Successor to Prompt Engineering",
+    metaDescription: "Context engineering is choosing what goes into the model's context window — retrieval, compression, ordering. Why it replaced prompt engineering as the real lever.",
+    keywords: [
+      "what is context engineering",
+      "context engineering vs prompt engineering",
+      "context window management",
+      "ai context engineering"
+    ],
+    accentColor: "#0891B2",
+    relatedCaseStudyIds: [
+      "cs-fm-shipped-26",
+      "cs-cursor-ws-1102"
+    ],
+    updatedAt: "2026-11-18",
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "How is context engineering different from prompt engineering?",
+        answer: "Prompt engineering is about how you word the instruction; context engineering is about what information you put around it. As models got better at following instructions, clever wording mattered less and the quality of the supplied context — the right documents, examples, and state — mattered more. Context engineering is the broader discipline that prompt wording now sits inside."
+      },
+      {
+        question: "Why not just put everything in the context window?",
+        answer: "Because more context isn't better context. Irrelevant material dilutes the signal, models can lose information buried in the middle of a long window, and every extra token adds cost and latency. The skill is curation — including what's needed and deliberately excluding what isn't — not maximizing how much you stuff in."
+      },
+      {
+        question: "Is RAG the same as context engineering?",
+        answer: "RAG is one technique within it. Retrieval-augmented generation fetches relevant documents to put in context, which is a core context-engineering move, but the discipline also covers compression, summarization of prior turns, ordering, tool-result handling, and what state to carry across steps. RAG answers 'what to retrieve'; context engineering answers the whole question of what the window should contain."
+      }
+    ],
+  },
+  {
     slug: "what-is-continuous-discovery",
     question: "What is continuous discovery?",
     shortAnswer: "Continuous discovery is the practice of talking to customers every week, as an ongoing habit, rather than in project-shaped research phases. The premise is that a small weekly touchpoint compounds into judgment, while a research sprint every six months produces a report that ages before it's used.",
@@ -2211,6 +2355,42 @@ export const answers: Answer[] = [
       {
         question: "Why is cycle time important?",
         answer: "Because k describes how many, not how fast. A k of 1.2 with a thirty-day cycle grows far more slowly than a k of 1.1 with a three-day cycle. Shortening the time from signup to invitation is often easier than raising the coefficient and does more for growth."
+      }
+    ],
+  },
+  {
+    slug: "what-is-llm-as-a-judge",
+    question: "What is LLM-as-a-judge?",
+    shortAnswer: "LLM-as-a-judge is using one language model to grade the outputs of another — scoring quality, correctness, or tone against a rubric — so you can evaluate at a scale humans can't. It's fast and cheap, which is its appeal, but the judge has its own biases, so it supplements human evaluation rather than replacing it.",
+    bodyHtml: "<h2>The problem it solves</h2>\n<p>Once you ship an AI feature, you have to answer a question constantly: did that change make the output better or worse? Human grading is the gold standard but doesn&#39;t scale — people can review a handful of outputs, not the thousands you&#39;d need to test every prompt tweak against a real distribution of inputs.</p>\n<p><strong>LLM-as-a-judge</strong> closes that gap. You give a model the output to assess, a rubric, and often a reference answer, and it returns a score or a verdict. Now you can run a large evaluation set on every change, cheaply and in minutes. It&#39;s the engine that makes continuous evaluation practical — the backbone of the <a href=\"/answers/what-are-llm-evals\">evals discipline</a> that separates teams who measure their AI from teams who guess.</p>\n<h2>Where it&#39;s reliable — and where it isn&#39;t</h2>\n<p>LLM judges are strong at graded, rubric-shaped questions: is this answer relevant, is it grounded in the source, is the tone appropriate, does it follow the format. They&#39;re weaker where correctness requires ground truth the judge doesn&#39;t have, or genuine domain expertise.</p>\n<p>And the judge brings its own <strong>biases</strong> to the bench:</p>\n<ul>\n<li><strong>Length bias</strong> — it tends to reward longer, more elaborate answers.</li>\n<li><strong>Position bias</strong> — in A/B grading, it over-picks whichever came first.</li>\n<li><strong>Self-preference</strong> — it favors outputs from its own model family.</li>\n</ul>\n<p>You manage these the way you&#39;d manage a biased human rater: a clear rubric, randomized ordering, reference answers, and periodic calibration against real human labels.</p>\n<h2>Why it supplements rather than replaces humans</h2>\n<p>The reliable pattern that scaled products — including enterprise deployments from labs like <a href=\"/case-study/anthropic-value-ecosystem\">Anthropic</a> and <a href=\"/case-study/claude-5-ships-2026\">the frontier launches that live or die on eval quality</a> — is a <strong>pyramid</strong>: a small, trusted set of human judgments at the top calibrates a large volume of LLM-judge scores below. The judge gives you coverage; the humans keep it honest.</p>\n<h2>The product takeaway</h2>\n<p>LLM-as-a-judge is what makes evaluating AI at scale affordable, and it&#39;s non-negotiable if you want to iterate safely. But treat the judge as an instrument that needs calibration, not an oracle: anchor it to a rubric, watch for its biases, and check it against humans often enough to trust the number.</p>\n",
+    category: "AI",
+    metaTitle: "What Is LLM-as-a-Judge? How AI Evaluates AI",
+    metaDescription: "LLM-as-a-judge uses one model to grade another's outputs at scale. How it works, where it's reliable, the biases to watch, and why it doesn't replace human evals.",
+    keywords: [
+      "llm as a judge",
+      "llm as judge evals",
+      "ai evaluating ai",
+      "model based evaluation"
+    ],
+    accentColor: "#DB2777",
+    relatedCaseStudyIds: [
+      "cs-claude-5-26",
+      "cs-anthropic-value-ecosystem-2026"
+    ],
+    updatedAt: "2026-11-18",
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "Why use an LLM to judge instead of a human?",
+        answer: "Scale and speed. Humans can grade dozens of outputs an hour; an LLM judge grades thousands for pennies, which lets you evaluate every change against a large test set instead of spot-checking. You trade some accuracy for enough throughput to actually run evals continuously — the difference between testing an AI product and hoping it works."
+      },
+      {
+        question: "What biases does an LLM judge have?",
+        answer: "Several well-documented ones: it tends to prefer longer answers, answers in its own style, and (in head-to-head grading) whichever option is presented first (position bias). It can also favor outputs from the same model family. You counter these by randomizing order, using a clear rubric, and periodically checking the judge's scores against human labels."
+      },
+      {
+        question: "Can the judge be the same model being tested?",
+        answer: "It can, but it's risky — a model grading its own family tends to score it generously (self-preference bias). Using a different, ideally stronger, model as the judge reduces this, as does anchoring the judge to a rubric and reference answers rather than letting it score on vibes. Either way, calibrate against human judgment before trusting it."
       }
     ],
   },

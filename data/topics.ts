@@ -26,6 +26,55 @@ export interface Topic {
 
 export const topics: Topic[] = [
   {
+    slug: "ai-native-companies",
+    title: "Built AI-Native",
+    eyebrow: "Companies designed around the model — not bolted onto it",
+    intro: "**AI-native isn't a chat box bolted onto old software — it's a company whose product wouldn't exist if you removed the model.** That distinction is the whole game in 2026. [OpenAI's ChatGPT](/case-study/chatgpt-consumer-launch) created the category by making the model itself the product. [Anthropic built a business around trust, safety, and an ecosystem](/case-study/anthropic-value-ecosystem) rather than a single app, and [shipped frontier models into the enterprise](/case-study/claude-5-ships-2026) on that reputation. [Cursor won the AI IDE](/case-study/cursor-vs-windsurf-2026) not by having the best model but by owning the developer's workflow. [Figure is betting the same thesis on humanoid robots](/case-study/figure-03-humanoid-robots), and [Apple quietly conceded the point by opening Siri to outside LLMs](/case-study/apple-opens-siri-to-llms-2026). The through-line — and the trap the [foundation-model era sets for founders](/case-study/foundation-model-shipped-your-product-2026) — is that your moat is only as deep as the next model release, so the durable companies build at the layer the model can't commoditize. These are the deep dives on the ones designing around the model instead of defending against it. See also [what makes an AI agent](/answers/what-is-an-ai-agent) and [whether you should build on a foundation model](/answers/should-you-build-on-a-foundation-model).",
+    metaTitle: "AI-Native Companies — Case Studies",
+    metaDescription: "What it means to build AI-native: deep dives on OpenAI, Anthropic, Cursor, Figure AI, and Apple's Siri bet. The companies designing around the model instead of bolting AI onto an old product.",
+    keywords: [
+      "AI-native companies",
+      "AI-native product strategy",
+      "OpenAI case study",
+      "Anthropic business model",
+      "Cursor AI IDE",
+      "building on foundation models"
+    ],
+    accentColor: "#8B5CF6",
+    caseStudyIds: [
+      "cs-29",
+      "cs-anthropic-value-ecosystem-2026",
+      "cs-claude-5-26",
+      "cs-cursor-ws-1102",
+      "cs-figure-03-robots-bmw-2026",
+      "cs-siri-llm-26",
+      "cs-fm-shipped-26"
+    ],
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "What does 'AI-native' actually mean?",
+        answer: "An AI-native product is architected around a model's capability as the core primitive, not as a feature added to an existing workflow. The difference shows up in the interface and the business model: a bolted-on product adds a chat box to software that already worked without it, while an AI-native one — Cursor, ChatGPT, a coding agent — would not exist at all if the model were removed. The model isn't an assistant inside the product; the model is the product."
+      },
+      {
+        question: "How is an AI-native company different from one that just added AI features?",
+        answer: "Incumbents add AI to defend an existing moat; AI-native companies build a new moat on top of the model. The tell is what breaks when the underlying model improves. For a feature-bolt-on, a better model is a threat that can replicate the feature. For an AI-native company, a better model is a tailwind that makes the core product better — which is why the durable ones build at the layer the model can't commoditize: distribution, workflow lock-in, proprietary context, or trust."
+      },
+      {
+        question: "What's the moat for an AI-native company if everyone uses the same models?",
+        answer: "Not the model weights — those commoditize fast. The moat is somewhere else: the proprietary data or context the model runs against (an employer's codebase, a company's documents), the workflow it's embedded in, the distribution it already owns, or the governance and trust layer around it. Anthropic's bet is the ecosystem and safety reputation; Cursor's is developer workflow lock-in; the loser's bet is a thin wrapper the next model release absorbs."
+      },
+      {
+        question: "Can an incumbent become AI-native, or only startups?",
+        answer: "Incumbents can, but it requires cannibalizing the thing that made them money. Apple opening Siri to third-party LLMs is an incumbent conceding its own model isn't good enough and rebuilding around someone else's — painful, but more honest than shipping a weak in-house assistant. The companies that fail at this are the ones that treat AI as a feature to protect the old product rather than a reason to rebuild it."
+      },
+      {
+        question: "Is 'AI-native' just a marketing label?",
+        answer: "Often, yes — it's the 2026 version of 'cloud-native' or 'mobile-first,' slapped on decks to raise money. The test that cuts through it: remove the model and see what's left. If there's still a viable product, it was AI-assisted, not AI-native. If there's nothing, it's genuinely built around the model — which is both the opportunity and the risk, because the company's ceiling and floor are now set by a model it may not control."
+      }
+    ],
+  },
+  {
     slug: "bootstrapped-companies",
     title: "Bootstrapped to Billion",
     eyebrow: "Companies that refused VC money — and won",
@@ -228,6 +277,53 @@ export const topics: Topic[] = [
       {
         question: "Why does Booking.com test so obsessively?",
         answer: "Booking.com runs thousands of concurrent A/B tests because at its scale, a fraction-of-a-percent lift in conversion is worth enormous revenue. It treats the funnel as something to be relentlessly optimized through experimentation rather than opinion. The result is a conversion machine that out-converts competitors not through one big idea but through a compounding accumulation of tiny, proven wins."
+      }
+    ],
+  },
+  {
+    slug: "edtech-business-models",
+    title: "The EdTech Reckoning",
+    eyebrow: "The boom funded growth; the survivors found a business model",
+    intro: "**EdTech's boom funded growth; its reckoning rewarded whoever had quietly found a business model.** The pandemic handed the whole category a demand spike, and the companies that read it as permanent — scaling acquisition and M&A against a number that was about to revert — became the cautionary tales. [Byju's is the defining collapse](/case-study/byjus-downfall): growth and acquisitions outran payback until the whole structure buckled. Against it, [Physics Wallah built profitably](/case-study/physics-wallah-profitable-edtech) with low prices and tight costs, reaching scale without the capital overhang. The survivors found structural reasons to keep getting paid: [Classplus sold software to educators](/case-study/classplus-b2b-creator-economy) instead of courses to students, [Coursera monetized the credential](/case-study/coursera-freemium-degree-stacking) while content stayed free, and [Duolingo turned retention into a game-design problem](/case-study/duolingo-gamification). These are the deep dives on what separated the burnouts from the businesses. See also [comeback stories](/topics/comeback-stories) and [spectacular flameouts](/topics/spectacular-flameouts).",
+    metaTitle: "EdTech Case Studies — Business Models That Worked and Failed",
+    metaDescription: "Why most EdTech burned out and a few didn't: deep dives on Byju's, Physics Wallah, Classplus, Coursera, and Duolingo. Growth-at-all-costs versus durable unit economics.",
+    keywords: [
+      "edtech case studies",
+      "Byju's downfall",
+      "Physics Wallah business model",
+      "edtech unit economics",
+      "Duolingo retention",
+      "online education business model"
+    ],
+    accentColor: "#F59E0B",
+    caseStudyIds: [
+      "cs-54",
+      "cs-197",
+      "cs-175",
+      "cs-177",
+      "cs-9"
+    ],
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "Why did so much EdTech collapse after the pandemic boom?",
+        answer: "Lockdowns created a one-time demand spike that companies mistook for permanent behavior change, and they raised and spent against that assumption. When classrooms reopened, demand reverted but the cost base — sales teams, acquisition spend, acquisitions — didn't. The collapse wasn't a demand problem so much as a unit-economics problem: companies that paid more to acquire a student than they ever earned back, papered over by growth, were exposed the moment growth stalled."
+      },
+      {
+        question: "What did Byju's get wrong that Physics Wallah got right?",
+        answer: "Byju's scaled acquisition and M&A faster than it proved payback, treating growth as the goal rather than a result of profitable units. Physics Wallah did the opposite — low price, high volume, tight costs, profitability before scale — which is why it reached large scale without the capital overhang. The lesson isn't 'India is cheap'; it's that in a price-sensitive market, the durable model is built on margin discipline, not funded losses."
+      },
+      {
+        question: "Why is retention the hardest problem in EdTech?",
+        answer: "Because the product's job is to make itself unnecessary: a student who succeeds graduates and leaves, and a student who struggles churns. Education also fights motivation decay — the gap between intending to learn and actually showing up. Duolingo's answer was to treat retention as a game-design problem (streaks, reminders, habit loops) rather than a content problem, which is why it kept daily engagement most EdTech never came close to."
+      },
+      {
+        question: "What business models actually work in EdTech?",
+        answer: "The durable ones avoid the trap of selling a one-time outcome to a one-time buyer. Freemium-plus-credential (Coursera) monetizes the certificate while content stays free. B2B tooling (Classplus) sells software to educators instead of courses to students, which is a recurring, higher-margin relationship. Habit-based consumer apps (Duolingo) monetize engagement over years. All three replace 'sell a course, hope they come back' with a structural reason to keep paying."
+      },
+      {
+        question: "Is EdTech a bad category, or were the business models bad?",
+        answer: "The category is real — people will always pay to learn and credential — but it punishes growth-at-all-costs harder than most because outcomes are slow, trust is fragile, and buyers are price-sensitive. The failures weren't proof that EdTech can't work; they were proof that EdTech can't be brute-forced with marketing spend. The survivors share margin discipline and a recurring reason to stay, not a bigger ad budget."
       }
     ],
   },
@@ -450,6 +546,57 @@ export const topics: Topic[] = [
     ],
   },
   {
+    slug: "payments-fintech-infrastructure",
+    title: "The Plumbing of Money",
+    eyebrow: "The companies that own the rails everyone else builds on",
+    intro: "**The most durable fintech companies don't win customers — they become the rails everyone else is built on, and then quietly tax the flow.** Payments is defensible because the integration is load-bearing: once checkout and payouts run through you, replacing you risks revenue. [Stripe made the API the product](/case-study/stripe-developer-first), winning developers bottom-up and skipping the enterprise sales gauntlet — the same move [Razorpay ran in India](/case-study/razorpay-pivot-fintech). [Adyen won enterprise acquiring](/case-study/adyen-enterprise-acquiring) by owning the full stack for global merchants, and [PayPal bootstrapped its network with a referral bonus](/case-study/paypal-referral-bonus). Others turned regulation and records into moats: [Coinbase made compliance the on-ramp](/case-study/coinbase-compliance-moat), [Carta became the system of record for cap tables](/case-study/carta-cap-table-monopoly), [Plaid became the connective tissue between banks and apps](/case-study/plaid-fintech-data-pipeline), and [ClearTax owned tax-filing workflows](/case-study/cleartax-tax-filing-simplification). [Brex rebuilt the corporate card](/case-study/brex-corporate-cards-for-startups) by underwriting startups banks wouldn't. These are the deep dives on owning the plumbing of money. See also [Indian fintech](/topics/indian-fintech) and [what makes a moat](/answers/what-is-a-moat).",
+    metaTitle: "Payments & Fintech Infrastructure — Case Studies",
+    metaDescription: "How fintech infrastructure wins: deep dives on Stripe, Adyen, Brex, Coinbase, Carta, Razorpay, PayPal, Plaid, and ClearTax. Developer-first distribution, compliance moats, and owning the rails.",
+    keywords: [
+      "fintech infrastructure case studies",
+      "Stripe developer-first",
+      "Adyen payments",
+      "payments API strategy",
+      "fintech compliance moat",
+      "Plaid data network"
+    ],
+    accentColor: "#6366F1",
+    caseStudyIds: [
+      "cs-27",
+      "cs-138",
+      "cs-157",
+      "cs-81",
+      "cs-164",
+      "cs-52",
+      "cs-20",
+      "cs-159",
+      "cs-176"
+    ],
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "Why is payments such a defensible business?",
+        answer: "Because switching costs compound and the integration is load-bearing. Once a company's checkout, reconciliation, and payout logic run through one provider, ripping it out risks revenue, so the incumbent keeps the account even when a cheaper option appears. Add regulatory licensing, bank relationships, and fraud models that improve with volume, and you get a business where the moat is the plumbing itself — invisible until you try to replace it."
+      },
+      {
+        question: "What made Stripe's developer-first strategy work?",
+        answer: "Stripe treated the buyer as the developer, not the CFO, and shipped a clean API with documentation good enough to integrate in an afternoon. That bypassed the traditional enterprise sales gauntlet: developers adopted bottom-up, and usage grew with the businesses built on top. The product was distribution. It's the same playbook Razorpay ran in India — win the developer, and the company follows."
+      },
+      {
+        question: "What is a compliance moat, and why does it matter in fintech?",
+        answer: "A compliance moat is defensibility built from the regulatory and licensing work competitors must redo from scratch. In crypto, Coinbase turned regulation from a cost into a moat — leaning into compliance made it the trusted on-ramp for institutions wary of riskier venues. Licensing, audits, and jurisdiction-by-jurisdiction approvals are slow and expensive, so a company that has already done them has a lead measured in years, not features."
+      },
+      {
+        question: "Why do fintech infrastructure companies become 'the standard'?",
+        answer: "Because infrastructure has strong winner-take-most dynamics: every integration a provider wins makes it the default others build against, and defaults are sticky. Plaid became the connective tissue between banks and apps; Carta became the system of record for cap tables. Once a provider is the assumed rail — the thing a new startup reaches for without evaluating alternatives — distribution becomes self-reinforcing and the category consolidates around it."
+      },
+      {
+        question: "Is fintech infrastructure a better business than consumer fintech?",
+        answer: "It's usually more durable, if less glamorous. Consumer fintech fights for attention, brand, and acquisition cost against well-funded rivals; infrastructure sells to businesses that integrate once and stay for years. The trade-off is that infrastructure is a slower, more technical, more regulated build with a longer path to revenue — but the resulting moats (switching costs, licensing, network defaults) tend to be far harder to dislodge than a consumer app's brand."
+      }
+    ],
+  },
+  {
     slug: "product-design",
     title: "Design as a Moat",
     eyebrow: "When product design is the competitive advantage",
@@ -532,6 +679,55 @@ export const topics: Topic[] = [
     ],
   },
   {
+    slug: "subscription-businesses",
+    title: "The Recurring-Revenue Machine",
+    eyebrow: "Businesses that get paid again every month — if they earn it",
+    intro: "**A subscription business doesn't sell a product — it rents one, and has to re-earn the sale every single month.** That single fact rewires the whole company around retention, because churn is the leak that caps growth no matter how fast you acquire. [Amazon Prime turned a subscription into a behavior-change flywheel](/case-study/amazon-prime-shipping-gamble-2005), making not using Amazon feel like wasting money. [Netflix re-earned the charge](/case-study/netflix-dvd-to-streaming) with continuously refreshed content and no hardware gate, while [Peloton's recurring revenue sat behind an expensive one-time purchase](/case-study/peloton-pandemic-overreach) that spiked and reverted. The durable ones each engineer a recurring reason to stay: [Spotify fights catalog commoditization with playlists and discovery](/case-study/spotify-streaming-war), [Duolingo fights motivation decay with streaks](/case-study/duolingo-gamification), [Coursera ties payment to a credential](/case-study/coursera-freemium-degree-stacking), and [Cult.fit bundled wellness into a habit](/case-study/cult-fit-super-app). These are the deep dives on the discipline of getting paid again. See also [freemium & PLG](/topics/freemium-plg), [ARR vs MRR](/answers/arr-vs-mrr), and [what is churn rate](/answers/what-is-churn-rate).",
+    metaTitle: "Subscription Business Case Studies",
+    metaDescription: "How subscription businesses win and lose: deep dives on Amazon Prime, Netflix, Spotify, Duolingo, Coursera, Cult.fit, and Peloton. Retention, churn, and the discipline of recurring revenue.",
+    keywords: [
+      "subscription business case studies",
+      "Amazon Prime strategy",
+      "Netflix subscription model",
+      "subscription churn",
+      "recurring revenue retention",
+      "subscription unit economics"
+    ],
+    accentColor: "#EC4899",
+    caseStudyIds: [
+      "cs-amazon-prime-2005",
+      "cs-4",
+      "cs-5",
+      "cs-9",
+      "cs-177",
+      "cs-59",
+      "cs-79"
+    ],
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "What makes a subscription business different from a transactional one?",
+        answer: "A transactional business earns the sale once; a subscription business re-earns it every billing cycle. That changes everything downstream: the key metric isn't acquisition but retention, the key risk isn't a bad quarter but churn compounding, and the key discipline is that value has to be delivered continuously, not at the point of sale. Revenue is a trailing indicator of whether customers still find the product worth keeping."
+      },
+      {
+        question: "Why is churn the metric that matters most?",
+        answer: "Because churn is the leak in the bucket, and at scale it caps growth no matter how much you pour in. A business losing 5% of subscribers a month has to replace more than half its base a year just to stand still. Low churn compounds the other way — retained subscribers fund acquisition, raise lifetime value, and make the whole model antifragile. Most subscription failures are retention failures wearing an acquisition costume."
+      },
+      {
+        question: "How did Amazon Prime change subscription strategy?",
+        answer: "Prime reframed a subscription as a loyalty-and-behavior-change engine rather than a content bundle. By pricing fast shipping as a membership, Amazon made not using Amazon feel like wasting money, which lifted order frequency across the whole store. The subscription wasn't the product — it was the flywheel that made the core business stickier, a model later copied across retail and services."
+      },
+      {
+        question: "Why did Peloton's subscription model falter when Netflix's held?",
+        answer: "Both sold recurring access, but Peloton's recurring revenue was gated behind expensive hardware, so growth depended on a one-time purchase that spiked in the pandemic and reverted after. Netflix's subscription had no hardware gate and a continuously refreshed reason to stay. The lesson: a subscription is only as durable as the ongoing value and the absence of a one-time demand cliff disguised as a trend."
+      },
+      {
+        question: "What's the hardest part of running a subscription business?",
+        answer: "Sustaining perceived value faster than novelty decays. Every subscriber quietly re-evaluates the charge, so the product must keep justifying itself — new content, new features, new habit. Spotify fights catalog commoditization with playlists and discovery; Duolingo fights motivation decay with streaks; Coursera ties payment to a credential outcome. The common thread: engineer a recurring reason to stay that isn't just 'you forgot to cancel.'"
+      }
+    ],
+  },
+  {
     slug: "super-app-failures",
     title: "When Super-Apps Break",
     eyebrow: "The bundle-everything thesis, autopsied",
@@ -569,6 +765,56 @@ export const topics: Topic[] = [
       {
         question: "Are super-apps still a viable strategy in India?",
         answer: "Mostly no, with one exception. Pure consumer super-apps (one app for everything) have failed repeatedly in India. The only viable variant is when one vertical produces such high engagement that adjacent verticals get a real distribution edge — like PhonePe layering financial products onto a UPI base. Even then, the core has to be dominant, not just present."
+      }
+    ],
+  },
+  {
+    slug: "two-sided-marketplaces",
+    title: "Both Sides of the Market",
+    eyebrow: "Businesses that have to win supply and demand at the same time",
+    intro: "**A marketplace is the only business that has to launch two companies at once — supply and demand — and keep both liquid in the same place at the same time.** That constraint is why most die in the cold start and why the winners share a signature move: they manufacture liquidity on one side before the flywheel can spin on its own. [Airbnb survived by doing things that didn't scale](/case-study/airbnb-cereal-survival), photographing listings by hand until supply was real. [DoorDash won the suburbs](/case-study/doordash-suburban-logistics) by solving delivery logistics others wouldn't touch, and [Uber blitzscaled](/case-study/uber-blitzscaling) city by city subsidizing drivers to stay online. [Booking.com turned relentless experimentation](/case-study/booking-cta-testing) into demand-side dominance, [Meesho built social commerce](/case-study/meesho-social-commerce) on India's latent reseller supply, and [Swiggy](/case-study/swiggy-instamart-bet) and [Zomato](/case-study/zomato-blinkit-bet) parlayed food-delivery liquidity into quick commerce. [Dream11 built a legal and trust moat](/case-study/dream11-fantasy-sports-legal-moat) around its two sides. These are the deep dives on solving the hardest launch problem in product. Start with the concept: [what is a two-sided marketplace](/answers/what-is-a-two-sided-marketplace) and [what is a growth loop](/answers/what-is-a-growth-loop).",
+    metaTitle: "Two-Sided Marketplace Case Studies",
+    metaDescription: "How two-sided marketplaces solve the chicken-and-egg problem: deep dives on Airbnb, DoorDash, Uber, Booking.com, Meesho, Swiggy, Zomato, and Dream11. Cold starts, take rates, and liquidity.",
+    keywords: [
+      "two-sided marketplace case studies",
+      "marketplace cold start problem",
+      "Airbnb supply growth",
+      "DoorDash logistics",
+      "marketplace liquidity",
+      "take rate strategy"
+    ],
+    accentColor: "#0EA5E9",
+    caseStudyIds: [
+      "cs-3",
+      "cs-80",
+      "cs-16",
+      "cs-72",
+      "cs-60",
+      "cs-56",
+      "cs-66",
+      "cs-173"
+    ],
+    publishedAt: "2026-11-18",
+    faqs: [
+      {
+        question: "What is a two-sided marketplace?",
+        answer: "A business that creates value by connecting two distinct user groups — buyers and sellers, riders and drivers, guests and hosts — where each side needs the other to show up. The platform doesn't own the inventory; it owns the matching. Its revenue is usually a take rate on transactions it facilitates, which means it only makes money when both sides are present and liquid at the same time."
+      },
+      {
+        question: "What is the cold-start (chicken-and-egg) problem?",
+        answer: "Neither side wants to join an empty marketplace: hosts won't list where there are no guests, and guests won't come where there are no listings. The cold start is the period before liquidity exists, and most marketplaces die in it. The companies that survive solve one side manually or subsidize it — Airbnb photographed listings itself, Uber paid drivers to idle, DoorDash hand-delivered orders — buying liquidity until the network could sustain itself."
+      },
+      {
+        question: "Which side of the marketplace is harder to build?",
+        answer: "Usually supply, because supply is slower to acquire and stickier once won, but it depends on the category. In rides and food delivery, constrained supply (drivers, couriers) is the bottleneck and the main cost. In lodging and social commerce, demand aggregation is the harder half because supply is latent and abundant. The strategic question every marketplace answers early: which side do we subsidize to pull the other in?"
+      },
+      {
+        question: "How do marketplaces decide their take rate?",
+        answer: "The take rate is a tax on the transaction, and the ceiling is set by how much value the platform adds versus how easily the two sides can transact around it (disintermediation). Marketplaces that add trust, logistics, or discovery — escrow, delivery fleets, reviews — can charge more because going direct is painful. Thin matchmakers with nothing holding the sides together get squeezed, which is why many evolve from pure matching into owning logistics or payments."
+      },
+      {
+        question: "Why do so many marketplaces expand into adjacent services?",
+        answer: "Because once a marketplace owns demand, the cheapest growth is selling that demand more services — which is how Swiggy and Zomato moved from food delivery into ten-minute grocery, and how ride and commerce platforms become 'super apps.' The risk is that each adjacency has its own unit economics and competitive set, so the expansion that looks like leverage can dilute the core liquidity that made the marketplace valuable in the first place."
       }
     ],
   },

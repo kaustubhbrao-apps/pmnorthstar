@@ -27,6 +27,14 @@ export const answersLite: AnswerLite[] = [
     accentColor: "#EA580C",
   },
   {
+    slug: "ai-copilot-vs-ai-agent",
+    question: "What's the difference between an AI copilot and an AI agent?",
+    shortAnswer: "A copilot assists a human who stays in control of every step; an agent is given a goal and takes the steps itself. The line is who holds the steering wheel — a copilot suggests and waits for you to act, an agent acts and reports back. That difference in autonomy is also the difference in risk.",
+    category: "AI",
+    accentColor: "#2563EB",
+    publishedAt: "2026-11-18",
+  },
+  {
     slug: "arr-vs-mrr",
     question: "What is the difference between ARR and MRR?",
     shortAnswer: "MRR is monthly recurring revenue — the predictable subscription revenue you bill in a month. ARR is annual recurring revenue, usually just MRR multiplied by twelve. The distinction that matters is not the timeframe but the word recurring: one-off fees, services and usage overages belong in neither, and including them is the most common way these numbers get inflated.",
@@ -116,6 +124,14 @@ export const answersLite: AnswerLite[] = [
     shortAnswer: "Price against the value the customer receives, not against your costs and not against a competitor's list price. Pick a value metric that grows as the customer gets more out of the product, then set the level by testing willingness to pay in the segment you actually want. Most products are underpriced, and the usual cause is founders projecting their own price sensitivity onto buyers.",
     category: "Strategy",
     accentColor: "#F3123C",
+  },
+  {
+    slug: "how-to-price-an-ai-feature",
+    question: "How do you price an AI feature?",
+    shortAnswer: "Price against the value the feature creates, but structure the price so it never sells below what inference costs you. The trap unique to AI is that usage drives real variable cost per request, so flat-rate pricing can turn your best customers into your biggest losses. Most durable AI pricing blends a value-based plan with usage guardrails.",
+    category: "AI",
+    accentColor: "#0D9488",
+    publishedAt: "2026-11-18",
   },
   {
     slug: "how-to-run-customer-interviews",
@@ -321,6 +337,14 @@ export const answersLite: AnswerLite[] = [
     accentColor: "#0891B2",
   },
   {
+    slug: "what-is-a-reasoning-model",
+    question: "What is a reasoning model?",
+    shortAnswer: "A reasoning model is an LLM trained to spend extra computation 'thinking' before it answers — generating intermediate steps — which makes it far better at problems with a verifiable right answer, like math, code, and logic. The trade-off is latency and cost: it's slower and more expensive per answer, so you use it where correctness matters more than speed.",
+    category: "AI",
+    accentColor: "#7C3AED",
+    publishedAt: "2026-11-18",
+  },
+  {
     slug: "what-is-a-retention-curve",
     question: "What is a retention curve and what does it mean when it flattens?",
     shortAnswer: "A retention curve plots what percentage of a cohort is still active at each period after signup. It always falls at first — the question is whether it flattens into a horizontal line, which means you have a group of users who keep coming back indefinitely. A curve that keeps declining toward zero means you have no retained base, only a leaky funnel.",
@@ -412,6 +436,14 @@ export const answersLite: AnswerLite[] = [
     accentColor: "#9B8FFF",
   },
   {
+    slug: "what-is-context-engineering",
+    question: "What is context engineering?",
+    shortAnswer: "Context engineering is the discipline of deciding what information goes into a model's context window for a given task — what to retrieve, include, compress, or leave out — so the model has exactly what it needs and nothing that distracts it. It's the successor to prompt engineering: the leverage moved from wording the instruction to assembling the right context around it.",
+    category: "AI",
+    accentColor: "#0891B2",
+    publishedAt: "2026-11-18",
+  },
+  {
     slug: "what-is-continuous-discovery",
     question: "What is continuous discovery?",
     shortAnswer: "Continuous discovery is the practice of talking to customers every week, as an ongoing habit, rather than in project-shaped research phases. The premise is that a small weekly touchpoint compounds into judgment, while a research sprint every six months produces a report that ages before it's used.",
@@ -438,6 +470,14 @@ export const answersLite: AnswerLite[] = [
     shortAnswer: "K-factor is the number of new users each existing user generates — invitations sent multiplied by the conversion rate of those invitations. Above 1.0 growth is self-sustaining and exponential; below 1.0 each cohort produces a smaller one and virality only amplifies other acquisition. Sustained k above 1 is genuinely rare, and cycle time matters nearly as much as the number.",
     category: "Growth",
     accentColor: "#0F9D58",
+  },
+  {
+    slug: "what-is-llm-as-a-judge",
+    question: "What is LLM-as-a-judge?",
+    shortAnswer: "LLM-as-a-judge is using one language model to grade the outputs of another — scoring quality, correctness, or tone against a rubric — so you can evaluate at a scale humans can't. It's fast and cheap, which is its appeal, but the judge has its own biases, so it supplements human evaluation rather than replacing it.",
+    category: "AI",
+    accentColor: "#DB2777",
+    publishedAt: "2026-11-18",
   },
   {
     slug: "what-is-mcp",
